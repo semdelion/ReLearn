@@ -34,7 +34,21 @@ namespace ReLearn
         public string enWords { get; set; }
         public string ruWords { get; set; }
         public int numberLearn { get; set; }
-        public int dateRepeat { get; set; }      
+        public int dateRepeat { get; set; }
+
+        //public static override Words operator=(Words x, Words y)
+        //{
+  
+        //    x.dateRepeat = y.dateRepeat;
+        //    x.enWords = y.enWords;
+        //    x.numberLearn = y.numberLearn;
+        //    x.ruWords = y.ruWords;
+        //    return x;
+        //}
+        public Words Find()
+        {   
+            return this;
+        }
     }
     public class Database //Класс для считывания базы данных English
     {

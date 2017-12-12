@@ -48,10 +48,7 @@ namespace ReLearn.Resources
         {
             var view = convertView ?? activity.LayoutInflater.Inflate(Resource.Layout.del_list, parent, false);
             var txtName = view.FindViewById<TextView>(Resource.Id.textView1);
-            /// test!
-                                                    Random rnd = new Random(unchecked((int)(DateTime.Now.Ticks)));
-                                                    list[position].numberLearn = rnd.Next(21);
-            // TEEEST
+            
 
             //switch (list[position].numberLearn / 5)
             //{

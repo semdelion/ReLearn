@@ -765,6 +765,9 @@ namespace ReLearn
 			// aapt resource value: 0x7f07000e
 			public const int button_learn_en_ru = 2131165198;
 			
+			// aapt resource value: 0x7f070034
+			public const int decrease = 2131165236;
+			
 			// aapt resource value: 0x7f070006
 			public const int editText_foreign_word = 2131165190;
 			
@@ -777,6 +780,9 @@ namespace ReLearn
 			// aapt resource value: 0x7f070022
 			public const int imageView_Flags_repeat = 2131165218;
 			
+			// aapt resource value: 0x7f070033
+			public const int increase = 2131165235;
+			
 			// aapt resource value: 0x7f07002f
 			public const int language_eng = 2131165231;
 			
@@ -788,6 +794,9 @@ namespace ReLearn
 			
 			// aapt resource value: 0x7f07000a
 			public const int listViewDelete = 2131165194;
+			
+			// aapt resource value: 0x7f070032
+			public const int menuDelSort = 2131165234;
 			
 			// aapt resource value: 0x7f070010
 			public const int scrollView1 = 2131165200;

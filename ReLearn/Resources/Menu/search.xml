@@ -1,13 +1,40 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <!--For all properties see: http://developer.android.com/guide/topics/resources/menu-resource.html-->
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu
+xmlns:android ="http://schemas.android.com/apk/res/android"
+xmlns:tools ="http://schemas.android.com/tools"
+tools:context=".English"
+>
   
-  <item android:id="@+id/action_search"
-         android:showAsAction="always"
-        android:text="Search"
-         android:actionViewClass="android.widget.SearchView"/>
-  
+  <item android:id="@+id/action_search"         
+        android:showAsAction="always"          
+        android:text="Search"       
+        android:actionViewClass="android.widget.SearchView"/>
+  <item
+    android:id="@+id/menuDelSort"
+    android:icon="@+drawable/settings"
+    android:showAsAction="always"
+    android:title="Sort">
+    <menu>
+      <!--возрастание-->
+      <item
+        android:id="@+id/increase"
+        android:orderInCategory="101"
+        android:showAsAction="always"
+        android:title="Sort ↓"
+      />
+      <!--убывание-->
+      <item
+        android:id="@+id/decrease"
+        android:orderInCategory="101"
+        android:showAsAction="never"
+        android:title="Sort ↑"
+      />
+    </menu>
+  </item>
 </menu>
+  
+
 
 <!-- Code to implement into Activity:
 
