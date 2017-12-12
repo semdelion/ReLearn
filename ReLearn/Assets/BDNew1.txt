@@ -1,0 +1,335 @@
+﻿above|выше
+accelerated|ускоренный
+acceptable|приемлемый
+acquired|приобретенный
+advanced|продвинутый
+advantage|преимущество
+ahead|впереди
+allocate|назначать
+allocation|распределение
+along with|вместе с
+altogether|совсем
+amount|количество
+amusing|забавный
+antique|античный
+apologize|принести извинения
+appalled|потрясло
+approachable|доступный
+appropriate|подходящее
+argues|утверждать
+assertions|утверждения
+assignment|назначение
+associated|связанный
+assume|предполагать
+assumption|предположение
+attach|прикреплять
+attracted|привлекли
+avoid|избежать
+avoidance|отказ
+awkward|неловко
+barging|продвижение
+become|стать
+behave|вести себя
+being|существование
+bleeding|кровотечение
+boost|увеличение
+briefly|кратко
+built-in|встроенный
+caller|гость
+care about|заботиться
+carefully|внимательно
+cast|отбрасывать
+caused|вызванный
+certainly|безусловно
+chains|цепочки
+cheap|дешево
+claims|требования
+clearly|явно
+clever|умная
+clumsy|топорный
+common|общий
+compete|конкурировать
+compiler|компилятор
+completely|полностью
+complexity|сложность
+complicated|сложно
+compose|составить
+comprehensible|понятный
+condemn|осуждать
+confuse|спутать
+consider|рассматривать
+considerable|значительный
+constant|постоянная
+constrained|ограничен
+constraint|ограничение
+consumer|потребитель
+contributed|способствовали
+convention|соглашение
+conversely|наоборот
+cost|стоимость
+could|мог
+cruising|путешествие
+current|текущий
+curriculum|учебный план
+dash|мчаться
+deal|дело
+debunk|разоблачать
+decreases|уменьшается
+deduced|счислимый
+deem|считать
+definition|определение
+degree|степень
+deliberate|преднамеренный
+deliver|обеспечивать
+demanding|требовательный
+denote|обозначать
+derived|полученный
+designed|предназначенный
+directly|непосредственно
+disappears|исчезает
+discard|отбрасывать
+dismiss|отклонить
+distract|отвлекать
+dozen|дюжина
+efficiency|эффективность
+effort|усилие
+either|или, любой
+elsewhere|в другом месте
+embedded|встроенный
+enables|позволяет
+encloses|включает
+encountered|сталкиваться
+ensure|обеспечивать
+especially|особенно
+even|даже
+evidence|доказательства
+exactly|в точку
+explanation|объяснения
+explicit|явный
+explore|исследовать
+expression|выражение
+extremely|чрезвычайно
+facilities|оборудование
+facilities|средства
+familiar|знакомо
+far easier|гораздо проще
+favor|одолжение
+few|мало
+fit|поместиться
+flat-out|плоский
+flexible|гибкий
+framework|структура
+frequently|часто
+further|дальше
+furthermore|более того
+generalize|обобщаем
+general-purpose|универсальный
+generic|общий
+guarantee|гарантировать
+handle it|справиться
+handles|обработка
+hardwired|аппаратный
+harm|вред
+harmless|безвредный
+Having to state|Явное указание
+having to|того, чтобы
+honest|честный
+honestly|честно говоря
+How come|как так
+imagine|представить
+implement|воплощать в жизнь
+implementation|реализация
+implicitly|неявно
+implies|подразумевает
+imply|означает
+importantly|важно
+improve|улучшать
+in turn|в очереди
+inappropriate|несоответствующий
+incidentally|кстати
+increasing|повышение
+indeed|в самом деле
+indirect|косвенный
+inevitable|неизбежный
+ingenuity|изобретательность
+inhibits|запрещать
+insane|безумный
+insist|настаивать
+installments|партия
+insulating|изоляционный
+interoperability|предназначены
+invoking|ссылающееся
+involves|связано
+issues|вопросы
+iterate|повторять
+knowledge|знание
+lead to|привести к
+leading|ведущий
+leads|приводит
+leaks|утечки
+likely|вероятно
+loop|петля
+maintain|поддерживать
+maintainable|удобный
+maintenance|поддержание
+map it|сопоставить его
+matching|соответствие
+matters|важна
+mean|имею в виду
+meaning|имея в виду
+measure|измерять
+measurements|измерения
+mention|упоминание
+mere|всего лишь
+mess around|возиться
+mess|беспорядок
+might|мог бы
+mileage|пробег
+miss the point|потерять суть
+mitigating|смягчающим
+most|большинство
+narrow|узкий
+naturally|естественно
+neither|также нет
+nonintrusive|неинтрузивного
+note that|Обратите внимание, что
+notice|замечать
+noticed|заметил
+notion|понятие
+novices|новичоки
+obvious|очевидный
+occasionally|время от времени
+occurrence|вхождение
+odd|странный
+often|довольно часто
+opinions|мнения
+order|порядок
+ordinary|обычный
+otherwise|в противном случае
+outdated|устаревший
+overheads|накладные расходы
+ownership|владение
+pair|пара
+particular|конкретный
+passed|передавать
+penalties|штрафы
+perpetuate|увековечивать
+pervasive|распространяющийся
+pipeline|конвейер
+plain|простой
+pleasant|приятный
+plenty|много
+plug|подключать
+point of view|c точки зрения
+pointer|указатель
+precise|точный
+prefer|предпочитать
+prevents|предотвращает
+primary|разработанный
+promote|продвинуть
+prone|склонный
+propagation|распространение
+proper|правильный
+proprietary|патентованный
+purely|чисто
+purpose|цель
+quite|довольно
+raise|поднять
+rarely|редко
+rather than of|а не
+rather|скорее
+rationale|обоснование
+reasonably|разумно
+recently|недавно
+reclaim|восстанавливать
+reevaluation|переоценка
+refactoring|рефакторинг
+reflection|отражение
+regex|регулярное выражение
+related|связанный
+relative|относительный
+reliable|надежный
+relies|полагается
+rely|полагаться
+represent|представлять
+request|запрос
+require|требовать
+responsible|ответственность
+restricted|ограниченный
+retention|удержание
+rigid|жесткий
+safe|безопасен
+safety|безопасность
+scratch|нуля
+seem|казаться
+sequence|последовательность
+serve|служить
+several|несколько
+shared|общий
+shift|перешли
+significant|значительное
+silly|глупый
+similar|аналогичный
+simplification|упрощение
+since|поскольку
+slightly|немного
+snags|помехи
+solid|сплошной
+something|что-нибудь
+soon|скоро
+sooner|рано
+sort of|вроде
+specify|указывать
+spend|тратить
+spurious|поддельный
+statements|заявления
+steal|украсть
+sticking|придерживание
+stir|переполох
+successfully|успешно
+suffering|страдающий
+sufficiently|достаточно
+suitable|подходящее
+summary|краткое изложение
+supplied|подаваемый
+supply|предоставить
+supported|поддерживают
+suppose|предполагать
+swap|замена
+taught|учил
+teachability|обучаемость
+tedious|утомительный
+terminated|прекращены
+therefore|следовательно
+throws away|выбрасывает
+thus|Таким образом
+tiny|крошечный
+to avoid|избегать
+to ensure|для обеспечения
+to rely|полагаться
+transferring|передача
+traverse|пересекать
+tricky|запутанный
+tries|попытается сделать это
+typos|опечаток
+ugly|уродливый
+uncommon|редкий
+unfortunate|несчастный
+unless|если
+unlikely|вряд ли
+unnecessary|ненужный
+unrealistically|нереалистично
+unsettling|тревожащий
+unwillingness|нежелание
+uses|полза
+varied|разнообразный
+variety|разных
+vary|варьировать
+verbose|подробный
+viable|жизнеспособный
+whenever|всякий раз, когда
+whoever|кто бы ни
+workarounds|обходные
+worthwhile|полезными
+wrap|заворачивать
+youth|молодежь

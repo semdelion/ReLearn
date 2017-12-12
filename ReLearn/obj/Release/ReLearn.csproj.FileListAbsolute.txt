@@ -1,0 +1,486 @@
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\bin\Release\ReLearn.dll
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\bin\Release\ReLearn.pdb
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\bin\Release\ReLearn.ReLearn.apk
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\bin\Release\ReLearn.ReLearn-Signed.apk
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\bin\Release\SQLite-net.dll
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\bin\Release\SQLitePCLRaw.batteries_green.dll
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\bin\Release\SQLitePCLRaw.batteries_v2.dll
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\bin\Release\SQLitePCLRaw.core.dll
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\bin\Release\SQLitePCLRaw.lib.e_sqlite3.dll
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\bin\Release\SQLitePCLRaw.provider.e_sqlite3.dll
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\bin\Release\SQLite-net.pdb
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\bin\Release\SQLite-net.xml
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\ReLearn.csproj.CoreCompileInputs.cache
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\ReLearn.dll
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\ReLearn.pdb
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\android\bin\ReLearn.ReLearn.apk
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\layout\english.xml
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\layout\flags.xml
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\layout\english_repeat.xml
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\layout\english_add.xml
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\layout\flags_learn.xml
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\layout\flags_repeat.xml
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\layout\english_learn.xml
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\layout\english_stat.xml
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\layout\english_delete.xml
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\layout\main.xml
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\values\strings.xml
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\menu\menu_english.xml
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\menu\menu_flags.xml
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\backgroundenfl.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\backgroundmain.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\button_enabled.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\button_false.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\button_touch.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\button_true.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\buttonafterclicking.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\buttonbeforeclicking.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\icon_new.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\mainbackground.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___nz.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___ad.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___ae.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___af.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___ag.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___al.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___am.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___ao.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___ar.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___at.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___au.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___az.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___ba.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___bb.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___bd.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___be.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___bf.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___bg.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___bh.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___bi.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___bj.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___bn.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___bo.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___br.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___bs.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___bt.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___bw.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___by.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___bz.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___ca.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___cd.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___cf.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___cg.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___ch.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___ci.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___ck.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___cl.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___cm.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___cn.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___co.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___cr.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___cu.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___cv.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___cy.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___cz.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___de.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___dj.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___dk.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___dm.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___dor.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___dz.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___ec.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___ee.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___eg.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___eh.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___er.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___es.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___et.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___fi.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___fj.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___fm.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___fr.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___ga.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___gb.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___gd.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___ge.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___gh.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___gm.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___gn.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___gq.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___gr.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___gt.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___gw.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___gy.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___hn.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___hr.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___ht.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___hu.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___id.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___ie.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___il.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___inn.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___iq.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___ir.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___iss.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___it.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___jm.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___jo.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___jp.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___ke.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___kg.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___kh.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___ki.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___km.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___kn.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___kp.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___kr.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___ks.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___kw.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___kz.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___la.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___lb.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___lc.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___li.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___lk.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___lr.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___ls.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___lt.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___lu.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___lv.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___ly.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___ma.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___mc.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___md.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___me.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___mg.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___mh.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___mk.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___ml.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___mm.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___mn.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___mr.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___mt.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___mu.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___mv.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___mw.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___mx.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___my.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___mz.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___na.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___ne.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___ng.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___ni.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___nl.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___no.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___np.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___nr.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___nu.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___om.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___pa.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___pe.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___pg.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___ph.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___pk.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___pl.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___pt.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___pw.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___py.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___qa.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___ro.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___rs.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___ru.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___rw.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___sa.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___sb.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___sc.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___sd.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___se.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___sg.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___si.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___sk.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___sl.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___sm.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___sn.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___so.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___sr.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___ss.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___sv.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___sy.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___sz.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___td.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___tg.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___th.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___tj.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___tl.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___tm.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___tn.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___to.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___tr.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___tt.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___tv.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___tw.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___tz.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___ua.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___ug.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___us.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___uy.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___uz.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___va.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___vc.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___ve.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___vn.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___vu.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___ws.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___ye.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___za.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___zm.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\res\drawable\___zw.png
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\R.cs.flag
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\uploadflags.txt
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\bin\Release\ReLearn.dll.mdb
+C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\ReLearn\ReLearn\obj\Release\android\assets\ReLearn.dll.mdb
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\bin\Release\ReLearn.dll
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\bin\Release\ReLearn.pdb
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\bin\Release\ReLearn.ReLearn.apk
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\bin\Release\ReLearn.ReLearn-Signed.apk
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\bin\Release\SQLite-net.dll
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\bin\Release\SQLitePCLRaw.batteries_green.dll
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\bin\Release\SQLitePCLRaw.batteries_v2.dll
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\bin\Release\SQLitePCLRaw.core.dll
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\bin\Release\SQLitePCLRaw.lib.e_sqlite3.dll
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\bin\Release\SQLitePCLRaw.provider.e_sqlite3.dll
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\bin\Release\SQLite-net.pdb
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\bin\Release\SQLite-net.xml
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\ReLearn.csprojResolveAssemblyReference.cache
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\ReLearn.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\ReLearn.dll
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\ReLearn.pdb
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\android\bin\ReLearn.ReLearn.apk
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\layout\english.xml
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\layout\flags.xml
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\layout\english_repeat.xml
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\layout\english_add.xml
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\layout\flags_learn.xml
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\layout\flags_repeat.xml
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\layout\english_learn.xml
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\layout\english_stat.xml
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\layout\english_delete.xml
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\layout\main.xml
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\values\strings.xml
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\menu\menu_english.xml
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\menu\menu_flags.xml
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\backgroundenfl.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\backgroundmain.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\button_enabled.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\button_false.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\button_touch.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\button_true.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\buttonafterclicking.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\buttonbeforeclicking.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\icon_new.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\mainbackground.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___nz.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___ad.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___ae.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___af.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___ag.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___al.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___am.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___ao.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___ar.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___at.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___au.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___az.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___ba.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___bb.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___bd.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___be.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___bf.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___bg.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___bh.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___bi.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___bj.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___bn.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___bo.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___br.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___bs.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___bt.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___bw.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___by.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___bz.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___ca.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___cd.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___cf.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___cg.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___ch.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___ci.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___ck.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___cl.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___cm.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___cn.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___co.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___cr.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___cu.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___cv.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___cy.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___cz.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___de.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___dj.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___dk.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___dm.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___dor.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___dz.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___ec.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___ee.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___eg.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___eh.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___er.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___es.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___et.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___fi.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___fj.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___fm.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___fr.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___ga.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___gb.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___gd.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___ge.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___gh.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___gm.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___gn.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___gq.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___gr.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___gt.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___gw.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___gy.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___hn.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___hr.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___ht.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___hu.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___id.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___ie.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___il.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___inn.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___iq.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___ir.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___iss.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___it.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___jm.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___jo.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___jp.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___ke.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___kg.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___kh.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___ki.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___km.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___kn.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___kp.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___kr.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___ks.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___kw.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___kz.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___la.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___lb.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___lc.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___li.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___lk.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___lr.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___ls.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___lt.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___lu.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___lv.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___ly.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___ma.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___mc.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___md.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___me.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___mg.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___mh.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___mk.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___ml.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___mm.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___mn.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___mr.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___mt.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___mu.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___mv.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___mw.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___mx.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___my.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___mz.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___na.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___ne.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___ng.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___ni.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___nl.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___no.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___np.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___nr.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___nu.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___om.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___pa.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___pe.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___pg.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___ph.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___pk.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___pl.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___pt.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___pw.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___py.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___qa.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___ro.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___rs.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___ru.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___rw.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___sa.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___sb.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___sc.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___sd.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___se.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___sg.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___si.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___sk.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___sl.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___sm.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___sn.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___so.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___sr.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___ss.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___sv.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___sy.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___sz.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___td.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___tg.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___th.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___tj.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___tl.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___tm.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___tn.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___to.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___tr.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___tt.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___tv.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___tw.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___tz.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___ua.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___ug.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___us.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___uy.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___uz.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___va.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___vc.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___ve.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___vn.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___vu.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___ws.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___ye.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___za.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___zm.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\___zw.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\relearnmain.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\mainrelearn.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\settings.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\drawable\arrow.png
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\res\menu\search.xml
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\R.cs.flag
+C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\uploadflags.txt
