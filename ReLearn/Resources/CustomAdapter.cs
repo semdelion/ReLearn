@@ -36,12 +36,11 @@ namespace ReLearn.Resources
 
         public override Java.Lang.Object GetItem(int position)
         {
-            return null;
+            return list[position].enWords;
         }
 
         public override long GetItemId(int position)
         {
-
             return list[position].numberLearn;
         }
 
@@ -49,15 +48,146 @@ namespace ReLearn.Resources
         {
             var view = convertView ?? activity.LayoutInflater.Inflate(Resource.Layout.del_list, parent, false);
             var txtName = view.FindViewById<TextView>(Resource.Id.textView1);
-            if (list[position].numberLearn > 10)
-                txtName.SetBackgroundColor(Android.Graphics.Color.Argb(127, 50, 0, 0));
-            //txtName.SetTextColor(Android.Graphics.Color.Red);         
-            if (list[position].numberLearn <= 10)
-                txtName.SetBackgroundColor(Android.Graphics.Color.Argb(127, 0, 50, 0));
-            // txtName.SetTextColor(Android.Graphics.Color.Green);
+            /// test!
+                                                    Random rnd = new Random(unchecked((int)(DateTime.Now.Ticks)));
+                                                    list[position].numberLearn = rnd.Next(21);
+            // TEEEST
 
+            //switch (list[position].numberLearn / 5)
+            //{
+            //    case 4:
+            //        {
+            //            txtName.SetBackgroundColor(Android.Graphics.Color.Argb(20, 255, 0, 0));
+            //            break;
+            //        }
+            //    case 3:
+            //        {
+            //            txtName.SetBackgroundColor(Android.Graphics.Color.Argb(20, 255, 105, 50));
+            //            break;
+            //        }
+            //    case 2:
+            //        {
+            //            if (list[position].numberLearn % 5 == 0)
+            //            { txtName.SetBackgroundColor(Android.Graphics.Color.Argb(20, 255, 255, 0)); }
+            //            else { txtName.SetBackgroundColor(Android.Graphics.Color.Argb(20, 255, 152, 50)); }
+            //            break;
 
-            txtName.Text = list[position].enWords;
+            //        }
+            //    case 1:
+            //        {
+            //            txtName.SetBackgroundColor(Android.Graphics.Color.Argb(20, 197, 255, 50));
+            //            break;
+
+            //        }
+            //    case 0:
+            //        {
+            //            if (list[position].numberLearn % 5 == 0)
+            //            { txtName.SetBackgroundColor(Android.Graphics.Color.Argb(20, 134, 48, 255)); }
+            //            else { txtName.SetBackgroundColor(Android.Graphics.Color.Argb(20, 48, 255, 55)); }
+            //            break;
+            //        }
+            //    default:
+            //        { break; }
+
+            //}
+            //switch (list[position].numberLearn / 5)
+            //{
+            //    case 4:
+            //        {
+            //            txtName.SetTextColor(Android.Graphics.Color.Argb(150, 255, 0, 0));
+            //            break;
+            //        }
+            //    case 3:
+            //        {
+            //            txtName.SetTextColor(Android.Graphics.Color.Argb(150, 255, 105, 50));
+            //            break;
+            //        }
+            //    case 2:
+            //        {
+            //            if (list[position].numberLearn % 5 == 0)
+            //            {
+            //                txtName.SetTextColor(Android.Graphics.Color.Argb(150, 255, 255, 0));
+            //            }
+            //            else { txtName.SetTextColor(Android.Graphics.Color.Argb(150, 255, 152, 50)); }
+            //            break;
+
+            //        }
+            //    case 1:
+            //        {
+            //            txtName.SetTextColor(Android.Graphics.Color.Argb(150, 197, 255, 50));
+            //            break;
+
+            //        }
+            //    case 0:
+            //        {
+            //            if (list[position].numberLearn % 5 == 0)
+            //            {
+            //                txtName.SetTextColor(Android.Graphics.Color.Argb(150, 134, 48, 255));
+            //            }
+            //            else { txtName.SetTextColor(Android.Graphics.Color.Argb(150, 48, 255, 55)); }
+            //            break;
+            //        }
+            //    default:
+            //        {
+            //            break;
+            //        }
+            //}
+
+            switch (list[position].numberLearn / 5)
+            {
+                case 4:
+                    {
+                        txtName.SetTextColor(Android.Graphics.Color.Argb(170, 255, 0, 0));
+                        txtName.SetBackgroundColor(Android.Graphics.Color.Argb(2, 255, 0, 0));
+                        break;
+                    }
+                case 3:
+                    {
+                        txtName.SetTextColor(Android.Graphics.Color.Argb(170, 255, 105, 50));
+                        txtName.SetBackgroundColor(Android.Graphics.Color.Argb(2, 255, 105, 50));
+                        break;
+                    }
+                case 2:
+                    {
+                        if (list[position].numberLearn % 5 == 0)
+                        {
+                            txtName.SetTextColor(Android.Graphics.Color.Argb(170, 255, 255, 0));
+                            txtName.SetBackgroundColor(Android.Graphics.Color.Argb(2, 255, 255, 0));
+                        }
+                        else
+                        {
+                            txtName.SetTextColor(Android.Graphics.Color.Argb(170, 255, 152, 50));
+                            txtName.SetBackgroundColor(Android.Graphics.Color.Argb(2, 255, 152, 50));
+                        }
+                        break;
+
+                    }
+                case 1:
+                    {
+                        txtName.SetTextColor(Android.Graphics.Color.Argb(170, 197, 255, 50));
+                        txtName.SetBackgroundColor(Android.Graphics.Color.Argb(2, 197, 255, 50));
+                        break;
+                    }
+                case 0:
+                    {
+                        if (list[position].numberLearn % 5 == 0)
+                        {
+                            txtName.SetTextColor(Android.Graphics.Color.Argb(170, 134, 48, 255));
+                            txtName.SetBackgroundColor(Android.Graphics.Color.Argb(2, 134, 48, 255));
+                        }
+                        else
+                        {
+                            txtName.SetTextColor(Android.Graphics.Color.Argb(170, 48, 255, 55));
+                            txtName.SetBackgroundColor(Android.Graphics.Color.Argb(2, 48, 255, 55));
+                        }
+                        break;
+                    }
+                default:
+                    { break; }
+
+            }
+
+            txtName.Text = list[position].enWords +"  -  "+ list[position].ruWords;
             return view;
         }
     }

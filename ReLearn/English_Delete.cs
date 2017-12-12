@@ -72,6 +72,8 @@ namespace ReLearn
             }
             var adapter = new CustomAdapter(this, dataBase);
             listViewDel.Adapter = adapter;
+
+            
             //adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, dataBase);
             //listViewDel.DrawingCacheBackgroundColor = Android.Graphics.Color.Gold;
             //listViewDel.CacheColorHint = Android.Graphics.Color.Gold;
@@ -95,30 +97,38 @@ namespace ReLearn
             };
 
             listViewDel.ItemClick += (s, args) => {
-                var word = listViewDel.GetItemAtPosition(args.Position);
-              //  var word = listViewDel.GetI[args.Position];
+
+                //Words t = listViewDel.Adapter.Get;
+
+
+                var word = listViewDel.Adapter.GetItem(args.Position);
+                //var selectedFromList = listViewDel.GetItemAtPosition(args.Position);
+
+
+                // var word = listViewDel.GetItemAtPosition(args.Position);
+                // var word = listViewDel.GetI[args.Position];
                 AlertDialog.Builder alert = new AlertDialog.Builder(this);
 
                 //alert.SetTitle("");
-                alert.SetMessage("To delete : " + word.ToString() + " ? ");
-                alert.SetPositiveButton("Cancel", delegate { alert.Dispose(); });
-                alert.SetNeutralButton("ок", delegate
-                {
-                    //dataBase.Remove(word.ToString());
-                    //adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, dataBase);
-                    //listViewDel.SetAdapter(adapter);
-                    //var database = DataBase.Connect(NameDatabase.English_DB);
-                    //database.CreateTable<Database>();
-                    //var search_occurrences = database.Query<Database>("SELECT * FROM Database WHERE enWords = ?", word.ToString());// поиск вхождения слова в БД              
-                    //if (search_occurrences.Count == 0)
-                    //    Toast.MakeText(this, "Words do not exist!", ToastLength.Short).Show();
-                    //else
-                    //{
-                    //    database.Query<Database>("DELETE FROM Database WHERE enWords = ?", word.ToString());
-                    //    Toast.MakeText(this, "Word delete!", ToastLength.Short).Show();
-                    //}
-                });
-                alert.Show();
+                //alert.SetMessage("To delete : " + word.ToString() + " ? ");
+                //alert.SetPositiveButton("Cancel", delegate { alert.Dispose(); });
+                //alert.SetNeutralButton("ок", delegate
+                //{
+                //    //dataBase.Remove(word.ToString());
+                //    //adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, dataBase);
+                //    //listViewDel.SetAdapter(adapter);
+                //    //var database = DataBase.Connect(NameDatabase.English_DB);
+                //    //database.CreateTable<Database>();
+                //    //var search_occurrences = database.Query<Database>("SELECT * FROM Database WHERE enWords = ?", word.ToString());// поиск вхождения слова в БД              
+                //    //if (search_occurrences.Count == 0)
+                //    //    Toast.MakeText(this, "Words do not exist!", ToastLength.Short).Show();
+                //    //else
+                //    //{
+                //    //    database.Query<Database>("DELETE FROM Database WHERE enWords = ?", word.ToString());
+                //    //    Toast.MakeText(this, "Word delete!", ToastLength.Short).Show();
+                //    //}
+                //});
+                //alert.Show();
             };
             return base.OnCreateOptionsMenu(menu);
         }

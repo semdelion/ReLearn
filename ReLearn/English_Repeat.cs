@@ -138,7 +138,7 @@ namespace ReLearn
             
                 Random rnd = new Random(unchecked((int)(DateTime.Now.Ticks)));
                 rand_word = rnd.Next(dataBase.Count); //ПЕРЕДЕЛАЙ сделать защиту от дурака, если все элементы базы имеют numberLearn = 0
-                i_rand = rnd.Next(3);                           //рандом для 4 кнопок
+                i_rand = rnd.Next(4);                           //рандом для 4 кнопок
                 Function_Next_Test(button1, button2, button3, button4, button_next, textView, dataBase, rand_word, i_rand);
                 button1.Click += (s, e) => { Answer(button1, button2, button3, button4, button_next, dataBase, Stats, rand_word); }; //лямбда оператор для подсветки ответа // true ? green:red
                 button2.Click += (s, e) => { Answer(button2, button1, button3, button4, button_next, dataBase, Stats, rand_word); };
@@ -148,8 +148,7 @@ namespace ReLearn
                 {
                     if (count < magic_constants.repeat_count - 1)
                     {
-
-                        i_rand = rnd.Next(3);
+                        i_rand = rnd.Next(4);
                         rand_word = rnd.Next(dataBase.Count);
                         Function_Next_Test(button1, button2, button3, button4, button_next, textView, dataBase, rand_word, i_rand);
                         GUI.Button_Refresh(button1, button2, button3, button4, button_next);
