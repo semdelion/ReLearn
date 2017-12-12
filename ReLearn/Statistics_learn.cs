@@ -35,16 +35,21 @@ namespace ReLearn
         public string ruWords { get; set; }
         public int numberLearn { get; set; }
         public int dateRepeat { get; set; }
+        public Words()
+        {
+            this.dateRepeat = 1;
+            this.enWords = "";
+            this.numberLearn = 10;
+            this.ruWords = "";
+        }
 
-        //public static override Words operator=(Words x, Words y)
-        //{
-  
-        //    x.dateRepeat = y.dateRepeat;
-        //    x.enWords = y.enWords;
-        //    x.numberLearn = y.numberLearn;
-        //    x.ruWords = y.ruWords;
-        //    return x;
-        //}
+        public Words(Words x)
+        {
+            this.dateRepeat= x.dateRepeat;
+            this.enWords=x.enWords;
+            this.numberLearn = x.numberLearn;
+            this.ruWords= x.ruWords;
+        }
         public Words Find()
         {   
             return this;

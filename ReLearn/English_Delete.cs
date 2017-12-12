@@ -125,21 +125,21 @@ namespace ReLearn
             int id = item.ItemId;
             //возрастание
             if (id == Resource.Id.increase)
-            {                
-                dataBase.Sort(delegate (Words x, Words y)
-                {
-                    return x.numberLearn.CompareTo(y.numberLearn);
-                });
+            {
+                dataBase.Sort((x, y) => x.numberLearn.CompareTo(y.numberLearn));
                 adapter = new CustomAdapter(this, dataBase);
                 listViewDel.Adapter = adapter;
             }
             //убывание
             if (id == Resource.Id.decrease)
             {
-                dataBase.Sort(delegate (Words x, Words y)
-                {
-                    return y.numberLearn.CompareTo(x.numberLearn);
-                });
+                dataBase.Sort((x, y) => y.numberLearn.CompareTo(x.numberLearn));
+                adapter = new CustomAdapter(this, dataBase);
+                listViewDel.Adapter = adapter;
+            }
+            if (id == Resource.Id.ABC)
+            {
+                dataBase.Sort((x, y) => x.enWords.CompareTo(y.enWords));
                 adapter = new CustomAdapter(this, dataBase);
                 listViewDel.Adapter = adapter;
             }

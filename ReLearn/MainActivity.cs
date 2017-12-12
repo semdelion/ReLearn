@@ -26,7 +26,6 @@ namespace ReLearn
         public static Button button_flags;
         public static void button_default_tread()
         {
-           
             GUI.button_default(button_english);
             GUI.button_default(button_flags);
         }
@@ -34,17 +33,6 @@ namespace ReLearn
         {
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             //setting layout
-            /* изменить цвет  
-             * using Android.Views;
-             * Window.ClearFlags(WindowManagerFlags.TranslucentStatus);
-             * Window.AddFlags(WindowManagerFlags.DrawsSystemBarBackgrounds);
-             * Window.SetStatusBarColor(Android.Graphics.Color.Transparent);*/
-
-            // Window.AddFlags(WindowManagerFlags.Fullscreen); //скрыть StatusBar
-            // Window.ClearFlags(WindowManagerFlags.Fullscreen); // показать StatusBar 
-            // this.ActionBar.SetBackgroundDrawable(GetDrawable(Resource.Drawable.BackgroundActionBar)); // новая версия
-            // this.ActionBar.SetBackgroundDrawable(Resources.GetDrawable(Resource.Drawable.BackgroundActionBar));
-            //this.ActionBar.SetBackgroundDrawable(new Android.Graphics.Drawables.ColorDrawable(Android.Graphics.Color.Transparent));
             GUI.Res = this;
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Main);
@@ -52,9 +40,7 @@ namespace ReLearn
             SetActionBar(toolbarMain);
             ActionBar.Title = "";
             ActionBar.SetBackgroundDrawable(Resources.GetDrawable(Resource.Drawable.relearnMain));
-            // this.ActionBar.SetDisplayShowTitleEnabled(false);
             Window.SetBackgroundDrawable(Resources.GetDrawable(Resource.Drawable.backgroundEnFl));
-           // this.ActionBar.SetBackgroundDrawable(new Android.Graphics.Drawables.ColorDrawable(Android.Graphics.Color.Transparent));
             Window.ClearFlags(WindowManagerFlags.TranslucentStatus);
             Window.AddFlags(WindowManagerFlags.DrawsSystemBarBackgrounds);
             Window.SetStatusBarColor(Android.Graphics.Color.Transparent);

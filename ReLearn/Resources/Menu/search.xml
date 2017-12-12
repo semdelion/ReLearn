@@ -30,6 +30,13 @@ tools:context=".English"
         android:showAsAction="never"
         android:title="Sort ↑"
       />
+      <!--a to z-->
+      <item
+        android:id="@+id/ABC"
+        android:orderInCategory="101"
+        android:showAsAction="never"
+        android:title="Sort A→Z"
+      />
     </menu>
   </item>
 </menu>

@@ -693,6 +693,9 @@ namespace ReLearn
 		public partial class Id
 		{
 			
+			// aapt resource value: 0x7f070035
+			public const int ABC = 2131165237;
+			
 			// aapt resource value: 0x7f07002c
 			public const int Deleteword = 2131165228;
 			
