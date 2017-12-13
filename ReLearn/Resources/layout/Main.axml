@@ -4,11 +4,8 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
     <Toolbar
-        android:minHeight="?android:attr/actionBarSize"
-        android:background="?android:attr/colorPrimary"
-        android:minWidth="25px"
         android:layout_width="match_parent"
-        android:layout_height="110px"
+        android:layout_height="?android:attr/actionBarSize" 
         android:id="@+id/toolbarMainActivity" />
     <Button
         android:text="Language"

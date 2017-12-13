@@ -1,26 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Paths>
-  <Jars></Jars>
+  <Jars />
   <ResolvedResourceDirectories>
-    <ResolvedResourceDirectory>C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\__library_projects__\SQLitePCLRaw.batteries_green\library_project_imports\res</ResolvedResourceDirectory>
-    <ResolvedResourceDirectory>C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\__library_projects__\SQLitePCLRaw.batteries_v2\library_project_imports\res</ResolvedResourceDirectory>
-    <ResolvedResourceDirectory>C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\__library_projects__\SQLitePCLRaw.core\library_project_imports\res</ResolvedResourceDirectory>
-    <ResolvedResourceDirectory>C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\__library_projects__\SQLitePCLRaw.lib.e_sqlite3\library_project_imports\res</ResolvedResourceDirectory>
-    <ResolvedResourceDirectory>C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\__library_projects__\SQLitePCLRaw.provider.e_sqlite3\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\RL\ReLearn\obj\Release\lp\1\jl\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\RL\ReLearn\obj\Release\lp\2\jl\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\RL\ReLearn\obj\Release\lp\3\jl\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\RL\ReLearn\obj\Release\lp\4\jl\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\RL\ReLearn\obj\Release\lp\5\jl\res</ResolvedResourceDirectory>
   </ResolvedResourceDirectories>
   <ResolvedAssetDirectories>
-    <ResolvedAssetDirectory>obj\Release\__library_projects__\SQLitePCLRaw.batteries_green\library_project_imports\assets</ResolvedAssetDirectory>
-    <ResolvedAssetDirectory>obj\Release\__library_projects__\SQLitePCLRaw.batteries_v2\library_project_imports\assets</ResolvedAssetDirectory>
-    <ResolvedAssetDirectory>obj\Release\__library_projects__\SQLitePCLRaw.core\library_project_imports\assets</ResolvedAssetDirectory>
-    <ResolvedAssetDirectory>obj\Release\__library_projects__\SQLitePCLRaw.lib.e_sqlite3\library_project_imports\assets</ResolvedAssetDirectory>
-    <ResolvedAssetDirectory>obj\Release\__library_projects__\SQLitePCLRaw.provider.e_sqlite3\library_project_imports\assets</ResolvedAssetDirectory>
+    <ResolvedAssetDirectory>obj\Release\lp\1\jl\assets</ResolvedAssetDirectory>
+    <ResolvedAssetDirectory>obj\Release\lp\2\jl\assets</ResolvedAssetDirectory>
+    <ResolvedAssetDirectory>obj\Release\lp\3\jl\assets</ResolvedAssetDirectory>
+    <ResolvedAssetDirectory>obj\Release\lp\4\jl\assets</ResolvedAssetDirectory>
+    <ResolvedAssetDirectory>obj\Release\lp\5\jl\assets</ResolvedAssetDirectory>
   </ResolvedAssetDirectories>
   <ResolvedEnvironmentFiles />
   <ResolvedResourceDirectoryStamps>
-    <ResolvedResourceDirectoryStamp>C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\__library_projects__\SQLitePCLRaw.batteries_green.stamp</ResolvedResourceDirectoryStamp>
-    <ResolvedResourceDirectoryStamp>C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\__library_projects__\SQLitePCLRaw.batteries_v2.stamp</ResolvedResourceDirectoryStamp>
-    <ResolvedResourceDirectoryStamp>C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\__library_projects__\SQLitePCLRaw.core.stamp</ResolvedResourceDirectoryStamp>
-    <ResolvedResourceDirectoryStamp>C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\__library_projects__\SQLitePCLRaw.lib.e_sqlite3.stamp</ResolvedResourceDirectoryStamp>
-    <ResolvedResourceDirectoryStamp>C:\Users\User\Documents\Visual Studio 2017\projects\Новая папка\24\ReLearn\ReLearn\obj\Release\__library_projects__\SQLitePCLRaw.provider.e_sqlite3.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\RL\ReLearn\obj\Release\lp\1.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\RL\ReLearn\obj\Release\lp\2.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\RL\ReLearn\obj\Release\lp\3.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\RL\ReLearn\obj\Release\lp\4.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\RL\ReLearn\obj\Release\lp\5.stamp</ResolvedResourceDirectoryStamp>
   </ResolvedResourceDirectoryStamps>
 </Paths>

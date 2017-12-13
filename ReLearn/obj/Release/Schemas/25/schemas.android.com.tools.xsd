@@ -2,7 +2,7 @@
 <xs:schema xmlns:tools="http://schemas.android.com/tools" attributeFormDefault="qualified" targetNamespace="http://schemas.android.com/tools" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:annotation>
     <xs:documentation>v25</xs:documentation>
-    <xs:documentation>11.12.2017 23:05:19</xs:documentation>
+    <xs:documentation>13.12.2017 4:22:09</xs:documentation>
   </xs:annotation>
   <xs:attribute name="layout">
     <xs:annotation>
@@ -12,6 +12,7 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@layout/del_list" />
             <xs:enumeration value="@layout/english" />
             <xs:enumeration value="@layout/english_add" />
             <xs:enumeration value="@layout/english_delete" />
@@ -21,7 +22,6 @@
             <xs:enumeration value="@layout/flags" />
             <xs:enumeration value="@layout/flags_learn" />
             <xs:enumeration value="@layout/flags_repeat" />
-            <xs:enumeration value="@layout/grid" />
             <xs:enumeration value="@layout/main" />
             <xs:enumeration value="@android:layout/activity_list_item" />
             <xs:enumeration value="@android:layout/browser_link_context_header" />
@@ -71,6 +71,7 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@layout/del_list" />
             <xs:enumeration value="@layout/english" />
             <xs:enumeration value="@layout/english_add" />
             <xs:enumeration value="@layout/english_delete" />
@@ -80,7 +81,6 @@
             <xs:enumeration value="@layout/flags" />
             <xs:enumeration value="@layout/flags_learn" />
             <xs:enumeration value="@layout/flags_repeat" />
-            <xs:enumeration value="@layout/grid" />
             <xs:enumeration value="@layout/main" />
             <xs:enumeration value="@android:layout/activity_list_item" />
             <xs:enumeration value="@android:layout/browser_link_context_header" />
@@ -130,6 +130,7 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@layout/del_list" />
             <xs:enumeration value="@layout/english" />
             <xs:enumeration value="@layout/english_add" />
             <xs:enumeration value="@layout/english_delete" />
@@ -139,7 +140,6 @@
             <xs:enumeration value="@layout/flags" />
             <xs:enumeration value="@layout/flags_learn" />
             <xs:enumeration value="@layout/flags_repeat" />
-            <xs:enumeration value="@layout/grid" />
             <xs:enumeration value="@layout/main" />
             <xs:enumeration value="@android:layout/activity_list_item" />
             <xs:enumeration value="@android:layout/browser_link_context_header" />
@@ -189,6 +189,7 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@layout/del_list" />
             <xs:enumeration value="@layout/english" />
             <xs:enumeration value="@layout/english_add" />
             <xs:enumeration value="@layout/english_delete" />
@@ -198,7 +199,6 @@
             <xs:enumeration value="@layout/flags" />
             <xs:enumeration value="@layout/flags_learn" />
             <xs:enumeration value="@layout/flags_repeat" />
-            <xs:enumeration value="@layout/grid" />
             <xs:enumeration value="@layout/main" />
             <xs:enumeration value="@android:layout/activity_list_item" />
             <xs:enumeration value="@android:layout/browser_link_context_header" />

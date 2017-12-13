@@ -14,10 +14,10 @@
         android:layout_height="wrap_content"
         android:titleTextColor="?android:attr/actionMenuTextColor"
         android:titleTextAppearance="?android:attr/textSize"
-        android:id="@+id/toolbarEnglishLearn" 
-        android:navigationIcon="@drawable/arrow"/>
+        android:id="@+id/toolbarEnglishLearn"
+        android:navigationIcon="@drawable/arrow" />
     <TextView
-        android:text="Text"
+        android:text="Text" 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textView_learn_en"

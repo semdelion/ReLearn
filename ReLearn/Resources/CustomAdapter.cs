@@ -67,8 +67,8 @@ namespace ReLearn.Resources
                     {
                         if (list[position].numberLearn % 5 == 0)
                         {
-                            txtName.SetTextColor(Android.Graphics.Color.Argb(TrText, 255, 255, 0));
-                            txtName.SetBackgroundColor(Android.Graphics.Color.Argb(TrBack, 255, 255, 0));
+                            txtName.SetTextColor(Android.Graphics.Color.Argb(TrText, 238, 252, 255));
+                            txtName.SetBackgroundColor(Android.Graphics.Color.Argb(TrBack, 110, 222, 255));
                         }
                         else
                         {

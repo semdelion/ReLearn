@@ -321,7 +321,7 @@ unnecessary|ненужный
 unrealistically|нереалистично
 unsettling|тревожащий
 unwillingness|нежелание
-uses|полза
+uses|польза
 varied|разнообразный
 variety|разных
 vary|варьировать

@@ -50,3 +50,11 @@ ReLearn.MainActivity, ReLearn;md5e77f64ebc9696940a2945b8e90646930.MainActivity
 ReLearn.MainActivity, ReLearn, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5e77f64ebc9696940a2945b8e90646930.MainActivity
 ReLearn.MainActivity;md5e77f64ebc9696940a2945b8e90646930.MainActivity
 relearn.MainActivity;md5e77f64ebc9696940a2945b8e90646930.MainActivity
+ReLearn.Resources.ViewHolder, ReLearn;md5b5e7f017f76b426227b2278c910c5006.ViewHolder
+ReLearn.Resources.ViewHolder, ReLearn, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5b5e7f017f76b426227b2278c910c5006.ViewHolder
+ReLearn.Resources.ViewHolder;md5b5e7f017f76b426227b2278c910c5006.ViewHolder
+relearn.resources.ViewHolder;md5b5e7f017f76b426227b2278c910c5006.ViewHolder
+ReLearn.Resources.CustomAdapter, ReLearn;md5b5e7f017f76b426227b2278c910c5006.CustomAdapter
+ReLearn.Resources.CustomAdapter, ReLearn, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5b5e7f017f76b426227b2278c910c5006.CustomAdapter
+ReLearn.Resources.CustomAdapter;md5b5e7f017f76b426227b2278c910c5006.CustomAdapter
+relearn.resources.CustomAdapter;md5b5e7f017f76b426227b2278c910c5006.CustomAdapter
