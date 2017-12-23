@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.IO;
-
+using Android.Speech.Tts;
+using Java.Util;
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -15,11 +16,27 @@ using SQLite;
 namespace ReLearn
 {
     [Activity(Label = "Repeat 1/20", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
-    class English_Repeat : Activity
+    class English_Repeat : Activity, TextToSpeech.IOnInitListener
     {
+        private TextToSpeech tts;
+        public void OnInit([GeneratedEnum] OperationResult status)
+        {
+            if (status == OperationResult.Success)
+            {
+                tts.SetLanguage(Locale.Uk);
+                tts.SetPitch(3.6f);
+                tts.SetSpeechRate(1.0f);
+                SpeakOut("");
+            }
+        }
+        private void SpeakOut(string text)
+        {
+            tts.Speak(text, QueueMode.Flush, null);
+        }
+
         void Random_Button(Button B1, Button B2, Button B3, Button B4, List<DatabaseOfWords> dataBase, int i)   //загружаем варианты ответа в текст кнопок
         {
-            Random rand = new Random(unchecked((int)(DateTime.Now.Ticks)));
+            System.Random rand = new System.Random(unchecked((int)(DateTime.Now.Ticks)));
             B1.Text = dataBase[i].ruWords;
             B2.Text = dataBase[rand.Next(dataBase.Count)].ruWords;
             B3.Text = dataBase[rand.Next(dataBase.Count)].ruWords;
@@ -91,7 +108,10 @@ namespace ReLearn
             //this.ActionBar.SetBackgroundDrawable(GetDrawable(Resource.Drawable.BackgroundActionBar));
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.English_Repeat);
+            tts = new TextToSpeech(this, this);
 
+            
+            
             var toolbarMain = FindViewById<Toolbar>(Resource.Id.toolbarEnglishRepeat);
             SetActionBar(toolbarMain);
             ActionBar.SetDisplayHomeAsUpEnabled(true); // отображаем кнопку домой
@@ -109,17 +129,20 @@ namespace ReLearn
             int rand_word = 0, i_rand = 0,count=0;
 
             TextView textView = FindViewById<TextView>(Resource.Id.textView_Eng_Word);
-            List<Statistics_learn> Stats = new List<Statistics_learn>(); 
+            List<Statistics_learn> Stats = new List<Statistics_learn>();
+            
             Button button1 = FindViewById<Button>(Resource.Id.button_E_choice1);
             Button button2 = FindViewById<Button>(Resource.Id.button_E_choice2);
             Button button3 = FindViewById<Button>(Resource.Id.button_E_choice3);
             Button button4 = FindViewById<Button>(Resource.Id.button_E_choice4);
             Button button_next = FindViewById<Button>(Resource.Id.button_E_Next);
+            Button btnSpeak = FindViewById<Button>(Resource.Id.Button_Speak);
             button1.Touch += GUI.TouchAdd;
             button2.Touch += GUI.TouchAdd;
             button3.Touch += GUI.TouchAdd;
             button4.Touch += GUI.TouchAdd;
             button_next.Touch += GUI.TouchAdd;
+            btnSpeak.Touch+=GUI.TouchAdd;
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             try
             {
@@ -135,8 +158,8 @@ namespace ReLearn
                         dataBase.Add(w);
                     }    
                 }
-            
-                Random rnd = new Random(unchecked((int)(DateTime.Now.Ticks)));
+
+                System.Random rnd = new System.Random(unchecked((int)(DateTime.Now.Ticks)));
                 rand_word = rnd.Next(dataBase.Count); //ПЕРЕДЕЛАЙ сделать защиту от дурака, если все элементы базы имеют numberLearn = 0
                 i_rand = rnd.Next(4);                           //рандом для 4 кнопок
                 Function_Next_Test(button1, button2, button3, button4, button_next, textView, dataBase, rand_word, i_rand);
@@ -144,6 +167,10 @@ namespace ReLearn
                 button2.Click += (s, e) => { Answer(button2, button1, button3, button4, button_next, dataBase, Stats, rand_word); };
                 button3.Click += (s, e) => { Answer(button3, button1, button2, button4, button_next, dataBase, Stats, rand_word); };
                 button4.Click += (s, e) => { Answer(button4, button1, button2, button3, button_next, dataBase, Stats, rand_word); };
+                btnSpeak.Click += delegate
+                {
+                    SpeakOut(textView.Text);
+                };
                 button_next.Click += (s, e) =>
                 {
                     if (count < magic_constants.repeat_count - 1)
