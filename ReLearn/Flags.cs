@@ -32,7 +32,7 @@ namespace ReLearn
             ActionBar.SetDisplayHomeAsUpEnabled(true);
             
 
-            Window.SetBackgroundDrawable(Resources.GetDrawable(Resource.Drawable.backgroundEnFl));
+            Window.SetBackgroundDrawable(GetDrawable(Resource.Drawable.backgroundEnFl));
             
             Window.ClearFlags(WindowManagerFlags.TranslucentStatus);
             Window.AddFlags(WindowManagerFlags.DrawsSystemBarBackgrounds);
