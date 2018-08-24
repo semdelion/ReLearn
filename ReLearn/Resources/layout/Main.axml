@@ -1,35 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
-    <Toolbar
-        android:layout_width="match_parent"
-        android:layout_height="?android:attr/actionBarSize" 
-        android:id="@+id/toolbarMainActivity" />
-    <Button
-        android:text="Language"
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:id="@+id/button_english"
-        android:layout_marginRight="40dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginBottom="10.0dp"
-        android:background="@drawable/buttonBeforeClicking"
-        android:textColor="#d7f8fe"
-        android:textSize="20sp"
-        android:height="@android:dimen/notification_large_icon_width" />
-    <Button
-        android:text="Flags"
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:id="@+id/button_flags"
-        android:layout_marginRight="40dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="6.0dp"
-        android:background="@drawable/buttonBeforeClicking"
-        android:textColor="#d7f8fe"
-        android:textSize="20dp"
-        android:height="@android:dimen/notification_large_icon_width" />
+
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:background="@drawable/backgroundMain"
+	android:baselineAligned="false">
+	<Button
+		android:text="Language"
+		android:layout_width="match_parent"
+		android:layout_height="80dp"
+		android:id="@+id/button_english"
+		android:layout_marginRight="40dp"
+		android:layout_marginLeft="40dp"
+		android:layout_marginTop="110dp"
+		android:layout_marginBottom="10.0dp"
+		android:background="@drawable/buttonBeforeClicking"
+		android:textColor="#d7f8fe"
+		android:textSize="20sp"
+		android:height="@android:dimen/notification_large_icon_width" 
+	/>
+	<Button
+		android:text="Flags"
+		android:layout_width="match_parent"
+		android:layout_height="80dp"
+		android:id="@+id/button_flags"
+		android:layout_marginRight="40dp"
+		android:layout_marginLeft="40dp"
+		android:layout_marginTop="6.0dp"
+		android:background="@drawable/buttonBeforeClicking"
+		android:textColor="#d7f8fe"
+		android:textSize="20dp"
+		android:height="@android:dimen/notification_large_icon_width" />
 </LinearLayout>

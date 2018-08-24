@@ -33,7 +33,7 @@ namespace ReLearn
             var toolbarMain = FindViewById<Toolbar>(Resource.Id.toolbarEnglishDelete);
             SetActionBar(toolbarMain);
             ActionBar.SetDisplayHomeAsUpEnabled(true); // отображаем кнопку домой
-            Window.SetBackgroundDrawable(Resources.GetDrawable(Resource.Drawable.backgroundEnFl));
+            Window.SetBackgroundDrawable(GetDrawable(Resource.Drawable.backgroundEnFl));
 
             Window.ClearFlags(WindowManagerFlags.TranslucentStatus);
             Window.AddFlags(WindowManagerFlags.DrawsSystemBarBackgrounds);

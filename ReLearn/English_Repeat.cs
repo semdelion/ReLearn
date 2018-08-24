@@ -29,10 +29,7 @@ namespace ReLearn
                 SpeakOut("");
             }
         }
-        private void SpeakOut(string text)
-        {
-            tts.Speak(text, QueueMode.Flush, null);
-        }
+        private void SpeakOut(string text) => tts.Speak(text, QueueMode.Flush, null);
 
         void Random_Button(Button B1, Button B2, Button B3, Button B4, List<DatabaseOfWords> dataBase, int i)   //загружаем варианты ответа в текст кнопок
         {
@@ -115,7 +112,7 @@ namespace ReLearn
             var toolbarMain = FindViewById<Toolbar>(Resource.Id.toolbarEnglishRepeat);
             SetActionBar(toolbarMain);
             ActionBar.SetDisplayHomeAsUpEnabled(true); // отображаем кнопку домой
-            Window.SetBackgroundDrawable(Resources.GetDrawable(Resource.Drawable.backgroundEnFl));
+            Window.SetBackgroundDrawable(GetDrawable(Resource.Drawable.backgroundEnFl));
 
             Window.ClearFlags(WindowManagerFlags.TranslucentStatus);
             Window.AddFlags(WindowManagerFlags.DrawsSystemBarBackgrounds);

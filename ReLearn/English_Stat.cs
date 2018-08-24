@@ -27,7 +27,7 @@ namespace ReLearn
             // var toolbarMain = FindViewById<Toolbar>(Resource.Id.toolbarEnglishStat);
             //  SetActionBar(toolbarMain);
             
-            Window.SetBackgroundDrawable(Resources.GetDrawable(Resource.Drawable.backgroundEnFl));
+            Window.SetBackgroundDrawable(GetDrawable(Resource.Drawable.backgroundEnFl));
             ActionBar.SetDisplayHomeAsUpEnabled(true); // отображаем кнопку домой
 
             Window.ClearFlags(WindowManagerFlags.TranslucentStatus);

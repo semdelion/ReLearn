@@ -12,44 +12,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Android.Runtime;
-
-
+using Android.Graphics;
 
 namespace ReLearn
 {
-    
     [Activity( MainLauncher = true, ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class MainActivity : Activity
     {
-        
         public static Button button_english;
         public static Button button_flags;
-        public static void button_default_tread()
-        {
-            GUI.button_default(button_english);
-            GUI.button_default(button_flags);
-        }
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            //setting layout
             GUI.Res = this;
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Main);
-            var toolbarMain = FindViewById<Toolbar>(Resource.Id.toolbarMainActivity);
-            SetActionBar(toolbarMain);
-            ActionBar.Title = "";
-            ActionBar.SetBackgroundDrawable(Resources.GetDrawable(Resource.Drawable.relearnMain));
-            Window.SetBackgroundDrawable(Resources.GetDrawable(Resource.Drawable.backgroundEnFl));
-            Window.ClearFlags(WindowManagerFlags.TranslucentStatus);
-            Window.AddFlags(WindowManagerFlags.DrawsSystemBarBackgrounds);
-            Window.SetStatusBarColor(Android.Graphics.Color.Transparent);
-            Window.SetStatusBarColor(Android.Graphics.Color.Argb(127, 0, 0, 0));
-
-            // this.ActionBar.SetBackgroundDrawable(Resources.GetDrawable(Resource.Drawable.ActionStatusBarBackground));
-            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            // load settings for first start and updating DB 
+            button_english = FindViewById<Button>(Resource.Id.button_english);
+            button_flags = FindViewById<Button>(Resource.Id.button_flags);
+            button_english.Touch += GUI.NewTouch;
+            button_flags.Touch += GUI.NewTouch;
             try
             {
                 var databaseSetting = DataBase.Connect(NameDatabase.Setting_DB); // загружаем настройки
@@ -84,14 +64,14 @@ namespace ReLearn
                         while (reader.Peek() >= 0)
                         {
                             string str_line = reader.ReadLine();
-                            var list_en_ru = str_line.Split('|');                         
+                            var list_en_ru = str_line.Split('|');
                             DataBase.Add_English_word(list_en_ru[0], list_en_ru[1], db);
                         }
 
                     List<DatabaseOfWords> dataBase = new List<DatabaseOfWords>();
                     var table = db.Table<Database>();
                     foreach (var word in table)
-                    { // создание БД в виде  List<DatabaseOfWords>
+                    {   // создание БД в виде  List<DatabaseOfWords>
                         DatabaseOfWords w = new DatabaseOfWords();
                         if (word.numberLearn != 0)
                         {
@@ -102,26 +82,19 @@ namespace ReLearn
                 }
 
                 int Month = System.DateTime.Today.Month;
-
                 DataBase.update_English_DB(Month); // обнавление repeat_number если слово не повторялась более месяца 
                 DataBase.update_Flags_DB(Month);   // обнавление repeat_number если слово не повторялась более месяца 
             }
             catch
-            { 
+            {
                 Toast.MakeText(this, "Error : Can't connect to database or update", ToastLength.Long).Show();
             }
-            
-            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            button_english = FindViewById<Button>(Resource.Id.button_english);
-            button_flags = FindViewById<Button>(Resource.Id.button_flags);
-            button_english.Touch += GUI.NewTouch;
-            button_flags.Touch += GUI.NewTouch;
-            
+
             button_english.Click += delegate
             {
                 GUI.button_click(button_english);
-                Intent intent_english = new Intent(this, typeof(English));  
-                StartActivity(intent_english);   
+                Intent intent_english = new Intent(this, typeof(English));
+                StartActivity(intent_english);
             };
 
             button_flags.Click += delegate
@@ -129,9 +102,6 @@ namespace ReLearn
                 GUI.button_click(button_flags);
                 Intent intent_flags = new Intent(this, typeof(Flags));
                 StartActivity(intent_flags);
-                
-                //GUI.button_default(button_flags);
-                //new Thread() {}.start();
             };
         }  
     }

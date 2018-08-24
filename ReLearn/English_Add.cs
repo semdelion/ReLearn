@@ -29,7 +29,7 @@ namespace ReLearn
             var toolbarMain = FindViewById<Toolbar>(Resource.Id.toolbarEnglishAdd);
             SetActionBar(toolbarMain);
             ActionBar.SetDisplayHomeAsUpEnabled(true); // отображаем кнопку домой
-            Window.SetBackgroundDrawable(Resources.GetDrawable(Resource.Drawable.backgroundEnFl));
+            Window.SetBackgroundDrawable(GetDrawable(Resource.Drawable.backgroundEnFl));
             Window.ClearFlags(WindowManagerFlags.TranslucentStatus);
             Window.AddFlags(WindowManagerFlags.DrawsSystemBarBackgrounds);
             Window.SetStatusBarColor(Android.Graphics.Color.Transparent);
