@@ -11,6 +11,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Android.Graphics;
 
 namespace ReLearn
 {
@@ -29,7 +30,12 @@ namespace ReLearn
 
         void Function_Next_Test(Button B1, Button B2, Button B3, Button B4, Button BNext, ImageView imageView, List<DatabaseOfFlags> dataBase, int rand_word, int i_rand) //new test
         {
-            imageView.SetImageResource(dataBase[rand_word].image_name);
+
+            var his = Application.Context.Assets.Open("ImageFlags/" + dataBase[rand_word].image_name+ ".png");
+            Bitmap bitmap = BitmapFactory.DecodeStream(his);
+            imageView.SetImageBitmap(bitmap);
+
+           // imageView.SetImageResource(dataBase[rand_word].image_name);
             GUI.button_ebabled(BNext);
             switch (i_rand)
             {// задаём рандоммную кнопку                            

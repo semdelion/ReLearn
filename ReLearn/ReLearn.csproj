@@ -189,603 +189,6 @@
     <AndroidResource Include="Resources\drawable\mainBackGround.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___nz.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___ad.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___ae.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___af.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___ag.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___al.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___am.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___ao.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___ar.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___at.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___au.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___az.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___ba.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___bb.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___bd.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___be.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___bf.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___bg.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___bh.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___bi.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___bj.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___bn.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___bo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___br.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___bs.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___bt.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___bw.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___by.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___bz.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___ca.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___cd.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___cf.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___cg.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___ch.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___ci.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___ck.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___cl.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___cm.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___cn.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___co.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___cr.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___cu.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___cv.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___cy.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___cz.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___de.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___dj.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___dk.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___dm.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___dor.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___dz.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___ec.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___ee.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___eg.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___eh.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___er.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___es.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___et.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___fi.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___fj.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___fm.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___fr.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___ga.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___gb.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___gd.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___ge.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___gh.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___gm.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___gn.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___gq.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___gr.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___gt.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___gw.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___gy.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___hn.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___hr.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___ht.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___hu.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___id.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___ie.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___il.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___inn.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___iq.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___ir.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___iss.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___it.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___jm.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___jo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___jp.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___ke.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___kg.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___kh.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___ki.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___km.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___kn.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___kp.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___kr.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___ks.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___kw.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___kz.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___la.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___lb.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___lc.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___li.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___lk.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___lr.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___ls.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___lt.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___lu.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___lv.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___ly.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___ma.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___mc.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___md.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___me.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___mg.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___mh.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___mk.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___ml.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___mm.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___mn.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___mr.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___mt.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___mu.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___mv.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___mw.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___mx.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___my.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___mz.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___na.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___ne.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___ng.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___ni.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___nl.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___no.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___np.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___nr.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___nu.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___om.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___pa.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___pe.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___pg.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___ph.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___pk.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___pl.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___pt.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___pw.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___py.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___qa.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___ro.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___rs.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___ru.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___rw.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___sa.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___sb.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___sc.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___sd.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___se.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___sg.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___si.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___sk.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___sl.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___sm.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___sn.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___so.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___sr.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___ss.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___sv.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___sy.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___sz.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___td.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___tg.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___th.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___tj.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___tl.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___tm.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___tn.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___to.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___tr.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___tt.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___tv.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___tw.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___tz.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___ua.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___ug.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___us.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___uy.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___uz.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___va.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___vc.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___ve.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___vn.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___vu.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___ws.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___ye.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___za.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___zm.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\___zw.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\database_flags.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\drawable\relearnMain.png" />
   </ItemGroup>
   <ItemGroup>
@@ -811,6 +214,608 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\iconSpeak.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\ad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\ae.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\af.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\ag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\al.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\am.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\ao.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\ar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\at.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\au.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\az.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\ba.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\bb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\bd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\be.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\bf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\bh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\bi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\bj.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\bn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\bo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\br.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\bs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\bt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\bw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\by.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\bz.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\ca.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\cd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\cf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\cg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\ch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\ci.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\ck.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\cl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\cm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\cn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\co.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\cr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\cu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\cv.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\cy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\cz.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\de.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\dj.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\dk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\dm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\dor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\dz.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\ec.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\ee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\eg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\eh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\er.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\es.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\et.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\fi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\fj.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\fr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\ga.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\gb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\gd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\ge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\gh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\gm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\gn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\gq.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\gr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\gt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\gw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\gy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\hn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\hr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\ht.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\hu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\id.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\ie.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\il.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\inn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\iq.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\ir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\iss.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\it.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\jm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\jo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\jp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\ke.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\kg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\kh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\ki.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\km.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\kn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\kp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\kr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\ks.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\kw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\kz.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\la.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\lb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\lc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\li.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\lk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\lr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\ls.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\lt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\lu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\lv.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\ly.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\ma.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\mc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\md.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\me.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\mg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\mh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\mk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\ml.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\mm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\mn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\mr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\mt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\mu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\mv.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\mw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\mx.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\my.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\mz.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\na.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\ne.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\ng.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\ni.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\nl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\no.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\np.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\nr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\nu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\nz.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\om.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\pa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\pe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\pg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\ph.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\pk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\pl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\pt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\pw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\py.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\qa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\ro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\rs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\ru.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\rw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\sa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\sb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\sc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\sd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\se.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\sg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\si.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\sk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\sl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\sm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\sn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\so.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\sr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\ss.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\sv.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\sy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\sz.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\td.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\tg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\th.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\tj.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\tl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\tm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\tn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\to.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\tr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\tt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\tv.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\tw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\tz.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\ua.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\ug.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\us.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\uy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\uz.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\va.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\vc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\ve.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\vn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\vu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\ws.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\ye.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\za.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\zm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\zw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFlags\fm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\databaseFlags.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\layout1.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

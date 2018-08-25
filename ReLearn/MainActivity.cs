@@ -42,9 +42,10 @@ namespace ReLearn
                 databaseSetting.CreateTable<Setting_Database>();
 
                 //databaseSetting.DropTable<Setting_Database>();
-                // var databaseFlags = DataBase.Connect(NameDatabase.Flags_DB); // подключение к БД
-                //databaseFlags.DropTable<Database_Flags>();
-                // databaseFlags.CreateTable<Database_Flags>();
+                //var databaseFlags2 = DataBase.Connect(NameDatabase.Flags_DB); // подключение к БД
+                //databaseFlags2.DropTable<Database_Flags>();
+                //databaseFlags2.CreateTable<Database_Flags>();
+
                 var search_Setting = databaseSetting.Query<Setting_Database>("SELECT * FROM Setting_Database");
                 if (search_Setting.Count == 0)
                     using (StreamReader reader = new StreamReader(Assets.Open("setting.txt")))
@@ -57,7 +58,7 @@ namespace ReLearn
                     databaseFlags.DropTable<Database_Flags>();
                     databaseFlags.CreateTable<Database_Flags>();
                     var tableFlags = databaseFlags.Table<Database_Flags>();
-                    using (StreamReader reader = new StreamReader(Assets.Open("database_flags.txt")))
+                    using (StreamReader reader = new StreamReader(Assets.Open(/*"database_flags.txt"*/"databaseFlags.txt")))
                         while (reader.Peek() >= 0)
                             DataBase.Add_newFlag(reader, databaseFlags);
                     databaseSetting.Query<Setting_Database>("UPDATE Setting_Database SET full_or_empty = " + 1 + " WHERE Setting_bd = 'flags'");

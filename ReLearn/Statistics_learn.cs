@@ -65,14 +65,32 @@ namespace ReLearn
         public int dateRepeat { get; set; }
     }
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //class DatabaseOfFlags // флаг 
+    //{
+    //    public int image_name = 0;
+    //    public string name_flag_en = null;
+    //    public string name_flag_ru = null;
+    //    public int numberLearn = 0;
+    //    public int dateRepeat = 0;
+    //    public DatabaseOfFlags Add(int image_n, string flag_en, string flag_ru, int nLearn, int date)
+    //    {
+    //        this.image_name = image_n;
+    //        this.name_flag_en = flag_en;
+    //        this.name_flag_ru = flag_ru;
+    //        this.numberLearn = nLearn;
+    //        this.dateRepeat = date;
+    //        return this;
+    //    }
+    //}
+
     class DatabaseOfFlags // флаг 
     {
-        public int image_name = 0;
+        public string image_name = null;
         public string name_flag_en = null;
         public string name_flag_ru = null;
         public int numberLearn = 0;
         public int dateRepeat = 0;
-        public DatabaseOfFlags Add(int image_n, string flag_en, string flag_ru, int nLearn, int date)
+        public DatabaseOfFlags Add(string image_n, string flag_en, string flag_ru, int nLearn, int date)
         {
             this.image_name = image_n;
             this.name_flag_en = flag_en;
@@ -86,7 +104,7 @@ namespace ReLearn
     {
         [PrimaryKey, AutoIncrement, Column("_id")]
         public int Id { get; set; }
-        public int image_name { get; set; }
+        public string image_name { get; set; }
         public string name_flag_en { get; set; }
         public string name_flag_ru { get; set; }
         public int numberLearn { get; set; }

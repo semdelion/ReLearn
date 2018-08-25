@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+	 
+	<Toolbar
+        android:popupTheme="@style/myPopupTheme"
+        android:minHeight="?android:attr/actionBarSize"
+        android:background="?android:attr/colorPrimary"
+        android:minWidth="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:titleTextColor="?android:attr/actionMenuTextColor"
+        android:titleTextAppearance="?android:attr/textSize"
+        android:id="@+id/toolbarEnglishRepeat"
+        android:navigationIcon="@drawable/arrow" />
+	<TextView
+        android:layout_width="match_parent"
+        android:id="@+id/textViewCount"
+        android:layout_marginLeft="276.7dp"
+        android:layout_marginTop="0.7dp"
+        android:textSize="25dp" />
+    <TextView
+        android:text=""
+        android:layout_width="match_parent"
+        android:layout_height="150.0dp"
+		 android:layout_marginRight="40dp"
+                android:layout_marginLeft="40dp"
+        android:id="@+id/textView_Eng_Word"
+        android:textSize="@android:dimen/app_icon_size"
+        android:textStyle="bold"
+        android:textColor="#d7f8fe" />
+
+	<GridLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginRight="40dp"
+        android:layout_marginLeft="40dp"
+		android:id="@+id/gridLayout1"
+		android:layout_gravity="center"
+		android:columnCount="2"
+		android:orientation="horizontal"> 		
+		<Button
+			android:layout_gravity="fill"
+			android:layout_columnSpan="2"
+			android:text=""
+            android:id="@+id/button_E_choice1"
+            android:background="@drawable/buttonBeforeClicking"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:textColor="#d7f8fe" 				
+		/>
+
+		<Button
+			android:layout_gravity="fill"
+			android:layout_columnSpan="2"
+			android:text=""
+            android:id="@+id/button_E_choice2"
+            android:background="@drawable/buttonBeforeClicking"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:textColor="#d7f8fe"		
+		/>
+		<Button
+			android:layout_gravity="fill"
+			android:layout_columnSpan="2"
+			android:text=""
+            android:id="@+id/button_E_choice3"
+            android:background="@drawable/buttonBeforeClicking"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:textColor="#d7f8fe"		
+		/>
+		<Button
+			android:layout_gravity="fill"
+			android:layout_columnSpan="2"
+			android:text=""
+            android:id="@+id/button_E_choice3"
+            android:background="@drawable/buttonBeforeClicking"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:textColor="#d7f8fe"		
+		/>
+		<Button
+			android:text=""
+			android:layout_width="60.0dp"
+			android:id="@+id/Button_Speak"
+			android:textColor="#d7f8fe"
+			android:background="@drawable/buttonBeforeClicking"
+			android:drawableRight="@android:drawable/ic_btn_speak_now"
+			android:layout_gravity="right" 
+		/>
+		<Button
+			android:text="Next"
+			android:layout_width="100.0dp"
+			android:id="@+id/button_E_Next"
+			android:textColor="#d7f8fe"
+			android:textSize="20dp"
+			android:background="@drawable/buttonBeforeClicking"
+			android:layout_gravity="top"
+			android:gravity="center" 
+		/>
+	
+	</GridLayout>
+</LinearLayout>

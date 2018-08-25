@@ -59,7 +59,8 @@ namespace ReLearn
             string str_line = reader.ReadLine();
             var list_imageName_flag = str_line.Split('|');
             var database_Flags = new Database_Flags();
-            database_Flags.image_name = System.Convert.ToInt32(list_imageName_flag[0]);
+            // database_Flags.image_name = System.Convert.ToInt32(list_imageName_flag[0]);
+            database_Flags.image_name = list_imageName_flag[0];
             database_Flags.name_flag_en = list_imageName_flag[1];
             database_Flags.name_flag_ru = list_imageName_flag[2];
             database_Flags.numberLearn = 10;

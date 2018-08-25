@@ -11,6 +11,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Android.Graphics;
 
 namespace ReLearn
 {
@@ -56,13 +57,22 @@ namespace ReLearn
                 Random rnd = new Random(unchecked((int)(DateTime.Now.Ticks)));
                 rand_word = rnd.Next(dataBase.Count);
 
-                imageView.SetImageResource(dataBase[rand_word].image_name);
+                var his = Application.Context.Assets.Open("ImageFlags/" + dataBase[rand_word].image_name + ".png");
+                Bitmap bitmap = BitmapFactory.DecodeStream(his);
+                imageView.SetImageBitmap(bitmap);
+
+               // imageView.SetImageResource(dataBase[rand_word].image_name);
                 textView_learn_flag.Text = Repeat_work.word_det(dataBase[rand_word]);
 
                 button_learn_en_ru.Click += (s, e) =>
                 {
                     rand_word = rnd.Next(dataBase.Count);
-                    imageView.SetImageResource(dataBase[rand_word].image_name);
+
+                    var hisi = Application.Context.Assets.Open("ImageFlags/" + dataBase[rand_word].image_name + ".png");
+                    Bitmap bitm = BitmapFactory.DecodeStream(hisi);
+                    imageView.SetImageBitmap(bitm);
+
+                    //imageView.SetImageResource(dataBase[rand_word].image_name);
                     textView_learn_flag.Text = Repeat_work.word_det(dataBase[rand_word]);
                 };
             }
