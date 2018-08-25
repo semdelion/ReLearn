@@ -28,20 +28,17 @@ namespace ReLearn
 
             var toolbarMain = FindViewById<Toolbar>(Resource.Id.toolbarEnglishAdd);
             SetActionBar(toolbarMain);
+
             ActionBar.SetDisplayHomeAsUpEnabled(true); // отображаем кнопку домой
             Window.SetBackgroundDrawable(GetDrawable(Resource.Drawable.backgroundEnFl));
-            Window.ClearFlags(WindowManagerFlags.TranslucentStatus);
-            Window.AddFlags(WindowManagerFlags.DrawsSystemBarBackgrounds);
-            Window.SetStatusBarColor(Android.Graphics.Color.Transparent);
             Window.SetStatusBarColor(Android.Graphics.Color.Argb(127, 0, 0, 0));
-            GUI.button_default(English.button_english_add);
-            //this.ActionBar.SetBackgroundDrawable(GetDrawable(Resource.Drawable.BackgroundActionBar));
-            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             EditText editText_foreign_word = FindViewById<EditText>(Resource.Id.editText_foreign_word);
             EditText editText_translation_word = FindViewById<EditText>(Resource.Id.editText_translation_word);
             Button button_add_word = FindViewById<Button>(Resource.Id.button_add_word);
             button_add_word.Touch += GUI.TouchAdd;
+
             try
             {
                 var database = DataBase.Connect(NameDatabase.English_DB);

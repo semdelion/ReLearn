@@ -29,10 +29,6 @@ namespace ReLearn
             ActionBar.SetDisplayHomeAsUpEnabled(true); // отображаем кнопку домой
             Window.SetBackgroundDrawable(GetDrawable(Resource.Drawable.backgroundEnFl));
 
-
-            Window.ClearFlags(WindowManagerFlags.TranslucentStatus);
-            Window.AddFlags(WindowManagerFlags.DrawsSystemBarBackgrounds);
-            Window.SetStatusBarColor(Android.Graphics.Color.Transparent);
             Window.SetStatusBarColor(Android.Graphics.Color.Argb(127, 0, 0, 0));
 
             GUI.button_default(English.button_english_learn);

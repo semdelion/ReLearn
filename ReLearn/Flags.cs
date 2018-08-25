@@ -16,33 +16,29 @@ using SQLite;
 namespace ReLearn
 {
     [Activity(Label = "Flags", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    
     class Flags : Activity
     {
         public static Button button_flags_learn;
         public static Button button_flags_repeat;
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            //setting layout
-            
+
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Flags);
-            var toolbarMain = FindViewById<Toolbar>(Resource.Id.toolbarFlags);
+
+            Toolbar toolbarMain = FindViewById<Toolbar>(Resource.Id.toolbarFlags);
             SetActionBar(toolbarMain);
             ActionBar.SetDisplayHomeAsUpEnabled(true);
-            
 
             Window.SetBackgroundDrawable(GetDrawable(Resource.Drawable.backgroundEnFl));
-            
-            Window.ClearFlags(WindowManagerFlags.TranslucentStatus);
-            Window.AddFlags(WindowManagerFlags.DrawsSystemBarBackgrounds);
-            Window.SetStatusBarColor(Android.Graphics.Color.Transparent);
             Window.SetStatusBarColor(Android.Graphics.Color.Argb(127, 0, 0, 0));
 
-            GUI.button_default(MainActivity.button_flags);
-            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            //setting prev language 
+            button_flags_learn = FindViewById<Button>(Resource.Id.button_flags_learn);
+            button_flags_repeat = FindViewById<Button>(Resource.Id.button_flags_repeat);
+            button_flags_learn.Touch += GUI.NewTouch;
+            button_flags_repeat.Touch += GUI.NewTouch;
+
             try
             {
                 var databaseSetting = DataBase.Connect(NameDatabase.Setting_DB);
@@ -57,13 +53,6 @@ namespace ReLearn
             catch (Exception e){
                 Android.Util.Log.Error(e.Message, e.ToString());
             }
-            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-            button_flags_learn = FindViewById<Button>(Resource.Id.button_flags_learn);
-            button_flags_repeat = FindViewById<Button>(Resource.Id.button_flags_repeat);
-            button_flags_learn.Touch += GUI.NewTouch;
-            button_flags_repeat.Touch += GUI.NewTouch;
-            
 
             button_flags_learn.Click += delegate
             {

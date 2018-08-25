@@ -23,16 +23,8 @@ namespace ReLearn
             //setting layout
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.English_Stat);
-
-            // var toolbarMain = FindViewById<Toolbar>(Resource.Id.toolbarEnglishStat);
-            //  SetActionBar(toolbarMain);
-            
-            Window.SetBackgroundDrawable(GetDrawable(Resource.Drawable.backgroundEnFl));
             ActionBar.SetDisplayHomeAsUpEnabled(true); // отображаем кнопку домой
-
-            Window.ClearFlags(WindowManagerFlags.TranslucentStatus);
-            Window.AddFlags(WindowManagerFlags.DrawsSystemBarBackgrounds);
-            Window.SetStatusBarColor(Android.Graphics.Color.Transparent);
+            Window.SetBackgroundDrawable(GetDrawable(Resource.Drawable.backgroundEnFl));
             Window.SetStatusBarColor(Android.Graphics.Color.Argb(127, 0, 0, 0));
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

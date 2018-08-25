@@ -10,8 +10,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/scrollView2">
         <TableLayout
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:stretchColumns="1">
             <Toolbar
                 android:popupTheme="@style/myPopupTheme"
@@ -45,7 +45,7 @@
                 android:textColor="#d7f8fe" />
             <Button
                 android:text="Next"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginRight="40.0dp"
                 android:layout_marginLeft="40.0dp"

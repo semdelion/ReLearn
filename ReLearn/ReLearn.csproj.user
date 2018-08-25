@@ -4,6 +4,6 @@
     <SelectedDevice>5" Marshmallow %286.0.0%29 XHDPI Phone</SelectedDevice>
     <DefaultDevice>5" Marshmallow %286.0.0%29 XHDPI Phone</DefaultDevice>
     <AndroidDesignerPreferredDevice>Nexus S</AndroidDesignerPreferredDevice>
-    <AndroidDesignerPreferredTheme>Theme.DeviceDefault.NoActionBar.TranslucentDecor</AndroidDesignerPreferredTheme>
+    <AndroidDesignerPreferredTheme>MyTheme</AndroidDesignerPreferredTheme>
   </PropertyGroup>
 </Project>

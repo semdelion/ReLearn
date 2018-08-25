@@ -99,10 +99,7 @@ namespace ReLearn
         protected override void OnCreate(Bundle savedInstanceState)
         {
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            //setting layout
-            //this.ActionBar.Hide(); //скрыть                     
-            //this.ActionBar.SetBackgroundDrawable(new Android.Graphics.Drawables.ColorDrawable(Android.Graphics.Color.Yellow)); // изменить цвет
-            //this.ActionBar.SetBackgroundDrawable(GetDrawable(Resource.Drawable.BackgroundActionBar));
+            ///
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.English_Repeat);
             tts = new TextToSpeech(this, this);
@@ -113,10 +110,6 @@ namespace ReLearn
             SetActionBar(toolbarMain);
             ActionBar.SetDisplayHomeAsUpEnabled(true); // отображаем кнопку домой
             Window.SetBackgroundDrawable(GetDrawable(Resource.Drawable.backgroundEnFl));
-
-            Window.ClearFlags(WindowManagerFlags.TranslucentStatus);
-            Window.AddFlags(WindowManagerFlags.DrawsSystemBarBackgrounds);
-            Window.SetStatusBarColor(Android.Graphics.Color.Transparent);
             Window.SetStatusBarColor(Android.Graphics.Color.Argb(127, 0, 0, 0));
 
             GUI.button_default(English.button_english_repeat);

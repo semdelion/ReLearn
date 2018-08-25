@@ -948,11 +948,14 @@ namespace ReLearn
 		public partial class Style
 		{
 			
-			// aapt resource value: 0x7F060002
-			public const int myPopupTheme = 2131099650;
-			
 			// aapt resource value: 0x7F060003
-			public const int ThemeStat = 2131099651;
+			public const int myPopupTheme = 2131099651;
+			
+			// aapt resource value: 0x7F060002
+			public const int MyTheme = 2131099650;
+			
+			// aapt resource value: 0x7F060004
+			public const int ThemeStat = 2131099652;
 			
 			static Style()
 			{

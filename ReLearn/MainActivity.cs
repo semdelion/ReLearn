@@ -26,10 +26,16 @@ namespace ReLearn
             GUI.Res = this;
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Main);
+
+            Window.SetBackgroundDrawable(GetDrawable(Resource.Drawable.backgroundMain));
+            Window.SetStatusBarColor(Android.Graphics.Color.Argb(127, 0, 0, 0));
+
             button_english = FindViewById<Button>(Resource.Id.button_english);
             button_flags = FindViewById<Button>(Resource.Id.button_flags);
+
             button_english.Touch += GUI.NewTouch;
             button_flags.Touch += GUI.NewTouch;
+
             try
             {
                 var databaseSetting = DataBase.Connect(NameDatabase.Setting_DB); // загружаем настройки
