@@ -11,6 +11,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.Graphics;
+using static Android.Graphics.Shader;
 
 namespace ReLearn
 {
@@ -19,21 +20,7 @@ namespace ReLearn
         public Graph_Statistics(Context context) : base(context) { }
         protected override void OnDraw(Canvas canvas)
         {
-            base.OnDraw(canvas);
-            Paint green = new Paint
-            {
-                AntiAlias = true,
-                Color = Color.Rgb(0x99, 0xcc, 0),
-            };
-            green.SetStyle(Paint.Style.FillAndStroke);
-
-            Paint red = new Paint
-            {
-                AntiAlias = true,
-                Color = Color.Rgb(0xff, 0x44, 0x44)
-            };
-            red.SetStyle(Paint.Style.FillAndStroke);
-
+            base.OnDraw(canvas);         
             string databasePath = System.IO.Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), NameDatabase.Statistics);
             var database = new SQLiteConnection(databasePath); // подключение к БД
             database.CreateTable<Database_Stat>();
@@ -60,13 +47,15 @@ namespace ReLearn
             foreach (var s in table)
             {
                 if (i >= n_count)
-                {
+                {                  
                     False = s.False; True = s.True;
-                    canvas.DrawRect(left, bottom - (height * False), right, bottom, red);
+                    Shader shader = new LinearGradient(left, bottom - (height * True), right, bottom, Color.Rgb(255 - 255 / 20 * True, 255 / 20 * True, 0), Color.Rgb(255, 0, 0), TileMode.Clamp);
+                    Paint paint = new Paint();
+                    paint.SetShader(shader);
+                    canvas.DrawRect(new RectF(left, bottom - (height * True), right, bottom), paint);
                     canvas.DrawText((i + 1).ToString(), right, bottom + 30, text_paint); //вывод номера теста
-                    left = left + width; right = left + width;
-                    canvas.DrawRect(left, bottom - (height * True), right, bottom, green);
-                    left = left + width; right = left + width;
+                    left = left + width + 2;
+                    right = left + width - 2;                  
                 }
                 ++i;
             }

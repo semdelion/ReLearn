@@ -47,7 +47,7 @@ namespace ReLearn
                 var table = databaseSetting.Table<Setting_Database>();
                 var search_Setting = databaseSetting.Query<Setting_Database>("SELECT * FROM Setting_Database WHERE Setting_bd = 'flags'");
                 if (search_Setting.Count != 0)
-                    magic_constants.language = search_Setting[0].language;
+                    Magic_constants.language = search_Setting[0].language;
                 else
                     throw new Exception("Error : can't connect to setting database");
             }
@@ -89,13 +89,13 @@ namespace ReLearn
             if (id == Resource.Id.language_eng)
             {
                 databaseSetting.Query<Setting_Database>("UPDATE Setting_Database SET language = " + 0 + " WHERE Setting_bd = ?", "flags");
-                magic_constants.language = 0;
+                Magic_constants.language = 0;
                 return true;
             }
             if (id == Resource.Id.language_rus)
             {
                 databaseSetting.Query<Setting_Database>("UPDATE Setting_Database SET language = " + 1 + " WHERE Setting_bd = ?", "flags");
-                magic_constants.language = 1;
+                Magic_constants.language = 1;
                 return true;
             }
             if (id == Android.Resource.Id.Home)

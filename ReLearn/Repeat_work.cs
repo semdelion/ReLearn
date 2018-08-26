@@ -30,16 +30,18 @@ namespace ReLearn
             string databasePath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), name_Database);
             var database = new SQLiteConnection(databasePath); // подключение к БД
             database.CreateTable<Database_Stat>();
-            var newStat = new Database_Stat();
-            newStat.True = True;
-            newStat.False = False;
+            var newStat = new Database_Stat
+            {
+                True = True,
+                False = False
+            };
             database.Insert(newStat); // добовление
         }
-        public static string word_det(DatabaseOfFlags word) // возвращает флаг на языке  // 0 - eng / 1 - rus
+        public static string Word_det(DatabaseOfFlags word) // возвращает флаг на языке  // 0 - eng / 1 - rus
         {
-            if (magic_constants.language == 0)
+            if (Magic_constants.language == 0)
                 return word.name_flag_en;
-            if (magic_constants.language == 1)
+            if (Magic_constants.language == 1)
                 return word.name_flag_ru;
             return "";
         }

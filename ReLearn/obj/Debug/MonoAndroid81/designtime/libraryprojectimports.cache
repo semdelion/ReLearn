@@ -2,11 +2,11 @@
 <Paths>
   <Jars />
   <ResolvedResourceDirectories>
-    <ResolvedResourceDirectory>C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\RL\ReLearn\obj\Debug\MonoAndroid81\lp\1\jl\res</ResolvedResourceDirectory>
-    <ResolvedResourceDirectory>C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\RL\ReLearn\obj\Debug\MonoAndroid81\lp\2\jl\res</ResolvedResourceDirectory>
-    <ResolvedResourceDirectory>C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\RL\ReLearn\obj\Debug\MonoAndroid81\lp\3\jl\res</ResolvedResourceDirectory>
-    <ResolvedResourceDirectory>C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\RL\ReLearn\obj\Debug\MonoAndroid81\lp\4\jl\res</ResolvedResourceDirectory>
-    <ResolvedResourceDirectory>C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\RL\ReLearn\obj\Debug\MonoAndroid81\lp\5\jl\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\Users\Nelaps\Documents\GitHub\RL\ReLearn\obj\Debug\MonoAndroid81\lp\1\jl\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\Users\Nelaps\Documents\GitHub\RL\ReLearn\obj\Debug\MonoAndroid81\lp\2\jl\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\Users\Nelaps\Documents\GitHub\RL\ReLearn\obj\Debug\MonoAndroid81\lp\3\jl\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\Users\Nelaps\Documents\GitHub\RL\ReLearn\obj\Debug\MonoAndroid81\lp\4\jl\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\Users\Nelaps\Documents\GitHub\RL\ReLearn\obj\Debug\MonoAndroid81\lp\5\jl\res</ResolvedResourceDirectory>
   </ResolvedResourceDirectories>
   <ResolvedAssetDirectories>
     <ResolvedAssetDirectory>obj\\Debug\MonoAndroid81\lp\1\jl\assets</ResolvedAssetDirectory>
@@ -17,10 +17,10 @@
   </ResolvedAssetDirectories>
   <ResolvedEnvironmentFiles />
   <ResolvedResourceDirectoryStamps>
-    <ResolvedResourceDirectoryStamp>C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\RL\ReLearn\obj\Debug\MonoAndroid81\lp\1.stamp</ResolvedResourceDirectoryStamp>
-    <ResolvedResourceDirectoryStamp>C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\RL\ReLearn\obj\Debug\MonoAndroid81\lp\2.stamp</ResolvedResourceDirectoryStamp>
-    <ResolvedResourceDirectoryStamp>C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\RL\ReLearn\obj\Debug\MonoAndroid81\lp\3.stamp</ResolvedResourceDirectoryStamp>
-    <ResolvedResourceDirectoryStamp>C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\RL\ReLearn\obj\Debug\MonoAndroid81\lp\4.stamp</ResolvedResourceDirectoryStamp>
-    <ResolvedResourceDirectoryStamp>C:\Users\Semdelion\Documents\Visual Studio 2017\GitHun_Projects\RL\ReLearn\obj\Debug\MonoAndroid81\lp\5.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\Users\Nelaps\Documents\GitHub\RL\ReLearn\obj\Debug\MonoAndroid81\lp\1.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\Users\Nelaps\Documents\GitHub\RL\ReLearn\obj\Debug\MonoAndroid81\lp\2.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\Users\Nelaps\Documents\GitHub\RL\ReLearn\obj\Debug\MonoAndroid81\lp\3.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\Users\Nelaps\Documents\GitHub\RL\ReLearn\obj\Debug\MonoAndroid81\lp\4.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\Users\Nelaps\Documents\GitHub\RL\ReLearn\obj\Debug\MonoAndroid81\lp\5.stamp</ResolvedResourceDirectoryStamp>
   </ResolvedResourceDirectoryStamps>
 </Paths>

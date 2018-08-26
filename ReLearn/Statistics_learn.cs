@@ -20,6 +20,7 @@ namespace ReLearn
         public string ruWords = null;
         public int numberLearn = 0;
         public int dateRepeat;
+
         public DatabaseOfWords Add(string en, string ru, int n, int date)
         {
             this.enWords = en;
@@ -35,6 +36,7 @@ namespace ReLearn
         public string ruWords { get; set; }
         public int numberLearn { get; set; }
         public int dateRepeat { get; set; }
+
         public Words()
         {
             this.dateRepeat = 1;
@@ -50,11 +52,13 @@ namespace ReLearn
             this.numberLearn = x.numberLearn;
             this.ruWords= x.ruWords;
         }
+
         public Words Find()
         {   
             return this;
         }
     }
+
     public class Database //Класс для считывания базы данных English
     {
         [PrimaryKey, AutoIncrement, Column("_id")]
@@ -65,23 +69,6 @@ namespace ReLearn
         public int dateRepeat { get; set; }
     }
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    //class DatabaseOfFlags // флаг 
-    //{
-    //    public int image_name = 0;
-    //    public string name_flag_en = null;
-    //    public string name_flag_ru = null;
-    //    public int numberLearn = 0;
-    //    public int dateRepeat = 0;
-    //    public DatabaseOfFlags Add(int image_n, string flag_en, string flag_ru, int nLearn, int date)
-    //    {
-    //        this.image_name = image_n;
-    //        this.name_flag_en = flag_en;
-    //        this.name_flag_ru = flag_ru;
-    //        this.numberLearn = nLearn;
-    //        this.dateRepeat = date;
-    //        return this;
-    //    }
-    //}
 
     class DatabaseOfFlags // флаг 
     {
@@ -148,8 +135,8 @@ namespace ReLearn
             position = position_new;
             word = word_new;
 
-            if (learn + Learn_new > magic_constants.maxLearn)
-                learn = magic_constants.maxLearn;
+            if (learn + Learn_new > Magic_constants.maxLearn)
+                learn = Magic_constants.maxLearn;
             else if (learn + Learn_new < 0)
                 learn = 0;
             else
@@ -166,6 +153,7 @@ namespace ReLearn
         public int Id { get; set; }
         public int True { get; set; }
         public int False { get; set; }
+        public DateTime DateOfTesting { get; set; }
     }
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     public static class NameDatabase // Имена баз данных
@@ -184,7 +172,7 @@ namespace ReLearn
         public static string Setting_DB = "Setting_Database.db3";
     }
 
-    public static class magic_constants // Маааагия!
+    public static class Magic_constants // Маааагия!
     {
         public static int repeat_count = 20; // количество повторений;
         public static int maxLearn = 20;

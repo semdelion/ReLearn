@@ -22,10 +22,10 @@ namespace ReLearn
         void Random_Button(Button B1, Button B2, Button B3, Button B4, List<DatabaseOfFlags> dataBase, int i)   //загружаем варианты ответа в текст кнопок
         {
             Random rand = new Random(unchecked((int)(DateTime.Now.Ticks)));
-            B1.Text = Repeat_work.word_det(dataBase[i]);
-            B2.Text = Repeat_work.word_det(dataBase[rand.Next(dataBase.Count)]);
-            B3.Text = Repeat_work.word_det(dataBase[rand.Next(dataBase.Count)]);
-            B4.Text = Repeat_work.word_det(dataBase[rand.Next(dataBase.Count)]);
+            B1.Text = Repeat_work.Word_det(dataBase[i]);
+            B2.Text = Repeat_work.Word_det(dataBase[rand.Next(dataBase.Count)]);
+            B3.Text = Repeat_work.Word_det(dataBase[rand.Next(dataBase.Count)]);
+            B4.Text = Repeat_work.Word_det(dataBase[rand.Next(dataBase.Count)]);
         }
 
         void Function_Next_Test(Button B1, Button B2, Button B3, Button B4, Button BNext, ImageView imageView, List<DatabaseOfFlags> dataBase, int rand_word, int i_rand) //new test
@@ -65,20 +65,20 @@ namespace ReLearn
         void Answer(Button B1, Button B2, Button B3, Button B4, Button BNext, List<DatabaseOfFlags> dataBase, List<Statistics_learn> Stats, int rand_word) // подсвечиваем правильный ответ, если мы ошиблись подсвечиваем неправвильный и паравильный 
         {
             GUI.Button_enable(B1, B2, B3, B4, BNext);
-            if (B1.Text == Repeat_work.word_det(dataBase[rand_word]))
+            if (B1.Text == Repeat_work.Word_det(dataBase[rand_word]))
             {
-                Repeat_work.DeleteRepeat(Stats, Convert.ToString(dataBase[rand_word].image_name), rand_word, dataBase[rand_word].numberLearn -= magic_constants.true_answer);
+                Repeat_work.DeleteRepeat(Stats, Convert.ToString(dataBase[rand_word].image_name), rand_word, dataBase[rand_word].numberLearn -= Magic_constants.true_answer);
                 Statistics_learn.answerTrue++;
                 GUI.Button_true(B1);
             }
             else
             {
-                Repeat_work.DeleteRepeat(Stats, Convert.ToString(dataBase[rand_word].image_name), rand_word, dataBase[rand_word].numberLearn += magic_constants.false_answer);
+                Repeat_work.DeleteRepeat(Stats, Convert.ToString(dataBase[rand_word].image_name), rand_word, dataBase[rand_word].numberLearn += Magic_constants.false_answer);
                 Statistics_learn.answerFalse++;
                 GUI.Button_false(B1);
-                if (B2.Text == Repeat_work.word_det(dataBase[rand_word]))
+                if (B2.Text == Repeat_work.Word_det(dataBase[rand_word]))
                     GUI.Button_true(B2);
-                else if (B3.Text == Repeat_work.word_det(dataBase[rand_word]))
+                else if (B3.Text == Repeat_work.Word_det(dataBase[rand_word]))
                     GUI.Button_true(B3);
                 else
                     GUI.Button_true(B4);
@@ -148,14 +148,14 @@ namespace ReLearn
                 button4.Click += (s, e) => { Answer(button4, button1, button2, button3, button_next, dataBase, Stats, rand_word); };
                 button_next.Click += (s, e) =>
                 {
-                    if (count < magic_constants.repeat_count - 1)
+                    if (count < Magic_constants.repeat_count - 1)
                     {
                         i_rand = rnd.Next(4);
                         rand_word = rnd.Next(dataBase.Count);
                         Function_Next_Test(button1, button2, button3, button4, button_next, imageView, dataBase, rand_word, i_rand);
                         GUI.Button_Refresh(button1, button2, button3, button4, button_next);
                         count++;
-                        ActionBar.Title = Convert.ToString("Repeat " + (count + 1) + "/" + magic_constants.repeat_count); // ПЕРЕДЕЛАЙ Костыль счётчик 
+                        ActionBar.Title = Convert.ToString("Repeat " + (count + 1) + "/" + Magic_constants.repeat_count); // ПЕРЕДЕЛАЙ Костыль счётчик 
                     }
                     else
                     {

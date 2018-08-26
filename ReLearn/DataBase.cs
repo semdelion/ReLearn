@@ -84,7 +84,7 @@ namespace ReLearn
             {
                 enWords = eng.ToLower(),
                 ruWords = rus.ToLower(),
-                numberLearn = magic_constants.numberLearn,
+                numberLearn = Magic_constants.numberLearn,
                 dateRepeat = System.DateTime.Today.Month
             };
             database.Insert(newWords);
