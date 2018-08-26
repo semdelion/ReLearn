@@ -75,16 +75,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataBase.cs" />
-    <Compile Include="English.cs" />
-    <Compile Include="English_Add.cs" />
-    <Compile Include="English_Delete.cs" />
-    <Compile Include="English_Learn.cs" />
-    <Compile Include="English_Repeat.cs" />
-    <Compile Include="English_Stat.cs" />
-    <Compile Include="Flags.cs" />
-    <Compile Include="Flags_Learn.cs" />
-    <Compile Include="Flags_Repeat.cs" />
-    <Compile Include="Flags_Stats.cs" />
+    <Compile Include="English\English.cs" />
+    <Compile Include="English\English_Add.cs" />
+    <Compile Include="English\English_Delete.cs" />
+    <Compile Include="English\English_Learn.cs" />
+    <Compile Include="English\English_Repeat.cs" />
+    <Compile Include="English\English_Stat.cs" />
+    <Compile Include="Flags\Flags.cs" />
+    <Compile Include="Flags\Flags_Learn.cs" />
+    <Compile Include="Flags\Flags_Repeat.cs" />
+    <Compile Include="Flags\Flags_Stats.cs" />
     <Compile Include="Graph_Statistics.cs" />
     <Compile Include="GUI.cs" />
     <Compile Include="MainActivity.cs" />

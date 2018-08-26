@@ -23,22 +23,19 @@ namespace ReLearn
             //setting layout
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.English_Learn);
-
+            GUI.Button_default(English.button_english_learn);
             var toolbarMain = FindViewById<Toolbar>(Resource.Id.toolbarEnglishLearn);
             SetActionBar(toolbarMain);
             ActionBar.SetDisplayHomeAsUpEnabled(true); // отображаем кнопку домой
             Window.SetBackgroundDrawable(GetDrawable(Resource.Drawable.backgroundEnFl));
-
             Window.SetStatusBarColor(Android.Graphics.Color.Argb(127, 0, 0, 0));
-
-            GUI.button_default(English.button_english_learn);
             //this.ActionBar.SetBackgroundDrawable(GetDrawable(Resource.Drawable.BackgroundActionBar));
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
             TextView textView_learn_en = FindViewById<TextView>(Resource.Id.textView_learn_en);
             TextView textView_learn_ru = FindViewById<TextView>(Resource.Id.textView_learn_ru);
             Button button_learn_en_ru = FindViewById<Button>(Resource.Id.button_learn_en_ru);
-            button_learn_en_ru.Touch += GUI.TouchAdd;
+            button_learn_en_ru.Touch += GUI.Button_Click;
 
             try
             {

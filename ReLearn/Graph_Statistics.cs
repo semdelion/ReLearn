@@ -21,7 +21,7 @@ namespace ReLearn
         {
             base.OnDraw(canvas);
             Paint green = new Paint
-            { // цвет для прямоугольников
+            {
                 AntiAlias = true,
                 Color = Color.Rgb(0x99, 0xcc, 0),
             };
@@ -38,8 +38,8 @@ namespace ReLearn
             var database = new SQLiteConnection(databasePath); // подключение к БД
             database.CreateTable<Database_Stat>();
 
-            Paint text_paint = new Paint(); // используется для написания текста и рисования линии
-            text_paint.TextSize = 25;
+            Paint text_paint = new Paint {TextSize = 25}; 
+            // используется для написания текста и рисования линии
             //left    float: Левая сторона прямоугольника, который нужно нарисовать
             //top float: Верхняя сторона прямоугольника, который нужно нарисовать
             //right   float: Правая сторона прямоугольника, который нужно нарисовать

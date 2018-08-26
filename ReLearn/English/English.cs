@@ -20,37 +20,37 @@ namespace ReLearn
         public static Button button_english_learn;
         public static Button button_english_repeat;
         protected override void OnCreate(Bundle savedInstanceState)
-        {
-            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            //setting layout         
+        {       
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.English);
-
-            var toolbarMain = FindViewById<Toolbar>(Resource.Id.toolbarEnglish);
+            GUI.Button_default(MainActivity.button_english);
+            Window.SetStatusBarColor(Android.Graphics.Color.Argb(127, 0, 0, 0));
+            Window.SetBackgroundDrawable(GetDrawable(Resource.Drawable.backgroundEnFl));
+            Toolbar toolbarMain = FindViewById<Toolbar>(Resource.Id.toolbarEnglish);
             toolbarMain.SetBackgroundColor(Android.Graphics.Color.Transparent);
             SetActionBar(toolbarMain);
-            ActionBar.SetDisplayHomeAsUpEnabled(true); // отображаем кнопку домой
-
-            Window.SetBackgroundDrawable(GetDrawable(Resource.Drawable.backgroundEnFl));
-            Window.SetStatusBarColor(Android.Graphics.Color.Argb(127, 0, 0, 0));
+            ActionBar.SetDisplayHomeAsUpEnabled(true);
 
             button_english_add = FindViewById<Button>(Resource.Id.button_english_add);
             button_english_learn = FindViewById<Button>(Resource.Id.button_english_learn);
             button_english_repeat = FindViewById<Button>(Resource.Id.button_english_repeat);
-            button_english_add.Touch += GUI.NewTouch;
-            button_english_learn.Touch += GUI.NewTouch;
-            button_english_repeat.Touch += GUI.NewTouch;
+            button_english_add.Touch += GUI.Button_Touch;
+            button_english_learn.Touch += GUI.Button_Touch;
+            button_english_repeat.Touch += GUI.Button_Touch;
+            button_english_add.Click += GUI.Button_1_Click;
+            button_english_learn.Click += GUI.Button_1_Click;
+            button_english_repeat.Click += GUI.Button_1_Click;
 
-            button_english_add.Click += delegate{
-                GUI.button_click(button_english_add);
+            button_english_add.Click += delegate
+            {
                 Intent intent_english_add = new Intent(this, typeof(English_Add));
                 StartActivity(intent_english_add);
             };
 
-            button_english_learn.Click += delegate{
+            button_english_learn.Click += delegate
+            {
                 try
                 {
-                    GUI.button_click(button_english_learn);
                     var database = DataBase.Connect(NameDatabase.English_DB);
                     database.CreateTable<Database>();
                     var search_occurrences = database.Query<Database>("SELECT * FROM Database");// поиск вхождения слова в БД
@@ -62,16 +62,12 @@ namespace ReLearn
                     else
                         Toast.MakeText(this, "The database is empty", ToastLength.Short).Show();
                 }
-                catch
-                {
-                    Toast.MakeText(this, "Error : can't connect to database", ToastLength.Long).Show();
-                }
+                catch { Toast.MakeText(this, "Error : can't connect to database", ToastLength.Long).Show(); }
             };
 
             button_english_repeat.Click += delegate
             {
                 try {
-                    GUI.button_click(button_english_repeat);
                     var database = DataBase.Connect(NameDatabase.English_DB);
                     database.CreateTable<Database>();
                     var search_occurrences = database.Query<Database>("SELECT * FROM Database");// поиск вхождения слова в БД
@@ -85,16 +81,14 @@ namespace ReLearn
                     else
                         Toast.MakeText(this, "The database is empty", ToastLength.Short).Show();
                 }
-                catch {
-                    Toast.MakeText(this, "Error : can't connect to database", ToastLength.Long).Show();
-                }
+                catch { Toast.MakeText(this, "Error : can't connect to database", ToastLength.Long).Show(); }
             };
-        }
 
+            
+        }
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
-            var inflater = MenuInflater;      
-            inflater.Inflate(Resource.Menu.menu_english, menu);
+            MenuInflater.Inflate(Resource.Menu.menu_english, menu);
             return true;
         }
 
@@ -112,9 +106,7 @@ namespace ReLearn
                 return true;
             }
             if (id == Android.Resource.Id.Home)
-            {
                 this.Finish(); 
-            }
             return true;
         }
     }

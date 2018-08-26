@@ -45,25 +45,25 @@ namespace ReLearn
             if (B1.Text == dataBase[rand_word].ruWords){
                 Repeat_work.DeleteRepeat(Stats, dataBase[rand_word].enWords, rand_word, dataBase[rand_word].numberLearn -= magic_constants.true_answer);
                 Statistics_learn.answerTrue++;
-                GUI.button_true(B1);
+                GUI.Button_true(B1);
             }
             else{
                 Repeat_work.DeleteRepeat(Stats, dataBase[rand_word].enWords, rand_word, dataBase[rand_word].numberLearn += magic_constants.false_answer);
                 Statistics_learn.answerFalse++;
-                GUI.button_false(B1);
+                GUI.Button_false(B1);
                 if (B2.Text == dataBase[rand_word].ruWords)
-                    GUI.button_true(B2);
+                    GUI.Button_true(B2);
                 else if (B3.Text == dataBase[rand_word].ruWords)
-                    GUI.button_true(B3);
+                    GUI.Button_true(B3);
                 else
-                    GUI.button_true(B4);
+                    GUI.Button_true(B4);
             }
         }
 
         void Function_Next_Test(Button B1, Button B2, Button B3, Button B4, Button BNext, TextView textView, List<DatabaseOfWords> dataBase,int rand_word,int i_rand) //новый тест
         {
             textView.Text = dataBase[rand_word].enWords.ToString();
-            GUI.button_ebabled(BNext);
+            GUI.Button_ebabled(BNext);
             switch (i_rand){// задаём рандоммную кнопку                            
                 case 0:{
                         Random_Button(B1, B2, B3, B4, dataBase, rand_word);
@@ -101,18 +101,17 @@ namespace ReLearn
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             ///
             base.OnCreate(savedInstanceState);
+            GUI.Button_default(English.button_english_repeat);
             SetContentView(Resource.Layout.English_Repeat);
             tts = new TextToSpeech(this, this);
 
-            
-            
             var toolbarMain = FindViewById<Toolbar>(Resource.Id.toolbarEnglishRepeat);
             SetActionBar(toolbarMain);
             ActionBar.SetDisplayHomeAsUpEnabled(true); // отображаем кнопку домой
             Window.SetBackgroundDrawable(GetDrawable(Resource.Drawable.backgroundEnFl));
             Window.SetStatusBarColor(Android.Graphics.Color.Argb(127, 0, 0, 0));
 
-            GUI.button_default(English.button_english_repeat);
+            GUI.Button_default(English.button_english_repeat);
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             Statistics_learn.answerFalse = 0;
             Statistics_learn.answerTrue = 0;
@@ -127,12 +126,12 @@ namespace ReLearn
             Button button4 = FindViewById<Button>(Resource.Id.button_E_choice4);
             Button button_next = FindViewById<Button>(Resource.Id.button_E_Next);
             Button btnSpeak = FindViewById<Button>(Resource.Id.Button_Speak);
-            button1.Touch += GUI.TouchAdd;
-            button2.Touch += GUI.TouchAdd;
-            button3.Touch += GUI.TouchAdd;
-            button4.Touch += GUI.TouchAdd;
-            button_next.Touch += GUI.TouchAdd;
-            btnSpeak.Touch+=GUI.TouchAdd;
+            button1.Touch += GUI.Button_Click;
+            button2.Touch += GUI.Button_Click;
+            button3.Touch += GUI.Button_Click;
+            button4.Touch += GUI.Button_Click;
+            button_next.Touch += GUI.Button_Click;
+            btnSpeak.Touch+=GUI.Button_Click;
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             try
             {

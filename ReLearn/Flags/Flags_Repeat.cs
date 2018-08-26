@@ -36,7 +36,7 @@ namespace ReLearn
             imageView.SetImageBitmap(bitmap);
 
            // imageView.SetImageResource(dataBase[rand_word].image_name);
-            GUI.button_ebabled(BNext);
+            GUI.Button_ebabled(BNext);
             switch (i_rand)
             {// задаём рандоммную кнопку                            
                 case 0:
@@ -69,19 +69,19 @@ namespace ReLearn
             {
                 Repeat_work.DeleteRepeat(Stats, Convert.ToString(dataBase[rand_word].image_name), rand_word, dataBase[rand_word].numberLearn -= magic_constants.true_answer);
                 Statistics_learn.answerTrue++;
-                GUI.button_true(B1);
+                GUI.Button_true(B1);
             }
             else
             {
                 Repeat_work.DeleteRepeat(Stats, Convert.ToString(dataBase[rand_word].image_name), rand_word, dataBase[rand_word].numberLearn += magic_constants.false_answer);
                 Statistics_learn.answerFalse++;
-                GUI.button_false(B1);
+                GUI.Button_false(B1);
                 if (B2.Text == Repeat_work.word_det(dataBase[rand_word]))
-                    GUI.button_true(B2);
+                    GUI.Button_true(B2);
                 else if (B3.Text == Repeat_work.word_det(dataBase[rand_word]))
-                    GUI.button_true(B3);
+                    GUI.Button_true(B3);
                 else
-                    GUI.button_true(B4);
+                    GUI.Button_true(B4);
             }
         }
         public void Update_Database(List<Statistics_learn> listdataBase) // изменение у бвзы данных элемента numberLearn
@@ -101,14 +101,12 @@ namespace ReLearn
             //setting layout     
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Flags_Repeat);
-
+            GUI.Button_default(Flags.button_flags_repeat);
             var toolbarMain = FindViewById<Toolbar>(Resource.Id.toolbarFlagsRepeat);
             SetActionBar(toolbarMain);
             ActionBar.SetDisplayHomeAsUpEnabled(true); // отображаем кнопку домой
             Window.SetBackgroundDrawable(GetDrawable(Resource.Drawable.backgroundEnFl));
             Window.SetStatusBarColor(Android.Graphics.Color.Argb(127, 0, 0, 0));
-
-            GUI.button_default(Flags.button_flags_repeat);
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             Statistics_learn.answerFalse = 0;
             Statistics_learn.answerTrue = 0;
@@ -121,11 +119,11 @@ namespace ReLearn
             Button button3 = FindViewById<Button>(Resource.Id.button_F_choice3);
             Button button4 = FindViewById<Button>(Resource.Id.button_F_choice4);
             Button button_next = FindViewById<Button>(Resource.Id.button_F_Next);
-            button1.Touch += GUI.TouchAdd;
-            button2.Touch += GUI.TouchAdd;
-            button3.Touch += GUI.TouchAdd;
-            button4.Touch += GUI.TouchAdd;
-            button_next.Touch += GUI.TouchAdd;
+            button1.Touch += GUI.Button_Click;
+            button2.Touch += GUI.Button_Click;
+            button3.Touch += GUI.Button_Click;
+            button4.Touch += GUI.Button_Click;
+            button_next.Touch += GUI.Button_Click;
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             //repeat flags
             try

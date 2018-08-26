@@ -16,20 +16,25 @@ namespace ReLearn
     class GUI:Activity
     {
         public static Context Res;
-        public static void NewTouch(object sender, View.TouchEventArgs e)
+
+        public static void Button_Touch(object sender, View.TouchEventArgs e)
         {
             Button button = (Button)sender;           
             var handled = false;
             if (e.Event.Action == MotionEventActions.Down)
                 button.Background = (Res.GetDrawable(Resource.Drawable.button_touch));
             else if (e.Event.Action == MotionEventActions.Up)
-            {
                 button.Background = (Res.GetDrawable(Resource.Drawable.buttonBeforeClicking));
-            }
             e.Handled = handled;
         }
 
-        public static void TouchAdd(object sender, View.TouchEventArgs e)
+        public static void Button_1_Click(object sender, System.EventArgs e)
+        {
+            Button button = (Button)sender;
+            button.Background = (Res.GetDrawable(Resource.Drawable.buttonAfterClicking));
+        }
+
+        public static void Button_Click(object sender, View.TouchEventArgs e)
         {
             Button button = (Button)sender;
             var handled = false;
@@ -40,23 +45,27 @@ namespace ReLearn
             e.Handled = handled;
         }
 
-        public static void button_click(Button B)
+        public static void Button_click(Button B)
         {
             B.Background = (Res.GetDrawable(Resource.Drawable.buttonAfterClicking));
         }
-        public static void button_default(Button B)
+
+        public static void Button_default(Button B)
         {
             B.Background = (Res.GetDrawable(Resource.Drawable.buttonBeforeClicking));
         }
-        public static void button_true(Button B)
+
+        public static void Button_true(Button B)
         {
             B.Background = (Res.GetDrawable(Resource.Drawable.button_true));
         }
-        public static void button_false(Button B)
+
+        public static void Button_false(Button B)
         {
             B.Background = (Res.GetDrawable(Resource.Drawable.button_false));
         }
-        public static void button_ebabled(Button B)
+
+        public static void Button_ebabled(Button B)
         {
             B.Background = (Res.GetDrawable(Resource.Drawable.button_enabled));
             B.Enabled = false;
@@ -75,6 +84,7 @@ namespace ReLearn
             BNext.Enabled = true;
             BNext.Background = (Res.GetDrawable(Resource.Drawable.buttonBeforeClicking));
         }
+
         public static void Button_Refresh(Button B1, Button B2, Button B3, Button B4, Button BNext) // обновляем кнопки для нового теста.
         {
             B1.Enabled = true; B2.Enabled = true; B3.Enabled = true; B4.Enabled = true;
@@ -83,6 +93,5 @@ namespace ReLearn
             B3.Background = (Res.GetDrawable(Resource.Drawable.buttonBeforeClicking));
             B4.Background = (Res.GetDrawable(Resource.Drawable.buttonBeforeClicking));
         }
-        
     }
 }

@@ -20,24 +20,19 @@ namespace ReLearn
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            //setting layout
-           
             base.OnCreate(savedInstanceState);
+            GUI.Button_default(English.button_english_add);
+            Window.SetStatusBarColor(Android.Graphics.Color.Argb(127, 0, 0, 0));
+            Window.SetBackgroundDrawable(GetDrawable(Resource.Drawable.backgroundEnFl));
             SetContentView(Resource.Layout.English_Add);
-
             var toolbarMain = FindViewById<Toolbar>(Resource.Id.toolbarEnglishAdd);
             SetActionBar(toolbarMain);
-
-            ActionBar.SetDisplayHomeAsUpEnabled(true); // отображаем кнопку домой
-            Window.SetBackgroundDrawable(GetDrawable(Resource.Drawable.backgroundEnFl));
-            Window.SetStatusBarColor(Android.Graphics.Color.Argb(127, 0, 0, 0));
-
-            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            ActionBar.SetDisplayHomeAsUpEnabled(true); 
+            
             EditText editText_foreign_word = FindViewById<EditText>(Resource.Id.editText_foreign_word);
             EditText editText_translation_word = FindViewById<EditText>(Resource.Id.editText_translation_word);
             Button button_add_word = FindViewById<Button>(Resource.Id.button_add_word);
-            button_add_word.Touch += GUI.TouchAdd;
+            button_add_word.Touch += GUI.Button_Click;
 
             try
             {

@@ -16,17 +16,17 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:stretchColumns="2">
-            <Toolbar
-                android:popupTheme="@style/myPopupTheme"
-                android:minHeight="?android:attr/actionBarSize"
-                android:background="?android:attr/colorPrimary"
-                android:minWidth="25px"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:titleTextColor="?android:attr/actionMenuTextColor"
-                android:titleTextAppearance="?android:attr/textSize"
-                android:id="@+id/toolbarEnglishRepeat"
-                android:navigationIcon="@drawable/arrow" />
+			<Toolbar
+				android:popupTheme="@style/myPopupTheme"
+				android:minHeight="?android:attr/actionBarSize"
+				android:background="?android:attr/colorPrimary"
+				android:minWidth="25px"
+				android:layout_width="match_parent"
+				android:layout_height="60.0dp"
+				android:titleTextColor="?android:attr/actionMenuTextColor"
+				android:titleTextAppearance="?android:attr/textSize"
+				android:id="@+id/toolbarEnglishRepeat"
+				android:navigationIcon="@drawable/arrow" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
