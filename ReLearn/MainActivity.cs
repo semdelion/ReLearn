@@ -20,10 +20,7 @@ namespace ReLearn
             GUI.Res = this;
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Main);
-
             Window.SetBackgroundDrawable(GetDrawable(Resource.Drawable.backgroundMain));
-            Window.SetStatusBarColor(Color.Argb(127, 0, 0, 0));
-
             DataBase.Check_and_update_database();
 
             button_english = FindViewById<Button>(Resource.Id.button_english);

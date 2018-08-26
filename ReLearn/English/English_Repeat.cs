@@ -29,7 +29,7 @@ namespace ReLearn
                 SpeakOut("");
             }
         }
-        private void SpeakOut(string text) => tts.Speak(text, QueueMode.Flush, null);
+        private void SpeakOut(string text) => tts.Speak(text, QueueMode.Flush, null, null);
 
         void Random_Button(Button B1, Button B2, Button B3, Button B4, List<DatabaseOfWords> dataBase, int i)   //загружаем варианты ответа в текст кнопок
         {
@@ -156,6 +156,7 @@ namespace ReLearn
                 button2.Click += (s, e) => { Answer(button2, button1, button3, button4, button_next, dataBase, Stats, rand_word); };
                 button3.Click += (s, e) => { Answer(button3, button1, button2, button4, button_next, dataBase, Stats, rand_word); };
                 button4.Click += (s, e) => { Answer(button4, button1, button2, button3, button_next, dataBase, Stats, rand_word); };
+
                 btnSpeak.Click += delegate
                 {
                     SpeakOut(textView.Text);
@@ -179,14 +180,10 @@ namespace ReLearn
                         Intent intent_english_stat = new Intent(this, typeof(English_Stat));
                         StartActivity(intent_english_stat);
                         this.Finish();
-                        
                     }
-
                 };
             }
-            catch{
-                Toast.MakeText(this, "Error : can't connect to database of Language in Repeat", ToastLength.Long).Show();
-            }
+            catch{ Toast.MakeText(this, "Error : can't connect to database of Language in Repeat", ToastLength.Long).Show(); }
 
         }
         public override bool OnOptionsItemSelected(IMenuItem item)

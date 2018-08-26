@@ -30,16 +30,16 @@ namespace ReLearn
             Toolbar toolbarMain = FindViewById<Toolbar>(Resource.Id.toolbarFlags);
             SetActionBar(toolbarMain);
             ActionBar.SetDisplayHomeAsUpEnabled(true);
-            Window.SetBackgroundDrawable(GetDrawable(Resource.Drawable.backgroundEnFl));
-            Window.SetStatusBarColor(Android.Graphics.Color.Argb(127, 0, 0, 0));
 
             button_flags_learn = FindViewById<Button>(Resource.Id.button_flags_learn);
             button_flags_repeat = FindViewById<Button>(Resource.Id.button_flags_repeat);
+
             button_flags_learn.Touch += GUI.Button_Touch;
             button_flags_repeat.Touch += GUI.Button_Touch;
 
             button_flags_learn.Click += GUI.Button_1_Click;
             button_flags_repeat.Click += GUI.Button_1_Click;
+
             try
             {
                 var databaseSetting = DataBase.Connect(NameDatabase.Setting_DB);
@@ -59,6 +59,7 @@ namespace ReLearn
                 Intent intent_flags_learn = new Intent(this, typeof(Flags_Learn));
                 StartActivity(intent_flags_learn);
             };
+
             button_flags_repeat.Click += delegate
             {
                 GUI.Button_click(button_flags_repeat);

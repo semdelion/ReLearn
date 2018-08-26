@@ -24,10 +24,7 @@ namespace ReLearn
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.English);
             GUI.Button_default(MainActivity.button_english);
-            Window.SetStatusBarColor(Android.Graphics.Color.Argb(127, 0, 0, 0));
-            Window.SetBackgroundDrawable(GetDrawable(Resource.Drawable.backgroundEnFl));
             Toolbar toolbarMain = FindViewById<Toolbar>(Resource.Id.toolbarEnglish);
-            toolbarMain.SetBackgroundColor(Android.Graphics.Color.Transparent);
             SetActionBar(toolbarMain);
             ActionBar.SetDisplayHomeAsUpEnabled(true);
 
@@ -82,9 +79,7 @@ namespace ReLearn
                         Toast.MakeText(this, "The database is empty", ToastLength.Short).Show();
                 }
                 catch { Toast.MakeText(this, "Error : can't connect to database", ToastLength.Long).Show(); }
-            };
-
-            
+            };   
         }
         public override bool OnCreateOptionsMenu(IMenu menu)
         {

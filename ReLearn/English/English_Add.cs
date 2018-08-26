@@ -22,8 +22,6 @@ namespace ReLearn
         {
             base.OnCreate(savedInstanceState);
             GUI.Button_default(English.button_english_add);
-            Window.SetStatusBarColor(Android.Graphics.Color.Argb(127, 0, 0, 0));
-            Window.SetBackgroundDrawable(GetDrawable(Resource.Drawable.backgroundEnFl));
             SetContentView(Resource.Layout.English_Add);
             var toolbarMain = FindViewById<Toolbar>(Resource.Id.toolbarEnglishAdd);
             SetActionBar(toolbarMain);

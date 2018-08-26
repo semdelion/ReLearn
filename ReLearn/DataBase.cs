@@ -68,8 +68,7 @@ namespace ReLearn
         {
             string str_line = reader.ReadLine();
             var list_sett = str_line.Split('|');
-            var sett_bd = ne
-w Setting_Database
+            var sett_bd = new Setting_Database
             {
                 Setting_bd = list_sett[0],
                 Name_bd = list_sett[1],

@@ -26,11 +26,10 @@ namespace ReLearn
             var toolbarMain = FindViewById<Toolbar>(Resource.Id.toolbarFlagsLearn);
             SetActionBar(toolbarMain);
             ActionBar.SetDisplayHomeAsUpEnabled(true); // отображаем кнопку домой
-            Window.SetBackgroundDrawable(GetDrawable(Resource.Drawable.backgroundEnFl));
-            Window.SetStatusBarColor(Android.Graphics.Color.Argb(127, 0, 0, 0));
             TextView textView_learn_flag = FindViewById<TextView>(Resource.Id.textView_flag_learn);
             ImageView imageView = FindViewById<ImageView>(Resource.Id.imageView_Flags_learn);
             Button button_learn_en_ru = FindViewById<Button>(Resource.Id.button_F_learn_Next);
+
             button_learn_en_ru.Touch += GUI.Button_Click;
 
             try

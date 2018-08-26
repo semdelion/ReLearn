@@ -84,6 +84,7 @@ namespace ReLearn
                     GUI.Button_true(B4);
             }
         }
+
         public void Update_Database(List<Statistics_learn> listdataBase) // изменение у бвзы данных элемента numberLearn
         {
             var database = DataBase.Connect(NameDatabase.Flags_DB);
@@ -95,19 +96,16 @@ namespace ReLearn
                 database.Query<Database_Flags>("UPDATE Database_Flags SET numberLearn = " + listdataBase[i].Learn + " WHERE image_name = ?", listdataBase[i].Word);
             }
         }
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            //setting layout     
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Flags_Repeat);
             GUI.Button_default(Flags.button_flags_repeat);
             var toolbarMain = FindViewById<Toolbar>(Resource.Id.toolbarFlagsRepeat);
             SetActionBar(toolbarMain);
             ActionBar.SetDisplayHomeAsUpEnabled(true); // отображаем кнопку домой
-            Window.SetBackgroundDrawable(GetDrawable(Resource.Drawable.backgroundEnFl));
-            Window.SetStatusBarColor(Android.Graphics.Color.Argb(127, 0, 0, 0));
-            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
             Statistics_learn.answerFalse = 0;
             Statistics_learn.answerTrue = 0;
             int rand_word = 0, i_rand = 0, count = 0;
@@ -124,8 +122,7 @@ namespace ReLearn
             button3.Touch += GUI.Button_Click;
             button4.Touch += GUI.Button_Click;
             button_next.Touch += GUI.Button_Click;
-            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            //repeat flags
+            
             try
             {
                 var db = DataBase.Connect(NameDatabase.Flags_DB);
@@ -174,7 +171,6 @@ namespace ReLearn
             catch{
                 Toast.MakeText(this, "Error : can't connect to database of flags", ToastLength.Long).Show();
             }
-        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         }
         public override bool OnOptionsItemSelected(IMenuItem item)
         {

@@ -20,9 +20,8 @@ namespace ReLearn
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.English_Stat);
             Window.SetBackgroundDrawable(GetDrawable(Resource.Drawable.backgroundEnFl));
-            ActionBar.SetDisplayHomeAsUpEnabled(true); // отображаем кнопку домой
             Window.SetStatusBarColor(Android.Graphics.Color.Argb(127, 0, 0, 0));
-            NameDatabase.Statistics = NameDatabase.Flags_DB_Stat_DB;
+            ActionBar.SetDisplayHomeAsUpEnabled(true);
             SetContentView(new Graph_Statistics(this));
         }
         public override bool OnOptionsItemSelected(IMenuItem item)

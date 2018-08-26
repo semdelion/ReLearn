@@ -13,10 +13,6 @@ using Java.Lang;
 
 namespace ReLearn.Resources
 {
-    public class ViewHolder : Java.Lang.Object
-    {
-        public TextView textView_en { get; set; }
-    }
     public class CustomAdapter : BaseAdapter
     {
         private Activity activity;
