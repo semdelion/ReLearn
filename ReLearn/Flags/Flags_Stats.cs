@@ -20,7 +20,8 @@ namespace ReLearn
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.English_Stat);
             Window.SetBackgroundDrawable(GetDrawable(Resource.Drawable.backgroundEnFl));
-            Window.SetStatusBarColor(Android.Graphics.Color.Argb(127, 0, 0, 0));
+            Window.AddFlags(WindowManagerFlags.DrawsSystemBarBackgrounds);
+            Window.SetStatusBarColor(Android.Graphics.Color.Argb(128, 0, 0, 0));
             NameDatabase.Statistics = "database_flags_stat.db3";
             ActionBar.SetDisplayHomeAsUpEnabled(true);
             SetContentView(new Graph_Statistics(this));

@@ -3,6 +3,7 @@
   <string name="app_name">ReLearn</string>
   <style name="MyTheme" perent ="@android:style/Theme.DeviceDefault.NoActionBar.TranslucentDecor"  >
     <item name="android:statusBarColor">#80000000</item>
+    <item name="android:windowDrawsSystemBarBackgrounds">true</item>
     <item name="android:windowBackground">@drawable/backgroundEnFl</item>
     <item name="android:windowNoTitle">true</item>
     <item name="android:colorPrimary">@android:color/transparent</item>

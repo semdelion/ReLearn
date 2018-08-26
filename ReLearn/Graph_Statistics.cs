@@ -44,6 +44,7 @@ namespace ReLearn
             var count_Database_Stat = database.Query<Database_Stat>("SELECT * FROM Database_Stat");// количество строк в БД
             int i = 0, n_count = count_Database_Stat.Count - 10, False = 0, True = 0; // n_count - используется для вывода только последних 10 строк БД
             var table = database.Table<Database_Stat>();  //ПЕРЕДЕЛАТЬ!!!! оставить только 10 статистик
+            right -= 2;
             foreach (var s in table)
             {
                 if (i >= n_count)

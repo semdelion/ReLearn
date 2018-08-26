@@ -24,9 +24,9 @@ namespace ReLearn
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.English_Stat);
             ActionBar.SetDisplayHomeAsUpEnabled(true); // отображаем кнопку домой
-
             Window.SetBackgroundDrawable(GetDrawable(Resource.Drawable.backgroundEnFl));
-            Window.SetStatusBarColor(Android.Graphics.Color.Argb(127, 0, 0, 0));
+            Window.AddFlags(WindowManagerFlags.DrawsSystemBarBackgrounds);
+            Window.SetStatusBarColor(Android.Graphics.Color.Argb(128, 0, 0, 0));
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
             NameDatabase.Statistics = NameDatabase.English_Stat_DB;

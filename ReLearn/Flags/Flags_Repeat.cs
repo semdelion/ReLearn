@@ -148,6 +148,7 @@ namespace ReLearn
                 button4.Click += (s, e) => { Answer(button4, button1, button2, button3, button_next, dataBase, Stats, rand_word); };
                 button_next.Click += (s, e) =>
                 {
+                    button_next.Enabled = false;
                     if (count < Magic_constants.repeat_count - 1)
                     {
                         i_rand = rnd.Next(4);
@@ -165,7 +166,6 @@ namespace ReLearn
                         StartActivity(intent_flags_stat);
                         this.Finish();
                     }
-
                 };
             }
             catch{

@@ -2,11 +2,8 @@
 using Android.Widget;
 using Android.OS;
 using Android.Content;
-using System.IO;
 using Android.Views;
-using System.Collections.Generic;
 using Android.Graphics;
-using System.Threading;
 namespace ReLearn
 {
     [Activity( MainLauncher = true, ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
@@ -14,9 +11,10 @@ namespace ReLearn
     {
         public static Button button_english;
         public static Button button_flags;
-
+        
         protected override void OnCreate(Bundle savedInstanceState)
         {
+
             GUI.Res = this;
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Main);

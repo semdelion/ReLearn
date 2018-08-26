@@ -6,7 +6,6 @@
 	<Toolbar
 		android:popupTheme="@style/myPopupTheme"
 		android:minHeight="?android:attr/actionBarSize"
-		android:minWidth="25px"
 		android:layout_width="match_parent"
 		android:layout_height="56.0dp"
 		android:titleTextColor="?android:attr/actionMenuTextColor"

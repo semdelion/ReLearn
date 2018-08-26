@@ -123,7 +123,7 @@ namespace ReLearn
                     db.CreateTable<Database>();
 
                     var tableWords = db.Table<Database>();
-                    using (StreamReader reader = new StreamReader(GUI.Res.Assets.Open("BDNew1.txt")))
+                    using (StreamReader reader = new StreamReader(GUI.Res.Assets.Open("My_dictionary.txt")))
                         while (reader.Peek() >= 0)
                         {
                             string str_line = reader.ReadLine();

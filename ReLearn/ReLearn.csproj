@@ -204,7 +204,7 @@
     <AndroidResource Include="Resources\Menu\search.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\BDNew1.txt" />
+    <AndroidAsset Include="Assets\My_dictionary.txt" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\Button_Speak.png" />

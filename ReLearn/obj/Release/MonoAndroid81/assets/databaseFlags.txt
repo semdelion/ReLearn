@@ -1,0 +1,194 @@
+﻿ad|Andorra|Андорра
+ae|United Arab Emirates|Объединённые Арабские Эмираты
+af|Afghanistan|Афганистан
+ag|Antigua and Barbuda|Антигуа и Барбуда
+al|Albania|Албания
+am|Armenia|Армения
+ao|Angola|Ангола
+ar|Argentina|Аргентина
+at|Austria|Австрия
+au|Australia|Австралия
+az|Azerbaijan|Азербайджан
+ba|Bosnia and Herzegovina|Босния и Герцеговина
+bb|Barbados|Барбадос
+bd|Bangladesh|Бангладеш
+be|Belgium|Бельгия
+bf|Burkina Faso|Буркина-Фасо
+bg|Bulgaria|Болгария
+bh|Bahrain|Бахрейн
+bi|Burundi|Бурунди
+bj|Benin|Бенин
+bn|Brunei|Бруней
+bo|Bolivia|Боливия
+br|Brazil|Бразилия
+bs|Bahamas|Багамские острова
+bt|Butane|Бутан
+bw|Botswana|Ботсвана
+by|Belarus|Белоруссия
+bz|Belize|Белиз
+ca|Canada|Канада
+cd|Democratic Republic of the Congo|Демократическая Республика Конго
+cf|Republique Centrafricaine|Центральноафриканская Республика
+cg|Republic of the Congo|Республика Конго
+ch|Switzerland|Швейцария
+ci|Colombia|Колумбия
+ci|Ivory Coast|Кот-д'Ивуар
+ck|Cook Islands|Острова Кука
+cl|Chile|Чили
+cm|Cameroon|Камерун
+cn|China|Китай
+cr|Costa Rica|Коста-Рика
+cu|Cuba|Куба
+cv|Cape Verde|Кабо-Верде
+cy|Cyprus|Кипр
+cz|Czech Republic|Чехия
+de|Germany|Германия
+dj|Djibouti|Джибути
+dk|Denmark|Дания
+dm|Dominica|Доминика
+dor|Dominican Republic|Доминиканская Республика
+dz|Algeria|Алжир
+ec|Ecuador|Эквадор
+ee|Estonia|Эстония
+eg|Egypt|Египет
+eh|West Sahara|Западная Сахара
+er|Eritrea|Эритрея
+es|Spain|Испания
+et|Ethiopia|Эфиопия
+fi|Finland|Финляндия
+fj|Fiji|Фиджи
+fm|Federated States of Micronesia|Федеративные Штаты Микронезии
+fr|France|Франция
+ga|Gabon|Габон
+gb|United Kingdom|Великобритания
+gd|Grenada|Гренада
+ge|Georgia|Грузия
+gh|Ghana|Гана
+gm|Gambia|Гамбия
+gn|Guinea|Гвинея
+gq|Equatorial Guinea|Экваториальная Гвинея
+gr|Greece|Греция
+gt|Guatemala|Гватемала
+gw|Guinea-Bissau|Гвинея-Бисау
+gy|Guyana|Гайана
+hn|Honduras|Гондурас
+hr|Croatia|Хорватия
+ht|Haiti|Гаити
+hu|Hungary|Венгрия
+id|Indonesia|Индонезия
+ie|Ireland|Ирландия
+il|Israel|Израиль
+inn|India|Индия
+iq|Iraq|Ирак
+ir|Iran|Иран
+iss|Iceland|Исландия
+it|Italy|Италия
+jm|Jamaica|Ямайка
+jo|Jordan|Иордания
+jp|Japan|Япония
+ke|Kenya|Кения
+kg|Kyrgyzstan|Киргизия
+kh|Cambodia|Камбоджа
+ki|Kiribati|Кирибати
+km|Comoros|Коморские острова
+kn|Saint Kitts and Nevis|Сент-Китс и Невис
+kp|DPRK|КНДР
+kr|The Republic of Korea|Республика Корея
+ks|Kosovo|Косово
+kw|Kuwait|Кувейт
+kz|Kazakhstan|Казахстан
+la|Laos|Лаос
+lb|Lebanon|Ливан
+lc|Saint Lucia|Сент-Люсия
+li|Liechtenstein|Лихтенштейн
+lk|Sri Lanka|Шри-Ланка
+lr|Liberia|Либерия
+ls|Lesotho|Лесото
+lt|Lithuania|Литва
+lu|Luxembourg|Люксембург
+lv|Latvia|Латвия
+ly|Libya|Ливия
+ma|Morocco|Марокко
+mc|Monaco|Монако
+md|Moldova|Молдавия
+me|Montenegro|Черногория
+mg|Madagascar|Мадагаскар
+mh|Marshall Islands|Маршалловы острова
+mk|The Republic of Macedonia|Республика Македония
+ml|Mali|Мали
+mm|Myanmar|Мьянма
+mr|Mauritania|Мавритания
+mt|Malta|Мальта
+mu|Mauritius|Маврикий
+mv|Maldives|Мальдивы
+mw|Malawi|Малави
+mx|Mexico|Мексика
+my|Malaysia|Малайзия
+mz|Mozambique|Мозамбик
+na|Namibia|Намибия
+ne|Niger|Нигер
+ng|Nigeria|Нигерия
+ni|Nicaragua|Никарагуа
+nl|Netherlands|Нидерланды
+no|Norway|Норвегия
+np|Nepal|Непал
+nu|Niue|Ниуэ
+nz|New Zealand|Новая Зеландия
+om|Oman|Оман
+pa|Panama|Панама
+pe|Peru|Перу
+pg|Papua New Guinea|Папуа — Новая Гвинея
+ph|Philippines|Филиппины
+pk|Pakistan|Пакистан
+pl|Poland|Польша
+pt|Portugal|Португалия
+pw|Palau|Палау
+py|Paraguay|Парагвай
+qa|Qatar|Катар
+ro|Romania|Румыния
+rs|Serbia|Сербия
+ru|Russia|Россия
+rw|Rwanda|Руанда
+sa|Saudi Arabia|Саудовская Аравия
+sb|Solomon islands|Соломоновы острова
+sc|Seychelles|Сейшельские острова
+sd|Sudan|Судан
+se|Sweden|Швеция
+sg|Singapore|Сингапур
+si|Slovenia|Словения
+sk|Slovakia|Словакия
+sl|Sierra Leone|Сьерра-Леоне
+sm|San Marino|Сан-Марино
+sn|Senegal|Сенегал
+so|Somalia|Сомали
+sr|Suriname|Суринам
+ss|South Sudan|Южный Судан
+sv|Salvador|Сальвадор
+sy|Syria|Сирия
+sz|Swaziland|Свазиленд
+td|Chad|Чад
+tj|Tajikistan|Таджикистан
+tl|East Timor|Восточный Тимор
+tm|Turkmenistan|Туркменистан
+tn|Tunisia|Тунис
+to|Tonga|Тонга
+tr|Turkey|Турция
+tt|Trinidad and Tobago|Тринидад и Тобаго
+tv|Tuvalu|Тувалу
+tw|Taiwan|Тайвань
+tz|Tanzania|Танзания
+ua|Ukraine|Украина
+ug|Uganda|Уганда
+us|USA|Соединённые Штаты Америки
+uy|Uruguay|Уругвай
+uz|Uzbekistan|Узбекистан
+va|Vatican|Ватикан
+vc|Saint Vincent and the Grenadines|Сент-Винсент и Гренадины
+ve|Venezuela|Венесуэла
+vn|Vietnam|Вьетнам
+vu|Vanuatu|Вануату
+ws|Samoa|Самоа
+ye|Yemen|Йемен
+za|South Africa|ЮАР
+zm|Zambia|Замбия
+zw|Zimbabwe|Зимбабве

@@ -19,13 +19,12 @@ namespace ReLearn
 
         public static void Button_Touch(object sender, View.TouchEventArgs e)
         {
-            Button button = (Button)sender;           
-            var handled = false;
+            Button button = (Button)sender;
             if (e.Event.Action == MotionEventActions.Down)
                 button.Background = (Res.GetDrawable(Resource.Drawable.button_touch));
             else if (e.Event.Action == MotionEventActions.Up)
                 button.Background = (Res.GetDrawable(Resource.Drawable.buttonBeforeClicking));
-            e.Handled = handled;
+            e.Handled = false;
         }
 
         public static void Button_1_Click(object sender, System.EventArgs e)
@@ -37,12 +36,11 @@ namespace ReLearn
         public static void Button_Click(object sender, View.TouchEventArgs e)
         {
             Button button = (Button)sender;
-            var handled = false;
             if (e.Event.Action == MotionEventActions.Down)
                 button.Background = (Res.GetDrawable(Resource.Drawable.buttonAfterClicking));
             else if (e.Event.Action == MotionEventActions.Up)
                 button.Background = (Res.GetDrawable(Resource.Drawable.buttonBeforeClicking));
-            e.Handled = handled;
+            e.Handled = false;
         }
 
         public static void Button_click(Button B)

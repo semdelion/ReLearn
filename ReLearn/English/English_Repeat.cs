@@ -22,12 +22,8 @@ namespace ReLearn
         public void OnInit([GeneratedEnum] OperationResult status)
         {
             if (status == OperationResult.Success)
-            {
                 tts.SetLanguage(Locale.Uk);
-                tts.SetPitch(3.6f);
-                tts.SetSpeechRate(1.0f);
-                SpeakOut("");
-            }
+            
         }
         private void SpeakOut(string text) => tts.Speak(text, QueueMode.Flush, null, null);
 
@@ -104,13 +100,9 @@ namespace ReLearn
             GUI.Button_default(English.button_english_repeat);
             SetContentView(Resource.Layout.English_Repeat);
             tts = new TextToSpeech(this, this);
-
             var toolbarMain = FindViewById<Toolbar>(Resource.Id.toolbarEnglishRepeat);
             SetActionBar(toolbarMain);
             ActionBar.SetDisplayHomeAsUpEnabled(true); // отображаем кнопку домой
-            Window.SetBackgroundDrawable(GetDrawable(Resource.Drawable.backgroundEnFl));
-            Window.SetStatusBarColor(Android.Graphics.Color.Argb(127, 0, 0, 0));
-
             GUI.Button_default(English.button_english_repeat);
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             Statistics_learn.answerFalse = 0;
@@ -125,13 +117,14 @@ namespace ReLearn
             Button button3 = FindViewById<Button>(Resource.Id.button_E_choice3);
             Button button4 = FindViewById<Button>(Resource.Id.button_E_choice4);
             Button button_next = FindViewById<Button>(Resource.Id.button_E_Next);
-            Button btnSpeak = FindViewById<Button>(Resource.Id.Button_Speak);
+            Button button_Speak = FindViewById<Button>(Resource.Id.Button_Speak);
+
             button1.Touch += GUI.Button_Click;
             button2.Touch += GUI.Button_Click;
             button3.Touch += GUI.Button_Click;
             button4.Touch += GUI.Button_Click;
             button_next.Touch += GUI.Button_Click;
-            btnSpeak.Touch+=GUI.Button_Click;
+            button_Speak.Touch+=GUI.Button_Click;
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             try
             {
@@ -152,17 +145,20 @@ namespace ReLearn
                 rand_word = rnd.Next(dataBase.Count); //ПЕРЕДЕЛАЙ сделать защиту от дурака, если все элементы базы имеют numberLearn = 0
                 i_rand = rnd.Next(4);                           //рандом для 4 кнопок
                 Function_Next_Test(button1, button2, button3, button4, button_next, textView, dataBase, rand_word, i_rand);
+
                 button1.Click += (s, e) => { Answer(button1, button2, button3, button4, button_next, dataBase, Stats, rand_word); }; //лямбда оператор для подсветки ответа // true ? green:red
                 button2.Click += (s, e) => { Answer(button2, button1, button3, button4, button_next, dataBase, Stats, rand_word); };
                 button3.Click += (s, e) => { Answer(button3, button1, button2, button4, button_next, dataBase, Stats, rand_word); };
                 button4.Click += (s, e) => { Answer(button4, button1, button2, button3, button_next, dataBase, Stats, rand_word); };
 
-                btnSpeak.Click += delegate
+                button_Speak.Click += delegate
                 {
                     SpeakOut(textView.Text);
                 };
+
                 button_next.Click += (s, e) =>
                 {
+                    button_next.Enabled = false;
                     if (count < Magic_constants.repeat_count - 1)
                     {
                         i_rand = rnd.Next(4);
