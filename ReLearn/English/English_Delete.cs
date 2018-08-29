@@ -40,8 +40,11 @@ namespace ReLearn
             
             var db = DataBase.Connect(NameDatabase.English_DB);
             dataBase = db.Query<Database_Words>("SELECT * FROM " + DataBase.Table_Name);
-
+            var fdf = db.Query<Database_Words>("SELECT * FROM " + DataBase.Table_Name);
+            fdf.Sort((x, y) => y.numberLearn.CompareTo(x.numberLearn));
+          
             dataBase.Sort((x, y) => x.enWords.CompareTo(y.enWords));
+
             //dataBase = dataBase.OrderBy(o => o.enWords).ToList();         
             adapter = new CustomAdapter(this, dataBase);
             listViewDel.Adapter = adapter;
@@ -85,7 +88,7 @@ namespace ReLearn
                 alert.SetNeutralButton("ок", delegate
                 {
                     dataBase.Remove(words);
-                    adapter = new CustomAdapter(this, /*Android.Resource.Layout.SimpleListItem1,*/ dataBase);
+                    adapter = new CustomAdapter(this, dataBase);
                     listViewDel.Adapter = adapter;
 
                     var database = DataBase.Connect(NameDatabase.English_DB);
