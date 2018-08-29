@@ -41,7 +41,7 @@ namespace ReLearn
         {
             this.dateRepeat = 1;
             this.enWords = "";
-            this.numberLearn = 10;
+            this.numberLearn = 6;
             this.ruWords = "";
         }
 
@@ -182,9 +182,9 @@ namespace ReLearn
 
     public static class Magic_constants // Маааагия!
     {
-        public static int repeat_count = 20; // количество повторений;
-        public static int maxLearn = 20;
-        public static int numberLearn = 10;
+        public static int repeat_count = 12; // количество повторений;
+        public static int maxLearn = 12;
+        public static int numberLearn = 6;
         public static int false_answer = 3;
         public static int true_answer = 1;
         public static int language = 0; // 0 - eng, 1 - rus ...
