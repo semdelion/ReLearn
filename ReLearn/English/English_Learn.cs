@@ -1,16 +1,8 @@
-﻿using System;
-using System.IO;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
-using Android.Content;
+﻿using Android.App;
 using Android.OS;
-using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-using SQLite;
+using System;
 
 namespace ReLearn
 {
@@ -38,39 +30,12 @@ namespace ReLearn
             try
             {
                 var db = DataBase.Connect(NameDatabase.English_DB);
-                List<DatabaseOfWords> dataBase = new List<DatabaseOfWords>();
+                var dataBase = db.Query<Database_Words>("SELECT * FROM " + DataBase.tableDatabaseWords);
 
-                if (DataBase.tableDatabaseWords == "Database_My_Directly")
-                {
-                    db.CreateTable<Database_My_Directly>();
-                    var table = db.Table<Database_My_Directly>();
-                    foreach (var word in table)
-                    { // создание БД в виде  List<DatabaseOfWords>
-                        DatabaseOfWords w = new DatabaseOfWords();
-                        w.Add(word.enWords, word.ruWords, word.numberLearn, word.dateRepeat);
-                        dataBase.Add(w);
-                    }
-                }
-                else if (DataBase.tableDatabaseWords == "Database_PopularWords")
-                {
-                    db.CreateTable<Database_PopularWords>();
-                    var table = db.Table<Database_PopularWords>();
-                    foreach (var word in table)
-                    { // создание БД в виде  List<DatabaseOfWords>
-                        DatabaseOfWords w = new DatabaseOfWords();
-                        w.Add(word.enWords, word.ruWords, word.numberLearn, word.dateRepeat);
-                        dataBase.Add(w);
-                    }
-                }
-                else
-                {
-                    db.CreateTable<DatabaseAnimals>();
-                    db.Table<DatabaseAnimals>();
-                }
-                                            
-                int rand_word = 0;
                 Random rnd = new Random(unchecked((int)(DateTime.Now.Ticks)));
-                rand_word = rnd.Next(dataBase.Count);
+                int rand_word = 0;
+
+                rand_word = rnd.Next(dataBase.Count);  ////TODO говнокод
                 textView_learn_en.Text = dataBase[rand_word].enWords;
                 textView_learn_ru.Text = dataBase[rand_word].ruWords;
 

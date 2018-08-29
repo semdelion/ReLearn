@@ -19,19 +19,19 @@
                 android:background="?android:attr/colorPrimary"
                 android:minWidth="25px"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:titleTextColor="?android:attr/actionMenuTextColor"
                 android:titleTextAppearance="?android:attr/textSize"
                 android:id="@+id/toolbarFlagsRepeat" 
                 android:navigationIcon="@drawable/arrow"/>
-            <ImageView
-                android:id="@+id/imageView_Flags_repeat"
-                android:layout_width="match_parent"
-                android:layout_height="200.0dp"
-                android:src="@drawable/icon_new"
-                android:layout_marginTop="25.0dp"
-                android:layout_marginRight="25.0dp"
-                android:layout_marginLeft="25.0dp" />
+			<ImageView
+				android:id="@+id/imageView_Flags_repeat"
+				android:layout_width="wrap_content"
+				android:layout_height="170.0dp"
+				android:src="@drawable/icon_new"
+				android:layout_marginTop="25.0dp"
+				android:layout_marginRight="25.0dp"
+				android:layout_marginLeft="25.0dp" />
             <Button
                 android:text=""
                 android:layout_width="match_parent"
@@ -82,17 +82,18 @@
                 android:textStyle="bold"
                 android:textSize="20dp"
                 android:textColor="#d7f8fe" />
-            <Button
-                android:text="Next"
-                android:layout_width="match_parent"
-                android:layout_height="60.0dp"
-                android:layout_marginRight="40dp"
-                android:layout_marginLeft="200dp"
-                android:id="@+id/button_F_Next"
-                android:layout_marginTop="5.0dp"
-                android:textSize="20dp"
-                android:textColor="#d7f8fe"
-                android:background="@drawable/buttonBeforeClicking" />
+			<Button
+				android:text="Next"
+				android:layout_width="match_parent"
+				android:layout_height="60.0dp"
+				android:layout_marginRight="40dp"
+				android:layout_marginLeft="200dp"
+				android:id="@+id/button_F_Next"
+				android:layout_marginTop="5.0dp"
+				android:textSize="20dp"
+				android:textColor="#d7f8fe"
+				android:background="@drawable/buttonBeforeClicking"
+				android:gravity="center" />
         </TableLayout>
     </ScrollView>
 </RelativeLayout>

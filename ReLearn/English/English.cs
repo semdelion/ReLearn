@@ -19,6 +19,8 @@ namespace ReLearn
         public static Button button_english_add;
         public static Button button_english_learn;
         public static Button button_english_repeat;
+       
+
         protected override void OnCreate(Bundle savedInstanceState)
         {       
             base.OnCreate(savedInstanceState);
@@ -48,28 +50,9 @@ namespace ReLearn
             {
                 try
                 {
-                    //var database = DataBase.Connect(NameDatabase.English_DB);
-                    //database.CreateTable<Database>();
-                    //var search_occurrences = database.Query<Database>("SELECT * FROM Database");// поиск вхождения слова в БД
                     var database = DataBase.Connect(NameDatabase.English_DB);
-                    int search_occurrences = 0;
-                    if (DataBase.tableDatabaseWords == "Database_My_Directly")
-                    {
-                        database.CreateTable<Database_My_Directly>();
-                        search_occurrences = database.Query<Database_My_Directly> ("SELECT * FROM Database_My_Directly").Count;// поиск вхождения слова в БД
-                    }
-                    else if (DataBase.tableDatabaseWords == "Database_PopularWords")
-                    {
-                        database.CreateTable<Database_PopularWords>();
-                        search_occurrences = database.Query<Database_PopularWords>("SELECT * FROM Database_PopularWords").Count;// поиск вхождения слова в БД
-                    }
-                    else
-                    {
-                        database.CreateTable<DatabaseAnimals>();
-                        search_occurrences = database.Query<DatabaseAnimals>("SELECT * FROM DatabaseAnimals").Count;// поиск вхождения слова в БД
-                    }
-
-
+                    database.CreateTable<Database_Words>();
+                    int search_occurrences = database.Query<Database_Words>("SELECT * FROM " + DataBase.tableDatabaseWords).Count;
                     if (search_occurrences != 0)
                     {
                         Intent intent_english_learn = new Intent(this, typeof(English_Learn));
@@ -84,10 +67,8 @@ namespace ReLearn
             button_english_repeat.Click += delegate
             {
                 try {
+
                     var database = DataBase.Connect(NameDatabase.English_DB);
-                    //database.CreateTable<Database>();
-                    //var search_occurrences = database.Query<Database>("SELECT * FROM Database");// поиск вхождения слова в БД
-                    //var search_numberlearn_null = database.Query<Database>("SELECT * FROM Database WHERE numberLearn = 0");
                     database.CreateTable<Database_My_Directly>();
                     var search_occurrences = database.Query<Database_My_Directly>("SELECT * FROM Database_My_Directly");// поиск вхождения слова в БД
                     var search_numberlearn_null = database.Query<Database_My_Directly>("SELECT * FROM Database_My_Directly WHERE numberLearn = 0");

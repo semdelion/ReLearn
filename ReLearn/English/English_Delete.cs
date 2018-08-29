@@ -39,7 +39,12 @@ namespace ReLearn
             listViewDel = FindViewById<ListView>(Resource.Id.listViewDelete);    
             
             var db = DataBase.Connect(NameDatabase.English_DB);
+            //var dataBase = db.Query<Database_Words>("SELECT * FROM " + DataBase.tableDatabaseWords);
+
             dataBase = new List<Words>();
+
+
+
 
             if (DataBase.tableDatabaseWords == "Database_My_Directly")
             {
@@ -128,35 +133,14 @@ namespace ReLearn
                     listViewDel.Adapter = adapter;
 
                     var database = DataBase.Connect(NameDatabase.English_DB);
-                    int search_occurrences = 0;              
-
-                    if (DataBase.tableDatabaseWords == "Database_My_Directly")
-                    {
-                        database.CreateTable<Database_My_Directly>();
-                        search_occurrences = database.Query<Database_My_Directly>("SELECT * FROM Database_My_Directly WHERE enWords = ?", word.ToString()).Count;// поиск вхождения слова в БД
-                    }
-                    else if (DataBase.tableDatabaseWords == "Database_PopularWords")
-                    {
-                        database.CreateTable<Database_PopularWords>();
-                        search_occurrences = database.Query<Database_PopularWords>("SELECT * FROM Database_PopularWords WHERE enWords = ?", word.ToString()).Count;// поиск вхождения слова в БД
-                    }
-                    else
-                    {
-                        database.CreateTable<DatabaseAnimals>();
-                        search_occurrences = database.Query<DatabaseAnimals>("SELECT * FROM DatabaseAnimals WHERE enWords = ?", word.ToString()).Count;// поиск вхождения слова в БД
-                    }
-                            
+                    database.CreateTable<Database_Words>();
+                    int search_occurrences = database.Query<Database_Words>("SELECT * FROM " + DataBase.tableDatabaseWords).Count;
+                    
                     if (search_occurrences == 0)
                         Toast.MakeText(this, "Words do not exist!", ToastLength.Short).Show();
                     else
                     {
-                        if (DataBase.tableDatabaseWords == "Database_My_Directly")
-                            database.Query<Database_My_Directly>("DELETE FROM Database_My_Directly WHERE enWords = ?", word.ToString());// поиск вхождения слова в БД
-                        else if (DataBase.tableDatabaseWords == "Database_PopularWords")
-                            database.Query<Database_PopularWords>("DELETE FROM Database_PopularWords WHERE enWords = ?", word.ToString());// поиск вхождения слова в БД
-                        else
-                           database.Query<DatabaseAnimals>("DELETE FROM DatabaseAnimals WHERE enWords = ?", word.ToString());// поиск вхождения слова в БД
-
+                        database.Query<Database_Words>("DELETE FROM " + DataBase.tableDatabaseWords + " WHERE enWords = ?", word.ToString());// поиск вхождения слова в БД
                         Toast.MakeText(this, "Word delete!", ToastLength.Short).Show();
                     }
                 });

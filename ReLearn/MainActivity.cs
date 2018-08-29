@@ -35,10 +35,6 @@ namespace ReLearn
             button_english.Click += GUI.Button_1_Click;
             button_flags.Click += GUI.Button_1_Click;
 
-
-           
-
-
             button_english.Click += delegate
             {
                 Intent intent_english = new Intent(this, typeof(English));

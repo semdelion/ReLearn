@@ -11,7 +11,7 @@
         android:background="?android:attr/colorPrimary"
         android:minWidth="25px"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:titleTextColor="?android:attr/actionMenuTextColor"
         android:titleTextAppearance="?android:attr/textSize"
         android:id="@+id/toolbarEnglishAdd" 
@@ -36,15 +36,16 @@
         android:textSize="30dp"
         android:textColor="#d7f8fe"
         android:layout_marginTop="34.6dp" />
-    <Button
-        android:text="Add"
-        android:layout_width="match_parent"
-        android:layout_height="60.0dp"
-        android:id="@+id/button_add_word"
-        android:layout_marginRight="40.0dp"
-        android:layout_marginLeft="40.0dp"
-        android:layout_marginTop="20.0dp"
-        android:textColor="#d7f8fe"
-        android:textSize="20dp"
-        android:background="@drawable/buttonBeforeClicking" />
+	<Button
+		android:text="Add"
+		android:layout_width="match_parent"
+		android:layout_height="60.0dp"
+		android:id="@+id/button_add_word"
+		android:layout_marginRight="40.0dp"
+		android:layout_marginLeft="40.0dp"
+		android:layout_marginTop="20.0dp"
+		android:textColor="#d7f8fe"
+		android:textSize="20dp"
+		android:background="@drawable/buttonBeforeClicking"
+		android:gravity="center" />
 </LinearLayout>

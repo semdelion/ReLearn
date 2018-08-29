@@ -35,16 +35,12 @@ namespace ReLearn
                 // получаем контекст приложения
                 Context context = Android.App.Application.Context;
                 var dbAssetStream = context.Assets.Open("Database/" + sqliteFilename);
-
                 var dbFileStream = new System.IO.FileStream(path, System.IO.FileMode.OpenOrCreate);
                 var buffer = new byte[1024];
-
-                int b = buffer.Length;
                 int length;
 
-                while ((length = dbAssetStream.Read(buffer, 0, b)) > 0)
+                while ((length = dbAssetStream.Read(buffer, 0, buffer.Length)) > 0)
                     dbFileStream.Write(buffer, 0, length);
-
                 dbFileStream.Flush();
                 dbFileStream.Close();
                 dbAssetStream.Close();
@@ -54,13 +50,13 @@ namespace ReLearn
         public static void Update_English_DB(int Month)
         {
             var database = DataBase.Connect(NameDatabase.English_DB); // подключение к БД
-            database.CreateTable<Database>();
-            var table = database.Table<Database>();
+            database.CreateTable<Database_Words>();
+            var table = database.Table<Database_Words>();
             foreach (var s in table) // UPDATE Database
                 if (Month != s.dateRepeat && s.numberLearn == 0)
                 {  // обновление БД, при условии, что месяцы не совпадают и numberLearn == 0. изменяем месяц на текущий и numberLearn++;                
-                    database.Query<Database>("UPDATE Database SET dateRepeat = " + Month + " WHERE enWords = ?", s.enWords);
-                    database.Query<Database>("UPDATE Database SET numberLearn = " + s.numberLearn + 1 + " WHERE enWords = ?", s.enWords);
+                    database.Query<Database_Words>("UPDATE Database SET dateRepeat = " + Month + " WHERE enWords = ?", s.enWords);
+                    database.Query<Database_Words>("UPDATE Database SET numberLearn = " + s.numberLearn + 1 + " WHERE enWords = ?", s.enWords);
                 }
         }
 
@@ -77,38 +73,9 @@ namespace ReLearn
                 }
         }
 
-        //public static void Add_new_Flag(StreamReader reader, SQLiteConnection databaseFlags)
-        //{
-        //    string str_line = reader.ReadLine();
-        //    var list_imageName_flag = str_line.Split('|');
-        //    var database_Flags = new Database_Flags
-        //    {
-        //        image_name = list_imageName_flag[0],
-        //        name_flag_en = list_imageName_flag[1],
-        //        name_flag_ru = list_imageName_flag[2],
-        //        numberLearn = 10,
-        //        dateRepeat = System.DateTime.Today.Month
-        //    };
-        //    databaseFlags.Insert(database_Flags);
-        //}
-
-        //public static void Add_Setting(StreamReader reader, SQLiteConnection databaseSetting)
-        //{
-        //    string str_line = reader.ReadLine();
-        //    var list_sett = str_line.Split('|');
-        //    var sett_bd = new Setting_Database
-        //    {
-        //        Setting_bd = list_sett[0],
-        //        Name_bd = list_sett[1],
-        //        full_or_empty = System.Convert.ToInt32(list_sett[2]),
-        //        language = System.Convert.ToInt32(list_sett[3])
-        //    };
-        //    databaseSetting.Insert(sett_bd);
-        //}
-
         public static void Add_English_word(string eng, string rus, SQLiteConnection database)
         {
-            var newWords = new Database
+            var newWords = new Database_Words
             {
                 enWords = eng.ToLower(),
                 ruWords = rus.ToLower(),
@@ -182,4 +149,152 @@ namespace ReLearn
             }
         }
     }
+
+    class DatabaseOfWords // Строка базы данных
+    {
+        public string enWords = null;
+        public string ruWords = null;
+        public int numberLearn = 0;
+        public int dateRepeat;
+
+        public DatabaseOfWords Add(string en, string ru, int n, int date)
+        {
+            this.enWords = en;
+            this.ruWords = ru;
+            this.numberLearn = n;
+            this.dateRepeat = date;
+            return this;
+        }
+    }
+
+    public class Words // Строка базы данных !!!!
+    {
+        public string enWords { get; set; }
+        public string ruWords { get; set; }
+        public int numberLearn { get; set; }
+        public int dateRepeat { get; set; }
+
+        public Words()
+        {
+            this.dateRepeat = 1;
+            this.enWords = "";
+            this.numberLearn = 6;
+            this.ruWords = "";
+        }
+
+        public Words(Words x)
+        {
+            this.dateRepeat = x.dateRepeat;
+            this.enWords = x.enWords;
+            this.numberLearn = x.numberLearn;
+            this.ruWords = x.ruWords;
+        }
+
+        public Words Find()
+        {
+            return this;
+        }
+    }
+
+    public class Database_Words //Класс для считывания базы данных English
+    {
+        [PrimaryKey, AutoIncrement, Column("_id")]
+        public int Id { get; set; }
+        public string enWords { get; set; }
+        public string ruWords { get; set; }
+        public int numberLearn { get; set; }
+        public int dateRepeat { get; set; }
+    }
+
+    public class Database_My_Directly : Database_Words { }
+    public class DatabaseHome : Database_Words { }
+    public class Database_PopularWords : Database_Words { }
+    public class DatabaseAnimals : Database_Words { }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    class DatabaseOfFlags // флаг 
+    {
+        public string image_name = null;
+        public string name_flag_en = null;
+        public string name_flag_ru = null;
+        public int numberLearn = 0;
+        public int dateRepeat = 0;
+        public DatabaseOfFlags Add(string image_n, string flag_en, string flag_ru, int nLearn, int date)
+        {
+            this.image_name = image_n;
+            this.name_flag_en = flag_en;
+            this.name_flag_ru = flag_ru;
+            this.numberLearn = nLearn;
+            this.dateRepeat = date;
+            return this;
+        }
+    }
+
+    public class Database_Flags // Класс для считывания базы данных flags
+    {
+        [PrimaryKey, AutoIncrement, Column("_id")]
+        public int Id { get; set; }
+        public string image_name { get; set; }
+        public string name_flag_en { get; set; }
+        public string name_flag_ru { get; set; }
+        public int numberLearn { get; set; }
+        public int dateRepeat { get; set; }
+    }
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    ///
+    class DatabaseOfSetting// настройки
+    {
+        public string Setting_bd = null;
+        public string Name_bd = null;
+        public int full_or_empty = 0;
+        public int language = 0;
+        public DatabaseOfSetting Add(string Set_bd, string N_bd, int f_or_e, int lan)
+        {
+            this.Setting_bd = Set_bd;
+            this.Name_bd = N_bd;
+            this.full_or_empty = f_or_e;
+            this.language = lan;
+            return this;
+        }
+    }
+    public class Setting_Database // Класс для считывания базы данных Stat
+    {
+        [PrimaryKey, AutoIncrement, Column("_id")]
+        public int Id { get; set; }
+        public string Setting_bd { get; set; }
+        public string Name_bd { get; set; }
+        public int full_or_empty { get; set; }
+        public int language { get; set; }
+    }
 }
+
+
+//public static void Add_new_Flag(StreamReader reader, SQLiteConnection databaseFlags)
+//{
+//    string str_line = reader.ReadLine();
+//    var list_imageName_flag = str_line.Split('|');
+//    var database_Flags = new Database_Flags
+//    {
+//        image_name = list_imageName_flag[0],
+//        name_flag_en = list_imageName_flag[1],
+//        name_flag_ru = list_imageName_flag[2],
+//        numberLearn = 10,
+//        dateRepeat = System.DateTime.Today.Month
+//    };
+//    databaseFlags.Insert(database_Flags);
+//}
+
+//public static void Add_Setting(StreamReader reader, SQLiteConnection databaseSetting)
+//{
+//    string str_line = reader.ReadLine();
+//    var list_sett = str_line.Split('|');
+//    var sett_bd = new Setting_Database
+//    {
+//        Setting_bd = list_sett[0],
+//        Name_bd = list_sett[1],
+//        full_or_empty = System.Convert.ToInt32(list_sett[2]),
+//        language = System.Convert.ToInt32(list_sett[3])
+//    };
+//    databaseSetting.Insert(sett_bd);
+//}

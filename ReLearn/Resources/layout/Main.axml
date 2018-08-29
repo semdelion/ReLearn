@@ -12,12 +12,12 @@
         android:background="?android:attr/colorPrimary"
         android:minWidth="25px"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:titleTextColor="?android:attr/actionMenuTextColor"
         android:titleTextAppearance="?android:attr/textSize"
         android:id="@+id/toolbarEnglishLearn" 
 	/>
-	<Button 
+	<Button
 		android:text="Language"
 		android:layout_width="match_parent"
 		android:layout_height="80dp"
@@ -29,7 +29,8 @@
 		android:background="@drawable/buttonBeforeClicking"
 		android:textColor="#d7f8fe"
 		android:textSize="20dp"
-		android:height="@android:dimen/notification_large_icon_width" 
+		android:height="@android:dimen/notification_large_icon_width"
+		android:gravity="center" 
 	/>
 	<Button
 		android:text="Flags"
@@ -42,5 +43,6 @@
 		android:background="@drawable/buttonBeforeClicking"
 		android:textColor="#d7f8fe"
 		android:textSize="20dp"
-		android:height="@android:dimen/notification_large_icon_width" />
+		android:height="@android:dimen/notification_large_icon_width"
+		android:gravity="center" />
 </LinearLayout>
