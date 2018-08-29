@@ -24,6 +24,7 @@ namespace ReLearn
         // ArrayAdapter adapter;
         CustomAdapter adapter;
         List<Words> dataBase;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -35,22 +36,49 @@ namespace ReLearn
             ActionBar.SetDisplayHomeAsUpEnabled(true); // отображаем кнопку домой
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-            listViewDel = FindViewById<ListView>(Resource.Id.listViewDelete);        
+            listViewDel = FindViewById<ListView>(Resource.Id.listViewDelete);    
+            
             var db = DataBase.Connect(NameDatabase.English_DB);
-            db.CreateTable<Database>();
             dataBase = new List<Words>();
-            var table = db.Table<Database>();
-            foreach (var word in table)
-            { // создание БД в виде  List<Words>
-                Words w = new Words()
-                {
-                    enWords = word.enWords,
-                    ruWords = word.ruWords,
-                    numberLearn = word.numberLearn,
-                    dateRepeat = word.dateRepeat
-                };
-                dataBase.Add(w);                
+
+            if (DataBase.tableDatabaseWords == "Database_My_Directly")
+            {
+                db.CreateTable<Database_My_Directly>();
+                var table = db.Table<Database_My_Directly>();
+                foreach (var word in table)
+                { // создание БД в виде  List<DatabaseOfWords>
+                    Words w = new Words()
+                    {
+                        enWords = word.enWords,
+                        ruWords = word.ruWords,
+                        numberLearn = word.numberLearn,
+                        dateRepeat = word.dateRepeat
+                    };
+                    dataBase.Add(w);
+                }
             }
+            else if (DataBase.tableDatabaseWords == "Database_PopularWords")
+            {
+                db.CreateTable<Database_PopularWords>();
+                var table = db.Table<Database_PopularWords>();
+                foreach (var word in table)
+                { // создание БД в виде  List<DatabaseOfWords>
+                    Words w = new Words()
+                    {
+                        enWords = word.enWords,
+                        ruWords = word.ruWords,
+                        numberLearn = word.numberLearn,
+                        dateRepeat = word.dateRepeat
+                    };
+                    dataBase.Add(w);
+                }
+            }
+            else
+            {
+                db.CreateTable<DatabaseAnimals>();
+                db.Table<DatabaseAnimals>();
+            }
+
 
             dataBase.Sort((x, y) => x.enWords.CompareTo(y.enWords));
             //dataBase = dataBase.OrderBy(o => o.enWords).ToList();         
@@ -98,14 +126,37 @@ namespace ReLearn
                     dataBase.Remove(words);
                     adapter = new CustomAdapter(this, /*Android.Resource.Layout.SimpleListItem1,*/ dataBase);
                     listViewDel.Adapter = adapter;
+
                     var database = DataBase.Connect(NameDatabase.English_DB);
-                    database.CreateTable<Database>();
-                    var search_occurrences = database.Query<Database>("SELECT * FROM Database WHERE enWords = ?", word.ToString());// поиск вхождения слова в БД              
-                    if (search_occurrences.Count == 0)
+                    int search_occurrences = 0;              
+
+                    if (DataBase.tableDatabaseWords == "Database_My_Directly")
+                    {
+                        database.CreateTable<Database_My_Directly>();
+                        search_occurrences = database.Query<Database_My_Directly>("SELECT * FROM Database_My_Directly WHERE enWords = ?", word.ToString()).Count;// поиск вхождения слова в БД
+                    }
+                    else if (DataBase.tableDatabaseWords == "Database_PopularWords")
+                    {
+                        database.CreateTable<Database_PopularWords>();
+                        search_occurrences = database.Query<Database_PopularWords>("SELECT * FROM Database_PopularWords WHERE enWords = ?", word.ToString()).Count;// поиск вхождения слова в БД
+                    }
+                    else
+                    {
+                        database.CreateTable<DatabaseAnimals>();
+                        search_occurrences = database.Query<DatabaseAnimals>("SELECT * FROM DatabaseAnimals WHERE enWords = ?", word.ToString()).Count;// поиск вхождения слова в БД
+                    }
+                            
+                    if (search_occurrences == 0)
                         Toast.MakeText(this, "Words do not exist!", ToastLength.Short).Show();
                     else
                     {
-                        database.Query<Database>("DELETE FROM Database WHERE enWords = ?", word.ToString());
+                        if (DataBase.tableDatabaseWords == "Database_My_Directly")
+                            database.Query<Database_My_Directly>("DELETE FROM Database_My_Directly WHERE enWords = ?", word.ToString());// поиск вхождения слова в БД
+                        else if (DataBase.tableDatabaseWords == "Database_PopularWords")
+                            database.Query<Database_PopularWords>("DELETE FROM Database_PopularWords WHERE enWords = ?", word.ToString());// поиск вхождения слова в БД
+                        else
+                           database.Query<DatabaseAnimals>("DELETE FROM DatabaseAnimals WHERE enWords = ?", word.ToString());// поиск вхождения слова в БД
+
                         Toast.MakeText(this, "Word delete!", ToastLength.Short).Show();
                     }
                 });

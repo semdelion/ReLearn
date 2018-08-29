@@ -81,14 +81,29 @@ namespace ReLearn
         }
         public void Update_Database(List<Statistics_learn> listdataBase) // изменение у бвзы данных элемента numberLearn
         {
-            string databasePath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), NameDatabase.English_DB);
-            var database = new SQLiteConnection(databasePath); 
-            database.CreateTable<Database>();
+            var database = DataBase.Connect(NameDatabase.English_DB);
             int month = DateTime.Today.Month;
-            for (int i = 0; i < listdataBase.Count; i++)
-            {               
-                database.Query<Database>("UPDATE Database SET dateRepeat = " + month + " WHERE enWords = ?", listdataBase[i].Word);
-                database.Query<Database>("UPDATE Database SET numberLearn = " + listdataBase[i].Learn + " WHERE enWords = ?", listdataBase[i].Word);
+            if (DataBase.tableDatabaseWords == "Database_My_Directly")
+            {
+                database.CreateTable<Database_My_Directly>();
+                for (int i = 0; i < listdataBase.Count; i++)
+                {
+                    database.Query<Database_My_Directly>("UPDATE Database_My_Directly SET dateRepeat = " + month + " WHERE enWords = ?", listdataBase[i].Word);
+                    database.Query<Database_My_Directly>("UPDATE Database_My_Directly SET numberLearn = " + listdataBase[i].Learn + " WHERE enWords = ?", listdataBase[i].Word);
+                }
+            }
+            else if (DataBase.tableDatabaseWords == "Database_PopularWords")
+            {
+                database.CreateTable<Database_PopularWords>();
+                for (int i = 0; i < listdataBase.Count; i++)
+                {
+                    database.Query<Database_PopularWords>("UPDATE Database_PopularWords SET dateRepeat = " + month + " WHERE enWords = ?", listdataBase[i].Word);
+                    database.Query<Database_PopularWords>("UPDATE Database_PopularWords SET numberLearn = " + listdataBase[i].Learn + " WHERE enWords = ?", listdataBase[i].Word);
+                }
+            }
+            else
+            {
+                database.CreateTable<DatabaseAnimals>();                
             }
         }
 
@@ -129,16 +144,40 @@ namespace ReLearn
             try
             {
                 var db = DataBase.Connect(NameDatabase.English_DB);
-                db.CreateTable<Database>();
                 List<DatabaseOfWords> dataBase = new List<DatabaseOfWords>();
-                var table = db.Table<Database>();
-                foreach (var word in table){ // создание БД в виде  List<DatabaseOfWords>
-                    DatabaseOfWords w = new DatabaseOfWords();
-                    if (word.numberLearn != 0)
-                    {
-                        w.Add(word.enWords, word.ruWords, word.numberLearn, word.dateRepeat);
-                        dataBase.Add(w);
-                    }    
+
+                if (DataBase.tableDatabaseWords == "Database_My_Directly")
+                {
+                    db.CreateTable<Database_My_Directly>();
+                    var table = db.Table<Database_My_Directly>();
+                    foreach (var word in table)
+                    { // создание БД в виде  List<DatabaseOfWords>
+                        DatabaseOfWords w = new DatabaseOfWords();
+                        if (word.numberLearn != 0)
+                        {
+                            w.Add(word.enWords, word.ruWords, word.numberLearn, word.dateRepeat);
+                            dataBase.Add(w);
+                        }
+                    }
+                }
+                else if (DataBase.tableDatabaseWords == "Database_PopularWords")
+                {
+                    db.CreateTable<Database_PopularWords>();
+                    var table = db.Table<Database_PopularWords>();
+                    foreach (var word in table)
+                    { // создание БД в виде  List<DatabaseOfWords>
+                        DatabaseOfWords w = new DatabaseOfWords();
+                        if (word.numberLearn != 0)
+                        {
+                            w.Add(word.enWords, word.ruWords, word.numberLearn, word.dateRepeat);
+                            dataBase.Add(w);
+                        }
+                    }
+                }
+                else
+                {
+                    db.CreateTable<DatabaseAnimals>();
+                    db.Table<DatabaseAnimals>();
                 }
 
                 System.Random rnd = new System.Random(unchecked((int)(DateTime.Now.Ticks)));

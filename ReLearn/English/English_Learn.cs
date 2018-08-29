@@ -84,9 +84,7 @@ namespace ReLearn
             catch{
                 Toast.MakeText(this, "Error : can't connect to database of Language in Learn", ToastLength.Long).Show();
             }
-        }
-
-      
+        }     
 
         public override bool OnOptionsItemSelected(IMenuItem item)
         {

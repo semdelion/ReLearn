@@ -35,10 +35,10 @@ namespace ReLearn
             try
             {
                 var database = DataBase.Connect(NameDatabase.English_DB);
-                database.CreateTable<Database>();
+                database.CreateTable<Database_My_Directly>();
                 button_add_word.Click += (s, e) =>
                 { // добавление элемента в БД
-                    var search_occurrences = database.Query<Database>("SELECT * FROM Database WHERE enWords = ?", editText_foreign_word.Text);// поиск вхождения слова в БД
+                    var search_occurrences = database.Query<Database_My_Directly>("SELECT * FROM Database_My_Directly WHERE enWords = ?", editText_foreign_word.Text);// поиск вхождения слова в БД
                     if (editText_foreign_word.Text == "" || editText_translation_word.Text == "")
                         Toast.MakeText(this, "Enter word!", ToastLength.Short).Show();
                     else if (search_occurrences.Count != 0)

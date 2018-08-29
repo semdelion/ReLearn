@@ -19,7 +19,13 @@ namespace ReLearn
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Main);
             Window.SetBackgroundDrawable(GetDrawable(Resource.Drawable.backgroundMain));
-            DataBase.Check_and_update_database();
+
+            DataBase.GetDatabasePath(NameDatabase.English_DB);
+            DataBase.GetDatabasePath(NameDatabase.Flags_DB);
+            DataBase.GetDatabasePath(NameDatabase.Statistics);
+
+
+            //DataBase.Check_and_update_database();
 
             button_english = FindViewById<Button>(Resource.Id.button_english);
             button_flags = FindViewById<Button>(Resource.Id.button_flags);
@@ -28,6 +34,10 @@ namespace ReLearn
             button_flags.Touch += GUI.Button_Touch;
             button_english.Click += GUI.Button_1_Click;
             button_flags.Click += GUI.Button_1_Click;
+
+
+           
+
 
             button_english.Click += delegate
             {
