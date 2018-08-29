@@ -35,17 +35,24 @@ namespace ReLearn
             try
             {
                 var database = DataBase.Connect(NameDatabase.English_DB);
-                database.CreateTable<Database_My_Directly>();
+                database.CreateTable<Database_Words>();
                 button_add_word.Click += (s, e) =>
                 { // добавление элемента в БД
-                    var search_occurrences = database.Query<Database_My_Directly>("SELECT * FROM Database_My_Directly WHERE enWords = ?", editText_foreign_word.Text);// поиск вхождения слова в БД
+                    var search_occurrences = database.Query<Database_Words>("SELECT * FROM Database_My_Directly WHERE enWords = ?", editText_foreign_word.Text);// поиск вхождения слова в БД
                     if (editText_foreign_word.Text == "" || editText_translation_word.Text == "")
                         Toast.MakeText(this, "Enter word!", ToastLength.Short).Show();
                     else if (search_occurrences.Count != 0)
                         Toast.MakeText(this, "The word exists!", ToastLength.Short).Show();
                     else
                     {
-                        DataBase.Add_English_word(editText_foreign_word.Text, editText_translation_word.Text, database);
+                        var newWords = new Database_Words
+                        {
+                            enWords = editText_foreign_word.Text.ToLower(),
+                            ruWords = editText_translation_word.Text.ToLower(),
+                            numberLearn = Magic_constants.numberLearn,
+                            dateRepeat = System.DateTime.Today.Month
+                        };
+                        database.Insert(newWords);
                         Toast.MakeText(this, "Word added!", ToastLength.Short).Show();
                     }
                     editText_foreign_word.Text = "";

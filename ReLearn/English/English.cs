@@ -52,7 +52,7 @@ namespace ReLearn
                 {
                     var database = DataBase.Connect(NameDatabase.English_DB);
                     database.CreateTable<Database_Words>();
-                    int search_occurrences = database.Query<Database_Words>("SELECT * FROM " + DataBase.tableDatabaseWords).Count;
+                    int search_occurrences = database.Query<Database_Words>("SELECT * FROM " + DataBase.Table_Name).Count;
                     if (search_occurrences != 0)
                     {
                         Intent intent_english_learn = new Intent(this, typeof(English_Learn));
@@ -69,10 +69,10 @@ namespace ReLearn
                 try {
 
                     var database = DataBase.Connect(NameDatabase.English_DB);
-                    database.CreateTable<Database_My_Directly>();
-                    var search_occurrences = database.Query<Database_My_Directly>("SELECT * FROM Database_My_Directly");// поиск вхождения слова в БД
-                    var search_numberlearn_null = database.Query<Database_My_Directly>("SELECT * FROM Database_My_Directly WHERE numberLearn = 0");
-                    if (search_occurrences.Count == search_numberlearn_null.Count)
+                    database.CreateTable<Database_Words>();
+                    var search_occurrences = database.Query<Database_Words>("SELECT * FROM  " + DataBase.Table_Name);// поиск вхождения слова в БД
+                    var search_numberlearn_null = database.Query<Database_Words>("SELECT * FROM  " + DataBase.Table_Name + " WHERE numberLearn = 0").Count;
+                    if (search_occurrences.Count == search_numberlearn_null)
                         Toast.MakeText(this, "You repeated all the words", ToastLength.Short).Show();
                     else if (search_occurrences.Count != 0){
                         Intent intent_english_repeat = new Intent(this, typeof(English_Repeat));
@@ -97,12 +97,12 @@ namespace ReLearn
             int id = item.ItemId;
             if (id == Resource.Id.menuDatabase_MyDictionary)
             {
-                DataBase.tableDatabaseWords = "Database_My_Directly";
+                DataBase.Table_Name = "Database_My_Directly";
                 return true;
             }
             if (id == Resource.Id.menuDatabase_PopularWords)
             {
-                DataBase.tableDatabaseWords = "Database_PopularWords";
+                DataBase.Table_Name = "Database_PopularWords";
                 return true;
             }
             if (id == Resource.Id.Stats){

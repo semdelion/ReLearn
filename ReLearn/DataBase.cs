@@ -17,7 +17,7 @@ namespace ReLearn
 {
     public static class DataBase
     {
-        public static string tableDatabaseWords = "Database_My_Directly";
+        public static string Table_Name = "Database_My_Directly";
 
         public static SQLiteConnection Connect(string nameDB)
         {
@@ -71,18 +71,6 @@ namespace ReLearn
                     databaseFlags.Query<Database_Flags>("UPDATE Database_Flags SET dateRepeat = " + Month + " WHERE image_name = ?", s.image_name);
                     databaseFlags.Query<Database_Flags>("UPDATE Database_Flags SET numberLearn = " + s.numberLearn + 1 + " WHERE image_name = ?", s.image_name);
                 }
-        }
-
-        public static void Add_English_word(string eng, string rus, SQLiteConnection database)
-        {
-            var newWords = new Database_Words
-            {
-                enWords = eng.ToLower(),
-                ruWords = rus.ToLower(),
-                numberLearn = Magic_constants.numberLearn,
-                dateRepeat = System.DateTime.Today.Month
-            };
-            database.Insert(newWords);
         }
 
         public static void Check_and_update_database()
@@ -150,52 +138,6 @@ namespace ReLearn
         }
     }
 
-    class DatabaseOfWords // Строка базы данных
-    {
-        public string enWords = null;
-        public string ruWords = null;
-        public int numberLearn = 0;
-        public int dateRepeat;
-
-        public DatabaseOfWords Add(string en, string ru, int n, int date)
-        {
-            this.enWords = en;
-            this.ruWords = ru;
-            this.numberLearn = n;
-            this.dateRepeat = date;
-            return this;
-        }
-    }
-
-    public class Words // Строка базы данных !!!!
-    {
-        public string enWords { get; set; }
-        public string ruWords { get; set; }
-        public int numberLearn { get; set; }
-        public int dateRepeat { get; set; }
-
-        public Words()
-        {
-            this.dateRepeat = 1;
-            this.enWords = "";
-            this.numberLearn = 6;
-            this.ruWords = "";
-        }
-
-        public Words(Words x)
-        {
-            this.dateRepeat = x.dateRepeat;
-            this.enWords = x.enWords;
-            this.numberLearn = x.numberLearn;
-            this.ruWords = x.ruWords;
-        }
-
-        public Words Find()
-        {
-            return this;
-        }
-    }
-
     public class Database_Words //Класс для считывания базы данных English
     {
         [PrimaryKey, AutoIncrement, Column("_id")]
@@ -204,13 +146,28 @@ namespace ReLearn
         public string ruWords { get; set; }
         public int numberLearn { get; set; }
         public int dateRepeat { get; set; }
+
+        public Database_Words()
+        {
+            this.dateRepeat = 1;
+            this.enWords = "";
+            this.numberLearn = 6;
+            this.ruWords = "";
+        }
+
+        public Database_Words(Database_Words x)
+        {
+            this.dateRepeat = x.dateRepeat;
+            this.enWords = x.enWords;
+            this.numberLearn = x.numberLearn;
+            this.ruWords = x.ruWords;
+        }
+
+        public Database_Words Find()
+        {
+            return this;
+        }
     }
-
-    public class Database_My_Directly : Database_Words { }
-    public class DatabaseHome : Database_Words { }
-    public class Database_PopularWords : Database_Words { }
-    public class DatabaseAnimals : Database_Words { }
-
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     class DatabaseOfFlags // флаг 

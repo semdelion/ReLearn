@@ -27,7 +27,7 @@ namespace ReLearn
         }
         private void SpeakOut(string text) => tts.Speak(text, QueueMode.Flush, null, null);
 
-        void Random_Button(Button B1, Button B2, Button B3, Button B4, List<DatabaseOfWords> dataBase, int i)   //загружаем варианты ответа в текст кнопок
+        void Random_Button(Button B1, Button B2, Button B3, Button B4, List<Database_Words> dataBase, int i)   //загружаем варианты ответа в текст кнопок
         {
             System.Random rand = new System.Random(unchecked((int)(DateTime.Now.Ticks)));
             B1.Text = dataBase[i].ruWords;
@@ -35,7 +35,7 @@ namespace ReLearn
             B3.Text = dataBase[rand.Next(dataBase.Count)].ruWords;
             B4.Text = dataBase[rand.Next(dataBase.Count)].ruWords;
         }
-        void Answer(Button B1, Button B2, Button B3, Button B4,Button BNext, List<DatabaseOfWords> dataBase, List<Statistics_learn> Stats,int rand_word ) // подсвечиваем правильный ответ, если мы ошиблись подсвечиваем неправвильный и паравильный 
+        void Answer(Button B1, Button B2, Button B3, Button B4,Button BNext, List<Database_Words> dataBase, List<Statistics_learn> Stats,int rand_word ) // подсвечиваем правильный ответ, если мы ошиблись подсвечиваем неправвильный и паравильный 
         {
             GUI.Button_enable(B1, B2, B3, B4, BNext);
             if (B1.Text == dataBase[rand_word].ruWords){
@@ -56,7 +56,7 @@ namespace ReLearn
             }
         }
 
-        void Function_Next_Test(Button B1, Button B2, Button B3, Button B4, Button BNext, TextView textView, List<DatabaseOfWords> dataBase,int rand_word,int i_rand) //новый тест
+        void Function_Next_Test(Button B1, Button B2, Button B3, Button B4, Button BNext, TextView textView, List<Database_Words> dataBase,int rand_word,int i_rand) //новый тест
         {
             textView.Text = dataBase[rand_word].enWords.ToString();
             GUI.Button_ebabled(BNext);
@@ -83,27 +83,11 @@ namespace ReLearn
         {
             var database = DataBase.Connect(NameDatabase.English_DB);
             int month = DateTime.Today.Month;
-            if (DataBase.tableDatabaseWords == "Database_My_Directly")
+            database.CreateTable<Database_Words>();
+            for (int i = 0; i < listdataBase.Count; i++)
             {
-                database.CreateTable<Database_My_Directly>();
-                for (int i = 0; i < listdataBase.Count; i++)
-                {
-                    database.Query<Database_My_Directly>("UPDATE Database_My_Directly SET dateRepeat = " + month + " WHERE enWords = ?", listdataBase[i].Word);
-                    database.Query<Database_My_Directly>("UPDATE Database_My_Directly SET numberLearn = " + listdataBase[i].Learn + " WHERE enWords = ?", listdataBase[i].Word);
-                }
-            }
-            else if (DataBase.tableDatabaseWords == "Database_PopularWords")
-            {
-                database.CreateTable<Database_PopularWords>();
-                for (int i = 0; i < listdataBase.Count; i++)
-                {
-                    database.Query<Database_PopularWords>("UPDATE Database_PopularWords SET dateRepeat = " + month + " WHERE enWords = ?", listdataBase[i].Word);
-                    database.Query<Database_PopularWords>("UPDATE Database_PopularWords SET numberLearn = " + listdataBase[i].Learn + " WHERE enWords = ?", listdataBase[i].Word);
-                }
-            }
-            else
-            {
-                database.CreateTable<DatabaseAnimals>();                
+                database.Query<Database_Words>("UPDATE " + DataBase.Table_Name + " SET dateRepeat = " + month + " WHERE enWords = ?", listdataBase[i].Word);
+                database.Query<Database_Words>("UPDATE " + DataBase.Table_Name + " SET numberLearn = " + listdataBase[i].Learn + " WHERE enWords = ?", listdataBase[i].Word);
             }
         }
 
@@ -144,41 +128,7 @@ namespace ReLearn
             try
             {
                 var db = DataBase.Connect(NameDatabase.English_DB);
-                List<DatabaseOfWords> dataBase = new List<DatabaseOfWords>();
-
-                if (DataBase.tableDatabaseWords == "Database_My_Directly")
-                {
-                    db.CreateTable<Database_My_Directly>();
-                    var table = db.Table<Database_My_Directly>();
-                    foreach (var word in table)
-                    { // создание БД в виде  List<DatabaseOfWords>
-                        DatabaseOfWords w = new DatabaseOfWords();
-                        if (word.numberLearn != 0)
-                        {
-                            w.Add(word.enWords, word.ruWords, word.numberLearn, word.dateRepeat);
-                            dataBase.Add(w);
-                        }
-                    }
-                }
-                else if (DataBase.tableDatabaseWords == "Database_PopularWords")
-                {
-                    db.CreateTable<Database_PopularWords>();
-                    var table = db.Table<Database_PopularWords>();
-                    foreach (var word in table)
-                    { // создание БД в виде  List<DatabaseOfWords>
-                        DatabaseOfWords w = new DatabaseOfWords();
-                        if (word.numberLearn != 0)
-                        {
-                            w.Add(word.enWords, word.ruWords, word.numberLearn, word.dateRepeat);
-                            dataBase.Add(w);
-                        }
-                    }
-                }
-                else
-                {
-                    db.CreateTable<DatabaseAnimals>();
-                    db.Table<DatabaseAnimals>();
-                }
+                var dataBase = db.Query<Database_Words>("SELECT * FROM " + DataBase.Table_Name);
 
                 System.Random rnd = new System.Random(unchecked((int)(DateTime.Now.Ticks)));
                 rand_word = rnd.Next(dataBase.Count); //ПЕРЕДЕЛАЙ сделать защиту от дурака, если все элементы базы имеют numberLearn = 0

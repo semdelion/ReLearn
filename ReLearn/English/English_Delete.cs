@@ -23,7 +23,7 @@ namespace ReLearn
         SearchView _searchView;
         // ArrayAdapter adapter;
         CustomAdapter adapter;
-        List<Words> dataBase;
+        List<Database_Words> dataBase;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -39,51 +39,7 @@ namespace ReLearn
             listViewDel = FindViewById<ListView>(Resource.Id.listViewDelete);    
             
             var db = DataBase.Connect(NameDatabase.English_DB);
-            //var dataBase = db.Query<Database_Words>("SELECT * FROM " + DataBase.tableDatabaseWords);
-
-            dataBase = new List<Words>();
-
-
-
-
-            if (DataBase.tableDatabaseWords == "Database_My_Directly")
-            {
-                db.CreateTable<Database_My_Directly>();
-                var table = db.Table<Database_My_Directly>();
-                foreach (var word in table)
-                { // создание БД в виде  List<DatabaseOfWords>
-                    Words w = new Words()
-                    {
-                        enWords = word.enWords,
-                        ruWords = word.ruWords,
-                        numberLearn = word.numberLearn,
-                        dateRepeat = word.dateRepeat
-                    };
-                    dataBase.Add(w);
-                }
-            }
-            else if (DataBase.tableDatabaseWords == "Database_PopularWords")
-            {
-                db.CreateTable<Database_PopularWords>();
-                var table = db.Table<Database_PopularWords>();
-                foreach (var word in table)
-                { // создание БД в виде  List<DatabaseOfWords>
-                    Words w = new Words()
-                    {
-                        enWords = word.enWords,
-                        ruWords = word.ruWords,
-                        numberLearn = word.numberLearn,
-                        dateRepeat = word.dateRepeat
-                    };
-                    dataBase.Add(w);
-                }
-            }
-            else
-            {
-                db.CreateTable<DatabaseAnimals>();
-                db.Table<DatabaseAnimals>();
-            }
-
+            dataBase = db.Query<Database_Words>("SELECT * FROM " + DataBase.Table_Name);
 
             dataBase.Sort((x, y) => x.enWords.CompareTo(y.enWords));
             //dataBase = dataBase.OrderBy(o => o.enWords).ToList();         
@@ -103,7 +59,7 @@ namespace ReLearn
                     listViewDel.Adapter = new CustomAdapter(this, dataBase);
                 else
                 {
-                    List<Words> FD = new List<Words>();
+                    List<Database_Words> FD = new List<Database_Words>();
                     foreach (var word in dataBase)
                         if (word.enWords.Substring(0, ((e.NewText.Length > word.enWords.Length) ? 0 : e.NewText.Length)) == e.NewText)
                             FD.Add(word);
@@ -114,7 +70,7 @@ namespace ReLearn
 
             listViewDel.ItemClick += (s, args) => {
                 var word = listViewDel.Adapter.GetItem(args.Position);
-                Words words = new Words();
+                Database_Words words = new Database_Words();
                 foreach (var item in dataBase)
                     if (item.enWords == word.ToString())
                     {
@@ -134,13 +90,13 @@ namespace ReLearn
 
                     var database = DataBase.Connect(NameDatabase.English_DB);
                     database.CreateTable<Database_Words>();
-                    int search_occurrences = database.Query<Database_Words>("SELECT * FROM " + DataBase.tableDatabaseWords).Count;
+                    int search_occurrences = database.Query<Database_Words>("SELECT * FROM " + DataBase.Table_Name).Count;
                     
                     if (search_occurrences == 0)
                         Toast.MakeText(this, "Words do not exist!", ToastLength.Short).Show();
                     else
                     {
-                        database.Query<Database_Words>("DELETE FROM " + DataBase.tableDatabaseWords + " WHERE enWords = ?", word.ToString());// поиск вхождения слова в БД
+                        database.Query<Database_Words>("DELETE FROM " + DataBase.Table_Name + " WHERE enWords = ?", word.ToString());// поиск вхождения слова в БД
                         Toast.MakeText(this, "Word delete!", ToastLength.Short).Show();
                     }
                 });

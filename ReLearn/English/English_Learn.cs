@@ -30,7 +30,7 @@ namespace ReLearn
             try
             {
                 var db = DataBase.Connect(NameDatabase.English_DB);
-                var dataBase = db.Query<Database_Words>("SELECT * FROM " + DataBase.tableDatabaseWords);
+                var dataBase = db.Query<Database_Words>("SELECT * FROM " + DataBase.Table_Name);
 
                 Random rnd = new Random(unchecked((int)(DateTime.Now.Ticks)));
                 int rand_word = 0;
