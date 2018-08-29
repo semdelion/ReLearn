@@ -68,6 +68,11 @@ namespace ReLearn
         public int numberLearn { get; set; }
         public int dateRepeat { get; set; }
     }
+
+    public class Database_My_Directly : Database { }
+    public class DatabaseHome : Database { }
+    public class Database_PopularWords : Database { }
+    public class DatabaseAnimals : Database { }
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     class DatabaseOfFlags // флаг 
@@ -99,11 +104,11 @@ namespace ReLearn
     }
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     class DatabaseOfSetting// настройки
-    {      
+    {
         public string Setting_bd = null;
         public string Name_bd = null;
         public int full_or_empty = 0;
-        public int language = 0;      
+        public int language = 0;
         public DatabaseOfSetting Add(string Set_bd, string N_bd, int f_or_e, int lan)
         {
             this.Setting_bd = Set_bd;
@@ -155,20 +160,23 @@ namespace ReLearn
         public int False { get; set; }
         public DateTime DateOfTesting { get; set; }
     }
+
+    class Database_Stat_My_Directly : Database_Stat { }
+    class Database_Stat_PopularWords : Database_Stat{ }
+    class Database_Stat_Flags : Database_Stat { }
+
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     public static class NameDatabase // Имена баз данных
     {
-        public static string Statistics = "database_english_stat.db3";
+        public static string Statistics = "database_stat.db3";
 
-        public static string English_DB = "database.db3";
+        public static string English_DB = "database_words.db3";
+        public static string Flags_DB = "database_flags.db3";
+
         public static string English_Stat_DB = "database_english_stat.db3";
 
-        public static string Flags_DB = "database_flags_en_ru.db3";
+        
         public static string Flags_DB_Stat_DB = "database_flags_stat.db3";
-
-        public static string Flags_DB_short = "database_flags_short_en_ru.db3";
-        public static string Flags_DB_long = "database_flags_en_ru.db3";
-
         public static string Setting_DB = "Setting_Database.db3";
     }
 

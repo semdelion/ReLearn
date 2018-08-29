@@ -1,17 +1,49 @@
-﻿<?xml version="1.0" encoding="utf-8" ?> 
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <menu
 xmlns:android ="http://schemas.android.com/apk/res/android"
 xmlns:tools ="http://schemas.android.com/tools"
 tools:context=".MainActivity"
->        
-  <item 
+>
+  <item
+ android:id="@+id/menuDatabase"
+ android:icon="@+drawable/settings"
+ android:showAsAction="always"
+ android:title="main">
+    <menu>
+      <item
+        android:id="@+id/menuDatabase_PopularWords"
+        android:orderInCategory="103"
+        android:showAsAction="always"
+        android:title="Popular words"
+       />
+      <item
+        android:id="@+id/menuDatabase_Animals"
+        android:orderInCategory="102"
+        android:showAsAction="always"
+        android:title="Animals"
+       />
+      <item
+       android:id="@+id/menuDatabase_Home"
+       android:orderInCategory="101"
+       android:showAsAction="always"
+       android:title="Home"
+       />
+      <item
+        android:id="@+id/menuDatabase_MyDictionary"
+        android:orderInCategory="100"
+        android:showAsAction="always"
+        android:title="My dictionary"
+      />
+    </menu>
+  </item>
+  <item
   android:id="@+id/settings"
   android:icon="@+drawable/settings"
   android:showAsAction="always"
   android:title="Delete a word">
     <menu>
-      <item       
-        android:id="@+id/Deleteword"     
+      <item
+        android:id="@+id/Deleteword"
         android:orderInCategory="101"
         android:showAsAction="always"
         android:title="View dictionary"
@@ -23,5 +55,5 @@ tools:context=".MainActivity"
         android:title="Statistic"
        />
     </menu>
-    </item>
+  </item>
 </menu>

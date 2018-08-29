@@ -48,10 +48,29 @@ namespace ReLearn
             {
                 try
                 {
+                    //var database = DataBase.Connect(NameDatabase.English_DB);
+                    //database.CreateTable<Database>();
+                    //var search_occurrences = database.Query<Database>("SELECT * FROM Database");// поиск вхождения слова в БД
                     var database = DataBase.Connect(NameDatabase.English_DB);
-                    database.CreateTable<Database>();
-                    var search_occurrences = database.Query<Database>("SELECT * FROM Database");// поиск вхождения слова в БД
-                    if (search_occurrences.Count != 0)
+                    int search_occurrences = 0;
+                    if (DataBase.tableDatabaseWords == "Database_My_Directly")
+                    {
+                        database.CreateTable<Database_My_Directly>();
+                        search_occurrences = database.Query<Database_My_Directly> ("SELECT * FROM Database_My_Directly").Count;// поиск вхождения слова в БД
+                    }
+                    else if (DataBase.tableDatabaseWords == "Database_PopularWords")
+                    {
+                        database.CreateTable<Database_PopularWords>();
+                        search_occurrences = database.Query<Database_PopularWords>("SELECT * FROM Database_PopularWords").Count;// поиск вхождения слова в БД
+                    }
+                    else
+                    {
+                        database.CreateTable<DatabaseAnimals>();
+                        search_occurrences = database.Query<DatabaseAnimals>("SELECT * FROM DatabaseAnimals").Count;// поиск вхождения слова в БД
+                    }
+
+
+                    if (search_occurrences != 0)
                     {
                         Intent intent_english_learn = new Intent(this, typeof(English_Learn));
                         StartActivity(intent_english_learn);
@@ -66,9 +85,12 @@ namespace ReLearn
             {
                 try {
                     var database = DataBase.Connect(NameDatabase.English_DB);
-                    database.CreateTable<Database>();
-                    var search_occurrences = database.Query<Database>("SELECT * FROM Database");// поиск вхождения слова в БД
-                    var search_numberlearn_null = database.Query<Database>("SELECT * FROM Database WHERE numberLearn = 0");
+                    //database.CreateTable<Database>();
+                    //var search_occurrences = database.Query<Database>("SELECT * FROM Database");// поиск вхождения слова в БД
+                    //var search_numberlearn_null = database.Query<Database>("SELECT * FROM Database WHERE numberLearn = 0");
+                    database.CreateTable<Database_My_Directly>();
+                    var search_occurrences = database.Query<Database_My_Directly>("SELECT * FROM Database_My_Directly");// поиск вхождения слова в БД
+                    var search_numberlearn_null = database.Query<Database_My_Directly>("SELECT * FROM Database_My_Directly WHERE numberLearn = 0");
                     if (search_occurrences.Count == search_numberlearn_null.Count)
                         Toast.MakeText(this, "You repeated all the words", ToastLength.Short).Show();
                     else if (search_occurrences.Count != 0){
@@ -89,7 +111,19 @@ namespace ReLearn
 
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
+
+            
             int id = item.ItemId;
+            if (id == Resource.Id.menuDatabase_MyDictionary)
+            {
+                DataBase.tableDatabaseWords = "Database_My_Directly";
+                return true;
+            }
+            if (id == Resource.Id.menuDatabase_PopularWords)
+            {
+                DataBase.tableDatabaseWords = "Database_PopularWords";
+                return true;
+            }
             if (id == Resource.Id.Stats){
                 Intent intent_english_stat = new Intent(this, typeof(English_Stat));
                 StartActivity(intent_english_stat);

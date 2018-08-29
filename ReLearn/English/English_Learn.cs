@@ -38,16 +38,36 @@ namespace ReLearn
             try
             {
                 var db = DataBase.Connect(NameDatabase.English_DB);
-                db.CreateTable<Database>();
                 List<DatabaseOfWords> dataBase = new List<DatabaseOfWords>();
-                var table = db.Table<Database>();
-                foreach (var word in table)
-                { // создание БД в виде  List<DatabaseOfWords>
-                    DatabaseOfWords w = new DatabaseOfWords();
-                    w.Add(word.enWords, word.ruWords, word.numberLearn, word.dateRepeat);
-                    dataBase.Add(w);
-                }
 
+                if (DataBase.tableDatabaseWords == "Database_My_Directly")
+                {
+                    db.CreateTable<Database_My_Directly>();
+                    var table = db.Table<Database_My_Directly>();
+                    foreach (var word in table)
+                    { // создание БД в виде  List<DatabaseOfWords>
+                        DatabaseOfWords w = new DatabaseOfWords();
+                        w.Add(word.enWords, word.ruWords, word.numberLearn, word.dateRepeat);
+                        dataBase.Add(w);
+                    }
+                }
+                else if (DataBase.tableDatabaseWords == "Database_PopularWords")
+                {
+                    db.CreateTable<Database_PopularWords>();
+                    var table = db.Table<Database_PopularWords>();
+                    foreach (var word in table)
+                    { // создание БД в виде  List<DatabaseOfWords>
+                        DatabaseOfWords w = new DatabaseOfWords();
+                        w.Add(word.enWords, word.ruWords, word.numberLearn, word.dateRepeat);
+                        dataBase.Add(w);
+                    }
+                }
+                else
+                {
+                    db.CreateTable<DatabaseAnimals>();
+                    db.Table<DatabaseAnimals>();
+                }
+                                            
                 int rand_word = 0;
                 Random rnd = new Random(unchecked((int)(DateTime.Now.Ticks)));
                 rand_word = rnd.Next(dataBase.Count);
@@ -65,6 +85,9 @@ namespace ReLearn
                 Toast.MakeText(this, "Error : can't connect to database of Language in Learn", ToastLength.Long).Show();
             }
         }
+
+      
+
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
             this.Finish();
