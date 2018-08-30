@@ -23,12 +23,15 @@ namespace ReLearn
 
         protected override void OnCreate(Bundle savedInstanceState)
         {       
+            
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.English);
             GUI.Button_default(MainActivity.button_english);
             Toolbar toolbarMain = FindViewById<Toolbar>(Resource.Id.toolbarEnglish);
             SetActionBar(toolbarMain);
             ActionBar.SetDisplayHomeAsUpEnabled(true);
+
+            ////////////////DataBase.Table_Name = "settings!!!!"///// TODO STRRINGS
 
             button_english_add = FindViewById<Button>(Resource.Id.button_english_add);
             button_english_learn = FindViewById<Button>(Resource.Id.button_english_learn);
@@ -50,7 +53,7 @@ namespace ReLearn
             {
                 try
                 {
-                    var database = DataBase.Connect(NameDatabase.English_DB);
+                    var database = DataBase.Connect(Database_Name.English_DB);
                     database.CreateTable<Database_Words>();
                     int search_occurrences = database.Query<Database_Words>("SELECT * FROM " + DataBase.Table_Name).Count;
                     if (search_occurrences != 0)
@@ -68,7 +71,7 @@ namespace ReLearn
             {
                 try {
 
-                    var database = DataBase.Connect(NameDatabase.English_DB);
+                    var database = DataBase.Connect(Database_Name.English_DB);
                     database.CreateTable<Database_Words>();
                     var search_occurrences = database.Query<Database_Words>("SELECT * FROM  " + DataBase.Table_Name);// поиск вхождения слова в БД
                     var search_numberlearn_null = database.Query<Database_Words>("SELECT * FROM  " + DataBase.Table_Name + " WHERE NumberLearn = 0").Count;
@@ -97,12 +100,12 @@ namespace ReLearn
             int id = item.ItemId;
             if (id == Resource.Id.menuDatabase_MyDictionary)
             {
-                DataBase.Table_Name = "Database_My_Directly";
+                DataBase.Table_Name = Table_name.My_Directly;
                 return true;
             }
             if (id == Resource.Id.menuDatabase_PopularWords)
             {
-                DataBase.Table_Name = "Database_Popular_Words";
+                DataBase.Table_Name = Table_name.Popular_Words;
                 return true;
             }
             if (id == Resource.Id.Stats){

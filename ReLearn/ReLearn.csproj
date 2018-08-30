@@ -74,6 +74,7 @@
     <Reference Include="Mono.Android" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Additional_functions.cs" />
     <Compile Include="DataBase.cs" />
     <Compile Include="English\English.cs" />
     <Compile Include="English\English_Add.cs" />

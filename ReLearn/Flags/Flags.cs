@@ -21,8 +21,10 @@ namespace ReLearn
     {
         public static Button button_flags_learn;
         public static Button button_flags_repeat;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            DataBase.Table_Name = Table_name.Database_Flags;
 
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Flags);
@@ -39,19 +41,6 @@ namespace ReLearn
 
             button_flags_learn.Click += GUI.Button_1_Click;
             button_flags_repeat.Click += GUI.Button_1_Click;
-
-            try
-            {
-                var databaseSetting = DataBase.Connect(NameDatabase.Setting_DB);
-                databaseSetting.CreateTable<Setting_Database>();
-                var table = databaseSetting.Table<Setting_Database>();
-                var search_Setting = databaseSetting.Query<Setting_Database>("SELECT * FROM Setting_Database WHERE Setting_bd = 'flags'");
-                if (search_Setting.Count != 0)
-                    Magic_constants.language = search_Setting[0].language;
-                else
-                    throw new Exception("Error : can't connect to setting database");
-            }
-            catch (Exception e){ Android.Util.Log.Error(e.Message, e.ToString()); }
 
             button_flags_learn.Click += delegate
             {
@@ -76,9 +65,7 @@ namespace ReLearn
         }
 
         public override bool OnOptionsItemSelected(IMenuItem item)
-        {
-            var databaseSetting = DataBase.Connect(NameDatabase.Setting_DB); // подключение к БД
-            databaseSetting.CreateTable<Setting_Database>();            
+        {         
             int id = item.ItemId;
             if (id == Resource.Id.Stats_Flags)
             {
@@ -88,13 +75,12 @@ namespace ReLearn
             }
             if (id == Resource.Id.language_eng)
             {
-                databaseSetting.Query<Setting_Database>("UPDATE Setting_Database SET language = " + 0 + " WHERE Setting_bd = ?", "flags");
+                //databaseSetting.Query<Setting_Database>("UPDATE Setting_Database SET language = " + 0 + " WHERE Setting_bd = ?", "flags");
                 Magic_constants.language = 0;
                 return true;
             }
             if (id == Resource.Id.language_rus)
             {
-                databaseSetting.Query<Setting_Database>("UPDATE Setting_Database SET language = " + 1 + " WHERE Setting_bd = ?", "flags");
                 Magic_constants.language = 1;
                 return true;
             }

@@ -15,9 +15,24 @@ using SQLite;
 
 namespace ReLearn
 {
+    public static class Database_Name // Имена баз данных
+    {
+        public static string Statistics = "database_statistics.db3";
+        public static string English_DB = "database_words.db3";
+        public static string Flags_DB = "database_flags.db3";
+        public static string Setting_DB = "Setting_Database.db3";
+    }
+    public static class Table_name// Имена баз данных
+    {
+        public const string My_Directly = "My_Directly";
+        public const string Popular_Words = "Popular_Words";
+        public const string Database_Flags = "Database_Flags";
+    }
+
+
     public static class DataBase
     {
-        public static string Table_Name = "Database_My_Directly";
+        public static string Table_Name = "My_Directly";
 
         public static SQLiteConnection Connect(string nameDB)
         {
@@ -49,7 +64,7 @@ namespace ReLearn
 
         public static void Update_English_DB(int Month)
         {
-            var database = DataBase.Connect(NameDatabase.English_DB); // подключение к БД
+            var database = DataBase.Connect(Database_Name.English_DB); // подключение к БД
             database.CreateTable<Database_Words>();
             var table = database.Table<Database_Words>();
             foreach (var s in table) // UPDATE Database
@@ -62,7 +77,7 @@ namespace ReLearn
 
         public static void Update_Flags_DB(int Month)
         {
-            var databaseFlags = DataBase.Connect(NameDatabase.Flags_DB); // подключение к БД
+            var databaseFlags = DataBase.Connect(Database_Name.Flags_DB); // подключение к БД
             databaseFlags.CreateTable<Database_Flags>();
             var tableFlags = databaseFlags.Table<Database_Flags>();
             foreach (var s in tableFlags) // UPDATE Database_Flags
@@ -77,56 +92,6 @@ namespace ReLearn
         {
             try
             {
-                //var databaseSetting = DataBase.Connect(NameDatabase.Setting_DB); // загружаем настройки
-                //databaseSetting.CreateTable<Setting_Database>();
-
-                ///*databaseSetting.DropTable<Setting_Database>();
-                //var databaseFlags2 = DataBase.Connect(NameDatabase.Flags_DB); // подключение к БД
-                //databaseFlags2.DropTable<Database_Flags>();
-                //databaseFlags2.CreateTable<Database_Flags>();*/
-
-                //var search_Setting = databaseSetting.Query<Setting_Database>("SELECT * FROM Setting_Database");
-                //if (search_Setting.Count == 0)
-                //    using (StreamReader reader = new StreamReader(GUI.Res.Assets.Open("setting.txt")))
-                //        while (reader.Peek() >= 0)
-                //            DataBase.Add_Setting(reader, databaseSetting);
-                //search_Setting = databaseSetting.Query<Setting_Database>("SELECT full_or_empty  FROM Setting_Database WHERE Setting_bd = 'flags'");
-                //if (search_Setting[0].full_or_empty == 0)
-                //{
-                //    var databaseFlags = DataBase.Connect(NameDatabase.Flags_DB); // подключение к БД
-                //    databaseFlags.DropTable<Database_Flags>();
-                //    databaseFlags.CreateTable<Database_Flags>();
-                //    var tableFlags = databaseFlags.Table<Database_Flags>();
-                //    using (StreamReader reader = new StreamReader(GUI.Res.Assets.Open(/*"database_flags.txt"*/"databaseFlags.txt")))
-                //        while (reader.Peek() >= 0)
-                //            DataBase.Add_new_Flag(reader, databaseFlags);
-                //    databaseSetting.Query<Setting_Database>("UPDATE Setting_Database SET full_or_empty = " + 1 + " WHERE Setting_bd = 'flags'");
-
-                //    var db = DataBase.Connect(NameDatabase.English_DB);
-                //    db.CreateTable<Database>();
-
-                //    var tableWords = db.Table<Database>();
-                //    using (StreamReader reader = new StreamReader(GUI.Res.Assets.Open("My_dictionary.txt")))
-                //        while (reader.Peek() >= 0)
-                //        {
-                //            string str_line = reader.ReadLine();
-                //            var list_en_ru = str_line.Split('|');
-                //            DataBase.Add_English_word(list_en_ru[0], list_en_ru[1], db);
-                //        }
-
-                //    List<DatabaseOfWords> dataBase = new List<DatabaseOfWords>();
-                //    var table = db.Table<Database>();
-                //    foreach (var word in table)
-                //    {   // создание БД в виде  List<DatabaseOfWords>
-                //        DatabaseOfWords w = new DatabaseOfWords();
-                //        if (word.NumberLearn != 0)
-                //        {
-                //            w.Add(word.Word, word.TranslationWord, word.NumberLearn, word.DateRecurrence);
-                //            dataBase.Add(w);
-                //        }
-                //    }
-                //}
-
                 int Month = System.DateTime.Today.Month;
                 Update_English_DB(Month); // обнавление repeat_number если слово не повторялась более месяца 
                 Update_Flags_DB(Month);   // обнавление repeat_number если слово не повторялась более месяца 
@@ -163,30 +128,10 @@ namespace ReLearn
             this.TranslationWord = x.TranslationWord;
         }
 
-        public Database_Words Find()
-        {
-            return this;
-        }
+        public Database_Words Find() => this;
     }
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    class DatabaseOfFlags // флаг 
-    {
-        public string Image_name = null;
-        public string Name_flag_en = null;
-        public string Name_flag_ru = null;
-        public int NumberLearn = 0;
-        public int DateRecurrence = 0;
-        public DatabaseOfFlags Add(string image_n, string flag_en, string flag_ru, int nLearn, int date)
-        {
-            this.Image_name = image_n;
-            this.Name_flag_en = flag_en;
-            this.Name_flag_ru = flag_ru;
-            this.NumberLearn = nLearn;
-            this.DateRecurrence = date;
-            return this;
-        }
-    }
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     public class Database_Flags // Класс для считывания базы данных flags
     {
@@ -197,33 +142,52 @@ namespace ReLearn
         public string Name_flag_ru { get; set; }
         public int NumberLearn { get; set; }
         public int DateRecurrence { get; set; }
-    }
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    ///
-    class DatabaseOfSetting// настройки
-    {
-        public string Setting_bd = null;
-        public string Name_bd = null;
-        public int full_or_empty = 0;
-        public int language = 0;
-        public DatabaseOfSetting Add(string Set_bd, string N_bd, int f_or_e, int lan)
+
+        public Database_Flags Add(string image_n, string flag_en, string flag_ru, int nLearn, int date)
         {
-            this.Setting_bd = Set_bd;
-            this.Name_bd = N_bd;
-            this.full_or_empty = f_or_e;
-            this.language = lan;
+            this.Image_name = image_n;
+            this.Name_flag_en = flag_en;
+            this.Name_flag_ru = flag_ru;
+            this.NumberLearn = nLearn;
+            this.DateRecurrence = date;
             return this;
         }
+        public Database_Flags()
+        {
+            Image_name = null;
+            Name_flag_en = null;
+            Name_flag_ru = null;
+            NumberLearn = 0;
+            DateRecurrence = 0;
+        }
     }
-    public class Setting_Database // Класс для считывания базы данных Stat
-    {
-        [PrimaryKey, AutoIncrement, Column("_id")]
-        public int Id { get; set; }
-        public string Setting_bd { get; set; }
-        public string Name_bd { get; set; }
-        public int full_or_empty { get; set; }
-        public int language { get; set; }
-    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    ///
+    //class DatabaseOfSetting// настройки
+    //{
+    //    public string Setting_bd = null;
+    //    public string Name_bd = null;
+    //    public int full_or_empty = 0;
+    //    public int language = 0;
+    //    public DatabaseOfSetting Add(string Set_bd, string N_bd, int f_or_e, int lan)
+    //    {
+    //        this.Setting_bd = Set_bd;
+    //        this.Name_bd = N_bd;
+    //        this.full_or_empty = f_or_e;
+    //        this.language = lan;
+    //        return this;
+    //    }
+    //}
+    //public class Setting_Database // Класс для считывания базы данных Stat
+    //{
+    //    [PrimaryKey, AutoIncrement, Column("_id")]
+    //    public int Id { get; set; }
+    //    public string Setting_bd { get; set; }
+    //    public string Name_bd { get; set; }
+    //    public int full_or_empty { get; set; }
+    //    public int language { get; set; }
+    //}
 }
 
 

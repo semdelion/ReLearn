@@ -15,7 +15,7 @@ namespace ReLearn
 {
     class Repeat_work
     {
-        public static void DeleteRepeat(List<Statistics_learn> Stats, String identifier, int rand_word, int RepeatLearn)
+        public static void Delete_Repeat(List<Statistics_learn> Stats, String identifier, int rand_word, int RepeatLearn)
         {
             for (int i = 0; i < Stats.Count; i++)
                 if (Stats[i].Word == identifier)
@@ -25,19 +25,16 @@ namespace ReLearn
                 }
             Stats.Add(new Statistics_learn(rand_word, identifier, RepeatLearn));
         }
-        public static void AddStatistics(int True, int False, string name_Database)// добовление статистики в базу данных 
+
+        public static void Add_Statistics(int True, int False)// добовление статистики в базу данных 
         {
-            string databasePath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), name_Database);
-            var database = new SQLiteConnection(databasePath); // подключение к БД
+            string name_table = DataBase.Table_Name + "_Statistics";
+            var database = DataBase.Connect(Database_Name.Statistics);
             database.CreateTable<Database_Statistics>();
-            var newStat = new Database_Statistics
-            {
-                True = True,
-                False = False
-            };
-            database.Insert(newStat); // добовление
+            database.Query<Database_Statistics>("INSERT INTO " + name_table + " (True, False, DateOfTesting) VALUES (" + True + "," + False + ", DATETIME('NOW'))");
         }
-        public static string Word_det(DatabaseOfFlags word) // возвращает флаг на языке  // 0 - eng / 1 - rus
+
+        public static string Word_det(Database_Flags word) // возвращает флаг на языке  // 0 - eng / 1 - rus
         {
             if (Magic_constants.language == 0)
                 return word.Name_flag_en;

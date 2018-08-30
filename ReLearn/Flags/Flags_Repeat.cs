@@ -18,17 +18,16 @@ namespace ReLearn
     [Activity(Label = "Repeat 1/20", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     class Flags_Repeat : Activity
     {
-        
-        void Random_Button(Button B1, Button B2, Button B3, Button B4, List<DatabaseOfFlags> dataBase, int i)   //загружаем варианты ответа в текст кнопок
+        void Random_Button(Button B1, Button B2, Button B3, Button B4, List<Database_Flags> dataBase, int i)   //загружаем варианты ответа в текст кнопок
         {
-            Random rand = new Random(unchecked((int)(DateTime.Now.Ticks)));
-            B1.Text = Repeat_work.Word_det(dataBase[i]);
-            B2.Text = Repeat_work.Word_det(dataBase[rand.Next(dataBase.Count)]);
-            B3.Text = Repeat_work.Word_det(dataBase[rand.Next(dataBase.Count)]);
-            B4.Text = Repeat_work.Word_det(dataBase[rand.Next(dataBase.Count)]);
+            Additional_functions.Random_4_numbers(i, dataBase.Count, out List<int> random_numbers);
+            B1.Text = Repeat_work.Word_det(dataBase[random_numbers[0]]);
+            B2.Text = Repeat_work.Word_det(dataBase[random_numbers[1]]);
+            B3.Text = Repeat_work.Word_det(dataBase[random_numbers[2]]);
+            B4.Text = Repeat_work.Word_det(dataBase[random_numbers[3]]);
         }
 
-        void Function_Next_Test(Button B1, Button B2, Button B3, Button B4, Button BNext, ImageView imageView, List<DatabaseOfFlags> dataBase, int rand_word, int i_rand) //new test
+        void Function_Next_Test(Button B1, Button B2, Button B3, Button B4, Button BNext, ImageView imageView, List<Database_Flags> dataBase, int rand_word, int i_rand) //new test
         {
 
             var his = Application.Context.Assets.Open("ImageFlags/" + dataBase[rand_word].Image_name+ ".png");
@@ -62,19 +61,19 @@ namespace ReLearn
             }
         }
 
-        void Answer(Button B1, Button B2, Button B3, Button B4, Button BNext, List<DatabaseOfFlags> dataBase, List<Statistics_learn> Stats, int rand_word) // подсвечиваем правильный ответ, если мы ошиблись подсвечиваем неправвильный и паравильный 
+        void Answer(Button B1, Button B2, Button B3, Button B4, Button BNext, List<Database_Flags> dataBase, List<Statistics_learn> Stats, int rand_word) // подсвечиваем правильный ответ, если мы ошиблись подсвечиваем неправвильный и паравильный 
         {
             GUI.Button_enable(B1, B2, B3, B4, BNext);
             if (B1.Text == Repeat_work.Word_det(dataBase[rand_word]))
             {
-                Repeat_work.DeleteRepeat(Stats, Convert.ToString(dataBase[rand_word].Image_name), rand_word, dataBase[rand_word].NumberLearn -= Magic_constants.true_answer);
-                Statistics_learn.answerTrue++;
+                Repeat_work.Delete_Repeat(Stats, Convert.ToString(dataBase[rand_word].Image_name), rand_word, dataBase[rand_word].NumberLearn -= Magic_constants.true_answer);
+                Statistics_learn.AnswerTrue++;
                 GUI.Button_true(B1);
             }
             else
             {
-                Repeat_work.DeleteRepeat(Stats, Convert.ToString(dataBase[rand_word].Image_name), rand_word, dataBase[rand_word].NumberLearn += Magic_constants.false_answer);
-                Statistics_learn.answerFalse++;
+                Repeat_work.Delete_Repeat(Stats, Convert.ToString(dataBase[rand_word].Image_name), rand_word, dataBase[rand_word].NumberLearn += Magic_constants.false_answer);
+                Statistics_learn.AnswerFalse++;
                 GUI.Button_false(B1);
                 if (B2.Text == Repeat_work.Word_det(dataBase[rand_word]))
                     GUI.Button_true(B2);
@@ -87,7 +86,7 @@ namespace ReLearn
 
         public void Update_Database(List<Statistics_learn> listdataBase) // изменение у бвзы данных элемента NumberLearn
         {
-            var database = DataBase.Connect(NameDatabase.Flags_DB);
+            var database = DataBase.Connect(Database_Name.Flags_DB);
             database.CreateTable<Database_Flags>();
             int month = DateTime.Today.Month;
             for (int i = 0; i < listdataBase.Count; i++)
@@ -106,8 +105,8 @@ namespace ReLearn
             SetActionBar(toolbarMain);
             ActionBar.SetDisplayHomeAsUpEnabled(true); // отображаем кнопку домой
 
-            Statistics_learn.answerFalse = 0;
-            Statistics_learn.answerTrue = 0;
+            Statistics_learn.AnswerFalse = 0;
+            Statistics_learn.AnswerTrue = 0;
             int rand_word = 0, i_rand = 0, count = 0;
             List<Statistics_learn> Stats = new List<Statistics_learn>();
 
@@ -125,13 +124,13 @@ namespace ReLearn
             
             try
             {
-                var db = DataBase.Connect(NameDatabase.Flags_DB);
+                var db = DataBase.Connect(Database_Name.Flags_DB);
                 db.CreateTable<Database_Flags>(); //
-                List<DatabaseOfFlags> dataBase = new List<DatabaseOfFlags>();
+                List<Database_Flags> dataBase = new List<Database_Flags>();
                 var table = db.Table<Database_Flags>();
                 foreach (var word in table)
                 { // создание БД в виде  List<DatabaseOfFlags>
-                    DatabaseOfFlags w = new DatabaseOfFlags();
+                    Database_Flags w = new Database_Flags();
                     if (word.NumberLearn != 0) //add all flags with 'NumberLearn' > 0
                     {
                         w.Add(word.Image_name, word.Name_flag_en, word.Name_flag_ru, word.NumberLearn, word.DateRecurrence);
@@ -160,7 +159,7 @@ namespace ReLearn
                     }
                     else
                     {
-                        Repeat_work.AddStatistics(Statistics_learn.answerTrue, Statistics_learn.answerFalse, NameDatabase.Flags_DB_Stat_DB);
+                        Repeat_work.Add_Statistics(Statistics_learn.AnswerTrue, Statistics_learn.AnswerFalse);
                         Update_Database(Stats);
                         Intent intent_flags_stat = new Intent(this, typeof(Flags_Stats));
                         StartActivity(intent_flags_stat);

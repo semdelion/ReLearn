@@ -20,18 +20,18 @@ namespace ReLearn
             SetContentView(Resource.Layout.Main);
             Window.SetBackgroundDrawable(GetDrawable(Resource.Drawable.backgroundMain));
 
-            DataBase.GetDatabasePath(NameDatabase.English_DB);
-            DataBase.GetDatabasePath(NameDatabase.Flags_DB);
-            DataBase.GetDatabasePath(NameDatabase.Statistics);
+            DataBase.GetDatabasePath(Database_Name.English_DB);
+            DataBase.GetDatabasePath(Database_Name.Flags_DB);
+            DataBase.GetDatabasePath(Database_Name.Statistics);
 
-
-            //DataBase.Check_and_update_database();
+            DataBase.Check_and_update_database();
 
             button_english = FindViewById<Button>(Resource.Id.button_english);
             button_flags = FindViewById<Button>(Resource.Id.button_flags);
 
             button_english.Touch += GUI.Button_Touch;
             button_flags.Touch += GUI.Button_Touch;
+
             button_english.Click += GUI.Button_1_Click;
             button_flags.Click += GUI.Button_1_Click;
 

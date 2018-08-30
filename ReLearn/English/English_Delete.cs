@@ -38,11 +38,9 @@ namespace ReLearn
 
             listViewDel = FindViewById<ListView>(Resource.Id.listViewDelete);    
             
-            var db = DataBase.Connect(NameDatabase.English_DB);
+            var db = DataBase.Connect(Database_Name.English_DB);
             dataBase = db.Query<Database_Words>("SELECT * FROM " + DataBase.Table_Name);
-            var fdf = db.Query<Database_Words>("SELECT * FROM " + DataBase.Table_Name);
-            fdf.Sort((x, y) => y.NumberLearn.CompareTo(x.NumberLearn));
-          
+
             dataBase.Sort((x, y) => x.Word.CompareTo(y.Word));
 
             //dataBase = dataBase.OrderBy(o => o.Word).ToList();         
@@ -91,7 +89,7 @@ namespace ReLearn
                     adapter = new CustomAdapter(this, dataBase);
                     listViewDel.Adapter = adapter;
 
-                    var database = DataBase.Connect(NameDatabase.English_DB);
+                    var database = DataBase.Connect(Database_Name.English_DB);
                     database.CreateTable<Database_Words>();
                     int search_occurrences = database.Query<Database_Words>("SELECT * FROM " + DataBase.Table_Name).Count;
                     

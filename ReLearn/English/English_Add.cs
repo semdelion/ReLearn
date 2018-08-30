@@ -34,30 +34,28 @@ namespace ReLearn
 
             try
             {
-                var database = DataBase.Connect(NameDatabase.English_DB);
+                var database = DataBase.Connect(Database_Name.English_DB);
                 database.CreateTable<Database_Words>();
                 button_add_word.Click += (s, e) =>
                 { // добавление элемента в БД
-                    var search_occurrences = database.Query<Database_Words>("SELECT * FROM Database_My_Directly WHERE Word = ?", editText_foreign_word.Text);// поиск вхождения слова в БД
+                    var search_occurrences = database.Query<Database_Words>("SELECT * FROM My_Directly WHERE Word = ?", editText_foreign_word.Text);// поиск вхождения слова в БД
                     if (editText_foreign_word.Text == "" || editText_translation_word.Text == "")
                         Toast.MakeText(this, "Enter word!", ToastLength.Short).Show();
                     else if (search_occurrences.Count != 0)
                         Toast.MakeText(this, "The word exists!", ToastLength.Short).Show();
                     else
                     {
-                        var newWords = new Database_Words
-                        {
-                            Word = editText_foreign_word.Text.ToLower(),
-                            TranslationWord = editText_translation_word.Text.ToLower(),
-                            NumberLearn = Magic_constants.numberLearn,
-                            DateRecurrence = System.DateTime.Today.Month
-                        };
-                        database.Insert(newWords);
+                        database.Query<Database_Words>($"INSERT INTO My_Directly " +
+                            $"(Word, TranslationWord, NumberLearn, DateRecurrence) VALUES ("
+                            + "\"" + editText_foreign_word.Text.ToLower() + "\"" + ","
+                            + "\"" + editText_translation_word.Text.ToLower() + "\"" + ","
+                            + Magic_constants.numberLearn + ","
+                            + DateTime.Today.Month + ")");
+
                         Toast.MakeText(this, "Word added!", ToastLength.Short).Show();
                     }
                     editText_foreign_word.Text = "";
                     editText_translation_word.Text = "";
-                   
                 };
             }
             catch{

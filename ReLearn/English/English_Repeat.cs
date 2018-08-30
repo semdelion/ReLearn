@@ -19,33 +19,36 @@ namespace ReLearn
     class English_Repeat : Activity, TextToSpeech.IOnInitListener
     {
         private TextToSpeech tts;
+
         public void OnInit([GeneratedEnum] OperationResult status)
         {
             if (status == OperationResult.Success)
                 tts.SetLanguage(Locale.Uk);
             
         }
+
         private void SpeakOut(string text) => tts.Speak(text, QueueMode.Flush, null, null);
 
         void Random_Button(Button B1, Button B2, Button B3, Button B4, List<Database_Words> dataBase, int i)   //загружаем варианты ответа в текст кнопок
         {
-            System.Random rand = new System.Random(unchecked((int)(DateTime.Now.Ticks)));
-            B1.Text = dataBase[i].TranslationWord;
-            B2.Text = dataBase[rand.Next(dataBase.Count)].TranslationWord;
-            B3.Text = dataBase[rand.Next(dataBase.Count)].TranslationWord;
-            B4.Text = dataBase[rand.Next(dataBase.Count)].TranslationWord;
+            Additional_functions.Random_4_numbers(i, dataBase.Count, out List<int> random_numbers);
+            B1.Text = dataBase[random_numbers[0]].TranslationWord;
+            B2.Text = dataBase[random_numbers[1]].TranslationWord;
+            B3.Text = dataBase[random_numbers[2]].TranslationWord;
+            B4.Text = dataBase[random_numbers[3]].TranslationWord;
         }
+
         void Answer(Button B1, Button B2, Button B3, Button B4,Button BNext, List<Database_Words> dataBase, List<Statistics_learn> Stats,int rand_word ) // подсвечиваем правильный ответ, если мы ошиблись подсвечиваем неправвильный и паравильный 
         {
             GUI.Button_enable(B1, B2, B3, B4, BNext);
             if (B1.Text == dataBase[rand_word].TranslationWord){
-                Repeat_work.DeleteRepeat(Stats, dataBase[rand_word].Word, rand_word, dataBase[rand_word].NumberLearn -= Magic_constants.true_answer);
-                Statistics_learn.answerTrue++;
+                Repeat_work.Delete_Repeat(Stats, dataBase[rand_word].Word, rand_word, dataBase[rand_word].NumberLearn -= Magic_constants.true_answer);
+                Statistics_learn.AnswerTrue++;
                 GUI.Button_true(B1);
             }
             else{
-                Repeat_work.DeleteRepeat(Stats, dataBase[rand_word].Word, rand_word, dataBase[rand_word].NumberLearn += Magic_constants.false_answer);
-                Statistics_learn.answerFalse++;
+                Repeat_work.Delete_Repeat(Stats, dataBase[rand_word].Word, rand_word, dataBase[rand_word].NumberLearn += Magic_constants.false_answer);
+                Statistics_learn.AnswerFalse++;
                 GUI.Button_false(B1);
                 if (B2.Text == dataBase[rand_word].TranslationWord)
                     GUI.Button_true(B2);
@@ -79,9 +82,10 @@ namespace ReLearn
                 }
             }
         }
+
         public void Update_Database(List<Statistics_learn> listdataBase) // изменение у бвзы данных элемента NumberLearn
         {
-            var database = DataBase.Connect(NameDatabase.English_DB);
+            var database = DataBase.Connect(Database_Name.English_DB);
             int month = DateTime.Today.Month;
             database.CreateTable<Database_Words>();
             for (int i = 0; i < listdataBase.Count; i++)
@@ -94,7 +98,6 @@ namespace ReLearn
         protected override void OnCreate(Bundle savedInstanceState)
         {
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            ///
             base.OnCreate(savedInstanceState);
             GUI.Button_default(English.button_english_repeat);
             SetContentView(Resource.Layout.English_Repeat);
@@ -104,8 +107,8 @@ namespace ReLearn
             ActionBar.SetDisplayHomeAsUpEnabled(true); // отображаем кнопку домой
             GUI.Button_default(English.button_english_repeat);
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            Statistics_learn.answerFalse = 0;
-            Statistics_learn.answerTrue = 0;
+            Statistics_learn.AnswerFalse = 0;
+            Statistics_learn.AnswerTrue = 0;
             int rand_word = 0, i_rand = 0,count=0;
 
             TextView textView = FindViewById<TextView>(Resource.Id.textView_Eng_Word);
@@ -124,11 +127,12 @@ namespace ReLearn
             button4.Touch += GUI.Button_Click;
             button_next.Touch += GUI.Button_Click;
             button_Speak.Touch+=GUI.Button_Click;
+
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             try
             {
-                var db = DataBase.Connect(NameDatabase.English_DB);
-                var dataBase = db.Query<Database_Words>("SELECT * FROM " + DataBase.Table_Name);
+                var db = DataBase.Connect(Database_Name.English_DB);
+                var dataBase = db.Query<Database_Words>("SELECT * FROM " + DataBase.Table_Name + " WHERE NumberLearn > 0");
 
                 System.Random rnd = new System.Random(unchecked((int)(DateTime.Now.Ticks)));
                 rand_word = rnd.Next(dataBase.Count); //ПЕРЕДЕЛАЙ сделать защиту от дурака, если все элементы базы имеют NumberLearn = 0
@@ -150,18 +154,17 @@ namespace ReLearn
                     button_next.Enabled = false;
                     if (count < Magic_constants.repeat_count - 1)
                     {
+                        count++;
                         i_rand = rnd.Next(4);
                         rand_word = rnd.Next(dataBase.Count);
                         Function_Next_Test(button1, button2, button3, button4, button_next, textView, dataBase, rand_word, i_rand);
                         GUI.Button_Refresh(button1, button2, button3, button4, button_next);
-                        count++;
                         ActionBar.Title = Convert.ToString("Repeat " + (count + 1) + "/" + Magic_constants.repeat_count); // ПЕРЕДЕЛАЙ Костыль счётчик 
                     }
                     else
                     {
-                        Repeat_work.AddStatistics(Statistics_learn.answerTrue, Statistics_learn.answerFalse, NameDatabase.English_Stat_DB/*English_DB*/);
+                        Repeat_work.Add_Statistics(Statistics_learn.AnswerTrue, Statistics_learn.AnswerFalse);
                         Update_Database(Stats);
-
                         Intent intent_english_stat = new Intent(this, typeof(English_Stat));
                         StartActivity(intent_english_stat);
                         this.Finish();

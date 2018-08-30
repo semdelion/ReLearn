@@ -21,7 +21,7 @@ namespace ReLearn
         protected override void OnDraw(Canvas canvas)
         {
             base.OnDraw(canvas);         
-            string databasePath = System.IO.Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), NameDatabase.Statistics);
+            string databasePath = System.IO.Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), Database_Name.Statistics);
             var database = new SQLiteConnection(databasePath); // подключение к БД
             database.CreateTable<Database_Statistics>();
 
