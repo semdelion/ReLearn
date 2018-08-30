@@ -31,12 +31,12 @@ namespace ReLearn.Resources
 
         public override Java.Lang.Object GetItem(int position)
         {
-            return list[position].enWords;
+            return list[position].Word;
         }
 
         public override long GetItemId(int position)
         {
-            return list[position].numberLearn;
+            return list[position].NumberLearn;
         }
         void Color_TextView(TextView TV, Color color)
         {
@@ -51,7 +51,7 @@ namespace ReLearn.Resources
             var view = convertView ?? activity.LayoutInflater.Inflate(Resource.Layout.del_list, parent, false);
             var TView = view.FindViewById<TextView>(Resource.Id.textView1);
             
-            switch (list[position].numberLearn / 3)
+            switch (list[position].NumberLearn / 3)
             {
                 case 4:
                     {
@@ -65,7 +65,7 @@ namespace ReLearn.Resources
                     }
                 case 2:
                     {
-                        if (list[position].numberLearn % 3 == 0)
+                        if (list[position].NumberLearn % 3 == 0)
                             Color_TextView(TView, new Color(238, 252, 255));
                         else
                             Color_TextView(TView, new Color(255, 152, 50));
@@ -79,7 +79,7 @@ namespace ReLearn.Resources
                     }
                 case 0:
                     {
-                        if (list[position].numberLearn % 3 == 0)
+                        if (list[position].NumberLearn % 3 == 0)
                             Color_TextView(TView, new Color(134, 48, 255));
                         else
                             Color_TextView(TView, new Color(48, 255, 55));
@@ -89,7 +89,7 @@ namespace ReLearn.Resources
                     break; 
 
             }
-            TView.Text = list[position].enWords +"  -  "+ list[position].ruWords;
+            TView.Text = list[position].Word +"  -  "+ list[position].TranslationWord;
             return view;
         }
     }

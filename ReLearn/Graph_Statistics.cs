@@ -23,7 +23,7 @@ namespace ReLearn
             base.OnDraw(canvas);         
             string databasePath = System.IO.Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), NameDatabase.Statistics);
             var database = new SQLiteConnection(databasePath); // подключение к БД
-            database.CreateTable<Database_Stat>();
+            database.CreateTable<Database_Statistics>();
 
             Paint text_paint = new Paint {TextSize = 25}; 
             // используется для написания текста и рисования линии
@@ -41,9 +41,9 @@ namespace ReLearn
             canvas.DrawLine(left - 20f, 120, left - 5f, 100, text_paint);
             canvas.DrawLine(left + 10f, 120, left - 5f, 100, text_paint);
             text_paint.Color = Color.White;
-            var count_Database_Stat = database.Query<Database_Stat>("SELECT * FROM Database_Stat");// количество строк в БД
+            var count_Database_Stat = database.Query<Database_Statistics>("SELECT * FROM Database_Statistics");// количество строк в БД
             int i = 0, n_count = count_Database_Stat.Count - 10, False = 0, True = 0; // n_count - используется для вывода только последних 10 строк БД
-            var table = database.Table<Database_Stat>();  //ПЕРЕДЕЛАТЬ!!!! оставить только 10 статистик
+            var table = database.Table<Database_Statistics>();  //ПЕРЕДЕЛАТЬ!!!! оставить только 10 статистик
             right -= 2;
             foreach (var s in table)
             {

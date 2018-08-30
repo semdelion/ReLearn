@@ -31,11 +31,11 @@ namespace ReLearn
         void Function_Next_Test(Button B1, Button B2, Button B3, Button B4, Button BNext, ImageView imageView, List<DatabaseOfFlags> dataBase, int rand_word, int i_rand) //new test
         {
 
-            var his = Application.Context.Assets.Open("ImageFlags/" + dataBase[rand_word].image_name+ ".png");
+            var his = Application.Context.Assets.Open("ImageFlags/" + dataBase[rand_word].Image_name+ ".png");
             Bitmap bitmap = BitmapFactory.DecodeStream(his);
             imageView.SetImageBitmap(bitmap);
 
-           // imageView.SetImageResource(dataBase[rand_word].image_name);
+           // imageView.SetImageResource(dataBase[rand_word].Image_name);
             GUI.Button_ebabled(BNext);
             switch (i_rand)
             {// задаём рандоммную кнопку                            
@@ -67,13 +67,13 @@ namespace ReLearn
             GUI.Button_enable(B1, B2, B3, B4, BNext);
             if (B1.Text == Repeat_work.Word_det(dataBase[rand_word]))
             {
-                Repeat_work.DeleteRepeat(Stats, Convert.ToString(dataBase[rand_word].image_name), rand_word, dataBase[rand_word].numberLearn -= Magic_constants.true_answer);
+                Repeat_work.DeleteRepeat(Stats, Convert.ToString(dataBase[rand_word].Image_name), rand_word, dataBase[rand_word].NumberLearn -= Magic_constants.true_answer);
                 Statistics_learn.answerTrue++;
                 GUI.Button_true(B1);
             }
             else
             {
-                Repeat_work.DeleteRepeat(Stats, Convert.ToString(dataBase[rand_word].image_name), rand_word, dataBase[rand_word].numberLearn += Magic_constants.false_answer);
+                Repeat_work.DeleteRepeat(Stats, Convert.ToString(dataBase[rand_word].Image_name), rand_word, dataBase[rand_word].NumberLearn += Magic_constants.false_answer);
                 Statistics_learn.answerFalse++;
                 GUI.Button_false(B1);
                 if (B2.Text == Repeat_work.Word_det(dataBase[rand_word]))
@@ -85,15 +85,15 @@ namespace ReLearn
             }
         }
 
-        public void Update_Database(List<Statistics_learn> listdataBase) // изменение у бвзы данных элемента numberLearn
+        public void Update_Database(List<Statistics_learn> listdataBase) // изменение у бвзы данных элемента NumberLearn
         {
             var database = DataBase.Connect(NameDatabase.Flags_DB);
             database.CreateTable<Database_Flags>();
             int month = DateTime.Today.Month;
             for (int i = 0; i < listdataBase.Count; i++)
             {
-                database.Query<Database_Flags>("UPDATE Database_Flags SET dateRepeat = " + month + " WHERE image_name = ?", listdataBase[i].Word);
-                database.Query<Database_Flags>("UPDATE Database_Flags SET numberLearn = " + listdataBase[i].Learn + " WHERE image_name = ?", listdataBase[i].Word);
+                database.Query<Database_Flags>("UPDATE Database_Flags SET DateRecurrence = " + month + " WHERE Image_name = ?", listdataBase[i].Word);
+                database.Query<Database_Flags>("UPDATE Database_Flags SET NumberLearn = " + listdataBase[i].Learn + " WHERE Image_name = ?", listdataBase[i].Word);
             }
         }
 
@@ -132,9 +132,9 @@ namespace ReLearn
                 foreach (var word in table)
                 { // создание БД в виде  List<DatabaseOfFlags>
                     DatabaseOfFlags w = new DatabaseOfFlags();
-                    if (word.numberLearn != 0) //add all flags with 'numberLearn' > 0
+                    if (word.NumberLearn != 0) //add all flags with 'NumberLearn' > 0
                     {
-                        w.Add(word.image_name, word.name_flag_en, word.name_flag_ru, word.numberLearn, word.dateRepeat);
+                        w.Add(word.Image_name, word.Name_flag_en, word.Name_flag_ru, word.NumberLearn, word.DateRecurrence);
                         dataBase.Add(w);
                     }
                 }

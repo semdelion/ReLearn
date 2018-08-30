@@ -41,11 +41,11 @@ namespace ReLearn
             var db = DataBase.Connect(NameDatabase.English_DB);
             dataBase = db.Query<Database_Words>("SELECT * FROM " + DataBase.Table_Name);
             var fdf = db.Query<Database_Words>("SELECT * FROM " + DataBase.Table_Name);
-            fdf.Sort((x, y) => y.numberLearn.CompareTo(x.numberLearn));
+            fdf.Sort((x, y) => y.NumberLearn.CompareTo(x.NumberLearn));
           
-            dataBase.Sort((x, y) => x.enWords.CompareTo(y.enWords));
+            dataBase.Sort((x, y) => x.Word.CompareTo(y.Word));
 
-            //dataBase = dataBase.OrderBy(o => o.enWords).ToList();         
+            //dataBase = dataBase.OrderBy(o => o.Word).ToList();         
             adapter = new CustomAdapter(this, dataBase);
             listViewDel.Adapter = adapter;
         }
@@ -64,7 +64,7 @@ namespace ReLearn
                 {
                     List<Database_Words> FD = new List<Database_Words>();
                     foreach (var word in dataBase)
-                        if (word.enWords.Substring(0, ((e.NewText.Length > word.enWords.Length) ? 0 : e.NewText.Length)) == e.NewText)
+                        if (word.Word.Substring(0, ((e.NewText.Length > word.Word.Length) ? 0 : e.NewText.Length)) == e.NewText)
                             FD.Add(word);
                     var ad = new CustomAdapter(this, FD);
                     listViewDel.Adapter = ad;
@@ -75,7 +75,7 @@ namespace ReLearn
                 var word = listViewDel.Adapter.GetItem(args.Position);
                 Database_Words words = new Database_Words();
                 foreach (var item in dataBase)
-                    if (item.enWords == word.ToString())
+                    if (item.Word == word.ToString())
                     {
                         words = item.Find();
                         break;
@@ -99,7 +99,7 @@ namespace ReLearn
                         Toast.MakeText(this, "Words do not exist!", ToastLength.Short).Show();
                     else
                     {
-                        database.Query<Database_Words>("DELETE FROM " + DataBase.Table_Name + " WHERE enWords = ?", word.ToString());// поиск вхождения слова в БД
+                        database.Query<Database_Words>("DELETE FROM " + DataBase.Table_Name + " WHERE Word = ?", word.ToString());// поиск вхождения слова в БД
                         Toast.MakeText(this, "Word delete!", ToastLength.Short).Show();
                     }
                 });
@@ -114,20 +114,20 @@ namespace ReLearn
             //возрастание
             if (id == Resource.Id.increase)
             {
-                dataBase.Sort((x, y) => x.numberLearn.CompareTo(y.numberLearn));
+                dataBase.Sort((x, y) => x.NumberLearn.CompareTo(y.NumberLearn));
                 adapter = new CustomAdapter(this, dataBase);
                 listViewDel.Adapter = adapter;
             }
             //убывание
             if (id == Resource.Id.decrease)
             {
-                dataBase.Sort((x, y) => y.numberLearn.CompareTo(x.numberLearn));
+                dataBase.Sort((x, y) => y.NumberLearn.CompareTo(x.NumberLearn));
                 adapter = new CustomAdapter(this, dataBase);
                 listViewDel.Adapter = adapter;
             }
             if (id == Resource.Id.ABC)
             {
-                dataBase.Sort((x, y) => x.enWords.CompareTo(y.enWords));
+                dataBase.Sort((x, y) => x.Word.CompareTo(y.Word));
                 adapter = new CustomAdapter(this, dataBase);
                 listViewDel.Adapter = adapter;
             }

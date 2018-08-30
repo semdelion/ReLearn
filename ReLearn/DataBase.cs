@@ -53,10 +53,10 @@ namespace ReLearn
             database.CreateTable<Database_Words>();
             var table = database.Table<Database_Words>();
             foreach (var s in table) // UPDATE Database
-                if (Month != s.dateRepeat && s.numberLearn == 0)
-                {  // обновление БД, при условии, что месяцы не совпадают и numberLearn == 0. изменяем месяц на текущий и numberLearn++;                
-                    database.Query<Database_Words>("UPDATE Database SET dateRepeat = " + Month + " WHERE enWords = ?", s.enWords);
-                    database.Query<Database_Words>("UPDATE Database SET numberLearn = " + s.numberLearn + 1 + " WHERE enWords = ?", s.enWords);
+                if (Month != s.DateRecurrence && s.NumberLearn == 0)
+                {  // обновление БД, при условии, что месяцы не совпадают и NumberLearn == 0. изменяем месяц на текущий и NumberLearn++;                
+                    database.Query<Database_Words>("UPDATE Database SET DateRecurrence = " + Month + " WHERE Word = ?", s.Word);
+                    database.Query<Database_Words>("UPDATE Database SET NumberLearn = " + s.NumberLearn + 1 + " WHERE Word = ?", s.Word);
                 }
         }
 
@@ -66,10 +66,10 @@ namespace ReLearn
             databaseFlags.CreateTable<Database_Flags>();
             var tableFlags = databaseFlags.Table<Database_Flags>();
             foreach (var s in tableFlags) // UPDATE Database_Flags
-                if (Month != s.dateRepeat && s.numberLearn == 0)
-                {  // обновление БД, при условии, что месяцы не совпадают и numberLearn == 0. изменяем месяц на текущий и numberLearn++;                
-                    databaseFlags.Query<Database_Flags>("UPDATE Database_Flags SET dateRepeat = " + Month + " WHERE image_name = ?", s.image_name);
-                    databaseFlags.Query<Database_Flags>("UPDATE Database_Flags SET numberLearn = " + s.numberLearn + 1 + " WHERE image_name = ?", s.image_name);
+                if (Month != s.DateRecurrence && s.NumberLearn == 0)
+                {  // обновление БД, при условии, что месяцы не совпадают и NumberLearn == 0. изменяем месяц на текущий и NumberLearn++;                
+                    databaseFlags.Query<Database_Flags>("UPDATE Database_Flags SET DateRecurrence = " + Month + " WHERE Image_name = ?", s.Image_name);
+                    databaseFlags.Query<Database_Flags>("UPDATE Database_Flags SET NumberLearn = " + s.NumberLearn + 1 + " WHERE Image_name = ?", s.Image_name);
                 }
         }
 
@@ -119,9 +119,9 @@ namespace ReLearn
                 //    foreach (var word in table)
                 //    {   // создание БД в виде  List<DatabaseOfWords>
                 //        DatabaseOfWords w = new DatabaseOfWords();
-                //        if (word.numberLearn != 0)
+                //        if (word.NumberLearn != 0)
                 //        {
-                //            w.Add(word.enWords, word.ruWords, word.numberLearn, word.dateRepeat);
+                //            w.Add(word.Word, word.TranslationWord, word.NumberLearn, word.DateRecurrence);
                 //            dataBase.Add(w);
                 //        }
                 //    }
@@ -142,25 +142,25 @@ namespace ReLearn
     {
         [PrimaryKey, AutoIncrement, Column("_id")]
         public int Id { get; set; }
-        public string enWords { get; set; }
-        public string ruWords { get; set; }
-        public int numberLearn { get; set; }
-        public int dateRepeat { get; set; }
+        public string Word { get; set; }
+        public string TranslationWord { get; set; }
+        public int NumberLearn { get; set; }
+        public int DateRecurrence { get; set; }
 
         public Database_Words()
         {
-            this.dateRepeat = 1;
-            this.enWords = "";
-            this.numberLearn = 6;
-            this.ruWords = "";
+            this.DateRecurrence = 1;
+            this.Word = "";
+            this.NumberLearn = 6;
+            this.TranslationWord = "";
         }
 
         public Database_Words(Database_Words x)
         {
-            this.dateRepeat = x.dateRepeat;
-            this.enWords = x.enWords;
-            this.numberLearn = x.numberLearn;
-            this.ruWords = x.ruWords;
+            this.DateRecurrence = x.DateRecurrence;
+            this.Word = x.Word;
+            this.NumberLearn = x.NumberLearn;
+            this.TranslationWord = x.TranslationWord;
         }
 
         public Database_Words Find()
@@ -172,18 +172,18 @@ namespace ReLearn
 
     class DatabaseOfFlags // флаг 
     {
-        public string image_name = null;
-        public string name_flag_en = null;
-        public string name_flag_ru = null;
-        public int numberLearn = 0;
-        public int dateRepeat = 0;
+        public string Image_name = null;
+        public string Name_flag_en = null;
+        public string Name_flag_ru = null;
+        public int NumberLearn = 0;
+        public int DateRecurrence = 0;
         public DatabaseOfFlags Add(string image_n, string flag_en, string flag_ru, int nLearn, int date)
         {
-            this.image_name = image_n;
-            this.name_flag_en = flag_en;
-            this.name_flag_ru = flag_ru;
-            this.numberLearn = nLearn;
-            this.dateRepeat = date;
+            this.Image_name = image_n;
+            this.Name_flag_en = flag_en;
+            this.Name_flag_ru = flag_ru;
+            this.NumberLearn = nLearn;
+            this.DateRecurrence = date;
             return this;
         }
     }
@@ -192,11 +192,11 @@ namespace ReLearn
     {
         [PrimaryKey, AutoIncrement, Column("_id")]
         public int Id { get; set; }
-        public string image_name { get; set; }
-        public string name_flag_en { get; set; }
-        public string name_flag_ru { get; set; }
-        public int numberLearn { get; set; }
-        public int dateRepeat { get; set; }
+        public string Image_name { get; set; }
+        public string Name_flag_en { get; set; }
+        public string Name_flag_ru { get; set; }
+        public int NumberLearn { get; set; }
+        public int DateRecurrence { get; set; }
     }
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     ///
@@ -233,11 +233,11 @@ namespace ReLearn
 //    var list_imageName_flag = str_line.Split('|');
 //    var database_Flags = new Database_Flags
 //    {
-//        image_name = list_imageName_flag[0],
-//        name_flag_en = list_imageName_flag[1],
-//        name_flag_ru = list_imageName_flag[2],
-//        numberLearn = 10,
-//        dateRepeat = System.DateTime.Today.Month
+//        Image_name = list_imageName_flag[0],
+//        Name_flag_en = list_imageName_flag[1],
+//        Name_flag_ru = list_imageName_flag[2],
+//        NumberLearn = 10,
+//        DateRecurrence = System.DateTime.Today.Month
 //    };
 //    databaseFlags.Insert(database_Flags);
 //}

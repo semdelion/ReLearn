@@ -71,7 +71,7 @@ namespace ReLearn
                     var database = DataBase.Connect(NameDatabase.English_DB);
                     database.CreateTable<Database_Words>();
                     var search_occurrences = database.Query<Database_Words>("SELECT * FROM  " + DataBase.Table_Name);// поиск вхождения слова в БД
-                    var search_numberlearn_null = database.Query<Database_Words>("SELECT * FROM  " + DataBase.Table_Name + " WHERE numberLearn = 0").Count;
+                    var search_numberlearn_null = database.Query<Database_Words>("SELECT * FROM  " + DataBase.Table_Name + " WHERE NumberLearn = 0").Count;
                     if (search_occurrences.Count == search_numberlearn_null)
                         Toast.MakeText(this, "You repeated all the words", ToastLength.Short).Show();
                     else if (search_occurrences.Count != 0){
@@ -102,7 +102,7 @@ namespace ReLearn
             }
             if (id == Resource.Id.menuDatabase_PopularWords)
             {
-                DataBase.Table_Name = "Database_PopularWords";
+                DataBase.Table_Name = "Database_Popular_Words";
                 return true;
             }
             if (id == Resource.Id.Stats){

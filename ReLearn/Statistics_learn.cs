@@ -19,10 +19,10 @@ namespace ReLearn
     {
         [PrimaryKey, AutoIncrement, Column("_id")]
         public int Id { get; set; }
-        public string enWords { get; set; }
-        public string ruWords { get; set; }
-        public int numberLearn { get; set; }
-        public int dateRepeat { get; set; }
+        public string Word { get; set; }
+        public string TranslationWord { get; set; }
+        public int NumberLearn { get; set; }
+        public int DateRecurrence { get; set; }
     }
 
 
@@ -51,7 +51,7 @@ namespace ReLearn
         public int Learn { get { return learn; } }
     }
 
-    public class Database_Stat // Класс для считывания базы данных Stat
+    public class Database_Statistics // Класс для считывания базы данных Stat
     {
         [PrimaryKey, AutoIncrement, Column("_id")]
         public int Id { get; set; }
@@ -60,17 +60,21 @@ namespace ReLearn
         public DateTime DateOfTesting { get; set; }
     }
 
-    class Database_Stat_My_Directly : Database_Stat { }
-    class Database_Stat_PopularWords : Database_Stat{ }
-    class Database_Stat_Flags : Database_Stat { }
+    class My_Directly_Statistics : Database_Statistics { }
+    class Popular_Words_Statistics : Database_Statistics{ }
+    class Flags_Statistics : Database_Statistics { }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     public static class NameDatabase // Имена баз данных
     {
-        public static string Statistics = "database_stat.db3";
+
+
+        public static string Statistics = "database_statistics.db3";
 
         public static string English_DB = "database_words.db3";
+
         public static string Flags_DB = "database_flags.db3";
+
 
         public static string English_Stat_DB = "database_english_stat.db3";
 

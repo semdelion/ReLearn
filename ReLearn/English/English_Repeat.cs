@@ -30,26 +30,26 @@ namespace ReLearn
         void Random_Button(Button B1, Button B2, Button B3, Button B4, List<Database_Words> dataBase, int i)   //загружаем варианты ответа в текст кнопок
         {
             System.Random rand = new System.Random(unchecked((int)(DateTime.Now.Ticks)));
-            B1.Text = dataBase[i].ruWords;
-            B2.Text = dataBase[rand.Next(dataBase.Count)].ruWords;
-            B3.Text = dataBase[rand.Next(dataBase.Count)].ruWords;
-            B4.Text = dataBase[rand.Next(dataBase.Count)].ruWords;
+            B1.Text = dataBase[i].TranslationWord;
+            B2.Text = dataBase[rand.Next(dataBase.Count)].TranslationWord;
+            B3.Text = dataBase[rand.Next(dataBase.Count)].TranslationWord;
+            B4.Text = dataBase[rand.Next(dataBase.Count)].TranslationWord;
         }
         void Answer(Button B1, Button B2, Button B3, Button B4,Button BNext, List<Database_Words> dataBase, List<Statistics_learn> Stats,int rand_word ) // подсвечиваем правильный ответ, если мы ошиблись подсвечиваем неправвильный и паравильный 
         {
             GUI.Button_enable(B1, B2, B3, B4, BNext);
-            if (B1.Text == dataBase[rand_word].ruWords){
-                Repeat_work.DeleteRepeat(Stats, dataBase[rand_word].enWords, rand_word, dataBase[rand_word].numberLearn -= Magic_constants.true_answer);
+            if (B1.Text == dataBase[rand_word].TranslationWord){
+                Repeat_work.DeleteRepeat(Stats, dataBase[rand_word].Word, rand_word, dataBase[rand_word].NumberLearn -= Magic_constants.true_answer);
                 Statistics_learn.answerTrue++;
                 GUI.Button_true(B1);
             }
             else{
-                Repeat_work.DeleteRepeat(Stats, dataBase[rand_word].enWords, rand_word, dataBase[rand_word].numberLearn += Magic_constants.false_answer);
+                Repeat_work.DeleteRepeat(Stats, dataBase[rand_word].Word, rand_word, dataBase[rand_word].NumberLearn += Magic_constants.false_answer);
                 Statistics_learn.answerFalse++;
                 GUI.Button_false(B1);
-                if (B2.Text == dataBase[rand_word].ruWords)
+                if (B2.Text == dataBase[rand_word].TranslationWord)
                     GUI.Button_true(B2);
-                else if (B3.Text == dataBase[rand_word].ruWords)
+                else if (B3.Text == dataBase[rand_word].TranslationWord)
                     GUI.Button_true(B3);
                 else
                     GUI.Button_true(B4);
@@ -58,7 +58,7 @@ namespace ReLearn
 
         void Function_Next_Test(Button B1, Button B2, Button B3, Button B4, Button BNext, TextView textView, List<Database_Words> dataBase,int rand_word,int i_rand) //новый тест
         {
-            textView.Text = dataBase[rand_word].enWords.ToString();
+            textView.Text = dataBase[rand_word].Word.ToString();
             GUI.Button_ebabled(BNext);
             switch (i_rand){// задаём рандоммную кнопку                            
                 case 0:{
@@ -79,15 +79,15 @@ namespace ReLearn
                 }
             }
         }
-        public void Update_Database(List<Statistics_learn> listdataBase) // изменение у бвзы данных элемента numberLearn
+        public void Update_Database(List<Statistics_learn> listdataBase) // изменение у бвзы данных элемента NumberLearn
         {
             var database = DataBase.Connect(NameDatabase.English_DB);
             int month = DateTime.Today.Month;
             database.CreateTable<Database_Words>();
             for (int i = 0; i < listdataBase.Count; i++)
             {
-                database.Query<Database_Words>("UPDATE " + DataBase.Table_Name + " SET dateRepeat = " + month + " WHERE enWords = ?", listdataBase[i].Word);
-                database.Query<Database_Words>("UPDATE " + DataBase.Table_Name + " SET numberLearn = " + listdataBase[i].Learn + " WHERE enWords = ?", listdataBase[i].Word);
+                database.Query<Database_Words>("UPDATE " + DataBase.Table_Name + " SET DateRecurrence = " + month + " WHERE Word = ?", listdataBase[i].Word);
+                database.Query<Database_Words>("UPDATE " + DataBase.Table_Name + " SET NumberLearn = " + listdataBase[i].Learn + " WHERE Word = ?", listdataBase[i].Word);
             }
         }
 
@@ -131,7 +131,7 @@ namespace ReLearn
                 var dataBase = db.Query<Database_Words>("SELECT * FROM " + DataBase.Table_Name);
 
                 System.Random rnd = new System.Random(unchecked((int)(DateTime.Now.Ticks)));
-                rand_word = rnd.Next(dataBase.Count); //ПЕРЕДЕЛАЙ сделать защиту от дурака, если все элементы базы имеют numberLearn = 0
+                rand_word = rnd.Next(dataBase.Count); //ПЕРЕДЕЛАЙ сделать защиту от дурака, если все элементы базы имеют NumberLearn = 0
                 i_rand = rnd.Next(4);                           //рандом для 4 кнопок
                 Function_Next_Test(button1, button2, button3, button4, button_next, textView, dataBase, rand_word, i_rand);
 

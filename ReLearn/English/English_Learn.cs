@@ -36,14 +36,14 @@ namespace ReLearn
                 int rand_word = 0;
 
                 rand_word = rnd.Next(dataBase.Count);  ////TODO говнокод
-                textView_learn_en.Text = dataBase[rand_word].enWords;
-                textView_learn_ru.Text = dataBase[rand_word].ruWords;
+                textView_learn_en.Text = dataBase[rand_word].Word;
+                textView_learn_ru.Text = dataBase[rand_word].TranslationWord;
 
                 button_learn_en_ru.Click += (s, e) =>
                 {                  
                     rand_word = rnd.Next(dataBase.Count);
-                    textView_learn_en.Text = dataBase[rand_word].enWords;
-                    textView_learn_ru.Text = dataBase[rand_word].ruWords;
+                    textView_learn_en.Text = dataBase[rand_word].Word;
+                    textView_learn_ru.Text = dataBase[rand_word].TranslationWord;
                 };
             }
             catch{

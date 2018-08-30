@@ -41,29 +41,29 @@ namespace ReLearn
                 foreach (var word in table)
                 { // создание БД в виде  List<DatabaseOfFlags>
                     DatabaseOfFlags w = new DatabaseOfFlags();
-                    w.Add(word.image_name, word.name_flag_en, word.name_flag_ru, word.numberLearn, word.dateRepeat);
+                    w.Add(word.Image_name, word.Name_flag_en, word.Name_flag_ru, word.NumberLearn, word.DateRecurrence);
                     dataBase.Add(w);
                 }
                 int rand_word = 0;
                 Random rnd = new Random(unchecked((int)(DateTime.Now.Ticks)));
                 rand_word = rnd.Next(dataBase.Count);
 
-                var his = Application.Context.Assets.Open("ImageFlags/" + dataBase[rand_word].image_name + ".png");
+                var his = Application.Context.Assets.Open("ImageFlags/" + dataBase[rand_word].Image_name + ".png");
                 Bitmap bitmap = BitmapFactory.DecodeStream(his);
                 imageView.SetImageBitmap(bitmap);
 
-               // imageView.SetImageResource(dataBase[rand_word].image_name);
+               // imageView.SetImageResource(dataBase[rand_word].Image_name);
                 textView_learn_flag.Text = Repeat_work.Word_det(dataBase[rand_word]);
 
                 button_learn_en_ru.Click += (s, e) =>
                 {
                     rand_word = rnd.Next(dataBase.Count);
 
-                    var hisi = Application.Context.Assets.Open("ImageFlags/" + dataBase[rand_word].image_name + ".png");
+                    var hisi = Application.Context.Assets.Open("ImageFlags/" + dataBase[rand_word].Image_name + ".png");
                     Bitmap bitm = BitmapFactory.DecodeStream(hisi);
                     imageView.SetImageBitmap(bitm);
 
-                    //imageView.SetImageResource(dataBase[rand_word].image_name);
+                    //imageView.SetImageResource(dataBase[rand_word].Image_name);
                     textView_learn_flag.Text = Repeat_work.Word_det(dataBase[rand_word]);
                 };
             }

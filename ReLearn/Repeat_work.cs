@@ -29,8 +29,8 @@ namespace ReLearn
         {
             string databasePath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), name_Database);
             var database = new SQLiteConnection(databasePath); // подключение к БД
-            database.CreateTable<Database_Stat>();
-            var newStat = new Database_Stat
+            database.CreateTable<Database_Statistics>();
+            var newStat = new Database_Statistics
             {
                 True = True,
                 False = False
@@ -40,9 +40,9 @@ namespace ReLearn
         public static string Word_det(DatabaseOfFlags word) // возвращает флаг на языке  // 0 - eng / 1 - rus
         {
             if (Magic_constants.language == 0)
-                return word.name_flag_en;
+                return word.Name_flag_en;
             if (Magic_constants.language == 1)
-                return word.name_flag_ru;
+                return word.Name_flag_ru;
             return "";
         }
     }

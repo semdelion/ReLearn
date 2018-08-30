@@ -96,7 +96,7 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\Database\database_flags.db3" />
-    <AndroidAsset Include="Assets\Database\database_stat.db3" />
+    <AndroidAsset Include="Assets\Database\database_statistics.db3" />
     <AndroidAsset Include="Assets\Database\database_words.db3" />
     <None Include="packages.config" />
     <None Include="Resources\AboutResources.txt" />
