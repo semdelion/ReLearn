@@ -53,7 +53,7 @@ namespace ReLearn
                 imageView.SetImageBitmap(bitmap);
 
                // imageView.SetImageResource(dataBase[rand_word].Image_name);
-                textView_learn_flag.Text = Repeat_work.Word_det(dataBase[rand_word]);
+                textView_learn_flag.Text = Additional_functions.Name_of_the_flag(dataBase[rand_word]);
 
                 button_learn_en_ru.Click += (s, e) =>
                 {
@@ -64,7 +64,7 @@ namespace ReLearn
                     imageView.SetImageBitmap(bitm);
 
                     //imageView.SetImageResource(dataBase[rand_word].Image_name);
-                    textView_learn_flag.Text = Repeat_work.Word_det(dataBase[rand_word]);
+                    textView_learn_flag.Text = Additional_functions.Name_of_the_flag(dataBase[rand_word]);
                 };
             }
             catch {

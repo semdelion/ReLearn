@@ -15,7 +15,7 @@ using SQLite;
 
 namespace ReLearn
 {
-    [Activity(Label = "Repeat 1/20", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    [Activity(Label = "Repeat ", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     class English_Repeat : Activity, TextToSpeech.IOnInitListener
     {
         private TextToSpeech tts;
@@ -38,17 +38,17 @@ namespace ReLearn
             B4.Text = dataBase[random_numbers[3]].TranslationWord;
         }
 
-        void Answer(Button B1, Button B2, Button B3, Button B4,Button BNext, List<Database_Words> dataBase, List<Statistics_learn> Stats,int rand_word ) // подсвечиваем правильный ответ, если мы ошиблись подсвечиваем неправвильный и паравильный 
+        void Answer(Button B1, Button B2, Button B3, Button B4,Button BNext, List<Database_Words> dataBase, List<Statistics> Stats,int rand_word ) // подсвечиваем правильный ответ, если мы ошиблись подсвечиваем неправвильный и паравильный 
         {
             GUI.Button_enable(B1, B2, B3, B4, BNext);
             if (B1.Text == dataBase[rand_word].TranslationWord){
-                Repeat_work.Delete_Repeat(Stats, dataBase[rand_word].Word, rand_word, dataBase[rand_word].NumberLearn -= Magic_constants.true_answer);
-                Statistics_learn.AnswerTrue++;
+                Additional_functions.Update_number_learn(Stats, dataBase[rand_word].Word, rand_word, dataBase[rand_word].NumberLearn -= Magic_constants.true_answer);
+                Statistics.AnswerTrue++;
                 GUI.Button_true(B1);
             }
             else{
-                Repeat_work.Delete_Repeat(Stats, dataBase[rand_word].Word, rand_word, dataBase[rand_word].NumberLearn += Magic_constants.false_answer);
-                Statistics_learn.AnswerFalse++;
+                Additional_functions.Update_number_learn(Stats, dataBase[rand_word].Word, rand_word, dataBase[rand_word].NumberLearn += Magic_constants.false_answer);
+                Statistics.AnswerFalse++;
                 GUI.Button_false(B1);
                 if (B2.Text == dataBase[rand_word].TranslationWord)
                     GUI.Button_true(B2);
@@ -83,7 +83,7 @@ namespace ReLearn
             }
         }
 
-        public void Update_Database(List<Statistics_learn> listdataBase) // изменение у бвзы данных элемента NumberLearn
+        public void Update_Database(List<Statistics> listdataBase) // изменение у бвзы данных элемента NumberLearn
         {
             var database = DataBase.Connect(Database_Name.English_DB);
             int month = DateTime.Today.Month;
@@ -107,12 +107,12 @@ namespace ReLearn
             ActionBar.SetDisplayHomeAsUpEnabled(true); // отображаем кнопку домой
             GUI.Button_default(English.button_english_repeat);
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            Statistics_learn.AnswerFalse = 0;
-            Statistics_learn.AnswerTrue = 0;
+            Statistics.AnswerFalse = 0;
+            Statistics.AnswerTrue = 0;
             int rand_word = 0, i_rand = 0,count=0;
-
+            ActionBar.Title = Convert.ToString("Repeat " + (count + 1) + "/" + Magic_constants.repeat_count);
             TextView textView = FindViewById<TextView>(Resource.Id.textView_Eng_Word);
-            List<Statistics_learn> Stats = new List<Statistics_learn>();
+            List<Statistics> Stats = new List<Statistics>();
             
             Button button1 = FindViewById<Button>(Resource.Id.button_E_choice1);
             Button button2 = FindViewById<Button>(Resource.Id.button_E_choice2);
@@ -163,7 +163,7 @@ namespace ReLearn
                     }
                     else
                     {
-                        Repeat_work.Add_Statistics(Statistics_learn.AnswerTrue, Statistics_learn.AnswerFalse);
+                        Statistics.Add_Statistics(Statistics.AnswerTrue, Statistics.AnswerFalse);
                         Update_Database(Stats);
                         Intent intent_english_stat = new Intent(this, typeof(English_Stat));
                         StartActivity(intent_english_stat);
@@ -174,6 +174,7 @@ namespace ReLearn
             catch{ Toast.MakeText(this, "Error : can't connect to database of Language in Repeat", ToastLength.Long).Show(); }
 
         }
+
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
             this.Finish();

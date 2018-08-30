@@ -15,16 +15,16 @@ using Android.Graphics;
 
 namespace ReLearn
 {
-    [Activity(Label = "Repeat 1/20", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    [Activity(Label = "Repeat ", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     class Flags_Repeat : Activity
     {
         void Random_Button(Button B1, Button B2, Button B3, Button B4, List<Database_Flags> dataBase, int i)   //загружаем варианты ответа в текст кнопок
         {
             Additional_functions.Random_4_numbers(i, dataBase.Count, out List<int> random_numbers);
-            B1.Text = Repeat_work.Word_det(dataBase[random_numbers[0]]);
-            B2.Text = Repeat_work.Word_det(dataBase[random_numbers[1]]);
-            B3.Text = Repeat_work.Word_det(dataBase[random_numbers[2]]);
-            B4.Text = Repeat_work.Word_det(dataBase[random_numbers[3]]);
+            B1.Text = Additional_functions.Name_of_the_flag(dataBase[random_numbers[0]]);
+            B2.Text = Additional_functions.Name_of_the_flag(dataBase[random_numbers[1]]);
+            B3.Text = Additional_functions.Name_of_the_flag(dataBase[random_numbers[2]]);
+            B4.Text = Additional_functions.Name_of_the_flag(dataBase[random_numbers[3]]);
         }
 
         void Function_Next_Test(Button B1, Button B2, Button B3, Button B4, Button BNext, ImageView imageView, List<Database_Flags> dataBase, int rand_word, int i_rand) //new test
@@ -61,38 +61,38 @@ namespace ReLearn
             }
         }
 
-        void Answer(Button B1, Button B2, Button B3, Button B4, Button BNext, List<Database_Flags> dataBase, List<Statistics_learn> Stats, int rand_word) // подсвечиваем правильный ответ, если мы ошиблись подсвечиваем неправвильный и паравильный 
+        void Answer(Button B1, Button B2, Button B3, Button B4, Button BNext, List<Database_Flags> dataBase, List<Statistics> Stats, int rand_word) // подсвечиваем правильный ответ, если мы ошиблись подсвечиваем неправвильный и паравильный 
         {
             GUI.Button_enable(B1, B2, B3, B4, BNext);
-            if (B1.Text == Repeat_work.Word_det(dataBase[rand_word]))
+            if (B1.Text == Additional_functions.Name_of_the_flag(dataBase[rand_word]))
             {
-                Repeat_work.Delete_Repeat(Stats, Convert.ToString(dataBase[rand_word].Image_name), rand_word, dataBase[rand_word].NumberLearn -= Magic_constants.true_answer);
-                Statistics_learn.AnswerTrue++;
+                Additional_functions.Update_number_learn(Stats, Convert.ToString(dataBase[rand_word].Image_name), rand_word, dataBase[rand_word].NumberLearn -= Magic_constants.true_answer);
+                Statistics.AnswerTrue++;
                 GUI.Button_true(B1);
             }
             else
             {
-                Repeat_work.Delete_Repeat(Stats, Convert.ToString(dataBase[rand_word].Image_name), rand_word, dataBase[rand_word].NumberLearn += Magic_constants.false_answer);
-                Statistics_learn.AnswerFalse++;
+                Additional_functions.Update_number_learn(Stats, Convert.ToString(dataBase[rand_word].Image_name), rand_word, dataBase[rand_word].NumberLearn += Magic_constants.false_answer);
+                Statistics.AnswerFalse++;
                 GUI.Button_false(B1);
-                if (B2.Text == Repeat_work.Word_det(dataBase[rand_word]))
+                if (B2.Text == Additional_functions.Name_of_the_flag(dataBase[rand_word]))
                     GUI.Button_true(B2);
-                else if (B3.Text == Repeat_work.Word_det(dataBase[rand_word]))
+                else if (B3.Text == Additional_functions.Name_of_the_flag(dataBase[rand_word]))
                     GUI.Button_true(B3);
                 else
                     GUI.Button_true(B4);
             }
         }
 
-        public void Update_Database(List<Statistics_learn> listdataBase) // изменение у бвзы данных элемента NumberLearn
+        public void Update_Database(List<Statistics> listdataBase) // изменение у бвзы данных элемента NumberLearn
         {
             var database = DataBase.Connect(Database_Name.Flags_DB);
             database.CreateTable<Database_Flags>();
             int month = DateTime.Today.Month;
             for (int i = 0; i < listdataBase.Count; i++)
             {
-                database.Query<Database_Flags>("UPDATE Database_Flags SET DateRecurrence = " + month + " WHERE Image_name = ?", listdataBase[i].Word);
-                database.Query<Database_Flags>("UPDATE Database_Flags SET NumberLearn = " + listdataBase[i].Learn + " WHERE Image_name = ?", listdataBase[i].Word);
+                database.Query<Database_Flags>("UPDATE " + DataBase.Table_Name + " SET DateRecurrence = " + month + " WHERE Image_name = ?", listdataBase[i].Word);
+                database.Query<Database_Flags>("UPDATE " + DataBase.Table_Name + " SET NumberLearn = " + listdataBase[i].Learn + " WHERE Image_name = ?", listdataBase[i].Word);
             }
         }
 
@@ -105,11 +105,11 @@ namespace ReLearn
             SetActionBar(toolbarMain);
             ActionBar.SetDisplayHomeAsUpEnabled(true); // отображаем кнопку домой
 
-            Statistics_learn.AnswerFalse = 0;
-            Statistics_learn.AnswerTrue = 0;
+            Statistics.AnswerFalse = 0;
+            Statistics.AnswerTrue = 0;
             int rand_word = 0, i_rand = 0, count = 0;
-            List<Statistics_learn> Stats = new List<Statistics_learn>();
-
+            List<Statistics> Stats = new List<Statistics>();
+            ActionBar.Title = Convert.ToString("Repeat " + (count + 1) + "/" + Magic_constants.repeat_count);
             ImageView imageView = FindViewById<ImageView>(Resource.Id.imageView_Flags_repeat); // проверить
             Button button1 = FindViewById<Button>(Resource.Id.button_F_choice1);
             Button button2 = FindViewById<Button>(Resource.Id.button_F_choice2);
@@ -155,11 +155,11 @@ namespace ReLearn
                         Function_Next_Test(button1, button2, button3, button4, button_next, imageView, dataBase, rand_word, i_rand);
                         GUI.Button_Refresh(button1, button2, button3, button4, button_next);
                         count++;
-                        ActionBar.Title = Convert.ToString("Repeat " + (count + 1) + "/" + Magic_constants.repeat_count); // ПЕРЕДЕЛАЙ Костыль счётчик 
+                        ActionBar.Title = Convert.ToString("Repeat " + (count + 1) + "/" + Magic_constants.repeat_count); 
                     }
                     else
                     {
-                        Repeat_work.Add_Statistics(Statistics_learn.AnswerTrue, Statistics_learn.AnswerFalse);
+                        Statistics.Add_Statistics(Statistics.AnswerTrue, Statistics.AnswerFalse);
                         Update_Database(Stats);
                         Intent intent_flags_stat = new Intent(this, typeof(Flags_Stats));
                         StartActivity(intent_flags_stat);

@@ -23,13 +23,13 @@ namespace ReLearn
         public static string Flags_DB = "database_flags.db3";
         public static string Setting_DB = "Setting_Database.db3";
     }
+
     public static class Table_name// Имена баз данных
     {
         public const string My_Directly = "My_Directly";
         public const string Popular_Words = "Popular_Words";
         public const string Database_Flags = "Database_Flags";
     }
-
 
     public static class DataBase
     {
@@ -144,6 +144,15 @@ namespace ReLearn
         public int NumberLearn { get; set; }
         public int DateRecurrence { get; set; }
 
+        public Database_Flags()
+        {
+            Image_name = null;
+            Name_flag_en = null;
+            Name_flag_ru = null;
+            NumberLearn = 0;
+            DateRecurrence = 0;
+        }
+
         public Database_Flags Add(string image_n, string flag_en, string flag_ru, int nLearn, int date)
         {
             this.Image_name = image_n;
@@ -153,44 +162,10 @@ namespace ReLearn
             this.DateRecurrence = date;
             return this;
         }
-        public Database_Flags()
-        {
-            Image_name = null;
-            Name_flag_en = null;
-            Name_flag_ru = null;
-            NumberLearn = 0;
-            DateRecurrence = 0;
-        }
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    ///
-    //class DatabaseOfSetting// настройки
-    //{
-    //    public string Setting_bd = null;
-    //    public string Name_bd = null;
-    //    public int full_or_empty = 0;
-    //    public int language = 0;
-    //    public DatabaseOfSetting Add(string Set_bd, string N_bd, int f_or_e, int lan)
-    //    {
-    //        this.Setting_bd = Set_bd;
-    //        this.Name_bd = N_bd;
-    //        this.full_or_empty = f_or_e;
-    //        this.language = lan;
-    //        return this;
-    //    }
-    //}
-    //public class Setting_Database // Класс для считывания базы данных Stat
-    //{
-    //    [PrimaryKey, AutoIncrement, Column("_id")]
-    //    public int Id { get; set; }
-    //    public string Setting_bd { get; set; }
-    //    public string Name_bd { get; set; }
-    //    public int full_or_empty { get; set; }
-    //    public int language { get; set; }
-    //}
 }
-
 
 //public static void Add_new_Flag(StreamReader reader, SQLiteConnection databaseFlags)
 //{

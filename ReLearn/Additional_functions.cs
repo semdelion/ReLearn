@@ -12,6 +12,16 @@ using Android.Widget;
 
 namespace ReLearn
 {
+    public static class Magic_constants // Маааагия!
+    {
+        public static int repeat_count = 20; // количество повторений;
+        public static int maxLearn = 12;
+        public static int numberLearn = 6;
+        public static int false_answer = 3;
+        public static int true_answer = 1;
+        public static int language = 0; // 0 - eng, 1 - rus ...
+    }
+
     static class Additional_functions
     {
         public static void Random_4_numbers(int NotI, int count, out List<int> random_numbers)
@@ -45,5 +55,24 @@ namespace ReLearn
             }
         }
 
+        public static string Name_of_the_flag(Database_Flags word) // возвращает имя флага на языке  // 0 - eng / 1 - rus
+        {
+            if (Magic_constants.language == 0)
+                return word.Name_flag_en;
+            if (Magic_constants.language == 1)
+                return word.Name_flag_ru;
+            return "";
+        }
+
+        public static void Update_number_learn(List<Statistics> Stats, String identifier, int rand_word, int RepeatLearn)
+        {
+            for (int i = 0; i < Stats.Count; i++)
+                if (Stats[i].Word == identifier)
+                {
+                    Stats[i] = new Statistics(rand_word, identifier, RepeatLearn);
+                    return;
+                }
+            Stats.Add(new Statistics(rand_word, identifier, RepeatLearn));
+        }
     }
 }

@@ -1,1 +1,1 @@
-﻿flags|database_flags_en_ru.db3|0|1
+﻿DictionaryName " "

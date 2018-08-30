@@ -18,6 +18,7 @@ namespace ReLearn
     class Graph_Statistics : View
     {
         public Graph_Statistics(Context context) : base(context) { }
+
         protected override void OnDraw(Canvas canvas)
         {
             base.OnDraw(canvas);         
