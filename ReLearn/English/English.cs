@@ -11,6 +11,8 @@ using Android.Views;
 using Android.Widget;
 using SQLite;
 using System.IO;
+using Plugin.Settings;
+
 namespace ReLearn
 {
     [Activity(Label = "Language", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
@@ -31,7 +33,11 @@ namespace ReLearn
             SetActionBar(toolbarMain);
             ActionBar.SetDisplayHomeAsUpEnabled(true);
 
-            ////////////////DataBase.Table_Name = "settings!!!!"///// TODO STRRINGS
+            if (String.IsNullOrEmpty(DataBase.Table_Name))
+            {
+                CrossSettings.Current.AddOrUpdateValue("DictionaryName", Table_name.My_Directly);
+                DataBase.Table_Name = CrossSettings.Current.GetValueOrDefault("DictionaryName", null);
+            }
 
             button_english_add = FindViewById<Button>(Resource.Id.button_english_add);
             button_english_learn = FindViewById<Button>(Resource.Id.button_english_learn);
@@ -94,18 +100,18 @@ namespace ReLearn
         }
 
         public override bool OnOptionsItemSelected(IMenuItem item)
-        {
-
-            
+        {            
             int id = item.ItemId;
             if (id == Resource.Id.menuDatabase_MyDictionary)
             {
                 DataBase.Table_Name = Table_name.My_Directly;
+                CrossSettings.Current.AddOrUpdateValue("DictionaryName", DataBase.Table_Name);
                 return true;
             }
             if (id == Resource.Id.menuDatabase_PopularWords)
             {
                 DataBase.Table_Name = Table_name.Popular_Words;
+                CrossSettings.Current.AddOrUpdateValue("DictionaryName", DataBase.Table_Name);
                 return true;
             }
             if (id == Resource.Id.Stats){

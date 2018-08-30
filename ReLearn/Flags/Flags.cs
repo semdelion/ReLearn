@@ -12,6 +12,7 @@ using Android.Views;
 using Android.Widget;
 
 using SQLite;
+using Plugin.Settings;
 
 namespace ReLearn
 {
@@ -32,6 +33,8 @@ namespace ReLearn
             Toolbar toolbarMain = FindViewById<Toolbar>(Resource.Id.toolbarFlags);
             SetActionBar(toolbarMain);
             ActionBar.SetDisplayHomeAsUpEnabled(true);
+
+            Magic_constants.language = Convert.ToInt32(CrossSettings.Current.GetValueOrDefault("ImageLanguage", null));
 
             button_flags_learn = FindViewById<Button>(Resource.Id.button_flags_learn);
             button_flags_repeat = FindViewById<Button>(Resource.Id.button_flags_repeat);
@@ -76,12 +79,14 @@ namespace ReLearn
             if (id == Resource.Id.language_eng)
             {
                 //databaseSetting.Query<Setting_Database>("UPDATE Setting_Database SET language = " + 0 + " WHERE Setting_bd = ?", "flags");
-                Magic_constants.language = 0;
+                CrossSettings.Current.AddOrUpdateValue("ImageLanguage", "0");
+                Magic_constants.language = Convert.ToInt32(CrossSettings.Current.GetValueOrDefault("ImageLanguage", null));
                 return true;
             }
             if (id == Resource.Id.language_rus)
             {
-                Magic_constants.language = 1;
+                CrossSettings.Current.AddOrUpdateValue("ImageLanguage", "1");
+                Magic_constants.language = Convert.ToInt32(CrossSettings.Current.GetValueOrDefault("ImageLanguage", null));
                 return true;
             }
             if (id == Android.Resource.Id.Home)

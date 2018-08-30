@@ -12,6 +12,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using SQLite;
+using Plugin.Settings;
 
 namespace ReLearn
 {
@@ -32,7 +33,7 @@ namespace ReLearn
 
     public static class DataBase
     {
-        public static string Table_Name = "My_Directly";
+        public static string Table_Name = CrossSettings.Current.GetValueOrDefault("DictionaryName", null);
 
         public static SQLiteConnection Connect(string nameDB)
         {
