@@ -150,11 +150,11 @@ namespace ReLearn
                     button_next.Enabled = false;
                     if (count < Magic_constants.repeat_count - 1)
                     {
+                        count++;
                         i_rand = rnd.Next(4);
                         rand_word = rnd.Next(dataBase.Count);
                         Function_Next_Test(button1, button2, button3, button4, button_next, imageView, dataBase, rand_word, i_rand);
                         GUI.Button_Refresh(button1, button2, button3, button4, button_next);
-                        count++;
                         ActionBar.Title = Convert.ToString("Repeat " + (count + 1) + "/" + Magic_constants.repeat_count); 
                     }
                     else

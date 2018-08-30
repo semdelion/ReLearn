@@ -21,11 +21,9 @@ namespace ReLearn
 
         protected override void OnDraw(Canvas canvas)
         {
-            base.OnDraw(canvas);         
-            string databasePath = System.IO.Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), Database_Name.Statistics);
-            var database = new SQLiteConnection(databasePath); // подключение к БД
-            database.CreateTable<Database_Statistics>();
+            base.OnDraw(canvas);
 
+            
             Paint text_paint = new Paint {TextSize = 25}; 
             // используется для написания текста и рисования линии
             //left    float: Левая сторона прямоугольника, который нужно нарисовать
@@ -42,11 +40,11 @@ namespace ReLearn
             canvas.DrawLine(left - 20f, 120, left - 5f, 100, text_paint);
             canvas.DrawLine(left + 10f, 120, left - 5f, 100, text_paint);
             text_paint.Color = Color.White;
-            var count_Database_Stat = database.Query<Database_Statistics>("SELECT * FROM Database_Statistics");// количество строк в БД
+            var database = DataBase.Connect(Database_Name.Statistics);
+            var count_Database_Stat = database.Query<Database_Statistics>("SELECT * FROM " + DataBase.Table_Name+"_Statistics" );// количество строк в БД
             int i = 0, n_count = count_Database_Stat.Count - 10, False = 0, True = 0; // n_count - используется для вывода только последних 10 строк БД
-            var table = database.Table<Database_Statistics>();  //ПЕРЕДЕЛАТЬ!!!! оставить только 10 статистик
             right -= 2;
-            foreach (var s in table)
+            foreach (var s in count_Database_Stat)
             {
                 if (i >= n_count)
                 {                  
