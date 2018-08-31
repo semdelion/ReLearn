@@ -55,15 +55,8 @@ namespace ReLearn
             }
         }
 
-        public static string Name_of_the_flag(Database_images word) // возвращает имя флага на языке  // 0 - eng / 1 - rus
-        {
-            if (Magic_constants.language == 0)
-                return word.Name_image_en;
-            if (Magic_constants.language == 1)
-                return word.Name_image_ru;
-            return "";
-        }
-
+        public static string Name_of_the_flag(Database_images word) => Magic_constants.language == 0 ? word.Name_image_en : word.Name_image_ru;
+        
         public static void Update_number_learn(List<Statistics> Stats, String identifier, int rand_word, int RepeatLearn)
         {
             for (int i = 0; i < Stats.Count; i++)

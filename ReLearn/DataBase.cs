@@ -18,17 +18,17 @@ namespace ReLearn
 {
     public static class Database_Name // Имена баз данных
     {
-        public static string Statistics = "database_statistics.db3";
-        public static string English_DB = "database_words.db3";
-        public static string Flags_DB = "database_image.db3";
-        public static string Setting_DB = "Setting_Database.db3";
+        public static string Statistics  { get => "database_statistics.db3"; }
+        public static string English_DB { get => "database_words.db3"; } 
+        public static string Flags_DB { get => "database_image.db3"; }  
+        public static string Setting_DB { get => "Setting_Database.db3"; }  
     }
 
     public static class Table_name// Имена баз данных
     {
-        public const string My_Directly = "My_Directly";
-        public const string Popular_Words = "Popular_Words";
-        public const string Flags = "Flags";
+        public static string My_Directly { get => "My_Directly"; } 
+        public static string Popular_Words { get => "Popular_Words"; }  
+        public static string Flags { get => "Flags"; }  
     }
 
     public static class DataBase
@@ -63,8 +63,9 @@ namespace ReLearn
             }          
         }
 
-        public static void Update_English_DB(int Month) //////////////////проверить
-        {          
+        public static void Update_English_DB()
+        {
+            int Month = DateTime.Today.Month;
             var db = DataBase.Connect(Database_Name.English_DB);
             var dataBase = db.Query<Database_Words>("SELECT * FROM " + DataBase.Table_Name + " WHERE NumberLearn = 0 AND DateRecurrence != " + Month);
             foreach (var s in dataBase) // UPDATE Database
@@ -75,30 +76,16 @@ namespace ReLearn
             }
         }
 
-        public static void Update_Flags_DB(int Month)/////////////переделать
+        public static void Update_Flags_DB()
         {
+            int Month = DateTime.Today.Month;
             var db = DataBase.Connect(Database_Name.Flags_DB); // подключение к БД
-            var dataBase = db.Query<Database_images>("SELECT * FROM " + DataBase.Table_Name);
-         
-            foreach (var s in dataBase) // UPDATE Flags
-                if (Month != s.DateRecurrence && s.NumberLearn == 0)
-                {  // обновление БД, при условии, что месяцы не совпадают и NumberLearn == 0. изменяем месяц на текущий и NumberLearn++;                
-                    db.Query<Database_images>("UPDATE " + DataBase.Table_Name + " SET DateRecurrence = " + Month + " WHERE Image_name = ?", s.Image_name);
-                    db.Query<Database_images>("UPDATE " + DataBase.Table_Name + " SET NumberLearn = " + s.NumberLearn + 1 + " WHERE Image_name = ?", s.Image_name);
-                }
-        }
+            var dataBase = db.Query<Database_images>("SELECT * FROM " + DataBase.Table_Name + " WHERE NumberLearn = 0 AND DateRecurrence != " + Month);
 
-        public static void Check_and_update_database()
-        {
-            try
+            foreach (var s in dataBase) // UPDATE Flags
             {
-                int Month = System.DateTime.Today.Month;
-                Update_English_DB(Month); // обнавление repeat_number если слово не повторялась более месяца 
-                Update_Flags_DB(Month);   // обнавление repeat_number если слово не повторялась более месяца 
-            }
-            catch
-            {
-                Toast.MakeText(GUI.Res, "Error : Can't connect to database or update", ToastLength.Long).Show();
+                db.Query<Database_images>("UPDATE " + DataBase.Table_Name + " SET DateRecurrence = " + Month + " WHERE Image_name = ?", s.Image_name);
+                db.Query<Database_images>("UPDATE " + DataBase.Table_Name + " SET NumberLearn = " + s.NumberLearn + 1 + " WHERE Image_name = ?", s.Image_name);
             }
         }
     }

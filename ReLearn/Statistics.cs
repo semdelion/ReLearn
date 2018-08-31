@@ -38,7 +38,6 @@ namespace ReLearn
         {
             string name_table = DataBase.Table_Name + "_Statistics";
             var database = DataBase.Connect(Database_Name.Statistics);
-            //database.CreateTable<Database_Statistics>();
             database.Query<Database_Statistics>("INSERT INTO " + name_table + " (True, False, DateOfTesting) VALUES (" + True + "," + False + ", DATETIME('NOW'))");
         }
     }

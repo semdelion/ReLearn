@@ -33,9 +33,7 @@ namespace ReLearn
                 var dataBase = db.Query<Database_Words>("SELECT * FROM " + DataBase.Table_Name);
 
                 Random rnd = new Random(unchecked((int)(DateTime.Now.Ticks)));
-                int rand_word = 0;
-
-                rand_word = rnd.Next(dataBase.Count);  ////TODO говнокод
+                int rand_word = rnd.Next(dataBase.Count);  ////TODO говнокод
                 textView_learn_en.Text = dataBase[rand_word].Word;
                 textView_learn_ru.Text = dataBase[rand_word].TranslationWord;
 

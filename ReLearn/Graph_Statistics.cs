@@ -22,8 +22,6 @@ namespace ReLearn
         protected override void OnDraw(Canvas canvas)
         {
             base.OnDraw(canvas);
-
-            
             Paint text_paint = new Paint {TextSize = 25}; 
             // используется для написания текста и рисования линии
             //left    float: Левая сторона прямоугольника, который нужно нарисовать
@@ -32,7 +30,7 @@ namespace ReLearn
             //bottom  float: Нижняя сторона прямоугольника, который нужно нарисовать
             float height = (canvas.Height - 450f) / 20, width = (canvas.Width - 100f) / 20, left = 50f, right = left + width, bottom = canvas.Height - 300f;
             text_paint.Color = Color.Black;//цвет для линии
-            text_paint.StrokeWidth = 4; // толщина черной линии
+            text_paint.StrokeWidth = 4; // толщина  линии
             canvas.DrawLine(25, bottom + 3f, canvas.Width, bottom + 3f, text_paint); //абсцисса
             canvas.DrawLine(canvas.Width - 15, bottom + 18f, canvas.Width, bottom + 3f, text_paint);
             canvas.DrawLine(canvas.Width - 15, bottom - 12f, canvas.Width, bottom + 3f, text_paint);

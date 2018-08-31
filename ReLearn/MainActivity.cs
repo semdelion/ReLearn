@@ -11,19 +11,17 @@ namespace ReLearn
     {
         public static Button button_english;
         public static Button button_flags;
-        
+       
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             GUI.Res = this;
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Main);
             Window.SetBackgroundDrawable(GetDrawable(Resource.Drawable.backgroundMain));
-
             DataBase.GetDatabasePath(Database_Name.English_DB);
             DataBase.GetDatabasePath(Database_Name.Flags_DB);
             DataBase.GetDatabasePath(Database_Name.Statistics);
-
-            //DataBase.Check_and_update_database();
 
             button_english = FindViewById<Button>(Resource.Id.button_english);
             button_flags = FindViewById<Button>(Resource.Id.button_flags);

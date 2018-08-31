@@ -35,6 +35,7 @@ namespace ReLearn
             ActionBar.SetDisplayHomeAsUpEnabled(true);
 
             Magic_constants.language = Convert.ToInt32(CrossSettings.Current.GetValueOrDefault("ImageLanguage", null));
+            DataBase.Update_Flags_DB();
 
             button_flags_learn = FindViewById<Button>(Resource.Id.button_flags_learn);
             button_flags_repeat = FindViewById<Button>(Resource.Id.button_flags_repeat);
