@@ -35,15 +35,10 @@ namespace ReLearn
             try
             {
                 var db = DataBase.Connect(Database_Name.Flags_DB);
-                db.CreateTable<Database_Flags>(); //
-                List<Database_Flags> dataBase = new List<Database_Flags>();
-                var table = db.Table<Database_Flags>();
-                foreach (var word in table)
-                { // создание БД в виде  List<DatabaseOfFlags>
-                    Database_Flags w = new Database_Flags();
-                    w.Add(word.Image_name, word.Name_flag_en, word.Name_flag_ru, word.NumberLearn, word.DateRecurrence);
-                    dataBase.Add(w);
-                }
+
+                // db.CreateTable<Database_images>(); //           
+                var dataBase = db.Query<Database_images>("SELECT * FROM " + DataBase.Table_Name);
+
                 int rand_word = 0;
                 Random rnd = new Random(unchecked((int)(DateTime.Now.Ticks)));
                 rand_word = rnd.Next(dataBase.Count);

@@ -18,7 +18,7 @@ namespace ReLearn
     [Activity(Label = "Repeat ", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     class Flags_Repeat : Activity
     {
-        void Random_Button(Button B1, Button B2, Button B3, Button B4, List<Database_Flags> dataBase, int i)   //загружаем варианты ответа в текст кнопок
+        void Random_Button(Button B1, Button B2, Button B3, Button B4, List<Database_images> dataBase, int i)   //загружаем варианты ответа в текст кнопок
         {
             Additional_functions.Random_4_numbers(i, dataBase.Count, out List<int> random_numbers);
             B1.Text = Additional_functions.Name_of_the_flag(dataBase[random_numbers[0]]);
@@ -27,7 +27,7 @@ namespace ReLearn
             B4.Text = Additional_functions.Name_of_the_flag(dataBase[random_numbers[3]]);
         }
 
-        void Function_Next_Test(Button B1, Button B2, Button B3, Button B4, Button BNext, ImageView imageView, List<Database_Flags> dataBase, int rand_word, int i_rand) //new test
+        void Function_Next_Test(Button B1, Button B2, Button B3, Button B4, Button BNext, ImageView imageView, List<Database_images> dataBase, int rand_word, int i_rand) //new test
         {
 
             var his = Application.Context.Assets.Open("ImageFlags/" + dataBase[rand_word].Image_name+ ".png");
@@ -61,7 +61,7 @@ namespace ReLearn
             }
         }
 
-        void Answer(Button B1, Button B2, Button B3, Button B4, Button BNext, List<Database_Flags> dataBase, List<Statistics> Stats, int rand_word) // подсвечиваем правильный ответ, если мы ошиблись подсвечиваем неправвильный и паравильный 
+        void Answer(Button B1, Button B2, Button B3, Button B4, Button BNext, List<Database_images> dataBase, List<Statistics> Stats, int rand_word) // подсвечиваем правильный ответ, если мы ошиблись подсвечиваем неправвильный и паравильный 
         {
             GUI.Button_enable(B1, B2, B3, B4, BNext);
             if (B1.Text == Additional_functions.Name_of_the_flag(dataBase[rand_word]))
@@ -87,12 +87,12 @@ namespace ReLearn
         public void Update_Database(List<Statistics> listdataBase) // изменение у бвзы данных элемента NumberLearn
         {
             var database = DataBase.Connect(Database_Name.Flags_DB);
-            database.CreateTable<Database_Flags>();
+           // database.CreateTable<Database_images>();
             int month = DateTime.Today.Month;
             for (int i = 0; i < listdataBase.Count; i++)
             {
-                database.Query<Database_Flags>("UPDATE " + DataBase.Table_Name + " SET DateRecurrence = " + month + " WHERE Image_name = ?", listdataBase[i].Word);
-                database.Query<Database_Flags>("UPDATE " + DataBase.Table_Name + " SET NumberLearn = " + listdataBase[i].Learn + " WHERE Image_name = ?", listdataBase[i].Word);
+                database.Query<Database_images>("UPDATE " + DataBase.Table_Name + " SET DateRecurrence = " + month + " WHERE Image_name = ?", listdataBase[i].Word);
+                database.Query<Database_images>("UPDATE " + DataBase.Table_Name + " SET NumberLearn = " + listdataBase[i].Learn + " WHERE Image_name = ?", listdataBase[i].Word);
             }
         }
 
@@ -125,18 +125,21 @@ namespace ReLearn
             try
             {
                 var db = DataBase.Connect(Database_Name.Flags_DB);
-                db.CreateTable<Database_Flags>(); //
-                List<Database_Flags> dataBase = new List<Database_Flags>();
-                var table = db.Table<Database_Flags>();
-                foreach (var word in table)
-                { // создание БД в виде  List<DatabaseOfFlags>
-                    Database_Flags w = new Database_Flags();
-                    if (word.NumberLearn != 0) //add all flags with 'NumberLearn' > 0
-                    {
-                        w.Add(word.Image_name, word.Name_flag_en, word.Name_flag_ru, word.NumberLearn, word.DateRecurrence);
-                        dataBase.Add(w);
-                    }
-                }
+                //db.CreateTable<Database_images>(); //
+                var dataBase = db.Query<Database_images>("SELECT * FROM " + DataBase.Table_Name + " WHERE NumberLearn > 0");
+
+                //List<Database_images> dataBase = new List<Database_images>();
+                //var table = db.Table<Database_images>();
+                //foreach (var word in table)
+                //{ // создание БД в виде  List<DatabaseOfFlags>
+                //    Database_images w = new Database_images();
+                //    if (word.NumberLearn != 0) //add all flags with 'NumberLearn' > 0
+                //    {
+                //        w.Add(word.Image_name, word.Name_image_en, word.Name_image_ru, word.NumberLearn, word.DateRecurrence);
+                //        dataBase.Add(w);
+                //    }
+                //}
+
                 Random rnd = new Random(unchecked((int)(DateTime.Now.Ticks)));
                 rand_word = rnd.Next(dataBase.Count);
                 i_rand = rnd.Next(4);                                                                                                //рандом для 4 кнопок

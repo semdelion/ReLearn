@@ -25,7 +25,7 @@ namespace ReLearn
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            DataBase.Table_Name = Table_name.Database_Flags;
+            DataBase.Table_Name = Table_name.Flags;
 
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Flags);

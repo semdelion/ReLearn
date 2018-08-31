@@ -55,12 +55,12 @@ namespace ReLearn
             }
         }
 
-        public static string Name_of_the_flag(Database_Flags word) // возвращает имя флага на языке  // 0 - eng / 1 - rus
+        public static string Name_of_the_flag(Database_images word) // возвращает имя флага на языке  // 0 - eng / 1 - rus
         {
             if (Magic_constants.language == 0)
-                return word.Name_flag_en;
+                return word.Name_image_en;
             if (Magic_constants.language == 1)
-                return word.Name_flag_ru;
+                return word.Name_image_ru;
             return "";
         }
 

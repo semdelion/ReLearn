@@ -41,7 +41,7 @@ namespace ReLearn
             canvas.DrawLine(left + 10f, 120, left - 5f, 100, text_paint);
             text_paint.Color = Color.White;
             var database = DataBase.Connect(Database_Name.Statistics);
-            var count_Database_Stat = database.Query<Database_Statistics>("SELECT * FROM " + DataBase.Table_Name+"_Statistics" );// количество строк в БД
+            var count_Database_Stat = database.Query<Database_Statistics>("SELECT * FROM " + DataBase.Table_Name + "_Statistics" );// количество строк в БД
             int i = 0, n_count = count_Database_Stat.Count - 10, False = 0, True = 0; // n_count - используется для вывода только последних 10 строк БД
             right -= 2;
             foreach (var s in count_Database_Stat)

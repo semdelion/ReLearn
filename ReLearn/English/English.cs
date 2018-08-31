@@ -106,12 +106,15 @@ namespace ReLearn
             {
                 DataBase.Table_Name = Table_name.My_Directly;
                 CrossSettings.Current.AddOrUpdateValue("DictionaryName", DataBase.Table_Name);
+                DataBase.Update_English_DB(System.DateTime.Today.Month);
+
                 return true;
             }
             if (id == Resource.Id.menuDatabase_PopularWords)
             {
                 DataBase.Table_Name = Table_name.Popular_Words;
                 CrossSettings.Current.AddOrUpdateValue("DictionaryName", DataBase.Table_Name);
+                DataBase.Update_English_DB(System.DateTime.Today.Month);
                 return true;
             }
             if (id == Resource.Id.Stats){

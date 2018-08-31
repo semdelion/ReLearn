@@ -20,7 +20,7 @@ namespace ReLearn
     {
         public static string Statistics = "database_statistics.db3";
         public static string English_DB = "database_words.db3";
-        public static string Flags_DB = "database_flags.db3";
+        public static string Flags_DB = "database_image.db3";
         public static string Setting_DB = "Setting_Database.db3";
     }
 
@@ -28,7 +28,7 @@ namespace ReLearn
     {
         public const string My_Directly = "My_Directly";
         public const string Popular_Words = "Popular_Words";
-        public const string Database_Flags = "Database_Flags";
+        public const string Flags = "Flags";
     }
 
     public static class DataBase
@@ -63,29 +63,28 @@ namespace ReLearn
             }          
         }
 
-        public static void Update_English_DB(int Month)
-        {
-            var database = DataBase.Connect(Database_Name.English_DB); // подключение к БД
-            database.CreateTable<Database_Words>();
-            var table = database.Table<Database_Words>();
-            foreach (var s in table) // UPDATE Database
-                if (Month != s.DateRecurrence && s.NumberLearn == 0)
-                {  // обновление БД, при условии, что месяцы не совпадают и NumberLearn == 0. изменяем месяц на текущий и NumberLearn++;                
-                    database.Query<Database_Words>("UPDATE Database SET DateRecurrence = " + Month + " WHERE Word = ?", s.Word);
-                    database.Query<Database_Words>("UPDATE Database SET NumberLearn = " + s.NumberLearn + 1 + " WHERE Word = ?", s.Word);
-                }
+        public static void Update_English_DB(int Month) //////////////////проверить
+        {          
+            var db = DataBase.Connect(Database_Name.English_DB);
+            var dataBase = db.Query<Database_Words>("SELECT * FROM " + DataBase.Table_Name + " WHERE NumberLearn = 0 AND DateRecurrence != " + Month);
+            foreach (var s in dataBase) // UPDATE Database
+            {
+              // обновление БД, при условии, что месяцы не совпадают и NumberLearn == 0. изменяем месяц на текущий и NumberLearn++;                
+                db.Query<Database_Words>("UPDATE " + DataBase.Table_Name + " SET DateRecurrence = " + Month + " WHERE Word = ?", s.Word);
+                db.Query<Database_Words>("UPDATE " + DataBase.Table_Name + " SET NumberLearn = " + s.NumberLearn + 1 + " WHERE Word = ?", s.Word);                
+            }
         }
 
-        public static void Update_Flags_DB(int Month)
+        public static void Update_Flags_DB(int Month)/////////////переделать
         {
-            var databaseFlags = DataBase.Connect(Database_Name.Flags_DB); // подключение к БД
-            databaseFlags.CreateTable<Database_Flags>();
-            var tableFlags = databaseFlags.Table<Database_Flags>();
-            foreach (var s in tableFlags) // UPDATE Database_Flags
+            var db = DataBase.Connect(Database_Name.Flags_DB); // подключение к БД
+            var dataBase = db.Query<Database_images>("SELECT * FROM " + DataBase.Table_Name);
+         
+            foreach (var s in dataBase) // UPDATE Flags
                 if (Month != s.DateRecurrence && s.NumberLearn == 0)
                 {  // обновление БД, при условии, что месяцы не совпадают и NumberLearn == 0. изменяем месяц на текущий и NumberLearn++;                
-                    databaseFlags.Query<Database_Flags>("UPDATE Database_Flags SET DateRecurrence = " + Month + " WHERE Image_name = ?", s.Image_name);
-                    databaseFlags.Query<Database_Flags>("UPDATE Database_Flags SET NumberLearn = " + s.NumberLearn + 1 + " WHERE Image_name = ?", s.Image_name);
+                    db.Query<Database_images>("UPDATE " + DataBase.Table_Name + " SET DateRecurrence = " + Month + " WHERE Image_name = ?", s.Image_name);
+                    db.Query<Database_images>("UPDATE " + DataBase.Table_Name + " SET NumberLearn = " + s.NumberLearn + 1 + " WHERE Image_name = ?", s.Image_name);
                 }
         }
 
@@ -134,30 +133,30 @@ namespace ReLearn
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    public class Database_Flags // Класс для считывания базы данных flags
+    public class Database_images // Класс для считывания базы данных flags
     {
         [PrimaryKey, AutoIncrement, Column("_id")]
         public int Id { get; set; }
         public string Image_name { get; set; }
-        public string Name_flag_en { get; set; }
-        public string Name_flag_ru { get; set; }
+        public string Name_image_en { get; set; }
+        public string Name_image_ru { get; set; }
         public int NumberLearn { get; set; }
         public int DateRecurrence { get; set; }
 
-        public Database_Flags()
+        public Database_images()
         {
             Image_name = null;
-            Name_flag_en = null;
-            Name_flag_ru = null;
+            Name_image_en = null;
+            Name_image_ru = null;
             NumberLearn = 0;
             DateRecurrence = 0;
         }
 
-        public Database_Flags Add(string image_n, string flag_en, string flag_ru, int nLearn, int date)
+        public Database_images Add(string image_n, string flag_en, string flag_ru, int nLearn, int date)
         {
             this.Image_name = image_n;
-            this.Name_flag_en = flag_en;
-            this.Name_flag_ru = flag_ru;
+            this.Name_image_en = flag_en;
+            this.Name_image_ru = flag_ru;
             this.NumberLearn = nLearn;
             this.DateRecurrence = date;
             return this;
@@ -171,11 +170,11 @@ namespace ReLearn
 //{
 //    string str_line = reader.ReadLine();
 //    var list_imageName_flag = str_line.Split('|');
-//    var database_Flags = new Database_Flags
+//    var database_Flags = new Flags
 //    {
 //        Image_name = list_imageName_flag[0],
-//        Name_flag_en = list_imageName_flag[1],
-//        Name_flag_ru = list_imageName_flag[2],
+//        Name_image_en = list_imageName_flag[1],
+//        Name_image_ru = list_imageName_flag[2],
 //        NumberLearn = 10,
 //        DateRecurrence = System.DateTime.Today.Month
 //    };
