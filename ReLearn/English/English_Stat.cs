@@ -28,6 +28,7 @@ namespace ReLearn
             Window.AddFlags(WindowManagerFlags.DrawsSystemBarBackgrounds);
             Window.SetStatusBarColor(Android.Graphics.Color.Argb(128, 0, 0, 0));
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            ///
             SetContentView(new Graph_Statistics(this)); 
         }
         public override bool OnOptionsItemSelected(IMenuItem item)

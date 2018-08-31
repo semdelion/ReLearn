@@ -12,7 +12,6 @@ namespace ReLearn
         public static Button button_english;
         public static Button button_flags;
        
-
         protected override void OnCreate(Bundle savedInstanceState)
         {
             GUI.Res = this;

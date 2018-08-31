@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.IO;
-using Android.Speech.Tts;
-using Java.Util;
+
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -12,23 +11,13 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using SQLite;
+using Plugin.TextToSpeech;
 
 namespace ReLearn
 {
     [Activity(Label = "Repeat ", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
-    class English_Repeat : Activity, TextToSpeech.IOnInitListener
+    class English_Repeat : Activity
     {
-        private TextToSpeech tts;
-
-        public void OnInit([GeneratedEnum] OperationResult status)
-        {
-            if (status == OperationResult.Success)
-                tts.SetLanguage(Locale.Uk);
-            
-        }
-
-        private void SpeakOut(string text) => tts.Speak(text, QueueMode.Flush, null, null);
-
         void Random_Button(Button B1, Button B2, Button B3, Button B4, List<Database_Words> dataBase, int i)   //загружаем варианты ответа в текст кнопок
         {
             Additional_functions.Random_4_numbers(i, dataBase.Count, out List<int> random_numbers);
@@ -101,7 +90,7 @@ namespace ReLearn
             base.OnCreate(savedInstanceState);
             GUI.Button_default(English.button_english_repeat);
             SetContentView(Resource.Layout.English_Repeat);
-            tts = new TextToSpeech(this, this);
+            
             var toolbarMain = FindViewById<Toolbar>(Resource.Id.toolbarEnglishRepeat);
             SetActionBar(toolbarMain);
             ActionBar.SetDisplayHomeAsUpEnabled(true); // отображаем кнопку домой
@@ -135,7 +124,7 @@ namespace ReLearn
                 var dataBase = db.Query<Database_Words>("SELECT * FROM " + DataBase.Table_Name + " WHERE NumberLearn > 0");
 
                 System.Random rnd = new System.Random(unchecked((int)(DateTime.Now.Ticks)));
-                rand_word = rnd.Next(dataBase.Count); //ПЕРЕДЕЛАЙ сделать защиту от дурака, если все элементы базы имеют NumberLearn = 0
+                rand_word = rnd.Next(dataBase.Count);           //ПЕРЕДЕЛАЙ сделать защиту от дурака, если все элементы базы имеют NumberLearn = 0
                 i_rand = rnd.Next(4);                           //рандом для 4 кнопок
                 Function_Next_Test(button1, button2, button3, button4, button_next, textView, dataBase, rand_word, i_rand);
 
@@ -144,9 +133,9 @@ namespace ReLearn
                 button3.Click += (s, e) => { Answer(button3, button1, button2, button4, button_next, dataBase, Stats, rand_word); };
                 button4.Click += (s, e) => { Answer(button4, button1, button2, button3, button_next, dataBase, Stats, rand_word); };
 
-                button_Speak.Click += delegate
+                button_Speak.Click += async delegate
                 {
-                    SpeakOut(textView.Text);
+                    await CrossTextToSpeech.Current.Speak(textView.Text);
                 };
 
                 button_next.Click += (s, e) =>

@@ -128,18 +128,6 @@ namespace ReLearn
                 //db.CreateTable<Database_images>(); //
                 var dataBase = db.Query<Database_images>("SELECT * FROM " + DataBase.Table_Name + " WHERE NumberLearn > 0");
 
-                //List<Database_images> dataBase = new List<Database_images>();
-                //var table = db.Table<Database_images>();
-                //foreach (var word in table)
-                //{ // создание БД в виде  List<DatabaseOfFlags>
-                //    Database_images w = new Database_images();
-                //    if (word.NumberLearn != 0) //add all flags with 'NumberLearn' > 0
-                //    {
-                //        w.Add(word.Image_name, word.Name_image_en, word.Name_image_ru, word.NumberLearn, word.DateRecurrence);
-                //        dataBase.Add(w);
-                //    }
-                //}
-
                 Random rnd = new Random(unchecked((int)(DateTime.Now.Ticks)));
                 rand_word = rnd.Next(dataBase.Count);
                 i_rand = rnd.Next(4);                                                                                                //рандом для 4 кнопок
