@@ -21,14 +21,12 @@ namespace ReLearn
         public static Button button_english_add;
         public static Button button_english_learn;
         public static Button button_english_repeat;
-       
 
         protected override void OnCreate(Bundle savedInstanceState)
         {       
             
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.English);
-            GUI.Button_default(MainActivity.button_english);
             Toolbar toolbarMain = FindViewById<Toolbar>(Resource.Id.toolbarEnglish);
             SetActionBar(toolbarMain);
             ActionBar.SetDisplayHomeAsUpEnabled(true);

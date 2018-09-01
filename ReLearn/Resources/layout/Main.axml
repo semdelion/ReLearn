@@ -26,11 +26,12 @@
 		android:layout_marginLeft="40dp"
 		android:layout_marginTop="60dp"
 		android:layout_marginBottom="10.0dp"
-		android:background="@drawable/buttonBeforeClicking"
+		android:background="@drawable/button_style_standard"
 		android:textColor="#d7f8fe"
 		android:textSize="20dp"
 		android:height="@android:dimen/notification_large_icon_width"
-		android:gravity="center" 
+		android:gravity="center"
+		android:onClick="Button_Language_Click"
 	/>
 	<Button
 		android:text="Flags"
@@ -40,9 +41,11 @@
 		android:layout_marginRight="40dp"
 		android:layout_marginLeft="40dp"
 		android:layout_marginTop="6.0dp"
-		android:background="@drawable/buttonBeforeClicking"
+		android:background="@drawable/button_style_standard"
 		android:textColor="#d7f8fe"
 		android:textSize="20dp"
 		android:height="@android:dimen/notification_large_icon_width"
-		android:gravity="center" />
+		android:gravity="center"
+		android:onClick="Button_Flags_Click"
+	/>
 </LinearLayout>

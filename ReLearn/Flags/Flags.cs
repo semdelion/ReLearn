@@ -29,7 +29,6 @@ namespace ReLearn
 
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Flags);
-            GUI.Button_default(MainActivity.button_flags);
             Toolbar toolbarMain = FindViewById<Toolbar>(Resource.Id.toolbarFlags);
             SetActionBar(toolbarMain);
             ActionBar.SetDisplayHomeAsUpEnabled(true);

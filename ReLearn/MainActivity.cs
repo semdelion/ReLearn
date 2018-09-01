@@ -9,9 +9,20 @@ namespace ReLearn
     [Activity( MainLauncher = true, ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class MainActivity : Activity
     {
-        public static Button button_english;
-        public static Button button_flags;
-       
+        [Java.Interop.Export("Button_Language_Click")]
+        public void Button_Language_Click(View v)
+        {
+            Intent intent_english = new Intent(this, typeof(English));
+            StartActivity(intent_english);
+        }
+
+        [Java.Interop.Export("Button_Flags_Click")]
+        public void Button_Flags_Click(View v)
+        {
+            Intent intent_flags = new Intent(this, typeof(Flags));
+            StartActivity(intent_flags);
+        }
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             GUI.Res = this;
@@ -21,27 +32,6 @@ namespace ReLearn
             DataBase.GetDatabasePath(Database_Name.English_DB);
             DataBase.GetDatabasePath(Database_Name.Flags_DB);
             DataBase.GetDatabasePath(Database_Name.Statistics);
-
-            button_english = FindViewById<Button>(Resource.Id.button_english);
-            button_flags = FindViewById<Button>(Resource.Id.button_flags);
-
-            button_english.Touch += GUI.Button_Touch;
-            button_flags.Touch += GUI.Button_Touch;
-
-            button_english.Click += GUI.Button_1_Click;
-            button_flags.Click += GUI.Button_1_Click;
-
-            button_english.Click += delegate
-            {
-                Intent intent_english = new Intent(this, typeof(English));
-                StartActivity(intent_english);
-            };
-
-            button_flags.Click += delegate
-            {
-                Intent intent_flags = new Intent(this, typeof(Flags));
-                StartActivity(intent_flags);
-            };
         }
     }
 }
