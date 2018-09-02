@@ -100,7 +100,7 @@ namespace ReLearn
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Flags_Repeat);
-            GUI.Button_default(Flags.button_flags_repeat);
+            //GUI.Button_default(Flags.button_flags_repeat);
             var toolbarMain = FindViewById<Toolbar>(Resource.Id.toolbarFlagsRepeat);
             SetActionBar(toolbarMain);
             ActionBar.SetDisplayHomeAsUpEnabled(true); // отображаем кнопку домой

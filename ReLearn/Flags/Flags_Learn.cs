@@ -18,54 +18,49 @@ namespace ReLearn
     [Activity(Label = "Learn", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     class Flags_Learn : Activity
     {
-        protected override void OnCreate(Bundle savedInstanceState)
+        ImageView imageView;
+        TextView textView_learn_flag;
+
+        [Java.Interop.Export("Button_Flags_Learn_Next_Click")]
+        public void Button_Flags_Learn_Click(View v)
         {
-            base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.Flags_Learn);
-            GUI.Button_default(Flags.button_flags_learn);
-            var toolbarMain = FindViewById<Toolbar>(Resource.Id.toolbarFlagsLearn);
-            SetActionBar(toolbarMain);
-            ActionBar.SetDisplayHomeAsUpEnabled(true); // отображаем кнопку домой
-            TextView textView_learn_flag = FindViewById<TextView>(Resource.Id.textView_flag_learn);
-            ImageView imageView = FindViewById<ImageView>(Resource.Id.imageView_Flags_learn);
-            Button button_learn_en_ru = FindViewById<Button>(Resource.Id.button_F_learn_Next);
+            Following_Random_Image();
+        }
 
-            button_learn_en_ru.Touch += GUI.Button_Click;
-
+        public void Following_Random_Image()
+        {
             try
             {
-                var db = DataBase.Connect(Database_Name.Flags_DB);
-
-                // db.CreateTable<Database_images>(); //           
+                var db = DataBase.Connect(Database_Name.Flags_DB);        
                 var dataBase = db.Query<Database_images>("SELECT * FROM " + DataBase.Table_Name);
-
-                int rand_word = 0;
                 Random rnd = new Random(unchecked((int)(DateTime.Now.Ticks)));
-                rand_word = rnd.Next(dataBase.Count);
+                int rand_word = rnd.Next(dataBase.Count);
 
                 var his = Application.Context.Assets.Open("ImageFlags/" + dataBase[rand_word].Image_name + ".png");
                 Bitmap bitmap = BitmapFactory.DecodeStream(his);
                 imageView.SetImageBitmap(bitmap);
 
-               // imageView.SetImageResource(dataBase[rand_word].Image_name);
                 textView_learn_flag.Text = Additional_functions.Name_of_the_flag(dataBase[rand_word]);
-
-                button_learn_en_ru.Click += (s, e) =>
-                {
-                    rand_word = rnd.Next(dataBase.Count);
-
-                    var hisi = Application.Context.Assets.Open("ImageFlags/" + dataBase[rand_word].Image_name + ".png");
-                    Bitmap bitm = BitmapFactory.DecodeStream(hisi);
-                    imageView.SetImageBitmap(bitm);
-
-                    //imageView.SetImageResource(dataBase[rand_word].Image_name);
-                    textView_learn_flag.Text = Additional_functions.Name_of_the_flag(dataBase[rand_word]);
-                };
             }
-            catch {
+            catch
+            {
                 Toast.MakeText(this, "Error : can't connect to database of flags", ToastLength.Long).Show();
             }
+        }
 
+        protected override void OnCreate(Bundle savedInstanceState)
+        {
+            base.OnCreate(savedInstanceState);
+            SetContentView(Resource.Layout.Flags_Learn);
+
+            var toolbarMain = FindViewById<Toolbar>(Resource.Id.toolbarFlagsLearn);
+            SetActionBar(toolbarMain);
+            ActionBar.SetDisplayHomeAsUpEnabled(true); // отображаем кнопку домой
+
+            textView_learn_flag = FindViewById<TextView>(Resource.Id.textView_flag_learn);
+            imageView = FindViewById<ImageView>(Resource.Id.imageView_Flags_learn);
+
+            Following_Random_Image();        
         }
 
         public override bool OnOptionsItemSelected(IMenuItem item) // button home

@@ -27,9 +27,10 @@
 		android:layout_marginBottom="10.0dp"
 		android:textColor="#d7f8fe"
 		android:textSize="20dp"
-		android:background="@drawable/buttonBeforeClicking"
+		android:background="@drawable/button_style_standard"
 		android:height="@android:dimen/notification_large_icon_width"
-		android:gravity="center" />
+		android:gravity="center"
+		android:onClick="Button_Flags_Repeat_Click"/>
 	<Button
 		android:text="Learn"
 		android:layout_width="match_parent"
@@ -40,7 +41,8 @@
 		android:layout_marginRight="40.0dp"
 		android:textColor="#d7f8fe"
 		android:textSize="20dp"
-		android:background="@drawable/buttonBeforeClicking"
+		android:background="@drawable/button_style_standard"
 		android:height="@android:dimen/notification_large_icon_width"
-		android:gravity="center" />
+		android:gravity="center"
+		android:onClick="Button_Flags_Learn_Click"/>
 </LinearLayout>

@@ -40,10 +40,8 @@ namespace ReLearn
             
             var db = DataBase.Connect(Database_Name.English_DB);
             dataBase = db.Query<Database_Words>("SELECT * FROM " + DataBase.Table_Name);
-
             dataBase.Sort((x, y) => x.Word.CompareTo(y.Word));
-
-            //dataBase = dataBase.OrderBy(o => o.Word).ToList();         
+            
             adapter = new CustomAdapter(this, dataBase);
             listViewDel.Adapter = adapter;
         }

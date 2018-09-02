@@ -53,8 +53,9 @@
 				android:id="@+id/button_F_learn_Next"
 				android:textSize="20dp"
 				android:textColor="#d7f8fe"
-				android:background="@drawable/buttonBeforeClicking"
-				android:gravity="center" />
+				android:background="@drawable/button_style_standard"
+				android:gravity="center"
+				android:onClick="Button_Flags_Learn_Next_Click"/>
         </TableLayout>
     </ScrollView>
 </RelativeLayout>

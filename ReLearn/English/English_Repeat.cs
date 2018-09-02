@@ -88,13 +88,13 @@ namespace ReLearn
         {
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             base.OnCreate(savedInstanceState);
-            GUI.Button_default(English.button_english_repeat);
+            //GUI.Button_default(English.button_english_repeat);
             SetContentView(Resource.Layout.English_Repeat);
             
             var toolbarMain = FindViewById<Toolbar>(Resource.Id.toolbarEnglishRepeat);
             SetActionBar(toolbarMain);
             ActionBar.SetDisplayHomeAsUpEnabled(true); // отображаем кнопку домой
-            GUI.Button_default(English.button_english_repeat);
+           // GUI.Button_default(English.button_english_repeat);
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             Statistics.AnswerFalse = 0;
             Statistics.AnswerTrue = 0;

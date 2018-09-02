@@ -27,9 +27,10 @@
 		android:layout_marginTop="60dp"
 		android:textColor="#d7f8fe"
 		android:textSize="20dp"
-		android:background="@drawable/buttonBeforeClicking"
+		android:background="@drawable/button_style_standard"
 		android:height="@android:dimen/notification_large_icon_width"
-		android:gravity="center" />
+		android:gravity="center" 
+		android:onClick="Button_English_Add_Click"/>
 	<Button
 		android:text="Repeat"
 		android:layout_width="match_parent"
@@ -41,9 +42,10 @@
 		android:layout_marginBottom="10.0dp"
 		android:textColor="#d7f8fe"
 		android:textSize="20dp"
-		android:background="@drawable/buttonBeforeClicking"
+		android:background="@drawable/button_style_standard"
 		android:height="@android:dimen/notification_large_icon_width"
-		android:gravity="center" />
+		android:gravity="center" 
+		android:onClick="Button_English_Repeat_Click"/>
 	<Button
 		android:text="Learn"
 		android:layout_width="match_parent"
@@ -55,7 +57,8 @@
 		android:layout_marginTop="6.0dp"
 		android:textColor="#d7f8fe"
 		android:textSize="20dp"
-		android:background="@drawable/buttonBeforeClicking"
+		android:background="@drawable/button_style_standard"
 		android:height="@android:dimen/notification_large_icon_width"
-		android:gravity="center" />
+		android:gravity="center" 
+		android:onClick="Button_English_Learn_Click"/>
 </LinearLayout>

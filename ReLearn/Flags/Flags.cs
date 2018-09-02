@@ -20,8 +20,34 @@ namespace ReLearn
     
     class Flags : Activity
     {
-        public static Button button_flags_learn;
-        public static Button button_flags_repeat;
+        //public static Button button_flags_learn;
+        //public static Button button_flags_repeat;
+
+        [Java.Interop.Export("Button_Flags_Learn_Click")]
+        public void Button_Flags_Learn_Click(View v)
+        {
+            v.Enabled = false;
+            Intent intent_flags_learn = new Intent(this, typeof(Flags_Learn));
+            StartActivity(intent_flags_learn);
+        }
+
+        [Java.Interop.Export("Button_Flags_Repeat_Click")]
+        public void Button_Flags_Repeat_Click(View v)
+        {
+            v.Enabled = false;
+            Intent intent_flags_repeat = new Intent(this, typeof(Flags_Repeat));
+            StartActivity(intent_flags_repeat);
+        }
+
+        [Android.Runtime.Register("onWindowFocusChanged", "(Z)V", "GetOnWindowFocusChanged_ZHandler")]
+        public override void OnWindowFocusChanged(bool hasFocus)
+        {
+            if (hasFocus)
+            {
+                FindViewById<Button>(Resource.Id.button_flags_learn).Enabled = true;
+                FindViewById<Button>(Resource.Id.button_flags_repeat).Enabled = true;
+            }
+        }
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -36,28 +62,28 @@ namespace ReLearn
             Magic_constants.language = Convert.ToInt32(CrossSettings.Current.GetValueOrDefault("ImageLanguage", null));
             DataBase.Update_Flags_DB();
 
-            button_flags_learn = FindViewById<Button>(Resource.Id.button_flags_learn);
-            button_flags_repeat = FindViewById<Button>(Resource.Id.button_flags_repeat);
+            //button_flags_learn = FindViewById<Button>(Resource.Id.button_flags_learn);
+            //button_flags_repeat = FindViewById<Button>(Resource.Id.button_flags_repeat);
 
-            button_flags_learn.Touch += GUI.Button_Touch;
-            button_flags_repeat.Touch += GUI.Button_Touch;
+            //button_flags_learn.Touch += GUI.Button_Touch;
+            //button_flags_repeat.Touch += GUI.Button_Touch;
 
-            button_flags_learn.Click += GUI.Button_1_Click;
-            button_flags_repeat.Click += GUI.Button_1_Click;
+            //button_flags_learn.Click += GUI.Button_1_Click;
+            //button_flags_repeat.Click += GUI.Button_1_Click;
 
-            button_flags_learn.Click += delegate
-            {
-                GUI.Button_click(button_flags_learn);
-                Intent intent_flags_learn = new Intent(this, typeof(Flags_Learn));
-                StartActivity(intent_flags_learn);
-            };
+            //button_flags_learn.Click += delegate
+            //{
+            //    GUI.Button_click(button_flags_learn);
+            //    Intent intent_flags_learn = new Intent(this, typeof(Flags_Learn));
+            //    StartActivity(intent_flags_learn);
+            //};
 
-            button_flags_repeat.Click += delegate
-            {
-                GUI.Button_click(button_flags_repeat);
-                Intent intent_flags_repeat = new Intent(this, typeof(Flags_Repeat));
-                StartActivity(intent_flags_repeat);
-            };
+            //button_flags_repeat.Click += delegate
+            //{
+            //    GUI.Button_click(button_flags_repeat);
+            //    Intent intent_flags_repeat = new Intent(this, typeof(Flags_Repeat));
+            //    StartActivity(intent_flags_repeat);
+            //};
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
