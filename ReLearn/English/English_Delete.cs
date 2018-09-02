@@ -21,7 +21,6 @@ namespace ReLearn
     {
         ListView listViewDel;
         SearchView _searchView;
-        // ArrayAdapter adapter;
         CustomAdapter adapter;
         List<Database_Words> dataBase;
 
@@ -107,14 +106,12 @@ namespace ReLearn
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
             int id = item.ItemId;
-            //возрастание
             if (id == Resource.Id.increase)
             {
                 dataBase.Sort((x, y) => x.NumberLearn.CompareTo(y.NumberLearn));
                 adapter = new CustomAdapter(this, dataBase);
                 listViewDel.Adapter = adapter;
             }
-            //убывание
             if (id == Resource.Id.decrease)
             {
                 dataBase.Sort((x, y) => y.NumberLearn.CompareTo(x.NumberLearn));

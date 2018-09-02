@@ -48,55 +48,61 @@ namespace ReLearn
 			public const int arrow = 2130837504;
 			
 			// aapt resource value: 0x7f020001
-			public const int backgroundEnFl = 2130837505;
+			public const int background_EditText = 2130837505;
 			
 			// aapt resource value: 0x7f020002
-			public const int backgroundMain = 2130837506;
+			public const int backgroundEnFl = 2130837506;
 			
 			// aapt resource value: 0x7f020003
-			public const int button_enabled = 2130837507;
+			public const int backgroundMain = 2130837507;
 			
 			// aapt resource value: 0x7f020004
-			public const int button_false = 2130837508;
+			public const int button_enabled = 2130837508;
 			
 			// aapt resource value: 0x7f020005
-			public const int Button_Speak = 2130837509;
+			public const int button_false = 2130837509;
 			
 			// aapt resource value: 0x7f020006
-			public const int button_style_standard = 2130837510;
+			public const int Button_Speak = 2130837510;
 			
 			// aapt resource value: 0x7f020007
-			public const int button_touch = 2130837511;
+			public const int button_style_standard = 2130837511;
 			
 			// aapt resource value: 0x7f020008
-			public const int button_true = 2130837512;
+			public const int button_touch = 2130837512;
 			
 			// aapt resource value: 0x7f020009
-			public const int buttonAfterClicking = 2130837513;
+			public const int button_true = 2130837513;
 			
 			// aapt resource value: 0x7f02000a
-			public const int buttonBeforeClicking = 2130837514;
+			public const int buttonAfterClicking = 2130837514;
 			
 			// aapt resource value: 0x7f02000b
-			public const int buttonSpeech = 2130837515;
+			public const int buttonBeforeClicking = 2130837515;
 			
 			// aapt resource value: 0x7f02000c
-			public const int icon_new = 2130837516;
+			public const int buttonSpeech = 2130837516;
 			
 			// aapt resource value: 0x7f02000d
-			public const int iconSpeak = 2130837517;
+			public const int EditText_style = 2130837517;
 			
 			// aapt resource value: 0x7f02000e
-			public const int mainBackGround = 2130837518;
+			public const int icon_new = 2130837518;
 			
 			// aapt resource value: 0x7f02000f
-			public const int MainRelearn = 2130837519;
+			public const int iconSpeak = 2130837519;
 			
 			// aapt resource value: 0x7f020010
-			public const int relearnMain = 2130837520;
+			public const int mainBackGround = 2130837520;
 			
 			// aapt resource value: 0x7f020011
-			public const int settings = 2130837521;
+			public const int MainRelearn = 2130837521;
+			
+			// aapt resource value: 0x7f020012
+			public const int relearnMain = 2130837522;
+			
+			// aapt resource value: 0x7f020013
+			public const int settings = 2130837523;
 			
 			static Drawable()
 			{
@@ -115,7 +121,7 @@ namespace ReLearn
 			public const int ABC = 2131165242;
 			
 			// aapt resource value: 0x7f07001a
-			public const int Button_Speak = 2131165210;
+			public const int Button_Speak_Eng = 2131165210;
 			
 			// aapt resource value: 0x7f07000f
 			public const int Button_Speak_TurnOn_TurnOff = 2131165199;

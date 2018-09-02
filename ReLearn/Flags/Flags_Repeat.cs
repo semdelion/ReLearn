@@ -18,7 +18,36 @@ namespace ReLearn
     [Activity(Label = "Repeat ", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     class Flags_Repeat : Activity
     {
-        void Random_Button(Button B1, Button B2, Button B3, Button B4, List<Database_images> dataBase, int i)   //загружаем варианты ответа в текст кнопок
+        ImageView ImageView_image;
+        Button Button1;
+        Button Button2;
+        Button Button3;
+        Button Button4;
+        Button Button_next;
+        int Count = -1;
+        int Rand_word { get; set; }
+        readonly List<Statistics> Stats = new List<Statistics>();
+        List<Database_images> dataBase;
+
+        void Button_enable()
+        {
+            Button1.Enabled = false;
+            Button2.Enabled = false;
+            Button3.Enabled = false;
+            Button4.Enabled = false;
+            Button_next.Enabled = true;
+        }
+
+        void Button_Refresh()
+        {
+            Button1.Enabled = true; Button2.Enabled = true; Button3.Enabled = true; Button4.Enabled = true;
+            Button1.Background = GetDrawable(Resource.Drawable.button_style_standard);
+            Button2.Background = GetDrawable(Resource.Drawable.button_style_standard);
+            Button3.Background = GetDrawable(Resource.Drawable.button_style_standard);
+            Button4.Background = GetDrawable(Resource.Drawable.button_style_standard);
+        }
+
+        void Random_Button(Button B1, Button B2, Button B3, Button B4, int i)   //загружаем варианты ответа в текст кнопок
         {
             Additional_functions.Random_4_numbers(i, dataBase.Count, out List<int> random_numbers);
             B1.Text = Additional_functions.Name_of_the_flag(dataBase[random_numbers[0]]);
@@ -27,72 +56,103 @@ namespace ReLearn
             B4.Text = Additional_functions.Name_of_the_flag(dataBase[random_numbers[3]]);
         }
 
-        void Function_Next_Test(Button B1, Button B2, Button B3, Button B4, Button BNext, ImageView imageView, List<Database_images> dataBase, int rand_word, int i_rand) //new test
+        void Function_Next_Test(int rand_word) //new test
         {
-
+            Random rnd = new Random(unchecked((int)(DateTime.Now.Ticks)));
             var his = Application.Context.Assets.Open("ImageFlags/" + dataBase[rand_word].Image_name+ ".png");
             Bitmap bitmap = BitmapFactory.DecodeStream(his);
-            imageView.SetImageBitmap(bitmap);
-
-           // imageView.SetImageResource(dataBase[rand_word].Image_name);
-            GUI.Button_ebabled(BNext);
-            switch (i_rand)
-            {// задаём рандоммную кнопку                            
-                case 0:
-                    {
-                        Random_Button(B1, B2, B3, B4, dataBase, rand_word);
-                        break;
-                    }
-                case 1:
-                    {
-                        Random_Button(B2, B1, B3, B4, dataBase, rand_word);
-                        break;
-                    }
-                case 2:
-                    {
-                        Random_Button(B3, B1, B2, B4, dataBase, rand_word);
-                        break;
-                    }
-                case 3:
-                    {
-                        Random_Button(B4, B1, B2, B3, dataBase, rand_word);
-                        break;
-                    }
+            ImageView_image.SetImageBitmap(bitmap);
+            switch (rnd.Next(4))
+            {                            
+                case 0:{
+                    Random_Button(Button1, Button2, Button3, Button4, rand_word);
+                    break;
+                }
+                case 1:{
+                    Random_Button(Button2, Button1, Button3, Button4, rand_word);
+                    break;
+                }
+                case 2:{
+                    Random_Button(Button3, Button1, Button2, Button4, rand_word);
+                    break;
+                }
+                case 3:{
+                    Random_Button(Button4, Button1, Button2, Button3, rand_word);
+                    break;
+                }
             }
         }
 
-        void Answer(Button B1, Button B2, Button B3, Button B4, Button BNext, List<Database_images> dataBase, List<Statistics> Stats, int rand_word) // подсвечиваем правильный ответ, если мы ошиблись подсвечиваем неправвильный и паравильный 
+        void Answer(Button B1, Button B2, Button B3, Button B4, Button BNext, int rand_word) // подсвечиваем правильный ответ, если мы ошиблись подсвечиваем неправвильный и паравильный 
         {
-            GUI.Button_enable(B1, B2, B3, B4, BNext);
+            Button_enable();
             if (B1.Text == Additional_functions.Name_of_the_flag(dataBase[rand_word]))
             {
                 Additional_functions.Update_number_learn(Stats, Convert.ToString(dataBase[rand_word].Image_name), rand_word, dataBase[rand_word].NumberLearn -= Magic_constants.true_answer);
                 Statistics.AnswerTrue++;
-                GUI.Button_true(B1);
+                B1.Background = GetDrawable(Resource.Drawable.button_true);
             }
             else
             {
                 Additional_functions.Update_number_learn(Stats, Convert.ToString(dataBase[rand_word].Image_name), rand_word, dataBase[rand_word].NumberLearn += Magic_constants.false_answer);
                 Statistics.AnswerFalse++;
-                GUI.Button_false(B1);
+                B1.Background = GetDrawable(Resource.Drawable.button_false);
                 if (B2.Text == Additional_functions.Name_of_the_flag(dataBase[rand_word]))
-                    GUI.Button_true(B2);
+                    B2.Background = GetDrawable(Resource.Drawable.button_true);
                 else if (B3.Text == Additional_functions.Name_of_the_flag(dataBase[rand_word]))
-                    GUI.Button_true(B3);
+                    B3.Background = GetDrawable(Resource.Drawable.button_true);
                 else
-                    GUI.Button_true(B4);
+                    B4.Background = GetDrawable(Resource.Drawable.button_true);
             }
         }
 
-        public void Update_Database(List<Statistics> listdataBase) // изменение у бвзы данных элемента NumberLearn
+        public void Update_Database() // изменение у бвзы данных элемента NumberLearn
         {
             var database = DataBase.Connect(Database_Name.Flags_DB);
-           // database.CreateTable<Database_images>();
             int month = DateTime.Today.Month;
-            for (int i = 0; i < listdataBase.Count; i++)
+            for (int i = 0; i < Stats.Count; i++)
             {
-                database.Query<Database_images>("UPDATE " + DataBase.Table_Name + " SET DateRecurrence = " + month + " WHERE Image_name = ?", listdataBase[i].Word);
-                database.Query<Database_images>("UPDATE " + DataBase.Table_Name + " SET NumberLearn = " + listdataBase[i].Learn + " WHERE Image_name = ?", listdataBase[i].Word);
+                database.Query<Database_images>("UPDATE " + DataBase.Table_Name + " SET DateRecurrence = " + month + " WHERE Image_name = ?", Stats[i].Word);
+                database.Query<Database_images>("UPDATE " + DataBase.Table_Name + " SET NumberLearn = " + Stats[i].Learn + " WHERE Image_name = ?", Stats[i].Word);
+            }
+        }
+
+        [Java.Interop.Export("Button_Flags_1_Click")]
+        public void Button_Flags_1_Click(View v) => Answer(Button1, Button2, Button3, Button4, Button_next, Rand_word);
+
+
+        [Java.Interop.Export("Button_Flags_2_Click")]
+        public void Button_Flags_2_Click(View v) => Answer(Button2, Button1, Button3, Button4, Button_next, Rand_word);
+
+
+        [Java.Interop.Export("Button_Flags_3_Click")]
+        public void Button_Flags_3_Click(View v) => Answer(Button3, Button1, Button2, Button4, Button_next, Rand_word);
+
+
+        [Java.Interop.Export("Button_Flags_4_Click")]
+        public void Button_Flags_4_Click(View v) => Answer(Button4, Button1, Button2, Button3, Button_next, Rand_word);
+
+
+        [Java.Interop.Export("Button_Flags_Next_Click")]
+        public void Button_Flags_Next_Click(View v)
+        {
+            Button_next.Enabled = false;
+            if (Count < Magic_constants.repeat_count - 1)
+            {
+                Count++;
+                Random rnd = new Random(unchecked((int)(DateTime.Now.Ticks)));
+                Rand_word = rnd.Next(dataBase.Count);
+                Function_Next_Test(Rand_word);
+                Button_Refresh();
+                ActionBar.Title = Convert.ToString("Repeat " + (Count + 1) + "/" + Magic_constants.repeat_count);
+            }
+            else
+            {
+                Statistics.Add_Statistics(Statistics.AnswerTrue, Statistics.AnswerFalse);
+                Update_Database();
+                Intent intent_flags_stat = new Intent(this, typeof(Flags_Stats));
+                StartActivity(intent_flags_stat);
+                this.Finish();
             }
         }
 
@@ -100,63 +160,22 @@ namespace ReLearn
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Flags_Repeat);
-            //GUI.Button_default(Flags.button_flags_repeat);
             var toolbarMain = FindViewById<Toolbar>(Resource.Id.toolbarFlagsRepeat);
             SetActionBar(toolbarMain);
-            ActionBar.SetDisplayHomeAsUpEnabled(true); // отображаем кнопку домой
+            ActionBar.SetDisplayHomeAsUpEnabled(true);
+            Statistics.Statistics_update();
+            ImageView_image = FindViewById<ImageView>(Resource.Id.imageView_Flags_repeat);
+            Button1 = FindViewById<Button>(Resource.Id.button_F_choice1);
+            Button2 = FindViewById<Button>(Resource.Id.button_F_choice2);
+            Button3 = FindViewById<Button>(Resource.Id.button_F_choice3);
+            Button4 = FindViewById<Button>(Resource.Id.button_F_choice4);
+            Button_next = FindViewById<Button>(Resource.Id.button_F_Next);
 
-            Statistics.AnswerFalse = 0;
-            Statistics.AnswerTrue = 0;
-            int rand_word = 0, i_rand = 0, count = 0;
-            List<Statistics> Stats = new List<Statistics>();
-            ActionBar.Title = Convert.ToString("Repeat " + (count + 1) + "/" + Magic_constants.repeat_count);
-            ImageView imageView = FindViewById<ImageView>(Resource.Id.imageView_Flags_repeat); // проверить
-            Button button1 = FindViewById<Button>(Resource.Id.button_F_choice1);
-            Button button2 = FindViewById<Button>(Resource.Id.button_F_choice2);
-            Button button3 = FindViewById<Button>(Resource.Id.button_F_choice3);
-            Button button4 = FindViewById<Button>(Resource.Id.button_F_choice4);
-            Button button_next = FindViewById<Button>(Resource.Id.button_F_Next);
-            button1.Touch += GUI.Button_Click;
-            button2.Touch += GUI.Button_Click;
-            button3.Touch += GUI.Button_Click;
-            button4.Touch += GUI.Button_Click;
-            button_next.Touch += GUI.Button_Click;
-            
             try
             {
-                var db = DataBase.Connect(Database_Name.Flags_DB);
-                //db.CreateTable<Database_images>(); //
-                var dataBase = db.Query<Database_images>("SELECT * FROM " + DataBase.Table_Name + " WHERE NumberLearn > 0");
-
-                Random rnd = new Random(unchecked((int)(DateTime.Now.Ticks)));
-                rand_word = rnd.Next(dataBase.Count);
-                i_rand = rnd.Next(4);                                                                                                //рандом для 4 кнопок
-                Function_Next_Test(button1, button2, button3, button4, button_next, imageView, dataBase, rand_word, i_rand);
-                button1.Click += (s, e) => { Answer(button1, button2, button3, button4, button_next, dataBase, Stats, rand_word); }; //лямбда оператор для подсветки ответа // true ? green:red
-                button2.Click += (s, e) => { Answer(button2, button1, button3, button4, button_next, dataBase, Stats, rand_word); };
-                button3.Click += (s, e) => { Answer(button3, button1, button2, button4, button_next, dataBase, Stats, rand_word); };
-                button4.Click += (s, e) => { Answer(button4, button1, button2, button3, button_next, dataBase, Stats, rand_word); };
-                button_next.Click += (s, e) =>
-                {
-                    button_next.Enabled = false;
-                    if (count < Magic_constants.repeat_count - 1)
-                    {
-                        count++;
-                        i_rand = rnd.Next(4);
-                        rand_word = rnd.Next(dataBase.Count);
-                        Function_Next_Test(button1, button2, button3, button4, button_next, imageView, dataBase, rand_word, i_rand);
-                        GUI.Button_Refresh(button1, button2, button3, button4, button_next);
-                        ActionBar.Title = Convert.ToString("Repeat " + (count + 1) + "/" + Magic_constants.repeat_count); 
-                    }
-                    else
-                    {
-                        Statistics.Add_Statistics(Statistics.AnswerTrue, Statistics.AnswerFalse);
-                        Update_Database(Stats);
-                        Intent intent_flags_stat = new Intent(this, typeof(Flags_Stats));
-                        StartActivity(intent_flags_stat);
-                        this.Finish();
-                    }
-                };
+                SQLiteConnection db = DataBase.Connect(Database_Name.Flags_DB);
+                dataBase = db.Query<Database_images>("SELECT * FROM " + DataBase.Table_Name + " WHERE NumberLearn > 0");
+                Button_Flags_Next_Click(null);
             }
             catch{
                 Toast.MakeText(this, "Error : can't connect to database of flags", ToastLength.Long).Show();

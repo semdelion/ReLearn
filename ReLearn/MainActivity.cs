@@ -27,7 +27,6 @@ namespace ReLearn
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            GUI.Res = this;
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Main);
             Window.SetBackgroundDrawable(GetDrawable(Resource.Drawable.backgroundMain));

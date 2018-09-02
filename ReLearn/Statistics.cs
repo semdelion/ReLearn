@@ -17,9 +17,15 @@ namespace ReLearn
     {  
         public int Position  { get; }                        //Posithoin  in table words,
         public string Word { get; }                          //Word Ebglish or Flag - "name"
-        public static int AnswerTrue { get; set; }           //Answer ? true or false 
-        public static int AnswerFalse { get; set; }
-        public int Learn { get; }                            //Answer ? true or false 
+        public static int AnswerTrue = 0;                    //Answer ? true or false 
+        public static int AnswerFalse = 0;
+        public int Learn { get; }
+
+        public static void Statistics_update()
+        {
+            AnswerTrue = 0;                    
+            AnswerFalse = 0;
+        }
 
         public Statistics(int position_new, string word_new, int Learn_new)
         {

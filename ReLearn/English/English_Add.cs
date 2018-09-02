@@ -69,8 +69,6 @@ namespace ReLearn
             var toolbarMain = FindViewById<Toolbar>(Resource.Id.toolbarEnglishAdd);
             SetActionBar(toolbarMain);
             ActionBar.SetDisplayHomeAsUpEnabled(true);
-
-              
         }
 
         public override bool OnOptionsItemSelected(IMenuItem item)

@@ -98,7 +98,6 @@
     <Compile Include="Flags\Flags_Repeat.cs" />
     <Compile Include="Flags\Flags_Stats.cs" />
     <Compile Include="Graph_Statistics.cs" />
-    <Compile Include="GUI.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\CustomAdapter.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
@@ -821,6 +820,12 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\button_style_standard.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\EditText_style.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\background_EditText.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
