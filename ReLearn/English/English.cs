@@ -30,12 +30,11 @@ namespace ReLearn
             Toolbar toolbarMain = FindViewById<Toolbar>(Resource.Id.toolbarEnglish);
             SetActionBar(toolbarMain);
             ActionBar.SetDisplayHomeAsUpEnabled(true);
-
             if (String.IsNullOrEmpty(DataBase.Table_Name))
                 CrossSettings.Current.AddOrUpdateValue("DictionaryName", Table_name.My_Directly);
             DataBase.Table_Name = CrossSettings.Current.GetValueOrDefault("DictionaryName", null);
-
             DataBase.Update_English_DB();
+
             button_english_add = FindViewById<Button>(Resource.Id.button_english_add);
             button_english_learn = FindViewById<Button>(Resource.Id.button_english_learn);
             button_english_repeat = FindViewById<Button>(Resource.Id.button_english_repeat);
