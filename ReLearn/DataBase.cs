@@ -65,29 +65,35 @@ namespace ReLearn
 
         public static void Update_English_DB()
         {
-            int Month = DateTime.Today.Month;
+            var toDay = DateTime.Today;
             var db = DataBase.Connect(Database_Name.English_DB);
-            var dataBase = db.Query<Database_Words>("SELECT * FROM " + DataBase.Table_Name + " WHERE NumberLearn = 0 AND DateRecurrence != " + Month);
+            var dataBase = db.Query<Database_Words>("SELECT * FROM " + DataBase.Table_Name + " WHERE NumberLearn = 0 AND DateRecurrence != DATETIME('NOW')");
             foreach (var s in dataBase) // UPDATE Database
             {
-              // обновление БД, при условии, что месяцы не совпадают и NumberLearn == 0. изменяем месяц на текущий и NumberLearn++;                
-                db.Query<Database_Words>("UPDATE " + DataBase.Table_Name + " SET DateRecurrence = " + Month + " WHERE Word = ?", s.Word);
-                db.Query<Database_Words>("UPDATE " + DataBase.Table_Name + " SET NumberLearn = " + s.NumberLearn + 1 + " WHERE Word = ?", s.Word);                
+                if (s.DateRecurrence.Month != toDay.Month && toDay.Day >= s.DateRecurrence.Day)
+                {
+                    // обновление БД, при условии, что месяцы не совпадают и NumberLearn == 0. изменяем месяц на текущий и NumberLearn++;                
+                    db.Query<Database_Words>("UPDATE " + DataBase.Table_Name + " SET DateRecurrence = DATETIME('NOW') WHERE Word = ?", s.Word);
+                    db.Query<Database_Words>("UPDATE " + DataBase.Table_Name + " SET NumberLearn = " + s.NumberLearn + 1 + " WHERE Word = ?", s.Word);
+                }                       
             }
         }
 
         public static void Update_Flags_DB()
         {
-            int Month = DateTime.Today.Month;
+            var toDay = DateTime.Today;
             var db = DataBase.Connect(Database_Name.Flags_DB); // подключение к БД
-            var dataBase = db.Query<Database_images>("SELECT * FROM " + DataBase.Table_Name + " WHERE NumberLearn = 0 AND DateRecurrence != " + Month);
+            var dataBase = db.Query<Database_images>("SELECT * FROM " + DataBase.Table_Name + " WHERE NumberLearn = 0 AND DateRecurrence != DATETIME('NOW')");
 
             foreach (var s in dataBase) // UPDATE Flags
             {
-                db.Query<Database_images>("UPDATE " + DataBase.Table_Name + " SET DateRecurrence = " + Month + " WHERE Image_name = ?", s.Image_name);
-                db.Query<Database_images>("UPDATE " + DataBase.Table_Name + " SET NumberLearn = " + s.NumberLearn + 1 + " WHERE Image_name = ?", s.Image_name);
+                if (s.DateRecurrence.Month != toDay.Month && toDay.Day >= s.DateRecurrence.Day)
+                {
+                    db.Query<Database_images>("UPDATE " + DataBase.Table_Name + " SET DateRecurrence = DATETIME('NOW') WHERE Image_name = ?", s.Image_name);
+                    db.Query<Database_images>("UPDATE " + DataBase.Table_Name + " SET NumberLearn = " + s.NumberLearn + 1 + " WHERE Image_name = ?", s.Image_name);
+                }
             }
-        }
+        }    
     }
 
     public class Database_Words //Класс для считывания базы данных English
@@ -97,11 +103,11 @@ namespace ReLearn
         public string Word { get; set; }
         public string TranslationWord { get; set; }
         public int NumberLearn { get; set; }
-        public int DateRecurrence { get; set; }
+        public DateTime DateRecurrence { get; set; }
 
         public Database_Words()
         {
-            this.DateRecurrence = 1;
+            this.DateRecurrence = DateTime.Today;
             this.Word = "";
             this.NumberLearn = 6;
             this.TranslationWord = "";
@@ -128,7 +134,7 @@ namespace ReLearn
         public string Name_image_en { get; set; }
         public string Name_image_ru { get; set; }
         public int NumberLearn { get; set; }
-        public int DateRecurrence { get; set; }
+        public DateTime DateRecurrence { get; set; }
 
         public Database_images()
         {
@@ -136,10 +142,10 @@ namespace ReLearn
             Name_image_en = null;
             Name_image_ru = null;
             NumberLearn = 0;
-            DateRecurrence = 0;
+            DateRecurrence = DateTime.Today;
         }
 
-        public Database_images Add(string image_n, string flag_en, string flag_ru, int nLearn, int date)
+        public Database_images Add(string image_n, string flag_en, string flag_ru, int nLearn, DateTime date)
         {
             this.Image_name = image_n;
             this.Name_image_en = flag_en;

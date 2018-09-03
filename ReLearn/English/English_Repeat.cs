@@ -102,12 +102,11 @@ namespace ReLearn
 
         public void Update_Database() // изменение у бвзы данных элемента NumberLearn
         {
-            var database = DataBase.Connect(Database_Name.English_DB);
-            int month = DateTime.Today.Month;
+            var database = DataBase.Connect(Database_Name.English_DB);          
             database.CreateTable<Database_Words>();
             for (int i = 0; i < Stats.Count; i++)
             {
-                database.Query<Database_Words>("UPDATE " + DataBase.Table_Name + " SET DateRecurrence = " + month + " WHERE Word = ?", Stats[i].Word);
+                database.Query<Database_Words>("UPDATE " + DataBase.Table_Name + " SET DateRecurrence = DATETIME('NOW') WHERE Word = ?", Stats[i].Word);
                 database.Query<Database_Words>("UPDATE " + DataBase.Table_Name + " SET NumberLearn = " + Stats[i].Learn + " WHERE Word = ?", Stats[i].Word);
             }
         }

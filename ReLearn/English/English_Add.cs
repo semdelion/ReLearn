@@ -40,8 +40,7 @@ namespace ReLearn
                         $"(Word, TranslationWord, NumberLearn, DateRecurrence) VALUES ("
                         + "\"" + editText_foreign_word.Text.ToLower() + "\"" + ","
                         + "\"" + editText_translation_word.Text.ToLower() + "\"" + ","
-                        + Magic_constants.numberLearn + ","
-                        + DateTime.Today.Month + ")");
+                        + Magic_constants.numberLearn + ", DATETIME('NOW'))");
 
                     Toast.MakeText(this, "Word added!", ToastLength.Short).Show();
                 }

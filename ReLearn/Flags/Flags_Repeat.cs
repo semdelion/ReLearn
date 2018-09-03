@@ -108,11 +108,10 @@ namespace ReLearn
 
         public void Update_Database() // изменение у бвзы данных элемента NumberLearn
         {
-            var database = DataBase.Connect(Database_Name.Flags_DB);
-            int month = DateTime.Today.Month;
+            var database = DataBase.Connect(Database_Name.Flags_DB);         
             for (int i = 0; i < Stats.Count; i++)
             {
-                database.Query<Database_images>("UPDATE " + DataBase.Table_Name + " SET DateRecurrence = " + month + " WHERE Image_name = ?", Stats[i].Word);
+                database.Query<Database_images>("UPDATE " + DataBase.Table_Name + " SET DateRecurrence = DATETIME('NOW') WHERE Image_name = ?", Stats[i].Word);
                 database.Query<Database_images>("UPDATE " + DataBase.Table_Name + " SET NumberLearn = " + Stats[i].Learn + " WHERE Image_name = ?", Stats[i].Word);
             }
         }
