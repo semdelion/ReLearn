@@ -23,7 +23,25 @@ namespace ReLearn
             Window.AddFlags(WindowManagerFlags.DrawsSystemBarBackgrounds);
             Window.SetStatusBarColor(Android.Graphics.Color.Argb(128, 0, 0, 0));
             ActionBar.SetDisplayHomeAsUpEnabled(true);
-            SetContentView(new Graph_Statistics(this));
+            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            ActionBar.NavigationMode = ActionBarNavigationMode.Tabs;
+            SetContentView(Resource.Layout.English_Stat);
+            TextView tv = new TextView(this);////////////////
+
+            var tab = ActionBar.NewTab();
+            tab.SetIcon(Resource.Drawable.arrow);/// icon 1
+            tab.TabSelected += (sender, args) => {
+                SetContentView(new Graph_Statistics(this));
+            };
+            ActionBar.AddTab(tab);
+
+            tab = ActionBar.NewTab();
+            tab.SetIcon(Resource.Drawable.arrow); /// icon 2
+            tab.TabSelected += (sender, args) => {
+                SetContentView(tv);
+            };
+            ActionBar.AddTab(tab);
+            
         }
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
