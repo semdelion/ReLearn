@@ -101,12 +101,12 @@ namespace ReLearn
                 The_canvas.DrawText((i).ToString(), left - 45f, bottom - step * (i) + 10f, paint);
         }
 
-        void Graph_layout(float left, float bottom, float top)
+        void Graph_layout(float left, float bottom, float top, float right)
         {
             float height = bottom - top;
             Paint paint = new Paint { TextSize = 25, Color = Color.Argb(40, 215, 248, 254), StrokeWidth = 1 };
             for (int j = 2; j <= 20; j += 2)
-                The_canvas.DrawLine(left, bottom - height * (j), The_canvas.Width - 30f, bottom - height * (j), paint);
+                The_canvas.DrawLine(left, bottom - height * (j), right, bottom - height * (j), paint);
         }
 
         void Diagram(List<Database_Statistics> Database_Stat, float left, float right, float bottom, float top)
@@ -138,16 +138,16 @@ namespace ReLearn
 
             paint_border.SetStyle(Paint.Style.Stroke);
 
-            float left = 70f, right = The_canvas.Width - 30f,
-                  top = 150f, bottom = The_canvas.Height - 300f;
+            float left = 70f, right = The_canvas.Width - 70f,
+                  top = 50f, bottom = The_canvas.Height - 300f;
 
 
             Ordinate(left - 10f, bottom, bottom - top, paint_text);
-            Abscissa(left, bottom + 10f, The_canvas.Width - 100f, paint_text, Database_Stat.Count);
-            Graph_layout(left, bottom, top);
+            Abscissa(left, bottom + 10f, right - left, paint_text, Database_Stat.Count);
+            Graph_layout(left, bottom, top, right);
             Diagram(Database_Stat, left, right, bottom, top);
 
-            FrameStatistics LastStat = new FrameStatistics(left - 20f, bottom + 70, right - 20f, canvas.Height - 50, background_color);
+            FrameStatistics LastStat = new FrameStatistics(left, bottom + 70, right, canvas.Height - 50, background_color);
             LastStat.DrawBorder(The_canvas, paint_border);
             if (Database_Stat.Count != 0)
             {
