@@ -113,16 +113,26 @@ namespace ReLearn
         {
             float step_width = (right - left) / 10f,
                   step_height = (bottom - top) / 20f;
-            int i = 0, n_count = Database_Stat.Count - 10, False, True;
+
+            int i = 0, n_count = Database_Stat.Count - 10;
+
+            float padding = 3f; // between columns
+            float frame = 1f; //width frame
+
             foreach (var s in Database_Stat)
             {
                 if (i >= n_count)
                 {
-                    False = s.False; True = s.True;
-                    Shader shader = new LinearGradient(left + 2f, bottom - (step_height * True), left + step_width - 2f, bottom, Color.Rgb(155 - 155 / 20 * True, 100 + 155 / 20 * True, 0), Color.Rgb(255, 0, 0), TileMode.Clamp);
+                     //Shader shader = new LinearGradient(left + 2f, bottom - (step_height * s.True), left + step_width - 2f, bottom, Color.Argb(200, 35 , 155 + s.True*(100/20) , 255 - s.True * (230 / 20)), Color.Argb(250, 35, 55 , 255), TileMode.Clamp);
+                    Shader shader = new LinearGradient(left + 2f, bottom - (step_height * s.True), left + step_width - 2f, bottom, Color.Rgb(155 - 155 / 20 * s.True, 100 + 155 / 20 * s.True, 0), Color.Rgb(255, 0, 0), TileMode.Clamp);
+                    //Shader shader = new LinearGradient(left + 2f, bottom - (step_height * s.True), left + step_width - 2f, bottom, Color.Rgb(0, 100 + 155 / 20 * s.True, 155 - 155 / 20 * s.True ), Color.Rgb(0,0, 255), TileMode.Clamp);
                     Paint paint = new Paint();
                     paint.SetShader(shader);
-                    The_canvas.DrawRoundRect(new RectF(left + 2, bottom - (step_height * True), left + step_width - 2f, bottom), 6, 6, paint);
+                    The_canvas.DrawRoundRect(new RectF(left + padding, bottom - (step_height * s.True), left + step_width - padding, bottom), 6, 6, paint);
+
+                    Paint paint_bg = new Paint { StrokeWidth = frame, Color = Color.Argb(250, 215, 248, 254) };
+                    paint_bg.SetStyle(Paint.Style.Stroke);
+                    The_canvas.DrawRoundRect(new RectF(left + padding, bottom - (step_height * s.True), left + step_width - padding, bottom), 6, 6, paint_bg);
                     left = left + step_width;
                 }
                 ++i;

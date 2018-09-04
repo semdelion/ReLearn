@@ -30,8 +30,10 @@ namespace ReLearn
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             ActionBar.NavigationMode = ActionBarNavigationMode.Tabs;
             SetContentView(Resource.Layout.English_Stat);
+
             TextView Stat2 = new TextView(this);////////////////
             Graph_Statistics Stat1 = new Graph_Statistics(this);
+
             var tab = ActionBar.NewTab();
             tab.SetIcon(Resource.Drawable.Stat2);/// icon 1
             tab.TabSelected += (sender, args) => {
