@@ -12,7 +12,7 @@ namespace ReLearn
     {
         TextView textView_learn_en;
         TextView textView_learn_ru;
-        bool Voice_Enable = false;
+        bool Voice_Enable = true;
 
         [Java.Interop.Export("Button_English_Learn_Next_Click")]
         public void Button_English_Learn_Next_Click(View v)
@@ -29,15 +29,18 @@ namespace ReLearn
         [Java.Interop.Export("Button_English_Learn_Voice_Enable")]
         public void Button_English_Learn_Voice_Enable(View v)
         {
+            ImageButton button = FindViewById<ImageButton>(Resource.Id.Button_Speak_TurnOn_TurnOff);
             if (Voice_Enable)
             {
                 Voice_Enable = false;
-                Toast.MakeText(this, "Voice off", ToastLength.Long).Show();
+                button.SetImageDrawable(GetDrawable(Resource.Drawable.speak_off));         
+                Toast.MakeText(this, "Voice off", ToastLength.Short).Show();
             }
             else
             {
                 Voice_Enable = true;
-                Toast.MakeText(this, "Voice on", ToastLength.Long).Show();
+                button.SetImageDrawable(GetDrawable(Resource.Drawable.speak_on));
+                Toast.MakeText(this, "Voice on", ToastLength.Short).Show();
             }
         }
 
@@ -53,8 +56,7 @@ namespace ReLearn
                 textView_learn_ru.Text = dataBase[rand_word].TranslationWord;
 
                 if (Voice_Enable)
-                    CrossTextToSpeech.Current.Speak(textView_learn_en.Text);
-                
+                    CrossTextToSpeech.Current.Speak(textView_learn_en.Text);          
             }
             catch
             {

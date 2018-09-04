@@ -49,6 +49,8 @@ namespace ReLearn
         {
             this.MenuInflater.Inflate(Resource.Menu.search, menu);
             var searchItem = menu.FindItem(Resource.Id.action_search);
+
+            searchItem.SetIcon(GetDrawable(Resource.Drawable.settings));
             _searchView = searchItem.ActionView.JavaCast<Android.Widget.SearchView>();
 
             _searchView.QueryTextChange += (sender, e) =>

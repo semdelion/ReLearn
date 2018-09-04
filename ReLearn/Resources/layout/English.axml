@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_width="match_parent"
 	android:layout_height="match_parent">
 	<Toolbar
 		android:popupTheme="@style/myPopupTheme"
@@ -29,7 +30,7 @@
 		android:textSize="20dp"
 		android:background="@drawable/button_style_standard"
 		android:height="@android:dimen/notification_large_icon_width"
-		android:gravity="center" 
+		android:gravity="center"
 		android:onClick="Button_English_Add_Click"/>
 	<Button
 		android:text="Repeat"
@@ -44,7 +45,7 @@
 		android:textSize="20dp"
 		android:background="@drawable/button_style_standard"
 		android:height="@android:dimen/notification_large_icon_width"
-		android:gravity="center" 
+		android:gravity="center"
 		android:onClick="Button_English_Repeat_Click"/>
 	<Button
 		android:text="Learn"
@@ -59,6 +60,6 @@
 		android:textSize="20dp"
 		android:background="@drawable/button_style_standard"
 		android:height="@android:dimen/notification_large_icon_width"
-		android:gravity="center" 
+		android:gravity="center"
 		android:onClick="Button_English_Learn_Click"/>
 </LinearLayout>

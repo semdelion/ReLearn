@@ -29,14 +29,14 @@ namespace ReLearn
             TextView tv = new TextView(this);////////////////
 
             var tab = ActionBar.NewTab();
-            tab.SetIcon(Resource.Drawable.arrow);/// icon 1
+            tab.SetIcon(Resource.Drawable.Stat2);/// icon 1
             tab.TabSelected += (sender, args) => {
                 SetContentView(new Graph_Statistics(this));
             };
             ActionBar.AddTab(tab);
 
             tab = ActionBar.NewTab();
-            tab.SetIcon(Resource.Drawable.arrow); /// icon 2
+            tab.SetIcon(Resource.Drawable.Stat1); /// icon 2
             tab.TabSelected += (sender, args) => {
                 SetContentView(tv);
             };

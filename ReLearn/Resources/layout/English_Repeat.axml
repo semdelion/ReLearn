@@ -102,7 +102,7 @@
 				android:onClick="Button_English_4_Click"
                 android:textColor="#d7f8fe" />
             <TableRow>
-				<Button
+				<ImageButton
 					android:text=""
 					android:layout_column="0"
 					android:layout_width="60dp"
@@ -114,9 +114,10 @@
 					android:textColor="#d7f8fe"
 					android:textSize="20dp"
 					android:background="@drawable/button_style_standard"
-					android:drawableRight="@android:drawable/ic_btn_speak_now"
+					android:src="@drawable/speak_on"
 					android:layout_gravity="left|right|center"
-					android:gravity="left|right|center" />
+					android:gravity="left|right|center"
+					android:scaleType="fitXY"/>
 				<Button
 					android:text="Next"
 					android:layout_column="1"

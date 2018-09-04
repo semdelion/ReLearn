@@ -57,22 +57,21 @@
 			android:gravity="center" 
 			android:onClick="Button_English_Learn_Next_Click"/>		
 			<TableRow>
-			<Button
+			<ImageButton
 				android:text=""
 				android:layout_column="0"
 				android:layout_width="60dp"
 				android:layout_height="60.0dp"
 				android:layout_marginLeft="48.0dp"
 				android:id="@+id/Button_Speak_TurnOn_TurnOff"
-				android:layout_marginTop="0.0dp"
 				android:textColor="#d7f8fe"
 				android:textSize="20dp"
 				android:background="@drawable/button_style_standard"
-				android:drawableRight="@android:drawable/ic_btn_speak_now"
+				android:src="@drawable/speak_on"
 				android:layout_gravity="left|right|center"
 				android:gravity="left|right|center"
 				android:onClick="Button_English_Learn_Voice_Enable"
-				android:layout_marginRight="0.0dp" />
+				android:scaleType="fitXY"/>
 			<Button
 				android:text="Voice"
 				android:layout_column="1"
@@ -86,7 +85,9 @@
 				android:textSize="20dp"
 				android:background="@drawable/button_style_standard"
 				android:gravity="center"
-				android:onClick="Button_English_Learn_Voice_Click"/>
+				android:onClick="Button_English_Learn_Voice_Click"
+				
+				 />
 			</TableRow>
        </TableLayout>
 </LinearLayout>
