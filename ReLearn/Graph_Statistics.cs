@@ -156,9 +156,6 @@ namespace ReLearn
                 LastStat.DrawText(The_canvas, 30, "Correct: " + Convert.ToString(Database_Stat[Database_Stat.Count - 1].True) +
                                   ", Incorrect: " + Convert.ToString(Database_Stat[Database_Stat.Count - 1].False), LastStat.Left + 30f, LastStat.Top + 70f);
             }
-
-            var width = The_canvas.Width;
-            var h = The_canvas.Height;
         }
     }
 }

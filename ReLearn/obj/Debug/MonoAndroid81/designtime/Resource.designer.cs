@@ -107,16 +107,7 @@ namespace ReLearn
 			public const int Stat1 = 2130772006;
 			
 			// aapt resource value: 0x7F010027
-			public const int Stat12 = 2130772007;
-			
-			// aapt resource value: 0x7F010028
-			public const int Stat13 = 2130772008;
-			
-			// aapt resource value: 0x7F010029
-			public const int Stat2 = 2130772009;
-			
-			// aapt resource value: 0x7F010030
-			public const int Stat23 = 2130772016;
+			public const int Stat2 = 2130772007;
 			
 			static Drawable()
 			{
