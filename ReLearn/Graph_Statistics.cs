@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using Android.Content;
-using Android.Views;
+﻿using Android.Content;
 using Android.Graphics;
+using Android.Views;
+using System;
+using System.Collections.Generic;
 using static Android.Graphics.Shader;
 
 namespace ReLearn
@@ -103,10 +103,12 @@ namespace ReLearn
 
         void Graph_layout(float left, float bottom, float top, float right)
         {
-            float height = bottom - top;
+            float height = (bottom - top)/20f;
             Paint paint = new Paint { TextSize = 25, Color = Color.Argb(40, 215, 248, 254), StrokeWidth = 1 };
             for (int j = 2; j <= 20; j += 2)
-                The_canvas.DrawLine(left, bottom - height * (j), right, bottom - height * (j), paint);
+                The_canvas.DrawLine(left, bottom - height * j , right, bottom - height * j, paint);
+
+            
         }
 
         void Diagram(List<Database_Statistics> Database_Stat, float left, float right, float bottom, float top)
@@ -148,8 +150,10 @@ namespace ReLearn
 
             paint_border.SetStyle(Paint.Style.Stroke);
 
-            float left = 70f, right = The_canvas.Width - 70f,
-                  top = 50f, bottom = The_canvas.Height - 300f;
+            float h_rate = The_canvas.Height / 100f,
+                  w_rate = The_canvas.Width/ 100f,
+                  left = 10f * w_rate, right  = 90f * w_rate,
+                  top  = 7f * h_rate, bottom = 70f * h_rate;
 
 
             Ordinate(left - 10f, bottom, bottom - top, paint_text);
@@ -157,7 +161,7 @@ namespace ReLearn
             Graph_layout(left, bottom, top, right);
             Diagram(Database_Stat, left, right, bottom, top);
 
-            FrameStatistics LastStat = new FrameStatistics(left, bottom + 70, right, canvas.Height - 50, background_color);
+            FrameStatistics LastStat = new FrameStatistics(left, bottom + 7f * h_rate, right, 95f * h_rate, background_color);
             LastStat.DrawBorder(The_canvas, paint_border);
             if (Database_Stat.Count != 0)
             {
