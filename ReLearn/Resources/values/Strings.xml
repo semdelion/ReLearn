@@ -23,4 +23,18 @@
     <item name="android:titleTextColor">#d7f8fe</item>
     <item name="android:textSize">50dp</item>
   </style>
+
+  <style name="MenuStyle" parent="@android:style/Theme.Black">
+    <!-- Customize your theme here. -->
+    <item name="android:colorPrimary">#3F51B5</item>
+    <item name="android:colorPrimaryDark">#303F9F</item>
+    <item name="android:colorAccent">#FF4081</item>
+
+    <!-- To change the popup menu and app text color  -->
+    <item name="android:textColor">#d7f8fe</item>
+    
+    <!-- To change the background of options menu-->
+    <item name="android:itemBackground">#283544</item>
+  </style>
+
 </resources>

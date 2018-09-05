@@ -18,10 +18,11 @@ namespace ReLearn
     [Activity(Label = "Language", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     class English : Activity
     {
+        private int selected = Resource.Id.menuDatabase_MyDictionary;
+
         [Java.Interop.Export("Button_English_Add_Click")]
         public void Button_English_Add_Click(View v)
         {
-            v.Enabled = false;
             Intent intent_english_add = new Intent(this, typeof(English_Add));
             StartActivity(intent_english_add);
         }
@@ -29,7 +30,6 @@ namespace ReLearn
         [Java.Interop.Export("Button_English_Learn_Click")]
         public void Button_English_Learn_Click(View v)
         {
-            v.Enabled = false;
             try
             {
                 var database = DataBase.Connect(Database_Name.English_DB);
@@ -49,7 +49,6 @@ namespace ReLearn
         [Java.Interop.Export("Button_English_Repeat_Click")]
         public void Button_English_Repeat_Click(View v)
         {
-            v.Enabled = false;
             try
             {
                 var database = DataBase.Connect(Database_Name.English_DB);
@@ -67,18 +66,7 @@ namespace ReLearn
                     Toast.MakeText(this, "The database is empty", ToastLength.Short).Show();
             }
             catch { Toast.MakeText(this, "Error : can't connect to database", ToastLength.Long).Show(); }
-        }
-
-        [Android.Runtime.Register("onWindowFocusChanged", "(Z)V", "GetOnWindowFocusChanged_ZHandler")]
-        public override void OnWindowFocusChanged(bool hasFocus)
-        {
-            if (hasFocus)
-            {
-                FindViewById<Button>(Resource.Id.button_english_add).Enabled = true;
-                FindViewById<Button>(Resource.Id.button_english_learn).Enabled = true;
-                FindViewById<Button>(Resource.Id.button_english_repeat).Enabled = true;
-            }
-        }
+        }    
 
         protected override void OnCreate(Bundle savedInstanceState)
         {                  
@@ -88,33 +76,53 @@ namespace ReLearn
             SetActionBar(toolbarMain);
             ActionBar.SetDisplayHomeAsUpEnabled(true);
             if (String.IsNullOrEmpty(DataBase.Table_Name))
+            {
                 CrossSettings.Current.AddOrUpdateValue("DictionaryName", Table_name.My_Directly);
+                selected = Resource.Id.menuDatabase_MyDictionary;
+            }
             DataBase.Table_Name = CrossSettings.Current.GetValueOrDefault("DictionaryName", null);
+
+            if (DataBase.Table_Name == "Popular_Words")
+                selected = Resource.Id.menuDatabase_PopularWords;
+
             DataBase.Update_English_DB();
         }
 
-        public override bool OnCreateOptionsMenu(IMenu menu)
+        public override bool OnPrepareOptionsMenu(IMenu menu)
         {
             MenuInflater.Inflate(Resource.Menu.menu_english, menu);
+            if (selected == Resource.Id.menuDatabase_MyDictionary)
+            {
+                menu.FindItem(Resource.Id.menuDatabase_MyDictionary).SetChecked(true);
+                return true;
+            }
+            if (selected == Resource.Id.menuDatabase_PopularWords)
+            {
+                menu.FindItem(Resource.Id.menuDatabase_PopularWords).SetChecked(true);
+                return true;
+            }
             return true;
         }
 
         public override bool OnOptionsItemSelected(IMenuItem item)
-        {            
+        {
             int id = item.ItemId;
             if (id == Resource.Id.menuDatabase_MyDictionary)
             {
                 DataBase.Table_Name = Table_name.My_Directly;
+                Toast.MakeText(this, "My dictionary is selected", ToastLength.Short).Show();
                 CrossSettings.Current.AddOrUpdateValue("DictionaryName", DataBase.Table_Name);
                 DataBase.Update_English_DB();
-
+                item.SetChecked(true);
                 return true;
             }
             if (id == Resource.Id.menuDatabase_PopularWords)
             {
                 DataBase.Table_Name = Table_name.Popular_Words;
+                Toast.MakeText(this, "The dictionary of popular words is chosen", ToastLength.Short).Show();
                 CrossSettings.Current.AddOrUpdateValue("DictionaryName", DataBase.Table_Name);
                 DataBase.Update_English_DB();
+                item.SetChecked(true);
                 return true;
             }
             if (id == Resource.Id.Stats){
@@ -128,8 +136,12 @@ namespace ReLearn
                 return true;
             }
             if (id == Android.Resource.Id.Home)
-                this.Finish(); 
+            {
+                this.Finish();
+                return true;
+            }
             return true;
+
         }
     }
 }

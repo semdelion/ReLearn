@@ -20,13 +20,11 @@ namespace ReLearn
     
     class Flags : Activity
     {
-        //public static Button button_flags_learn;
-        //public static Button button_flags_repeat;
+        private int selected = 0;
 
         [Java.Interop.Export("Button_Flags_Learn_Click")]
         public void Button_Flags_Learn_Click(View v)
         {
-            v.Enabled = false;
             Intent intent_flags_learn = new Intent(this, typeof(Flags_Learn));
             StartActivity(intent_flags_learn);
         }
@@ -34,25 +32,13 @@ namespace ReLearn
         [Java.Interop.Export("Button_Flags_Repeat_Click")]
         public void Button_Flags_Repeat_Click(View v)
         {
-            v.Enabled = false;
             Intent intent_flags_repeat = new Intent(this, typeof(Flags_Repeat));
             StartActivity(intent_flags_repeat);
-        }
-
-        [Android.Runtime.Register("onWindowFocusChanged", "(Z)V", "GetOnWindowFocusChanged_ZHandler")]
-        public override void OnWindowFocusChanged(bool hasFocus)
-        {
-            if (hasFocus)
-            {
-                FindViewById<Button>(Resource.Id.button_flags_learn).Enabled = true;
-                FindViewById<Button>(Resource.Id.button_flags_repeat).Enabled = true;
-            }
-        }
+        }      
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             DataBase.Table_Name = Table_name.Flags;
-
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Flags);
             Toolbar toolbarMain = FindViewById<Toolbar>(Resource.Id.toolbarFlags);
@@ -60,38 +46,28 @@ namespace ReLearn
             ActionBar.SetDisplayHomeAsUpEnabled(true);
 
             Magic_constants.language = Convert.ToInt32(CrossSettings.Current.GetValueOrDefault("ImageLanguage", null));
-            DataBase.Update_Flags_DB();
-
-            //button_flags_learn = FindViewById<Button>(Resource.Id.button_flags_learn);
-            //button_flags_repeat = FindViewById<Button>(Resource.Id.button_flags_repeat);
-
-            //button_flags_learn.Touch += GUI.Button_Touch;
-            //button_flags_repeat.Touch += GUI.Button_Touch;
-
-            //button_flags_learn.Click += GUI.Button_1_Click;
-            //button_flags_repeat.Click += GUI.Button_1_Click;
-
-            //button_flags_learn.Click += delegate
-            //{
-            //    GUI.Button_click(button_flags_learn);
-            //    Intent intent_flags_learn = new Intent(this, typeof(Flags_Learn));
-            //    StartActivity(intent_flags_learn);
-            //};
-
-            //button_flags_repeat.Click += delegate
-            //{
-            //    GUI.Button_click(button_flags_repeat);
-            //    Intent intent_flags_repeat = new Intent(this, typeof(Flags_Repeat));
-            //    StartActivity(intent_flags_repeat);
-            //};
+            if (Magic_constants.language == 0)
+                selected = Resource.Id.language_eng;
+            else
+                selected = Resource.Id.language_rus;
+            DataBase.Update_Flags_DB();          
         }
 
-        public override bool OnCreateOptionsMenu(IMenu menu)
+        public override bool OnPrepareOptionsMenu(IMenu menu)
         {
-            var inflater = MenuInflater;
-            inflater.Inflate(Resource.Menu.menu_flags, menu);
+            MenuInflater.Inflate(Resource.Menu.menu_flags, menu);
+            if (selected == Resource.Id.language_eng)
+            {
+                menu.FindItem(Resource.Id.language_eng).SetChecked(true);
+                return true;
+            }
+            if (selected == Resource.Id.language_rus)
+            {
+                menu.FindItem(Resource.Id.language_rus).SetChecked(true);
+                return true;
+            }
             return true;
-        }
+        }    
 
         public override bool OnOptionsItemSelected(IMenuItem item)
         {         
@@ -107,12 +83,14 @@ namespace ReLearn
                 //databaseSetting.Query<Setting_Database>("UPDATE Setting_Database SET language = " + 0 + " WHERE Setting_bd = ?", "flags");
                 CrossSettings.Current.AddOrUpdateValue("ImageLanguage", "0");
                 Magic_constants.language = Convert.ToInt32(CrossSettings.Current.GetValueOrDefault("ImageLanguage", null));
+                item.SetChecked(true);
                 return true;
             }
             if (id == Resource.Id.language_rus)
             {
                 CrossSettings.Current.AddOrUpdateValue("ImageLanguage", "1");
                 Magic_constants.language = Convert.ToInt32(CrossSettings.Current.GetValueOrDefault("ImageLanguage", null));
+                item.SetChecked(true);
                 return true;
             }
             if (id == Android.Resource.Id.Home)

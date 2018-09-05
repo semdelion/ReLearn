@@ -1,22 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.IO;
-using SQLite;
-using Android.App;
-using Android.Content;
+﻿using Android.App;
 using Android.OS;
-using Android.Runtime;
 using Android.Views;
-using Android.Widget;
 using Android.Graphics;
 
 namespace ReLearn
 {
     [Activity(Label = "Statistics", Theme = "@style/ThemeStat")]
     class English_Stat : Activity
-    {        
+    {
         protected override void OnCreate(Bundle savedInstanceState)
         {
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -31,8 +22,9 @@ namespace ReLearn
             ActionBar.NavigationMode = ActionBarNavigationMode.Tabs;
             SetContentView(Resource.Layout.English_Stat);
 
-            TextView Stat2 = new TextView(this);////////////////
-            Graph_Statistics Stat1 = new Graph_Statistics(this);
+
+            Graph_Statistics Stat1 = new Graph_Statistics(this, Color.Rgb(0, 255, 255), Color.Argb(255, 50, 60, 126));
+            Graph_General_Statistics Stat2 = new Graph_General_Statistics(this, Color.Rgb(0, 255, 255), Color.Argb(255, 50, 60, 126), true);////////////////
 
             var tab = ActionBar.NewTab();
             tab.SetIcon(Resource.Drawable.Stat2);/// icon 1

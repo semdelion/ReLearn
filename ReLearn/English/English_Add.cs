@@ -54,13 +54,6 @@ namespace ReLearn
             }
         }
 
-        [Android.Runtime.Register("onWindowFocusChanged", "(Z)V", "GetOnWindowFocusChanged_ZHandler")]
-        public override void OnWindowFocusChanged(bool hasFocus)
-        {
-            if (hasFocus)
-                FindViewById<Button>(Resource.Id.button_add_word).Enabled = true;
-        }
-
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);

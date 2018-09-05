@@ -17,7 +17,7 @@
             android:layout_height="match_parent"
             android:stretchColumns="2">
 			<Toolbar
-				android:popupTheme="@style/myPopupTheme"
+				android:popupTheme="@style/MenuStyle"
 				android:minHeight="?android:attr/actionBarSize"
 				android:background="?android:attr/colorPrimary"
 				android:minWidth="25px"

@@ -100,6 +100,8 @@
     <Compile Include="Flags\Flags_Learn.cs" />
     <Compile Include="Flags\Flags_Repeat.cs" />
     <Compile Include="Flags\Flags_Stats.cs" />
+    <Compile Include="FrameStatistics.cs" />
+    <Compile Include="Graph_General_Statistics.cs" />
     <Compile Include="Graph_Statistics.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\CustomAdapter.cs" />
@@ -844,6 +846,9 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\Stat2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
