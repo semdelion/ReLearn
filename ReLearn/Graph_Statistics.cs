@@ -12,15 +12,15 @@ namespace ReLearn
         Canvas The_canvas;
         Color Color_Diagram_1;
         Color Color_Diagram_2;
+        readonly Color background_color = new Color(Color.Argb(150, 16, 19, 38));
+        readonly Paint paint_border = new Paint { StrokeWidth = 4, Color = Color.Argb(250, 215, 248, 254) };
+        readonly Paint paint_text = new Paint { TextSize = 25, StrokeWidth = 4, Color = Color.Rgb(215, 248, 254) };
+
         public Graph_Statistics(Context context, Color color_diagram_1, Color color_diagram_2) : base(context)
         {
             Color_Diagram_1 = color_diagram_1;
             Color_Diagram_2 = color_diagram_2;
         }
-
-        readonly Color background_color = new Color(Color.Argb(150, 16, 19, 38));
-        readonly Paint paint_border = new Paint { StrokeWidth = 4, Color = Color.Argb(250, 215, 248, 254) };
-        readonly Paint paint_text = new Paint { TextSize = 25, StrokeWidth = 4, Color = Color.Rgb(215, 248, 254) };
 
         void Abscissa(float left, float bottom, float width, Paint paint, int amount)
         {
@@ -105,7 +105,7 @@ namespace ReLearn
             if (Database_Stat.Count != 0)
             {
                 LastStat.Progress_Line(The_canvas, Database_Stat[Database_Stat.Count - 1].True, Database_Stat[Database_Stat.Count - 1].False, Color_Diagram_1, Color_Diagram_2);
-                if (h_rate > w_rate)
+                if (The_canvas.Height > The_canvas.Width)
                 {
                     LastStat.DrawText(The_canvas, 25 * LastStat.Height / 100, "Last testing", LastStat.Left + 7 * LastStat.Width / 100, LastStat.Top + LastStat.Height / 14);
                     LastStat.DrawText(The_canvas, 15 * LastStat.Height / 100, "Correct: " + Convert.ToString(Database_Stat[Database_Stat.Count - 1].True) +
