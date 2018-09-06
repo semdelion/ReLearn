@@ -104,7 +104,7 @@ namespace ReLearn
             LastStat.DrawBorder(The_canvas, paint_border);
             if (Database_Stat.Count != 0)
             {
-                LastStat.Progress_Line(The_canvas, Database_Stat[Database_Stat.Count - 1].True, Database_Stat[Database_Stat.Count - 1].False, Color_Diagram_1, Color_Diagram_2);
+                LastStat.ProgressLine(The_canvas, Database_Stat[Database_Stat.Count - 1].True, Database_Stat[Database_Stat.Count - 1].False, Color_Diagram_1, Color_Diagram_2);
                 if (The_canvas.Height > The_canvas.Width)
                 {
                     LastStat.DrawText(The_canvas, 25 * LastStat.Height / 100, "Last testing", LastStat.Left + 7 * LastStat.Width / 100, LastStat.Top + LastStat.Height / 14);

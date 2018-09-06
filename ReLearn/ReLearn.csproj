@@ -842,10 +842,10 @@
     <AndroidResource Include="Resources\drawable\speak_on.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\Stat1.png" />
+    <AndroidResource Include="Resources\drawable\Stat2.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\Stat2.png" />
+    <AndroidResource Include="Resources\drawable\Stat1.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\icon.png" />

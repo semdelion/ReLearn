@@ -155,6 +155,17 @@ namespace ReLearn
             return this;
         }
     }
+    public class Database_for_stats // Класс для считывания базы данных flags
+    {
+        public int NumberLearn { get; set; }
+        public DateTime DateRecurrence { get; set; }
+
+        public Database_for_stats()
+        {
+            NumberLearn = 0;
+            DateRecurrence = DateTime.Today;
+        }
+    }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 }
