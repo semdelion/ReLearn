@@ -9,7 +9,7 @@ namespace ReLearn
     class Graph_General_Statistics : View
     {
         Canvas The_canvas;
-        List<Database_for_stats> Stats_databse { get; }
+        List<Database_for_stats> Stats_database { get; }
         Color Color_Diagram_1 { get; }
         Color Color_Diagram_2 { get; }
         readonly Color background_color = new Color(Color.Argb(150, 16, 19, 38));
@@ -18,7 +18,7 @@ namespace ReLearn
 
         public Graph_General_Statistics(Context context, Color color_diagram_1, Color color_diagram_2, List<Database_for_stats> stats_databse) : base(context)
         {
-            Stats_databse = stats_databse;
+            Stats_database = stats_databse;
             Color_Diagram_1 = color_diagram_1;
             Color_Diagram_2 = color_diagram_2;
         }
@@ -26,9 +26,17 @@ namespace ReLearn
         {
             float sum = 0;
             foreach(var s in Database_Stat)
-                sum+=s.True;
+                sum += s.True;
             return sum/Database_Stat.Count;
         }
+
+        public float Average(List<Database_for_stats> list_stat)
+        {
+            float sum = 0;
+            for (int i = 0; i < list_stat.Count; i++)
+                sum += list_stat[i].NumberLearn;
+            return sum / list_stat.Count;         
+        }      
 
         protected override void OnDraw(Canvas canvas)
         {
@@ -37,7 +45,7 @@ namespace ReLearn
 
             var database = DataBase.Connect(Database_Name.Statistics);
             var Database_Stat = database.Query<Database_Statistics>("SELECT * FROM " + DataBase.Table_Name + "_Statistics");// количество строк в БД
-            float average_percent_true = Average_percent_true(Database_Stat);
+            //float average_percent_true = Average_percent_true(Database_Stat);
             paint_text.TextSize = 2.5f * (The_canvas.Height + The_canvas.Width) / 200;
             paint_border.SetStyle(Paint.Style.Stroke);
 
@@ -49,10 +57,7 @@ namespace ReLearn
             //FrameStatistics Degree_of_study;
             //FrameStatistics Average_degree;
 
-           
-
-
-
+            float avg_numberLearn_stat = Average(Stats_database);
 
             if (The_canvas.Height > The_canvas.Width)
             {
@@ -64,11 +69,12 @@ namespace ReLearn
                 During_all_time   = new FrameStatistics(10f * The_canvas.Height / 100f, 10 * The_canvas.Height / 100f, 90 * The_canvas.Height / 100f, 90 * The_canvas.Height / 100f, background_color);
                 During_last_month = new FrameStatistics(The_canvas.Height , 10 * The_canvas.Height / 100f, The_canvas.Width - 10f * The_canvas.Height / 100f, 30f * The_canvas.Height / 100f, background_color);
             }
-            During_all_time.DrawBorder(The_canvas, paint_border);
+            During_all_time.Draw(The_canvas);
+            //During_all_time.DrawBorder(The_canvas, paint_border);
             During_last_month.DrawBorder(The_canvas, paint_border);
-            During_last_month.ProgressLine(The_canvas, average_percent_true, 20 - average_percent_true, Color_Diagram_1, Color_Diagram_2);
+            During_last_month.ProgressLine(The_canvas, avg_numberLearn_stat, Magic_constants.maxLearn - avg_numberLearn_stat, Color_Diagram_1, Color_Diagram_2);
 
-            During_all_time.DrawPieChart(The_canvas, average_percent_true, 20, Color_Diagram_1, Color_Diagram_2);
+            During_all_time.DrawPieChart(The_canvas, avg_numberLearn_stat, Magic_constants.maxLearn, Color_Diagram_1, Color_Diagram_2);
            
 
         }

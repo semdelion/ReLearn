@@ -29,7 +29,14 @@ namespace ReLearn
             P.SetShader(shader);
         }
 
-        public void Draw(Canvas canvas) => canvas.DrawRoundRect(new RectF(Left, Top, Right, Bottom), 6, 6, P);
+        public void Draw(Canvas canvas)
+        {
+            LinearGradient backlg = new LinearGradient((canvas.Width + canvas.Height) / 200, 0, 0, (canvas.Width + canvas.Height) / 200, Color.Argb(40, 60, 90, 125), Color.Transparent, TileMode.Repeat);
+            Paint paint1 = new Paint();
+            paint1.SetShader(backlg);
+            canvas.DrawRoundRect(new RectF(Left, Top, Right, Bottom), 6, 6, paint1);
+            canvas.DrawRoundRect(new RectF(Left, Top, Right, Bottom), 6, 6, P);
+        }
 
         public void DrawBorder(Canvas canvas, Paint paint)
         {
@@ -61,6 +68,23 @@ namespace ReLearn
             canvas.DrawRect(new RectF(Left + padding_left_right, Bottom - padding_bottom - height, Right - padding_left_right, Bottom - padding_bottom), paint_border);
         }
 
+        public string Round(float number)
+        {
+            var numberChar= Convert.ToString(number);
+            if (numberChar.Length > 4)
+                numberChar = numberChar.Remove(4);
+            else if (numberChar.Contains(","))
+                numberChar += "0";
+            else
+            {                
+                if (numberChar.Length == 2)
+                    numberChar += ".0";
+                else if(numberChar.Length == 1)
+                    numberChar += ".00";
+            }
+            return numberChar;
+        }
+
         public void DrawPieChart(Canvas canvas, float average, float sum,Color Color_Diagram_1, Color Color_Diagram_2)
         {
             float rate = (canvas.Width+canvas.Height)/ 200;
@@ -74,7 +98,7 @@ namespace ReLearn
             canvas.Rotate(-90f, Left + Width / 2, Top + Height / 2);
             canvas.DrawArc(new RectF(Left + rate * 7f, Top + rate * 7f, Right - rate * 7f, Bottom - rate * 7f), 0, average * (360f / sum), false, paint1);
             canvas.Rotate(90f, Left + Width / 2, Top + Height / 2);
-            DrawText(canvas, Width * 25 / 100f, Convert.ToString((int)(average * 100f/sum)) + "%", Left + 3f * Width / 10f, Top + 3.2f * Width / 10f);
+            DrawText(canvas, Width * 22 / 100f, Round(100 - average * 100f/sum) + "%", Left + 2f * Width / 10f, Top + 3.2f * Width / 10f);
         }
 
         public void DrawText(Canvas canvas, float font_size, string text, float left, float top)
