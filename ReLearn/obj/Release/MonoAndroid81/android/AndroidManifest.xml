@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="ReLearn.ReLearn" android:versionCode="1" android:versionName="1.0" android:installLocation="auto">
+  <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="27" />
+  <application android:allowBackup="true" android:label="@string/app_name" android:icon="@drawable/icon" android:theme="@style/MyTheme" android:name="android.app.Application">
+    <activity android:label="Language" android:screenOrientation="portrait" android:name="md5c90e4a1d4c1d83b48682a7e35718fecb.English" />
+    <activity android:label="Word Add" android:screenOrientation="portrait" android:name="md5c90e4a1d4c1d83b48682a7e35718fecb.English_Add" />
+    <activity android:label="Delete" android:screenOrientation="portrait" android:name="md5c90e4a1d4c1d83b48682a7e35718fecb.English_Delete" />
+    <activity android:label="Learn" android:screenOrientation="portrait" android:name="md5c90e4a1d4c1d83b48682a7e35718fecb.English_Learn" />
+    <activity android:label="Repeat " android:screenOrientation="portrait" android:name="md5c90e4a1d4c1d83b48682a7e35718fecb.English_Repeat" />
+    <activity android:label="Statistics" android:screenOrientation="portrait" android:theme="@style/ThemeStat" android:name="md5c90e4a1d4c1d83b48682a7e35718fecb.English_Stat" />
+    <activity android:label="Flags" android:screenOrientation="portrait" android:name="md5c90e4a1d4c1d83b48682a7e35718fecb.Flags" />
+    <activity android:label="Learn" android:screenOrientation="portrait" android:name="md5c90e4a1d4c1d83b48682a7e35718fecb.Flags_Learn" />
+    <activity android:label="Repeat " android:screenOrientation="portrait" android:name="md5c90e4a1d4c1d83b48682a7e35718fecb.Flags_Repeat" />
+    <activity android:label="Statistics" android:screenOrientation="portrait" android:theme="@style/ThemeStat" android:name="md5c90e4a1d4c1d83b48682a7e35718fecb.Flags_Stats" />
+    <activity android:screenOrientation="portrait" android:name="md5c90e4a1d4c1d83b48682a7e35718fecb.MainActivity">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
+    <provider android:name="mono.MonoRuntimeProvider" android:exported="false" android:initOrder="2147483647" android:authorities="ReLearn.ReLearn.mono.MonoRuntimeProvider.__mono_init__" />
+  </application>
+</manifest>

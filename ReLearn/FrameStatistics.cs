@@ -85,21 +85,39 @@ namespace ReLearn
             return numberChar;
         }
 
-        public void DrawPieChart(Canvas canvas, float average, float sum,Color Color_Diagram_1, Color Color_Diagram_2)
+        public void DrawPieChart(Canvas canvas, float average, float sum, Color Color_Diagram_1, Color Color_Diagram_2, PointF Center, float Radius)
         {
-            float rate = (canvas.Width+canvas.Height)/ 200;
+            Shader shader1 = new SweepGradient(Center.X, Center.Y, Color_Diagram_2, Color_Diagram_1);
+            Paint paint1 = new Paint { Color = Color_Diagram_1,       StrokeWidth = 10f * Width / 100f };
+            Paint paint2 = new Paint { Color = Color.Rgb(29, 43, 59), StrokeWidth = 10f * Width / 100f };
+            paint1.SetStyle(Paint.Style.Stroke);
+            paint1.SetShader(shader1);
+            paint2.SetStyle(Paint.Style.Stroke);
+
+            canvas.DrawArc(new RectF(Center.X - Radius, Center.Y - Radius, Center.X + Radius, Center.Y + Radius),   0f, 360f, false, paint2);
+            canvas.Rotate (-90f, Center.X, Center.Y);
+            canvas.DrawArc(new RectF(Center.X - Radius, Center.Y - Radius, Center.X + Radius, Center.Y + Radius), 0.5f, 360f - average * (360f / sum), false, paint1);
+            canvas.Rotate ( 90f, Center.X, Center.Y);
+            DrawText(canvas, Width * 22f / 100f, Round(100 - average * 100f/sum) + "%", Left + 2f * Width / 10f, Center.Y - 33f * Radius/100);
+        }
+
+        public void DrawPieChart(Canvas canvas, float average, float sum, Color Color_Diagram_1, Color Color_Diagram_2)
+        {
+            float rate = (Width + Height) / 200f;
             Shader shader1 = new SweepGradient(Left + Width / 2, Top + Height / 2, Color_Diagram_2, Color_Diagram_1);
             Paint paint1 = new Paint { Color = Color_Diagram_1, StrokeWidth = 10f * Width / 100f };
             Paint paint2 = new Paint { Color = Color.Rgb(29, 43, 59), StrokeWidth = 10f * Width / 100f };
             paint1.SetStyle(Paint.Style.Stroke);
             paint1.SetShader(shader1);
             paint2.SetStyle(Paint.Style.Stroke);
-            canvas.DrawArc(new RectF(Left + rate * 7f, Top + rate * 7f, Right - rate * 7f, Bottom - rate * 7f), 0, 360, false, paint2);
+            canvas.DrawArc(new RectF(Left + rate * 10f, Top + rate * 10f, Right - rate * 10f, Bottom - rate * 10f), 0f, 360f, false, paint2);
             canvas.Rotate(-90f, Left + Width / 2, Top + Height / 2);
-            canvas.DrawArc(new RectF(Left + rate * 7f, Top + rate * 7f, Right - rate * 7f, Bottom - rate * 7f), 0, average * (360f / sum), false, paint1);
-            canvas.Rotate(90f, Left + Width / 2, Top + Height / 2);
-            DrawText(canvas, Width * 22 / 100f, Round(100 - average * 100f/sum) + "%", Left + 2f * Width / 10f, Top + 3.2f * Width / 10f);
+            canvas.DrawArc(new RectF(Left + rate * 10f, Top + rate * 10f, Right - rate * 10f, Bottom - rate * 10f), 0.5f, 360f - average * (360f / sum), false, paint1);
+            canvas.Rotate(90f, Left + Width / 2f, Top + Height / 2);
+            DrawText(canvas, Width * 22f / 100f, Round(100 - average * 100f / sum) + "%", Left + 2f * Width / 10f, Top + 3.2f * Width / 10f);
         }
+
+
 
         public void DrawText(Canvas canvas, float font_size, string text, float left, float top)
         {
@@ -108,7 +126,6 @@ namespace ReLearn
                 TextSize = font_size,
                 Color = Color.Rgb(215, 248, 254)
             };
-
             canvas.DrawText(Convert.ToString(text), left, top + font_size, paint);
         }
     }
