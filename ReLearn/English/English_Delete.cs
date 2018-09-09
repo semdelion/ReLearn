@@ -16,7 +16,7 @@ using ReLearn.Resources;
 
 namespace ReLearn
 {
-    [Activity(Label = "Delete", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    [Activity( ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     class English_Delete : Activity
     {
         ListView listViewDel;

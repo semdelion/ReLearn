@@ -169,7 +169,6 @@ namespace ReLearn
             Button3 = FindViewById<Button>(Resource.Id.button_F_choice3);
             Button4 = FindViewById<Button>(Resource.Id.button_F_choice4);
             Button_next = FindViewById<Button>(Resource.Id.button_F_Next);
-
             try
             {
                 SQLiteConnection db = DataBase.Connect(Database_Name.Flags_DB);
@@ -180,6 +179,7 @@ namespace ReLearn
                 Toast.MakeText(this, "Error : can't connect to database of flags", ToastLength.Long).Show();
             }
         }
+
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
             this.Finish();

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="Language">Язык</string>
+  <string name="Flags">Флаги</string>
+  <string name="Addition">Добавить</string>
+  <string name="Repeat">Повторить</string>
+  <string name="Learn">Учить</string>
+  <string name="Add_word">Добавить</string>
+  <string name="Next">Дальше</string>
+  <string name="Word_English">Слово (Английский)</string>
+  <string name="Word_Rus">Слово (Русский)</string>
+  <string name="Voice">Озвучить</string>
+  <string name="Delete">Удаление</string>
+  <string name="Popular_words">Популярные слова</string>
+  <string name="My_dictionary">Мой словарь</string>
+  <string name="Statistics">Статистика</string>
+  <string name="View_dictionary">Просмотр словаря</string>
+  <string name="language_eng">Язык (en)</string>
+  <string name="language_rus">Язык (ru)</string>
+  <string name="Sort_descending">Сортировать ↓</string>
+  <string name="Sort_Ascending">Сортировать ↑</string>
+  <string name="Sort_alphabetically">Сортировать А→Я</string>
+</resources>

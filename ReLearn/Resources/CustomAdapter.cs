@@ -70,7 +70,6 @@ namespace ReLearn.Resources
                         else
                             Color_TextView(TView, new Color(255, 152, 50));
                         break;
-
                     }
                 case 1:
                     {

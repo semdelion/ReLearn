@@ -16,7 +16,7 @@ tools:context=".MainActivity">
           android:id="@+id/menuDatabase_PopularWords"
           android:orderInCategory="103"
           android:showAsAction="never"
-          android:title="Popular words"/>
+          android:title="@string/Popular_words"/>
         <!--<item
           android:id="@+id/menuDatabase_Animals"
           android:orderInCategory="102"
@@ -33,7 +33,7 @@ tools:context=".MainActivity">
           android:id="@+id/menuDatabase_MyDictionary"
           android:orderInCategory="100"
           android:showAsAction="never"
-          android:title="My dictionary"/>
+          android:title="@string/My_dictionary"/>
       </group>
     </menu>    
   </item>
@@ -41,19 +41,18 @@ tools:context=".MainActivity">
   <item
   android:id="@+id/settings"
   android:icon="@+drawable/settings"
-  android:showAsAction="always"
-  android:title="Delete a word">
+  android:showAsAction="always">
     <menu>
       <item
         android:id="@+id/Deleteword"
         android:orderInCategory="101"
         android:showAsAction="never"
-        android:title="View dictionary"/>
+        android:title="@string/View_dictionary"/>
       <item
         android:id="@+id/Stats"
         android:orderInCategory="100"
         android:showAsAction="never"
-        android:title="Statistic"/>
+        android:title="@string/Statistics"/>
     </menu>
   </item>
 </menu>

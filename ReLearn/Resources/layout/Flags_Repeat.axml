@@ -13,17 +13,18 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:stretchColumns="1">
-            <Toolbar
-                android:popupTheme="@style/MenuStyle"
-                android:minHeight="?android:attr/actionBarSize"
-                android:background="?android:attr/colorPrimary"
-                android:minWidth="25px"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:titleTextColor="?android:attr/actionMenuTextColor"
-                android:titleTextAppearance="?android:attr/textSize"
-                android:id="@+id/toolbarFlagsRepeat" 
-                android:navigationIcon="@drawable/arrow"/>
+			<Toolbar
+				android:popupTheme="@style/MenuStyle"
+				android:minHeight="?android:attr/actionBarSize"
+				android:background="?android:attr/colorPrimary"
+				android:minWidth="25px"
+				android:layout_width="match_parent"
+				android:layout_height="60dp"
+				android:titleTextColor="?android:attr/actionMenuTextColor"
+				android:titleTextAppearance="?android:attr/textSize"
+				android:id="@+id/toolbarFlagsRepeat"
+				android:navigationIcon="@drawable/arrow"
+				android:title="@string/Repeat" />
 			<ImageView
 				android:id="@+id/imageView_Flags_repeat"
 				android:layout_width="wrap_content"
@@ -91,7 +92,7 @@
 				android:onClick="Button_Flags_4_Click"
 					/>
 			<Button
-				android:text="Next"
+				android:text="@string/Next"
 				android:layout_width="match_parent"
 				android:layout_height="60.0dp"
 				android:layout_marginRight="40dp"

@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace ReLearn
 {
-    [Activity(Label = "Statistics", Theme = "@style/ThemeStat", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    [Activity( Theme = "@style/ThemeStat", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     class English_Stat : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
@@ -14,7 +14,7 @@ namespace ReLearn
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             //setting layout
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.English_Stat);
+            SetContentView(Resource.Layout.English_Stat);         
             ActionBar.SetDisplayHomeAsUpEnabled(true); // отображаем кнопку домой
             Window.SetBackgroundDrawable(GetDrawable(Resource.Drawable.backgroundEnFl));
             Window.AddFlags(WindowManagerFlags.DrawsSystemBarBackgrounds);

@@ -99,28 +99,19 @@ namespace ReLearn
 			public const int iconSpeak = 2130837521;
 			
 			// aapt resource value: 0x7f020012
-			public const int mainBackGround = 2130837522;
+			public const int settings = 2130837522;
 			
 			// aapt resource value: 0x7f020013
-			public const int MainRelearn = 2130837523;
+			public const int speak_off = 2130837523;
 			
 			// aapt resource value: 0x7f020014
-			public const int relearnMain = 2130837524;
+			public const int speak_on = 2130837524;
 			
 			// aapt resource value: 0x7f020015
-			public const int settings = 2130837525;
+			public const int Stat1 = 2130837525;
 			
 			// aapt resource value: 0x7f020016
-			public const int speak_off = 2130837526;
-			
-			// aapt resource value: 0x7f020017
-			public const int speak_on = 2130837527;
-			
-			// aapt resource value: 0x7f020018
-			public const int Stat1 = 2130837528;
-			
-			// aapt resource value: 0x7f020019
-			public const int Stat2 = 2130837529;
+			public const int Stat2 = 2130837526;
 			
 			static Drawable()
 			{
@@ -135,8 +126,8 @@ namespace ReLearn
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f07003a
-			public const int ABC = 2131165242;
+			// aapt resource value: 0x7f07003b
+			public const int ABC = 2131165243;
 			
 			// aapt resource value: 0x7f07001a
 			public const int Button_Speak_Eng = 2131165210;
@@ -144,17 +135,20 @@ namespace ReLearn
 			// aapt resource value: 0x7f07000f
 			public const int Button_Speak_TurnOn_TurnOff = 2131165199;
 			
-			// aapt resource value: 0x7f070031
-			public const int Deleteword = 2131165233;
-			
 			// aapt resource value: 0x7f070032
-			public const int Stats = 2131165234;
+			public const int Deleteword = 2131165234;
+			
+			// aapt resource value: 0x7f07003c
+			public const int Language = 2131165244;
 			
 			// aapt resource value: 0x7f070033
-			public const int Stats_Flags = 2131165235;
+			public const int Stats = 2131165235;
 			
-			// aapt resource value: 0x7f070036
-			public const int action_search = 2131165238;
+			// aapt resource value: 0x7f070034
+			public const int Stats_Flags = 2131165236;
+			
+			// aapt resource value: 0x7f070037
+			public const int action_search = 2131165239;
 			
 			// aapt resource value: 0x7f07001b
 			public const int button_E_Next = 2131165211;
@@ -192,8 +186,8 @@ namespace ReLearn
 			// aapt resource value: 0x7f070008
 			public const int button_add_word = 2131165192;
 			
-			// aapt resource value: 0x7f07002b
-			public const int button_english = 2131165227;
+			// aapt resource value: 0x7f07002c
+			public const int button_english = 2131165228;
 			
 			// aapt resource value: 0x7f070002
 			public const int button_english_add = 2131165186;
@@ -204,8 +198,8 @@ namespace ReLearn
 			// aapt resource value: 0x7f070003
 			public const int button_english_repeat = 2131165187;
 			
-			// aapt resource value: 0x7f07002c
-			public const int button_flags = 2131165228;
+			// aapt resource value: 0x7f07002d
+			public const int button_flags = 2131165229;
 			
 			// aapt resource value: 0x7f07001e
 			public const int button_flags_learn = 2131165214;
@@ -219,8 +213,8 @@ namespace ReLearn
 			// aapt resource value: 0x7f070010
 			public const int button_voice = 2131165200;
 			
-			// aapt resource value: 0x7f070039
-			public const int decrease = 2131165241;
+			// aapt resource value: 0x7f07003a
+			public const int decrease = 2131165242;
 			
 			// aapt resource value: 0x7f070006
 			public const int editText_foreign_word = 2131165190;
@@ -228,20 +222,23 @@ namespace ReLearn
 			// aapt resource value: 0x7f070007
 			public const int editText_translation_word = 2131165191;
 			
+			// aapt resource value: 0x7f07003d
+			public const int en = 2131165245;
+			
 			// aapt resource value: 0x7f070021
 			public const int imageView_Flags_learn = 2131165217;
 			
 			// aapt resource value: 0x7f070025
 			public const int imageView_Flags_repeat = 2131165221;
 			
-			// aapt resource value: 0x7f070038
-			public const int increase = 2131165240;
-			
-			// aapt resource value: 0x7f070034
-			public const int language_eng = 2131165236;
+			// aapt resource value: 0x7f070039
+			public const int increase = 2131165241;
 			
 			// aapt resource value: 0x7f070035
-			public const int language_rus = 2131165237;
+			public const int language_eng = 2131165237;
+			
+			// aapt resource value: 0x7f070036
+			public const int language_rus = 2131165238;
 			
 			// aapt resource value: 0x7f070011
 			public const int linearLayout1 = 2131165201;
@@ -249,17 +246,20 @@ namespace ReLearn
 			// aapt resource value: 0x7f07000a
 			public const int listViewDelete = 2131165194;
 			
-			// aapt resource value: 0x7f07002d
-			public const int menuDatabase = 2131165229;
+			// aapt resource value: 0x7f07002e
+			public const int menuDatabase = 2131165230;
+			
+			// aapt resource value: 0x7f070030
+			public const int menuDatabase_MyDictionary = 2131165232;
 			
 			// aapt resource value: 0x7f07002f
-			public const int menuDatabase_MyDictionary = 2131165231;
+			public const int menuDatabase_PopularWords = 2131165231;
 			
-			// aapt resource value: 0x7f07002e
-			public const int menuDatabase_PopularWords = 2131165230;
+			// aapt resource value: 0x7f070038
+			public const int menuDelSort = 2131165240;
 			
-			// aapt resource value: 0x7f070037
-			public const int menuDelSort = 2131165239;
+			// aapt resource value: 0x7f07003e
+			public const int ru = 2131165246;
 			
 			// aapt resource value: 0x7f070012
 			public const int scrollView1 = 2131165202;
@@ -267,8 +267,8 @@ namespace ReLearn
 			// aapt resource value: 0x7f07001f
 			public const int scrollView2 = 2131165215;
 			
-			// aapt resource value: 0x7f070030
-			public const int settings = 2131165232;
+			// aapt resource value: 0x7f070031
+			public const int settings = 2131165233;
 			
 			// aapt resource value: 0x7f070000
 			public const int textView1 = 2131165184;
@@ -311,6 +311,9 @@ namespace ReLearn
 			
 			// aapt resource value: 0x7f070024
 			public const int toolbarFlagsRepeat = 2131165220;
+			
+			// aapt resource value: 0x7f07002b
+			public const int toolbarMain = 2131165227;
 			
 			static Id()
 			{
@@ -380,6 +383,9 @@ namespace ReLearn
 			// aapt resource value: 0x7f060002
 			public const int search = 2131099650;
 			
+			// aapt resource value: 0x7f060003
+			public const int settings = 2131099651;
+			
 			static Menu()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
@@ -393,8 +399,68 @@ namespace ReLearn
 		public partial class String
 		{
 			
+			// aapt resource value: 0x7f040006
+			public const int Add_word = 2130968582;
+			
+			// aapt resource value: 0x7f040003
+			public const int Addition = 2130968579;
+			
+			// aapt resource value: 0x7f04000b
+			public const int Delete = 2130968587;
+			
+			// aapt resource value: 0x7f040002
+			public const int Flags = 2130968578;
+			
+			// aapt resource value: 0x7f040001
+			public const int Language = 2130968577;
+			
+			// aapt resource value: 0x7f040005
+			public const int Learn = 2130968581;
+			
+			// aapt resource value: 0x7f04000d
+			public const int My_dictionary = 2130968589;
+			
+			// aapt resource value: 0x7f040007
+			public const int Next = 2130968583;
+			
+			// aapt resource value: 0x7f04000c
+			public const int Popular_words = 2130968588;
+			
+			// aapt resource value: 0x7f040004
+			public const int Repeat = 2130968580;
+			
+			// aapt resource value: 0x7f040013
+			public const int Sort_Ascending = 2130968595;
+			
+			// aapt resource value: 0x7f040014
+			public const int Sort_alphabetically = 2130968596;
+			
+			// aapt resource value: 0x7f040012
+			public const int Sort_descending = 2130968594;
+			
+			// aapt resource value: 0x7f04000e
+			public const int Statistics = 2130968590;
+			
+			// aapt resource value: 0x7f04000f
+			public const int View_dictionary = 2130968591;
+			
+			// aapt resource value: 0x7f04000a
+			public const int Voice = 2130968586;
+			
+			// aapt resource value: 0x7f040008
+			public const int Word_English = 2130968584;
+			
+			// aapt resource value: 0x7f040009
+			public const int Word_Rus = 2130968585;
+			
 			// aapt resource value: 0x7f040000
 			public const int app_name = 2130968576;
+			
+			// aapt resource value: 0x7f040010
+			public const int language_eng = 2130968592;
+			
+			// aapt resource value: 0x7f040011
+			public const int language_rus = 2130968593;
 			
 			static String()
 			{

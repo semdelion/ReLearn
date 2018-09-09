@@ -26,7 +26,8 @@
 				android:titleTextColor="?android:attr/actionMenuTextColor"
 				android:titleTextAppearance="?android:attr/textSize"
 				android:id="@+id/toolbarEnglishRepeat"
-				android:navigationIcon="@drawable/arrow" />
+				android:navigationIcon="@drawable/arrow"
+				android:title="@string/Repeat" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -119,7 +120,7 @@
 					android:gravity="left|right|center"
 					android:scaleType="fitXY"/>
 				<Button
-					android:text="Next"
+					android:text="@string/Next"
 					android:layout_column="1"
 					android:layout_width="0dp"
 					android:layout_weight="0.7"

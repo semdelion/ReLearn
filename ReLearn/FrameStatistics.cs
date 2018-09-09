@@ -40,7 +40,7 @@ namespace ReLearn
 
         public void DrawBorder(Canvas canvas, Paint paint)
         {
-            LinearGradient backlg = new LinearGradient((canvas.Width+ canvas.Height) / 200, 0, 0, (canvas.Width + canvas.Height) / 200, Color.Argb(40, 60, 90, 125), Color.Transparent , TileMode.Repeat);
+            LinearGradient backlg = new LinearGradient((canvas.Width + canvas.Height) / 200, 0, 0, (canvas.Width + canvas.Height) / 200, Color.Argb(40, 60, 90, 125), Color.Transparent, TileMode.Repeat);
             Paint paint1 = new Paint();
             paint1.SetShader(backlg);
             canvas.DrawRoundRect(new RectF(Left, Top, Right, Bottom), 6, 6, paint1);
@@ -70,16 +70,16 @@ namespace ReLearn
 
         public string Round(float number)
         {
-            var numberChar= Convert.ToString(number);
+            var numberChar = Convert.ToString(number);
             if (numberChar.Length > 4)
                 numberChar = numberChar.Remove(4);
             else if (numberChar.Contains(","))
                 numberChar += "0";
             else
-            {                
+            {
                 if (numberChar.Length == 2)
                     numberChar += ".0";
-                else if(numberChar.Length == 1)
+                else if (numberChar.Length == 1)
                     numberChar += ".00";
             }
             return numberChar;
@@ -88,17 +88,17 @@ namespace ReLearn
         public void DrawPieChart(Canvas canvas, float average, float sum, Color Color_Diagram_1, Color Color_Diagram_2, PointF Center, float Radius)
         {
             Shader shader1 = new SweepGradient(Center.X, Center.Y, Color_Diagram_2, Color_Diagram_1);
-            Paint paint1 = new Paint { Color = Color_Diagram_1,       StrokeWidth = 10f * Width / 100f };
+            Paint paint1 = new Paint { Color = Color_Diagram_1, StrokeWidth = 10f * Width / 100f };
             Paint paint2 = new Paint { Color = Color.Rgb(29, 43, 59), StrokeWidth = 10f * Width / 100f };
             paint1.SetStyle(Paint.Style.Stroke);
             paint1.SetShader(shader1);
             paint2.SetStyle(Paint.Style.Stroke);
 
-            canvas.DrawArc(new RectF(Center.X - Radius, Center.Y - Radius, Center.X + Radius, Center.Y + Radius),   0f, 360f, false, paint2);
-            canvas.Rotate (-90f, Center.X, Center.Y);
+            canvas.DrawArc(new RectF(Center.X - Radius, Center.Y - Radius, Center.X + Radius, Center.Y + Radius), 0f, 360f, false, paint2);
+            canvas.Rotate(-90f, Center.X, Center.Y);
             canvas.DrawArc(new RectF(Center.X - Radius, Center.Y - Radius, Center.X + Radius, Center.Y + Radius), 0.5f, 360f - average * (360f / sum), false, paint1);
-            canvas.Rotate ( 90f, Center.X, Center.Y);
-            DrawText(canvas, Width * 22f / 100f, Round(100 - average * 100f/sum) + "%", Left + 2f * Width / 10f, Center.Y - 33f * Radius/100);
+            canvas.Rotate(90f, Center.X, Center.Y);
+            DrawText(canvas, Width * 22f / 100f, Round(100 - average * 100f / sum) + "%", Left + 2f * Width / 10f, Center.Y - 33f * Radius / 100);
         }
 
         public void DrawPieChart(Canvas canvas, float average, float sum, Color Color_Diagram_1, Color Color_Diagram_2)
@@ -117,14 +117,12 @@ namespace ReLearn
             DrawText(canvas, Width * 22f / 100f, Round(100 - average * 100f / sum) + "%", Left + 2f * Width / 10f, Top + 3.2f * Width / 10f);
         }
 
-
-
-        public void DrawText(Canvas canvas, float font_size, string text, float left, float top)
+        public void DrawText(Canvas canvas, float font_size, string text, float left, float top, Color? c = null)
         {
             Paint paint = new Paint
             {
                 TextSize = font_size,
-                Color = Color.Rgb(215, 248, 254)
+                Color = c ?? Color.Rgb(215, 248, 254)
             };
             canvas.DrawText(Convert.ToString(text), left, top + font_size, paint);
         }

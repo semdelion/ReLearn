@@ -15,7 +15,7 @@ using Plugin.TextToSpeech;
 
 namespace ReLearn
 {
-    [Activity(Label = "Repeat ", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    [Activity(ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     class English_Repeat : Activity
     {
         TextView textView;
@@ -167,7 +167,6 @@ namespace ReLearn
             Button3 = FindViewById<Button>(Resource.Id.button_E_choice3);
             Button4 = FindViewById<Button>(Resource.Id.button_E_choice4);
             Button_next = FindViewById<Button>(Resource.Id.button_E_Next);
-
             try
             {
                 SQLiteConnection db = DataBase.Connect(Database_Name.English_DB);
@@ -175,7 +174,6 @@ namespace ReLearn
                 Button_English_Next_Click(null);
             }
             catch { Toast.MakeText(this, "Error : can't connect to database of Language in Repeat", ToastLength.Long).Show(); }
-
         }
 
         public override bool OnOptionsItemSelected(IMenuItem item)

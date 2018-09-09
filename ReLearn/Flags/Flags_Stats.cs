@@ -17,16 +17,13 @@ namespace ReLearn
             Window.AddFlags(WindowManagerFlags.DrawsSystemBarBackgrounds);
             Window.SetStatusBarColor(Android.Graphics.Color.Argb(128, 0, 0, 0));
             ActionBar.SetDisplayHomeAsUpEnabled(true);
-            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             ActionBar.NavigationMode = ActionBarNavigationMode.Tabs;
             SetContentView(Resource.Layout.English_Stat);
-
-
 
             var database = DataBase.Connect(Database_Name.Flags_DB);
             List<Database_for_stats> Database_NL_and_D = database.Query<Database_for_stats>("SELECT NumberLearn, DateRecurrence FROM " + DataBase.Table_Name);// количество строк в БД
 
-            Graph_General_Statistics Stat2 = new Graph_General_Statistics(this, Color.Argb(255, 254, 166, 10), Color.Argb(255, 154, 66, 3), Database_NL_and_D);////////////////
+            Graph_General_Statistics Stat2 = new Graph_General_Statistics(this, Color.Argb(255, 254, 166, 10), Color.Argb(255, 154, 66, 3), Database_NL_and_D);
             Graph_Statistics Stat1 = new Graph_Statistics(this, Color.Argb(255, 254, 166, 10), Color.Argb(255, 154, 66, 3));
 
             var tab = ActionBar.NewTab();
@@ -42,7 +39,6 @@ namespace ReLearn
                 SetContentView(Stat2);
             };
             ActionBar.AddTab(tab);
-
         }
         public override bool OnOptionsItemSelected(IMenuItem item)
         {

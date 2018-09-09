@@ -124,8 +124,6 @@ namespace ReLearn
         public Database_Words Find() => this;
     }
 
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
     public class Database_images // Класс для считывания базы данных flags
     {
         [PrimaryKey, AutoIncrement, Column("_id")]
@@ -164,39 +162,7 @@ namespace ReLearn
         {
             NumberLearn = 0;
             DateRecurrence = DateTime.Today;
-        }
-
-       
+        }       
     }
-
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 }
 
-//public static void Add_new_Flag(StreamReader reader, SQLiteConnection databaseFlags)
-//{
-//    string str_line = reader.ReadLine();
-//    var list_imageName_flag = str_line.Split('|');
-//    var database_Flags = new Flags
-//    {
-//        Image_name = list_imageName_flag[0],
-//        Name_image_en = list_imageName_flag[1],
-//        Name_image_ru = list_imageName_flag[2],
-//        NumberLearn = 10,
-//        DateRecurrence = System.DateTime.Today.Month
-//    };
-//    databaseFlags.Insert(database_Flags);
-//}
-
-//public static void Add_Setting(StreamReader reader, SQLiteConnection databaseSetting)
-//{
-//    string str_line = reader.ReadLine();
-//    var list_sett = str_line.Split('|');
-//    var sett_bd = new Setting_Database
-//    {
-//        Setting_bd = list_sett[0],
-//        Name_bd = list_sett[1],
-//        full_or_empty = System.Convert.ToInt32(list_sett[2]),
-//        language = System.Convert.ToInt32(list_sett[3])
-//    };
-//    databaseSetting.Insert(sett_bd);
-//}
