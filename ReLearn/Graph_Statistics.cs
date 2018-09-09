@@ -13,8 +13,8 @@ namespace ReLearn
         Color Color_Diagram_1;
         Color Color_Diagram_2;
         readonly Color background_color = new Color(Color.Argb(150, 16, 19, 38));
-        readonly Paint paint_border = new Paint { StrokeWidth = 4, Color = Color.Argb(250, 215, 248, 254) };
-        readonly Paint paint_text = new Paint { TextSize = 25, StrokeWidth = 4, Color = Color.Rgb(215, 248, 254) };
+        readonly Paint paint_border = new Paint { StrokeWidth = 4, Color = Color.Argb(250, 215, 248, 254), AntiAlias = true };
+        readonly Paint paint_text = new Paint { TextSize = 25, StrokeWidth = 4, Color = Color.Rgb(215, 248, 254), AntiAlias = true };
 
         public Graph_Statistics(Context context, Color color_diagram_1, Color color_diagram_2) : base(context)
         {
@@ -52,7 +52,7 @@ namespace ReLearn
         void Graph_layout(float left, float bottom, float top, float right)
         {
             float height = (bottom - top) / 20f;
-            Paint paint = new Paint { TextSize = 25, Color = Color.Argb(40, 215, 248, 254), StrokeWidth = 1 };
+            Paint paint = new Paint { TextSize = 25, Color = Color.Argb(40, 215, 248, 254), StrokeWidth = 1, AntiAlias = true };
             for (int j = 2; j <= 20; j += 2)
                 The_canvas.DrawLine(left, bottom - height * j, right, bottom - height * j, paint);
 
@@ -70,7 +70,7 @@ namespace ReLearn
                 if (i >= n_count)
                 {
                     Shader shader = new LinearGradient(left + 2f, bottom - step_height * 20, left + step_width - 2f, bottom, Color_Diagram_1, Color_Diagram_2, TileMode.Clamp);
-                    Paint paint = new Paint();
+                    Paint paint = new Paint { AntiAlias = true };
                     paint.SetShader(shader);
                     The_canvas.DrawRoundRect(new RectF(left + padding, bottom - (step_height * s.True), left + step_width - padding, bottom), 0, 0, paint);
 

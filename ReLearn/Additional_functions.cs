@@ -67,5 +67,22 @@ namespace ReLearn
                 }
             Stats.Add(new Statistics(rand_word, identifier, RepeatLearn));
         }
+
+        public static string Round(float number)
+        {
+            var numberChar = Convert.ToString(number);
+            if (numberChar.Length > 4)
+                numberChar = numberChar.Remove(4);
+            else if (numberChar.Contains(","))
+                numberChar += "0";
+            else
+            {
+                if (numberChar.Length == 2)
+                    numberChar += ".0";
+                else if (numberChar.Length == 1)
+                    numberChar += ".00";
+            }
+            return numberChar;
+        }
     }
 }
