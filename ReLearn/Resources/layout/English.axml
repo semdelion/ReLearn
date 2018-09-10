@@ -17,28 +17,13 @@
         android:title="@string/Language" 
 	/>
 	<Button
-		android:text="@string/Addition"
-		android:layout_width="match_parent"
-		android:layout_height="80.0dp"
-		android:id="@+id/button_english_add"
-		android:layout_marginBottom="10.0dp"
-		android:layout_marginRight="40.0dp"
-		android:layout_marginLeft="40.0dp"
-		android:layout_marginTop="60dp"
-		android:textColor="#d7f8fe"
-		android:textSize="20dp"
-		android:background="@drawable/button_style_standard"
-		android:height="@android:dimen/notification_large_icon_width"
-		android:gravity="center"
-		android:onClick="Button_English_Add_Click"/>
-	<Button
 		android:text="@string/Repeat"
 		android:layout_width="match_parent"
 		android:layout_height="80.0dp"
 		android:id="@+id/button_english_repeat"
 		android:layout_marginLeft="40.0dp"
 		android:layout_marginRight="40.0dp"
-		android:layout_marginTop="6.0dp"
+		android:layout_marginTop="60dp"
 		android:layout_marginBottom="10.0dp"
 		android:textColor="#d7f8fe"
 		android:textSize="20dp"
@@ -61,4 +46,19 @@
 		android:height="@android:dimen/notification_large_icon_width"
 		android:gravity="center"
 		android:onClick="Button_English_Learn_Click"/>
+	<Button
+		android:text="@string/Addition"
+		android:layout_width="match_parent"
+		android:layout_height="80.0dp"
+		android:id="@+id/button_english_add"
+		android:layout_marginBottom="10.0dp"
+		android:layout_marginRight="40.0dp"
+		android:layout_marginLeft="40.0dp"
+		android:layout_marginTop="6.0dp"
+		android:textColor="#d7f8fe"
+		android:textSize="20dp"
+		android:background="@drawable/button_style_standard"
+		android:height="@android:dimen/notification_large_icon_width"
+		android:gravity="center"
+		android:onClick="Button_English_Add_Click"/>
 </LinearLayout>

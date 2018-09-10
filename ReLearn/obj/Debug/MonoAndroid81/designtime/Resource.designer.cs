@@ -131,14 +131,14 @@ namespace ReLearn
 			// aapt resource value: 0x7F020046
 			public const int button_english = 2130837574;
 			
-			// aapt resource value: 0x7F020004
-			public const int button_english_add = 2130837508;
-			
 			// aapt resource value: 0x7F020006
-			public const int button_english_learn = 2130837510;
+			public const int button_english_add = 2130837510;
 			
 			// aapt resource value: 0x7F020005
-			public const int button_english_repeat = 2130837509;
+			public const int button_english_learn = 2130837509;
+			
+			// aapt resource value: 0x7F020004
+			public const int button_english_repeat = 2130837508;
 			
 			// aapt resource value: 0x7F020024
 			public const int button_E_choice1 = 2130837540;

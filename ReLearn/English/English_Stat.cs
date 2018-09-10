@@ -3,6 +3,7 @@ using Android.OS;
 using Android.Views;
 using Android.Graphics;
 using System.Collections.Generic;
+using Android.Graphics.Drawables;
 
 namespace ReLearn
 {
@@ -24,6 +25,7 @@ namespace ReLearn
             SetContentView(Resource.Layout.English_Stat);
 
             var database = DataBase.Connect(Database_Name.English_DB);
+            ActionBar.SetStackedBackgroundDrawable(new ColorDrawable(Color.Transparent));
             List<Database_for_stats> Database_NL_and_D = database.Query<Database_for_stats>("SELECT NumberLearn, DateRecurrence FROM " + DataBase.Table_Name);// количество строк в БД
 
             Graph_Statistics Stat1 = new Graph_Statistics(this, Color.Rgb(0, 255, 255), Color.Argb(255, 50, 60, 126));
