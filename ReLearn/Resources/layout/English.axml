@@ -13,8 +13,6 @@
         android:titleTextAppearance="?android:attr/textSize"
         android:id="@+id/toolbarEnglish"
         android:navigationIcon="@drawable/arrow"
-        android:layout_marginTop="0.0dp"
-        android:layout_marginBottom="0.0dp"
         android:scrollIndicators="top|bottom"
         android:title="@string/Language" 
 	/>

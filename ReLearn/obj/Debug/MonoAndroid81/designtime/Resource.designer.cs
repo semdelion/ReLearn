@@ -401,11 +401,41 @@ namespace ReLearn
 			// aapt resource value: 0x7F050002
 			public const int app_name = 2131034114;
 			
+			// aapt resource value: 0x7F050041
+			public const int Average = 2131034177;
+			
+			// aapt resource value: 0x7F050045
+			public const int Correct = 2131034181;
+			
+			// aapt resource value: 0x7F050038
+			public const int Correct_answers = 2131034168;
+			
+			// aapt resource value: 0x7F050025
+			public const int databaseEmpty = 2131034149;
+			
+			// aapt resource value: 0x7F050026
+			public const int databaseNotConnect = 2131034150;
+			
+			// aapt resource value: 0x7F050037
+			public const int Degree_Of_Study = 2131034167;
+			
 			// aapt resource value: 0x7F050013
 			public const int Delete = 2131034131;
 			
+			// aapt resource value: 0x7F050023
+			public const int EnIsSelected = 2131034147;
+			
+			// aapt resource value: 0x7F050030
+			public const int Enter_word = 2131034160;
+			
 			// aapt resource value: 0x7F050004
 			public const int Flags = 2131034116;
+			
+			// aapt resource value: 0x7F050046
+			public const int Incorrect = 2131034182;
+			
+			// aapt resource value: 0x7F050050
+			public const int Incorrect_Up = 2131034192;
 			
 			// aapt resource value: 0x7F050003
 			public const int Language = 2131034115;
@@ -416,8 +446,17 @@ namespace ReLearn
 			// aapt resource value: 0x7F050019
 			public const int language_rus = 2131034137;
 			
+			// aapt resource value: 0x7F050049
+			public const int Last_testing = 2131034185;
+			
 			// aapt resource value: 0x7F050007
 			public const int Learn = 2131034119;
+			
+			// aapt resource value: 0x7F050040
+			public const int Month = 2131034176;
+			
+			// aapt resource value: 0x7F050028
+			public const int MyDictionaryIsSelected = 2131034152;
 			
 			// aapt resource value: 0x7F050015
 			public const int My_dictionary = 2131034133;
@@ -425,11 +464,35 @@ namespace ReLearn
 			// aapt resource value: 0x7F050009
 			public const int Next = 2131034121;
 			
+			// aapt resource value: 0x7F050044
+			public const int Number_Correct_Answers = 2131034180;
+			
+			// aapt resource value: 0x7F050043
+			public const int Number_Inconvenient_Words = 2131034179;
+			
+			// aapt resource value: 0x7F050047
+			public const int Number_Of_Tests = 2131034183;
+			
+			// aapt resource value: 0x7F050042
+			public const int Number_Words_Learned = 2131034178;
+			
+			// aapt resource value: 0x7F050048
+			public const int Of = 2131034184;
+			
+			// aapt resource value: 0x7F050029
+			public const int PopularDictionaryIsSelected = 2131034153;
+			
 			// aapt resource value: 0x7F050014
 			public const int Popular_words = 2131034132;
 			
 			// aapt resource value: 0x7F050006
 			public const int Repeat = 2131034118;
+			
+			// aapt resource value: 0x7F050027
+			public const int repeatedAllWords = 2131034151;
+			
+			// aapt resource value: 0x7F050024
+			public const int RuIsSelected = 2131034148;
 			
 			// aapt resource value: 0x7F050022
 			public const int Sort_alphabetically = 2131034146;
@@ -443,14 +506,35 @@ namespace ReLearn
 			// aapt resource value: 0x7F050016
 			public const int Statistics = 2131034134;
 			
+			// aapt resource value: 0x7F050039
+			public const int Today = 2131034169;
+			
 			// aapt resource value: 0x7F050017
 			public const int View_dictionary = 2131034135;
 			
 			// aapt resource value: 0x7F050012
 			public const int Voice = 2131034130;
 			
+			// aapt resource value: 0x7F050035
+			public const int Voice_off = 2131034165;
+			
+			// aapt resource value: 0x7F050036
+			public const int Voice_on = 2131034166;
+			
+			// aapt resource value: 0x7F050032
+			public const int Word_Added = 2131034162;
+			
+			// aapt resource value: 0x7F050034
+			public const int Word_Delete = 2131034164;
+			
 			// aapt resource value: 0x7F050010
 			public const int Word_English = 2131034128;
+			
+			// aapt resource value: 0x7F050031
+			public const int Word_exists = 2131034161;
+			
+			// aapt resource value: 0x7F050033
+			public const int Word_Not_Exists = 2131034163;
 			
 			// aapt resource value: 0x7F050011
 			public const int Word_Rus = 2131034129;

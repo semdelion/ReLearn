@@ -107,13 +107,13 @@ namespace ReLearn
                 LastStat.ProgressLine(The_canvas, Database_Stat[Database_Stat.Count - 1].True, Database_Stat[Database_Stat.Count - 1].False, Color_Diagram_1, Color_Diagram_2);
                 if (The_canvas.Height > The_canvas.Width)
                 {
-                    LastStat.DrawText(The_canvas, 25 * LastStat.Height / 100, "Last testing", LastStat.Left + 7 * LastStat.Width / 100, LastStat.Top + LastStat.Height / 14);
-                    LastStat.DrawText(The_canvas, 15 * LastStat.Height / 100, "Correct: " + Convert.ToString(Database_Stat[Database_Stat.Count - 1].True) +
-                                      ", Incorrect: " + Convert.ToString(Database_Stat[Database_Stat.Count - 1].False), LastStat.Left + 7 * LastStat.Width / 100, LastStat.Top + 25 * LastStat.Height / 100 + LastStat.Height / 7);
+                    LastStat.DrawText(The_canvas, 25 * LastStat.Height / 100, Additional_functions.GetResourceString("Last_testing", this.Resources), LastStat.Left + 7 * LastStat.Width / 100, LastStat.Top + LastStat.Height / 14);
+                    LastStat.DrawText(The_canvas, 15 * LastStat.Height / 100, Additional_functions.GetResourceString("Correct", this.Resources) + ": " + Convert.ToString(Database_Stat[Database_Stat.Count - 1].True) +
+                                      ", "+ Additional_functions.GetResourceString("Incorrect_Up", this.Resources)+ ": " + Convert.ToString(Database_Stat[Database_Stat.Count - 1].False), LastStat.Left + 7 * LastStat.Width / 100, LastStat.Top + 25 * LastStat.Height / 100 + LastStat.Height / 7);
                 }
-                else
-                    LastStat.DrawText(The_canvas, 40 * LastStat.Height / 100, "Last testing." + "   Correct: " + Convert.ToString(Database_Stat[Database_Stat.Count - 1].True) +
-                        ", Incorrect: " + Convert.ToString(Database_Stat[Database_Stat.Count - 1].False), LastStat.Left + 7 * LastStat.Width / 100, LastStat.Top + LastStat.Height / 14);
+                else 
+                    LastStat.DrawText(The_canvas, 40 * LastStat.Height / 100, Additional_functions.GetResourceString("Last_testing", this.Resources) + "." + "   " + Additional_functions.GetResourceString("Correct", this.Resources) + ": " + Convert.ToString(Database_Stat[Database_Stat.Count - 1].True) +
+                        ", " + Additional_functions.GetResourceString("Incorrect_Up", this.Resources) + ": " + Convert.ToString(Database_Stat[Database_Stat.Count - 1].False), LastStat.Left + 7 * LastStat.Width / 100, LastStat.Top + LastStat.Height / 14);
             }
         }
     }

@@ -143,7 +143,7 @@ namespace ReLearn
                 Rand_word = rnd.Next(dataBase.Count);
                 Function_Next_Test(Rand_word);
                 Button_Refresh();
-                ActionBar.Title = Convert.ToString("Repeat " + (Count + 1) + "/" + Magic_constants.repeat_count);
+                ActionBar.Title = Convert.ToString(Additional_functions.GetResourceString("Repeat", this.Resources) + " " + (Count + 1) + "/" + Magic_constants.repeat_count);
             }
             else
             {
@@ -175,8 +175,9 @@ namespace ReLearn
                 dataBase = db.Query<Database_images>("SELECT * FROM " + DataBase.Table_Name + " WHERE NumberLearn > 0");
                 Button_Flags_Next_Click(null);
             }
-            catch{
-                Toast.MakeText(this, "Error : can't connect to database of flags", ToastLength.Long).Show();
+            catch
+            {
+                Toast.MakeText(this, Additional_functions.GetResourceString("databaseNotConnect", this.Resources), ToastLength.Short).Show();              
             }
         }
 

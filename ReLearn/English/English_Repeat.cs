@@ -141,7 +141,7 @@ namespace ReLearn
                 Rand_word = rnd.Next(dataBase.Count);
                 Function_Next_Test( Rand_word, rnd.Next(4));
                 Button_Refresh();
-                ActionBar.Title = Convert.ToString("Repeat " + (Count + 1) + "/" + Magic_constants.repeat_count); // ПЕРЕДЕЛАЙ Костыль счётчик 
+                ActionBar.Title = Convert.ToString(Additional_functions.GetResourceString("Repeat", this.Resources) + " " + (Count + 1) + "/" + Magic_constants.repeat_count); // ПЕРЕДЕЛАЙ Костыль счётчик 
             }
             else
             {
@@ -173,7 +173,10 @@ namespace ReLearn
                 dataBase = db.Query<Database_Words>("SELECT * FROM " + DataBase.Table_Name + " WHERE NumberLearn > 0");
                 Button_English_Next_Click(null);
             }
-            catch { Toast.MakeText(this, "Error : can't connect to database of Language in Repeat", ToastLength.Long).Show(); }
+            catch
+            {
+                Toast.MakeText(this, Additional_functions.GetResourceString("databaseNotConnect", this.Resources), ToastLength.Short).Show();
+            }
         }
 
         public override bool OnOptionsItemSelected(IMenuItem item)

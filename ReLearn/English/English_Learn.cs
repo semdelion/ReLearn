@@ -33,14 +33,14 @@ namespace ReLearn
             if (Voice_Enable)
             {
                 Voice_Enable = false;
-                button.SetImageDrawable(GetDrawable(Resource.Drawable.speak_off));         
-                Toast.MakeText(this, "Voice off", ToastLength.Short).Show();
+                button.SetImageDrawable(GetDrawable(Resource.Drawable.speak_off));
+                Toast.MakeText(this, Additional_functions.GetResourceString("Voice_off", this.Resources), ToastLength.Short).Show();
             }
             else
             {
                 Voice_Enable = true;
                 button.SetImageDrawable(GetDrawable(Resource.Drawable.speak_on));
-                Toast.MakeText(this, "Voice on", ToastLength.Short).Show();
+                Toast.MakeText(this, Additional_functions.GetResourceString("Voice_on", this.Resources), ToastLength.Short).Show();
             }
         }
 
@@ -60,7 +60,7 @@ namespace ReLearn
             }
             catch
             {
-                Toast.MakeText(this, "Error : can't connect to database of Language in Learn", ToastLength.Long).Show();
+                Toast.MakeText(this, Additional_functions.GetResourceString("databaseNotConnect", this.Resources), ToastLength.Short).Show();
             }
         }
 

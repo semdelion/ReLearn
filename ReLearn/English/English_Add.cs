@@ -31,18 +31,17 @@ namespace ReLearn
                 database.CreateTable<Database_Words>();
                 var search_occurrences = database.Query<Database_Words>("SELECT * FROM My_Directly WHERE Word = ?", editText_foreign_word.Text);// поиск вхождения слова в БД
                 if (editText_foreign_word.Text == "" || editText_translation_word.Text == "")
-                    Toast.MakeText(this, "Enter word!", ToastLength.Short).Show();
+                    Toast.MakeText(this, Additional_functions.GetResourceString("Enter_word", this.Resources), ToastLength.Short).Show();
                 else if (search_occurrences.Count != 0)
-                    Toast.MakeText(this, "The word exists!", ToastLength.Short).Show();
+                    Toast.MakeText(this, Additional_functions.GetResourceString("Word_exists", this.Resources), ToastLength.Short).Show();               
                 else
                 {
                     database.Query<Database_Words>($"INSERT INTO My_Directly " +
                         $"(Word, TranslationWord, NumberLearn, DateRecurrence) VALUES ("
                         + "\"" + editText_foreign_word.Text.ToLower() + "\"" + ","
                         + "\"" + editText_translation_word.Text.ToLower() + "\"" + ","
-                        + Magic_constants.numberLearn + ", DATETIME('NOW'))");
-
-                    Toast.MakeText(this, "Word added!", ToastLength.Short).Show();
+                        + Magic_constants.numberLearn + ", DATETIME('NOW'))");                   
+                    Toast.MakeText(this, Additional_functions.GetResourceString("Word_Added", this.Resources), ToastLength.Short).Show();
                 }
                 editText_foreign_word.Text = "";
                 editText_translation_word.Text = "";
@@ -50,7 +49,7 @@ namespace ReLearn
             }
             catch
             {
-                Toast.MakeText(this, "Error : can't connect to database of Language", ToastLength.Long).Show();
+                Toast.MakeText(this, Additional_functions.GetResourceString("databaseNotConnect", this.Resources), ToastLength.Short).Show();
             }
         }
 

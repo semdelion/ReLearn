@@ -41,9 +41,12 @@ namespace ReLearn
                     StartActivity(intent_english_learn);
                 }
                 else
-                    Toast.MakeText(this, "The database is empty", ToastLength.Short).Show();
+                    Toast.MakeText(this, Additional_functions.GetResourceString("databaseEmpty", this.Resources), ToastLength.Short).Show();
             }
-            catch { Toast.MakeText(this, "Error : can't connect to database", ToastLength.Long).Show(); }
+            catch
+            {
+                Toast.MakeText(this, Additional_functions.GetResourceString("databaseNotConnect", this.Resources), ToastLength.Short).Show();
+            }
         }
 
         [Java.Interop.Export("Button_English_Repeat_Click")]
@@ -56,16 +59,19 @@ namespace ReLearn
                 var search_occurrences = database.Query<Database_Words>("SELECT * FROM  " + DataBase.Table_Name);// поиск вхождения слова в БД
                 var search_numberlearn_null = database.Query<Database_Words>("SELECT * FROM  " + DataBase.Table_Name + " WHERE NumberLearn = 0").Count;
                 if (search_occurrences.Count == search_numberlearn_null)
-                    Toast.MakeText(this, "You repeated all the words", ToastLength.Short).Show();
+                    Toast.MakeText(this, Additional_functions.GetResourceString("repeatedAllWords", this.Resources), ToastLength.Short).Show();
                 else if (search_occurrences.Count != 0)
                 {
                     Intent intent_english_repeat = new Intent(this, typeof(English_Repeat));
                     StartActivity(intent_english_repeat);
                 }
                 else
-                    Toast.MakeText(this, "The database is empty", ToastLength.Short).Show();
+                    Toast.MakeText(this, Additional_functions.GetResourceString("databaseEmpty", this.Resources), ToastLength.Short).Show();              
             }
-            catch { Toast.MakeText(this, "Error : can't connect to database", ToastLength.Long).Show(); }
+            catch
+            {
+                Toast.MakeText(this, Additional_functions.GetResourceString("databaseNotConnect", this.Resources), ToastLength.Short).Show();
+            }
         }    
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -110,7 +116,7 @@ namespace ReLearn
             if (id == Resource.Id.menuDatabase_MyDictionary)
             {
                 DataBase.Table_Name = Table_name.My_Directly;
-                Toast.MakeText(this, "My dictionary is selected", ToastLength.Short).Show();
+                Toast.MakeText(this, Additional_functions.GetResourceString("MyDictionaryIsSelected", this.Resources), ToastLength.Short).Show();
                 CrossSettings.Current.AddOrUpdateValue("DictionaryName", DataBase.Table_Name);
                 DataBase.Update_English_DB();
                 item.SetChecked(true);
@@ -119,7 +125,7 @@ namespace ReLearn
             if (id == Resource.Id.menuDatabase_PopularWords)
             {
                 DataBase.Table_Name = Table_name.Popular_Words;
-                Toast.MakeText(this, "The dictionary of popular words is chosen", ToastLength.Short).Show();
+                Toast.MakeText(this, Additional_functions.GetResourceString("PopularDictionaryIsSelected", this.Resources), ToastLength.Short).Show();
                 CrossSettings.Current.AddOrUpdateValue("DictionaryName", DataBase.Table_Name);
                 DataBase.Update_English_DB();
                 item.SetChecked(true);

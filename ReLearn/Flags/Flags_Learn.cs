@@ -44,7 +44,7 @@ namespace ReLearn
             }
             catch
             {
-                Toast.MakeText(this, "Error : can't connect to database of flags", ToastLength.Long).Show();
+                Toast.MakeText(this, Additional_functions.GetResourceString("databaseNotConnect", this.Resources), ToastLength.Short).Show();             
             }
         }
 

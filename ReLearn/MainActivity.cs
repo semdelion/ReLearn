@@ -76,17 +76,17 @@ namespace ReLearn
         {
             int id = item.ItemId;
             if (id == Resource.Id.en)
-            {
-                Toast.MakeText(this, "English is selected", ToastLength.Short).Show();
+            {                
+                Toast.MakeText(this, Additional_functions.GetResourceString("EnIsSelected", this.Resources), ToastLength.Short).Show();
                 CrossSettings.Current.AddOrUpdateValue("Language", "en");
                 item.SetChecked(true);
                 Update_Configuration_Locale("en");
                 StartActivity(new Intent(this, typeof(MainActivity)));
                 return true;
             }
-            if (id == Resource.Id.ru)
+            if (id == Resource.Id.ru) 
             {
-                Toast.MakeText(this, "Selected Russian language", ToastLength.Short).Show();
+                Toast.MakeText(this, Additional_functions.GetResourceString("RuIsSelected", this.Resources), ToastLength.Short).Show();
                 CrossSettings.Current.AddOrUpdateValue("Language", "ru");
                 item.SetChecked(true);
                 Update_Configuration_Locale("ru");

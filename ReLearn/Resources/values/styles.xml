@@ -26,6 +26,8 @@
   </style>
 
   <style name="MenuStyle" parent="@android:style/Theme.Black">
+    <item name="android:textColor">#d7f8fe</item>
+    <item name="android:textSize">25dp</item>
     <!-- Customize your theme here. -->
     <item name="android:colorPrimary">#3F51B5</item>
     <item name="android:colorPrimaryDark">#303F9F</item>

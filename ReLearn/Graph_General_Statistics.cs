@@ -115,41 +115,41 @@ namespace ReLearn
 
             Vocabulary_learning.DrawPieChart(The_canvas, avg_numberLearn_stat, Magic_constants.maxLearn, Color_Diagram_1, Color_Diagram_2,
                 new PointF(Vocabulary_learning.Left + Vocabulary_learning.Width / 2f, Vocabulary_learning.Bottom - 27.5f * The_canvas.Width / 100f), Vocabulary_learning.Width / 2.5f);
-            Vocabulary_learning.DrawText(The_canvas, text_size_up, "Degree of study", Vocabulary_learning.Left + Vocabulary_learning.Width / 12, Vocabulary_learning.Top + Vocabulary_learning.Height / 20);
+            Vocabulary_learning.DrawText(The_canvas, text_size_up, Additional_functions.GetResourceString("Degree_Of_Study", this.Resources), Vocabulary_learning.Left + Vocabulary_learning.Width / 12, Vocabulary_learning.Top + Vocabulary_learning.Height / 20);
 
             float one_third = Vocabulary_learning.Height - 12.5f * Vocabulary_learning.Height / 100;
-            Correct_answers.DrawText(The_canvas, text_size_up, "Correct answers", Correct_answers.Left + 7f * Correct_answers.Width / 100, Correct_answers.Top + Vocabulary_learning.Height / 20);
+            Correct_answers.DrawText(The_canvas, text_size_up, Additional_functions.GetResourceString("Correct_answers", this.Resources), Correct_answers.Left + 7f * Correct_answers.Width / 100, Correct_answers.Top + Vocabulary_learning.Height / 20);
 
-            Correct_answers.DrawText(The_canvas, text_size_low, "Today", Correct_answers.Left + 7f * Correct_answers.Width / 100, Correct_answers.Top + 12.5f * Vocabulary_learning.Height / 100);
+            Correct_answers.DrawText(The_canvas, text_size_low, Additional_functions.GetResourceString("Today", this.Resources), Correct_answers.Left + 7f * Correct_answers.Width / 100, Correct_answers.Top + 12.5f * Vocabulary_learning.Height / 100);
             Correct_answers.DrawText(The_canvas, 1.9f * text_size_up, Math.Round(avg_true_today, 1) + "%", Correct_answers.Left + 7f * Correct_answers.Width / 100, Correct_answers.Top + 17.5f * Vocabulary_learning.Height / 100);
             if (avg_true_today != 0)
                 Correct_answers.DrawText(The_canvas, 6f * Vocabulary_learning.Width / 100,
                 (avg_true_today - avg_true >= 0 ? "+" : "") + Math.Round(avg_true_today - avg_true, 1) + "%",
                 Correct_answers.Left + 2f * Correct_answers.Width / 3, Correct_answers.Top + 20f * Vocabulary_learning.Height / 100, avg_true_today - avg_true >= 0 ? Color.Green : Color.Red);
 
-            Correct_answers.DrawText(The_canvas, text_size_low, "Month", Correct_answers.Left + 7f * Correct_answers.Width / 100, Correct_answers.Top + one_third / 3 + 12.5f * Vocabulary_learning.Height / 100);
+            Correct_answers.DrawText(The_canvas, text_size_low, Additional_functions.GetResourceString("Month", this.Resources), Correct_answers.Left + 7f * Correct_answers.Width / 100, Correct_answers.Top + one_third / 3 + 12.5f * Vocabulary_learning.Height / 100);
             Correct_answers.DrawText(The_canvas, 1.9f * text_size_up, Math.Round(avg_true_month, 1) + "%", Correct_answers.Left + 7f * Correct_answers.Width / 100, Correct_answers.Top + one_third / 3 + 17.5f * Vocabulary_learning.Height / 100);
             if (avg_true_month != 0)
                 Correct_answers.DrawText(The_canvas, 6f * Vocabulary_learning.Width / 100,
                 (avg_true_month - avg_true >= 0 ? "+" : "") + Math.Round(avg_true_month - avg_true, 1) + "%",
                 Correct_answers.Left + 2f * Correct_answers.Width / 3, Correct_answers.Top + one_third / 3 + 20f * Vocabulary_learning.Height / 100, avg_true_month - avg_true >= 0 ? Color.Green : Color.Red);
 
-            Correct_answers.DrawText(The_canvas, text_size_low, "Average", Correct_answers.Left + 7f * Correct_answers.Width / 100, Correct_answers.Top + 2f * one_third / 3 + 12.5f * Vocabulary_learning.Height / 100);
+            Correct_answers.DrawText(The_canvas, text_size_low, Additional_functions.GetResourceString("Average", this.Resources), Correct_answers.Left + 7f * Correct_answers.Width / 100, Correct_answers.Top + 2f * one_third / 3 + 12.5f * Vocabulary_learning.Height / 100);
             Correct_answers.DrawText(The_canvas, 1.9f * text_size_up, Math.Round(avg_true, 1) + "%", Correct_answers.Left + 7f * Correct_answers.Width / 100, Correct_answers.Top + 2f * one_third / 3 + 17.5f * Vocabulary_learning.Height / 100);
 
 
             Learned_words.ProgressLine(The_canvas, numberLearned, Stats_database.Count - numberLearned, Color_Diagram_1, Color_Diagram_2);
-            Learned_words.DrawText(The_canvas, text_size_up, "Number of words learned", Learned_words.Left + 7f * Learned_words.Width / 100, Learned_words.Top + 7f * Learned_words.Height / 100);
-            Learned_words.DrawText(The_canvas, text_size_low, numberLearned + " of " + Stats_database.Count, Learned_words.Left + 7f * Learned_words.Width / 100, Learned_words.Top + 38f * Learned_words.Height / 100);
+            Learned_words.DrawText(The_canvas, text_size_up, Additional_functions.GetResourceString("Number_Words_Learned", this.Resources), Learned_words.Left + 7f * Learned_words.Width / 100, Learned_words.Top + 7f * Learned_words.Height / 100);
+            Learned_words.DrawText(The_canvas, text_size_low, numberLearned + " " + Additional_functions.GetResourceString("Of", this.Resources) + " " + Stats_database.Count, Learned_words.Left + 7f * Learned_words.Width / 100, Learned_words.Top + 38f * Learned_words.Height / 100);
 
 
             Inconvenient_words.ProgressLine(The_canvas, numberInconvenient, Stats_database.Count - numberInconvenient, Color_Diagram_1, Color_Diagram_2);
-            Inconvenient_words.DrawText(The_canvas, text_size_up, "Number of inconvenient words", Inconvenient_words.Left + 7f * Inconvenient_words.Width / 100, Inconvenient_words.Top + 7f * Inconvenient_words.Height / 100);
-            Inconvenient_words.DrawText(The_canvas, text_size_low, numberInconvenient + " of " + Stats_database.Count, Inconvenient_words.Left + 7f * Inconvenient_words.Width / 100, Inconvenient_words.Top + 38f * Inconvenient_words.Height / 100);
+            Inconvenient_words.DrawText(The_canvas, text_size_up, Additional_functions.GetResourceString("Number_Inconvenient_Words", this.Resources), Inconvenient_words.Left + 7f * Inconvenient_words.Width / 100, Inconvenient_words.Top + 7f * Inconvenient_words.Height / 100);
+            Inconvenient_words.DrawText(The_canvas, text_size_low, numberInconvenient + " " + Additional_functions.GetResourceString("Of", this.Resources) + " " + Stats_database.Count, Inconvenient_words.Left + 7f * Inconvenient_words.Width / 100, Inconvenient_words.Top + 38f * Inconvenient_words.Height / 100);
 
             Total_numbers.ProgressLine(The_canvas, numberTrue, (Database_Stat.Count * Magic_constants.repeat_count - numberTrue), Color_Diagram_1, Color_Diagram_2);
-            Total_numbers.DrawText(The_canvas, text_size_up, "The total number of correct answers", Total_numbers.Left + 7f * Total_numbers.Width / 100, Total_numbers.Top + 7f * Total_numbers.Height / 100);
-            Total_numbers.DrawText(The_canvas, text_size_low, "Correct " + numberTrue + ", incorrect " + (Database_Stat.Count * Magic_constants.repeat_count - numberTrue) + ", number of tests " + Database_Stat.Count, Total_numbers.Left + 7f * Total_numbers.Width / 100, Total_numbers.Top + 38f * Total_numbers.Height / 100);
+            Total_numbers.DrawText(The_canvas, text_size_up, Additional_functions.GetResourceString("Number_Correct_Answers", this.Resources), Total_numbers.Left + 7f * Total_numbers.Width / 100, Total_numbers.Top + 7f * Total_numbers.Height / 100);
+            Total_numbers.DrawText(The_canvas, text_size_low, Additional_functions.GetResourceString("Correct", this.Resources)+ " " + numberTrue + ", " + Additional_functions.GetResourceString("Incorrect", this.Resources) + " " + (Database_Stat.Count * Magic_constants.repeat_count - numberTrue) + ", " + Additional_functions.GetResourceString("Number_Of_Tests", this.Resources) + " " + Database_Stat.Count, Total_numbers.Left + 7f * Total_numbers.Width / 100, Total_numbers.Top + 38f * Total_numbers.Height / 100);
         }
     }
 }

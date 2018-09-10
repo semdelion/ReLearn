@@ -11,6 +11,7 @@
         android:background="?android:attr/colorPrimary"
         android:layout_width="match_parent"
         android:layout_height="60dp"
+		android:textSize="25dp"
         android:titleTextColor="?android:attr/actionMenuTextColor"
         android:titleTextAppearance="?android:attr/textSize"
         android:id="@+id/toolbarMain"

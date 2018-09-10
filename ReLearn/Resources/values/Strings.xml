@@ -21,4 +21,34 @@
   <string name="Sort_descending">Sort ↓</string>
   <string name="Sort_Ascending">Sort ↑</string>
   <string name="Sort_alphabetically">Sort A→Z</string>
+  <string name="EnIsSelected">English is selected</string>
+  <string name="RuIsSelected">Selected Russian language</string>
+  <string name="databaseEmpty">The database is empty</string>
+  <string name="databaseNotConnect">Error : can not connect to database</string>
+  <string name="repeatedAllWords">You repeated all the words</string>
+  <string name="MyDictionaryIsSelected">My dictionary is selected</string>
+  <string name="PopularDictionaryIsSelected">The dictionary of popular words is chosen</string>
+  <string name="Enter_word">Enter word!</string>
+  <string name="Word_exists">The word exists!</string>
+  <string name="Word_Added">Word added!</string>
+  <string name="Word_Not_Exists">Words do not exist!</string>
+  <string name="Word_Delete">Word delete!</string>
+  <string name="Voice_off">Voice off!</string>
+  <string name="Voice_on">Voice on!</string>
+  <string name="Degree_Of_Study">Degree of study</string>
+  <string name="Correct_answers">Correct answers</string>
+  <string name="Today">Today</string>
+  <string name="Month">Month</string>
+  <string name="Average">Average</string>
+  <string name="Number_Words_Learned">Number of words learned</string>
+  <string name="Number_Inconvenient_Words">Number of inconvenient words</string>
+  <string name="Number_Correct_Answers">The total number of correct answers</string>
+  <string name="Correct">Correct </string>
+  <string name="Incorrect">incorrect </string>
+  <string name="Number_Of_Tests">number of tests </string>
+  <string name="Of">of</string>
+  <string name="Last_testing">Last testing</string>
+  <string name="Incorrect_Up">Incorrect</string>
+
+
 </resources>
