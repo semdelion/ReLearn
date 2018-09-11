@@ -7,7 +7,7 @@ using Android.App;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("ReLearn")]
-[assembly: AssemblyDescription("ReLearn")]
+[assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("SemdelionTeam")]
 [assembly: AssemblyProduct("ReLearn")]
