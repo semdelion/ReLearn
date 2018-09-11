@@ -13,13 +13,13 @@ using Android.Content.Res;
 
 namespace ReLearn
 {
-    [Activity( Label = "", MainLauncher = true, ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait, ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.Locale)]
-    [IntentFilter(new[] { Intent.ActionMain }, Categories = new[] { Intent.CategoryLauncher }, Label = "ReLearn")]
+    [Activity( Label = "@string/app_name", MainLauncher = true, ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait, ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.Locale)]
+    //[IntentFilter(new[] { Intent.ActionMain }, Categories = new[] { Intent.CategoryLauncher }, Label = "ReLearn")]
     public class MainActivity : Activity
     {
         private int selected = Resource.Id.en;
         public string language = CrossSettings.Current.GetValueOrDefault("Language", null);
-
+       
         [Java.Interop.Export("Button_Language_Click")]
         public void Button_Language_Click(View v)
         {
@@ -50,12 +50,12 @@ namespace ReLearn
         {
 
             Checklanguage();
-            base.OnCreate(savedInstanceState);
+            base.OnCreate(savedInstanceState);          
             SetContentView(Resource.Layout.Main);
             Window.SetBackgroundDrawable(GetDrawable(Resource.Drawable.backgroundMain));
             Toolbar toolbarMain = FindViewById<Toolbar>(Resource.Id.toolbarMain);
             SetActionBar(toolbarMain);
-
+            ActionBar.Title = "";
             DataBase.GetDatabasePath(Database_Name.English_DB);
             DataBase.GetDatabasePath(Database_Name.Flags_DB);
             DataBase.GetDatabasePath(Database_Name.Statistics);
