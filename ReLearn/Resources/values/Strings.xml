@@ -49,6 +49,21 @@
   <string name="Of">of</string>
   <string name="Last_testing">Last testing</string>
   <string name="Incorrect_Up">Incorrect</string>
-
+  <string name="about_us">About us</string>
+  <string name="Feedback">Feedback</string>
+  <string name="Feedback_comments">In this section you can leave your wishes, suggestions, comments</string>
+  <string name="Send">Send</string>
+  <string name="Message_Sent">Message sent</string>
+  <string name="Enter_Message">Enter Message</string>
+  <string name="Message_about_us">
+    \t\t\tHello!
+    \n\t\t\t This application was developed by a team of two people. The application was well received and helped us with the study of foreign words. For this reason, it was decided to realize the wish of users and publish the application.
+    \n\t\t\t Since our experience in developing applications for mobile devices is about 1 - 2 months, the application may contain errors.
+    \n\t\t\t In this regard, we accept your messages with wishes, suggestions and comments (all messages will be considered and taken into account).
+    \n\n\t\t\t Thank you for your attention!
+    \n\n\t\t\t Sincerely, SemdelionTeam
+    \n\n\t\t\t Mail: SemdelionTeam@gmail.com
+  </string>
+  <string name="support_project">Support the project</string>
 
 </resources>

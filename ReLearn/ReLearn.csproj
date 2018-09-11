@@ -88,6 +88,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="About_us.cs" />
     <Compile Include="Additional_functions.cs" />
     <Compile Include="DataBase.cs" />
     <Compile Include="English\English.cs" />
@@ -96,6 +97,7 @@
     <Compile Include="English\English_Learn.cs" />
     <Compile Include="English\English_Repeat.cs" />
     <Compile Include="English\English_Stat.cs" />
+    <Compile Include="Feedback.cs" />
     <Compile Include="Flags\Flags.cs" />
     <Compile Include="Flags\Flags_Learn.cs" />
     <Compile Include="Flags\Flags_Repeat.cs" />
@@ -855,6 +857,16 @@
   <ItemGroup>
     <AndroidResource Include="Resources\values-ru\Strings.xml">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\About_us.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Feedback.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

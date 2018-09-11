@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+	<Toolbar
+		android:popupTheme="@style/MenuStyle"
+		android:minHeight="?android:attr/actionBarSize"
+		android:background="?android:attr/colorPrimary"
+		android:minWidth="25px"
+		android:layout_width="match_parent"
+		android:layout_height="60dp"
+		android:titleTextColor="?android:attr/actionMenuTextColor"
+		android:titleTextAppearance="?android:attr/textSize"
+		android:id="@+id/toolbar_About_Us"
+		android:navigationIcon="@drawable/arrow"
+		android:title="@string/about_us" />
+	<TextView
+		android:text="@string/Message_about_us"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/textView_about_us"
+		android:textColor="#d7f8fe"
+		android:layout_marginRight="30.0dp"
+		android:layout_marginLeft="45.0dp"
+		android:layout_marginTop="40.0dp"
+		android:textSize="16dp"
+		android:defaultFocusHighlightEnabled="true"
+		android:scrollbars="vertical"
+		android:layout_marginBottom="40.0dp" />
+	<Button
+		android:text="@string/support_project"
+		android:layout_width="match_parent"
+		android:layout_height="60.0dp"
+		android:id="@+id/button_support_project"
+		android:layout_marginRight="40.0dp"
+		android:layout_marginLeft="40.0dp"
+		android:layout_marginTop="10.0dp"
+		android:textColor="#d7f8fe"
+		android:textSize="20dp"
+		android:background="@drawable/button_style_standard"
+		android:gravity="center"
+		android:onClick="Button_Support_Project_Click"/>
+</LinearLayout>

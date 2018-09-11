@@ -92,7 +92,19 @@ namespace ReLearn
                 Update_Configuration_Locale("ru");
                 StartActivity(new Intent(this, typeof(MainActivity)));
                 return true;
-            }         
+            }
+            if (id == Resource.Id.about_us)
+            {
+                Intent intent_about_us = new Intent(this, typeof(About_us));
+                StartActivity(intent_about_us);
+                return true;
+            }
+            if (id == Resource.Id.Feedback)
+            {
+                Intent intent_Feedback = new Intent(this, typeof(Feedback));
+                StartActivity(intent_Feedback);
+                return true;
+            }
             if (id == Android.Resource.Id.Home)
             {
                 this.Finish();
