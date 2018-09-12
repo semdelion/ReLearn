@@ -9,7 +9,7 @@ using Plugin.Settings;
 
 namespace ReLearn
 {
-    [Activity(Label = "Language", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    [Activity(Label ="", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     class English : Activity
     {
         private int selected = Resource.Id.menuDatabase_MyDictionary;
@@ -74,6 +74,7 @@ namespace ReLearn
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.English);
             Toolbar toolbarMain = FindViewById<Toolbar>(Resource.Id.toolbarEnglish);
+            //TextView textView = toolbarMain.FindViewById<TextView>(Resource.Id.toolbar_title_english)
             SetActionBar(toolbarMain);
             ActionBar.SetDisplayHomeAsUpEnabled(true);
             if (String.IsNullOrEmpty(DataBase.Table_Name))

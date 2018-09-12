@@ -9,7 +9,7 @@ using Calligraphy;
 
 namespace ReLearn
 {
-    [Activity(Label = "Learn", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    [Activity(Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     class English_Learn : Activity
     {
         TextView textView_learn_en;

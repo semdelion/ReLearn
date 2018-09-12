@@ -23,8 +23,13 @@
 				android:titleTextColor="?android:attr/actionMenuTextColor"
 				android:titleTextAppearance="?android:attr/textSize"
 				android:id="@+id/toolbarFlagsRepeat"
-				android:navigationIcon="@drawable/arrow"
-				android:title="@string/Repeat" />
+				android:navigationIcon="@drawable/arrow">
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content" 
+					android:id="@+id/Repeat_toolbar_textview_fl"
+					android:textColor="?android:attr/actionMenuTextColor" />
+			</Toolbar>
 			<ImageView
 				android:id="@+id/imageView_Flags_repeat"
 				android:layout_width="wrap_content"

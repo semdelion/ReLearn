@@ -15,7 +15,7 @@ using Android.Graphics;
 
 namespace ReLearn
 {
-    [Activity(Label = "Learn", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    [Activity(Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     class Flags_Learn : Activity
     {
         ImageView imageView;

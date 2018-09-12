@@ -26,8 +26,13 @@
 				android:titleTextColor="?android:attr/actionMenuTextColor"
 				android:titleTextAppearance="?android:attr/textSize"
 				android:id="@+id/toolbarEnglishRepeat"
-				android:navigationIcon="@drawable/arrow"
-				android:title="@string/Repeat" />
+				android:navigationIcon="@drawable/arrow" >
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"  
+					android:id="@+id/Repeat_toolbar_textview"
+					android:textColor="?android:attr/actionMenuTextColor" />
+			</Toolbar>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"

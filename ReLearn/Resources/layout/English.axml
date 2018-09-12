@@ -9,13 +9,15 @@
         android:minHeight="?android:attr/actionBarSize"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:titleTextColor="?android:attr/actionMenuTextColor"
-        android:titleTextAppearance="?android:attr/textSize"
         android:id="@+id/toolbarEnglish"
         android:navigationIcon="@drawable/arrow"
-        android:scrollIndicators="top|bottom"
-        android:title="@string/Language" 
-	/>
+        android:scrollIndicators="top|bottom">
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/Language"    
+			android:textColor="?android:attr/actionMenuTextColor" />
+	</Toolbar>
 	<Button
 		android:text="@string/Repeat"
 		android:layout_width="match_parent"

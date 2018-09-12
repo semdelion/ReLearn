@@ -10,11 +10,14 @@
 		android:minWidth="25px"
 		android:layout_width="match_parent"
 		android:layout_height="60dp"
-		android:titleTextColor="?android:attr/actionMenuTextColor"
-		android:titleTextAppearance="?android:attr/textSize"
 		android:id="@+id/toolbar_About_Us"
-		android:navigationIcon="@drawable/arrow"
-		android:title="@string/about_us" />
+		android:navigationIcon="@drawable/arrow" >
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/about_us"    
+			android:textColor="?android:attr/actionMenuTextColor" />
+	</Toolbar>
 	<TextView
 		android:text="@string/Message_about_us"
 		android:layout_width="match_parent"

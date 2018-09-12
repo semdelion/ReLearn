@@ -9,7 +9,7 @@ using ReLearn.Resources;
 
 namespace ReLearn
 {
-    [Activity( ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    [Activity( Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     class English_Delete : Activity
     {
         ListView listViewDel;

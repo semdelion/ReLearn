@@ -10,13 +10,16 @@
 		android:minHeight="?android:attr/actionBarSize"
 		android:background="?android:attr/colorPrimary"
 		android:minWidth="25px"
-		android:title="@string/Addition"
 		android:layout_width="match_parent"
 		android:layout_height="60dp"
-		android:titleTextColor="?android:attr/actionMenuTextColor"
-		android:titleTextAppearance="?android:attr/textSize"
 		android:id="@+id/toolbarEnglishAdd"
-		android:navigationIcon="@drawable/arrow"/>
+		android:navigationIcon="@drawable/arrow">
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/Addition"    
+			android:textColor="?android:attr/actionMenuTextColor" />
+	</Toolbar>
     <EditText
         android:hint="@string/Word_English"
         android:layout_width="match_parent"

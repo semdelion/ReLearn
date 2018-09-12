@@ -11,7 +11,7 @@ using Plugin.TextToSpeech;
 
 namespace ReLearn
 {
-    [Activity(ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    [Activity(Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     class English_Repeat : Activity
     {
         TextView textView;
@@ -127,7 +127,7 @@ namespace ReLearn
 
 
         [Java.Interop.Export("Button_English_Next_Click")]
-        public void Button_English_Next_Click(View v)
+        public void Button_English_Next_Click(View v, TextView mTitle)
         {
             Button_next.Enabled = false;
             if (Count < Magic_constants.repeat_count - 1)
@@ -137,7 +137,7 @@ namespace ReLearn
                 Rand_word = rnd.Next(dataBase.Count);
                 Function_Next_Test( Rand_word, rnd.Next(4));
                 Button_Refresh();
-                ActionBar.Title = Convert.ToString(Additional_functions.GetResourceString("Repeat", this.Resources) + " " + (Count + 1) + "/" + Magic_constants.repeat_count); // ПЕРЕДЕЛАЙ Костыль счётчик 
+                mTitle.Text = Convert.ToString(Additional_functions.GetResourceString("Repeat", this.Resources) + " " + (Count + 1) + "/" + Magic_constants.repeat_count); // ПЕРЕДЕЛАЙ Костыль счётчик 
             }
             else
             {
@@ -148,13 +148,14 @@ namespace ReLearn
                 this.Finish();
             }
         }
-
+        
         protected override void OnCreate(Bundle savedInstanceState)
         {
             Additional_functions.Font();
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.English_Repeat);
             var toolbarMain = FindViewById<Toolbar>(Resource.Id.toolbarEnglishRepeat);
+            TextView mTitle = toolbarMain.FindViewById<TextView>(Resource.Id.Repeat_toolbar_textview);
             SetActionBar(toolbarMain);
             ActionBar.SetDisplayHomeAsUpEnabled(true); // отображаем кнопку домой
             Statistics.Statistics_update();
@@ -168,7 +169,7 @@ namespace ReLearn
             {
                 SQLiteConnection db = DataBase.Connect(Database_Name.English_DB);
                 dataBase = db.Query<Database_Words>("SELECT * FROM " + DataBase.Table_Name + " WHERE NumberLearn > 0");
-                Button_English_Next_Click(null);
+                Button_English_Next_Click(null, mTitle);
             }
             catch
             {

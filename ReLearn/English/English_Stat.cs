@@ -6,6 +6,9 @@ using System.Collections.Generic;
 using Android.Graphics.Drawables;
 using Android.Content;
 using Calligraphy;
+using Android.Widget;
+using static Android.App.ActionBar;
+
 namespace ReLearn
 {
     [Activity( Theme = "@style/ThemeStat", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
@@ -16,6 +19,7 @@ namespace ReLearn
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             Additional_functions.Font();
             base.OnCreate(savedInstanceState);
+
             SetContentView(Resource.Layout.English_Stat);         
             ActionBar.SetDisplayHomeAsUpEnabled(true); // отображаем кнопку домой
             Window.SetBackgroundDrawable(GetDrawable(Resource.Drawable.backgroundEnFl));
@@ -24,6 +28,7 @@ namespace ReLearn
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             ActionBar.NavigationMode = ActionBarNavigationMode.Tabs;
             SetContentView(Resource.Layout.English_Stat);
+
 
             var database = DataBase.Connect(Database_Name.English_DB);
             ActionBar.SetStackedBackgroundDrawable(new ColorDrawable(Color.Transparent));

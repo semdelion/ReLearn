@@ -8,7 +8,7 @@ using Calligraphy;
 namespace ReLearn
 {
     
-    [Activity(Label = "Word Add", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    [Activity(Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     class English_Add : Activity
     {
       

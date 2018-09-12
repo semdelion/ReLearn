@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace ReLearn
 {
-    [Activity(Label = "Language", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    [Activity(Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     class Feedback : Activity
     {
         [Java.Interop.Export("Button_Send_Click")]

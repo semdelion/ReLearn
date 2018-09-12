@@ -10,11 +10,14 @@
 		android:minWidth="25px"
 		android:layout_width="match_parent"
 		android:layout_height="60dp"
-		android:titleTextColor="?android:attr/actionMenuTextColor"
-		android:titleTextAppearance="?android:attr/textSize"
 		android:id="@+id/toolbar_Feedback"
-		android:navigationIcon="@drawable/arrow"
-		android:title="@string/Feedback" />
+		android:navigationIcon="@drawable/arrow"  >
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/Feedback"    
+			android:textColor="?android:attr/actionMenuTextColor" />
+	</Toolbar>
 	<TextView
 		android:text="@string/Feedback_comments"
 		android:layout_width="match_parent"

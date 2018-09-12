@@ -16,7 +16,7 @@ using Plugin.Settings;
 
 namespace ReLearn
 {
-    [Activity(Label = "Flags", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    [Activity(Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     
     class Flags : Activity
     {

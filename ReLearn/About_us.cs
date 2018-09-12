@@ -7,7 +7,7 @@ using Android.Widget;
 
 namespace ReLearn
 {
-    [Activity(Label = "Language", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    [Activity(Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     class About_us : Activity
     {
         [Java.Interop.Export("Button_Support_Project_Click")]
