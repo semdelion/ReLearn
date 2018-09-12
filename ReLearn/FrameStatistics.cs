@@ -1,7 +1,7 @@
-﻿using Android.Graphics;
+﻿using Android.Content.Res;
+using Android.Graphics;
 using System;
 using static Android.Graphics.Shader;
-
 
 namespace ReLearn
 {
@@ -13,6 +13,7 @@ namespace ReLearn
         public float Bottom { get; }
         public float Width { get => Right - Left; }
         public float Height { get => Bottom - Top; }
+        public static Typeface plain { get; set; }
         Paint P;
 
         public FrameStatistics(float left, float top, float right, float bottom, Color color)
@@ -102,12 +103,15 @@ namespace ReLearn
 
         public void DrawText(Canvas canvas, float font_size, string text, float left, float top, Color? c = null)
         {
+            Typeface bold = Typeface.Create(plain, TypefaceStyle.Normal);
             Paint paint = new Paint
             {
                 AntiAlias = true,
                 TextSize = font_size,
+                
                 Color = c ?? Color.Rgb(215, 248, 254)
             };
+            paint.SetTypeface(bold);
             canvas.DrawText(Convert.ToString(text), left, top + font_size, paint);
         }
     }

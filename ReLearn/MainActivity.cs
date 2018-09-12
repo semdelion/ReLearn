@@ -53,6 +53,7 @@ namespace ReLearn
             Toolbar toolbarMain = FindViewById<Toolbar>(Resource.Id.toolbarMain);
             SetActionBar(toolbarMain);
             ActionBar.Title = "";
+            FrameStatistics.plain = Android.Graphics.Typeface.CreateFromAsset(Assets, "fonts/GamjaFlower-Regular.ttf");
             DataBase.GetDatabasePath(Database_Name.English_DB);
             DataBase.GetDatabasePath(Database_Name.Flags_DB);
             DataBase.GetDatabasePath(Database_Name.Statistics);

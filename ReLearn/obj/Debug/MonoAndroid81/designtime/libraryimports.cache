@@ -1,6 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Paths>
-  <ManifestDocuments />
+  <ManifestDocuments>
+    <ManifestDocument>obj\\Debug\MonoAndroid81\lp\0\jl\AndroidManifest.xml</ManifestDocument>
+  </ManifestDocuments>
   <NativeLibraries />
-  <Jars />
+  <Jars>
+    <Jar>obj\\Debug\MonoAndroid81\lp\0\jl\bin\classes.jar</Jar>
+  </Jars>
 </Paths>
