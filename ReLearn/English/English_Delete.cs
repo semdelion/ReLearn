@@ -1,17 +1,10 @@
-﻿using System;
-using System.IO;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-
+﻿using System.Collections.Generic;
 using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-using SQLite;
 using ReLearn.Resources;
 
 namespace ReLearn
@@ -26,14 +19,12 @@ namespace ReLearn
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            //setting layout 
+            Additional_functions.Font();
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.English_delete);
             var toolbarMain = FindViewById<Toolbar>(Resource.Id.toolbarEnglishDelete);
             SetActionBar(toolbarMain);
             ActionBar.SetDisplayHomeAsUpEnabled(true); // отображаем кнопку домой
-            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
             listViewDel = FindViewById<ListView>(Resource.Id.listViewDelete);    
             
@@ -132,6 +123,8 @@ namespace ReLearn
             }
             return true;
         }
+
+        protected override void AttachBaseContext(Context newbase) => base.AttachBaseContext(Calligraphy.CalligraphyContextWrapper.Wrap(newbase));
 
     }
 

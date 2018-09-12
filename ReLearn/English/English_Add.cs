@@ -1,16 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.IO;
-using Android.App;
+﻿using Android.App;
 using Android.Content;
 using Android.OS;
-using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-using SQLite;
-using System.Threading;
+using Calligraphy;
 
 namespace ReLearn
 {
@@ -55,6 +48,7 @@ namespace ReLearn
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            Additional_functions.Font();
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.English_Add);
             var toolbarMain = FindViewById<Toolbar>(Resource.Id.toolbarEnglishAdd);
@@ -67,5 +61,7 @@ namespace ReLearn
             this.Finish();
             return true;
         }
+
+        protected override void AttachBaseContext(Context newbase) => base.AttachBaseContext(CalligraphyContextWrapper.Wrap(newbase));
     }
 }

@@ -38,6 +38,7 @@ namespace ReLearn
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            Additional_functions.Font();
             DataBase.Table_Name = Table_name.Flags;
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Flags);
@@ -99,6 +100,8 @@ namespace ReLearn
                 this.Finish();
             return true;
         }
+
+        protected override void AttachBaseContext(Context newbase) => base.AttachBaseContext(Calligraphy.CalligraphyContextWrapper.Wrap(newbase));
     }
     
 }

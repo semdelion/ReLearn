@@ -4,14 +4,16 @@ using Android.Views;
 using Android.Graphics;
 using System.Collections.Generic;
 using Android.Graphics.Drawables;
-
+using Android.Content;
+using Calligraphy;
 namespace ReLearn
 {
-    [Activity(Label = "Statistics", Theme = "@style/ThemeStat", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    [Activity( Theme = "@style/ThemeStat", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     class Flags_Stats : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            Additional_functions.Font();
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.English_Stat);
             Window.SetBackgroundDrawable(GetDrawable(Resource.Drawable.backgroundEnFl));
@@ -47,5 +49,7 @@ namespace ReLearn
             this.Finish();
             return true;
         }
+
+        protected override void AttachBaseContext(Context newbase) => base.AttachBaseContext(CalligraphyContextWrapper.Wrap(newbase));
     }
 }

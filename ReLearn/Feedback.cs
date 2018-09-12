@@ -36,6 +36,7 @@ namespace ReLearn
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            Additional_functions.Font();
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Feedback);
             Toolbar toolbarMain = FindViewById<Toolbar>(Resource.Id.toolbar_Feedback);
@@ -53,6 +54,8 @@ namespace ReLearn
             }
             return true;
         }
+
+        protected override void AttachBaseContext(Context newbase) => base.AttachBaseContext(Calligraphy.CalligraphyContextWrapper.Wrap(newbase));
 
     }
 }

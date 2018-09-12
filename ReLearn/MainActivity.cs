@@ -1,20 +1,17 @@
 ﻿using Android.App;
 using Android.Widget;
 using Android.OS;
-using Android.Content;
 using Android.Views;
-using Android.Graphics;
 using Android.Content.PM;
 using Java.Util;
 using Plugin.Settings;
-using System.Globalization;
-using System;
+using Android.Content;
+using Calligraphy;
 using Android.Content.Res;
 
 namespace ReLearn
 {
-    [Activity( Label = "@string/app_name", MainLauncher = true, ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait, ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.Locale)]
-    //[IntentFilter(new[] { Intent.ActionMain }, Categories = new[] { Intent.CategoryLauncher }, Label = "ReLearn")]
+    [Activity(Label = "@string/app_name", MainLauncher = true, ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait, ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.Locale)]
     public class MainActivity : Activity
     {
         private int selected = Resource.Id.en;
@@ -48,8 +45,8 @@ namespace ReLearn
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
-
             Checklanguage();
+            Additional_functions.Font();
             base.OnCreate(savedInstanceState);          
             SetContentView(Resource.Layout.Main);
             Window.SetBackgroundDrawable(GetDrawable(Resource.Drawable.backgroundMain));
@@ -59,7 +56,7 @@ namespace ReLearn
             DataBase.GetDatabasePath(Database_Name.English_DB);
             DataBase.GetDatabasePath(Database_Name.Flags_DB);
             DataBase.GetDatabasePath(Database_Name.Statistics);
-        }        
+        }
 
         public override bool OnPrepareOptionsMenu(IMenu menu)
         {
@@ -128,6 +125,8 @@ namespace ReLearn
             Resources.UpdateConfiguration(conf, Resources.DisplayMetrics);
             //this.CreateConfigurationContext(conf);
         }
+
+        protected override void AttachBaseContext(Context newbase) => base.AttachBaseContext(CalligraphyContextWrapper.Wrap(newbase));
     }
 }
 

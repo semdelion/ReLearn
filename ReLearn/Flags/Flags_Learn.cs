@@ -50,6 +50,7 @@ namespace ReLearn
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            Additional_functions.Font();
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Flags_Learn);
 
@@ -68,5 +69,7 @@ namespace ReLearn
             this.Finish();
             return true;
         }
+
+        protected override void AttachBaseContext(Context newbase) => base.AttachBaseContext(Calligraphy.CalligraphyContextWrapper.Wrap(newbase));
     }
 }

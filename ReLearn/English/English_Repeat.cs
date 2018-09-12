@@ -1,13 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.IO;
-
 using Android.App;
 using Android.Content;
 using Android.OS;
-using Android.Runtime;
+using Calligraphy;
 using Android.Views;
 using Android.Widget;
 using SQLite;
@@ -155,6 +151,7 @@ namespace ReLearn
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            Additional_functions.Font();
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.English_Repeat);
             var toolbarMain = FindViewById<Toolbar>(Resource.Id.toolbarEnglishRepeat);
@@ -177,6 +174,11 @@ namespace ReLearn
             {
                 Toast.MakeText(this, Additional_functions.GetResourceString("databaseNotConnect", this.Resources), ToastLength.Short).Show();
             }
+            CalligraphyConfig.InitDefault(new CalligraphyConfig.Builder()
+              .SetDefaultFontPath(@"fonts/GamjaFlower-Regular.ttf")
+              .SetFontAttrId(Resource.Attribute.fontPath)
+              .Build());
+
         }
 
         public override bool OnOptionsItemSelected(IMenuItem item)
@@ -184,5 +186,8 @@ namespace ReLearn
             this.Finish();
             return true;
         }
+
+        protected override void AttachBaseContext(Context newbase) => base.AttachBaseContext(CalligraphyContextWrapper.Wrap(newbase));
+
     }
 }

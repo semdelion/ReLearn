@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using Calligraphy;
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -57,7 +57,7 @@ namespace ReLearn
 
         public static string Name_of_the_flag(Database_images word) => Magic_constants.language == 0 ? word.Name_image_en : word.Name_image_ru;
         
-        public static void Update_number_learn(List<Statistics> Stats, String identifier, int rand_word, int RepeatLearn)
+        public static void Update_number_learn(List<Statistics> Stats, string identifier, int rand_word, int RepeatLearn)
         {
             for (int i = 0; i < Stats.Count; i++)
                 if (Stats[i].Word == identifier)
@@ -96,6 +96,14 @@ namespace ReLearn
             {
                 return "";
             }            
+        }
+
+        public static void Font()
+        {
+            CalligraphyConfig.InitDefault(new CalligraphyConfig.Builder()
+               .SetDefaultFontPath(@"fonts/GamjaFlower-Regular.ttf")
+               .SetFontAttrId(Resource.Attribute.fontPath)
+               .Build());
         }
 
     }

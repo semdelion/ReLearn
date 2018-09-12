@@ -4,6 +4,8 @@ using Android.Views;
 using Android.Widget;
 using System;
 using Plugin.TextToSpeech;
+using Android.Content;
+using Calligraphy;
 
 namespace ReLearn
 {
@@ -67,7 +69,7 @@ namespace ReLearn
         protected override void OnCreate(Bundle savedInstanceState)
         {
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            //setting layout
+            Additional_functions.Font();
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.English_Learn);
             var toolbarMain = FindViewById<Toolbar>(Resource.Id.toolbarEnglishLearn);
@@ -88,6 +90,8 @@ namespace ReLearn
             this.Finish();
             return true;
         }
+
+        protected override void AttachBaseContext(Context newbase) => base.AttachBaseContext(CalligraphyContextWrapper.Wrap(newbase));
     }
     
 } 
