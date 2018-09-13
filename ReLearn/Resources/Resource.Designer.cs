@@ -310,7 +310,7 @@ namespace ReLearn
 			public const int settings = 2130968637;
 			
 			// aapt resource value: 0x7f040004
-			public const int textView1 = 2130968580;
+			public const int textView11 = 2130968580;
 			
 			// aapt resource value: 0x7f040019
 			public const int textViewCount = 2130968601;

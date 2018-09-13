@@ -41,7 +41,7 @@
             <Button
                 android:text=""
                 android:layout_width="match_parent"
-                android:layout_height="60.0dp"
+                android:layout_height="wrap_content"
                 android:id="@+id/button_F_choice1"
                 android:layout_marginTop="20.0dp"
                 android:layout_marginBottom="5dp"
@@ -52,11 +52,12 @@
                 android:textColor="#d7f8fe" 
 				android:background="@drawable/button_style_standard"
 				android:onClick="Button_Flags_1_Click"
+				android:minHeight="60dp" 
 			/>
             <Button
                 android:text=""
                 android:layout_width="match_parent"
-                android:layout_height="60.0dp"
+                android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:layout_marginRight="40dp"
                 android:layout_marginLeft="40dp"
@@ -67,11 +68,12 @@
                 android:textColor="#d7f8fe" 
 				android:background="@drawable/button_style_standard"
 				android:onClick="Button_Flags_2_Click"
+				android:minHeight="60dp" 
 			/>
             <Button
                 android:text=""
                 android:layout_width="match_parent"
-                android:layout_height="60.0dp"
+                android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:layout_marginRight="40dp"
                 android:layout_marginLeft="40dp"
@@ -81,20 +83,22 @@
                 android:textColor="#d7f8fe" 
 				android:background="@drawable/button_style_standard"
 				android:onClick="Button_Flags_3_Click"
+				android:minHeight="60dp" 
 			/>
-            <Button
-                android:text=""
-                android:layout_width="match_parent"
-                android:layout_height="60.0dp"
-                android:layout_marginRight="40dp"
-                android:layout_marginLeft="40dp"
-                android:id="@+id/button_F_choice4"
-                android:layout_marginTop="0.0dp"
-                android:textStyle="bold"
-                android:textSize="20dp"
-                android:textColor="#d7f8fe" 
+			<Button
+				android:text=""
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginRight="40dp"
+				android:layout_marginLeft="40dp"
+				android:id="@+id/button_F_choice4"
+				android:layout_marginTop="0.0dp"
+				android:textStyle="bold"
+				android:textSize="20dp"
+				android:textColor="#d7f8fe"
 				android:background="@drawable/button_style_standard"
 				android:onClick="Button_Flags_4_Click"
+				android:minHeight="60dp" 
 					/>
 			<Button
 				android:text="@string/Next"
