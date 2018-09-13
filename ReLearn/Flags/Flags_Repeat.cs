@@ -28,6 +28,7 @@ namespace ReLearn
         int Rand_word { get; set; }
         readonly List<Statistics> Stats = new List<Statistics>();
         List<Database_images> dataBase;
+        TextView Title_textView;
 
         void Button_enable()
         {
@@ -133,7 +134,7 @@ namespace ReLearn
 
 
         [Java.Interop.Export("Button_Flags_Next_Click")]
-        public void Button_Flags_Next_Click(View v, TextView textView)
+        public void Button_Flags_Next_Click(View v)
         {
             Button_next.Enabled = false;
             if (Count < Magic_constants.repeat_count - 1)
@@ -143,7 +144,7 @@ namespace ReLearn
                 Rand_word = rnd.Next(dataBase.Count);
                 Function_Next_Test(Rand_word);
                 Button_Refresh();
-                textView.Text = Convert.ToString(Additional_functions.GetResourceString("Repeat", this.Resources) + " " + (Count + 1) + "/" + Magic_constants.repeat_count);
+                Title_textView.Text = Convert.ToString(Additional_functions.GetResourceString("Repeat", this.Resources) + " " + (Count + 1) + "/" + Magic_constants.repeat_count);
             }
             else
             {
@@ -161,7 +162,7 @@ namespace ReLearn
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Flags_Repeat);
             var toolbarMain = FindViewById<Toolbar>(Resource.Id.toolbarFlagsRepeat);
-            TextView mTitle = toolbarMain.FindViewById<TextView>(Resource.Id.Repeat_toolbar_textview_fl); 
+            Title_textView = toolbarMain.FindViewById<TextView>(Resource.Id.Repeat_toolbar_textview_fl); 
             SetActionBar(toolbarMain);
             ActionBar.SetDisplayHomeAsUpEnabled(true);
             Statistics.Statistics_update();
@@ -175,7 +176,7 @@ namespace ReLearn
             {
                 SQLiteConnection db = DataBase.Connect(Database_Name.Flags_DB);
                 dataBase = db.Query<Database_images>("SELECT * FROM " + DataBase.Table_Name + " WHERE NumberLearn > 0");
-                Button_Flags_Next_Click(null, mTitle);
+                Button_Flags_Next_Click(null);
             }
             catch
             {

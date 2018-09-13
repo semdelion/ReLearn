@@ -11,12 +11,11 @@ using Android.Content.Res;
 
 namespace ReLearn
 {
-    [Activity(Label = "@string/app_name", MainLauncher = true, ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait, ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.Locale)]
+    [Activity(Label = "@string/app_name", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait, ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.Locale)]
     public class MainActivity : Activity
     {
         private int selected = Resource.Id.en;
-        public string language = CrossSettings.Current.GetValueOrDefault("Language", null);
-       
+
         [Java.Interop.Export("Button_Language_Click")]
         public void Button_Language_Click(View v)
         {
@@ -33,6 +32,7 @@ namespace ReLearn
 
         void Checklanguage()
         {
+            string language = CrossSettings.Current.GetValueOrDefault("Language", null);
             if (System.String.IsNullOrEmpty(language))
                 CrossSettings.Current.AddOrUpdateValue("Language", "en");
             language = CrossSettings.Current.GetValueOrDefault("Language", null);
@@ -53,10 +53,6 @@ namespace ReLearn
             Toolbar toolbarMain = FindViewById<Toolbar>(Resource.Id.toolbarMain);
             SetActionBar(toolbarMain);
             ActionBar.Title = "";
-            FrameStatistics.plain = Android.Graphics.Typeface.CreateFromAsset(Assets, Magic_constants.font);
-            DataBase.Install_database_from_assets(Database_Name.English_DB);
-            DataBase.Install_database_from_assets(Database_Name.Flags_DB);
-            DataBase.Install_database_from_assets(Database_Name.Statistics);
         }
 
         public override bool OnPrepareOptionsMenu(IMenu menu)
@@ -119,10 +115,7 @@ namespace ReLearn
         public void Update_Configuration_Locale(string str)
         {
             Locale locale = new Locale(str);
-            Configuration conf = new Configuration
-            {
-                Locale = locale
-            };
+            Configuration conf = new Configuration{Locale = locale};
             Resources.UpdateConfiguration(conf, Resources.DisplayMetrics);
             //this.CreateConfigurationContext(conf);
         }

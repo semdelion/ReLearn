@@ -31,4 +31,9 @@
     <item name="android:textColor">#d7f8fe</item>
     <item name="android:itemBackground">#283544</item>
   </style>
+  <style name="SplashTheme" parent ="@android:style/Theme.DeviceDefault.NoActionBar.TranslucentDecor">
+    <item name="android:windowBackground">@drawable/background_splash</item>
+    <item name="android:windowNoTitle">true</item>
+    <item name="android:windowFullscreen">true</item>
+  </style>
 </resources>

@@ -33,7 +33,7 @@
 			android:layout_marginRight="30.0dp"
 			android:layout_marginLeft="55.0dp"
 			android:layout_marginTop="40.0dp"
-			android:textSize="30dp"
+			android:textSize="25dp"
 			android:defaultFocusHighlightEnabled="true"
 		/>
 		<TextView
@@ -45,7 +45,7 @@
 			android:layout_marginRight="30.0dp"
 			android:layout_marginLeft="55.0dp"
 			android:layout_marginTop="35.0dp"
-			android:textSize="30dp"
+			android:textSize="25dp"
 			android:defaultFocusHighlightEnabled="true" />
         <Button
             android:text="@string/Next"

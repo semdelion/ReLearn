@@ -21,6 +21,7 @@ namespace ReLearn
         Button Button4;
         Button Button_next;
         List<Database_Words> dataBase;
+        TextView Title_textView;
         readonly List<Statistics> Stats = new List<Statistics>();
         int Count = -1;
         int Rand_word { get; set; }
@@ -127,7 +128,7 @@ namespace ReLearn
 
 
         [Java.Interop.Export("Button_English_Next_Click")]
-        public void Button_English_Next_Click(View v, TextView mTitle)
+        public void Button_English_Next_Click(View v)
         {
             Button_next.Enabled = false;
             if (Count < Magic_constants.repeat_count - 1)
@@ -137,7 +138,7 @@ namespace ReLearn
                 Rand_word = rnd.Next(dataBase.Count);
                 Function_Next_Test( Rand_word, rnd.Next(4));
                 Button_Refresh();
-                mTitle.Text = Convert.ToString(Additional_functions.GetResourceString("Repeat", this.Resources) + " " + (Count + 1) + "/" + Magic_constants.repeat_count); // ПЕРЕДЕЛАЙ Костыль счётчик 
+                Title_textView.Text = Convert.ToString(Additional_functions.GetResourceString("Repeat", this.Resources) + " " + (Count + 1) + "/" + Magic_constants.repeat_count); // ПЕРЕДЕЛАЙ Костыль счётчик 
             }
             else
             {
@@ -155,7 +156,7 @@ namespace ReLearn
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.English_Repeat);
             var toolbarMain = FindViewById<Toolbar>(Resource.Id.toolbarEnglishRepeat);
-            TextView mTitle = toolbarMain.FindViewById<TextView>(Resource.Id.Repeat_toolbar_textview);
+            Title_textView = toolbarMain.FindViewById<TextView>(Resource.Id.Repeat_toolbar_textview);
             SetActionBar(toolbarMain);
             ActionBar.SetDisplayHomeAsUpEnabled(true); // отображаем кнопку домой
             Statistics.Statistics_update();
@@ -169,7 +170,7 @@ namespace ReLearn
             {
                 SQLiteConnection db = DataBase.Connect(Database_Name.English_DB);
                 dataBase = db.Query<Database_Words>("SELECT * FROM " + DataBase.Table_Name + " WHERE NumberLearn > 0");
-                Button_English_Next_Click(null, mTitle);
+                Button_English_Next_Click(null);
             }
             catch
             {

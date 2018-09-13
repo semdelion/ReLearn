@@ -2080,8 +2080,8 @@ namespace ReLearn
 			// aapt resource value: 0x7F0A0041
 			public const int radio = 2131361857;
 			
-			// aapt resource value: 0x7F020024
-			public const int Repeat_toolbar_textview = 2130837540;
+			// aapt resource value: 0x7F020025
+			public const int Repeat_toolbar_textview = 2130837541;
 			
 			// aapt resource value: 0x7F020047
 			public const int Repeat_toolbar_textview_fl = 2130837575;
@@ -2107,8 +2107,8 @@ namespace ReLearn
 			// aapt resource value: 0x7F0A0034
 			public const int scrollView = 2131361844;
 			
-			// aapt resource value: 0x7F020025
-			public const int scrollView1 = 2130837541;
+			// aapt resource value: 0x7F020023
+			public const int scrollView1 = 2130837539;
 			
 			// aapt resource value: 0x7F020041
 			public const int scrollView2 = 2130837569;
@@ -2254,8 +2254,8 @@ namespace ReLearn
 			// aapt resource value: 0x7F020016
 			public const int toolbarEnglishLearn = 2130837526;
 			
-			// aapt resource value: 0x7F020023
-			public const int toolbarEnglishRepeat = 2130837539;
+			// aapt resource value: 0x7F020024
+			public const int toolbarEnglishRepeat = 2130837540;
 			
 			// aapt resource value: 0x7F020038
 			public const int toolbarFlags = 2130837560;
