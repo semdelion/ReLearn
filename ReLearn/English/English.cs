@@ -74,7 +74,6 @@ namespace ReLearn
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.English);
             Toolbar toolbarMain = FindViewById<Toolbar>(Resource.Id.toolbarEnglish);
-            //TextView textView = toolbarMain.FindViewById<TextView>(Resource.Id.toolbar_title_english)
             SetActionBar(toolbarMain);
             ActionBar.SetDisplayHomeAsUpEnabled(true);
             if (String.IsNullOrEmpty(DataBase.Table_Name))

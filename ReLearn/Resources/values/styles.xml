@@ -22,10 +22,6 @@
   <style name="ThemeStat" >
     <item name="android:homeAsUpIndicator">@drawable/arrow</item>
     <item name="android:colorPrimary">@android:color/transparent</item>
-    <item name="android:title">@string/Statistics</item>
-    <item name="android:textColor">#d7f8fe</item>
-    <item name="android:textSize">50dp</item>
-    <item name="fontPath">fonts/GamjaFlower-Regular.ttf</item>
   </style>
 
   <style name="MenuStyle" parent="@android:style/Theme.Black">

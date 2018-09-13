@@ -7,7 +7,7 @@ using Android.Graphics.Drawables;
 using Android.Content;
 using Calligraphy;
 using Android.Widget;
-using static Android.App.ActionBar;
+
 
 namespace ReLearn
 {
@@ -17,11 +17,24 @@ namespace ReLearn
         protected override void OnCreate(Bundle savedInstanceState)
         {
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            
             Additional_functions.Font();
             base.OnCreate(savedInstanceState);
+            SetContentView(Resource.Layout.English_Stat);
 
-            SetContentView(Resource.Layout.English_Stat);         
+            Typeface face = Typeface.CreateFromAsset(Assets, "fonts/GamjaFlower-Regular.ttf");
+            TextView textView = new TextView(ApplicationContext)
+            {
+                Text = Additional_functions.GetResourceString("Statistics", this.Resources),
+                Typeface = face
+            };
+            textView.SetTextSize(Android.Util.ComplexUnitType.Dip, 25f);                      
+            textView.SetTextColor(Color.Rgb(215,248,254));
+
+            ActionBar.SetDisplayOptions(ActionBarDisplayOptions.ShowCustom, ActionBarDisplayOptions.ShowCustom | ActionBarDisplayOptions.ShowTitle);
+            ActionBar.SetCustomView(textView, new ActionBar.LayoutParams(ViewGroup.LayoutParams.MatchParent, ViewGroup.LayoutParams.MatchParent));
             ActionBar.SetDisplayHomeAsUpEnabled(true); // отображаем кнопку домой
+       
             Window.SetBackgroundDrawable(GetDrawable(Resource.Drawable.backgroundEnFl));
             Window.AddFlags(WindowManagerFlags.DrawsSystemBarBackgrounds);
             Window.SetStatusBarColor(Android.Graphics.Color.Argb(128, 0, 0, 0));
@@ -29,6 +42,7 @@ namespace ReLearn
             ActionBar.NavigationMode = ActionBarNavigationMode.Tabs;
             SetContentView(Resource.Layout.English_Stat);
 
+       
 
             var database = DataBase.Connect(Database_Name.English_DB);
             ActionBar.SetStackedBackgroundDrawable(new ColorDrawable(Color.Transparent));
@@ -39,14 +53,16 @@ namespace ReLearn
 
             var tab = ActionBar.NewTab();
             tab.SetIcon(Resource.Drawable.Stat1);/// icon 1
-            tab.TabSelected += (sender, args) => {
+            tab.TabSelected += (sender, args) =>
+            {
                 SetContentView(Stat1);
             };
             ActionBar.AddTab(tab);
 
             tab = ActionBar.NewTab();
             tab.SetIcon(Resource.Drawable.Stat2);/// icon 2
-            tab.TabSelected += (sender, args) => {
+            tab.TabSelected += (sender, args) =>
+            {
                 SetContentView(Stat2);
             };
             ActionBar.AddTab(tab);

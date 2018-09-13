@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using Android.Graphics.Drawables;
 using Android.Content;
 using Calligraphy;
+using Android.Widget;
+
 namespace ReLearn
 {
     [Activity( Theme = "@style/ThemeStat", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
@@ -16,10 +18,24 @@ namespace ReLearn
             Additional_functions.Font();
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.English_Stat);
+
+            Typeface face = Typeface.CreateFromAsset(Assets, "fonts/GamjaFlower-Regular.ttf");
+            TextView textView = new TextView(ApplicationContext)
+            {
+                Text = Additional_functions.GetResourceString("Statistics", this.Resources),
+                Typeface = face
+            };
+            textView.SetTextSize(Android.Util.ComplexUnitType.Dip, 25f);
+            textView.SetTextColor(Color.Rgb(215, 248, 254));
+
+            ActionBar.SetDisplayOptions(ActionBarDisplayOptions.ShowCustom, ActionBarDisplayOptions.ShowCustom | ActionBarDisplayOptions.ShowTitle);
+            ActionBar.SetCustomView(textView, new ActionBar.LayoutParams(ViewGroup.LayoutParams.MatchParent, ViewGroup.LayoutParams.MatchParent));
+            ActionBar.SetDisplayHomeAsUpEnabled(true);
+
             Window.SetBackgroundDrawable(GetDrawable(Resource.Drawable.backgroundEnFl));
             Window.AddFlags(WindowManagerFlags.DrawsSystemBarBackgrounds);
             Window.SetStatusBarColor(Android.Graphics.Color.Argb(128, 0, 0, 0));
-            ActionBar.SetDisplayHomeAsUpEnabled(true);
+
             ActionBar.NavigationMode = ActionBarNavigationMode.Tabs;
             SetContentView(Resource.Layout.English_Stat);
 
