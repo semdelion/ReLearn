@@ -10,12 +10,10 @@
     <item name="android:actionMenuTextColor">#d7f8fe</item>
     <item name="android:textSize">25dp</item>
     <item name="android:textAllCaps">false</item>
-    <item name="fontPath">fonts/GamjaFlower-Regular.ttf</item>
   </style>
 
   <style name="myPopupTheme" parent="@android:style/Theme.Black">
     <item name="android:popupBackground">#0000ff</item>
-    <item name="fontPath">fonts/GamjaFlower-Regular.ttf</item>
     <item name="android:colorPrimary">@android:color/transparent</item>
   </style>
 
@@ -25,17 +23,12 @@
   </style>
 
   <style name="MenuStyle" parent="@android:style/Theme.Black">
-    <item name="fontPath">fonts/GamjaFlower-Regular.ttf</item>
     <item name="android:textColor">#d7f8fe</item>
     <item name="android:textSize">25dp</item>
-    <!-- Customize your theme here. -->
     <item name="android:colorPrimary">#3F51B5</item>
     <item name="android:colorPrimaryDark">#303F9F</item>
     <item name="android:colorAccent">#FF4081</item>
-    <!-- To change the popup menu and app text color  -->
     <item name="android:textColor">#d7f8fe</item>
-    <!-- To change the background of options menu-->
     <item name="android:itemBackground">#283544</item>
   </style>
-
 </resources>

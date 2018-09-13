@@ -17,17 +17,11 @@ namespace ReLearn
         bool Voice_Enable = true;
 
         [Java.Interop.Export("Button_English_Learn_Next_Click")]
-        public void Button_English_Learn_Next_Click(View v)
-        {
-            Following_Random_Word();              
-        }
-
+        public void Button_English_Learn_Next_Click(View v) => Following_Random_Word();              
+        
         [Java.Interop.Export("Button_English_Learn_Voice_Click")]
-        public void Button_English_Learn_Voice_Click(View v)
-        {
-            CrossTextToSpeech.Current.Speak(textView_learn_en.Text);
-        }
-
+        public void Button_English_Learn_Voice_Click(View v) => CrossTextToSpeech.Current.Speak(textView_learn_en.Text);
+        
         [Java.Interop.Export("Button_English_Learn_Voice_Enable")]
         public void Button_English_Learn_Voice_Enable(View v)
         {
@@ -83,7 +77,6 @@ namespace ReLearn
 
             Following_Random_Word();              
         }
-
 
         public override bool OnOptionsItemSelected(IMenuItem item)
         {

@@ -56,6 +56,5 @@ namespace ReLearn
         }
 
         protected override void AttachBaseContext(Context newbase) => base.AttachBaseContext(Calligraphy.CalligraphyContextWrapper.Wrap(newbase));
-
     }
 }

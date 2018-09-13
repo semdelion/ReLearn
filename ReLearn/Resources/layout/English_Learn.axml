@@ -31,7 +31,7 @@
 			android:id="@+id/textView_learn_en"
 			android:textColor="#d7f8fe"
 			android:layout_marginRight="30.0dp"
-			android:layout_marginLeft="45.0dp"
+			android:layout_marginLeft="55.0dp"
 			android:layout_marginTop="40.0dp"
 			android:textSize="30dp"
 			android:defaultFocusHighlightEnabled="true"
@@ -43,7 +43,7 @@
 			android:id="@+id/textView_learn_ru"
 			android:textColor="#d7f8fe"
 			android:layout_marginRight="30.0dp"
-			android:layout_marginLeft="45.0dp"
+			android:layout_marginLeft="55.0dp"
 			android:layout_marginTop="35.0dp"
 			android:textSize="30dp"
 			android:defaultFocusHighlightEnabled="true" />

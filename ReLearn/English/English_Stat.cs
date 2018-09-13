@@ -22,11 +22,12 @@ namespace ReLearn
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.English_Stat);
 
-            Typeface face = Typeface.CreateFromAsset(Assets, "fonts/GamjaFlower-Regular.ttf");
+            Typeface face = Typeface.CreateFromAsset(Assets, Magic_constants.font);
             TextView textView = new TextView(ApplicationContext)
             {
                 Text = Additional_functions.GetResourceString("Statistics", this.Resources),
-                Typeface = face
+                Typeface = face,
+                Gravity = GravityFlags.CenterVertical
             };
             textView.SetTextSize(Android.Util.ComplexUnitType.Dip, 25f);                      
             textView.SetTextColor(Color.Rgb(215,248,254));

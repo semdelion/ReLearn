@@ -24,20 +24,12 @@ namespace ReLearn.Resources
             this.list = list;
         }
 
-        public override int Count
-        {
-            get { return list.Count;}
-        }
+        public override int Count => list.Count;
+        
+        public override Java.Lang.Object GetItem(int position) => list[position].Word;
+        
+        public override long GetItemId(int position)=> list[position].NumberLearn;
 
-        public override Java.Lang.Object GetItem(int position)
-        {
-            return list[position].Word;
-        }
-
-        public override long GetItemId(int position)
-        {
-            return list[position].NumberLearn;
-        }
         void Color_TextView(TextView TV, Color color)
         {
             int TrText = 170, // прозрачность текста и фона
@@ -88,6 +80,7 @@ namespace ReLearn.Resources
                     break; 
 
             }
+
             TView.Text = list[position].Word +"  -  "+ list[position].TranslationWord;
             return view;
         }

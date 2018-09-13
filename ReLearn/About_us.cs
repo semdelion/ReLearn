@@ -14,7 +14,7 @@ namespace ReLearn
         public void Button_Support_Project_Click(View v)
         {
             Intent browserIntent = new Intent(Intent.ActionView);
-            browserIntent.SetData(Android.Net.Uri.Parse("https://www.patreon.com/SemdelionTeam"));
+            browserIntent.SetData(Android.Net.Uri.Parse("http://www.donationalerts.ru/r/semdelionteam"));
             StartActivity(browserIntent);
         }
 
@@ -40,6 +40,5 @@ namespace ReLearn
         }
 
         protected override void AttachBaseContext(Context newbase) => base.AttachBaseContext(CalligraphyContextWrapper.Wrap(newbase));
-
     }
 }

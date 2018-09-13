@@ -49,7 +49,7 @@
 				android:layout_marginBottom="2dp"
 				android:textSize="@android:dimen/app_icon_size"
 				android:layout_marginRight="40.0dp"
-				android:layout_marginLeft="40.0dp"
+				android:layout_marginLeft="55.0dp"
 				android:textStyle="bold"
 				android:textColor="#d7f8fe" 
 			/>

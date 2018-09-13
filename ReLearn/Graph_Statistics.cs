@@ -55,8 +55,6 @@ namespace ReLearn
             Paint paint = new Paint { TextSize = 25, Color = Color.Argb(40, 215, 248, 254), StrokeWidth = 1, AntiAlias = true };
             for (int j = 2; j <= 20; j += 2)
                 The_canvas.DrawLine(left, bottom - height * j, right, bottom - height * j, paint);
-
-
         }
 
         void Diagram(List<Database_Statistics> Database_Stat, float left, float right, float bottom, float top)
@@ -73,7 +71,6 @@ namespace ReLearn
                     Paint paint = new Paint { AntiAlias = true };
                     paint.SetShader(shader);
                     The_canvas.DrawRoundRect(new RectF(left + padding, bottom - (step_height * s.True), left + step_width - padding, bottom), 0, 0, paint);
-
                     left = left + step_width;
                 }
                 ++i;

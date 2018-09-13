@@ -46,8 +46,8 @@ namespace ReLearn
             SetActionBar(toolbarMain);
             ActionBar.SetDisplayHomeAsUpEnabled(true);
 
-            Magic_constants.language = Convert.ToInt32(CrossSettings.Current.GetValueOrDefault("ImageLanguage", null));
-            if (Magic_constants.language == 0)
+            Magic_constants.Language = Convert.ToInt32(CrossSettings.Current.GetValueOrDefault("ImageLanguage", null));
+            if (Magic_constants.Language == 0)
                 selected = Resource.Id.language_eng;
             else
                 selected = Resource.Id.language_rus;
@@ -84,7 +84,7 @@ namespace ReLearn
                 //databaseSetting.Query<Setting_Database>("UPDATE Setting_Database SET language = " + 0 + " WHERE Setting_bd = ?", "flags");
                 Toast.MakeText(this, Additional_functions.GetResourceString("EnIsSelected", this.Resources), ToastLength.Short).Show();
                 CrossSettings.Current.AddOrUpdateValue("ImageLanguage", "0");
-                Magic_constants.language = Convert.ToInt32(CrossSettings.Current.GetValueOrDefault("ImageLanguage", null));
+                Magic_constants.Language = Convert.ToInt32(CrossSettings.Current.GetValueOrDefault("ImageLanguage", null));
                 item.SetChecked(true);
                 return true;
             }
@@ -92,7 +92,7 @@ namespace ReLearn
             {
                 Toast.MakeText(this, Additional_functions.GetResourceString("RuIsSelected", this.Resources), ToastLength.Short).Show();
                 CrossSettings.Current.AddOrUpdateValue("ImageLanguage", "1");
-                Magic_constants.language = Convert.ToInt32(CrossSettings.Current.GetValueOrDefault("ImageLanguage", null));
+                Magic_constants.Language = Convert.ToInt32(CrossSettings.Current.GetValueOrDefault("ImageLanguage", null));
                 item.SetChecked(true);
                 return true;
             }

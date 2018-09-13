@@ -22,12 +22,9 @@ namespace ReLearn
         TextView textView_learn_flag;
 
         [Java.Interop.Export("Button_Flags_Learn_Next_Click")]
-        public void Button_Flags_Learn_Click(View v)
-        {
-            Following_Random_Image();
-        }
-
-        public void Following_Random_Image()
+        public void Button_Flags_Learn_Click(View v) => Random_Image();
+        
+        public void Random_Image()
         {
             try
             {
@@ -61,7 +58,7 @@ namespace ReLearn
             textView_learn_flag = FindViewById<TextView>(Resource.Id.textView_flag_learn);
             imageView = FindViewById<ImageView>(Resource.Id.imageView_Flags_learn);
 
-            Following_Random_Image();        
+            Random_Image();        
         }
 
         public override bool OnOptionsItemSelected(IMenuItem item) // button home

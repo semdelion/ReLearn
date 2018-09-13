@@ -20,7 +20,8 @@ namespace ReLearn
         public static int numberLearn = 6;
         public static int false_answer = 3;
         public static int true_answer = 1;
-        public static int language = 0; // 0 - eng, 1 - rus ...
+        public static int Language = 0; // 0 - eng, 1 - rus ...
+        public const string font = "fonts/Roboto-Regular.ttf";
     }
 
     static class Additional_functions
@@ -56,7 +57,7 @@ namespace ReLearn
             }
         }
 
-        public static string Name_of_the_flag(Database_images word) => Magic_constants.language == 0 ? word.Name_image_en : word.Name_image_ru;
+        public static string Name_of_the_flag(Database_images word) => Magic_constants.Language == 0 ? word.Name_image_en : word.Name_image_ru;
         
         public static void Update_number_learn(List<Statistics> Stats, string identifier, int rand_word, int RepeatLearn)
         {
@@ -102,10 +103,9 @@ namespace ReLearn
         public static void Font()
         {
             CalligraphyConfig.InitDefault(new CalligraphyConfig.Builder()
-               .SetDefaultFontPath(@"fonts/GamjaFlower-Regular.ttf")
+               .SetDefaultFontPath(Magic_constants.font)
                .SetFontAttrId(Resource.Attribute.fontPath)
                .Build());
         }
-        
     }
 }

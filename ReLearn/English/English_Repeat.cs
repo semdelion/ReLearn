@@ -175,11 +175,6 @@ namespace ReLearn
             {
                 Toast.MakeText(this, Additional_functions.GetResourceString("databaseNotConnect", this.Resources), ToastLength.Short).Show();
             }
-            CalligraphyConfig.InitDefault(new CalligraphyConfig.Builder()
-              .SetDefaultFontPath(@"fonts/GamjaFlower-Regular.ttf")
-              .SetFontAttrId(Resource.Attribute.fontPath)
-              .Build());
-
         }
 
         public override bool OnOptionsItemSelected(IMenuItem item)
@@ -189,6 +184,5 @@ namespace ReLearn
         }
 
         protected override void AttachBaseContext(Context newbase) => base.AttachBaseContext(CalligraphyContextWrapper.Wrap(newbase));
-
     }
 }

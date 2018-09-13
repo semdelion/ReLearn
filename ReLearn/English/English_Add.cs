@@ -11,7 +11,6 @@ namespace ReLearn
     [Activity(Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     class English_Add : Activity
     {
-      
         [Java.Interop.Export("Button_English_Add_Word_Click")]
         public void Button_English_Add_Click(View v)
         {

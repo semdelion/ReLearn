@@ -76,16 +76,17 @@ namespace ReLearn
             Toolbar toolbarMain = FindViewById<Toolbar>(Resource.Id.toolbarEnglish);
             SetActionBar(toolbarMain);
             ActionBar.SetDisplayHomeAsUpEnabled(true);
+
             if (String.IsNullOrEmpty(DataBase.Table_Name))
             {
                 CrossSettings.Current.AddOrUpdateValue("DictionaryName", Table_name.My_Directly);
                 selected = Resource.Id.menuDatabase_MyDictionary;
             }
+
             DataBase.Table_Name = CrossSettings.Current.GetValueOrDefault("DictionaryName", null);
 
             if (DataBase.Table_Name == "Popular_Words")
                 selected = Resource.Id.menuDatabase_PopularWords;
-
             DataBase.Update_English_DB();
         }
 
@@ -142,7 +143,6 @@ namespace ReLearn
                 return true;
             }
             return true;
-
         }
 
         protected override void AttachBaseContext(Context newbase) => base.AttachBaseContext(CalligraphyContextWrapper.Wrap(newbase));

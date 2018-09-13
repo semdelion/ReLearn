@@ -119,8 +119,7 @@
     <AndroidAsset Include="Assets\Database\database_statistics.db3" />
     <AndroidAsset Include="Assets\Database\database_words.db3" />
     <AndroidAsset Include="Assets\Database\database_image.db3" />
-    <AndroidAsset Include="Assets\fonts\GamjaFlower-Regular1.ttf" />
-    <AndroidAsset Include="Assets\fonts\GamjaFlower-Regular.ttf" />
+    <AndroidAsset Include="Assets\fonts\Roboto-Regular.ttf" />
     <None Include="packages.config" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Properties\AndroidManifest.xml">

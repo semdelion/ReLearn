@@ -41,17 +41,16 @@ namespace ReLearn
             return new SQLiteConnection(databasePath);
         }
 
-        public static void GetDatabasePath(string sqliteFilename)
+        public static void Install_database_from_assets(string sqliteFilename)
         {
             string documentsPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
             var path = Path.Combine(documentsPath, sqliteFilename);
             // копирование файла из папки Assets по пути path
             if (!File.Exists(path))
             {
-                // получаем контекст приложения
-                Context context = Android.App.Application.Context;
+                Context context = Application.Context;
                 var dbAssetStream = context.Assets.Open("Database/" + sqliteFilename);
-                var dbFileStream = new System.IO.FileStream(path, System.IO.FileMode.OpenOrCreate);
+                var dbFileStream = new FileStream(path, System.IO.FileMode.OpenOrCreate);
                 var buffer = new byte[1024];
                 int length;
 
@@ -66,15 +65,15 @@ namespace ReLearn
         public static void Update_English_DB()
         {
             var toDay = DateTime.Today;
-            var db = DataBase.Connect(Database_Name.English_DB);
-            var dataBase = db.Query<Database_Words>("SELECT * FROM " + DataBase.Table_Name + " WHERE NumberLearn = 0 AND DateRecurrence != DATETIME('NOW')");
+            var db = Connect(Database_Name.English_DB);
+            var dataBase = db.Query<Database_Words>("SELECT * FROM " + Table_Name + " WHERE NumberLearn = 0 AND DateRecurrence != DATETIME('NOW')");
             foreach (var s in dataBase) // UPDATE Database
             {
                 if (s.DateRecurrence.Month != toDay.Month && toDay.Day >= s.DateRecurrence.Day)
                 {
                     // обновление БД, при условии, что месяцы не совпадают и NumberLearn == 0. изменяем месяц на текущий и NumberLearn++;                
-                    db.Query<Database_Words>("UPDATE " + DataBase.Table_Name + " SET DateRecurrence = DATETIME('NOW') WHERE Word = ?", s.Word);
-                    db.Query<Database_Words>("UPDATE " + DataBase.Table_Name + " SET NumberLearn = " + s.NumberLearn + 1 + " WHERE Word = ?", s.Word);
+                    db.Query<Database_Words>("UPDATE " + Table_Name + " SET DateRecurrence = DATETIME('NOW') WHERE Word = ?", s.Word);
+                    db.Query<Database_Words>("UPDATE " + Table_Name + " SET NumberLearn = " + s.NumberLearn + 1 + " WHERE Word = ?", s.Word);
                 }                       
             }
         }
@@ -82,15 +81,15 @@ namespace ReLearn
         public static void Update_Flags_DB()
         {
             var toDay = DateTime.Today;
-            var db = DataBase.Connect(Database_Name.Flags_DB); // подключение к БД
-            var dataBase = db.Query<Database_images>("SELECT * FROM " + DataBase.Table_Name + " WHERE NumberLearn = 0 AND DateRecurrence != DATETIME('NOW')");
+            var db = Connect(Database_Name.Flags_DB); // подключение к БД
+            var dataBase = db.Query<Database_images>("SELECT * FROM " + Table_Name + " WHERE NumberLearn = 0 AND DateRecurrence != DATETIME('NOW')");
 
             foreach (var s in dataBase) // UPDATE Flags
             {
                 if (s.DateRecurrence.Month != toDay.Month && toDay.Day >= s.DateRecurrence.Day)
                 {
-                    db.Query<Database_images>("UPDATE " + DataBase.Table_Name + " SET DateRecurrence = DATETIME('NOW') WHERE Image_name = ?", s.Image_name);
-                    db.Query<Database_images>("UPDATE " + DataBase.Table_Name + " SET NumberLearn = " + s.NumberLearn + 1 + " WHERE Image_name = ?", s.Image_name);
+                    db.Query<Database_images>("UPDATE " + Table_Name + " SET DateRecurrence = DATETIME('NOW') WHERE Image_name = ?", s.Image_name);
+                    db.Query<Database_images>("UPDATE " + Table_Name + " SET NumberLearn = " + s.NumberLearn + 1 + " WHERE Image_name = ?", s.Image_name);
                 }
             }
         }    
@@ -153,6 +152,7 @@ namespace ReLearn
             return this;
         }
     }
+
     public class Database_for_stats // Класс для считывания базы данных flags
     {
         public int NumberLearn { get; set; }

@@ -18,30 +18,42 @@
 			android:text="@string/about_us"    
 			android:textColor="?android:attr/actionMenuTextColor" />
 	</Toolbar>
-	<TextView
-		android:text="@string/Message_about_us"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:id="@+id/textView_about_us"
-		android:textColor="#d7f8fe"
-		android:layout_marginRight="30.0dp"
-		android:layout_marginLeft="45.0dp"
-		android:layout_marginTop="40.0dp"
-		android:textSize="16dp"
-		android:defaultFocusHighlightEnabled="true"
-		android:scrollbars="vertical"
-		android:layout_marginBottom="40.0dp" />
-	<Button
-		android:text="@string/support_project"
-		android:layout_width="match_parent"
-		android:layout_height="60.0dp"
-		android:id="@+id/button_support_project"
-		android:layout_marginRight="40.0dp"
-		android:layout_marginLeft="40.0dp"
-		android:layout_marginTop="10.0dp"
-		android:textColor="#d7f8fe"
-		android:textSize="20dp"
-		android:background="@drawable/button_style_standard"
-		android:gravity="center"
-		android:onClick="Button_Support_Project_Click"/>
+		<ScrollView
+		android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+		<TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+			android:stretchColumns="1">
+			<TextView
+				android:text="@string/Message_about_us"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/textView_about_us"
+				android:textColor="#d7f8fe"
+				android:layout_marginRight="30.0dp"
+				android:layout_marginLeft="45.0dp"
+				android:layout_marginTop="40.0dp"
+				android:textSize="16dp"
+				android:defaultFocusHighlightEnabled="true"
+				android:layout_marginBottom="40.0dp" />
+			<Button
+				android:text="@string/support_project"
+				android:layout_width="match_parent"
+				android:layout_height="60.0dp"
+				android:id="@+id/button_support_project"
+				android:layout_marginRight="40.0dp"
+				android:layout_marginLeft="40.0dp"
+				android:layout_marginTop="10.0dp"
+				android:layout_marginBottom="20.0dp"
+				android:textColor="#d7f8fe"
+				android:textSize="20dp"
+				android:background="@drawable/button_style_standard"
+				android:gravity="center"
+				android:onClick="Button_Support_Project_Click"/>
+			 </TableLayout>
+		</ScrollView>
+
 </LinearLayout>
