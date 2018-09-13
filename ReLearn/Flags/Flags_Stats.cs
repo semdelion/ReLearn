@@ -35,7 +35,7 @@ namespace ReLearn
 
             Window.SetBackgroundDrawable(GetDrawable(Resource.Drawable.backgroundEnFl));
             Window.AddFlags(WindowManagerFlags.DrawsSystemBarBackgrounds);
-            Window.SetStatusBarColor(Android.Graphics.Color.Argb(128, 0, 0, 0));
+            Window.SetStatusBarColor(Color.Argb(128, 0, 0, 0));
 
             ActionBar.NavigationMode = ActionBarNavigationMode.Tabs;
             SetContentView(Resource.Layout.English_Stat);

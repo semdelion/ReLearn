@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
+﻿using Android.App;
 using Android.Content;
 using Android.OS;
-using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 
@@ -24,9 +18,9 @@ namespace ReLearn
             else
             {
                 var email = new Intent(Intent.ActionSend);
-                email.PutExtra(Android.Content.Intent.ExtraEmail, new string[] { "SemdelionTeam@gmail.com" });
-                email.PutExtra(Android.Content.Intent.ExtraSubject, "Hello, SemdelionTeam!");
-                email.PutExtra(Android.Content.Intent.ExtraText, editText_Feedback.Text);
+                email.PutExtra(Intent.ExtraEmail, new string[] { "SemdelionTeam@gmail.com" });
+                email.PutExtra(Intent.ExtraSubject, "Hello, SemdelionTeam!");
+                email.PutExtra(Intent.ExtraText, editText_Feedback.Text);
                 email.SetType("message/rfc822");
                 StartActivity(email);
                 editText_Feedback.Text = "";

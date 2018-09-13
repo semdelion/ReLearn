@@ -15,9 +15,7 @@ namespace ReLearn
     class English_Stat : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
-        {
-            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            
+        {      
             Additional_functions.Font();
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.English_Stat);
@@ -39,18 +37,15 @@ namespace ReLearn
             Window.SetBackgroundDrawable(GetDrawable(Resource.Drawable.backgroundEnFl));
             Window.AddFlags(WindowManagerFlags.DrawsSystemBarBackgrounds);
             Window.SetStatusBarColor(Android.Graphics.Color.Argb(128, 0, 0, 0));
-            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             ActionBar.NavigationMode = ActionBarNavigationMode.Tabs;
             SetContentView(Resource.Layout.English_Stat);
-
        
-
             var database = DataBase.Connect(Database_Name.English_DB);
             ActionBar.SetStackedBackgroundDrawable(new ColorDrawable(Color.Transparent));
-            List<Database_for_stats> Database_NL_and_D = database.Query<Database_for_stats>("SELECT NumberLearn, DateRecurrence FROM " + DataBase.Table_Name);// количество строк в БД
+            List<Database_for_stats> Database_NL_and_D = database.Query<Database_for_stats>("SELECT NumberLearn, DateRecurrence FROM " + DataBase.Table_Name);
 
             Graph_Statistics Stat1 = new Graph_Statistics(this, Color.Rgb(0, 255, 255), Color.Argb(255, 50, 60, 126));
-            Graph_General_Statistics Stat2 = new Graph_General_Statistics(this, Color.Rgb(0, 255, 255), Color.Argb(255, 50, 60, 126), Database_NL_and_D);////////////////
+            Graph_General_Statistics Stat2 = new Graph_General_Statistics(this, Color.Rgb(0, 255, 255), Color.Argb(255, 50, 60, 126), Database_NL_and_D);
 
             var tab = ActionBar.NewTab();
             tab.SetIcon(Resource.Drawable.Stat1);/// icon 1

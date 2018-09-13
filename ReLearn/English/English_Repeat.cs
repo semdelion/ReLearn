@@ -134,7 +134,7 @@ namespace ReLearn
             if (Count < Magic_constants.repeat_count - 1)
             {
                 Count++;
-                System.Random rnd = new System.Random(unchecked((int)(DateTime.Now.Ticks)));
+                Random rnd = new System.Random(unchecked((int)(DateTime.Now.Ticks)));
                 Rand_word = rnd.Next(dataBase.Count);
                 Function_Next_Test( Rand_word, rnd.Next(4));
                 Button_Refresh();

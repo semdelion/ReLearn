@@ -11,7 +11,7 @@ using Android.Content.Res;
 
 namespace ReLearn
 {
-    [Activity(Label = "@string/app_name", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait, ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.Locale)]
+    [Activity(Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait, ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.Locale)]
     public class MainActivity : Activity
     {
         private int selected = Resource.Id.en;
@@ -51,8 +51,7 @@ namespace ReLearn
             SetContentView(Resource.Layout.Main);
             Window.SetBackgroundDrawable(GetDrawable(Resource.Drawable.backgroundMain));
             Toolbar toolbarMain = FindViewById<Toolbar>(Resource.Id.toolbarMain);
-            SetActionBar(toolbarMain);
-            ActionBar.Title = "";
+            SetActionBar(toolbarMain);            
         }
 
         public override bool OnPrepareOptionsMenu(IMenu menu)

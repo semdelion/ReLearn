@@ -17,18 +17,18 @@ tools:context=".MainActivity">
           android:orderInCategory="103"
           android:showAsAction="never"
           android:title="@string/Popular_words"/>
-        <!--<item
-          android:id="@+id/menuDatabase_Animals"
+        <item
+          android:id="@+id/menuDatabase_Education"
           android:orderInCategory="102"
           android:showAsAction="always"
-          android:title="Animals"
+          android:title="@string/Education"
          />
         <item
          android:id="@+id/menuDatabase_Home"
          android:orderInCategory="101"
          android:showAsAction="always"
-         android:title="Home"
-         />-->
+         android:title="@string/Home"
+         />
         <item
           android:id="@+id/menuDatabase_MyDictionary"
           android:orderInCategory="100"

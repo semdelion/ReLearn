@@ -28,6 +28,8 @@
   <string name="repeatedAllWords">You repeated all the words</string>
   <string name="MyDictionaryIsSelected">My dictionary is selected</string>
   <string name="PopularDictionaryIsSelected">The dictionary of popular words is chosen</string>
+  <string name="HomeIsSelected">Selected dictionary "Home"</string>
+  <string name="EducationIsSelected">Selected dictionary " Education"</string>
   <string name="Enter_word">Enter word!</string>
   <string name="Word_exists">The word exists!</string>
   <string name="Word_Added">Word added!</string>
@@ -65,5 +67,7 @@
     \n\n\t\t\t Mail: SemdelionTeam@gmail.com
   </string>
   <string name="support_project">Support the project</string>
+  <string name="Education">Education</string>
+  <string name="Home">Home</string>
 
 </resources>

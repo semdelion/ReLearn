@@ -3,7 +3,7 @@ using Android.Graphics;
 using Android.Views;
 using System;
 using System.Collections.Generic;
-using static Android.Graphics.Shader;
+
 namespace ReLearn
 {
     class Graph_General_Statistics : View

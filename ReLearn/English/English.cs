@@ -87,6 +87,11 @@ namespace ReLearn
 
             if (DataBase.Table_Name == "Popular_Words")
                 selected = Resource.Id.menuDatabase_PopularWords;
+            else if (DataBase.Table_Name == "Home")
+                selected = Resource.Id.menuDatabase_Home;
+            else if (DataBase.Table_Name == "Education")
+                selected = Resource.Id.menuDatabase_Education;
+            
             DataBase.Update_English_DB();
         }
 
@@ -96,6 +101,16 @@ namespace ReLearn
             if (selected == Resource.Id.menuDatabase_MyDictionary)
             {
                 menu.FindItem(Resource.Id.menuDatabase_MyDictionary).SetChecked(true);
+                return true;
+            }
+            if (selected == Resource.Id.menuDatabase_Home)
+            {
+                menu.FindItem(Resource.Id.menuDatabase_Home).SetChecked(true);
+                return true;
+            }
+            if (selected == Resource.Id.menuDatabase_Education)
+            {
+                menu.FindItem(Resource.Id.menuDatabase_Education).SetChecked(true);
                 return true;
             }
             if (selected == Resource.Id.menuDatabase_PopularWords)
@@ -122,6 +137,24 @@ namespace ReLearn
             {
                 DataBase.Table_Name = Table_name.Popular_Words;
                 Toast.MakeText(this, Additional_functions.GetResourceString("PopularDictionaryIsSelected", this.Resources), ToastLength.Short).Show();
+                CrossSettings.Current.AddOrUpdateValue("DictionaryName", DataBase.Table_Name);
+                DataBase.Update_English_DB();
+                item.SetChecked(true);
+                return true;
+            }
+            if (id == Resource.Id.menuDatabase_Home)
+            {
+                DataBase.Table_Name = Table_name.Home;
+                Toast.MakeText(this, Additional_functions.GetResourceString("HomeIsSelected", this.Resources), ToastLength.Short).Show();
+                CrossSettings.Current.AddOrUpdateValue("DictionaryName", DataBase.Table_Name);
+                DataBase.Update_English_DB();
+                item.SetChecked(true);
+                return true;
+            }
+            if (id == Resource.Id.menuDatabase_Education)
+            {
+                DataBase.Table_Name = Table_name.Education;
+                Toast.MakeText(this, Additional_functions.GetResourceString("EducationIsSelected", this.Resources), ToastLength.Short).Show();
                 CrossSettings.Current.AddOrUpdateValue("DictionaryName", DataBase.Table_Name);
                 DataBase.Update_English_DB();
                 item.SetChecked(true);

@@ -1,16 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.IO;
-
-
 using Android.App;
 using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using SQLite;
 using Plugin.Settings;
 
@@ -26,7 +17,9 @@ namespace ReLearn
 
     public static class Table_name// Имена баз данных
     {
-        public static string My_Directly { get => "My_Directly"; } 
+        public static string My_Directly { get => "My_Directly"; }
+        public static string Home { get => "Home"; }
+        public static string Education { get => "Education"; }
         public static string Popular_Words { get => "Popular_Words"; }  
         public static string Flags { get => "Flags"; }  
     }
@@ -37,20 +30,20 @@ namespace ReLearn
 
         public static SQLiteConnection Connect(string nameDB)
         {
-            string databasePath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), nameDB);
+            string databasePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), nameDB);
             return new SQLiteConnection(databasePath);
         }
 
         public static void Install_database_from_assets(string sqliteFilename)
         {
-            string documentsPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
+            string documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
             var path = Path.Combine(documentsPath, sqliteFilename);
             // копирование файла из папки Assets по пути path
             if (!File.Exists(path))
             {
                 Context context = Application.Context;
                 var dbAssetStream = context.Assets.Open("Database/" + sqliteFilename);
-                var dbFileStream = new FileStream(path, System.IO.FileMode.OpenOrCreate);
+                var dbFileStream = new FileStream(path, FileMode.OpenOrCreate);
                 var buffer = new byte[1024];
                 int length;
 

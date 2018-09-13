@@ -28,6 +28,8 @@
   <string name="repeatedAllWords">Вы повторили все слова</string>
   <string name="MyDictionaryIsSelected">Мой словарь выбран</string>
   <string name="PopularDictionaryIsSelected">Выбран словарь популярных слов</string>
+  <string name="HomeIsSelected">Выбран словарь "Дом и быт"</string>
+  <string name="EducationIsSelected">Выбран словарь "Образование"</string>
   <string name="Enter_word">Введите слово!</string>
   <string name="Word_exists">Слово уже существует!</string>
   <string name="Word_Added">Слово добавлено!</string>
@@ -65,4 +67,6 @@
     \n\n\t\t\t Адрес: SemdelionTeam@gmail.com
   </string>
   <string name="support_project">Поддержать проект</string>
+  <string name="Education">Образование</string>
+  <string name="Home">Дом и быт</string>
 </resources>
