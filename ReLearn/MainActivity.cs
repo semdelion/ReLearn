@@ -45,11 +45,11 @@ namespace ReLearn
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            Checklanguage();
-            Additional_functions.Font();
-            base.OnCreate(savedInstanceState);          
-            SetContentView(Resource.Layout.Main);
+            Checklanguage();          
+            Additional_functions.Font();           
             Window.SetBackgroundDrawable(GetDrawable(Resource.Drawable.backgroundMain));
+            base.OnCreate(savedInstanceState);
+            SetContentView(Resource.Layout.Main);
             Toolbar toolbarMain = FindViewById<Toolbar>(Resource.Id.toolbarMain);
             SetActionBar(toolbarMain);            
         }
@@ -80,6 +80,7 @@ namespace ReLearn
                 item.SetChecked(true);
                 Update_Configuration_Locale("en");
                 StartActivity(new Intent(this, typeof(MainActivity)));
+                this.Finish();
                 return true;
             }
             if (id == Resource.Id.ru) 
@@ -87,8 +88,9 @@ namespace ReLearn
                 Toast.MakeText(this, Additional_functions.GetResourceString("RuIsSelected", this.Resources), ToastLength.Short).Show();
                 CrossSettings.Current.AddOrUpdateValue("Language", "ru");
                 item.SetChecked(true);
-                Update_Configuration_Locale("ru");
+                Update_Configuration_Locale("ru");                
                 StartActivity(new Intent(this, typeof(MainActivity)));
+                this.Finish();
                 return true;
             }
             if (id == Resource.Id.about_us)

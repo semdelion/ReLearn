@@ -14,8 +14,7 @@
 		android:textSize="25dp"
         android:titleTextColor="?android:attr/actionMenuTextColor"
         android:titleTextAppearance="?android:attr/textSize"
-        android:id="@+id/toolbarMain"
-	/>
+        android:id="@+id/toolbarMain"/>
 	<Button
 		android:text="@string/Language"
 		android:layout_width="match_parent"
@@ -30,8 +29,7 @@
 		android:textSize="20dp"
 		android:height="@android:dimen/notification_large_icon_width"
 		android:gravity="center"
-		android:onClick="Button_Language_Click"
-	/>
+		android:onClick="Button_Language_Click"/>
 	<Button
 		android:text="@string/Flags"
 		android:layout_width="match_parent"
@@ -45,6 +43,5 @@
 		android:textSize="20dp"
 		android:height="@android:dimen/notification_large_icon_width"
 		android:gravity="center"
-		android:onClick="Button_Flags_Click"
-	/>
+		android:onClick="Button_Flags_Click"/>
 </LinearLayout>

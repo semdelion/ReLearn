@@ -54,8 +54,7 @@
                 android:textColor="#d7f8fe" 
 				android:background="@drawable/button_style_standard"
 				android:onClick="Button_Flags_1_Click"
-				android:minHeight="60dp" 
-			/>
+				android:minHeight="60dp"/>
             <Button
                 android:text=""
                 android:layout_width="match_parent"
@@ -69,8 +68,7 @@
                 android:textColor="#d7f8fe" 
 				android:background="@drawable/button_style_standard"
 				android:onClick="Button_Flags_2_Click"
-				android:minHeight="60dp" 
-			/>
+				android:minHeight="60dp" />
             <Button
                 android:text=""
                 android:layout_width="match_parent"
@@ -84,8 +82,7 @@
                 android:textColor="#d7f8fe" 
 				android:background="@drawable/button_style_standard"
 				android:onClick="Button_Flags_3_Click"
-				android:minHeight="60dp" 
-			/>
+				android:minHeight="60dp" />
 			<Button
 				android:text=""
 				android:layout_width="match_parent"
@@ -99,8 +96,7 @@
 				android:textColor="#d7f8fe"
 				android:background="@drawable/button_style_standard"
 				android:onClick="Button_Flags_4_Click"
-				android:minHeight="60dp" 
-					/>
+				android:minHeight="60dp"/>
 			<Button
 				android:text="@string/Next"
 				android:layout_width="match_parent"

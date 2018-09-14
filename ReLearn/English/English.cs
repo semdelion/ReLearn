@@ -12,7 +12,7 @@ namespace ReLearn
     [Activity(Label ="", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     class English : Activity
     {
-        private int selected = Resource.Id.menuDatabase_MyDictionary;
+        private int selected = Resource.Id.menuDatabase_PopularWords;
 
         [Java.Interop.Export("Button_English_Add_Click")]
         public void Button_English_Add_Click(View v)
@@ -79,14 +79,14 @@ namespace ReLearn
 
             if (String.IsNullOrEmpty(DataBase.Table_Name))
             {
-                CrossSettings.Current.AddOrUpdateValue("DictionaryName", Table_name.My_Directly);
-                selected = Resource.Id.menuDatabase_MyDictionary;
+                CrossSettings.Current.AddOrUpdateValue("DictionaryName", Table_name.Popular_Words);
+                selected = Resource.Id.menuDatabase_PopularWords;
             }
 
             DataBase.Table_Name = CrossSettings.Current.GetValueOrDefault("DictionaryName", null);
 
-            if (DataBase.Table_Name == "Popular_Words")
-                selected = Resource.Id.menuDatabase_PopularWords;
+            if (DataBase.Table_Name == "My_Dictionary")
+                selected = Resource.Id.menuDatabase_MyDictionary;
             else if (DataBase.Table_Name == "Home")
                 selected = Resource.Id.menuDatabase_Home;
             else if (DataBase.Table_Name == "Education")
