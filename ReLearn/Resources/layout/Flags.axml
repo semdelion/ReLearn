@@ -21,7 +21,7 @@
 	<Button
 		android:text="@string/Repeat"
 		android:layout_width="match_parent"
-		android:layout_height="80.0dp"
+		android:layout_height="70dp"
 		android:id="@+id/button_flags_repeat"
 		android:layout_marginRight="40.0dp"
 		android:layout_marginLeft="40.0dp"
@@ -36,7 +36,7 @@
 	<Button
 		android:text="@string/Learn"
 		android:layout_width="match_parent"
-		android:layout_height="80.0dp"
+		android:layout_height="70dp"
 		android:id="@+id/button_flags_learn"
 		android:layout_marginTop="6.0dp"
 		android:layout_marginLeft="40.0dp"

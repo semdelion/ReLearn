@@ -1,9 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <ScrollView
+    android:layout_height="match_parent"
+	android:orientation="vertical"
+    android:minWidth="25px"
+    android:minHeight="25px">
+	<Toolbar
+		android:popupTheme="@style/MenuStyle"
+		android:minHeight="?android:attr/actionBarSize"
+		android:background="?android:attr/colorPrimary"
+		android:minWidth="25px"
+		android:layout_width="match_parent"
+		android:layout_height="60dp"
+		android:id="@+id/toolbarFlagsLearn"
+		android:navigationIcon="@drawable/arrow" >
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/Learn"    
+			android:textColor="?android:attr/actionMenuTextColor" />
+	</Toolbar>
+	<ScrollView
         android:minWidth="25px"
         android:minHeight="25px"
         android:layout_width="match_parent"
@@ -13,26 +31,11 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:stretchColumns="1">
-			<Toolbar
-				android:popupTheme="@style/MenuStyle"
-				android:minHeight="?android:attr/actionBarSize"
-				android:background="?android:attr/colorPrimary"
-				android:minWidth="25px"
-				android:layout_width="match_parent"
-				android:layout_height="60dp"
-				android:id="@+id/toolbarFlagsLearn"
-				android:navigationIcon="@drawable/arrow" >
-				<TextView
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:text="@string/Learn"    
-					android:textColor="?android:attr/actionMenuTextColor" />
-			</Toolbar>
             <ImageView
                 android:id="@+id/imageView_Flags_learn"
                 android:layout_width="wrap_content"
                 android:layout_height="170.0dp"
-                android:src="@drawable/icon_new"
+                android:src="@drawable/icon"
                 android:layout_marginTop="25.0dp"
                 android:layout_marginRight="25.0dp"
                 android:layout_marginLeft="25.0dp" />
@@ -50,7 +53,7 @@
             <Button
                 android:text="@string/Next"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="55.0dp"
                 android:layout_marginRight="40.0dp"
                 android:layout_marginLeft="40.0dp"
                 android:layout_marginTop="20.0dp"
@@ -62,4 +65,4 @@
                 android:onClick="Button_Flags_Learn_Next_Click"/>
         </TableLayout>
     </ScrollView>
-</RelativeLayout>
+</LinearLayout>

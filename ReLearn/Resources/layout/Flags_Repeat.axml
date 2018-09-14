@@ -1,50 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <ScrollView
-        android:minWidth="25px"
+    android:layout_height="match_parent"
+	android:orientation="vertical"
+    android:minWidth="25px"
+    android:minHeight="25px">  
+	<Toolbar
+		android:popupTheme="@style/MenuStyle"
+		android:minHeight="?android:attr/actionBarSize"
+		android:background="?android:attr/colorPrimary"
+		android:minWidth="25px"
+		android:layout_width="match_parent"
+		android:layout_height="60dp"
+		android:titleTextColor="?android:attr/actionMenuTextColor"
+		android:titleTextAppearance="?android:attr/textSize"
+		android:id="@+id/toolbarFlagsRepeat"
+		android:navigationIcon="@drawable/arrow">
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content" 
+			android:id="@+id/Repeat_toolbar_textview_fl"
+			android:textColor="?android:attr/actionMenuTextColor" />
+	</Toolbar>
+	<ScrollView
+		android:minWidth="25px"
         android:minHeight="25px"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/scrollView1">
-        <TableLayout
+        android:layout_height="wrap_content">
+		<TableLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:stretchColumns="1">
-			<Toolbar
-				android:popupTheme="@style/MenuStyle"
-				android:minHeight="?android:attr/actionBarSize"
-				android:background="?android:attr/colorPrimary"
-				android:minWidth="25px"
-				android:layout_width="match_parent"
-				android:layout_height="60dp"
-				android:titleTextColor="?android:attr/actionMenuTextColor"
-				android:titleTextAppearance="?android:attr/textSize"
-				android:id="@+id/toolbarFlagsRepeat"
-				android:navigationIcon="@drawable/arrow">
-				<TextView
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content" 
-					android:id="@+id/Repeat_toolbar_textview_fl"
-					android:textColor="?android:attr/actionMenuTextColor" />
-			</Toolbar>
+			android:stretchColumns="1">
 			<ImageView
 				android:id="@+id/imageView_Flags_repeat"
 				android:layout_width="wrap_content"
 				android:layout_height="170.0dp"
-				android:src="@drawable/icon_new"
+				android:src="@drawable/icon"
 				android:layout_marginTop="25.0dp"
 				android:layout_marginRight="25.0dp"
 				android:layout_marginLeft="25.0dp" />
             <Button
                 android:text=""
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="55.0dp"
                 android:id="@+id/button_F_choice1"
                 android:layout_marginTop="20.0dp"
-                android:layout_marginBottom="5dp"
+                android:layout_marginBottom="10dp"
                 android:layout_marginRight="40dp"
                 android:layout_marginLeft="40dp"
                 android:textStyle="bold"
@@ -57,12 +59,11 @@
             <Button
                 android:text=""
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
+                android:layout_height="55.0dp"
+                android:layout_marginBottom="10dp"
                 android:layout_marginRight="40dp"
                 android:layout_marginLeft="40dp"
                 android:id="@+id/button_F_choice2"
-                android:layout_marginTop="0.0dp"
                 android:textStyle="bold"
                 android:textSize="20dp"
                 android:textColor="#d7f8fe" 
@@ -73,8 +74,8 @@
             <Button
                 android:text=""
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
+                android:layout_height="55.0dp"
+                android:layout_marginBottom="10dp"
                 android:layout_marginRight="40dp"
                 android:layout_marginLeft="40dp"
                 android:id="@+id/button_F_choice3"
@@ -88,11 +89,11 @@
 			<Button
 				android:text=""
 				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
+				android:layout_height="55.0dp"
 				android:layout_marginRight="40dp"
 				android:layout_marginLeft="40dp"
 				android:id="@+id/button_F_choice4"
-				android:layout_marginTop="0.0dp"
+				android:layout_marginBottom="10dp"
 				android:textStyle="bold"
 				android:textSize="20dp"
 				android:textColor="#d7f8fe"
@@ -103,11 +104,11 @@
 			<Button
 				android:text="@string/Next"
 				android:layout_width="match_parent"
-				android:layout_height="60.0dp"
+				android:layout_height="55.0dp"
 				android:layout_marginRight="40dp"
 				android:layout_marginLeft="200dp"
 				android:id="@+id/button_F_Next"
-				android:layout_marginTop="5.0dp"
+				android:layout_marginBottom="20dp"
 				android:textSize="20dp"
 				android:textColor="#d7f8fe"
 				android:background="@drawable/button_style_standard"
@@ -115,4 +116,4 @@
 				android:gravity="center" />
         </TableLayout>
     </ScrollView>
-</RelativeLayout>
+</LinearLayout>

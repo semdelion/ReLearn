@@ -18,7 +18,7 @@
 			android:text="@string/about_us"    
 			android:textColor="?android:attr/actionMenuTextColor" />
 	</Toolbar>
-		<ScrollView
+	<ScrollView
 		android:minWidth="25px"
         android:minHeight="25px"
         android:layout_width="match_parent"
@@ -42,7 +42,7 @@
 			<Button
 				android:text="@string/support_project"
 				android:layout_width="match_parent"
-				android:layout_height="60.0dp"
+				android:layout_height="55.0dp"
 				android:id="@+id/button_support_project"
 				android:layout_marginRight="40.0dp"
 				android:layout_marginLeft="40.0dp"
