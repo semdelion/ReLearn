@@ -10,6 +10,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.Graphics;
+using Plugin.Settings;
 
 namespace ReLearn
 {
@@ -20,7 +21,7 @@ namespace ReLearn
         public static int numberLearn = 6;
         public static int false_answer = 3;
         public static int true_answer = 1;
-        public static int Language = 0; // 0 - eng, 1 - rus ...
+        //public static int Language = 0; // 0 - eng, 1 - rus ...
         public const string font = "fonts/Roboto-Regular.ttf";
     }
 
@@ -32,8 +33,15 @@ namespace ReLearn
             random_numbers = new List<int> { NotI, 0, 0, 0 };
             if (count > 4)
             {
+                //(NotI + rand.Next(1,count)) % (count);
                 int rnd;
-                random_numbers[1] = (NotI + rand.Next(count)) % count;
+                while (true)
+                {
+                    rnd = rand.Next(count);
+                    if (rnd != random_numbers[0])
+                        break;
+                }
+                random_numbers[1] = rnd;
                 while (true)
                 {
                     rnd = rand.Next(count);
@@ -51,13 +59,13 @@ namespace ReLearn
             }
             else
             {
-                random_numbers[1] = (NotI + 1) % 4;
-                random_numbers[2] = (NotI + 2) % 4;
-                random_numbers[3] = (NotI + 3) % 4;
+                random_numbers[1] = (NotI + 1) % count;
+                random_numbers[2] = (NotI + 2) % count;
+                random_numbers[3] = (NotI + 3) % count;
             }
         }
 
-        public static string Name_of_the_flag(Database_images word) => Magic_constants.Language == 0 ? word.Name_image_en : word.Name_image_ru;
+        public static string Name_of_the_flag(Database_images word) => CrossSettings.Current.GetValueOrDefault("Language", null) == "en" ? word.Name_image_en : word.Name_image_ru;
         
         public static void Update_number_learn(List<Statistics> Stats, string identifier, int rand_word, int RepeatLearn)
         {

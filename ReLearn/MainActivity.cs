@@ -8,6 +8,7 @@ using Plugin.Settings;
 using Android.Content;
 using Calligraphy;
 using Android.Content.Res;
+using System;
 
 namespace ReLearn
 {
@@ -51,7 +52,7 @@ namespace ReLearn
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Main);
             Toolbar toolbarMain = FindViewById<Toolbar>(Resource.Id.toolbarMain);
-            SetActionBar(toolbarMain);            
+            SetActionBar(toolbarMain);
         }
 
         public override bool OnPrepareOptionsMenu(IMenu menu)

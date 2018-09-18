@@ -56,17 +56,13 @@ namespace ReLearn
             float height = 15f * ((Bottom - Top) / 100f);
             float step_width = (Width - padding_left_right * 2) / (True + False);
 
-            Shader shader = new LinearGradient(0, Bottom - padding_bottom - height, 0, Bottom - padding_bottom, Color_Diagram_1, Color_Diagram_2, TileMode.Clamp);
+            Shader shader = new LinearGradient(0, Left + padding_left_right , Right - padding_left_right, 0, Color_Diagram_2, Color_Diagram_1, TileMode.Clamp);
             Paint Pen_F = new Paint { Color = Color.Rgb(29, 43, 59) , AntiAlias = true};
             Paint Pen_T = new Paint { AntiAlias = true };
             Pen_T.SetShader(shader);
 
             canvas.DrawRect(new RectF(Left + padding_left_right, Bottom - padding_bottom - height, Left + padding_left_right + step_width * True, Bottom - padding_bottom), Pen_T);
             canvas.DrawRect(new RectF(Left + padding_left_right + step_width * True, Bottom - padding_bottom - height, Right - padding_left_right, Bottom - padding_bottom), Pen_F);
-
-            Paint paint_border = new Paint { StrokeWidth = 2, Color = Color.Argb(250, 215, 248, 254) };
-            paint_border.SetStyle(Paint.Style.Stroke);
-            canvas.DrawRect(new RectF(Left + padding_left_right, Bottom - padding_bottom - height, Right - padding_left_right, Bottom - padding_bottom), paint_border);
         }
 
         public void DrawPieChart(Canvas canvas, float average, float sum, Color Color_Diagram_1, Color Color_Diagram_2, PointF Center, float Radius)
