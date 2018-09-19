@@ -45,7 +45,7 @@ namespace ReLearn
             List<Database_for_stats> Database_NL_and_D = database.Query<Database_for_stats>("SELECT NumberLearn, DateRecurrence FROM " + DataBase.Table_Name);
 
             Graph_Statistics Stat1 = new Graph_Statistics(this, Color.Rgb(0, 255, 255), Color.Argb(255, 50, 60, 126));
-            Graph_General_Statistics Stat2 = new Graph_General_Statistics(this, Color.Rgb(0, 255, 255), Color.Argb(255, 50, 60, 126), Database_NL_and_D);
+            Graph_General_Statistics Stat2 = new Graph_General_Statistics(this, Color.Rgb(0, 255, 255), Color.Argb(255, 50, 60, 126), Database_NL_and_D,"Words");
 
             var tab = ActionBar.NewTab();
             tab.SetIcon(Resource.Drawable.Stat1);/// icon 1

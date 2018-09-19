@@ -40,12 +40,12 @@ namespace ReLearn
         {
             The_canvas.DrawLine(left, bottom, left, bottom - height, paint);
 
-            float step = height / 20f;
-            for (int i = 0; i <= 20; i += 2)
+            float step = height / 10f;
+            for (int i = 0; i <= 10; i++)
                 The_canvas.DrawLine(left, bottom - step * i, left - 1.5f * (The_canvas.Width + The_canvas.Height) / 200, bottom - step * i, paint);
 
-            for (int i = 0; i <= 20; i += 2)
-                The_canvas.DrawText((i).ToString(), left - 5f * (The_canvas.Width + The_canvas.Height) / 200,
+            for (int i = 0; i <= 10; i++)
+                The_canvas.DrawText((i*10).ToString()+"%", left - 8f * (The_canvas.Width + The_canvas.Height) / 200,
                     bottom - step * (i) + 1.5f * (The_canvas.Width + The_canvas.Height) / 200, paint);
         }
 
@@ -60,17 +60,17 @@ namespace ReLearn
         void Diagram(List<Database_Statistics> Database_Stat, float left, float right, float bottom, float top)
         {
             float step_width = (right - left) / 10f,
-                  step_height = (bottom - top) / 20f,
+                  step_height = (bottom - top),
                   padding = 3f; // between columns
             int i = 0, n_count = Database_Stat.Count - 10;
             foreach (var s in Database_Stat)
             {
                 if (i >= n_count)
                 {
-                    Shader shader = new LinearGradient(left + 2f, bottom - step_height * 20, left + step_width - 2f, bottom, Color_Diagram_1, Color_Diagram_2, TileMode.Clamp);
+                    Shader shader = new LinearGradient(left + 2f, bottom - step_height, left + step_width - 2f, bottom, Color_Diagram_1, Color_Diagram_2, TileMode.Clamp);
                     Paint paint = new Paint { AntiAlias = true };
                     paint.SetShader(shader);
-                    The_canvas.DrawRoundRect(new RectF(left + padding, bottom - (step_height * s.True), left + step_width - padding, bottom), 0, 0, paint);
+                    The_canvas.DrawRoundRect(new RectF(left + padding, bottom - ((step_height/(s.True+s.False)) * s.True), left + step_width - padding, bottom), 0, 0, paint);
                     left = left + step_width;
                 }
                 ++i;
@@ -89,7 +89,7 @@ namespace ReLearn
 
             float h_rate = The_canvas.Height / 100f,
                   w_rate = The_canvas.Width / 100f,
-                  left = 10f * w_rate, right = 90f * w_rate,
+                  left = 14f * w_rate, right = 93f * w_rate,
                   top = 7f * h_rate, bottom = 70f * h_rate;
 
             Ordinate(left - 10f, bottom, bottom - top, paint_text);
@@ -97,7 +97,7 @@ namespace ReLearn
             Graph_layout(left, bottom, top, right);
             Diagram(Database_Stat, left, right, bottom, top);
 
-            FrameStatistics LastStat = new FrameStatistics(left, bottom + 10f * h_rate, right, 95f * h_rate, background_color);
+            FrameStatistics LastStat = new FrameStatistics(7f * w_rate, bottom + 10f * h_rate, right, 95f * h_rate, background_color);
             LastStat.DrawBorder(The_canvas, paint_border);
             if (Database_Stat.Count != 0)
             {

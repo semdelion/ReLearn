@@ -29,6 +29,7 @@ namespace ReLearn
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            Magic_constants.Get_repeat_count("Images_repeat_count");
             Additional_functions.Font();
             DataBase.Table_Name = Table_name.Flags;
             base.OnCreate(savedInstanceState);

@@ -42,8 +42,12 @@
   <string name="Today">Today</string>
   <string name="Month">Month</string>
   <string name="Average">Average</string>
-  <string name="Number_Words_Learned">Number of words learned</string>
+  <string name="Number_Learned_Words">Number of words learned</string>
   <string name="Number_Inconvenient_Words">Number of inconvenient words</string>
+  <string name="Number_Learned_Flags">Number of flags learned</string>
+  <string name="Number_Inconvenient_Flags">Number of inconvenient flags</string>
+  <string name="Number_Learned_Images">Number of images learned</string>
+  <string name="Number_Inconvenient_Images">Number of inconvenient images</string>
   <string name="Number_Correct_Answers">The total number of correct answers</string>
   <string name="Correct">Correct </string>
   <string name="Incorrect">incorrect </string>

@@ -11,16 +11,18 @@ namespace ReLearn
         Canvas The_canvas;
         Color Color_Diagram_1 { get; }
         Color Color_Diagram_2 { get; }
+        string Object_name { get;}
         List<Database_for_stats> Stats_database { get; }
         readonly Color background_color = new Color(Color.Argb(150, 16, 19, 38));
         readonly Paint paint_border = new Paint { StrokeWidth = 4, Color = Color.Argb(250, 215, 248, 254), AntiAlias = true };
         readonly Paint paint_text = new Paint { TextSize = 25, StrokeWidth = 4, Color = Color.Rgb(215, 248, 254), AntiAlias = true };
 
-        public Graph_General_Statistics(Context context, Color color_diagram_1, Color color_diagram_2, List<Database_for_stats> stats_databse) : base(context)
+        public Graph_General_Statistics(Context context, Color color_diagram_1, Color color_diagram_2, List<Database_for_stats> stats_database,string object_name ) : base(context)
         {
-            Stats_database = stats_databse;
+            Stats_database = stats_database;
             Color_Diagram_1 = color_diagram_1;
             Color_Diagram_2 = color_diagram_2;
+            Object_name = object_name;
         }
 
         float Average(List<Database_for_stats> list_stat)
@@ -139,12 +141,12 @@ namespace ReLearn
 
 
             Learned_words.ProgressLine(The_canvas, numberLearned, Stats_database.Count - numberLearned, Color_Diagram_1, Color_Diagram_2);
-            Learned_words.DrawText(The_canvas, text_size_up, Additional_functions.GetResourceString("Number_Words_Learned", this.Resources), Learned_words.Left + 7f * Learned_words.Width / 100, Learned_words.Top + 7f * Learned_words.Height / 100);
+            Learned_words.DrawText(The_canvas, text_size_up, Additional_functions.GetResourceString("Number_Learned_" + Object_name, this.Resources), Learned_words.Left + 7f * Learned_words.Width / 100, Learned_words.Top + 7f * Learned_words.Height / 100);
             Learned_words.DrawText(The_canvas, text_size_low, numberLearned + " " + Additional_functions.GetResourceString("Of", this.Resources) + " " + Stats_database.Count, Learned_words.Left + 7f * Learned_words.Width / 100, Learned_words.Top + 38f * Learned_words.Height / 100);
 
 
             Inconvenient_words.ProgressLine(The_canvas, numberInconvenient, Stats_database.Count - numberInconvenient, Color_Diagram_1, Color_Diagram_2);
-            Inconvenient_words.DrawText(The_canvas, text_size_up, Additional_functions.GetResourceString("Number_Inconvenient_Words", this.Resources), Inconvenient_words.Left + 7f * Inconvenient_words.Width / 100, Inconvenient_words.Top + 7f * Inconvenient_words.Height / 100);
+            Inconvenient_words.DrawText(The_canvas, text_size_up, Additional_functions.GetResourceString("Number_Inconvenient_"+Object_name, this.Resources), Inconvenient_words.Left + 7f * Inconvenient_words.Width / 100, Inconvenient_words.Top + 7f * Inconvenient_words.Height / 100);
             Inconvenient_words.DrawText(The_canvas, text_size_low, numberInconvenient + " " + Additional_functions.GetResourceString("Of", this.Resources) + " " + Stats_database.Count, Inconvenient_words.Left + 7f * Inconvenient_words.Width / 100, Inconvenient_words.Top + 38f * Inconvenient_words.Height / 100);
 
             Total_numbers.ProgressLine(The_canvas, numberTrue, (Database_Stat.Count * Magic_constants.repeat_count - numberTrue), Color_Diagram_1, Color_Diagram_2);

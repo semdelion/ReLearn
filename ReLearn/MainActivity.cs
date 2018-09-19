@@ -35,8 +35,11 @@ namespace ReLearn
         {
             string language = CrossSettings.Current.GetValueOrDefault("Language", null);
             if (System.String.IsNullOrEmpty(language))
+            {
                 CrossSettings.Current.AddOrUpdateValue("Language", "en");
-            language = CrossSettings.Current.GetValueOrDefault("Language", null);
+                language = "en";
+            }
+
             if (language == "en")
                 selected = Resource.Id.en;
             else if (language == "ru")

@@ -42,8 +42,12 @@
   <string name="Today">Сегодня</string>
   <string name="Month">Месяц</string>
   <string name="Average">Среднее значение</string>
-  <string name="Number_Words_Learned">Количество изученных слов</string>
+  <string name="Number_Learned_Words">Количество изученных слов</string>
   <string name="Number_Inconvenient_Words">Количество затруднительных слов</string>
+  <string name="Number_Learned_Flags">Количество изученных флагов</string>
+  <string name="Number_Inconvenient_Flags">Количество затруднительных флагов</string>
+  <string name="Number_Learned_Images">Количество изученных изображений</string>
+  <string name="Number_Inconvenient_Images">Количество затруднительных изображений</string>
   <string name="Number_Correct_Answers">Общее количество правильных ответов</string>
   <string name="Correct">Верные</string>
   <string name="Incorrect">неверные </string>

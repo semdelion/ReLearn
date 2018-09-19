@@ -16,14 +16,25 @@ namespace ReLearn
 {
     public static class Magic_constants // Маааагия!
     {
-        public static int repeat_count = 20; // количество повторений;
+        public static int repeat_count; // количество повторений;
         public static int maxLearn = 12;
         public static int numberLearn = 6;
         public static int false_answer = 3;
         public static int true_answer = 1;
-        //public static int Language = 0; // 0 - eng, 1 - rus ...
         public const string font = "fonts/Roboto-Regular.ttf";
-    }
+
+        public static void Get_repeat_count(string name)
+        {
+            if (System.String.IsNullOrEmpty(CrossSettings.Current.GetValueOrDefault(name, null)))
+                CrossSettings.Current.AddOrUpdateValue(name, "20");
+            Magic_constants.repeat_count = Convert.ToInt32(CrossSettings.Current.GetValueOrDefault(name, null));
+        }
+        public static void Set_repeat_count(string name,int count)
+        {
+            CrossSettings.Current.AddOrUpdateValue(name, Convert.ToString(count));
+            Magic_constants.repeat_count = Convert.ToInt32(CrossSettings.Current.GetValueOrDefault(name, null));
+        }
+}
 
     static class Additional_functions
     {
@@ -115,5 +126,6 @@ namespace ReLearn
                .SetFontAttrId(Resource.Attribute.fontPath)
                .Build());
         }
+        
     }
 }
