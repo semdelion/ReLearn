@@ -33,13 +33,9 @@ namespace ReLearn
 
         void Checklanguage()
         {
-            string language = CrossSettings.Current.GetValueOrDefault("Language", null);
-            if (System.String.IsNullOrEmpty(language))
-            {
+            if (System.String.IsNullOrEmpty(CrossSettings.Current.GetValueOrDefault("Language", null)))
                 CrossSettings.Current.AddOrUpdateValue("Language", "en");
-                language = "en";
-            }
-
+            string language = CrossSettings.Current.GetValueOrDefault("Language", null);
             if (language == "en")
                 selected = Resource.Id.en;
             else if (language == "ru")
@@ -101,6 +97,12 @@ namespace ReLearn
             {
                 Intent intent_about_us = new Intent(this, typeof(About_us));
                 StartActivity(intent_about_us);
+                return true;
+            }
+            if (id == Resource.Id.Settings_Menu)
+            {
+                Intent intent_Settings_Menu = new Intent(this, typeof(Settings_Menu));
+                StartActivity(intent_Settings_Menu);
                 return true;
             }
             if (id == Resource.Id.Feedback)

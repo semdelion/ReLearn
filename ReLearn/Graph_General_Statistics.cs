@@ -47,10 +47,14 @@ namespace ReLearn
 
         float Average_percent_true(List<Database_Statistics> Database_Stat)
         {
-            float sum = 0;
+            float sum_True = 0;
+            float sum_False = 0;
             foreach (var s in Database_Stat)
-                sum += s.True;
-            return (sum / (Database_Stat.Count == 0 ? 1 : Database_Stat.Count)) * (100f / Magic_constants.repeat_count);
+            {
+                sum_True += s.True;
+                sum_False += s.False;
+            }
+            return Database_Stat.Count == 0 ? 0 : (sum_True * (100 / (sum_True + sum_False)));
         }
 
         int Number_of_words_learned(List<Database_for_stats> list_stat)
@@ -76,6 +80,13 @@ namespace ReLearn
             int sum = 0;
             foreach (var s in Database_Stat)
                 sum += s.True;
+            return sum;
+        }
+        int Number_of_incorrect_answers(List<Database_Statistics> Database_Stat)
+        {
+            int sum = 0;
+            foreach (var s in Database_Stat)
+                sum += s.False;
             return sum;
         }
 
@@ -106,7 +117,8 @@ namespace ReLearn
 
             int numberLearned = Number_of_words_learned(Stats_database),
                 numberInconvenient = Number_of_words_inconvenient(Stats_database),
-                numberTrue = Number_of_correct_answers(Database_Stat);
+                numberTrue = Number_of_correct_answers(Database_Stat),
+                numberFalse = Number_of_incorrect_answers(Database_Stat);
 
 
             Vocabulary_learning.DrawBorder(The_canvas, paint_border);
@@ -149,9 +161,12 @@ namespace ReLearn
             Inconvenient_words.DrawText(The_canvas, text_size_up, Additional_functions.GetResourceString("Number_Inconvenient_"+Object_name, this.Resources), Inconvenient_words.Left + 7f * Inconvenient_words.Width / 100, Inconvenient_words.Top + 7f * Inconvenient_words.Height / 100);
             Inconvenient_words.DrawText(The_canvas, text_size_low, numberInconvenient + " " + Additional_functions.GetResourceString("Of", this.Resources) + " " + Stats_database.Count, Inconvenient_words.Left + 7f * Inconvenient_words.Width / 100, Inconvenient_words.Top + 38f * Inconvenient_words.Height / 100);
 
-            Total_numbers.ProgressLine(The_canvas, numberTrue, (Database_Stat.Count * Magic_constants.repeat_count - numberTrue), Color_Diagram_1, Color_Diagram_2);
+            Total_numbers.ProgressLine(The_canvas, numberTrue, numberFalse, Color_Diagram_1, Color_Diagram_2);
             Total_numbers.DrawText(The_canvas, text_size_up, Additional_functions.GetResourceString("Number_Correct_Answers", this.Resources), Total_numbers.Left + 7f * Total_numbers.Width / 100, Total_numbers.Top + 7f * Total_numbers.Height / 100);
-            Total_numbers.DrawText(The_canvas, text_size_low, Additional_functions.GetResourceString("Correct", this.Resources)+ " " + numberTrue + ", " + Additional_functions.GetResourceString("Incorrect", this.Resources) + " " + (Database_Stat.Count * Magic_constants.repeat_count - numberTrue) + ", " + Additional_functions.GetResourceString("Number_Of_Tests", this.Resources) + " " + Database_Stat.Count, Total_numbers.Left + 7f * Total_numbers.Width / 100, Total_numbers.Top + 38f * Total_numbers.Height / 100);
+            Total_numbers.DrawText(The_canvas, text_size_low, Additional_functions.GetResourceString("Correct", this.Resources) + " "
+                + numberTrue + ", " + Additional_functions.GetResourceString("Incorrect", this.Resources) + " " + numberFalse + ", " 
+                + Additional_functions.GetResourceString("Number_Of_Tests", this.Resources) + " " 
+                + Database_Stat.Count, Total_numbers.Left + 7f * Total_numbers.Width / 100, Total_numbers.Top + 38f * Total_numbers.Height / 100);
         }
     }
 }

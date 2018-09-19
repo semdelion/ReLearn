@@ -10,6 +10,8 @@ namespace ReLearn
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+            Magic_constants.Get_repeat_count("Language_repeat_count");
+            Magic_constants.Get_repeat_count("Images_repeat_count");
             FrameStatistics.plain = Android.Graphics.Typeface.CreateFromAsset(Assets, Magic_constants.font);
             DataBase.Install_database_from_assets(Database_Name.English_DB);
             DataBase.Install_database_from_assets(Database_Name.Flags_DB);

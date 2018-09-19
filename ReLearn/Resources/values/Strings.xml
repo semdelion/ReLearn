@@ -73,5 +73,7 @@
   <string name="support_project">Support the project</string>
   <string name="Education">Education</string>
   <string name="Home">Home</string>
-
+  <string name="Settings">Settings</string>
+  <string name="number_of_word_repeats">Number of word repeats</string>
+  <string name="number_of_image_repeats">Number of image repeats</string>
 </resources>
