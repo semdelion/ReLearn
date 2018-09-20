@@ -38,6 +38,55 @@ namespace ReLearn
 
     static class Additional_functions
     {
+        public static void Color_TextView(TextView TV, Color color)
+        {
+            int TrText = 170, // прозрачность текста и фона
+                TrBack = 10;
+            TV.SetTextColor(Color.Argb(TrText, color.R, color.G, color.B));
+            TV.SetBackgroundColor(Color.Argb(TrBack, color.R, color.G, color.B));
+        }
+
+        public static void SetColorForItems(int numberLearn, TextView TView)
+        {
+            switch (numberLearn / 3)
+            {
+                case 4:
+                    {
+                        Additional_functions.Color_TextView(TView, new Color(255, 0, 0));
+                        break;
+                    }
+                case 3:
+                    {
+                        Additional_functions.Color_TextView(TView, new Color(255, 105, 50));
+                        break;
+                    }
+                case 2:
+                    {
+                        if (numberLearn % 3 == 0)
+                            Additional_functions.Color_TextView(TView, new Color(238, 252, 255));
+                        else
+                            Additional_functions.Color_TextView(TView, new Color(255, 152, 50));
+                        break;
+                    }
+                case 1:
+                    {
+                        Additional_functions.Color_TextView(TView, new Color(197, 255, 50));
+                        break;
+                    }
+                case 0:
+                    {
+                        if (numberLearn % 3 == 0)
+                            Additional_functions.Color_TextView(TView, new Color(134, 48, 255));
+                        else
+                            Additional_functions.Color_TextView(TView, new Color(48, 255, 55));
+                        break;
+                    }
+                default:
+                    break;
+            }
+        }
+
+
         public static void Random_4_numbers(int NotI, int count, out List<int> random_numbers)
         {
             System.Random rand = new System.Random(unchecked((int)(DateTime.Now.Ticks)));

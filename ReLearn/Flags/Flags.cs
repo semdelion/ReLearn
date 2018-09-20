@@ -9,10 +9,8 @@ using Plugin.Settings;
 namespace ReLearn
 {
     [Activity(Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
-    
     class Flags : Activity
     {
-
         [Java.Interop.Export("Button_Flags_Learn_Click")]
         public void Button_Flags_Learn_Click(View v)
         {
@@ -59,6 +57,12 @@ namespace ReLearn
             {
                 Intent intent_flags_stat = new Intent(this, typeof(Flags_Stats));
                 StartActivity(intent_flags_stat);
+                return true;
+            }
+            if (id == Resource.Id.View_dictionary_image)
+            {
+                Intent intent_flags_view = new Intent(this, typeof(Flags_View_Dictionary));
+                StartActivity(intent_flags_view);
                 return true;
             }
             if (id == Android.Resource.Id.Home)

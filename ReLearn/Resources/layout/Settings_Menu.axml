@@ -31,7 +31,6 @@
 		android:layout_marginTop="30.0dp"
 		android:layout_marginRight="40.0dp"
 		android:layout_marginLeft="40.0dp" />
-
 	<SeekBar
 		android:id="@+id/SeekBarCountRepeatLenguage"
 		android:layout_marginTop="10.0dp"
@@ -43,9 +42,7 @@
 		android:maxHeight="10dp"
         android:maxWidth="10dp"
 		android:progressDrawable="@drawable/seekbar_progressbar"
-		android:thumb="@drawable/custom_thumb"
-	/>
-	/>
+		android:thumb="@drawable/custom_thumb"/>
 	<TextView
 		android:id="@+id/TextView_number_of_image_repeats"
 		android:text="@string/number_of_image_repeats"
@@ -55,8 +52,7 @@
 		android:textSize="15dp"
 		android:layout_marginTop="30.0dp"
 		android:layout_marginRight="40.0dp"
-		android:layout_marginLeft="40.0dp"
-	/>
+		android:layout_marginLeft="40.0dp"/>
 	<SeekBar
 		android:id="@+id/SeekBarCountRepeatImages"
 		android:layout_marginTop="10.0dp"
@@ -69,7 +65,15 @@
 		android:maxHeight="10dp"
         android:maxWidth="10dp"
 		android:thumbTintMode="multiply"
-		android:thumb="@drawable/custom_thumb"
-	/>
-
+		android:thumb="@drawable/custom_thumb"/>
+	<TextView
+		android:id="@+id/language"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:textColor="?android:attr/actionMenuTextColor"
+		android:textSize="20dp"
+		android:layout_marginTop="30.0dp"
+		android:layout_marginRight="40.0dp"
+		android:layout_marginLeft="40.0dp"
+		android:onClick="TextView_Language_Click"/>
 </LinearLayout>

@@ -167,7 +167,7 @@ namespace ReLearn
                 return true;
             }
             if(id == Resource.Id.Deleteword){
-                Intent intent_english_add = new Intent(this, typeof(English_Delete));
+                Intent intent_english_add = new Intent(this, typeof(English_View_Dictionary));
                 StartActivity(intent_english_add);
                 return true;
             }

@@ -12,28 +12,7 @@ tools:context=".MainActivity">
          android:id="@+id/Settings_Menu"
          android:orderInCategory="104"
          android:showAsAction="never"
-         android:title="@string/Settings"/>
-      <item
-        android:id="@+id/Language"
-        android:orderInCategory="101"
-        android:showAsAction="never"
-        android:title="@string/Language">
-        <menu>
-          <group
-            android:checkableBehavior="single">
-            <item
-              android:id="@+id/en"
-              android:orderInCategory="101"
-              android:showAsAction="never"
-              android:title="En"/>
-            <item
-             android:id="@+id/ru"
-             android:orderInCategory="100"
-             android:showAsAction="never"
-             android:title="Ru"/>
-          </group>
-        </menu>
-      </item>
+         android:title="@string/Settings"/>       
       <item
           android:id="@+id/Feedback"
           android:orderInCategory="102"

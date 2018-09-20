@@ -5,6 +5,7 @@ using System.Text;
 
 using Android.App;
 using Android.Content;
+using Android.Content.Res;
 using Android.Graphics;
 using Android.Graphics.Drawables;
 using Android.Graphics.Drawables.Shapes;
@@ -13,30 +14,71 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Calligraphy;
+using Java.Util;
 using Plugin.Settings;
 
 namespace ReLearn
 {
     [Activity(Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
-    class Settings_Menu: Activity
-    {
-        SeekBar SB_Repeat_Language;
-        SeekBar SB_Repeat_Image;
-        TextView TV_Repeat_Language;
-        TextView TV_Repeat_Image;
-        
-        protected override void OnCreate(Bundle savedInstanceState)
+    public class Settings_Menu: Activity
+    {      
+        int CheckedItem()
         {
+            if (CrossSettings.Current.GetValueOrDefault("Language", null) == "en")
+            {
+                FindViewById<TextView>(Resource.Id.language).Text = $"{Additional_functions.GetResourceString("Language", this.Resources) }:\t\t\tEnglish";
+                return 0;
+            }
+            else
+            {
+                FindViewById<TextView>(Resource.Id.language).Text = $"{Additional_functions.GetResourceString("Language", this.Resources) }:\t\t\tРусский";
+                return 1;
+            }
+        }
+
+        [Java.Interop.Export("TextView_Language_Click")]
+        public void TextView_Language_Click(View v)
+        {            
+            string[] listLanguage = { "English", "Русский" };
+            int checkedItem = CheckedItem();
+
+            AlertDialog.Builder alert = new AlertDialog.Builder(this);
+            alert.SetTitle(Additional_functions.GetResourceString("Language", this.Resources));
+            alert.SetPositiveButton("Cancel", delegate { alert.Dispose(); });
+            alert.SetSingleChoiceItems(listLanguage, checkedItem, new EventHandler<DialogClickEventArgs>(delegate (object sender, DialogClickEventArgs e) {
+                var d = (sender as Android.App.AlertDialog);
+                checkedItem = e.Which;
+                if (listLanguage[e.Which] == "English")
+                {
+                    Update_Configuration_Locale("en");          
+                    Toast.MakeText(this, Additional_functions.GetResourceString("EnIsSelected", this.Resources), ToastLength.Short).Show();
+                }
+                else
+                {
+                    Update_Configuration_Locale("ru");
+                    Toast.MakeText(this, Additional_functions.GetResourceString("RuIsSelected", this.Resources), ToastLength.Short).Show();
+                }
+                FindViewById<TextView>(Resource.Id.language).Text = $"{Additional_functions.GetResourceString("Language", this.Resources)}:\t\t\t{listLanguage[e.Which]}";
+                StartActivity(new Intent(this, typeof(Settings_Menu)));
+                this.Finish();        
+                d.Dismiss();
+            }));          
+            alert.Show();
+        }
+
+        protected override void OnCreate(Bundle savedInstanceState)
+        {          
             Additional_functions.Font();
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Settings_Menu);
+            CheckedItem();
             Toolbar toolbarSettings = FindViewById<Toolbar>(Resource.Id.toolbarSetting);
             SetActionBar(toolbarSettings);
-            SB_Repeat_Language = FindViewById<SeekBar>(Resource.Id.SeekBarCountRepeatLenguage);
-            TV_Repeat_Language = FindViewById<TextView>(Resource.Id.TextView_number_of_word_repeats);
 
-            SB_Repeat_Image = FindViewById<SeekBar>(Resource.Id.SeekBarCountRepeatImages);
-            TV_Repeat_Image = FindViewById<TextView>(Resource.Id.TextView_number_of_image_repeats);
+            SeekBar SB_Repeat_Language = FindViewById<SeekBar>(Resource.Id.SeekBarCountRepeatLenguage);
+            SeekBar SB_Repeat_Image = FindViewById<SeekBar>(Resource.Id.SeekBarCountRepeatImages);
+            TextView TV_Repeat_Language = FindViewById<TextView>(Resource.Id.TextView_number_of_word_repeats);
+            TextView TV_Repeat_Image = FindViewById<TextView>(Resource.Id.TextView_number_of_image_repeats);
 
             SB_Repeat_Language.Progress = Convert.ToInt32(CrossSettings.Current.GetValueOrDefault("Language_repeat_count", null)) - 5; 
             SB_Repeat_Image.Progress = Convert.ToInt32(CrossSettings.Current.GetValueOrDefault("Images_repeat_count", null)) - 5;
@@ -55,17 +97,26 @@ namespace ReLearn
                 TV_Repeat_Image.Text = Additional_functions.GetResourceString("number_of_image_repeats", this.Resources) + " " + Convert.ToString(5 + e.Progress);
                 Magic_constants.Set_repeat_count("Images_repeat_count",  e.Progress + 5);
             };
-
         }
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
             int id = item.ItemId;
             if (id == Android.Resource.Id.Home)
             {
+                StartActivity(new Intent(this, typeof(MainActivity)));
                 this.Finish();
                 return true;
             }
             return true;
+        }
+
+        public void Update_Configuration_Locale(string language)
+        {                     
+            CrossSettings.Current.AddOrUpdateValue("Language", language);
+            Locale locale = new Locale(language);
+            Configuration conf = new Configuration { Locale = locale };
+            Resources.UpdateConfiguration(conf, Resources.DisplayMetrics);
+            //this.CreateConfigurationContext(conf);
         }
 
         protected override void AttachBaseContext(Context newbase) => base.AttachBaseContext(CalligraphyContextWrapper.Wrap(newbase));

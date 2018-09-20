@@ -30,57 +30,14 @@ namespace ReLearn.Resources
         
         public override long GetItemId(int position)=> list[position].NumberLearn;
 
-        void Color_TextView(TextView TV, Color color)
-        {
-            int TrText = 170, // прозрачность текста и фона
-                TrBack = 10;
-            TV.SetTextColor(Color.Argb(TrText, color.R, color.G, color.B));
-            TV.SetBackgroundColor(Color.Argb(TrBack, color.R, color.G, color.B));
-        }
 
         public override View GetView(int position, View convertView, ViewGroup parent)
         {
-            var view = convertView ?? activity.LayoutInflater.Inflate(Resource.Layout.del_list, parent, false);
-            var TView = view.FindViewById<TextView>(Resource.Id.textView1);
-            
-            switch (list[position].NumberLearn / 3)
-            {
-                case 4:
-                    {
-                        Color_TextView(TView, new Color( 255, 0, 0));
-                        break;
-                    }
-                case 3:
-                    {
-                        Color_TextView(TView, new Color(255, 105, 50));
-                        break;
-                    }
-                case 2:
-                    {
-                        if (list[position].NumberLearn % 3 == 0)
-                            Color_TextView(TView, new Color(238, 252, 255));
-                        else
-                            Color_TextView(TView, new Color(255, 152, 50));
-                        break;
-                    }
-                case 1:
-                    {
-                        Color_TextView(TView, new Color(197, 255, 50));
-                        break;
-                    }
-                case 0:
-                    {
-                        if (list[position].NumberLearn % 3 == 0)
-                            Color_TextView(TView, new Color(134, 48, 255));
-                        else
-                            Color_TextView(TView, new Color(48, 255, 55));
-                        break;
-                    }
-                default:
-                    break; 
+            var view = convertView ?? activity.LayoutInflater.Inflate(Resource.Layout.item_view_dictionary_word, parent, false);
+            var TView = view.FindViewById<TextView>(Resource.Id.item_view_dictionary);
 
-            }
-
+            Additional_functions.SetColorForItems(list[position].NumberLearn, TView);
+         
             TView.Text = list[position].Word +"  -  "+ list[position].TranslationWord;
             return view;
         }

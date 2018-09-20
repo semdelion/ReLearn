@@ -15,7 +15,7 @@ tools:context=".MainActivity">
         android:title="@string/View_dictionary"/>
       <item
         android:id="@+id/Stats_Flags"
-        android:orderInCategory="101"
+        android:orderInCategory="100"
         android:showAsAction="always"
         android:title="@string/Statistics"/>
     </menu>
