@@ -129,8 +129,8 @@ namespace ReLearn
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f04004a
-			public const int ABC = 2130968650;
+			// aapt resource value: 0x7f04004b
+			public const int ABC = 2130968651;
 			
 			// aapt resource value: 0x7f04001f
 			public const int Button_Speak_Eng = 2130968607;
@@ -141,11 +141,11 @@ namespace ReLearn
 			// aapt resource value: 0x7f040043
 			public const int Deleteword = 2130968643;
 			
-			// aapt resource value: 0x7f04004f
-			public const int Feedback = 2130968655;
+			// aapt resource value: 0x7f040050
+			public const int Feedback = 2130968656;
 			
-			// aapt resource value: 0x7f04004c
-			public const int Language = 2130968652;
+			// aapt resource value: 0x7f04004d
+			public const int Language = 2130968653;
 			
 			// aapt resource value: 0x7f040017
 			public const int Repeat_toolbar_textview = 2130968599;
@@ -159,14 +159,14 @@ namespace ReLearn
 			// aapt resource value: 0x7f04003a
 			public const int SeekBarCountRepeatLenguage = 2130968634;
 			
-			// aapt resource value: 0x7f04004b
-			public const int Settings_Menu = 2130968651;
+			// aapt resource value: 0x7f04004c
+			public const int Settings_Menu = 2130968652;
 			
 			// aapt resource value: 0x7f040044
 			public const int Stats = 2130968644;
 			
-			// aapt resource value: 0x7f040045
-			public const int Stats_Flags = 2130968645;
+			// aapt resource value: 0x7f040046
+			public const int Stats_Flags = 2130968646;
 			
 			// aapt resource value: 0x7f04003b
 			public const int TextView_number_of_image_repeats = 2130968635;
@@ -174,11 +174,14 @@ namespace ReLearn
 			// aapt resource value: 0x7f040039
 			public const int TextView_number_of_word_repeats = 2130968633;
 			
-			// aapt resource value: 0x7f040050
-			public const int about_us = 2130968656;
+			// aapt resource value: 0x7f040045
+			public const int View_dictionary_image = 2130968645;
 			
-			// aapt resource value: 0x7f040046
-			public const int action_search = 2130968646;
+			// aapt resource value: 0x7f040051
+			public const int about_us = 2130968657;
+			
+			// aapt resource value: 0x7f040047
+			public const int action_search = 2130968647;
 			
 			// aapt resource value: 0x7f040020
 			public const int button_E_Next = 2130968608;
@@ -252,8 +255,8 @@ namespace ReLearn
 			// aapt resource value: 0x7f040000
 			public const int calligraphy_tag_id = 2130968576;
 			
-			// aapt resource value: 0x7f040049
-			public const int decrease = 2130968649;
+			// aapt resource value: 0x7f04004a
+			public const int decrease = 2130968650;
 			
 			// aapt resource value: 0x7f040023
 			public const int editText_Feedback = 2130968611;
@@ -264,8 +267,8 @@ namespace ReLearn
 			// aapt resource value: 0x7f04000b
 			public const int editText_translation_word = 2130968587;
 			
-			// aapt resource value: 0x7f04004d
-			public const int en = 2130968653;
+			// aapt resource value: 0x7f04004e
+			public const int en = 2130968654;
 			
 			// aapt resource value: 0x7f04002a
 			public const int imageView_Flags_learn = 2130968618;
@@ -273,8 +276,8 @@ namespace ReLearn
 			// aapt resource value: 0x7f04002f
 			public const int imageView_Flags_repeat = 2130968623;
 			
-			// aapt resource value: 0x7f040048
-			public const int increase = 2130968648;
+			// aapt resource value: 0x7f040049
+			public const int increase = 2130968649;
 			
 			// aapt resource value: 0x7f040015
 			public const int linearLayout1 = 2130968597;
@@ -297,11 +300,11 @@ namespace ReLearn
 			// aapt resource value: 0x7f04003e
 			public const int menuDatabase_PopularWords = 2130968638;
 			
-			// aapt resource value: 0x7f040047
-			public const int menuDelSort = 2130968647;
+			// aapt resource value: 0x7f040048
+			public const int menuDelSort = 2130968648;
 			
-			// aapt resource value: 0x7f04004e
-			public const int ru = 2130968654;
+			// aapt resource value: 0x7f04004f
+			public const int ru = 2130968655;
 			
 			// aapt resource value: 0x7f040018
 			public const int scrollView1 = 2130968600;

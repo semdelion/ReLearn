@@ -9,6 +9,11 @@ tools:context=".MainActivity">
   android:showAsAction="always">
     <menu>
       <item
+        android:id="@+id/View_dictionary_image"
+        android:orderInCategory="101"
+        android:showAsAction="never"
+        android:title="@string/View_dictionary"/>
+      <item
         android:id="@+id/Stats_Flags"
         android:orderInCategory="101"
         android:showAsAction="always"

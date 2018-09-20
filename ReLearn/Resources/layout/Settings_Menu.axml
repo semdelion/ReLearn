@@ -71,4 +71,5 @@
 		android:thumbTintMode="multiply"
 		android:thumb="@drawable/custom_thumb"
 	/>
+
 </LinearLayout>
