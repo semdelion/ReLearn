@@ -1741,8 +1741,8 @@ namespace ReLearn
 			// aapt resource value: 0x7F020079
 			public const int ABC = 2130837625;
 			
-			// aapt resource value: 0x7F020084
-			public const int about_us = 2130837636;
+			// aapt resource value: 0x7F020082
+			public const int about_us = 2130837634;
 			
 			// aapt resource value: 0x7F0A005A
 			public const int action0 = 2131361882;
@@ -1951,9 +1951,6 @@ namespace ReLearn
 			// aapt resource value: 0x7F0A004A
 			public const int edit_query = 2131361866;
 			
-			// aapt resource value: 0x7F020081
-			public const int en = 2130837633;
-			
 			// aapt resource value: 0x7F0A001C
 			public const int end = 2131361820;
 			
@@ -1966,8 +1963,8 @@ namespace ReLearn
 			// aapt resource value: 0x7F0A0029
 			public const int expand_activities_button = 2131361833;
 			
-			// aapt resource value: 0x7F020083
-			public const int Feedback = 2130837635;
+			// aapt resource value: 0x7F020081
+			public const int Feedback = 2130837633;
 			
 			// aapt resource value: 0x7F0A0005
 			public const int home = 2131361797;
@@ -2094,9 +2091,6 @@ namespace ReLearn
 			
 			// aapt resource value: 0x7F0A0061
 			public const int right_side = 2131361889;
-			
-			// aapt resource value: 0x7F020082
-			public const int ru = 2130837634;
 			
 			// aapt resource value: 0x7F0A0016
 			public const int screen = 2131361814;

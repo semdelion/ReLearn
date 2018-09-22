@@ -12,7 +12,7 @@ namespace ReLearn
     [Activity(Label ="", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     class English : Activity
     {
-        private int selected = Resource.Id.menuDatabase_PopularWords;
+        private int selected = 0;
 
         [Java.Interop.Export("Button_English_Add_Click")]
         public void Button_English_Add_Click(View v)
@@ -78,22 +78,28 @@ namespace ReLearn
             SetActionBar(toolbarMain);
             ActionBar.SetDisplayHomeAsUpEnabled(true);
 
-            if (String.IsNullOrEmpty(DataBase.Table_Name))
-            {
+            DataBase.Table_Name = GetDatabaseEnglish();
+            SetSelected();
+            DataBase.Update_English_DB();
+        }
+
+        string GetDatabaseEnglish()
+        {
+            if (String.IsNullOrEmpty(CrossSettings.Current.GetValueOrDefault("DictionaryName", null)))
                 CrossSettings.Current.AddOrUpdateValue("DictionaryName", Table_name.Popular_Words);
-                selected = Resource.Id.menuDatabase_PopularWords;
-            }
+             return CrossSettings.Current.GetValueOrDefault("DictionaryName", null);
+        }
 
-            DataBase.Table_Name = CrossSettings.Current.GetValueOrDefault("DictionaryName", null);
-
+        void SetSelected()
+        {
             if (DataBase.Table_Name == "My_Dictionary")
                 selected = Resource.Id.menuDatabase_MyDictionary;
             else if (DataBase.Table_Name == "Home")
                 selected = Resource.Id.menuDatabase_Home;
             else if (DataBase.Table_Name == "Education")
                 selected = Resource.Id.menuDatabase_Education;
-            
-            DataBase.Update_English_DB();
+            else
+                selected = Resource.Id.menuDatabase_PopularWords;
         }
 
         public override bool OnPrepareOptionsMenu(IMenu menu)

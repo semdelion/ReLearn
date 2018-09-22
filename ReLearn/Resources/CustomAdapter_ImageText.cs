@@ -10,6 +10,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Java.IO;
 using Java.Lang;
 using Plugin.Settings;
 
@@ -44,7 +45,13 @@ namespace ReLearn
             var TextView = view.FindViewById<TextView>(Resource.Id.textView_item_view_dictionary);
             var ImageView = view.FindViewById<ImageView>(Resource.Id.imageView_item_view_dictionary);
 
-            var his = Application.Context.Assets.Open("ImageFlags/" + list[position].Image_name + ".png");
+            //var his = Application.Context.Assets.Open("ImageFlags/" + list[position].Image_name + ".png");
+            //Bitmap bitmap = BitmapFactory.DecodeStream(his);
+            //var stream = new System.IO.MemoryStream();
+            //bitmap.Compress(Bitmap.CompressFormat.Png, 10, stream);       
+            //ImageView.SetImageBitmap(bitmap);
+
+            var his = Application.Context.Assets.Open("ImageFlagsJpeg/" + list[position].Image_name + ".jpg");
             Bitmap bitmap = BitmapFactory.DecodeStream(his);
             ImageView.SetImageBitmap(bitmap);
 

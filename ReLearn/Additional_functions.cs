@@ -11,12 +11,14 @@ using Android.Views;
 using Android.Widget;
 using Android.Graphics;
 using Plugin.Settings;
+using Java.Util;
+using Android.Content.Res;
 
 namespace ReLearn
 {
     public static class Magic_constants // Маааагия!
     {
-        public static int repeat_count; // количество повторений;
+        public static int repeat_count = 1; // количество повторений;
         public static int maxLearn = 12;
         public static int numberLearn = 6;
         public static int false_answer = 3;
@@ -34,7 +36,7 @@ namespace ReLearn
             CrossSettings.Current.AddOrUpdateValue(name, Convert.ToString(count));
             Magic_constants.repeat_count = Convert.ToInt32(CrossSettings.Current.GetValueOrDefault(name, null));
         }
-}
+    }
 
     static class Additional_functions
     {
@@ -175,6 +177,14 @@ namespace ReLearn
                .SetFontAttrId(Resource.Attribute.fontPath)
                .Build());
         }
-        
+
+        public static void Update_Configuration_Locale(string str, Android.Content.Res.Resources resource)
+        {
+            Locale locale = new Locale(str);
+            Configuration conf = new Configuration { Locale = locale };
+           // resource.UpdateConfiguration(conf, resource.DisplayMetrics);
+            //this.CreateConfigurationContext(conf);
+        }
+
     }
 }

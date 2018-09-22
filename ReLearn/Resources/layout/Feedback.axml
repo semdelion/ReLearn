@@ -40,6 +40,8 @@
 				android:defaultFocusHighlightEnabled="true"/>
 			<EditText
 				android:hint="@string/Enter_Message"
+				android:textColorHint="#939393"	
+				android:backgroundTint="#d7f8fe"
 				android:layout_width="match_parent"
 				android:layout_height="229.5dp"
 				android:minLines="2"

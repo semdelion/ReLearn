@@ -79,7 +79,7 @@ namespace ReLearn
 
         protected override void OnDraw(Canvas canvas)
         {
-            The_canvas = canvas;
+            The_canvas = canvas;            
             var database = DataBase.Connect(Database_Name.Statistics);
             var Database_Stat = database.Query<Database_Statistics>("SELECT * FROM " + DataBase.Table_Name + "_Statistics");// количество строк в БД
             base.OnDraw(The_canvas);

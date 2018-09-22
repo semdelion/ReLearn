@@ -27,18 +27,11 @@ namespace ReLearn
         {
             Intent intent_flags = new Intent(this, typeof(Flags));
             StartActivity(intent_flags);
-        }
-
-        void Checklanguage()
-        {
-            if (System.String.IsNullOrEmpty(CrossSettings.Current.GetValueOrDefault("Language", null)))
-                CrossSettings.Current.AddOrUpdateValue("Language", "en");
-            Update_Configuration_Locale(CrossSettings.Current.GetValueOrDefault("Language", null));
-        }
+        }    
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            Checklanguage();          
+          
             Additional_functions.Font();           
             Window.SetBackgroundDrawable(GetDrawable(Resource.Drawable.backgroundMain));
             base.OnCreate(savedInstanceState);
@@ -81,15 +74,7 @@ namespace ReLearn
                 return true;
             }
             return true;
-        }
-
-        public void Update_Configuration_Locale(string str)
-        {
-            Locale locale = new Locale(str);
-            Configuration conf = new Configuration { Locale = locale };
-            Resources.UpdateConfiguration(conf, Resources.DisplayMetrics);
-            //this.CreateConfigurationContext(conf);
-        }
+        }      
 
         protected override void AttachBaseContext(Context newbase) => base.AttachBaseContext(CalligraphyContextWrapper.Wrap(newbase));
     }

@@ -1,10 +1,8 @@
-﻿using System;
-using Android.App;
+﻿using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Views;
 using Android.Widget;
-using Plugin.Settings;
 
 namespace ReLearn
 {
@@ -36,11 +34,6 @@ namespace ReLearn
             SetActionBar(toolbarMain);
             ActionBar.SetDisplayHomeAsUpEnabled(true);
 
-            //Magic_constants.Language = Convert.ToInt32(CrossSettings.Current.GetValueOrDefault("ImageLanguage", null));
-            //if (Magic_constants.Language == 0)
-            //    selected = Resource.Id.language_eng;
-            //else
-            //    selected = Resource.Id.language_rus;
             DataBase.Update_Flags_DB();          
         }
 

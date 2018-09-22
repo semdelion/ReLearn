@@ -22,6 +22,8 @@
 	</Toolbar>
 	<EditText
 		android:hint="@string/Word_English"
+		android:textColorHint="#939393"	
+		android:backgroundTint="#d7f8fe"
 		android:layout_width="match_parent"
 		android:layout_height="100dp"
 		android:minLines="2"
@@ -36,6 +38,8 @@
 	/>
 	<EditText
 		android:hint="@string/Word_Rus"
+		android:textColorHint="#939393"
+		android:backgroundTint="#d7f8fe"
 		android:layout_width="match_parent"
 		android:layout_height="100dp"
 		android:minLines="2"

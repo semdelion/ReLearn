@@ -9,6 +9,7 @@ namespace ReLearn
     {     
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            Checklanguage();
             base.OnCreate(savedInstanceState);
             Magic_constants.Get_repeat_count("Language_repeat_count");
             Magic_constants.Get_repeat_count("Images_repeat_count");
@@ -19,6 +20,13 @@ namespace ReLearn
             Intent intent = new Intent(this, typeof(MainActivity));        
             StartActivity(typeof(MainActivity));
             this.Finish();
+        }
+
+        void Checklanguage()
+        {
+            if (System.String.IsNullOrEmpty(Plugin.Settings.CrossSettings.Current.GetValueOrDefault("Language", null)))
+                Plugin.Settings.CrossSettings.Current.AddOrUpdateValue("Language", "en");
+            Additional_functions.Update_Configuration_Locale(Plugin.Settings.CrossSettings.Current.GetValueOrDefault("Language", null), this.Resources);
         }
     }
 }

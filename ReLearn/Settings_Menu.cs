@@ -50,14 +50,15 @@ namespace ReLearn
                 checkedItem = e.Which;
                 if (listLanguage[e.Which] == "English")
                 {
-                    Update_Configuration_Locale("en");          
+                    CrossSettings.Current.AddOrUpdateValue("Language", "en");     
                     Toast.MakeText(this, Additional_functions.GetResourceString("EnIsSelected", this.Resources), ToastLength.Short).Show();
                 }
                 else
                 {
-                    Update_Configuration_Locale("ru");
+                    CrossSettings.Current.AddOrUpdateValue("Language", "ru");
                     Toast.MakeText(this, Additional_functions.GetResourceString("RuIsSelected", this.Resources), ToastLength.Short).Show();
                 }
+                Additional_functions.Update_Configuration_Locale(Plugin.Settings.CrossSettings.Current.GetValueOrDefault("Language", null), this.Resources);
                 FindViewById<TextView>(Resource.Id.language).Text = $"{Additional_functions.GetResourceString("Language", this.Resources)}:\t\t\t{listLanguage[e.Which]}";
                 StartActivity(new Intent(this, typeof(Settings_Menu)));
                 this.Finish();        
@@ -98,6 +99,7 @@ namespace ReLearn
                 Magic_constants.Set_repeat_count("Images_repeat_count",  e.Progress + 5);
             };
         }
+
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
             int id = item.ItemId;
@@ -108,16 +110,7 @@ namespace ReLearn
                 return true;
             }
             return true;
-        }
-
-        public void Update_Configuration_Locale(string language)
-        {                     
-            CrossSettings.Current.AddOrUpdateValue("Language", language);
-            Locale locale = new Locale(language);
-            Configuration conf = new Configuration { Locale = locale };
-            Resources.UpdateConfiguration(conf, Resources.DisplayMetrics);
-            //this.CreateConfigurationContext(conf);
-        }
+        }    
 
         protected override void AttachBaseContext(Context newbase) => base.AttachBaseContext(CalligraphyContextWrapper.Wrap(newbase));
     }

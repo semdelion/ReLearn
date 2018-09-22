@@ -18,7 +18,6 @@ namespace ReLearn
         {      
             Additional_functions.Font();
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.English_Stat);
 
             Typeface face = Typeface.CreateFromAsset(Assets, Magic_constants.font);
             TextView textView = new TextView(ApplicationContext)
@@ -39,7 +38,7 @@ namespace ReLearn
             Window.SetStatusBarColor(Android.Graphics.Color.Argb(128, 0, 0, 0));
             ActionBar.NavigationMode = ActionBarNavigationMode.Tabs;
             SetContentView(Resource.Layout.English_Stat);
-       
+
             var database = DataBase.Connect(Database_Name.English_DB);
             ActionBar.SetStackedBackgroundDrawable(new ColorDrawable(Color.Transparent));
             List<Database_for_stats> Database_NL_and_D = database.Query<Database_for_stats>("SELECT NumberLearn, DateRecurrence FROM " + DataBase.Table_Name);
