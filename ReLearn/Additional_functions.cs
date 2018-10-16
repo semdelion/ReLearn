@@ -182,7 +182,7 @@ namespace ReLearn
         {
             Locale locale = new Locale(str);
             Configuration conf = new Configuration { Locale = locale };
-           // resource.UpdateConfiguration(conf, resource.DisplayMetrics);
+            resource.UpdateConfiguration(conf, resource.DisplayMetrics);
             //this.CreateConfigurationContext(conf);
         }
 
