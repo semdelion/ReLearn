@@ -7,11 +7,12 @@ using Android.OS;
 using Android.Views;
 using Android.Widget;
 using Android.Graphics;
+using Android.Support.V7.App;
 
 namespace ReLearn
 {
     [Activity(Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
-    class Flags_Repeat : Activity
+    class Flags_Repeat : AppCompatActivity
     {
         ImageView ImageView_image;
         Button Button1;
@@ -156,10 +157,10 @@ namespace ReLearn
             Additional_functions.Font();
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Flags_Repeat);
-            var toolbarMain = FindViewById<Toolbar>(Resource.Id.toolbarFlagsRepeat);
-            Title_textView = toolbarMain.FindViewById<TextView>(Resource.Id.Repeat_toolbar_textview_fl); 
-            SetActionBar(toolbarMain);
-            ActionBar.SetDisplayHomeAsUpEnabled(true);
+            var toolbarMain = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbarFlagsRepeat);
+            Title_textView = toolbarMain.FindViewById<TextView>(Resource.Id.Repeat_toolbar_textview_fl);
+            SetSupportActionBar(toolbarMain);
+            SupportActionBar.SetDisplayHomeAsUpEnabled(true);
             Statistics.Statistics_update();
             ImageView_image = FindViewById<ImageView>(Resource.Id.imageView_Flags_repeat);
             Button1 = FindViewById<Button>(Resource.Id.button_F_choice1);

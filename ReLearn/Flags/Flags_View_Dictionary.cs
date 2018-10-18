@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -10,11 +9,12 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Plugin.Settings;
+using Android.Support.V7.App;
 
 namespace ReLearn
 {
     [Activity(Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
-    class Flags_View_Dictionary : Activity
+    class Flags_View_Dictionary : AppCompatActivity
     {
         ListView listView_dictionary;
         List<Database_images> dataBase;
@@ -24,9 +24,9 @@ namespace ReLearn
             Additional_functions.Font();
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.English_View_Dictionary);
-            var toolbarMain = FindViewById<Toolbar>(Resource.Id.toolbarEnglishDelete);
-            SetActionBar(toolbarMain);
-            ActionBar.SetDisplayHomeAsUpEnabled(true); // отображаем кнопку домой
+            var toolbarMain = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbarEnglishDelete);
+            SetSupportActionBar(toolbarMain);
+            SupportActionBar.SetDisplayHomeAsUpEnabled(true); // отображаем кнопку домой
 
             listView_dictionary = FindViewById<ListView>(Resource.Id.listView_dictionary);
 
@@ -64,16 +64,15 @@ namespace ReLearn
                 this.Finish();
             }
             return true;
-        }       
+        }
 
-        public override bool OnCreateOptionsMenu(IMenu menu)
+
+        public override bool OnPrepareOptionsMenu(IMenu menu)
         {
-            this.MenuInflater.Inflate(Resource.Menu.search, menu);
-            var searchItem = menu.FindItem(Resource.Id.action_search);   
-            
-            SearchView _searchView = searchItem.ActionView.JavaCast<Android.Widget.SearchView>();
+            MenuInflater.Inflate(Resource.Menu.search, menu);
+            var searchItem = menu.FindItem(Resource.Id.action_search);
 
-            _searchView.SetInputType(Android.Text.InputTypes.TextFlagCapWords);////?
+            var _searchView = searchItem.ActionView.JavaCast<Android.Support.V7.Widget.SearchView>();
 
             _searchView.QueryTextChange += (sender, e) =>
             {
@@ -83,18 +82,18 @@ namespace ReLearn
                 {
                     List<Database_images> FD = new List<Database_images>();
                     if (CrossSettings.Current.GetValueOrDefault("Language", null) == "en")
-                        FD = SearchWithGetTypeField("Name_image_en", e);                    
-                    else                    
+                        FD = SearchWithGetTypeField("Name_image_en", e);
+                    else
                         FD = SearchWithGetTypeField("Name_image_ru", e);
 
                     var ad = new CustomAdapter_ImageText(this, FD);
-                    listView_dictionary.Adapter = ad;                   
+                    listView_dictionary.Adapter = ad;
                 }
-            };           
-            return base.OnCreateOptionsMenu(menu);
+            };
+            return true;
         }
 
-        public List<Database_images> SearchWithGetTypeField(string nameField, SearchView.QueryTextChangeEventArgs e)
+        public List<Database_images> SearchWithGetTypeField(string nameField, Android.Support.V7.Widget.SearchView.QueryTextChangeEventArgs e)
         {
             List<Database_images> FD = new List<Database_images>();
             foreach (var image in dataBase)

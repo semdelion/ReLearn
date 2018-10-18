@@ -61,6 +61,12 @@ namespace ReLearn
 			// aapt resource value: 0x7F040009
 			public const int abc_slide_out_top = 2130968585;
 			
+			// aapt resource value: 0x7F01000B
+			public const int tooltip_enter = 2130771979;
+			
+			// aapt resource value: 0x7F01000C
+			public const int tooltip_exit = 2130771980;
+			
 			static Animation()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
@@ -194,6 +200,9 @@ namespace ReLearn
 			// aapt resource value: 0x7F01009F
 			public const int alpha = 2130772127;
 			
+			// aapt resource value: 0x7F040029
+			public const int alphabeticModifiers = 2130968617;
+			
 			// aapt resource value: 0x7F0100A6
 			public const int arrowHeadLength = 2130772134;
 			
@@ -202,6 +211,21 @@ namespace ReLearn
 			
 			// aapt resource value: 0x7F010090
 			public const int autoCompleteTextViewStyle = 2130772112;
+			
+			// aapt resource value: 0x7F04002D
+			public const int autoSizeMaxTextSize = 2130968621;
+			
+			// aapt resource value: 0x7F04002E
+			public const int autoSizeMinTextSize = 2130968622;
+			
+			// aapt resource value: 0x7F04002F
+			public const int autoSizePresetSizes = 2130968623;
+			
+			// aapt resource value: 0x7F040030
+			public const int autoSizeStepGranularity = 2130968624;
+			
+			// aapt resource value: 0x7F040031
+			public const int autoSizeTextType = 2130968625;
 			
 			// aapt resource value: 0x7F01000D
 			public const int background = 2130771981;
@@ -296,6 +320,9 @@ namespace ReLearn
 			// aapt resource value: 0x7F010081
 			public const int colorControlNormal = 2130772097;
 			
+			// aapt resource value: 0x7F040051
+			public const int colorError = 2130968657;
+			
 			// aapt resource value: 0x7F01007E
 			public const int colorPrimary = 2130772094;
 			
@@ -307,6 +334,9 @@ namespace ReLearn
 			
 			// aapt resource value: 0x7F0100C0
 			public const int commitIcon = 2130772160;
+			
+			// aapt resource value: 0x7F040056
+			public const int contentDescription = 2130968662;
 			
 			// aapt resource value: 0x7F010018
 			public const int contentInsetEnd = 2130771992;
@@ -383,8 +413,38 @@ namespace ReLearn
 			// aapt resource value: 0x7F010021
 			public const int expandActivityOverflowButtonDrawable = 2130772001;
 			
+			// aapt resource value: 0x7F040001
+			public const int font = 2130968577;
+			
+			// aapt resource value: 0x7F040071
+			public const int fontFamily = 2130968689;
+			
 			// aapt resource value: 0x7F010001
 			public const int fontPath = 2130771969;
+			
+			// aapt resource value: 0x7F040002
+			public const int fontProviderAuthority = 2130968578;
+			
+			// aapt resource value: 0x7F040003
+			public const int fontProviderCerts = 2130968579;
+			
+			// aapt resource value: 0x7F040004
+			public const int fontProviderFetchStrategy = 2130968580;
+			
+			// aapt resource value: 0x7F040005
+			public const int fontProviderFetchTimeout = 2130968581;
+			
+			// aapt resource value: 0x7F040006
+			public const int fontProviderPackage = 2130968582;
+			
+			// aapt resource value: 0x7F040007
+			public const int fontProviderQuery = 2130968583;
+			
+			// aapt resource value: 0x7F040008
+			public const int fontStyle = 2130968584;
+			
+			// aapt resource value: 0x7F040009
+			public const int fontWeight = 2130968585;
 			
 			// aapt resource value: 0x7F0100A5
 			public const int gapBetweenBars = 2130772133;
@@ -409,6 +469,12 @@ namespace ReLearn
 			
 			// aapt resource value: 0x7F0100B8
 			public const int iconifiedByDefault = 2130772152;
+			
+			// aapt resource value: 0x7F040081
+			public const int iconTint = 2130968705;
+			
+			// aapt resource value: 0x7F040082
+			public const int iconTintMode = 2130968706;
 			
 			// aapt resource value: 0x7F01006C
 			public const int imageButtonStyle = 2130772076;
@@ -484,6 +550,9 @@ namespace ReLearn
 			
 			// aapt resource value: 0x7F010005
 			public const int navigationMode = 2130771973;
+			
+			// aapt resource value: 0x7F04009D
+			public const int numericModifiers = 2130968733;
 			
 			// aapt resource value: 0x7F0100B3
 			public const int overlapAnchor = 2130772147;
@@ -638,6 +707,9 @@ namespace ReLearn
 			// aapt resource value: 0x7F010078
 			public const int textAppearanceListItem = 2130772088;
 			
+			// aapt resource value: 0x7F0400D1
+			public const int textAppearanceListItemSecondary = 2130968785;
+			
 			// aapt resource value: 0x7F010079
 			public const int textAppearanceListItemSmall = 2130772089;
 			
@@ -683,6 +755,12 @@ namespace ReLearn
 			// aapt resource value: 0x7F01002B
 			public const int tickMarkTintMode = 2130772011;
 			
+			// aapt resource value: 0x7F0400E1
+			public const int tint = 2130968801;
+			
+			// aapt resource value: 0x7F0400E2
+			public const int tintMode = 2130968802;
+			
 			// aapt resource value: 0x7F010004
 			public const int title = 2130771972;
 			
@@ -718,6 +796,15 @@ namespace ReLearn
 			
 			// aapt resource value: 0x7F010066
 			public const int toolbarStyle = 2130772070;
+			
+			// aapt resource value: 0x7F0400EF
+			public const int tooltipForegroundColor = 2130968815;
+			
+			// aapt resource value: 0x7F0400F0
+			public const int tooltipFrameBackground = 2130968816;
+			
+			// aapt resource value: 0x7F0400F1
+			public const int tooltipText = 2130968817;
 			
 			// aapt resource value: 0x7F0100C6
 			public const int track = 2130772166;
@@ -931,6 +1018,9 @@ namespace ReLearn
 			// aapt resource value: 0x7F090016
 			public const int dim_foreground_material_light = 2131296278;
 			
+			// aapt resource value: 0x7F06002B
+			public const int error_color_material = 2131099691;
+			
 			// aapt resource value: 0x7F090017
 			public const int foreground_material_dark = 2131296279;
 			
@@ -1047,6 +1137,12 @@ namespace ReLearn
 			
 			// aapt resource value: 0x7F09003A
 			public const int switch_thumb_normal_material_light = 2131296314;
+			
+			// aapt resource value: 0x7F060052
+			public const int tooltip_background_dark = 2131099730;
+			
+			// aapt resource value: 0x7F060053
+			public const int tooltip_background_light = 2131099731;
 			
 			static Color()
 			{
@@ -1283,6 +1379,21 @@ namespace ReLearn
 			// aapt resource value: 0x7F060004
 			public const int abc_text_size_title_material_toolbar = 2131099652;
 			
+			// aapt resource value: 0x7F080001
+			public const int compat_button_inset_horizontal_material = 2131230721;
+			
+			// aapt resource value: 0x7F080002
+			public const int compat_button_inset_vertical_material = 2131230722;
+			
+			// aapt resource value: 0x7F080003
+			public const int compat_button_padding_horizontal_material = 2131230723;
+			
+			// aapt resource value: 0x7F080004
+			public const int compat_button_padding_vertical_material = 2131230724;
+			
+			// aapt resource value: 0x7F080005
+			public const int compat_control_corner_material = 2131230725;
+			
 			// aapt resource value: 0x7F06004E
 			public const int disabled_alpha_material_dark = 2131099726;
 			
@@ -1354,6 +1465,30 @@ namespace ReLearn
 			
 			// aapt resource value: 0x7F060061
 			public const int notification_top_pad_large_text = 2131099745;
+			
+			// aapt resource value: 0x7F080068
+			public const int tooltip_corner_radius = 2131230824;
+			
+			// aapt resource value: 0x7F080069
+			public const int tooltip_horizontal_padding = 2131230825;
+			
+			// aapt resource value: 0x7F08006A
+			public const int tooltip_margin = 2131230826;
+			
+			// aapt resource value: 0x7F08006B
+			public const int tooltip_precise_anchor_extra_offset = 2131230827;
+			
+			// aapt resource value: 0x7F08006C
+			public const int tooltip_precise_anchor_threshold = 2131230828;
+			
+			// aapt resource value: 0x7F08006D
+			public const int tooltip_vertical_padding = 2131230829;
+			
+			// aapt resource value: 0x7F08006E
+			public const int tooltip_y_offset_non_touch = 2131230830;
+			
+			// aapt resource value: 0x7F08006F
+			public const int tooltip_y_offset_touch = 2131230831;
 			
 			static Dimension()
 			{
@@ -1702,28 +1837,37 @@ namespace ReLearn
 			public const int notify_panel_notification_icon_bg = 2130837596;
 			
 			// aapt resource value: 0x7F010018
-			public const int seekbar_progressbar = 2130771992;
+			public const int search = 2130771992;
 			
 			// aapt resource value: 0x7F010019
-			public const int settings = 2130771993;
+			public const int seekbar_progressbar = 2130771993;
 			
 			// aapt resource value: 0x7F010020
-			public const int settings2 = 2130772000;
+			public const int settings = 2130772000;
 			
 			// aapt resource value: 0x7F010021
-			public const int speak_off = 2130772001;
+			public const int settings2 = 2130772001;
 			
 			// aapt resource value: 0x7F010022
-			public const int speak_on = 2130772002;
+			public const int speak_off = 2130772002;
 			
 			// aapt resource value: 0x7F010023
-			public const int splash = 2130772003;
+			public const int speak_on = 2130772003;
 			
 			// aapt resource value: 0x7F010024
-			public const int Stat1 = 2130772004;
+			public const int splash = 2130772004;
 			
 			// aapt resource value: 0x7F010025
-			public const int Stat2 = 2130772005;
+			public const int Stat1 = 2130772005;
+			
+			// aapt resource value: 0x7F010026
+			public const int Stat2 = 2130772006;
+			
+			// aapt resource value: 0x7F090060
+			public const int tooltip_frame_dark = 2131296352;
+			
+			// aapt resource value: 0x7F090061
+			public const int tooltip_frame_light = 2131296353;
 			
 			static Drawable()
 			{
@@ -1816,8 +1960,14 @@ namespace ReLearn
 			// aapt resource value: 0x7F0A001E
 			public const int always = 2131361822;
 			
+			// aapt resource value: 0x7F0C0006
+			public const int async = 2131492870;
+			
 			// aapt resource value: 0x7F0A001B
 			public const int beginning = 2131361819;
+			
+			// aapt resource value: 0x7F0C0007
+			public const int blocking = 2131492871;
 			
 			// aapt resource value: 0x7F0A0023
 			public const int bottom = 2131361827;
@@ -1966,6 +2116,9 @@ namespace ReLearn
 			// aapt resource value: 0x7F020081
 			public const int Feedback = 2130837633;
 			
+			// aapt resource value: 0x7F0C0009
+			public const int forever = 2131492873;
+			
 			// aapt resource value: 0x7F0A0005
 			public const int home = 2131361797;
 			
@@ -1998,6 +2151,9 @@ namespace ReLearn
 			
 			// aapt resource value: 0x7F0A0064
 			public const int info = 2131361892;
+			
+			// aapt resource value: 0x7F0C000D
+			public const int italic = 2131492877;
 			
 			// aapt resource value: 0x7F020055
 			public const int item_view_dictionary = 2130837589;
@@ -2043,6 +2199,9 @@ namespace ReLearn
 			
 			// aapt resource value: 0x7F020076
 			public const int menuDelSort = 2130837622;
+			
+			// aapt resource value: 0x7F0C002E
+			public const int message = 2131492910;
 			
 			// aapt resource value: 0x7F0A001D
 			public const int middle = 2131361821;
@@ -2200,6 +2359,9 @@ namespace ReLearn
 			// aapt resource value: 0x7F0A000C
 			public const int tabMode = 2131361804;
 			
+			// aapt resource value: 0x7F0C0016
+			public const int tag_transition_group = 2131492886;
+			
 			// aapt resource value: 0x7F0A006C
 			public const int text = 2131361900;
 			
@@ -2296,6 +2458,9 @@ namespace ReLearn
 			// aapt resource value: 0x7F0A003A
 			public const int topPanel = 2131361850;
 			
+			// aapt resource value: 0x7F0C005D
+			public const int uniform = 2131492957;
+			
 			// aapt resource value: 0x7F0A0009
 			public const int up = 2131361801;
 			
@@ -2332,6 +2497,9 @@ namespace ReLearn
 			
 			// aapt resource value: 0x7F0B0002
 			public const int cancel_button_image_alpha = 2131427330;
+			
+			// aapt resource value: 0x7F0D0004
+			public const int config_tooltipAnimTime = 2131558404;
 			
 			// aapt resource value: 0x7F0B0003
 			public const int status_bar_notification_info_maxnum = 2131427331;
@@ -2531,6 +2699,9 @@ namespace ReLearn
 			
 			// aapt resource value: 0x7F03002D
 			public const int support_simple_spinner_dropdown_item = 2130903085;
+			
+			// aapt resource value: 0x7F0F0025
+			public const int tooltip = 2131689509;
 			
 			static Layout()
 			{
@@ -2898,6 +3069,12 @@ namespace ReLearn
 			// aapt resource value: 0x7F0700A2
 			public const int Animation_AppCompat_DropDownUp = 2131165346;
 			
+			// aapt resource value: 0x7F160005
+			public const int Animation_AppCompat_Tooltip = 2132148229;
+			
+			// aapt resource value: 0x7F060002
+			public const int AppTheme = 2131099650;
+			
 			// aapt resource value: 0x7F0700A3
 			public const int Base_AlertDialog_AppCompat = 2131165347;
 			
@@ -2909,6 +3086,9 @@ namespace ReLearn
 			
 			// aapt resource value: 0x7F0700A6
 			public const int Base_Animation_AppCompat_DropDownUp = 2131165350;
+			
+			// aapt resource value: 0x7F16000A
+			public const int Base_Animation_AppCompat_Tooltip = 2132148234;
 			
 			// aapt resource value: 0x7F0700A8
 			public const int Base_DialogWindowTitleBackground_AppCompat = 2131165352;
@@ -2996,6 +3176,9 @@ namespace ReLearn
 			
 			// aapt resource value: 0x7F070010
 			public const int Base_TextAppearance_AppCompat_Title_Inverse = 2131165200;
+			
+			// aapt resource value: 0x7F160028
+			public const int Base_TextAppearance_AppCompat_Tooltip = 2132148264;
 			
 			// aapt resource value: 0x7F070094
 			public const int Base_TextAppearance_AppCompat_Widget_ActionBar_Menu = 2131165332;
@@ -3162,6 +3345,15 @@ namespace ReLearn
 			// aapt resource value: 0x7F070097
 			public const int Base_V23_Theme_AppCompat_Light = 2131165335;
 			
+			// aapt resource value: 0x7F160060
+			public const int Base_V26_Theme_AppCompat = 2132148320;
+			
+			// aapt resource value: 0x7F160061
+			public const int Base_V26_Theme_AppCompat_Light = 2132148321;
+			
+			// aapt resource value: 0x7F160062
+			public const int Base_V26_Widget_AppCompat_Toolbar = 2132148322;
+			
 			// aapt resource value: 0x7F0700B9
 			public const int Base_V7_ThemeOverlay_AppCompat_Dialog = 2131165369;
 			
@@ -3182,6 +3374,9 @@ namespace ReLearn
 			
 			// aapt resource value: 0x7F0700BB
 			public const int Base_V7_Widget_AppCompat_EditText = 2131165371;
+			
+			// aapt resource value: 0x7F16006A
+			public const int Base_V7_Widget_AppCompat_Toolbar = 2132148330;
 			
 			// aapt resource value: 0x7F0700BC
 			public const int Base_Widget_AppCompat_ActionBar = 2131165372;
@@ -3359,9 +3554,6 @@ namespace ReLearn
 			
 			// aapt resource value: 0x7F060003
 			public const int myPopupTheme = 2131099651;
-			
-			// aapt resource value: 0x7F060002
-			public const int MyTheme = 2131099650;
 			
 			// aapt resource value: 0x7F07001E
 			public const int Platform_AppCompat = 2131165214;
@@ -3564,6 +3756,9 @@ namespace ReLearn
 			// aapt resource value: 0x7F0700EB
 			public const int TextAppearance_AppCompat_Title_Inverse = 2131165419;
 			
+			// aapt resource value: 0x7F1600DC
+			public const int TextAppearance_AppCompat_Tooltip = 2132148444;
+			
 			// aapt resource value: 0x7F0700EC
 			public const int TextAppearance_AppCompat_Widget_ActionBar_Menu = 2131165420;
 			
@@ -3620,6 +3815,36 @@ namespace ReLearn
 			
 			// aapt resource value: 0x7F0700FE
 			public const int TextAppearance_AppCompat_Widget_TextView_SpinnerItem = 2131165438;
+			
+			// aapt resource value: 0x7F160001
+			public const int TextAppearance_Compat_Notification = 2132148225;
+			
+			// aapt resource value: 0x7F160002
+			public const int TextAppearance_Compat_Notification_Info = 2132148226;
+			
+			// aapt resource value: 0x7F160003
+			public const int TextAppearance_Compat_Notification_Info_Media = 2132148227;
+			
+			// aapt resource value: 0x7F160003
+			public const int TextAppearance_Compat_Notification_Line2 = 2132148227;
+			
+			// aapt resource value: 0x7F160005
+			public const int TextAppearance_Compat_Notification_Line2_Media = 2132148229;
+			
+			// aapt resource value: 0x7F160006
+			public const int TextAppearance_Compat_Notification_Media = 2132148230;
+			
+			// aapt resource value: 0x7F160004
+			public const int TextAppearance_Compat_Notification_Time = 2132148228;
+			
+			// aapt resource value: 0x7F160008
+			public const int TextAppearance_Compat_Notification_Time_Media = 2132148232;
+			
+			// aapt resource value: 0x7F160005
+			public const int TextAppearance_Compat_Notification_Title = 2132148229;
+			
+			// aapt resource value: 0x7F16000A
+			public const int TextAppearance_Compat_Notification_Title_Media = 2132148234;
 			
 			// aapt resource value: 0x7F07002C
 			public const int TextAppearance_StatusBar_EventContent = 2131165228;
@@ -3954,6 +4179,12 @@ namespace ReLearn
 			// aapt resource value: 0x7F07015E
 			public const int Widget_AppCompat_Toolbar_Button_Navigation = 2131165534;
 			
+			// aapt resource value: 0x7F160006
+			public const int Widget_Compat_NotificationActionContainer = 2132148230;
+			
+			// aapt resource value: 0x7F160007
+			public const int Widget_Compat_NotificationActionText = 2132148231;
+			
 			static Style()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
@@ -4176,6 +4407,12 @@ namespace ReLearn
 			// aapt resource value: 0x1
 			public const int AppCompatImageView_srcCompat = 1;
 			
+			// aapt resource value: 0x2
+			public const int AppCompatImageView_tint = 2;
+			
+			// aapt resource value: 0x3
+			public const int AppCompatImageView_tintMode = 3;
+			
 			public static int[] AppCompatSeekBar = new int[] {
 					16843074,
 					2130772009,
@@ -4230,6 +4467,24 @@ namespace ReLearn
 			
 			// aapt resource value: 0x7F070072
 			public const int AppCompatTextView_android_textAppearance = 2131165298;
+			
+			// aapt resource value: 0x1
+			public const int AppCompatTextView_autoSizeMaxTextSize = 1;
+			
+			// aapt resource value: 0x2
+			public const int AppCompatTextView_autoSizeMinTextSize = 2;
+			
+			// aapt resource value: 0x3
+			public const int AppCompatTextView_autoSizePresetSizes = 3;
+			
+			// aapt resource value: 0x4
+			public const int AppCompatTextView_autoSizeStepGranularity = 4;
+			
+			// aapt resource value: 0x5
+			public const int AppCompatTextView_autoSizeTextType = 5;
+			
+			// aapt resource value: 0x6
+			public const int AppCompatTextView_fontFamily = 6;
 			
 			// aapt resource value: 0x1
 			public const int AppCompatTextView_textAllCaps = 1;
@@ -4513,6 +4768,9 @@ namespace ReLearn
 			// aapt resource value: 0x86
 			public const int AppCompatTheme_colorControlNormal = 134;
 			
+			// aapt resource value: 0x54
+			public const int AppCompatTheme_colorError = 84;
+			
 			// aapt resource value: 0x83
 			public const int AppCompatTheme_colorPrimary = 131;
 			
@@ -4639,6 +4897,9 @@ namespace ReLearn
 			// aapt resource value: 0x77
 			public const int AppCompatTheme_textAppearanceListItem = 119;
 			
+			// aapt resource value: 0x97
+			public const int AppCompatTheme_textAppearanceListItemSecondary = 151;
+			
 			// aapt resource value: 0x78
 			public const int AppCompatTheme_textAppearanceListItemSmall = 120;
 			
@@ -4665,6 +4926,12 @@ namespace ReLearn
 			
 			// aapt resource value: 0x59
 			public const int AppCompatTheme_toolbarStyle = 89;
+			
+			// aapt resource value: 0x107
+			public const int AppCompatTheme_tooltipForegroundColor = 263;
+			
+			// aapt resource value: 0x108
+			public const int AppCompatTheme_tooltipFrameBackground = 264;
 			
 			// aapt resource value: 0x2
 			public const int AppCompatTheme_windowActionBar = 2;
@@ -4763,6 +5030,58 @@ namespace ReLearn
 			
 			// aapt resource value: 0x7
 			public const int DrawerArrowToggle_thickness = 7;
+			
+			public static int[] FontFamily = new int[] {
+					2130968578,
+					2130968579,
+					2130968580,
+					2130968581,
+					2130968582,
+					2130968583};
+			
+			public static int[] FontFamilyFont = new int[] {
+					16844082,
+					16844095,
+					16844083,
+					2130968577,
+					2130968584,
+					2130968585};
+			
+			// aapt resource value: 0x7F070373
+			public const int FontFamilyFont_android_font = 2131166067;
+			
+			// aapt resource value: 0x1
+			public const int FontFamilyFont_android_fontStyle = 1;
+			
+			// aapt resource value: 0x2
+			public const int FontFamilyFont_android_fontWeight = 2;
+			
+			// aapt resource value: 0x3
+			public const int FontFamilyFont_font = 3;
+			
+			// aapt resource value: 0x4
+			public const int FontFamilyFont_fontStyle = 4;
+			
+			// aapt resource value: 0x5
+			public const int FontFamilyFont_fontWeight = 5;
+			
+			// aapt resource value: 0x7F070366
+			public const int FontFamily_fontProviderAuthority = 2131166054;
+			
+			// aapt resource value: 0x1
+			public const int FontFamily_fontProviderCerts = 1;
+			
+			// aapt resource value: 0x2
+			public const int FontFamily_fontProviderFetchStrategy = 2;
+			
+			// aapt resource value: 0x3
+			public const int FontFamily_fontProviderFetchTimeout = 3;
+			
+			// aapt resource value: 0x4
+			public const int FontFamily_fontProviderPackage = 4;
+			
+			// aapt resource value: 0x5
+			public const int FontFamily_fontProviderQuery = 5;
 			
 			public static int[] LinearLayoutCompat = new int[] {
 					16842927,
@@ -4884,6 +5203,9 @@ namespace ReLearn
 			// aapt resource value: 0x15
 			public const int MenuItem_actionViewClass = 21;
 			
+			// aapt resource value: 0x3
+			public const int MenuItem_alphabeticModifiers = 3;
+			
 			// aapt resource value: 0x9
 			public const int MenuItem_android_alphabeticShortcut = 9;
 			
@@ -4923,8 +5245,23 @@ namespace ReLearn
 			// aapt resource value: 0x4
 			public const int MenuItem_android_visible = 4;
 			
+			// aapt resource value: 0x17
+			public const int MenuItem_contentDescription = 23;
+			
+			// aapt resource value: 0x18
+			public const int MenuItem_iconTint = 24;
+			
+			// aapt resource value: 0x19
+			public const int MenuItem_iconTintMode = 25;
+			
+			// aapt resource value: 0x20
+			public const int MenuItem_numericModifiers = 32;
+			
 			// aapt resource value: 0x13
 			public const int MenuItem_showAsAction = 19;
+			
+			// aapt resource value: 0x22
+			public const int MenuItem_tooltipText = 34;
 			
 			public static int[] MenuView = new int[] {
 					16842926,
@@ -5156,6 +5493,9 @@ namespace ReLearn
 					16843108,
 					2130772012};
 			
+			// aapt resource value: 0x7F070397
+			public const int TextAppearance_android_fontFamily = 2131166103;
+			
 			// aapt resource value: 0x5
 			public const int TextAppearance_android_shadowColor = 5;
 			
@@ -5174,6 +5514,9 @@ namespace ReLearn
 			// aapt resource value: 0x4
 			public const int TextAppearance_android_textColorHint = 4;
 			
+			// aapt resource value: 0x7
+			public const int TextAppearance_android_textColorLink = 7;
+			
 			// aapt resource value: 0x7F070317
 			public const int TextAppearance_android_textSize = 2131165975;
 			
@@ -5182,6 +5525,9 @@ namespace ReLearn
 			
 			// aapt resource value: 0x1
 			public const int TextAppearance_android_typeface = 1;
+			
+			// aapt resource value: 0x11
+			public const int TextAppearance_fontFamily = 17;
 			
 			// aapt resource value: 0x9
 			public const int TextAppearance_textAllCaps = 9;

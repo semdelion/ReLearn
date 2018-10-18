@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using Android.Support.V7.App;
 using Android.App;
 using Android.Content;
 using Android.Content.Res;
@@ -20,7 +20,7 @@ using Plugin.Settings;
 namespace ReLearn
 {
     [Activity(Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
-    public class Settings_Menu: Activity
+    public class Settings_Menu: AppCompatActivity
     {      
         int CheckedItem()
         {
@@ -42,7 +42,7 @@ namespace ReLearn
             string[] listLanguage = { "English", "Русский" };
             int checkedItem = CheckedItem();
 
-            AlertDialog.Builder alert = new AlertDialog.Builder(this);
+            Android.App.AlertDialog.Builder alert = new Android.App.AlertDialog.Builder(this);
             alert.SetTitle(Additional_functions.GetResourceString("Language", this.Resources));
             alert.SetPositiveButton("Cancel", delegate { alert.Dispose(); });
             alert.SetSingleChoiceItems(listLanguage, checkedItem, new EventHandler<DialogClickEventArgs>(delegate (object sender, DialogClickEventArgs e) {
@@ -63,43 +63,6 @@ namespace ReLearn
                 StartActivity(new Intent(this, typeof(Settings_Menu)));
                 this.Finish();        
                 d.Dismiss();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             }));          
             alert.Show();
         }
@@ -110,8 +73,9 @@ namespace ReLearn
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Settings_Menu);
             CheckedItem();
-            Toolbar toolbarSettings = FindViewById<Toolbar>(Resource.Id.toolbarSetting);
-            SetActionBar(toolbarSettings);
+            var toolbarSettings = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbarSetting);
+            SetSupportActionBar(toolbarSettings);
+            SupportActionBar.SetDisplayHomeAsUpEnabled(true);
 
             SeekBar SB_Repeat_Language = FindViewById<SeekBar>(Resource.Id.SeekBarCountRepeatLenguage);
             SeekBar SB_Repeat_Image = FindViewById<SeekBar>(Resource.Id.SeekBarCountRepeatImages);

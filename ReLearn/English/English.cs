@@ -6,11 +6,12 @@ using Android.OS;
 using Android.Views;
 using Android.Widget;
 using Plugin.Settings;
+using Android.Support.V7.App;
 
 namespace ReLearn
 {
     [Activity(Label ="", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
-    class English : Activity
+    class English : AppCompatActivity
     {
         private int selected = 0;
 
@@ -74,9 +75,9 @@ namespace ReLearn
             Additional_functions.Font();
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.English);
-            Toolbar toolbarMain = FindViewById<Toolbar>(Resource.Id.toolbarEnglish);
-            SetActionBar(toolbarMain);
-            ActionBar.SetDisplayHomeAsUpEnabled(true);
+            var toolbarMain = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbarEnglish);
+            SetSupportActionBar(toolbarMain);
+            SupportActionBar.SetDisplayHomeAsUpEnabled(true);
 
             DataBase.Table_Name = GetDatabaseEnglish();
             SetSelected();

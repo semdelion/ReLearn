@@ -4,6 +4,6 @@
     <SelectedDevice>5.2" Marshmallow %286.0.0%29 XXHDPI Phone</SelectedDevice>
     <DefaultDevice>5.2" Marshmallow %286.0.0%29 XXHDPI Phone</DefaultDevice>
     <AndroidDesignerPreferredDevice>Galaxy Nexus</AndroidDesignerPreferredDevice>
-    <AndroidDesignerPreferredTheme>MyTheme</AndroidDesignerPreferredTheme>
+    <AndroidDesignerPreferredTheme>AppTheme</AndroidDesignerPreferredTheme>
   </PropertyGroup>
 </Project>

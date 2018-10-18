@@ -3,11 +3,12 @@ using Android.Content;
 using Android.OS;
 using Android.Views;
 using Android.Widget;
+using Android.Support.V7.App;
 
 namespace ReLearn
 {
     [Activity(Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
-    class Flags : Activity
+    class Flags : AppCompatActivity
     {
         [Java.Interop.Export("Button_Flags_Learn_Click")]
         public void Button_Flags_Learn_Click(View v)
@@ -30,9 +31,9 @@ namespace ReLearn
             DataBase.Table_Name = Table_name.Flags;
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Flags);
-            Toolbar toolbarMain = FindViewById<Toolbar>(Resource.Id.toolbarFlags);
-            SetActionBar(toolbarMain);
-            ActionBar.SetDisplayHomeAsUpEnabled(true);
+            var toolbarMain = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbarFlags);
+            SetSupportActionBar(toolbarMain);
+            SupportActionBar.SetDisplayHomeAsUpEnabled(true);
 
             DataBase.Update_Flags_DB();          
         }

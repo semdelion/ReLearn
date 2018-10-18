@@ -4,11 +4,12 @@ using Android.OS;
 using Android.Views;
 using Android.Widget;
 using Calligraphy;
+using Android.Support.V7.App;
 
 namespace ReLearn
 {
     [Activity(Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
-    class English_Add : Activity
+    class English_Add : AppCompatActivity
     {
         [Java.Interop.Export("Button_English_Add_Word_Click")]
         public void Button_English_Add_Click(View v)
@@ -49,9 +50,9 @@ namespace ReLearn
             Additional_functions.Font();
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.English_Add);
-            var toolbarMain = FindViewById<Toolbar>(Resource.Id.toolbarEnglishAdd);
-            SetActionBar(toolbarMain);
-            ActionBar.SetDisplayHomeAsUpEnabled(true);
+            var toolbarMain = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbarEnglishAdd);
+            SetSupportActionBar(toolbarMain);
+            SupportActionBar.SetDisplayHomeAsUpEnabled(true);
         }
 
         public override bool OnOptionsItemSelected(IMenuItem item)

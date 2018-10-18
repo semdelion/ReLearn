@@ -5,11 +5,12 @@ using Android.OS;
 using Android.Views;
 using Android.Widget;
 using Android.Graphics;
+using Android.Support.V7.App;
 
 namespace ReLearn
 {
     [Activity(Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
-    class Flags_Learn : Activity
+    class Flags_Learn : AppCompatActivity
     {
         ImageView imageView;
         TextView textView_learn_flag;
@@ -44,9 +45,9 @@ namespace ReLearn
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Flags_Learn);
 
-            var toolbarMain = FindViewById<Toolbar>(Resource.Id.toolbarFlagsLearn);
-            SetActionBar(toolbarMain);
-            ActionBar.SetDisplayHomeAsUpEnabled(true); // отображаем кнопку домой
+            var toolbarMain = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbarFlagsLearn);
+            SetSupportActionBar(toolbarMain);
+            SupportActionBar.SetDisplayHomeAsUpEnabled(true); // отображаем кнопку домой
 
             textView_learn_flag = FindViewById<TextView>(Resource.Id.textView_flag_learn);
             imageView = FindViewById<ImageView>(Resource.Id.imageView_Flags_learn);

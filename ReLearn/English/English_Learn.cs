@@ -6,11 +6,12 @@ using System;
 using Plugin.TextToSpeech;
 using Android.Content;
 using Calligraphy;
+using Android.Support.V7.App;
 
 namespace ReLearn
 {
     [Activity(Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
-    class English_Learn : Activity
+    class English_Learn : AppCompatActivity
     {
         TextView textView_learn_en;
         TextView textView_learn_ru;
@@ -66,9 +67,9 @@ namespace ReLearn
             Additional_functions.Font();
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.English_Learn);
-            var toolbarMain = FindViewById<Toolbar>(Resource.Id.toolbarEnglishLearn);
-            SetActionBar(toolbarMain);
-            ActionBar.SetDisplayHomeAsUpEnabled(true); // отображаем кнопку домой
+            var toolbarMain = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbarEnglishLearn);
+            SetSupportActionBar(toolbarMain);
+            SupportActionBar.SetDisplayHomeAsUpEnabled(true); // отображаем кнопку домой
             //this.ActionBar.SetBackgroundDrawable(GetDrawable(Resource.Drawable.BackgroundActionBar));
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

@@ -4,11 +4,12 @@ using Android.App;
 using Android.OS;
 using Android.Views;
 using Android.Widget;
+using Android.Support.V7.App;
 
 namespace ReLearn
 {
     [Activity(Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
-    class About_us : Activity
+    class About_us : AppCompatActivity
     {
         [Java.Interop.Export("Button_Support_Project_Click")]
         public void Button_Support_Project_Click(View v)
@@ -23,9 +24,9 @@ namespace ReLearn
             Additional_functions.Font();
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.About_us);
-            Toolbar toolbarMain = FindViewById<Toolbar>(Resource.Id.toolbar_About_Us);
-            SetActionBar(toolbarMain);
-            ActionBar.SetDisplayHomeAsUpEnabled(true);
+            var toolbarMain = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar_About_Us);
+            SetSupportActionBar(toolbarMain);
+            SupportActionBar.SetDisplayHomeAsUpEnabled(true);
         }
 
         public override bool OnOptionsItemSelected(IMenuItem item)

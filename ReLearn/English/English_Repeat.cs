@@ -8,11 +8,12 @@ using Android.Views;
 using Android.Widget;
 using SQLite;
 using Plugin.TextToSpeech;
+using Android.Support.V7.App;
 
 namespace ReLearn
 {
     [Activity(Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
-    class English_Repeat : Activity
+    class English_Repeat : AppCompatActivity
     {
         TextView textView;
         Button Button1;
@@ -155,10 +156,10 @@ namespace ReLearn
             Additional_functions.Font();
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.English_Repeat);
-            var toolbarMain = FindViewById<Toolbar>(Resource.Id.toolbarEnglishRepeat);
+            var toolbarMain = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbarEnglishRepeat);
             Title_textView = toolbarMain.FindViewById<TextView>(Resource.Id.Repeat_toolbar_textview);
-            SetActionBar(toolbarMain);
-            ActionBar.SetDisplayHomeAsUpEnabled(true); // отображаем кнопку домой
+            SetSupportActionBar(toolbarMain);
+            SupportActionBar.SetDisplayHomeAsUpEnabled(true); // отображаем кнопку домой
             Statistics.Statistics_update();
             textView = FindViewById<TextView>(Resource.Id.textView_Eng_Word);
             Button1 = FindViewById<Button>(Resource.Id.button_E_choice1);

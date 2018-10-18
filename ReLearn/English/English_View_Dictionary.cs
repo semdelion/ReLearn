@@ -6,11 +6,12 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using ReLearn.Resources;
+using Android.Support.V7.App;
 
 namespace ReLearn
 {
     [Activity( Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
-    class English_View_Dictionary : Activity
+    class English_View_Dictionary : AppCompatActivity
     {
         ListView listViewDel;
         CustomAdapter adapter;
@@ -21,10 +22,10 @@ namespace ReLearn
             Additional_functions.Font();
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.English_View_Dictionary);
-            var toolbarMain = FindViewById<Toolbar>(Resource.Id.toolbarEnglishDelete);
-            SetActionBar(toolbarMain);
-            ActionBar.SetDisplayHomeAsUpEnabled(true); // отображаем кнопку домой
-
+            var toolbarMain = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbarEnglishDelete);
+            SetSupportActionBar(toolbarMain);
+            SupportActionBar.SetDisplayHomeAsUpEnabled(true); // отображаем кнопку домой
+   
             listViewDel = FindViewById<ListView>(Resource.Id.listView_dictionary);    
             
             var db = DataBase.Connect(Database_Name.English_DB);
@@ -35,12 +36,12 @@ namespace ReLearn
             listViewDel.Adapter = adapter;
         }
 
-        public override bool OnCreateOptionsMenu(IMenu menu) // удаление слова по клику из списка
+        public override bool OnPrepareOptionsMenu(IMenu menu)
         {
-            this.MenuInflater.Inflate(Resource.Menu.search, menu);
+            MenuInflater.Inflate(Resource.Menu.search, menu);
             var searchItem = menu.FindItem(Resource.Id.action_search);
 
-            SearchView _searchView = searchItem.ActionView.JavaCast<Android.Widget.SearchView>();
+            var _searchView = searchItem.ActionView.JavaCast<Android.Support.V7.Widget.SearchView>();
 
             _searchView.QueryTextChange += (sender, e) =>
             {
@@ -57,7 +58,8 @@ namespace ReLearn
                 }
             };
 
-            listViewDel.ItemClick += (s, args) => {
+            listViewDel.ItemClick += (s, args) =>
+            {
                 var word = listViewDel.Adapter.GetItem(args.Position);
                 Database_Words words = new Database_Words();
                 foreach (var item in dataBase)
@@ -65,8 +67,8 @@ namespace ReLearn
                     {
                         words = item.Find();
                         break;
-                    }                        
-                AlertDialog.Builder alert = new AlertDialog.Builder(this);
+                    }
+                Android.App.AlertDialog.Builder alert = new Android.App.AlertDialog.Builder(this);
                 alert.SetTitle("");
                 alert.SetMessage("To delete : " + word.ToString() + " ? ");
                 alert.SetPositiveButton("Cancel", delegate { alert.Dispose(); });
@@ -79,19 +81,78 @@ namespace ReLearn
                     var database = DataBase.Connect(Database_Name.English_DB);
                     database.CreateTable<Database_Words>();
                     int search_occurrences = database.Query<Database_Words>("SELECT * FROM " + DataBase.Table_Name).Count;
-                    
+
                     if (search_occurrences == 0)
                         Toast.MakeText(this, Additional_functions.GetResourceString("Word_Not_Exists", this.Resources), ToastLength.Short).Show();
                     else
                     {
                         database.Query<Database_Words>("DELETE FROM " + DataBase.Table_Name + " WHERE Word = ?", word.ToString());// поиск вхождения слова в БД
-                        Toast.MakeText(this, Additional_functions.GetResourceString("Word_Delete", this.Resources), ToastLength.Short).Show();
+                            Toast.MakeText(this, Additional_functions.GetResourceString("Word_Delete", this.Resources), ToastLength.Short).Show();
                     }
                 });
                 alert.Show();
             };
-            return base.OnCreateOptionsMenu(menu);
+            return true;
         }
+
+
+        //public override bool OnCreateOptionsMenu(IMenu menu) // удаление слова по клику из списка
+        //{
+        //    this.MenuInflater.Inflate(Resource.Menu.search, menu);
+        //    var searchItem = menu.FindItem(Resource.Id.action_search);
+
+        //    var _searchView = searchItem.ActionView.JavaCast<Android.Support.V7.Widget.SearchView>();
+
+        //    _searchView.QueryTextChange += (sender, e) =>
+        //    {
+        //        if (e.NewText == "")
+        //            listViewDel.Adapter = new CustomAdapter(this, dataBase);
+        //        else
+        //        {
+        //            List<Database_Words> FD = new List<Database_Words>();
+        //            foreach (var word in dataBase)
+        //                if (word.Word.Substring(0, ((e.NewText.Length > word.Word.Length) ? 0 : e.NewText.Length)) == e.NewText)
+        //                    FD.Add(word);
+        //            var ad = new CustomAdapter(this, FD);
+        //            listViewDel.Adapter = ad;
+        //        }
+        //    };
+
+        //    listViewDel.ItemClick += (s, args) => {
+        //        var word = listViewDel.Adapter.GetItem(args.Position);
+        //        Database_Words words = new Database_Words();
+        //        foreach (var item in dataBase)
+        //            if (item.Word == word.ToString())
+        //            {
+        //                words = item.Find();
+        //                break;
+        //            }
+        //        Android.App.AlertDialog.Builder alert = new Android.App.AlertDialog.Builder(this);
+        //        alert.SetTitle("");
+        //        alert.SetMessage("To delete : " + word.ToString() + " ? ");
+        //        alert.SetPositiveButton("Cancel", delegate { alert.Dispose(); });
+        //        alert.SetNeutralButton("ок", delegate
+        //        {
+        //            dataBase.Remove(words);
+        //            adapter = new CustomAdapter(this, dataBase);
+        //            listViewDel.Adapter = adapter;
+
+        //            var database = DataBase.Connect(Database_Name.English_DB);
+        //            database.CreateTable<Database_Words>();
+        //            int search_occurrences = database.Query<Database_Words>("SELECT * FROM " + DataBase.Table_Name).Count;
+
+        //            if (search_occurrences == 0)
+        //                Toast.MakeText(this, Additional_functions.GetResourceString("Word_Not_Exists", this.Resources), ToastLength.Short).Show();
+        //            else
+        //            {
+        //                database.Query<Database_Words>("DELETE FROM " + DataBase.Table_Name + " WHERE Word = ?", word.ToString());// поиск вхождения слова в БД
+        //                Toast.MakeText(this, Additional_functions.GetResourceString("Word_Delete", this.Resources), ToastLength.Short).Show();
+        //            }
+        //        });
+        //        alert.Show();
+        //    };
+        //    return base.OnCreateOptionsMenu(menu);
+        //}
 
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
