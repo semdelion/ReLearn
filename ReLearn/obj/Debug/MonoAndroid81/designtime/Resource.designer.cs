@@ -1771,34 +1771,37 @@ namespace ReLearn
 			public const int buttonBeforeClicking = 2130771975;
 			
 			// aapt resource value: 0x7F010008
-			public const int button_enabled = 2130771976;
+			public const int button_dontknow = 2130771976;
 			
 			// aapt resource value: 0x7F010009
-			public const int button_false = 2130771977;
+			public const int button_enabled = 2130771977;
 			
 			// aapt resource value: 0x7F010010
-			public const int button_style_standard = 2130771984;
+			public const int button_false = 2130771984;
 			
 			// aapt resource value: 0x7F010011
-			public const int button_touch = 2130771985;
+			public const int button_style_standard = 2130771985;
 			
 			// aapt resource value: 0x7F010012
-			public const int button_true = 2130771986;
+			public const int button_touch = 2130771986;
 			
 			// aapt resource value: 0x7F010013
-			public const int custom_thumb = 2130771987;
+			public const int button_true = 2130771987;
 			
 			// aapt resource value: 0x7F010014
-			public const int dictionary = 2130771988;
+			public const int custom_thumb = 2130771988;
 			
 			// aapt resource value: 0x7F010015
-			public const int EditText_style = 2130771989;
+			public const int dictionary = 2130771989;
 			
 			// aapt resource value: 0x7F010016
-			public const int icon = 2130771990;
+			public const int EditText_style = 2130771990;
 			
 			// aapt resource value: 0x7F010017
-			public const int iconSpeak = 2130771991;
+			public const int icon = 2130771991;
+			
+			// aapt resource value: 0x7F010018
+			public const int iconSpeak = 2130771992;
 			
 			// aapt resource value: 0x7F020053
 			public const int notification_action_background = 2130837587;
@@ -1836,41 +1839,41 @@ namespace ReLearn
 			// aapt resource value: 0x7F02005C
 			public const int notify_panel_notification_icon_bg = 2130837596;
 			
-			// aapt resource value: 0x7F010018
-			public const int search = 2130771992;
-			
 			// aapt resource value: 0x7F010019
-			public const int seekbar_progressbar = 2130771993;
+			public const int search = 2130771993;
 			
 			// aapt resource value: 0x7F010020
-			public const int settings = 2130772000;
+			public const int seekbar_progressbar = 2130772000;
 			
 			// aapt resource value: 0x7F010021
-			public const int settings2 = 2130772001;
+			public const int settings = 2130772001;
 			
 			// aapt resource value: 0x7F010022
-			public const int speak_off = 2130772002;
+			public const int settings2 = 2130772002;
 			
 			// aapt resource value: 0x7F010023
-			public const int speak_on = 2130772003;
+			public const int speak_off = 2130772003;
 			
 			// aapt resource value: 0x7F010024
-			public const int splash = 2130772004;
+			public const int speak_on = 2130772004;
 			
 			// aapt resource value: 0x7F010025
-			public const int Stat1 = 2130772005;
+			public const int splash = 2130772005;
 			
 			// aapt resource value: 0x7F010026
-			public const int Stat2 = 2130772006;
+			public const int Stat1 = 2130772006;
 			
 			// aapt resource value: 0x7F010027
-			public const int toolbar = 2130772007;
+			public const int Stat2 = 2130772007;
 			
 			// aapt resource value: 0x7F010028
-			public const int toolbarMain = 2130772008;
+			public const int toolbar = 2130772008;
 			
 			// aapt resource value: 0x7F010029
-			public const int toolbarmainback = 2130772009;
+			public const int toolbarMain = 2130772009;
+			
+			// aapt resource value: 0x7F010030
+			public const int toolbarmainback = 2130772016;
 			
 			// aapt resource value: 0x7F090060
 			public const int tooltip_frame_dark = 2131296352;

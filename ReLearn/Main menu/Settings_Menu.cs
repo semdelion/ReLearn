@@ -82,8 +82,8 @@ namespace ReLearn
             TextView TV_Repeat_Language = FindViewById<TextView>(Resource.Id.TextView_number_of_word_repeats);
             TextView TV_Repeat_Image = FindViewById<TextView>(Resource.Id.TextView_number_of_image_repeats);
 
-            SB_Repeat_Language.Progress = Convert.ToInt32(CrossSettings.Current.GetValueOrDefault("Language_repeat_count", null)) - 5; 
-            SB_Repeat_Image.Progress = Convert.ToInt32(CrossSettings.Current.GetValueOrDefault("Images_repeat_count", null)) - 5;
+            SB_Repeat_Language.Progress = Magic_constants.NumberOfRepeatsLanguage - 5; 
+            SB_Repeat_Image.Progress = Magic_constants.NumberOfRepeatsImage - 5;
 
             TV_Repeat_Language.Text = Additional_functions.GetResourceString("number_of_word_repeats", this.Resources) + " " + Convert.ToString(5 + SB_Repeat_Language.Progress);
             TV_Repeat_Image.Text = Additional_functions.GetResourceString("number_of_image_repeats", this.Resources) + " " + Convert.ToString(5 + SB_Repeat_Image.Progress);
@@ -91,13 +91,13 @@ namespace ReLearn
             SB_Repeat_Language.ProgressChanged += (s, e) =>
             {
                 TV_Repeat_Language.Text = Additional_functions.GetResourceString("number_of_word_repeats", this.Resources) + " " + Convert.ToString(5 + e.Progress);
-                Magic_constants.Set_repeat_count("Language_repeat_count", e.Progress + 5);
+                Magic_constants.NumberOfRepeatsLanguage = e.Progress + 5;
             };
 
             SB_Repeat_Image.ProgressChanged += (s, e) =>
             {
                 TV_Repeat_Image.Text = Additional_functions.GetResourceString("number_of_image_repeats", this.Resources) + " " + Convert.ToString(5 + e.Progress);
-                Magic_constants.Set_repeat_count("Images_repeat_count",  e.Progress + 5);
+                Magic_constants.NumberOfRepeatsImage = e.Progress + 5;
             };
         }
 

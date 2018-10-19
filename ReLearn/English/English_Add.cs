@@ -32,7 +32,7 @@ namespace ReLearn
                         $"(Word, TranslationWord, NumberLearn, DateRecurrence) VALUES ("
                         + "\"" + editText_foreign_word.Text.ToLower() + "\"" + ","
                         + "\"" + editText_translation_word.Text.ToLower() + "\"" + ","
-                        + Magic_constants.numberLearn + ", DATETIME('NOW'))");                   
+                        + Magic_constants.StandardNumberOfRepeats + ", DATETIME('NOW'))");                   
                     Toast.MakeText(this, Additional_functions.GetResourceString("Word_Added", this.Resources), ToastLength.Short).Show();
                 }
                 editText_foreign_word.Text = "";

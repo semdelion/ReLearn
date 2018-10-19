@@ -16,86 +16,72 @@ using Android.Content.Res;
 
 namespace ReLearn
 {
-    public static class Magic_constants // Маааагия!
+    static class Magic_constants // Маааагия!
     {
-        public static int repeat_count = 1; // количество повторений;
-        public static int maxLearn = 12;
-        public static int numberLearn = 6;
-        public static int false_answer = 3;
-        public static int true_answer = 1;
+        public const int MaxNumberOfRepeats = 12;
+        public const int StandardNumberOfRepeats = 6;
+        public const int FalseAnswer = 3;
+        public const int NeutralAnswer = 2;
+        public const int TrueAnswer = 1;
         public const string font = "fonts/Roboto-Regular.ttf";
 
-        public static void Get_repeat_count(string name)
-        {
-            if (System.String.IsNullOrEmpty(CrossSettings.Current.GetValueOrDefault(name, null)))
-                CrossSettings.Current.AddOrUpdateValue(name, "20");
-            Magic_constants.repeat_count = Convert.ToInt32(CrossSettings.Current.GetValueOrDefault(name, null));
+        public static int NumberOfRepeatsImage {
+            get{
+                if (System.String.IsNullOrEmpty(CrossSettings.Current.GetValueOrDefault("Images_repeat_count", null)))
+                    CrossSettings.Current.AddOrUpdateValue("Images_repeat_count", "20");
+                return Convert.ToInt32(CrossSettings.Current.GetValueOrDefault("Images_repeat_count", null));
+            }
+            set{
+                CrossSettings.Current.AddOrUpdateValue("Images_repeat_count", Convert.ToString(value));
+            }
         }
-        public static void Set_repeat_count(string name,int count)
+
+        public static int NumberOfRepeatsLanguage 
         {
-            CrossSettings.Current.AddOrUpdateValue(name, Convert.ToString(count));
-            Magic_constants.repeat_count = Convert.ToInt32(CrossSettings.Current.GetValueOrDefault(name, null));
+            get{ 
+                if (System.String.IsNullOrEmpty(CrossSettings.Current.GetValueOrDefault("Language_repeat_count", null)))
+                    CrossSettings.Current.AddOrUpdateValue("Language_repeat_count", "20");
+                return Convert.ToInt32(CrossSettings.Current.GetValueOrDefault("Language_repeat_count", null));
+            }
+            set { 
+                CrossSettings.Current.AddOrUpdateValue("Language_repeat_count", Convert.ToString(value));
+            }
         }
     }
 
     static class Additional_functions
     {
-        public static void Color_TextView(TextView TV, Color color)
+        static void Color_TextView(TextView TextV, Color color)
         {
-            int TrText = 170, // прозрачность текста и фона
-                TrBack = 10;
-            TV.SetTextColor(Color.Argb(TrText, color.R, color.G, color.B));
-            TV.SetBackgroundColor(Color.Argb(TrBack, color.R, color.G, color.B));
+            int TextTransparence = 225, 
+                BackgroundTransparence = 10;
+            TextV.SetTextColor(Color.Argb(TextTransparence, color.R, color.G, color.B));
+            TextV.SetBackgroundColor(Color.Argb(BackgroundTransparence, color.R, color.G, color.B));
         }
 
-        public static void SetColorForItems(int numberLearn, TextView TView)
+        public static void SetColorForItems(int degreeOfStudy, TextView TView)
         {
-            switch (numberLearn / 3)
-            {
-                case 4:
-                    {
-                        Additional_functions.Color_TextView(TView, new Color(255, 0, 0));
-                        break;
-                    }
-                case 3:
-                    {
-                        Additional_functions.Color_TextView(TView, new Color(255, 105, 50));
-                        break;
-                    }
-                case 2:
-                    {
-                        if (numberLearn % 3 == 0)
-                            Additional_functions.Color_TextView(TView, new Color(238, 252, 255));
-                        else
-                            Additional_functions.Color_TextView(TView, new Color(255, 152, 50));
-                        break;
-                    }
-                case 1:
-                    {
-                        Additional_functions.Color_TextView(TView, new Color(197, 255, 50));
-                        break;
-                    }
-                case 0:
-                    {
-                        if (numberLearn % 3 == 0)
-                            Additional_functions.Color_TextView(TView, new Color(134, 48, 255));
-                        else
-                            Additional_functions.Color_TextView(TView, new Color(48, 255, 55));
-                        break;
-                    }
-                default:
-                    break;
-            }
+
+            if (degreeOfStudy == Magic_constants.StandardNumberOfRepeats)
+                Additional_functions.Color_TextView(TView, new Color(238, 252, 255));
+            else if (degreeOfStudy > Magic_constants.StandardNumberOfRepeats) 
+                Additional_functions.Color_TextView(TView, new Color(230, 
+                200 - ((degreeOfStudy - Magic_constants.StandardNumberOfRepeats) * 180 / Magic_constants.StandardNumberOfRepeats), 20));     //  230, 20, 20   to   230, 200, 20
+            else
+                Additional_functions.Color_TextView(TView, 
+                    new Color(20 + (degreeOfStudy * 180 / (Magic_constants.StandardNumberOfRepeats - 1)), 230, 20));                        //  180, 230, 20   to   20,  230, 20
+
+            //Additional_functions.Color_TextView(TView, new Color(       (degreeOfStudy * 50  / Magic_constants.MaxNumberOfRepeats), 
+            //                                                          255 - (degreeOfStudy * 195 / Magic_constants.MaxNumberOfRepeats), 
+            //                                                          255 - (degreeOfStudy * 129 / Magic_constants.MaxNumberOfRepeats))); //0, 255, 255   to  50, 60, 126
         }
 
-
-        public static void Random_4_numbers(int NotI, int count, out List<int> random_numbers)
+        public static void Random_4_numbers(int NotI, int count, out List<int> random_numbers)  // TODO ужас!!! 
         {
             System.Random rand = new System.Random(unchecked((int)(DateTime.Now.Ticks)));
             random_numbers = new List<int> { NotI, 0, 0, 0 };
             if (count > 4)
             {
-                //(NotI + rand.Next(1,count)) % (count);
                 int rnd;
                 while (true)
                 {
@@ -140,7 +126,7 @@ namespace ReLearn
             Stats.Add(new Statistics(rand_word, identifier, RepeatLearn));
         }
 
-        public static string Round(float number)
+        public static string RoundOfNumber(float number)
         {
             var numberChar = Convert.ToString(number);
             if (numberChar.Length > 4)

@@ -70,7 +70,7 @@ namespace ReLearn
         {
             int sum = 0;
             foreach (var s in list_stat)
-                if (s.NumberLearn == Magic_constants.maxLearn)
+                if (s.NumberLearn == Magic_constants.MaxNumberOfRepeats)
                     sum++;
             return sum;
         }
@@ -127,7 +127,7 @@ namespace ReLearn
             Inconvenient_words.DrawBorder(The_canvas, paint_border);
             Total_numbers.DrawBorder(The_canvas, paint_border);
 
-            Vocabulary_learning.DrawPieChart(The_canvas, avg_numberLearn_stat, Magic_constants.maxLearn, Color_Diagram_1, Color_Diagram_2,
+            Vocabulary_learning.DrawPieChart(The_canvas, avg_numberLearn_stat, Magic_constants.MaxNumberOfRepeats, Color_Diagram_1, Color_Diagram_2,
                 new PointF(Vocabulary_learning.Left + Vocabulary_learning.Width / 2f, Vocabulary_learning.Bottom - 27.5f * The_canvas.Width / 100f), Vocabulary_learning.Width / 2.5f);
             Vocabulary_learning.DrawText(The_canvas, text_size_up, Additional_functions.GetResourceString("Degree_Of_Study", this.Resources), Vocabulary_learning.Left + Vocabulary_learning.Width / 12, Vocabulary_learning.Top + Vocabulary_learning.Height / 20);
 

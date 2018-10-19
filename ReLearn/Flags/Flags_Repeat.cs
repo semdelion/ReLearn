@@ -85,13 +85,13 @@ namespace ReLearn
             Button_enable();
             if (B1.Text == Additional_functions.Name_of_the_flag(dataBase[rand_word]))
             {
-                Additional_functions.Update_number_learn(Stats, Convert.ToString(dataBase[rand_word].Image_name), rand_word, dataBase[rand_word].NumberLearn -= Magic_constants.true_answer);
+                Additional_functions.Update_number_learn(Stats, Convert.ToString(dataBase[rand_word].Image_name), rand_word, dataBase[rand_word].NumberLearn -= Magic_constants.TrueAnswer);
                 Statistics.AnswerTrue++;
                 B1.Background = GetDrawable(Resource.Drawable.button_true);
             }
             else
             {
-                Additional_functions.Update_number_learn(Stats, Convert.ToString(dataBase[rand_word].Image_name), rand_word, dataBase[rand_word].NumberLearn += Magic_constants.false_answer);
+                Additional_functions.Update_number_learn(Stats, Convert.ToString(dataBase[rand_word].Image_name), rand_word, dataBase[rand_word].NumberLearn += Magic_constants.FalseAnswer);
                 Statistics.AnswerFalse++;
                 B1.Background = GetDrawable(Resource.Drawable.button_false);
                 if (B2.Text == Additional_functions.Name_of_the_flag(dataBase[rand_word]))
@@ -133,14 +133,14 @@ namespace ReLearn
         public void Button_Flags_Next_Click(View v)
         {
             Button_next.Enabled = false;
-            if (Count < Magic_constants.repeat_count - 1)
+            if (Count < Magic_constants.NumberOfRepeatsImage - 1)
             {
                 Count++;
                 Random rnd = new Random(unchecked((int)(DateTime.Now.Ticks)));
                 Rand_word = rnd.Next(dataBase.Count);
                 Function_Next_Test(Rand_word);
                 Button_Refresh();
-                Title_textView.Text = Convert.ToString(Additional_functions.GetResourceString("Repeat", this.Resources) + " " + (Count + 1) + "/" + Magic_constants.repeat_count);
+                Title_textView.Text = Convert.ToString(Additional_functions.GetResourceString("Repeat", this.Resources) + " " + (Count + 1) + "/" + Magic_constants.NumberOfRepeatsImage);
             }
             else
             {

@@ -20,15 +20,15 @@ namespace ReLearn
             Position = position_new;
             Word = word_new;
 
-            if (Learn + Learn_new > Magic_constants.maxLearn)
-                Learn = Magic_constants.maxLearn;
+            if (Learn + Learn_new > Magic_constants.MaxNumberOfRepeats)
+                Learn = Magic_constants.MaxNumberOfRepeats;
             else if (Learn + Learn_new < 0)
                 Learn = 0;
             else
                 Learn = Learn_new;
         }
 
-        public static void Add_Statistics(int True, int False)// добовление статистики в базу данных 
+        public static void Add_Statistics(int True, int False)      // add stats to the database
         {
             string name_table = DataBase.Table_Name + "_Statistics";
             var database = DataBase.Connect(Database_Name.Statistics);
@@ -36,7 +36,7 @@ namespace ReLearn
         }
     }
 
-    public class Database_Statistics // Класс для считывания базы данных Stat
+    public class Database_Statistics                                // class for reading databse
     {
         [PrimaryKey, AutoIncrement, Column("_id")]
         public int Id { get; set; }

@@ -74,7 +74,7 @@ namespace ReLearn
         public static void Update_Flags_DB()
         {
             var toDay = DateTime.Today;
-            var db = Connect(Database_Name.Flags_DB); // подключение к БД
+            var db = Connect(Database_Name.Flags_DB); 
             var dataBase = db.Query<Database_images>("SELECT * FROM " + Table_Name + " WHERE NumberLearn = 0 AND DateRecurrence != DATETIME('NOW')");
 
             foreach (var s in dataBase) // UPDATE Flags
