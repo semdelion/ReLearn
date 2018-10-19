@@ -16,12 +16,24 @@ using Android.Content.Res;
 
 namespace ReLearn
 {
+    enum StateButton
+    {
+        Next,
+        Unknown
+    };
+
+    class ButtonNext
+    {
+        public StateButton State { get; set; }
+        public Button button = null;
+    }
+
     static class Magic_constants // Маааагия!
     {
         public const int MaxNumberOfRepeats = 12;
         public const int StandardNumberOfRepeats = 6;
         public const int FalseAnswer = 3;
-        public const int NeutralAnswer = 2;
+        public const int NeutralAnswer = 1;
         public const int TrueAnswer = 1;
         public const string font = "fonts/Roboto-Regular.ttf";
 

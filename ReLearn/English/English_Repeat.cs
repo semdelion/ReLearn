@@ -20,85 +20,108 @@ namespace ReLearn
         Button Button2;
         Button Button3;
         Button Button4;
-        Button Button_next;
+        ButtonNext Button_next;
         List<Database_Words> dataBase;
         TextView Title_textView;
         readonly List<Statistics> Stats = new List<Statistics>();
         int Count = -1;
-        int Rand_word { get; set; }
+        int CurrentWordNumber { get; set; }
 
-        void Button_enable() 
+        void Button_enable(bool state)
         {
-            Button1.Enabled = false;
-            Button2.Enabled = false;
-            Button3.Enabled = false;
-            Button4.Enabled = false;
-            Button_next.Enabled = true;
+            Button1.Enabled = state;
+            Button2.Enabled = state;
+            Button3.Enabled = state;
+            Button4.Enabled = state;
+            if (state)
+            {
+                Button_next.State = StateButton.Unknown;
+                Button_next.button.Text = Additional_functions.GetResourceString("unknown", this.Resources);
+                Button1.Background = GetDrawable(Resource.Drawable.button_style_standard);
+                Button2.Background = GetDrawable(Resource.Drawable.button_style_standard);
+                Button3.Background = GetDrawable(Resource.Drawable.button_style_standard);
+                Button4.Background = GetDrawable(Resource.Drawable.button_style_standard);
+            }
+            else
+            {
+                Button_next.State = StateButton.Next;
+                Button_next.button.Text = Additional_functions.GetResourceString("Next", this.Resources);
+            }
+           
         }
 
-        void Button_Refresh() 
+        void Random_Button(Button B1, Button B2, Button B3, Button B4)   //загружаем варианты ответа в текст кнопок
         {
-            Button1.Enabled = true; Button2.Enabled = true; Button3.Enabled = true; Button4.Enabled = true;
-            Button1.Background = GetDrawable(Resource.Drawable.button_style_standard);
-            Button2.Background = GetDrawable(Resource.Drawable.button_style_standard);
-            Button3.Background = GetDrawable(Resource.Drawable.button_style_standard);
-            Button4.Background = GetDrawable(Resource.Drawable.button_style_standard);
-        }
-
-        void Random_Button(Button B1, Button B2, Button B3, Button B4, int i)   //загружаем варианты ответа в текст кнопок
-        {
-            Additional_functions.Random_4_numbers(i, dataBase.Count, out List<int> random_numbers);
+            Additional_functions.Random_4_numbers(CurrentWordNumber, dataBase.Count, out List<int> random_numbers);
             B1.Text = dataBase[random_numbers[0]].TranslationWord;
             B2.Text = dataBase[random_numbers[1]].TranslationWord;
             B3.Text = dataBase[random_numbers[2]].TranslationWord;
             B4.Text = dataBase[random_numbers[3]].TranslationWord;
         }
 
-        void Answer(Button B1, Button B2, Button B3, Button B4,Button BNext,int rand_word ) // подсвечиваем правильный ответ, если мы ошиблись подсвечиваем неправвильный и паравильный 
+        void Function_Next_Test() //новый тест
         {
-            Button_enable();
-            if (B1.Text == dataBase[rand_word].TranslationWord){
-                Additional_functions.Update_number_learn(Stats, dataBase[rand_word].Word, rand_word, dataBase[rand_word].NumberLearn -= Magic_constants.TrueAnswer);
+            Random rnd = new Random(unchecked((int)(DateTime.Now.Ticks)));
+            textView.Text = dataBase[CurrentWordNumber].Word.ToString();
+            switch (rnd.Next(4))
+            {                        
+                case 0:
+                    {
+                        Random_Button(Button1, Button2, Button3, Button4);
+                        break;
+                    }
+                case 1:
+                    {
+                        Random_Button(Button2, Button1, Button3, Button4);
+                        break;
+                    }
+                case 2:
+                    {
+                        Random_Button(Button3, Button1, Button2, Button4);
+                        break;
+                    }
+                case 3:
+                    {
+                        Random_Button(Button4, Button1, Button2, Button3);
+                        break;
+                    }
+            }
+        }
+
+        void Answer(Button B1, Button B2, Button B3, Button B4) // подсвечиваем правильный ответ, если мы ошиблись подсвечиваем неправвильный и паравильный 
+        {
+            Button_enable(false);
+            if (B1.Text == dataBase[CurrentWordNumber].TranslationWord){
+                Additional_functions.Update_number_learn(Stats, dataBase[CurrentWordNumber].Word, CurrentWordNumber, dataBase[CurrentWordNumber].NumberLearn -= Magic_constants.TrueAnswer);
                 Statistics.AnswerTrue++;
                 B1.Background = GetDrawable(Resource.Drawable.button_true);
             }
             else{
-                Additional_functions.Update_number_learn(Stats, dataBase[rand_word].Word, rand_word, dataBase[rand_word].NumberLearn += Magic_constants.FalseAnswer);
+                Additional_functions.Update_number_learn(Stats, dataBase[CurrentWordNumber].Word, CurrentWordNumber, dataBase[CurrentWordNumber].NumberLearn += Magic_constants.FalseAnswer);
                 Statistics.AnswerFalse++;
                 B1.Background = GetDrawable(Resource.Drawable.button_false);
-                if (B2.Text == dataBase[rand_word].TranslationWord)
+                if (B2.Text == dataBase[CurrentWordNumber].TranslationWord)
                     B2.Background = GetDrawable(Resource.Drawable.button_true);
-                else if (B3.Text == dataBase[rand_word].TranslationWord)
+                else if (B3.Text == dataBase[CurrentWordNumber].TranslationWord)
                     B3.Background = GetDrawable(Resource.Drawable.button_true);
                 else
                     B4.Background = GetDrawable(Resource.Drawable.button_true);
             }
         }
 
-        void Function_Next_Test(int rand_word,int i_rand) //новый тест
+        void Unknown()
         {
-            textView.Text = dataBase[rand_word].Word.ToString();
-            switch (i_rand){// задаём рандоммную кнопку                            
-                case 0:{
-                    Random_Button(Button1, Button2, Button3, Button4, rand_word);
-                    break;
-                }
-                case 1:{
-                    Random_Button(Button2, Button1, Button3, Button4, rand_word);
-                    break;
-                }
-                case 2:{
-                    Random_Button(Button3, Button1, Button2, Button4, rand_word);
-                    break;
-                }
-                case 3:{
-                    Random_Button(Button4, Button1, Button2, Button3, rand_word);
-                    break;
-                }
-            }
+            Button tmp;
+            if      (Button1.Text == dataBase[CurrentWordNumber].TranslationWord) tmp = Button1;
+            else if (Button2.Text == dataBase[CurrentWordNumber].TranslationWord) tmp = Button2;
+            else if (Button3.Text == dataBase[CurrentWordNumber].TranslationWord) tmp = Button3;
+            else tmp = Button4;
+            Statistics.AnswerFalse++;
+            Additional_functions.Update_number_learn(Stats, dataBase[CurrentWordNumber].Word, CurrentWordNumber, dataBase[CurrentWordNumber].NumberLearn += Magic_constants.NeutralAnswer);
+            tmp.Background = GetDrawable(Resource.Drawable.button_unknown);
         }
 
-        public void Update_Database() // изменение у бвзы данных элемента NumberLearn
+        void Update_Database() // изменение у BD элемента NumberLearn
         {
             var database = DataBase.Connect(Database_Name.English_DB);          
             database.CreateTable<Database_Words>();
@@ -113,42 +136,48 @@ namespace ReLearn
         public async void Button_Speak_Eng_Click(View v) => await CrossTextToSpeech.Current.Speak(textView.Text);
 
         [Java.Interop.Export("Button_English_1_Click")]
-        public void Button_English_1_Click(View v) =>  Answer(Button1, Button2, Button3, Button4, Button_next, Rand_word);
+        public void Button_English_1_Click(View v) =>  Answer(Button1, Button2, Button3, Button4);
     
-
         [Java.Interop.Export("Button_English_2_Click")]
-        public void Button_English_2_Click(View v) => Answer(Button2, Button1, Button3, Button4, Button_next, Rand_word);
-
+        public void Button_English_2_Click(View v) => Answer(Button2, Button1, Button3, Button4);
 
         [Java.Interop.Export("Button_English_3_Click")]
-        public void Button_English_3_Click(View v) => Answer(Button3, Button1, Button2, Button4, Button_next, Rand_word);
-
+        public void Button_English_3_Click(View v) => Answer(Button3, Button1, Button2, Button4);
 
         [Java.Interop.Export("Button_English_4_Click")]
-        public void Button_English_4_Click(View v) => Answer(Button4, Button1, Button2, Button3, Button_next, Rand_word);
-
+        public void Button_English_4_Click(View v) => Answer(Button4, Button1, Button2, Button3);
 
         [Java.Interop.Export("Button_English_Next_Click")]
         public void Button_English_Next_Click(View v)
         {
-            Button_next.Enabled = false;
-            if (Count < Magic_constants.NumberOfRepeatsLanguage - 1)
+            Button_next.button.Enabled = false;
+            if (Button_next.State == StateButton.Unknown)
             {
-                Count++;
-                Random rnd = new System.Random(unchecked((int)(DateTime.Now.Ticks)));
-                Rand_word = rnd.Next(dataBase.Count);
-                Function_Next_Test( Rand_word, rnd.Next(4));
-                Button_Refresh();
-                Title_textView.Text = Convert.ToString(Additional_functions.GetResourceString("Repeat", this.Resources) + " " + (Count + 1) + "/" + Magic_constants.NumberOfRepeatsLanguage); // ПЕРЕДЕЛАЙ Костыль счётчик 
+                Button_next.State = StateButton.Next;
+                Button_enable(false);
+                Unknown();
             }
             else
             {
-                Statistics.Add_Statistics(Statistics.AnswerTrue, Statistics.AnswerFalse);
-                Update_Database();
-                Intent intent_english_stat = new Intent(this, typeof(English_Stat));
-                StartActivity(intent_english_stat);
-                this.Finish();
+                if (Count < Magic_constants.NumberOfRepeatsLanguage - 1)
+                {
+                    Count++;
+                    Random rnd = new System.Random(unchecked((int)(DateTime.Now.Ticks)));
+                    CurrentWordNumber = rnd.Next(dataBase.Count);
+                    Function_Next_Test();
+                    Button_enable(true);
+                    Title_textView.Text = Convert.ToString(Additional_functions.GetResourceString("Repeat", this.Resources) + " " + (Count + 1) + "/" + Magic_constants.NumberOfRepeatsLanguage); // ПЕРЕДЕЛАЙ Костыль счётчик 
+                }
+                else
+                {
+                    Statistics.Add_Statistics(Statistics.AnswerTrue, Statistics.AnswerFalse);
+                    Update_Database();
+                    Intent intent_english_stat = new Intent(this, typeof(English_Stat));
+                    StartActivity(intent_english_stat);
+                    this.Finish();
+                }
             }
+            Button_next.button.Enabled = true;
         }
         
         protected override void OnCreate(Bundle savedInstanceState)
@@ -166,7 +195,11 @@ namespace ReLearn
             Button2 = FindViewById<Button>(Resource.Id.button_E_choice2);
             Button3 = FindViewById<Button>(Resource.Id.button_E_choice3);
             Button4 = FindViewById<Button>(Resource.Id.button_E_choice4);
-            Button_next = FindViewById<Button>(Resource.Id.button_E_Next);
+            Button_next = new ButtonNext
+            {
+                button = FindViewById<Button>(Resource.Id.button_E_Next),
+                State = StateButton.Next
+            };
             try
             {
                 SQLiteConnection db = DataBase.Connect(Database_Name.English_DB);

@@ -125,7 +125,7 @@
 					android:gravity="left|right|center"
 					android:scaleType="fitXY"/>
 				<Button
-					android:text="@string/Next"
+					android:text="@string/unknown"
 					android:layout_column="1"
 					android:layout_width="0dp"
 					android:layout_weight="0.7"

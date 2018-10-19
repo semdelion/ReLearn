@@ -76,4 +76,5 @@
   <string name="Settings">Settings</string>
   <string name="number_of_word_repeats">Number of word repeats</string>
   <string name="number_of_image_repeats">Number of image repeats</string>
+  <string name="unknown">Unknown</string>
 </resources>

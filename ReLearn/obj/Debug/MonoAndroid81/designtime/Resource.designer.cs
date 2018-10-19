@@ -1771,22 +1771,22 @@ namespace ReLearn
 			public const int buttonBeforeClicking = 2130771975;
 			
 			// aapt resource value: 0x7F010008
-			public const int button_dontknow = 2130771976;
+			public const int button_enabled = 2130771976;
 			
 			// aapt resource value: 0x7F010009
-			public const int button_enabled = 2130771977;
+			public const int button_false = 2130771977;
 			
 			// aapt resource value: 0x7F010010
-			public const int button_false = 2130771984;
+			public const int button_style_standard = 2130771984;
 			
 			// aapt resource value: 0x7F010011
-			public const int button_style_standard = 2130771985;
+			public const int button_touch = 2130771985;
 			
 			// aapt resource value: 0x7F010012
-			public const int button_touch = 2130771986;
+			public const int button_true = 2130771986;
 			
 			// aapt resource value: 0x7F010013
-			public const int button_true = 2130771987;
+			public const int button_unknown = 2130771987;
 			
 			// aapt resource value: 0x7F010014
 			public const int custom_thumb = 2130771988;
@@ -3025,6 +3025,9 @@ namespace ReLearn
 			
 			// aapt resource value: 0x7F050041
 			public const int Today = 2131034177;
+			
+			// aapt resource value: 0x7F050070
+			public const int unknown = 2131034224;
 			
 			// aapt resource value: 0x7F050017
 			public const int View_dictionary = 2131034135;

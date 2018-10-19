@@ -1765,22 +1765,22 @@ namespace ReLearn
 			public const int backgroundMain = 2130837591;
 			
 			// aapt resource value: 0x7f020058
-			public const int button_dontknow = 2130837592;
+			public const int button_enabled = 2130837592;
 			
 			// aapt resource value: 0x7f020059
-			public const int button_enabled = 2130837593;
+			public const int button_false = 2130837593;
 			
 			// aapt resource value: 0x7f02005a
-			public const int button_false = 2130837594;
+			public const int button_style_standard = 2130837594;
 			
 			// aapt resource value: 0x7f02005b
-			public const int button_style_standard = 2130837595;
+			public const int button_touch = 2130837595;
 			
 			// aapt resource value: 0x7f02005c
-			public const int button_touch = 2130837596;
+			public const int button_true = 2130837596;
 			
 			// aapt resource value: 0x7f02005d
-			public const int button_true = 2130837597;
+			public const int button_unknown = 2130837597;
 			
 			// aapt resource value: 0x7f02005e
 			public const int buttonBeforeClicking = 2130837598;
@@ -3058,6 +3058,9 @@ namespace ReLearn
 			
 			// aapt resource value: 0x7f05005d
 			public const int support_project = 2131034205;
+			
+			// aapt resource value: 0x7f050063
+			public const int unknown = 2131034211;
 			
 			static String()
 			{
