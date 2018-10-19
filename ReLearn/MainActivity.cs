@@ -34,7 +34,6 @@ namespace ReLearn
         protected override void OnCreate(Bundle savedInstanceState)
         {          
             Additional_functions.Font();
-            Window.SetBackgroundDrawable(GetDrawable(Resource.Drawable.backgroundMain));
             SetContentView(Resource.Layout.Main);
             var toolbarMain = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbarMain);
             SetSupportActionBar(toolbarMain);
@@ -44,34 +43,9 @@ namespace ReLearn
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
             this.MenuInflater.Inflate(Resource.Menu.settings, menu);
-            //expandableListView.ChildClick += (s, args) =>
-            //{
-            //    var item = expandableListView.Adapter.GetItem(args.GroupPosition);
-            //    var document = collectionsDocuments[args.GroupPosition].Documents[args.ChildPosition];
-            //    Android.App.AlertDialog.Builder alert = new Android.App.AlertDialog.Builder(this);
-            //    alert.SetTitle("");
-            //    alert.SetMessage($"Select Document:\n{item}\n{args.Id}?");
-            //    alert.SetPositiveButton("Cancel", delegate { alert.Dispose(); });
-            //    alert.SetNeutralButton("Ok", delegate
-            //    {
-            //        Intent intent = new Intent(this, typeof(ViewDocument));
-            //        intent.PutExtra("Document", document);
-            //        StartActivity(intent);
-            //        this.Finish();
-            //        Toast.MakeText(this, "Selected Document: " + item, ToastLength.Short).Show();
-            //    });
-            //    alert.Show();
-            //};
-
             return base.OnCreateOptionsMenu(menu);
         }
-
-        //public override bool OnPrepareOptionsMenu(IMenu menu)
-        //{
-        //    MenuInflater.Inflate(Resource.Menu.settings, menu);
-        //    return true;
-        //}     
-
+      
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
             int id = item.ItemId;

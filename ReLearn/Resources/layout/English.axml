@@ -6,10 +6,14 @@
 	android:layout_width="match_parent"
 	android:layout_height="match_parent">
    <android.support.v7.widget.Toolbar 
-        android:popupTheme="@style/MenuStyle"
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		app:popupTheme="@style/Theme.AppCompat.NoActionBar"
+		android:layout_height="85dp"
+		android:fitsSystemWindows="true"
+		android:elevation="10dp"
+		android:background="@drawable/toolbar"    
         android:minHeight="?android:attr/actionBarSize"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
         android:id="@+id/toolbarEnglish"
         app:navigationIcon="@drawable/arrow"
         android:scrollIndicators="top|bottom">

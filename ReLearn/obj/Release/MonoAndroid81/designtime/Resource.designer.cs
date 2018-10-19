@@ -1863,6 +1863,15 @@ namespace ReLearn
 			// aapt resource value: 0x7F010026
 			public const int Stat2 = 2130772006;
 			
+			// aapt resource value: 0x7F010027
+			public const int toolbar = 2130772007;
+			
+			// aapt resource value: 0x7F010028
+			public const int toolbarMain = 2130772008;
+			
+			// aapt resource value: 0x7F010029
+			public const int toolbarmainback = 2130772009;
+			
 			// aapt resource value: 0x7F090060
 			public const int tooltip_frame_dark = 2131296352;
 			

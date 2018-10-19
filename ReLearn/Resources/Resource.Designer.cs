@@ -1821,11 +1821,11 @@ namespace ReLearn
 			// aapt resource value: 0x7f02006a
 			public const int notification_icon_background = 2130837610;
 			
-			// aapt resource value: 0x7f020077
-			public const int notification_template_icon_bg = 2130837623;
+			// aapt resource value: 0x7f02007a
+			public const int notification_template_icon_bg = 2130837626;
 			
-			// aapt resource value: 0x7f020078
-			public const int notification_template_icon_low_bg = 2130837624;
+			// aapt resource value: 0x7f02007b
+			public const int notification_template_icon_low_bg = 2130837627;
 			
 			// aapt resource value: 0x7f02006b
 			public const int notification_tile_bg = 2130837611;
@@ -1858,10 +1858,19 @@ namespace ReLearn
 			public const int Stat2 = 2130837620;
 			
 			// aapt resource value: 0x7f020075
-			public const int tooltip_frame_dark = 2130837621;
+			public const int toolbar = 2130837621;
 			
 			// aapt resource value: 0x7f020076
-			public const int tooltip_frame_light = 2130837622;
+			public const int toolbarMain = 2130837622;
+			
+			// aapt resource value: 0x7f020077
+			public const int toolbarmainback = 2130837623;
+			
+			// aapt resource value: 0x7f020078
+			public const int tooltip_frame_dark = 2130837624;
+			
+			// aapt resource value: 0x7f020079
+			public const int tooltip_frame_light = 2130837625;
 			
 			static Drawable()
 			{
