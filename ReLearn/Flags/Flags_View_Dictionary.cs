@@ -31,7 +31,7 @@ namespace ReLearn
             listView_dictionary = FindViewById<ListView>(Resource.Id.listView_dictionary);
 
             var db = DataBase.Connect(Database_Name.Flags_DB);
-            dataBase = db.Query<Database_images>("SELECT * FROM " + DataBase.Table_Name);
+            dataBase = db.Query<Database_images>("SELECT * FROM " + DataBase.TableNameImage);
             SortNamesImages();
 
             Adapter = new CustomAdapter_ImageText(this, dataBase);
@@ -81,7 +81,7 @@ namespace ReLearn
                 else
                 {
                     List<Database_images> FD = new List<Database_images>();
-                    if (CrossSettings.Current.GetValueOrDefault("Language", null) == "en")
+                    if (CrossSettings.Current.GetValueOrDefault(Settings.Language.ToString(), null) == Languages.en.ToString())
                         FD = SearchWithGetTypeField("Name_image_en", e);
                     else
                         FD = SearchWithGetTypeField("Name_image_ru", e);
@@ -104,7 +104,7 @@ namespace ReLearn
 
         public void SortNamesImages()
         {
-            if (CrossSettings.Current.GetValueOrDefault("Language", null) == "en")
+            if (CrossSettings.Current.GetValueOrDefault(Settings.Language.ToString(), null) == Languages.en.ToString())
                 dataBase.Sort((x, y) => x.Name_image_en.CompareTo(y.Name_image_en));
             else
                 dataBase.Sort((x, y) => x.Name_image_ru.CompareTo(y.Name_image_ru));

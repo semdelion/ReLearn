@@ -12,14 +12,16 @@ namespace ReLearn
         Canvas The_canvas;
         Color Color_Diagram_1;
         Color Color_Diagram_2;
+        TableNames TabelName;
         readonly Color background_color = new Color(Color.Argb(150, 16, 19, 38));
         readonly Paint paint_border = new Paint { StrokeWidth = 4, Color = Color.Argb(250, 215, 248, 254), AntiAlias = true };
         readonly Paint paint_text = new Paint { TextSize = 25, StrokeWidth = 4, Color = Color.Rgb(215, 248, 254), AntiAlias = true };
 
-        public Graph_Statistics(Context context, Color color_diagram_1, Color color_diagram_2) : base(context)
+        public Graph_Statistics(Context context, Color color_diagram_1, Color color_diagram_2, string Table_Name) : base(context)
         {
             Color_Diagram_1 = color_diagram_1;
             Color_Diagram_2 = color_diagram_2;
+            TabelName = (TableNames)Enum.Parse(typeof(TableNames), Table_Name);
         }
 
         void Abscissa(float left, float bottom, float width, Paint paint, int amount)
@@ -81,7 +83,7 @@ namespace ReLearn
         {
             The_canvas = canvas;            
             var database = DataBase.Connect(Database_Name.Statistics);
-            var Database_Stat = database.Query<Database_Statistics>("SELECT * FROM " + DataBase.Table_Name + "_Statistics");// количество строк в БД
+            var Database_Stat = database.Query<Database_Statistics>("SELECT * FROM " + TabelName.ToString() + "_Statistics");// количество строк в БД
             base.OnDraw(The_canvas);
 
             paint_text.TextSize = 2.5f * (The_canvas.Height + The_canvas.Width) / 200;

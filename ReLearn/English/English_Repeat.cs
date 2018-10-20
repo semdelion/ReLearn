@@ -29,25 +29,18 @@ namespace ReLearn
 
         void Button_enable(bool state)
         {
-            Button1.Enabled = state;
-            Button2.Enabled = state;
-            Button3.Enabled = state;
-            Button4.Enabled = state;
+            Button1.Enabled = Button2.Enabled = Button3.Enabled = Button4.Enabled = state;
             if (state)
             {
                 Button_next.State = StateButton.Unknown;
                 Button_next.button.Text = Additional_functions.GetResourceString("unknown", this.Resources);
-                Button1.Background = GetDrawable(Resource.Drawable.button_style_standard);
-                Button2.Background = GetDrawable(Resource.Drawable.button_style_standard);
-                Button3.Background = GetDrawable(Resource.Drawable.button_style_standard);
-                Button4.Background = GetDrawable(Resource.Drawable.button_style_standard);
+                Button1.Background = Button2.Background = Button3.Background = Button4.Background = GetDrawable(Resource.Drawable.button_style_standard);
             }
             else
             {
                 Button_next.State = StateButton.Next;
                 Button_next.button.Text = Additional_functions.GetResourceString("Next", this.Resources);
             }
-           
         }
 
         void Random_Button(Button B1, Button B2, Button B3, Button B4)   //загружаем варианты ответа в текст кнопок
@@ -59,7 +52,7 @@ namespace ReLearn
             B4.Text = dataBase[random_numbers[3]].TranslationWord;
         }
 
-        void Function_Next_Test() //новый тест
+        void NextWord() //new
         {
             Random rnd = new Random(unchecked((int)(DateTime.Now.Ticks)));
             textView.Text = dataBase[CurrentWordNumber].Word.ToString();
@@ -127,8 +120,8 @@ namespace ReLearn
             database.CreateTable<Database_Words>();
             for (int i = 0; i < Stats.Count; i++)
             {
-                database.Query<Database_Words>("UPDATE " + DataBase.Table_Name + " SET DateRecurrence = DATETIME('NOW') WHERE Word = ?", Stats[i].Word);
-                database.Query<Database_Words>("UPDATE " + DataBase.Table_Name + " SET NumberLearn = " + Stats[i].Learn + " WHERE Word = ?", Stats[i].Word);
+                database.Query<Database_Words>("UPDATE " + DataBase.TableNameLanguage + " SET DateRecurrence = DATETIME('NOW') WHERE Word = ?", Stats[i].Word);
+                database.Query<Database_Words>("UPDATE " + DataBase.TableNameLanguage + " SET NumberLearn = " + Stats[i].Learn + " WHERE Word = ?", Stats[i].Word);
             }
         }
 
@@ -164,13 +157,13 @@ namespace ReLearn
                     Count++;
                     Random rnd = new System.Random(unchecked((int)(DateTime.Now.Ticks)));
                     CurrentWordNumber = rnd.Next(dataBase.Count);
-                    Function_Next_Test();
+                    NextWord();
                     Button_enable(true);
                     Title_textView.Text = Convert.ToString(Additional_functions.GetResourceString("Repeat", this.Resources) + " " + (Count + 1) + "/" + Magic_constants.NumberOfRepeatsLanguage); // ПЕРЕДЕЛАЙ Костыль счётчик 
                 }
                 else
                 {
-                    Statistics.Add_Statistics(Statistics.AnswerTrue, Statistics.AnswerFalse);
+                    Statistics.Add_Statistics(Statistics.AnswerTrue, Statistics.AnswerFalse, DataBase.TableNameLanguage);
                     Update_Database();
                     Intent intent_english_stat = new Intent(this, typeof(English_Stat));
                     StartActivity(intent_english_stat);
@@ -195,15 +188,17 @@ namespace ReLearn
             Button2 = FindViewById<Button>(Resource.Id.button_E_choice2);
             Button3 = FindViewById<Button>(Resource.Id.button_E_choice3);
             Button4 = FindViewById<Button>(Resource.Id.button_E_choice4);
+
             Button_next = new ButtonNext
             {
                 button = FindViewById<Button>(Resource.Id.button_E_Next),
                 State = StateButton.Next
             };
+
             try
             {
                 SQLiteConnection db = DataBase.Connect(Database_Name.English_DB);
-                dataBase = db.Query<Database_Words>("SELECT * FROM " + DataBase.Table_Name + " WHERE NumberLearn > 0");
+                dataBase = db.Query<Database_Words>("SELECT * FROM " + DataBase.TableNameLanguage + " WHERE NumberLearn > 0");
                 Button_English_Next_Click(null);
             }
             catch

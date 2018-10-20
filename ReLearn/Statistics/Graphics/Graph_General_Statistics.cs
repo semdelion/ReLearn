@@ -9,6 +9,7 @@ namespace ReLearn
     class Graph_General_Statistics : View
     {
         Canvas The_canvas;
+        TableNames TableName;
         Color Color_Diagram_1 { get; }
         Color Color_Diagram_2 { get; }
         string Object_name { get;}
@@ -17,12 +18,13 @@ namespace ReLearn
         readonly Paint paint_border = new Paint { StrokeWidth = 4, Color = Color.Argb(250, 215, 248, 254), AntiAlias = true };
         readonly Paint paint_text = new Paint { TextSize = 25, StrokeWidth = 4, Color = Color.Rgb(215, 248, 254), AntiAlias = true };
 
-        public Graph_General_Statistics(Context context, Color color_diagram_1, Color color_diagram_2, List<Database_for_stats> stats_database,string object_name ) : base(context)
+        public Graph_General_Statistics(Context context, Color color_diagram_1, Color color_diagram_2, List<Database_for_stats> stats_database,string object_name , string Table_Name ) : base(context)
         {
             Stats_database = stats_database;
             Color_Diagram_1 = color_diagram_1;
             Color_Diagram_2 = color_diagram_2;
             Object_name = object_name;
+            TableName = (TableNames)Enum.Parse(typeof(TableNames), Table_Name);
         }
 
         float Average(List<Database_for_stats> list_stat)
@@ -35,13 +37,13 @@ namespace ReLearn
 
         float Average_True_Today(SQLite.SQLiteConnection database)
         {
-            var Database_Stat = database.Query<Database_Statistics>("SELECT * FROM " + DataBase.Table_Name + "_Statistics" + " WHERE DateOfTesting >= date('now')");// количество строк в БД
+            var Database_Stat = database.Query<Database_Statistics>("SELECT * FROM " + TableName.ToString() + "_Statistics" + " WHERE DateOfTesting >= date('now')");// количество строк в БД
             return Average_percent_true(Database_Stat);
         }
 
         float Average_True_Month(SQLite.SQLiteConnection database)
         {
-            var Database_Stat = database.Query<Database_Statistics>("SELECT * FROM " + DataBase.Table_Name + "_Statistics" + " WHERE  STRFTIME ( '%Y%m', DateOfTesting) = STRFTIME ( '%Y%m', 'now')");// количество строк в БД
+            var Database_Stat = database.Query<Database_Statistics>("SELECT * FROM " + TableName.ToString() + "_Statistics" + " WHERE  STRFTIME ( '%Y%m', DateOfTesting) = STRFTIME ( '%Y%m', 'now')");// количество строк в БД
             return Average_percent_true(Database_Stat);
         }
 
@@ -97,7 +99,7 @@ namespace ReLearn
             paint_border.SetStyle(Paint.Style.Stroke);
             paint_text.TextSize = 2.5f * (The_canvas.Height + The_canvas.Width) / 200;
             var database = DataBase.Connect(Database_Name.Statistics);
-            var Database_Stat = database.Query<Database_Statistics>("SELECT * FROM " + DataBase.Table_Name + "_Statistics");// количество строк в БД
+            var Database_Stat = database.Query<Database_Statistics>("SELECT * FROM " + TableName.ToString() + "_Statistics");// количество строк в БД
 
             float height = (The_canvas.Height - 81f * The_canvas.Width / 100f) / 3;
 

@@ -13,15 +13,24 @@ namespace ReLearn
     [Activity(Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     class English_Learn : AppCompatActivity
     {
-        TextView textView_learn_en;
-        TextView textView_learn_ru;
         bool Voice_Enable = true;
+        string Word
+        {
+            get { return FindViewById<TextView>(Resource.Id.textView_learn_en).Text; }
+            set { FindViewById<EditText>(Resource.Id.editText_foreign_word).Text = value; }
+        }
+
+        string TranslationWord
+        {
+            get { return FindViewById<TextView>(Resource.Id.textView_learn_ru).Text; }
+            set { FindViewById<TextView>(Resource.Id.textView_learn_ru).Text = value; }
+        }
 
         [Java.Interop.Export("Button_English_Learn_Next_Click")]
-        public void Button_English_Learn_Next_Click(View v) => Following_Random_Word();              
+        public void Button_English_Learn_Next_Click(View v) => NextRandomWord();              
         
         [Java.Interop.Export("Button_English_Learn_Voice_Click")]
-        public void Button_English_Learn_Voice_Click(View v) => CrossTextToSpeech.Current.Speak(textView_learn_en.Text);
+        public void Button_English_Learn_Voice_Click(View v) => CrossTextToSpeech.Current.Speak(Word);
         
         [Java.Interop.Export("Button_English_Learn_Voice_Enable")]
         public void Button_English_Learn_Voice_Enable(View v)
@@ -41,19 +50,19 @@ namespace ReLearn
             }
         }
 
-        public void Following_Random_Word()
+        void NextRandomWord()
         {
             try
             {
                 var db = DataBase.Connect(Database_Name.English_DB);
-                var dataBase = db.Query<Database_Words>("SELECT * FROM " + DataBase.Table_Name);
+                var dataBase = db.Query<Database_Words>("SELECT * FROM " + DataBase.TableNameLanguage);
                 Random rnd = new Random(unchecked((int)(DateTime.Now.Ticks)));
                 int rand_word = rnd.Next(dataBase.Count);
-                textView_learn_en.Text = dataBase[rand_word].Word;
-                textView_learn_ru.Text = dataBase[rand_word].TranslationWord;
+                Word = dataBase[rand_word].Word;
+                TranslationWord = dataBase[rand_word].TranslationWord;
 
                 if (Voice_Enable)
-                    CrossTextToSpeech.Current.Speak(textView_learn_en.Text);          
+                    CrossTextToSpeech.Current.Speak(Word);          
             }
             catch
             {
@@ -63,20 +72,13 @@ namespace ReLearn
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             Additional_functions.Font();
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.English_Learn);
             var toolbarMain = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbarEnglishLearn);
             SetSupportActionBar(toolbarMain);
             SupportActionBar.SetDisplayHomeAsUpEnabled(true); // отображаем кнопку домой
-            //this.ActionBar.SetBackgroundDrawable(GetDrawable(Resource.Drawable.BackgroundActionBar));
-            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-            textView_learn_en = FindViewById<TextView>(Resource.Id.textView_learn_en);
-            textView_learn_ru = FindViewById<TextView>(Resource.Id.textView_learn_ru);
-
-            Following_Random_Word();              
+            NextRandomWord();              
         }
 
         public override bool OnOptionsItemSelected(IMenuItem item)
@@ -87,5 +89,4 @@ namespace ReLearn
 
         protected override void AttachBaseContext(Context newbase) => base.AttachBaseContext(CalligraphyContextWrapper.Wrap(newbase));
     }
-    
 } 

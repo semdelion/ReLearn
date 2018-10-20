@@ -28,18 +28,12 @@ namespace ReLearn
 
         void Button_enable(bool state)
         {
-            Button1.Enabled = state;
-            Button2.Enabled = state;
-            Button3.Enabled = state;
-            Button4.Enabled = state;
+            Button1.Enabled = Button2.Enabled = Button3.Enabled = Button4.Enabled = state;
             if (state)
             {
                 Button_next.State = StateButton.Unknown;
                 Button_next.button.Text = Additional_functions.GetResourceString("unknown", this.Resources);
-                Button1.Background = GetDrawable(Resource.Drawable.button_style_standard);
-                Button2.Background = GetDrawable(Resource.Drawable.button_style_standard);
-                Button3.Background = GetDrawable(Resource.Drawable.button_style_standard);
-                Button4.Background = GetDrawable(Resource.Drawable.button_style_standard);
+                Button1.Background = Button2.Background = Button3.Background = Button4.Background = GetDrawable(Resource.Drawable.button_style_standard);
             }
             else
             {
@@ -57,7 +51,7 @@ namespace ReLearn
             B4.Text = Additional_functions.Name_of_the_flag(dataBase[random_numbers[3]]);
         }
 
-        void Function_Next_Test() //new test
+        void NextTest() //new test
         {
             Random rnd = new Random(unchecked((int)(DateTime.Now.Ticks)));
             var his = Application.Context.Assets.Open("ImageFlags/" + dataBase[CurrentWordNumber].Image_name+ ".png");
@@ -124,8 +118,8 @@ namespace ReLearn
             var database = DataBase.Connect(Database_Name.Flags_DB);         
             for (int i = 0; i < Stats.Count; i++)
             {
-                database.Query<Database_images>("UPDATE " + DataBase.Table_Name + " SET DateRecurrence = DATETIME('NOW') WHERE Image_name = ?", Stats[i].Word);
-                database.Query<Database_images>("UPDATE " + DataBase.Table_Name + " SET NumberLearn = " + Stats[i].Learn + " WHERE Image_name = ?", Stats[i].Word);
+                database.Query<Database_images>("UPDATE " + DataBase.TableNameImage + " SET DateRecurrence = DATETIME('NOW') WHERE Image_name = ?", Stats[i].Word);
+                database.Query<Database_images>("UPDATE " + DataBase.TableNameImage + " SET NumberLearn = " + Stats[i].Learn + " WHERE Image_name = ?", Stats[i].Word);
             }
         }
 
@@ -162,13 +156,13 @@ namespace ReLearn
                     Count++;
                     Random rnd = new Random(unchecked((int)(DateTime.Now.Ticks)));
                     CurrentWordNumber = rnd.Next(dataBase.Count);
-                    Function_Next_Test();
+                    NextTest();
                     Button_enable(true);
                     Title_textView.Text = Convert.ToString(Additional_functions.GetResourceString("Repeat", this.Resources) + " " + (Count + 1) + "/" + Magic_constants.NumberOfRepeatsImage);
                 }
                 else
                 {
-                    Statistics.Add_Statistics(Statistics.AnswerTrue, Statistics.AnswerFalse);
+                    Statistics.Add_Statistics(Statistics.AnswerTrue, Statistics.AnswerFalse, DataBase.TableNameImage);
                     Update_Database();
                     Intent intent_flags_stat = new Intent(this, typeof(Flags_Stats));
                     StartActivity(intent_flags_stat);
@@ -201,7 +195,7 @@ namespace ReLearn
             try
             {
                 SQLiteConnection db = DataBase.Connect(Database_Name.Flags_DB);
-                dataBase = db.Query<Database_images>("SELECT * FROM " + DataBase.Table_Name + " WHERE NumberLearn > 0");
+                dataBase = db.Query<Database_images>("SELECT * FROM " + DataBase.TableNameImage + " WHERE NumberLearn > 0");
                 Button_Flags_Next_Click(null);
             }
             catch

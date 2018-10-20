@@ -27,14 +27,12 @@ namespace ReLearn
         protected override void OnCreate(Bundle savedInstanceState)
         {
             Additional_functions.Font();
-            DataBase.Table_Name = Table_name.Flags;
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Flags);
             var toolbarMain = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbarFlags);
             SetSupportActionBar(toolbarMain);
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
-
-            DataBase.Update_Flags_DB();          
+            DataBase.UpdateImagesToRepeat();          
         }
 
         public override bool OnPrepareOptionsMenu(IMenu menu)

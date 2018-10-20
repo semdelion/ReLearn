@@ -1,6 +1,7 @@
 ﻿using Android.App;
 using Android.Content;
 using Android.OS;
+using Plugin.Settings;
 
 namespace ReLearn
 {
@@ -9,7 +10,7 @@ namespace ReLearn
     {     
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            Checklanguage();
+            Additional_functions.Update_Configuration_Locale(this.Resources);
             base.OnCreate(savedInstanceState);
             FrameStatistics.plain = Android.Graphics.Typeface.CreateFromAsset(Assets, Magic_constants.font);
             DataBase.Install_database_from_assets(Database_Name.English_DB);
@@ -18,13 +19,6 @@ namespace ReLearn
             Intent intent = new Intent(this, typeof(MainActivity));        
             StartActivity(typeof(MainActivity));
             this.Finish();
-        }
-
-        void Checklanguage()
-        {
-            if (System.String.IsNullOrEmpty(Plugin.Settings.CrossSettings.Current.GetValueOrDefault("Language", null)))
-                Plugin.Settings.CrossSettings.Current.AddOrUpdateValue("Language", "en");
-            Additional_functions.Update_Configuration_Locale(Plugin.Settings.CrossSettings.Current.GetValueOrDefault("Language", null), this.Resources);
         }
     }
 }

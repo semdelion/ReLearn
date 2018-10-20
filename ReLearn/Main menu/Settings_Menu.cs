@@ -24,7 +24,7 @@ namespace ReLearn
     {      
         int CheckedItem()
         {
-            if (CrossSettings.Current.GetValueOrDefault("Language", null) == "en")
+            if (CrossSettings.Current.GetValueOrDefault(Settings.Language.ToString(), null) == Languages.en.ToString())
             {
                 FindViewById<TextView>(Resource.Id.language).Text = $"{Additional_functions.GetResourceString("Language", this.Resources) }:\t\t\tEnglish";
                 return 0;
@@ -50,15 +50,15 @@ namespace ReLearn
                 checkedItem = e.Which;
                 if (listLanguage[e.Which] == "English")
                 {
-                    CrossSettings.Current.AddOrUpdateValue("Language", "en");     
+                    CrossSettings.Current.AddOrUpdateValue(Settings.Language.ToString(), Languages.en.ToString());     
                     Toast.MakeText(this, Additional_functions.GetResourceString("EnIsSelected", this.Resources), ToastLength.Short).Show();
                 }
                 else
                 {
-                    CrossSettings.Current.AddOrUpdateValue("Language", "ru");
+                    CrossSettings.Current.AddOrUpdateValue(Settings.Language.ToString(), Languages.ru.ToString());
                     Toast.MakeText(this, Additional_functions.GetResourceString("RuIsSelected", this.Resources), ToastLength.Short).Show();
                 }
-                Additional_functions.Update_Configuration_Locale(Plugin.Settings.CrossSettings.Current.GetValueOrDefault("Language", null), this.Resources);
+                Additional_functions.Update_Configuration_Locale(this.Resources);
                 FindViewById<TextView>(Resource.Id.language).Text = $"{Additional_functions.GetResourceString("Language", this.Resources)}:\t\t\t{listLanguage[e.Which]}";
                 StartActivity(new Intent(this, typeof(Settings_Menu)));
                 this.Finish();        

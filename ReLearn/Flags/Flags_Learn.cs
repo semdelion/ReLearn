@@ -13,7 +13,11 @@ namespace ReLearn
     class Flags_Learn : AppCompatActivity
     {
         ImageView imageView;
-        TextView textView_learn_flag;
+        string ImageName
+        {
+            get { return FindViewById<TextView>(Resource.Id.textView_flag_learn).Text; }
+            set { FindViewById<TextView>(Resource.Id.textView_flag_learn).Text = value; }
+        }
 
         [Java.Interop.Export("Button_Flags_Learn_Next_Click")]
         public void Button_Flags_Learn_Click(View v) => Random_Image();
@@ -23,7 +27,7 @@ namespace ReLearn
             try
             {
                 var db = DataBase.Connect(Database_Name.Flags_DB);        
-                var dataBase = db.Query<Database_images>("SELECT * FROM " + DataBase.Table_Name);
+                var dataBase = db.Query<Database_images>("SELECT * FROM " + DataBase.TableNameImage);
                 Random rnd = new Random(unchecked((int)(DateTime.Now.Ticks)));
                 int rand_word = rnd.Next(dataBase.Count);
 
@@ -31,7 +35,7 @@ namespace ReLearn
                 Bitmap bitmap = BitmapFactory.DecodeStream(his);
                 imageView.SetImageBitmap(bitmap);
 
-                textView_learn_flag.Text = Additional_functions.Name_of_the_flag(dataBase[rand_word]);
+                ImageName = Additional_functions.Name_of_the_flag(dataBase[rand_word]);
             }
             catch
             {
@@ -49,9 +53,7 @@ namespace ReLearn
             SetSupportActionBar(toolbarMain);
             SupportActionBar.SetDisplayHomeAsUpEnabled(true); // отображаем кнопку домой
 
-            textView_learn_flag = FindViewById<TextView>(Resource.Id.textView_flag_learn);
             imageView = FindViewById<ImageView>(Resource.Id.imageView_Flags_learn);
-
             Random_Image();        
         }
 

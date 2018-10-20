@@ -57,7 +57,7 @@ namespace ReLearn
 
             Additional_functions.SetColorForItems(list[position].NumberLearn, TextView);
 
-            if (CrossSettings.Current.GetValueOrDefault("Language", null)=="en")
+            if (CrossSettings.Current.GetValueOrDefault(Settings.Language.ToString(), null) == Languages.en.ToString())
                 TextView.Text = list[position].Name_image_en;
             else
                 TextView.Text = list[position].Name_image_ru;            

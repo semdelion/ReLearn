@@ -20,7 +20,22 @@ namespace ReLearn
     {
         Next,
         Unknown
-    };
+    }
+
+    enum Settings
+    {
+        Language,
+        Language_repeat_count,
+        Images_repeat_count,
+        DictionaryName,
+        DictionaryNameImage
+    }
+
+    enum Languages
+    {
+        en,
+        ru
+    }
 
     class ButtonNext
     {
@@ -39,24 +54,24 @@ namespace ReLearn
 
         public static int NumberOfRepeatsImage {
             get{
-                if (System.String.IsNullOrEmpty(CrossSettings.Current.GetValueOrDefault("Images_repeat_count", null)))
-                    CrossSettings.Current.AddOrUpdateValue("Images_repeat_count", "20");
-                return Convert.ToInt32(CrossSettings.Current.GetValueOrDefault("Images_repeat_count", null));
+                if (System.String.IsNullOrEmpty(CrossSettings.Current.GetValueOrDefault(Settings.Images_repeat_count.ToString(), null)))
+                    CrossSettings.Current.AddOrUpdateValue(Settings.Images_repeat_count.ToString(), "20");
+                return Convert.ToInt32(CrossSettings.Current.GetValueOrDefault(Settings.Images_repeat_count.ToString(), null));
             }
             set{
-                CrossSettings.Current.AddOrUpdateValue("Images_repeat_count", Convert.ToString(value));
+                CrossSettings.Current.AddOrUpdateValue(Settings.Images_repeat_count.ToString(), Convert.ToString(value));
             }
         }
 
         public static int NumberOfRepeatsLanguage 
         {
             get{ 
-                if (System.String.IsNullOrEmpty(CrossSettings.Current.GetValueOrDefault("Language_repeat_count", null)))
-                    CrossSettings.Current.AddOrUpdateValue("Language_repeat_count", "20");
-                return Convert.ToInt32(CrossSettings.Current.GetValueOrDefault("Language_repeat_count", null));
+                if (System.String.IsNullOrEmpty(CrossSettings.Current.GetValueOrDefault(Settings.Language_repeat_count.ToString(), null)))
+                    CrossSettings.Current.AddOrUpdateValue(Settings.Language_repeat_count.ToString(), "20");
+                return Convert.ToInt32(CrossSettings.Current.GetValueOrDefault(Settings.Language_repeat_count.ToString(), null));
             }
             set { 
-                CrossSettings.Current.AddOrUpdateValue("Language_repeat_count", Convert.ToString(value));
+                CrossSettings.Current.AddOrUpdateValue(Settings.Language_repeat_count.ToString(), Convert.ToString(value));
             }
         }
     }
@@ -125,7 +140,7 @@ namespace ReLearn
             }
         }
 
-        public static string Name_of_the_flag(Database_images word) => CrossSettings.Current.GetValueOrDefault("Language", null) == "en" ? word.Name_image_en : word.Name_image_ru;
+        public static string Name_of_the_flag(Database_images word) => CrossSettings.Current.GetValueOrDefault(Settings.Language.ToString(), null) == Languages.en.ToString() ? word.Name_image_en : word.Name_image_ru;
         
         public static void Update_number_learn(List<Statistics> Stats, string identifier, int rand_word, int RepeatLearn)
         {
@@ -164,7 +179,7 @@ namespace ReLearn
             }
             catch
             {
-                return "";
+                return "Error: Error can't find string  - " + str;
             }            
         }
 
@@ -176,13 +191,14 @@ namespace ReLearn
                .Build());
         }
 
-        public static void Update_Configuration_Locale(string str, Android.Content.Res.Resources resource)
+        public static void Update_Configuration_Locale(Android.Content.Res.Resources resource)
         {
-            Locale locale = new Locale(str);
+            if (System.String.IsNullOrEmpty(Plugin.Settings.CrossSettings.Current.GetValueOrDefault(Settings.Language.ToString(), null)))
+                Plugin.Settings.CrossSettings.Current.AddOrUpdateValue(Settings.Language.ToString(), Languages.en.ToString());
+            Locale locale = new Locale(Plugin.Settings.CrossSettings.Current.GetValueOrDefault(Settings.Language.ToString(), null));
             Configuration conf = new Configuration { Locale = locale };
             resource.UpdateConfiguration(conf, resource.DisplayMetrics);
             //this.CreateConfigurationContext(conf);
         }
-
     }
 }

@@ -9,24 +9,48 @@ namespace ReLearn
 {
     public static class Database_Name
     {
-        public static string Statistics  { get => "database_statistics.db3"; }
-        public static string English_DB { get => "database_words.db3"; } 
-        public static string Flags_DB { get => "database_image.db3"; }  
-        public static string Setting_DB { get => "Setting_Database.db3"; }  
+        public static string Statistics { get => "database_statistics.db3"; }
+        public static string English_DB { get => "database_words.db3"; }
+        public static string Flags_DB { get => "database_image.db3"; }
     }
 
-    public static class Table_name
+    public enum TableNames
     {
-        public static string My_Directly { get => "My_Directly"; }
-        public static string Home { get => "Home"; }
-        public static string Education { get => "Education"; }
-        public static string Popular_Words { get => "Popular_Words"; }  
-        public static string Flags { get => "Flags"; }  
+        My_Directly,
+        Home,
+        Education,
+        Popular_Words,
+        Flags,
     }
-
+    
     public static class DataBase
     {
-        public static string Table_Name = CrossSettings.Current.GetValueOrDefault("DictionaryName", null);
+        public static string TableNameLanguage
+        {
+            get
+            {
+                if (String.IsNullOrEmpty(CrossSettings.Current.GetValueOrDefault(Settings.DictionaryName.ToString(), null)))
+                    CrossSettings.Current.AddOrUpdateValue(Settings.DictionaryName.ToString(), TableNames.Popular_Words.ToString());
+                return CrossSettings.Current.GetValueOrDefault(Settings.DictionaryName.ToString(), null);
+            }
+            set
+            {
+                CrossSettings.Current.AddOrUpdateValue(Settings.DictionaryName.ToString(), value);
+            }
+        }
+        public static string TableNameImage
+        {
+            get
+            {
+                if (String.IsNullOrEmpty(CrossSettings.Current.GetValueOrDefault(Settings.DictionaryNameImage.ToString(), null)))
+                    CrossSettings.Current.AddOrUpdateValue(Settings.DictionaryNameImage.ToString(), TableNames.Flags.ToString());
+                return CrossSettings.Current.GetValueOrDefault(Settings.DictionaryNameImage.ToString(), null);
+            }
+            set
+            {
+                CrossSettings.Current.AddOrUpdateValue(Settings.DictionaryNameImage.ToString(), value);
+            }
+        }
 
         public static SQLiteConnection Connect(string nameDB)
         {
@@ -38,51 +62,51 @@ namespace ReLearn
         {
             string documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
             var path = Path.Combine(documentsPath, sqliteFilename);
-            // копирование файла из папки Assets по пути path
             if (!File.Exists(path))
             {
                 Context context = Application.Context;
-                var dbAssetStream = context.Assets.Open("Database/" + sqliteFilename);
-                var dbFileStream = new FileStream(path, FileMode.OpenOrCreate);
-                var buffer = new byte[1024];
-                int length;
-
-                while ((length = dbAssetStream.Read(buffer, 0, buffer.Length)) > 0)
-                    dbFileStream.Write(buffer, 0, length);
-                dbFileStream.Flush();
-                dbFileStream.Close();
-                dbAssetStream.Close();
+                using (var dbAssetStream = context.Assets.Open("Database/" + sqliteFilename))
+                {
+                    using (var dbFileStream = new FileStream(path, FileMode.OpenOrCreate))
+                    {
+                        var buffer = new byte[1024];
+                        int length;
+                        while ((length = dbAssetStream.Read(buffer, 0, buffer.Length)) > 0)
+                            dbFileStream.Write(buffer, 0, length);
+                        dbFileStream.Flush();
+                    }
+                }
             }          
         }
 
-        public static void Update_English_DB()
+        public static void UpdateWordsToRepeat()
         {
             var toDay = DateTime.Today;
             var db = Connect(Database_Name.English_DB);
-            var dataBase = db.Query<Database_Words>("SELECT * FROM " + Table_Name + " WHERE NumberLearn = 0 AND DateRecurrence != DATETIME('NOW')");
+            var dataBase = db.Query<Database_Words>("SELECT * FROM " + TableNameLanguage + " WHERE NumberLearn = 0 AND DateRecurrence != DATETIME('NOW')");
             foreach (var s in dataBase) // UPDATE Database
             {
                 if (s.DateRecurrence.Month != toDay.Month && toDay.Day >= s.DateRecurrence.Day)
                 {
                     // обновление БД, при условии, что месяцы не совпадают и NumberLearn == 0. изменяем месяц на текущий и NumberLearn++;                
-                    db.Query<Database_Words>("UPDATE " + Table_Name + " SET DateRecurrence = DATETIME('NOW') WHERE Word = ?", s.Word);
-                    db.Query<Database_Words>("UPDATE " + Table_Name + " SET NumberLearn = " + s.NumberLearn + 1 + " WHERE Word = ?", s.Word);
+                    db.Query<Database_Words>("UPDATE " + TableNameLanguage + " SET DateRecurrence = DATETIME('NOW') WHERE Word = ?", s.Word);
+                    db.Query<Database_Words>("UPDATE " + TableNameLanguage + " SET NumberLearn = " + s.NumberLearn + 1 + " WHERE Word = ?", s.Word);
                 }                       
             }
         }
 
-        public static void Update_Flags_DB()
+        public static void UpdateImagesToRepeat()
         {
             var toDay = DateTime.Today;
             var db = Connect(Database_Name.Flags_DB); 
-            var dataBase = db.Query<Database_images>("SELECT * FROM " + Table_Name + " WHERE NumberLearn = 0 AND DateRecurrence != DATETIME('NOW')");
+            var dataBase = db.Query<Database_images>("SELECT * FROM " + TableNameImage + " WHERE NumberLearn = 0 AND DateRecurrence != DATETIME('NOW')");
 
             foreach (var s in dataBase) // UPDATE Flags
             {
                 if (s.DateRecurrence.Month != toDay.Month && toDay.Day >= s.DateRecurrence.Day)
                 {
-                    db.Query<Database_images>("UPDATE " + Table_Name + " SET DateRecurrence = DATETIME('NOW') WHERE Image_name = ?", s.Image_name);
-                    db.Query<Database_images>("UPDATE " + Table_Name + " SET NumberLearn = " + s.NumberLearn + 1 + " WHERE Image_name = ?", s.Image_name);
+                    db.Query<Database_images>("UPDATE " + TableNameImage + " SET DateRecurrence = DATETIME('NOW') WHERE Image_name = ?", s.Image_name);
+                    db.Query<Database_images>("UPDATE " + TableNameImage + " SET NumberLearn = " + s.NumberLearn + 1 + " WHERE Image_name = ?", s.Image_name);
                 }
             }
         }    
@@ -101,7 +125,7 @@ namespace ReLearn
         {
             this.DateRecurrence = DateTime.Today;
             this.Word = "";
-            this.NumberLearn = 6;
+            this.NumberLearn = Magic_constants.StandardNumberOfRepeats;
             this.TranslationWord = "";
         }
 

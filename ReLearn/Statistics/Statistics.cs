@@ -28,11 +28,10 @@ namespace ReLearn
                 Learn = Learn_new;
         }
 
-        public static void Add_Statistics(int True, int False)      // add stats to the database
+        public static void Add_Statistics(int True, int False, string TableName)      // add stats to the database
         {
-            string name_table = DataBase.Table_Name + "_Statistics";
             var database = DataBase.Connect(Database_Name.Statistics);
-            database.Query<Database_Statistics>("INSERT INTO " + name_table + " (True, False, DateOfTesting) VALUES (" + True + "," + False + ", DATETIME('NOW'))");
+            database.Query<Database_Statistics>("INSERT INTO " + TableName + "_Statistics" + " (True, False, DateOfTesting) VALUES (" + True + "," + False + ", DATETIME('NOW'))");
         }
     }
 
