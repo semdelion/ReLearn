@@ -6,21 +6,20 @@
 	android:layout_height="wrap_content">
 	<android.support.v7.widget.Toolbar
 		xmlns:app="http://schemas.android.com/apk/res-auto"
-		app:popupTheme="@style/Theme.AppCompat.NoActionBar"
-		android:layout_height="85dp"
-		android:fitsSystemWindows="true"
-		android:elevation="10dp"
-		android:background="@drawable/toolbar"
-		android:minHeight="?android:attr/actionBarSize"
-		android:minWidth="25px"
-		android:layout_width="match_parent"
 		android:id="@+id/toolbarFlags"
-		app:navigationIcon="@drawable/arrow" >
+		android:layout_width="match_parent"
+		android:layout_height="80dp"	
+		android:theme="@style/ToolbarStyle"	
+		android:background="@drawable/toolbar"
+		app:buttonGravity="bottom"
+		app:navigationIcon="@mipmap/arrow" >
 		<TextView
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:text="@string/Flags"    
-			android:textColor="?android:attr/actionMenuTextColor" />
+			android:gravity="bottom"
+			android:paddingBottom="12dp"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:text="@string/Flags"    			
+		/>
 	</android.support.v7.widget.Toolbar>
 	<Button
 		android:text="@string/Repeat"

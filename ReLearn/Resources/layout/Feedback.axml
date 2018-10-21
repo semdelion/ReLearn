@@ -1,26 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 	<android.support.v7.widget.Toolbar 
 		xmlns:app="http://schemas.android.com/apk/res-auto"
-		app:popupTheme="@style/Theme.AppCompat.NoActionBar"
-		android:layout_height="85dp"
-		android:fitsSystemWindows="true"
-		android:background="@drawable/toolbar"
-		android:elevation="10dp"
-		android:minHeight="?android:attr/actionBarSize"
-		android:minWidth="25px"
-		android:layout_width="match_parent"
 		android:id="@+id/toolbar_Feedback"
-		app:navigationIcon="@drawable/arrow"  >
+		android:layout_width="match_parent"
+		android:layout_height="80dp"	
+		android:theme="@style/ToolbarStyle"	
+		android:background="@drawable/toolbar"
+		app:buttonGravity="bottom"
+		app:navigationIcon="@mipmap/arrow" >
 		<TextView
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:text="@string/Feedback"    
-			android:textColor="?android:attr/actionMenuTextColor" />
+			android:gravity="bottom"
+			android:paddingBottom="12dp"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:text="@string/Feedback" />
 	</android.support.v7.widget.Toolbar>
 	<ScrollView
 		android:minWidth="25px"

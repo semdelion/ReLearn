@@ -26,13 +26,20 @@
     <item name="android:windowTranslucentStatus">true</item>
   </style>
 
-  <style name="myPopupTheme" parent="@android:style/Theme.Black">
-    <item name="android:popupBackground">#0000ff</item>
+  <style name="myPopupTheme">
+    <item name="android:textColor">#d7f8fe</item>
+    <item name="android:background">#283544</item>
     <item name="android:colorPrimary">@android:color/transparent</item>
   </style>
 
+  <style name="ToolbarStyle" parent="Theme.AppCompat.NoActionBar">
+    <item name="android:textColor">#d7f8fe</item>
+    <item name="android:elevation">10dp</item>    
+  </style>
+
   <style name="ThemeStat" >
-    <item name="android:homeAsUpIndicator">@drawable/arrow</item>
+    <item name="android:homeAsUpIndicator">@mipmap/arrow</item>
+    <item name="android:itemBackground">#283544</item>
     <item name="android:colorPrimary">@android:color/transparent</item>
   </style>
 
@@ -42,9 +49,9 @@
     <item name="android:colorPrimary">#3F51B5</item>
     <item name="android:colorPrimaryDark">#303F9F</item>
     <item name="android:colorAccent">#FF4081</item>
-    <item name="android:textColor">#d7f8fe</item>
     <item name="android:itemBackground">#283544</item>
   </style>
+    
   <style name="SplashTheme" parent ="@android:style/Theme.DeviceDefault.NoActionBar.TranslucentDecor">
     <item name="android:windowBackground">@drawable/background_splash</item>
     <item name="android:windowNoTitle">true</item>

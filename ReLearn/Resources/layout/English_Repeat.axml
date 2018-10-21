@@ -8,24 +8,21 @@
     android:layout_height="match_parent"
     android:id="@+id/linearLayout1">   
 	<android.support.v7.widget.Toolbar
-		xmlns:app="http://schemas.android.com/apk/res-auto"
-		app:popupTheme="@style/Theme.AppCompat.NoActionBar"
-		android:layout_height="85dp"
-		android:fitsSystemWindows="true"
-		android:elevation="10dp"
-		android:background="@drawable/toolbar"
-		android:minHeight="?android:attr/actionBarSize"
-		android:minWidth="25px"
+		xmlns:app="http://schemas.android.com/apk/res-auto"		
+		android:id="@+id/toolbarEnglishRepeat"		   
 		android:layout_width="match_parent"
-		android:titleTextColor="?android:attr/actionMenuTextColor"
-		android:titleTextAppearance="?android:attr/textSize"
-		android:id="@+id/toolbarEnglishRepeat"
-		app:navigationIcon="@drawable/arrow" >
+       	android:layout_height="80dp"	
+		android:theme="@style/ToolbarStyle"	
+		android:background="@drawable/toolbar"    		
+		app:buttonGravity="bottom"
+		app:navigationIcon="@mipmap/arrow"  >
 		<TextView
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"  
+			android:gravity="bottom"
+			android:paddingBottom="12dp"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
 			android:id="@+id/Repeat_toolbar_textview"
-			android:textColor="?android:attr/actionMenuTextColor" />
+		/>
 	</android.support.v7.widget.Toolbar>
 	<ScrollView
         android:minWidth="25px"
@@ -120,7 +117,7 @@
 					android:textColor="#d7f8fe"
 					android:textSize="20dp"
 					android:background="@drawable/button_style_standard"
-					android:src="@drawable/speak_on"
+					android:src="@mipmap/speak_on"
 					android:layout_gravity="left|right|center"
 					android:gravity="left|right|center"
 					android:scaleType="fitXY"/>

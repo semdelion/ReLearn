@@ -33,7 +33,10 @@ namespace ReLearn
             {
                 Button_next.State = StateButton.Unknown;
                 Button_next.button.Text = Additional_functions.GetResourceString("unknown", this.Resources);
-                Button1.Background = Button2.Background = Button3.Background = Button4.Background = GetDrawable(Resource.Drawable.button_style_standard);
+                Button1.Background = GetDrawable(Resource.Drawable.button_style_standard);
+                Button2.Background = GetDrawable(Resource.Drawable.button_style_standard);
+                Button3.Background = GetDrawable(Resource.Drawable.button_style_standard);
+                Button4.Background = GetDrawable(Resource.Drawable.button_style_standard);
             }
             else
             {
@@ -80,7 +83,7 @@ namespace ReLearn
 
         void Answer(Button B1, Button B2, Button B3, Button B4) // подсвечиваем правильный ответ, если мы ошиблись подсвечиваем неправвильный и паравильный 
         {
-            Button_enable(true);
+            Button_enable(false);
             if (B1.Text == Additional_functions.Name_of_the_flag(dataBase[CurrentWordNumber]))
             {
                 Additional_functions.Update_number_learn(Stats, Convert.ToString(dataBase[CurrentWordNumber].Image_name), CurrentWordNumber, dataBase[CurrentWordNumber].NumberLearn -= Magic_constants.TrueAnswer);
@@ -110,7 +113,7 @@ namespace ReLearn
             else tmp = Button4;
             Statistics.AnswerFalse++;
             Additional_functions.Update_number_learn(Stats, Convert.ToString(dataBase[CurrentWordNumber].Image_name), CurrentWordNumber, dataBase[CurrentWordNumber].NumberLearn += Magic_constants.NeutralAnswer);
-            tmp.Background = GetDrawable(Resource.Drawable.button_unknown);
+            tmp.Background = GetDrawable(Resource.Drawable.button_true);
         }
 
         void Update_Database() // изменение у BD элемента NumberLearn

@@ -17,7 +17,7 @@ namespace ReLearn
         string Word
         {
             get { return FindViewById<TextView>(Resource.Id.textView_learn_en).Text; }
-            set { FindViewById<EditText>(Resource.Id.editText_foreign_word).Text = value; }
+            set { FindViewById<TextView>(Resource.Id.textView_learn_en).Text = value; }
         }
 
         string TranslationWord
@@ -39,13 +39,13 @@ namespace ReLearn
             if (Voice_Enable)
             {
                 Voice_Enable = false;
-                button.SetImageDrawable(GetDrawable(Resource.Drawable.speak_off));
+                button.SetImageDrawable(GetDrawable(Resource.Mipmap.speak_off));
                 Toast.MakeText(this, Additional_functions.GetResourceString("Voice_off", this.Resources), ToastLength.Short).Show();
             }
             else
             {
                 Voice_Enable = true;
-                button.SetImageDrawable(GetDrawable(Resource.Drawable.speak_on));
+                button.SetImageDrawable(GetDrawable(Resource.Mipmap.speak_on));
                 Toast.MakeText(this, Additional_functions.GetResourceString("Voice_on", this.Resources), ToastLength.Short).Show();
             }
         }

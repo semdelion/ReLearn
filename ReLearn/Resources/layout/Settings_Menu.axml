@@ -9,21 +9,19 @@
 	android:minHeight="25px">
 	<android.support.v7.widget.Toolbar 
         xmlns:app="http://schemas.android.com/apk/res-auto"
-		app:popupTheme="@style/Theme.AppCompat.NoActionBar"
-		android:layout_height="85dp"
-		android:fitsSystemWindows="true"
-		android:elevation="10dp"
+		android:id="@+id/toolbarSetting"
+		android:layout_width="match_parent"
+       	android:layout_height="80dp"
+		android:theme="@style/ToolbarStyle"		
 		android:background="@drawable/toolbar"
-        android:minHeight="?android:attr/actionBarSize"
-        android:minWidth="25px"
-        android:layout_width="match_parent"
-        android:id="@+id/toolbarSetting"
-        app:navigationIcon="@drawable/arrow" >
+		app:buttonGravity="bottom"
+        app:navigationIcon="@mipmap/arrow" >
 		<TextView
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:text="@string/Settings"    
-			android:textColor="?android:attr/actionMenuTextColor" />
+			android:gravity="bottom"
+			android:paddingBottom="12dp"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:text="@string/Settings" />
 	</android.support.v7.widget.Toolbar >
 	<TextView
 		android:id="@+id/TextView_number_of_word_repeats"
