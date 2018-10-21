@@ -66,14 +66,13 @@ namespace ReLearn
             return true;
         }
 
-
         public override bool OnPrepareOptionsMenu(IMenu menu)
         {
             MenuInflater.Inflate(Resource.Menu.search, menu);
             var searchItem = menu.FindItem(Resource.Id.action_search);
 
             var _searchView = searchItem.ActionView.JavaCast<Android.Support.V7.Widget.SearchView>();
-
+            _searchView.InputType =Convert.ToInt32(Android.Text.InputTypes.TextFlagCapWords);
             _searchView.QueryTextChange += (sender, e) =>
             {
                 if (e.NewText == "")
