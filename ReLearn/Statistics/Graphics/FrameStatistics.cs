@@ -32,7 +32,8 @@ namespace ReLearn
 
         public void Draw(Canvas canvas)
         {
-            LinearGradient backlg = new LinearGradient((canvas.Width + canvas.Height) / 200, 0, 0, (canvas.Width + canvas.Height) / 200, Color.Argb(40, 60, 90, 125), Color.Transparent, TileMode.Repeat);
+            LinearGradient backlg = new LinearGradient((canvas.Width + canvas.Height) / 200, 0, 0, (canvas.Width + canvas.Height) / 200,
+                Color.Argb(40, 60, 90, 125), Color.Transparent, TileMode.Repeat);
             Paint paint1 = new Paint { AntiAlias = true };
             paint1.SetShader(backlg);
             canvas.DrawRoundRect(new RectF(Left, Top, Right, Bottom), 6, 6, paint1);
@@ -41,7 +42,8 @@ namespace ReLearn
 
         public void DrawBorder(Canvas canvas, Paint paint)
         {
-            LinearGradient backlg = new LinearGradient((canvas.Width + canvas.Height) / 200, 0, 0, (canvas.Width + canvas.Height) / 200, Color.Argb(40, 60, 90, 125), Color.Transparent, TileMode.Repeat);
+            LinearGradient backlg = new LinearGradient((canvas.Width + canvas.Height) / 200, 0, 0, (canvas.Width + canvas.Height) / 200, 
+                Color.Argb(40, 60, 90, 125), Color.Transparent, TileMode.Repeat);
             Paint paint1 = new Paint { AntiAlias = true };
             paint1.SetShader(backlg);
             canvas.DrawRoundRect(new RectF(Left, Top, Right, Bottom), 6, 6, paint1);
@@ -104,7 +106,6 @@ namespace ReLearn
             {
                 AntiAlias = true,
                 TextSize = font_size,
-                
                 Color = c ?? Color.Rgb(215, 248, 254)
             };
             paint.SetTypeface(bold);
