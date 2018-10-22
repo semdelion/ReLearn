@@ -37,7 +37,7 @@ namespace ReLearn
             SetContentView(Resource.Layout.Main);
             var toolbarMain = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbarMain);
             SetSupportActionBar(toolbarMain);
-            base.OnCreate(savedInstanceState);                     
+            base.OnCreate(savedInstanceState);
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
