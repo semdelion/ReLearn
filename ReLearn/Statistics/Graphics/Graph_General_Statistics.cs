@@ -3,6 +3,7 @@ using Android.Graphics;
 using Android.Views;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ReLearn
 {
@@ -10,29 +11,21 @@ namespace ReLearn
     {
         Canvas The_canvas;
         TableNames TableName;
-        Color Color_Diagram_1 { get; }
-        Color Color_Diagram_2 { get; }
+        Color Start { get; }
+        Color End { get; }
         string Object_name { get;}
         List<Database_for_stats> Stats_database { get; }
-        readonly Color background_color = new Color(Color.Argb(150, 16, 19, 38));
+        readonly Color background_color = new Color( Color.Argb(150, 16, 19, 38) );
         readonly Paint paint_border = new Paint { StrokeWidth = 4, Color = Color.Argb(250, 215, 248, 254), AntiAlias = true };
         readonly Paint paint_text = new Paint { TextSize = 25, StrokeWidth = 4, Color = Color.Rgb(215, 248, 254), AntiAlias = true };
 
-        public Graph_General_Statistics(Context context, Color color_diagram_1, Color color_diagram_2, List<Database_for_stats> stats_database,string object_name , string Table_Name ) : base(context)
+        public Graph_General_Statistics(Context context, Color start, Color end, List<Database_for_stats> stats_database, string object_name , string Table_Name ) : base(context)
         {
             Stats_database = stats_database;
-            Color_Diagram_1 = color_diagram_1;
-            Color_Diagram_2 = color_diagram_2;
+            Start = start;
+            End = end;
             Object_name = object_name;
             TableName = (TableNames)Enum.Parse(typeof(TableNames), Table_Name);
-        }
-
-        float Average(List<Database_for_stats> list_stat)
-        {
-            float sum = 0;
-            for (int i = 0; i < list_stat.Count; i++)
-                sum += list_stat[i].NumberLearn;
-            return sum / list_stat.Count;
         }
 
         float Average_True_Today(SQLite.SQLiteConnection database)
@@ -47,51 +40,9 @@ namespace ReLearn
             return Average_percent_true(Database_Stat);
         }
 
-        float Average_percent_true(List<Database_Statistics> Database_Stat)
-        {
-            float sum_True = 0;
-            float sum_False = 0;
-            foreach (var s in Database_Stat)
-            {
-                sum_True += s.True;
-                sum_False += s.False;
-            }
-            return Database_Stat.Count == 0 ? 0 : (sum_True * (100 / (sum_True + sum_False)));
-        }
-
-        int Number_of_words_learned(List<Database_for_stats> list_stat)
-        {
-            int sum = 0;
-            foreach (var s in list_stat)
-                if (s.NumberLearn == 0)
-                    sum++;
-            return sum;
-        }
-
-        int Number_of_words_inconvenient(List<Database_for_stats> list_stat)
-        {
-            int sum = 0;
-            foreach (var s in list_stat)
-                if (s.NumberLearn == Magic_constants.MaxNumberOfRepeats)
-                    sum++;
-            return sum;
-        }
-
-        int Number_of_correct_answers(List<Database_Statistics> Database_Stat)
-        {
-            int sum = 0;
-            foreach (var s in Database_Stat)
-                sum += s.True;
-            return sum;
-        }
-        int Number_of_incorrect_answers(List<Database_Statistics> Database_Stat)
-        {
-            int sum = 0;
-            foreach (var s in Database_Stat)
-                sum += s.False;
-            return sum;
-        }
-
+        float Average_percent_true(List<Database_Statistics> Database_Stat) =>
+            Database_Stat.Count == 0 ? 0 : (Database_Stat.Sum(r => r.True) * (100 / (Database_Stat.Sum(r => r.True) + Database_Stat.Sum(r => r.False))));
+        
         protected override void OnDraw(Canvas canvas)
         {
             The_canvas = canvas;
@@ -110,17 +61,17 @@ namespace ReLearn
             FrameStatistics Total_numbers = new FrameStatistics(5f * The_canvas.Width / 100f, 2f * The_canvas.Width / 100f + Inconvenient_words.Bottom, 95f * The_canvas.Width / 100f, 2f * The_canvas.Width / 100f + Inconvenient_words.Bottom + height, background_color);
 
             float rate = (The_canvas.Height + The_canvas.Width) / 200f,
-                  avg_numberLearn_stat = Average(Stats_database),
+                  avg_numberLearn_stat = Stats_database.Sum(r => r.NumberLearn > Magic_constants.StandardNumberOfRepeats ? Magic_constants.StandardNumberOfRepeats : r.NumberLearn),
                   avg_true_today = Average_True_Today(database),
                   avg_true_month = Average_True_Month(database),
                   avg_true = Average_percent_true(Database_Stat),
                   text_size_up = 7f * Vocabulary_learning.Width / 100,
                   text_size_low = 5f * Vocabulary_learning.Width / 100;
 
-            int numberLearned = Number_of_words_learned(Stats_database),
-                numberInconvenient = Number_of_words_inconvenient(Stats_database),
-                numberTrue = Number_of_correct_answers(Database_Stat),
-                numberFalse = Number_of_incorrect_answers(Database_Stat);
+            int numberLearned = Stats_database.Count (r => r.NumberLearn == 0),
+                numberInconvenient = Stats_database.Count (r => r.NumberLearn == Magic_constants.MaxNumberOfRepeats),
+                numberTrue = Database_Stat.Sum (r => r.True),
+                numberFalse = Database_Stat.Sum (r => r.False);
 
 
             Vocabulary_learning.DrawBorder(The_canvas, paint_border);
@@ -129,7 +80,7 @@ namespace ReLearn
             Inconvenient_words.DrawBorder(The_canvas, paint_border);
             Total_numbers.DrawBorder(The_canvas, paint_border);
 
-            Vocabulary_learning.DrawPieChart(The_canvas, avg_numberLearn_stat, Magic_constants.MaxNumberOfRepeats, Color_Diagram_1, Color_Diagram_2,
+            Vocabulary_learning.DrawPieChart(The_canvas, avg_numberLearn_stat, Magic_constants.StandardNumberOfRepeats, Start, End,
                 new PointF(Vocabulary_learning.Left + Vocabulary_learning.Width / 2f, Vocabulary_learning.Bottom - 27.5f * The_canvas.Width / 100f), Vocabulary_learning.Width / 2.5f);
             Vocabulary_learning.DrawText(The_canvas, text_size_up, Additional_functions.GetResourceString("Degree_Of_Study", this.Resources), Vocabulary_learning.Left + Vocabulary_learning.Width / 12, Vocabulary_learning.Top + Vocabulary_learning.Height / 20);
 
@@ -154,16 +105,16 @@ namespace ReLearn
             Correct_answers.DrawText(The_canvas, 1.9f * text_size_up, Math.Round(avg_true, 1) + "%", Correct_answers.Left + 7f * Correct_answers.Width / 100, Correct_answers.Top + 2f * one_third / 3 + 17.5f * Vocabulary_learning.Height / 100);
 
 
-            Learned_words.ProgressLine(The_canvas, numberLearned, Stats_database.Count - numberLearned, Color_Diagram_1, Color_Diagram_2);
+            Learned_words.ProgressLine(The_canvas, numberLearned, Stats_database.Count - numberLearned, Start, End);
             Learned_words.DrawText(The_canvas, text_size_up, Additional_functions.GetResourceString("Number_Learned_" + Object_name, this.Resources), Learned_words.Left + 7f * Learned_words.Width / 100, Learned_words.Top + 7f * Learned_words.Height / 100);
             Learned_words.DrawText(The_canvas, text_size_low, numberLearned + " " + Additional_functions.GetResourceString("Of", this.Resources) + " " + Stats_database.Count, Learned_words.Left + 7f * Learned_words.Width / 100, Learned_words.Top + 38f * Learned_words.Height / 100);
 
 
-            Inconvenient_words.ProgressLine(The_canvas, numberInconvenient, Stats_database.Count - numberInconvenient, Color_Diagram_1, Color_Diagram_2);
+            Inconvenient_words.ProgressLine(The_canvas, numberInconvenient, Stats_database.Count - numberInconvenient, Start, End);
             Inconvenient_words.DrawText(The_canvas, text_size_up, Additional_functions.GetResourceString("Number_Inconvenient_"+Object_name, this.Resources), Inconvenient_words.Left + 7f * Inconvenient_words.Width / 100, Inconvenient_words.Top + 7f * Inconvenient_words.Height / 100);
             Inconvenient_words.DrawText(The_canvas, text_size_low, numberInconvenient + " " + Additional_functions.GetResourceString("Of", this.Resources) + " " + Stats_database.Count, Inconvenient_words.Left + 7f * Inconvenient_words.Width / 100, Inconvenient_words.Top + 38f * Inconvenient_words.Height / 100);
 
-            Total_numbers.ProgressLine(The_canvas, numberTrue, numberFalse, Color_Diagram_1, Color_Diagram_2);
+            Total_numbers.ProgressLine(The_canvas, numberTrue, numberFalse, Start, End);
             Total_numbers.DrawText(The_canvas, text_size_up, Additional_functions.GetResourceString("Number_Correct_Answers", this.Resources), Total_numbers.Left + 7f * Total_numbers.Width / 100, Total_numbers.Top + 7f * Total_numbers.Height / 100);
             Total_numbers.DrawText(The_canvas, text_size_low, Additional_functions.GetResourceString("Correct", this.Resources) + " "
                 + numberTrue + ", " + Additional_functions.GetResourceString("Incorrect", this.Resources) + " " + numberFalse + ", " 

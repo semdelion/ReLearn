@@ -97,10 +97,6 @@ namespace ReLearn
             else
                 Additional_functions.Color_TextView(TView, 
                     new Color(20 + (degreeOfStudy * 180 / (Magic_constants.StandardNumberOfRepeats - 1)), 230, 20));                        //  180, 230, 20   to   20,  230, 20
-
-            //Additional_functions.Color_TextView(TView, new Color(       (degreeOfStudy * 50  / Magic_constants.MaxNumberOfRepeats), 
-            //                                                          255 - (degreeOfStudy * 195 / Magic_constants.MaxNumberOfRepeats), 
-            //                                                          255 - (degreeOfStudy * 129 / Magic_constants.MaxNumberOfRepeats))); //0, 255, 255   to  50, 60, 126
         }
 
         public static void Random_4_numbers(int NotI, int count, out List<int> random_numbers)  // TODO ужас!!! 
@@ -109,28 +105,13 @@ namespace ReLearn
             random_numbers = new List<int> { NotI, 0, 0, 0 };
             if (count > 4)
             {
-                int rnd;
-                while (true)
-                {
-                    rnd = rand.Next(count);
-                    if (rnd != random_numbers[0])
-                        break;
-                }
-                random_numbers[1] = rnd;
-                while (true)
-                {
-                    rnd = rand.Next(count);
-                    if (rnd != random_numbers[0] && rnd != random_numbers[1])
-                        break;
-                }
-                random_numbers[2] = rnd;
-                while (true)
-                {
-                    rnd = rand.Next(count);
-                    if (rnd != random_numbers[0] && rnd != random_numbers[1] && rnd != random_numbers[2])
-                        break;
-                }
-                random_numbers[3] = rnd;
+                var array = Enumerable.Range(0, count).ToList();
+                array.Remove(random_numbers[0]);
+                random_numbers[1] = array[rand.Next(array.Count)];
+                array.Remove(random_numbers[1]);
+                random_numbers[2] = array[rand.Next(array.Count)];
+                array.Remove(random_numbers[2]);
+                random_numbers[3] = array[rand.Next(array.Count)];
             }
             else
             {
@@ -140,7 +121,8 @@ namespace ReLearn
             }
         }
 
-        public static string Name_of_the_flag(Database_images word) => CrossSettings.Current.GetValueOrDefault(Settings.Language.ToString(), null) == Languages.en.ToString() ? word.Name_image_en : word.Name_image_ru;
+        public static string Name_of_the_flag(Database_images word) => 
+            CrossSettings.Current.GetValueOrDefault(Settings.Language.ToString(), null) == Languages.en.ToString() ? word.Name_image_en : word.Name_image_ru;
         
         public static void Update_number_learn(List<Statistics> Stats, string identifier, int rand_word, int RepeatLearn)
         {
