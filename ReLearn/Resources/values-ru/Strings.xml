@@ -12,8 +12,8 @@
   <string name="Word_Rus">Слово (Русский)</string>
   <string name="Voice">Озвучить</string>
   <string name="Delete">Удаление</string>
-  <string name="Popular_words">Популярные слова</string>
-  <string name="My_dictionary">Мой словарь</string>
+  <string name="Popular_Words">Популярные слова</string>
+  <string name="My_Directly">Мой словарь</string>
   <string name="Statistics">Статистика</string>
   <string name="View_dictionary">Просмотр</string>
   <string name="language_eng">Язык (en)</string>

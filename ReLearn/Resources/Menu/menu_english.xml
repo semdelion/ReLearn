@@ -5,6 +5,10 @@ xmlns:tools ="http://schemas.android.com/tools"
 xmlns:app="http://schemas.android.com/apk/res-auto"
 tools:context=".MainActivity">
   <item
+     android:id="@+id/MenuSelectDictionary"
+     android:icon="@+mipmap/dictionary"
+     app:showAsAction="always"/>
+  <item
    android:id="@+id/menuDatabase"
    android:icon="@+mipmap/dictionary"
    android:scaleType="fitXY"
@@ -17,7 +21,7 @@ tools:context=".MainActivity">
           android:id="@+id/menuDatabase_PopularWords"
           android:orderInCategory="103"
           app:showAsAction="never"
-          android:title="@string/Popular_words"/>
+          android:title="@string/Popular_Words"/>
         <item
           android:id="@+id/menuDatabase_Education"
           android:orderInCategory="102"
@@ -34,7 +38,7 @@ tools:context=".MainActivity">
           android:id="@+id/menuDatabase_MyDictionary"
           android:orderInCategory="100"
           app:showAsAction="never"
-          android:title="@string/My_dictionary"/>
+          android:title="@string/My_Directly"/>
       </group>
     </menu>    
   </item>

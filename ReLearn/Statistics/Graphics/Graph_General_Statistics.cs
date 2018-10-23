@@ -18,8 +18,8 @@ namespace ReLearn
         readonly Color background_color = new Color( Color.Argb(150, 16, 19, 38) );
         readonly Paint paint_border = new Paint { StrokeWidth = 4, Color = Color.Argb(250, 215, 248, 254), AntiAlias = true };
         readonly Paint paint_text = new Paint { TextSize = 25, StrokeWidth = 4, Color = Color.Rgb(215, 248, 254), AntiAlias = true };
-        float text_size_up;
-        float text_size_low;
+        float font_up;
+        float font_low;
 
         public Graph_General_Statistics(Context context, Color start, Color end, List<Database_for_stats> stats_database, string object_name , string Table_Name ) : base(context)
         {
@@ -54,7 +54,7 @@ namespace ReLearn
 
             Degree.DrawPieChart(The_canvas, avg_numberLearn_stat, Magic_constants.StandardNumberOfRepeats, Start, End,
             new PointF(Degree.Left + Degree.Width / 2f, Degree.Bottom - 27.5f * The_canvas.Width / 100f), Degree.Width / 2.5f);
-            Degree.DrawText(The_canvas, text_size_up, Additional_functions.GetResourceString("Degree_Of_Study", this.Resources), 
+            Degree.DrawText(The_canvas, font_up, Additional_functions.GetResourceString("Degree_Of_Study", this.Resources), 
                 Degree.Left + Degree.Width / 12, Degree.Top + Degree.Height / 20);
         }
 
@@ -63,11 +63,11 @@ namespace ReLearn
             CA.DrawBorder(The_canvas, paint_border);
             float one_third     = Height - 12.5f * Height / 100;
 
-            CA.DrawText(The_canvas, text_size_up, 
+            CA.DrawText(The_canvas, font_up, 
                 Additional_functions.GetResourceString("Correct_answers", this.Resources), CA.Left + 7f * CA.Width / 100, CA.Top + Height / 20);
-            CA.DrawText(The_canvas, text_size_low, 
+            CA.DrawText(The_canvas, font_low, 
                 Additional_functions.GetResourceString("Today", this.Resources), CA.Left + 7f * CA.Width / 100, CA.Top + 12.5f *  Height / 100);
-            CA.DrawText(The_canvas, 1.9f * text_size_up, 
+            CA.DrawText(The_canvas, 1.9f * font_up, 
                 Math.Round(avg_true_today, 1) + "%", CA.Left + 7f * CA.Width / 100, CA.Top + 17.5f * Height / 100);
 
             if (avg_true_today != 0)
@@ -75,9 +75,9 @@ namespace ReLearn
                 (avg_true_today - avg_true >= 0 ? "+" : "") + Math.Round(avg_true_today - avg_true, 1) + "%",
                 CA.Left + 2f * CA.Width / 3, CA.Top + 20f * Height / 100, avg_true_today - avg_true >= 0 ? Color.Green : Color.Red);
 
-            CA.DrawText(The_canvas, text_size_low, 
+            CA.DrawText(The_canvas, font_low, 
                 Additional_functions.GetResourceString("Month", this.Resources), CA.Left + 7f * CA.Width / 100, CA.Top + one_third / 3 + 12.5f * Height / 100);
-            CA.DrawText(The_canvas, 1.9f * text_size_up, 
+            CA.DrawText(The_canvas, 1.9f * font_up, 
                 Math.Round(avg_true_month, 1) + "%", CA.Left + 7f * CA.Width / 100, CA.Top + one_third / 3 + 17.5f * Height / 100);
 
             if (avg_true_month != 0)
@@ -85,9 +85,9 @@ namespace ReLearn
                 (avg_true_month - avg_true >= 0 ? "+" : "") + Math.Round(avg_true_month - avg_true, 1) + "%",
                 CA.Left + 2f * CA.Width / 3, CA.Top + one_third / 3 + 20f * Height / 100, avg_true_month - avg_true >= 0 ? Color.Green : Color.Red);
 
-            CA.DrawText(The_canvas, text_size_low, 
+            CA.DrawText(The_canvas, font_low, 
                 Additional_functions.GetResourceString("Average", this.Resources), CA.Left + 7f * CA.Width / 100, CA.Top + 2f * one_third / 3 + 12.5f * Height / 100);
-            CA.DrawText(The_canvas, 1.9f * text_size_up, 
+            CA.DrawText(The_canvas, 1.9f * font_up, 
                 Math.Round(avg_true, 1)       + "%", CA.Left + 7f * CA.Width / 100, CA.Top + 2f * one_third / 3 + 17.5f * Height / 100);
         }
 
@@ -96,10 +96,10 @@ namespace ReLearn
             int numberLearned = Stats_database.Count(r => r.NumberLearn == 0);
             LW.DrawBorder(The_canvas, paint_border);
             LW.ProgressLine(The_canvas, numberLearned, Stats_database.Count - numberLearned, Start, End);
-            LW.DrawText    (The_canvas, text_size_up,  
+            LW.DrawText    (The_canvas, font_up,  
                 Additional_functions.GetResourceString("Number_Learned_" + Object_name, this.Resources), 
                 LW.Left + 7f * LW.Width / 100, LW.Top + 7f * LW.Height / 100);
-            LW.DrawText    (The_canvas, text_size_low, 
+            LW.DrawText    (The_canvas, font_low, 
                 numberLearned + " " + Additional_functions.GetResourceString("Of", this.Resources) + " " + Stats_database.Count, 
                 LW.Left + 7f * LW.Width / 100, LW.Top + 38f * LW.Height / 100);
         }
@@ -109,10 +109,10 @@ namespace ReLearn
             int numberInconvenient = Stats_database.Count(r => r.NumberLearn == Magic_constants.MaxNumberOfRepeats);
             IW.DrawBorder(The_canvas, paint_border);
             IW.ProgressLine(The_canvas, numberInconvenient, Stats_database.Count - numberInconvenient, Start, End);
-            IW.DrawText(The_canvas, text_size_up, 
+            IW.DrawText(The_canvas, font_up, 
                 Additional_functions.GetResourceString("Number_Inconvenient_" + Object_name, this.Resources), 
                 IW.Left + 7f * IW.Width / 100, IW.Top + 7f * IW.Height / 100);
-            IW.DrawText(The_canvas, text_size_low, 
+            IW.DrawText(The_canvas, font_low, 
                 numberInconvenient + " " + Additional_functions.GetResourceString("Of", this.Resources) + " " + Stats_database.Count, 
                 IW.Left + 7f * IW.Width / 100, IW.Top + 38f * IW.Height / 100);
         }
@@ -125,11 +125,11 @@ namespace ReLearn
 
             TotalNumbers.ProgressLine(The_canvas, numberTrue, numberFalse, Start, End);
 
-            TotalNumbers.DrawText(The_canvas, text_size_up, 
+            TotalNumbers.DrawText(The_canvas, font_up, 
                 Additional_functions.GetResourceString("Number_Correct_Answers", this.Resources), 
                 TotalNumbers.Left + 7f * TotalNumbers.Width / 100, TotalNumbers.Top + 7f * TotalNumbers.Height / 100);
 
-            TotalNumbers.DrawText(The_canvas, text_size_low, 
+            TotalNumbers.DrawText(The_canvas, font_low, 
                 Additional_functions.GetResourceString("Correct", this.Resources)         + " " + numberTrue  + ", " + 
                 Additional_functions.GetResourceString("Incorrect", this.Resources)       + " " + numberFalse + ", " + 
                 Additional_functions.GetResourceString("Number_Of_Tests", this.Resources) + " " + Database_Stat.Count, 
@@ -157,8 +157,8 @@ namespace ReLearn
                                                                       95f * The_canvas.Width / 100f, 2f  * The_canvas.Width / 100f + LearnedWords.Bottom      + height, background_color);
             FrameStatistics TotalNumbers =        new FrameStatistics(5f  * The_canvas.Width / 100f, 2f  * The_canvas.Width / 100f + InconvenientWords.Bottom, 
                                                                       95f * The_canvas.Width / 100f, 2f  * The_canvas.Width / 100f + InconvenientWords.Bottom + height, background_color);
-            text_size_up  = 7f * DegreeOfStudy.Width / 100;
-            text_size_low = 5f * DegreeOfStudy.Width / 100;
+            font_up  = 7f * DegreeOfStudy.Width / 100;
+            font_low = 5f * DegreeOfStudy.Width / 100;
 
             float avg_true_today = Average_True_Today(database),
                   avg_true_month = Average_True_Month(database),

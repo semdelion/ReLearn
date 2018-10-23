@@ -164,6 +164,12 @@ namespace ReLearn
                 StartActivity(intent_english_add);
                 return true;
             }
+            if (id == Resource.Id.MenuSelectDictionary)
+            {
+                Intent intent_SelectDictionary = new Intent(this, typeof(SelectDictionary));
+                StartActivity(intent_SelectDictionary);
+                return true;
+            }
             if (id == Android.Resource.Id.Home)
             {
                 this.Finish();
