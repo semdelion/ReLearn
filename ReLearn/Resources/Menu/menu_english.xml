@@ -8,7 +8,7 @@ tools:context=".MainActivity">
      android:id="@+id/MenuSelectDictionary"
      android:icon="@+mipmap/dictionary"
      app:showAsAction="always"/>
-  <item
+ <!--<item
    android:id="@+id/menuDatabase"
    android:icon="@+mipmap/dictionary"
    android:scaleType="fitXY"
@@ -41,9 +41,9 @@ tools:context=".MainActivity">
           android:title="@string/My_Directly"/>
       </group>
     </menu>    
-  </item>
-  
-  <item
+  </item>-->
+
+    <item
   android:id="@+id/settings"
   android:icon="@+mipmap/settings"
   app:showAsAction="always">

@@ -13,8 +13,6 @@ namespace ReLearn
     [Activity(Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     class English : AppCompatActivity
     {
-        private int selected = 0;
-
         [Java.Interop.Export("Button_English_Add_Click")]
         public void Button_English_Add_Click(View v)
         {
@@ -77,100 +75,34 @@ namespace ReLearn
             var toolbarMain = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbarEnglish);
             SetSupportActionBar(toolbarMain);
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
-            SetSelected();
             DataBase.UpdateWordsToRepeat();
-        }
-
-        void SetSelected() // TODO to new layout just crutch.
-        {
-            if (DataBase.TableNameLanguage == TableNames.My_Directly.ToString())
-                selected = Resource.Id.menuDatabase_MyDictionary;
-            else if (DataBase.TableNameLanguage == TableNames.Home.ToString())
-                selected = Resource.Id.menuDatabase_Home;
-            else if (DataBase.TableNameLanguage == TableNames.Education.ToString())
-                selected = Resource.Id.menuDatabase_Education;
-            else if (DataBase.TableNameLanguage == TableNames.Popular_Words.ToString())
-                selected = Resource.Id.menuDatabase_PopularWords;
         }
 
         public override bool OnPrepareOptionsMenu(IMenu menu)
         {
             MenuInflater.Inflate(Resource.Menu.menu_english, menu);
-            if (selected == Resource.Id.menuDatabase_MyDictionary)
-            {
-                menu.FindItem(Resource.Id.menuDatabase_MyDictionary).SetChecked(true);
-                return true;
-            }
-            if (selected == Resource.Id.menuDatabase_Home)
-            {
-                menu.FindItem(Resource.Id.menuDatabase_Home).SetChecked(true);
-                return true;
-            }
-            if (selected == Resource.Id.menuDatabase_Education)
-            {
-                menu.FindItem(Resource.Id.menuDatabase_Education).SetChecked(true);
-                return true;
-            }
-            if (selected == Resource.Id.menuDatabase_PopularWords)
-            {
-                menu.FindItem(Resource.Id.menuDatabase_PopularWords).SetChecked(true);
-                return true;
-            }
             return true;
         }
 
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
-            int id = item.ItemId;
-            if (id == Resource.Id.menuDatabase_MyDictionary)
-            {
-                DataBase.TableNameLanguage = TableNames.My_Directly.ToString();
-                Toast.MakeText(this, Additional_functions.GetResourceString("MyDictionaryIsSelected", this.Resources), ToastLength.Short).Show();
-                DataBase.UpdateWordsToRepeat();
-                item.SetChecked(true);
-                return true;
-            }
-            if (id == Resource.Id.menuDatabase_PopularWords)
-            {
-                DataBase.TableNameLanguage = TableNames.Popular_Words.ToString();
-                Toast.MakeText(this, Additional_functions.GetResourceString("PopularDictionaryIsSelected", this.Resources), ToastLength.Short).Show();
-                DataBase.UpdateWordsToRepeat();
-                item.SetChecked(true);
-                return true;
-            }
-            if (id == Resource.Id.menuDatabase_Home)
-            {
-                DataBase.TableNameLanguage = TableNames.Home.ToString();
-                Toast.MakeText(this, Additional_functions.GetResourceString("HomeIsSelected", this.Resources), ToastLength.Short).Show();
-                DataBase.UpdateWordsToRepeat();
-                item.SetChecked(true);
-                return true;
-            }
-            if (id == Resource.Id.menuDatabase_Education)
-            {
-                DataBase.TableNameLanguage = TableNames.Education.ToString();
-                Toast.MakeText(this, Additional_functions.GetResourceString("EducationIsSelected", this.Resources), ToastLength.Short).Show();
-                DataBase.UpdateWordsToRepeat();
-                item.SetChecked(true);
-                return true;
-            }
-            if (id == Resource.Id.Stats){
+            if (item.ItemId == Resource.Id.Stats){
                 Intent intent_english_stat = new Intent(this, typeof(English_Stat));
                 StartActivity(intent_english_stat);
                 return true;
             }
-            if(id == Resource.Id.Deleteword){
+            if(item.ItemId == Resource.Id.Deleteword){
                 Intent intent_english_add = new Intent(this, typeof(English_View_Dictionary));
                 StartActivity(intent_english_add);
                 return true;
             }
-            if (id == Resource.Id.MenuSelectDictionary)
+            if (item.ItemId == Resource.Id.MenuSelectDictionary)
             {
                 Intent intent_SelectDictionary = new Intent(this, typeof(SelectDictionary));
                 StartActivity(intent_SelectDictionary);
                 return true;
             }
-            if (id == Android.Resource.Id.Home)
+            if (item.ItemId == Android.Resource.Id.Home)
             {
                 this.Finish();
                 return true;

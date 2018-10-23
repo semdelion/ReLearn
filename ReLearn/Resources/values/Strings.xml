@@ -26,8 +26,8 @@
   <string name="databaseEmpty">The database is empty</string>
   <string name="databaseNotConnect">Error : can not connect to database</string>
   <string name="repeatedAllWords">You repeated all the words</string>
-  <string name="MyDictionaryIsSelected">My dictionary is selected</string>
-  <string name="PopularDictionaryIsSelected">The dictionary of popular words is chosen</string>
+  <string name="My_DirectlyIsSelected">My dictionary is selected</string>
+  <string name="Popular_WordsIsSelected">The dictionary of popular words is chosen</string>
   <string name="HomeIsSelected">Selected dictionary "Home"</string>
   <string name="EducationIsSelected">Selected dictionary " Education"</string>
   <string name="Enter_word">Enter word!</string>

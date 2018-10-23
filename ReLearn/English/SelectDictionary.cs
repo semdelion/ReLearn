@@ -22,7 +22,9 @@ namespace ReLearn
         private void SelectDictionaryClick(object sender, EventArgs e)
         {
             ImageView ImgV = sender as ImageView;
-            Toast.MakeText(this, ImgV.Tag.ToString(), ToastLength.Short).Show();
+            DataBase.TableNameLanguage = ImgV.Tag.ToString();
+            Toast.MakeText(this, Additional_functions.GetResourceString(ImgV.Tag.ToString() + "IsSelected", this.Resources), ToastLength.Short).Show();
+            DataBase.UpdateWordsToRepeat();
         }
 
         public void CreateDictionary(TableNames name, Drawable originalImage)
@@ -63,7 +65,6 @@ namespace ReLearn
             CreateDictionary(TableNames.Education, GetDrawable(Resource.Drawable.EducationDictionary));
             CreateDictionary(TableNames.Popular_Words, GetDrawable(Resource.Drawable.EducationDictionary));
             CreateDictionary(TableNames.My_Directly, GetDrawable(Resource.Drawable.MyDictionary));
-
         }
 
         public override bool OnOptionsItemSelected(IMenuItem item)
@@ -78,3 +79,42 @@ namespace ReLearn
         protected override void AttachBaseContext(Context newbase) => base.AttachBaseContext(CalligraphyContextWrapper.Wrap(newbase));
     }
 }
+
+
+//void SetSelected() // TODO to new layout just crutch.
+//{
+//    if (DataBase.TableNameLanguage == TableNames.My_Directly.ToString())
+//        selected = Resource.Id.menuDatabase_MyDictionary;
+//    else if (DataBase.TableNameLanguage == TableNames.Home.ToString())
+//        selected = Resource.Id.menuDatabase_Home;
+//    else if (DataBase.TableNameLanguage == TableNames.Education.ToString())
+//        selected = Resource.Id.menuDatabase_Education;
+//    else if (DataBase.TableNameLanguage == TableNames.Popular_Words.ToString())
+//        selected = Resource.Id.menuDatabase_PopularWords;
+//}
+
+//public override bool OnPrepareOptionsMenu(IMenu menu)
+//{
+//    MenuInflater.Inflate(Resource.Menu.menu_english, menu);
+//    if (selected == Resource.Id.menuDatabase_MyDictionary)
+//    {
+//        menu.FindItem(Resource.Id.menuDatabase_MyDictionary).SetChecked(true);
+//        return true;
+//    }
+//    if (selected == Resource.Id.menuDatabase_Home)
+//    {
+//        menu.FindItem(Resource.Id.menuDatabase_Home).SetChecked(true);
+//        return true;
+//    }
+//    if (selected == Resource.Id.menuDatabase_Education)
+//    {
+//        menu.FindItem(Resource.Id.menuDatabase_Education).SetChecked(true);
+//        return true;
+//    }
+//    if (selected == Resource.Id.menuDatabase_PopularWords)
+//    {
+//        menu.FindItem(Resource.Id.menuDatabase_PopularWords).SetChecked(true);
+//        return true;
+//    }
+//    return true;
+//}
