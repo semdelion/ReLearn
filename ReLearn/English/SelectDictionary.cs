@@ -63,7 +63,7 @@ namespace ReLearn
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
             CreateDictionary(TableNames.Home, GetDrawable(Resource.Drawable.homeDictionary));
             CreateDictionary(TableNames.Education, GetDrawable(Resource.Drawable.EducationDictionary));
-            CreateDictionary(TableNames.Popular_Words, GetDrawable(Resource.Drawable.EducationDictionary));
+            CreateDictionary(TableNames.Popular_Words, GetDrawable(Resource.Drawable.PopularWordsDictionary));
             CreateDictionary(TableNames.My_Directly, GetDrawable(Resource.Drawable.MyDictionary));
         }
 

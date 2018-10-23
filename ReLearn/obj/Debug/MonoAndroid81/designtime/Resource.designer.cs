@@ -1837,25 +1837,28 @@ namespace ReLearn
 			public const int notify_panel_notification_icon_bg = 2130837596;
 			
 			// aapt resource value: 0x7F010018
-			public const int seekbar_progressbar = 2130771992;
+			public const int PopularWordsDictionary = 2130771992;
 			
 			// aapt resource value: 0x7F010019
-			public const int splash = 2130771993;
+			public const int seekbar_progressbar = 2130771993;
 			
 			// aapt resource value: 0x7F010020
-			public const int Stat1 = 2130772000;
+			public const int splash = 2130772000;
 			
 			// aapt resource value: 0x7F010021
-			public const int Stat2 = 2130772001;
+			public const int Stat1 = 2130772001;
 			
 			// aapt resource value: 0x7F010022
-			public const int toolbar = 2130772002;
+			public const int Stat2 = 2130772002;
 			
 			// aapt resource value: 0x7F010023
-			public const int toolbarMain = 2130772003;
+			public const int toolbar = 2130772003;
 			
 			// aapt resource value: 0x7F010024
-			public const int toolbarmainback = 2130772004;
+			public const int toolbarMain = 2130772004;
+			
+			// aapt resource value: 0x7F010025
+			public const int toolbarmainback = 2130772005;
 			
 			// aapt resource value: 0x7F090060
 			public const int tooltip_frame_dark = 2131296352;
