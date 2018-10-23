@@ -52,7 +52,8 @@
 				android:layout_marginRight="50.0dp"
 				android:layout_marginLeft="50.0dp"
 				android:textStyle="bold"
-				android:textColor="#d7f8fe" />
+				android:textColor="#d7f8fe"
+				android:gravity="center_horizontal" />
             <Button
                 android:text=""
                 android:layout_width="match_parent"

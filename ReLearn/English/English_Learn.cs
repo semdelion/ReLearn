@@ -49,13 +49,21 @@ namespace ReLearn
                 Toast.MakeText(this, Additional_functions.GetResourceString("Voice_on", this.Resources), ToastLength.Short).Show();
             }
         }
+       
+        [Java.Interop.Export(" Button_English_Learn_NotRepeat_Click")]
+        public void Button_English_Learn_NotRepeat_Click(View v)
+        {
+            var db = DataBase.Connect(Database_Name.English_DB);
+            db.Query<Database_Words>("UPDATE " + DataBase.TableNameLanguage + " SET NumberLearn = 0 WHERE Word = ?", Word);
+            Toast.MakeText(this, Additional_functions.GetResourceString("notRepeat", this.Resources) + ": " + Word, ToastLength.Short).Show();
+        }
 
         void NextRandomWord()
         {
             try
             {
                 var db = DataBase.Connect(Database_Name.English_DB);
-                var dataBase = db.Query<Database_Words>("SELECT * FROM " + DataBase.TableNameLanguage);
+                var dataBase = db.Query<Database_Words>("SELECT * FROM " + DataBase.TableNameLanguage + " WHERE NumberLearn != 0");
                 Random rnd = new Random(unchecked((int)(DateTime.Now.Ticks)));
                 int rand_word = rnd.Next(dataBase.Count);
                 Word = dataBase[rand_word].Word;

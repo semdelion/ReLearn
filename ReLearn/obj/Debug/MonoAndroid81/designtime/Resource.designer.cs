@@ -2961,6 +2961,9 @@ namespace ReLearn
 			// aapt resource value: 0x7F060009
 			public const int Next = 2131099657;
 			
+			// aapt resource value: 0x7F060071
+			public const int notRepeat = 2131099761;
+			
 			// aapt resource value: 0x7F060050
 			public const int Number_Correct_Answers = 2131099728;
 			

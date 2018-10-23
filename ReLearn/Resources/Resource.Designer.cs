@@ -1821,11 +1821,11 @@ namespace ReLearn
 			// aapt resource value: 0x7f02006a
 			public const int notification_icon_background = 2130837610;
 			
-			// aapt resource value: 0x7f020076
-			public const int notification_template_icon_bg = 2130837622;
-			
 			// aapt resource value: 0x7f020077
-			public const int notification_template_icon_low_bg = 2130837623;
+			public const int notification_template_icon_bg = 2130837623;
+			
+			// aapt resource value: 0x7f020078
+			public const int notification_template_icon_low_bg = 2130837624;
 			
 			// aapt resource value: 0x7f02006b
 			public const int notification_tile_bg = 2130837611;
@@ -1834,31 +1834,34 @@ namespace ReLearn
 			public const int notify_panel_notification_icon_bg = 2130837612;
 			
 			// aapt resource value: 0x7f02006d
-			public const int seekbar_progressbar = 2130837613;
+			public const int PopularWordsDictionary = 2130837613;
 			
 			// aapt resource value: 0x7f02006e
-			public const int splash = 2130837614;
+			public const int seekbar_progressbar = 2130837614;
 			
 			// aapt resource value: 0x7f02006f
-			public const int Stat1 = 2130837615;
+			public const int splash = 2130837615;
 			
 			// aapt resource value: 0x7f020070
-			public const int Stat2 = 2130837616;
+			public const int Stat1 = 2130837616;
 			
 			// aapt resource value: 0x7f020071
-			public const int toolbar = 2130837617;
+			public const int Stat2 = 2130837617;
 			
 			// aapt resource value: 0x7f020072
-			public const int toolbarMain = 2130837618;
+			public const int toolbar = 2130837618;
 			
 			// aapt resource value: 0x7f020073
-			public const int toolbarmainback = 2130837619;
+			public const int toolbarMain = 2130837619;
 			
 			// aapt resource value: 0x7f020074
-			public const int tooltip_frame_dark = 2130837620;
+			public const int toolbarmainback = 2130837620;
 			
 			// aapt resource value: 0x7f020075
-			public const int tooltip_frame_light = 2130837621;
+			public const int tooltip_frame_dark = 2130837621;
+			
+			// aapt resource value: 0x7f020076
+			public const int tooltip_frame_light = 2130837622;
 			
 			static Drawable()
 			{
@@ -3053,6 +3056,9 @@ namespace ReLearn
 			
 			// aapt resource value: 0x7f060030
 			public const int language_rus = 2131099696;
+			
+			// aapt resource value: 0x7f060064
+			public const int notRepeat = 2131099748;
 			
 			// aapt resource value: 0x7f060062
 			public const int number_of_image_repeats = 2131099746;

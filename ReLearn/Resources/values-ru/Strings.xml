@@ -77,4 +77,6 @@
   <string name="number_of_word_repeats">Количество повторений слов</string>
   <string name="number_of_image_repeats">Количество повторений изображений</string>
   <string name="unknown">Не знаю</string>
+  <string name="notRepeat">Не повторять</string>
+ 
 </resources>
