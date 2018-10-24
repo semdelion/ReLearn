@@ -6,6 +6,7 @@ using Android.App;
 using Android.Content;
 using Android.Graphics;
 using Android.Graphics.Drawables;
+using Android.Media;
 using Android.OS;
 using Android.Runtime;
 using Android.Support.V7.App;
@@ -14,11 +15,22 @@ using Android.Views;
 using Android.Widget;
 using Calligraphy;
 
+
 namespace ReLearn
 {
     [Activity(Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     class SelectDictionary : AppCompatActivity
     {
+
+        private Bitmap CreateSingleImageFromMultipleImages(Bitmap firstImage, Bitmap secondImage)
+        {
+            Bitmap result = Bitmap.CreateBitmap(firstImage.Width, firstImage.Height, firstImage.GetConfig());
+            Canvas canvas = new Canvas(result);
+            canvas.DrawBitmap(firstImage, 0f, 0f, null);
+            canvas.DrawBitmap(secondImage, 10f, 10f, null);
+            return result;
+        }
+
         private void SelectDictionaryClick(object sender, EventArgs e)
         {
             ImageView ImgV = sender as ImageView;
@@ -27,21 +39,45 @@ namespace ReLearn
             DataBase.UpdateWordsToRepeat();
         }
 
-        public void CreateDictionary(TableNames name, Drawable originalImage)
+        public void CreateDictionary(TableNames name, int ImageId)
         {
-            int width = (int)Resources.DisplayMetrics.WidthPixels / 4;
-            LinearLayout.LayoutParams parmsImage = new LinearLayout.LayoutParams(width, width);
-            parmsImage.Gravity = GravityFlags.Center;
-            parmsImage.TopMargin = 30;
-            parmsImage.BottomMargin = 10;
+            int width = (int)Resources.DisplayMetrics.WidthPixels / 3;
+            LinearLayout.LayoutParams parmsImage = new LinearLayout.LayoutParams(width, width)
+            {
+                Gravity = GravityFlags.Center,
+                TopMargin = 30,
+                BottomMargin = 10
+            };
+
+            BitmapFactory.Options t = new BitmapFactory.Options
+            {
+                OutWidth = 100,
+                OutHeight = 100
+            };
+            Bitmap baseImage = Bitmap.CreateBitmap(width, width, Bitmap.Config.Argb4444);
+            Bitmap overlayImage = BitmapFactory.DecodeResource(Resources, ImageId,  t);
+
+            Color background_color = new Color(Color.Argb(150, 16, 19, 38));
+            FrameStatistics DegreeOfStudy = new FrameStatistics(0, 0, baseImage.Width, baseImage.Width, background_color);
+
+            Canvas baseCan = new Canvas(baseImage);
+
+            DegreeOfStudy.DrawPieChart(baseCan, 1, 6, Color.Rgb(0, 255, 255), Color.Rgb(50, 60, 126), new PointF(width / 2, width / 2), (float)(width / 3));
+
+            Bitmap finalImage = CreateSingleImageFromMultipleImages(baseImage, overlayImage);
+
             ImageView DictionaryImage = new ImageView(this)
             {
                 LayoutParameters = parmsImage,
                 Tag = name.ToString()
             };
-            DictionaryImage.SetImageDrawable(originalImage);
+
+            DictionaryImage.SetImageBitmap(finalImage);
+
             DictionaryImage.Click += SelectDictionaryClick;
             FindViewById<LinearLayout>(Resource.Id.SelectDictionary).AddView(DictionaryImage);
+
+
 
             TextView DictionaryName = new TextView(this)
             {
@@ -61,10 +97,11 @@ namespace ReLearn
             var toolbarMain = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbarSelectDictionary);
             SetSupportActionBar(toolbarMain);
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
-            CreateDictionary(TableNames.Home, GetDrawable(Resource.Drawable.homeDictionary));
-            CreateDictionary(TableNames.Education, GetDrawable(Resource.Drawable.EducationDictionary));
-            CreateDictionary(TableNames.Popular_Words, GetDrawable(Resource.Drawable.PopularWordsDictionary));
-            CreateDictionary(TableNames.My_Directly, GetDrawable(Resource.Drawable.MyDictionary));
+           
+            CreateDictionary(TableNames.Home, Resource.Drawable.homeDictionary);
+            CreateDictionary(TableNames.Education, Resource.Drawable.EducationDictionary);
+            CreateDictionary(TableNames.Popular_Words, Resource.Drawable.PopularWordsDictionary);
+            CreateDictionary(TableNames.My_Directly, Resource.Drawable.MyDictionary);
         }
 
         public override bool OnOptionsItemSelected(IMenuItem item)
