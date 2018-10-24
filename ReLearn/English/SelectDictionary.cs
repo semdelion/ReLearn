@@ -21,72 +21,97 @@ namespace ReLearn
     [Activity(Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     class SelectDictionary : AppCompatActivity
     {
-
-        private Bitmap CreateSingleImageFromMultipleImages(Bitmap firstImage, Bitmap secondImage)
+        List<Bitmap> DictionariesBitmap { get; set; }
+        List<ImageView> DictionariesView { get; set; }
+        
+        int Width;
+        private Bitmap CreateSingleImageFromMultipleImages(Bitmap firstImage, Bitmap secondImage, PointF C)
         {
             Bitmap result = Bitmap.CreateBitmap(firstImage.Width, firstImage.Height, firstImage.GetConfig());
             Canvas canvas = new Canvas(result);
             canvas.DrawBitmap(firstImage, 0f, 0f, null);
-            canvas.DrawBitmap(secondImage, 10f, 10f, null);
+            canvas.DrawBitmap(secondImage, C.X, C.Y, null);
             return result;
         }
+        private float GetAVG_numberLearn_stat(TableNames name)
+        {
+            var database = DataBase.Connect(Database_Name.English_DB);
+            List<Database_for_stats> Database_NL_and_D = database.Query<Database_for_stats>("SELECT NumberLearn, DateRecurrence FROM " + name.ToString());
+            float avg_numberLearn_stat = (float)Database_NL_and_D.Sum(
+                r => r.NumberLearn > Magic_constants.StandardNumberOfRepeats ?
+                Magic_constants.StandardNumberOfRepeats : r.NumberLearn) / (float)Database_NL_and_D.Count;
+            return avg_numberLearn_stat;
+        }
+        private void Selected(string name)
+        {
+            for (int i = 0; i < DictionariesView.Count; i++)
+                if (DictionariesView[i].Tag.ToString() == DataBase.TableNameLanguage)
+                {
+                    DictionariesView[i].SetImageBitmap(DictionariesBitmap[i]);
+                    break;
+                }
 
+            Bitmap Image1 = Bitmap.CreateBitmap(Width, Width, Bitmap.Config.Argb4444);
+            Canvas baseCan = new Canvas(Image1);
+            Paint paint2 = new Paint { Color = Color.Argb(200,215, 248, 254), AntiAlias = true };
+            baseCan.DrawCircle(Width/2, Width/2, Width / 2.5f, paint2);
+
+            for (int i = 0; i < DictionariesView.Count; i++)
+                if (DictionariesView[i].Tag.ToString() == name)
+                {
+                    DictionariesView[i].SetImageBitmap(CreateSingleImageFromMultipleImages(Image1, DictionariesBitmap[i] , new PointF(0,0)));
+                    break;
+                }
+        }
         private void SelectDictionaryClick(object sender, EventArgs e)
         {
             ImageView ImgV = sender as ImageView;
+            Selected(ImgV.Tag.ToString());
             DataBase.TableNameLanguage = ImgV.Tag.ToString();
+           
             Toast.MakeText(this, Additional_functions.GetResourceString(ImgV.Tag.ToString() + "IsSelected", this.Resources), ToastLength.Short).Show();
             DataBase.UpdateWordsToRepeat();
         }
 
-        public void CreateDictionary(TableNames name, int ImageId)
+        private Bitmap GetBitmap(int ImageId, TableNames name)
         {
-            int width = (int)Resources.DisplayMetrics.WidthPixels / 3;
-            LinearLayout.LayoutParams parmsImage = new LinearLayout.LayoutParams(width, width)
-            {
-                Gravity = GravityFlags.Center,
-                TopMargin = 30,
-                BottomMargin = 10
-            };
+            Bitmap Image1 = Bitmap.CreateBitmap(Width, Width, Bitmap.Config.Argb4444);
+            FrameStatistics FRAME = new FrameStatistics(0, 0, Image1.Width, Image1.Width, Color.Argb(150, 16, 19, 38));
+            float WidthLine = FRAME.Width / 10;
+            Bitmap Image2 = Bitmap.CreateScaledBitmap(BitmapFactory.DecodeResource(Resources, ImageId), 
+                (int)((Width / 2.5) * 2 - WidthLine), (int)((Width / 2.5) * 2 - WidthLine), false);
+            Canvas baseCan = new Canvas(Image1);
+            FRAME.DrawPieChart(baseCan, GetAVG_numberLearn_stat(name), Magic_constants.StandardNumberOfRepeats, 
+                               Color.Rgb(0, 255, 255), Color.Rgb(50, 60, 126), (float)(baseCan.Height / 2.5), WidthLine);
+            Bitmap finalImage = CreateSingleImageFromMultipleImages(Image1, Image2,
+                new PointF(((FRAME.Left + FRAME.Width)  / 2) - (float)(baseCan.Height / 2.5) + WidthLine / 2, 
+                           ((FRAME.Top  + FRAME.Height) / 2) - (float)(baseCan.Height / 2.5) + WidthLine / 2));
+            return finalImage;
+        }
 
-            BitmapFactory.Options t = new BitmapFactory.Options
-            {
-                OutWidth = 100,
-                OutHeight = 100
-            };
-            Bitmap baseImage = Bitmap.CreateBitmap(width, width, Bitmap.Config.Argb4444);
-            Bitmap overlayImage = BitmapFactory.DecodeResource(Resources, ImageId,  t);
-
-            Color background_color = new Color(Color.Argb(150, 16, 19, 38));
-            FrameStatistics DegreeOfStudy = new FrameStatistics(0, 0, baseImage.Width, baseImage.Width, background_color);
-
-            Canvas baseCan = new Canvas(baseImage);
-
-            DegreeOfStudy.DrawPieChart(baseCan, 1, 6, Color.Rgb(0, 255, 255), Color.Rgb(50, 60, 126), new PointF(width / 2, width / 2), (float)(width / 3));
-
-            Bitmap finalImage = CreateSingleImageFromMultipleImages(baseImage, overlayImage);
+        public void CreateViewForDictionary(TableNames name, int ImageId, GravityFlags GF)
+        {
+            LinearLayout.LayoutParams parmsImage = new LinearLayout.LayoutParams(Width, Width)
+                {Gravity = GF, TopMargin = 30, BottomMargin = 10};
+            DictionariesBitmap.Add(GetBitmap(ImageId, name));
 
             ImageView DictionaryImage = new ImageView(this)
             {
                 LayoutParameters = parmsImage,
                 Tag = name.ToString()
             };
-
-            DictionaryImage.SetImageBitmap(finalImage);
-
+            DictionaryImage.SetImageBitmap(DictionariesBitmap[DictionariesBitmap.Count - 1]);
             DictionaryImage.Click += SelectDictionaryClick;
             FindViewById<LinearLayout>(Resource.Id.SelectDictionary).AddView(DictionaryImage);
-
-
 
             TextView DictionaryName = new TextView(this)
             {
                 Text = Additional_functions.GetResourceString(name.ToString(), this.Resources),
-                Gravity = GravityFlags.Center
+                Gravity = GF
             };
             DictionaryName.SetTextColor(Color.Rgb(215, 248, 254));
-
             FindViewById<LinearLayout>(Resource.Id.SelectDictionary).AddView(DictionaryName);
+            DictionariesView.Add(DictionaryImage);
         }
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -97,11 +122,14 @@ namespace ReLearn
             var toolbarMain = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbarSelectDictionary);
             SetSupportActionBar(toolbarMain);
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
-           
-            CreateDictionary(TableNames.Home, Resource.Drawable.homeDictionary);
-            CreateDictionary(TableNames.Education, Resource.Drawable.EducationDictionary);
-            CreateDictionary(TableNames.Popular_Words, Resource.Drawable.PopularWordsDictionary);
-            CreateDictionary(TableNames.My_Directly, Resource.Drawable.MyDictionary);
+            DictionariesBitmap = new List<Bitmap>();
+            DictionariesView = new List<ImageView>();
+            Width = (int)(Resources.DisplayMetrics.WidthPixels / 3f);
+            CreateViewForDictionary(TableNames.Home, Resource.Drawable.homeDictionary, GravityFlags.Center);
+            CreateViewForDictionary(TableNames.Education, Resource.Drawable.EducationDictionary, GravityFlags.Center);
+            CreateViewForDictionary(TableNames.Popular_Words, Resource.Drawable.PopularWordsDictionary, GravityFlags.Center);
+            CreateViewForDictionary(TableNames.My_Directly, Resource.Drawable.MyDictionary, GravityFlags.Center);
+            Selected(DataBase.TableNameLanguage);
         }
 
         public override bool OnOptionsItemSelected(IMenuItem item)
@@ -118,40 +146,3 @@ namespace ReLearn
 }
 
 
-//void SetSelected() // TODO to new layout just crutch.
-//{
-//    if (DataBase.TableNameLanguage == TableNames.My_Directly.ToString())
-//        selected = Resource.Id.menuDatabase_MyDictionary;
-//    else if (DataBase.TableNameLanguage == TableNames.Home.ToString())
-//        selected = Resource.Id.menuDatabase_Home;
-//    else if (DataBase.TableNameLanguage == TableNames.Education.ToString())
-//        selected = Resource.Id.menuDatabase_Education;
-//    else if (DataBase.TableNameLanguage == TableNames.Popular_Words.ToString())
-//        selected = Resource.Id.menuDatabase_PopularWords;
-//}
-
-//public override bool OnPrepareOptionsMenu(IMenu menu)
-//{
-//    MenuInflater.Inflate(Resource.Menu.menu_english, menu);
-//    if (selected == Resource.Id.menuDatabase_MyDictionary)
-//    {
-//        menu.FindItem(Resource.Id.menuDatabase_MyDictionary).SetChecked(true);
-//        return true;
-//    }
-//    if (selected == Resource.Id.menuDatabase_Home)
-//    {
-//        menu.FindItem(Resource.Id.menuDatabase_Home).SetChecked(true);
-//        return true;
-//    }
-//    if (selected == Resource.Id.menuDatabase_Education)
-//    {
-//        menu.FindItem(Resource.Id.menuDatabase_Education).SetChecked(true);
-//        return true;
-//    }
-//    if (selected == Resource.Id.menuDatabase_PopularWords)
-//    {
-//        menu.FindItem(Resource.Id.menuDatabase_PopularWords).SetChecked(true);
-//        return true;
-//    }
-//    return true;
-//}

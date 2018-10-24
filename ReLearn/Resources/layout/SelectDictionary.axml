@@ -20,7 +20,7 @@
 			android:paddingBottom="12dp"
 			android:layout_width="match_parent"
 			android:layout_height="match_parent"
-			android:text="@string/Addition"    
+			android:text="@string/Dictionaries"    
 		/>
 	</android.support.v7.widget.Toolbar>
 	<ScrollView
@@ -31,6 +31,7 @@
         <LinearLayout
 			android:id="@+id/SelectDictionary"
 			android:orientation="vertical"
+			android:antialias="true"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
         </LinearLayout>

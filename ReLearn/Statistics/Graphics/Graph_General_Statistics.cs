@@ -52,7 +52,7 @@ namespace ReLearn
                 r => r.NumberLearn > Magic_constants.StandardNumberOfRepeats ? 
                 Magic_constants.StandardNumberOfRepeats : r.NumberLearn) / (float)Stats_database.Count;
 
-            Degree.DrawPieChart(The_canvas, avg_numberLearn_stat, Magic_constants.StandardNumberOfRepeats, Start, End,
+            Degree.DrawPieChartWithText(The_canvas, avg_numberLearn_stat, Magic_constants.StandardNumberOfRepeats, Start, End,
             new PointF(Degree.Left + Degree.Width / 2f, Degree.Bottom - 27.5f * The_canvas.Width / 100f), Degree.Width / 2.5f);
             Degree.DrawText(The_canvas, font_up, Additional_functions.GetResourceString("Degree_Of_Study", this.Resources), 
                 Degree.Left + Degree.Width / 12, Degree.Top + Degree.Height / 20);

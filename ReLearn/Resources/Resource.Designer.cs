@@ -2799,6 +2799,9 @@ namespace ReLearn
 			// aapt resource value: 0x7f06002a
 			public const int Delete = 2131099690;
 			
+			// aapt resource value: 0x7f060065
+			public const int Dictionaries = 2131099749;
+			
 			// aapt resource value: 0x7f06005e
 			public const int Education = 2131099742;
 			

@@ -67,7 +67,7 @@ namespace ReLearn
             canvas.DrawRect(new RectF(Left + padding_left_right + step_width * True, Bottom - padding_bottom - height, Right - padding_left_right, Bottom - padding_bottom), Pen_F);
         }
 
-        public void DrawPieChart(Canvas canvas, float average, float sum, Color Color_Diagram_1, Color Color_Diagram_2, PointF Center, float Radius)
+        public void DrawPieChartWithText(Canvas canvas, float average, float sum, Color Color_Diagram_1, Color Color_Diagram_2, PointF Center, float Radius)
         {
             Shader shader1 = new SweepGradient(Center.X, Center.Y, Color_Diagram_2, Color_Diagram_1);
             Paint paint1 = new Paint { Color = Color_Diagram_1, StrokeWidth = 10f * Width / 100f, AntiAlias = true };
@@ -83,7 +83,24 @@ namespace ReLearn
             DrawText(canvas, Width * 22f / 100f, Additional_functions.RoundOfNumber(100 - average * 100f / sum) + "%", Left + 2f * Width / 10f, Center.Y - 33f * Radius / 100);
         }
 
-        public void DrawPieChart(Canvas canvas, float average, float sum, Color Color_Diagram_1, Color Color_Diagram_2)
+        public void DrawPieChart(Canvas canvas, float average, float sum, Color Color_Diagram_1, Color Color_Diagram_2, float Radius, float width)
+        {
+            float X = Left + Width  / 2,
+                  Y = Top  + Height / 2;
+            Shader shader1 = new SweepGradient(X, Y, Color_Diagram_2, Color_Diagram_1);
+            Paint paint1 = new Paint { Color = Color_Diagram_1, StrokeWidth = width, AntiAlias = true };
+            Paint paint2 = new Paint { Color = Color.Rgb(29, 43, 59), StrokeWidth = width, AntiAlias = true };
+            paint1.SetStyle(Paint.Style.Stroke);
+            paint1.SetShader(shader1);
+            paint2.SetStyle(Paint.Style.Stroke);
+            canvas.DrawArc(new RectF(X - Radius, Y - Radius, X + Radius, Y + Radius), 0f, 360f, false, paint2);
+            canvas.Rotate(-90f, X, Y);
+            canvas.DrawArc(new RectF(X - Radius, Y - Radius, X + Radius, Y + Radius), 0.5f, 360f - average * (360f / sum), false, paint1);
+            canvas.Rotate(90f, X, Y);
+
+        }
+
+        public void DrawPieChartWithText(Canvas canvas, float average, float sum, Color Color_Diagram_1, Color Color_Diagram_2)
         {
             float rate = (Width + Height) / 200f;
             Shader shader1 = new SweepGradient(Left + Width / 2, Top + Height / 2, Color_Diagram_2, Color_Diagram_1);
