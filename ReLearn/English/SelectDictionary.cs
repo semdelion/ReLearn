@@ -68,8 +68,6 @@ namespace ReLearn
             ImageView ImgV = sender as ImageView;
             Selected(ImgV.Tag.ToString());
             DataBase.TableNameLanguage = ImgV.Tag.ToString();
-           
-            Toast.MakeText(this, Additional_functions.GetResourceString(ImgV.Tag.ToString() + "IsSelected", this.Resources), ToastLength.Short).Show();
             DataBase.UpdateWordsToRepeat();
         }
 
@@ -92,7 +90,7 @@ namespace ReLearn
         public void CreateViewForDictionary(TableNames name, int ImageId, GravityFlags GF)
         {
             LinearLayout.LayoutParams parmsImage = new LinearLayout.LayoutParams(Width, Width)
-                {Gravity = GF, TopMargin = 30, BottomMargin = 10};
+                {Gravity = GF, TopMargin = 10};
             DictionariesBitmap.Add(GetBitmap(ImageId, name));
 
             ImageView DictionaryImage = new ImageView(this)
