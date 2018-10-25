@@ -1795,73 +1795,82 @@ namespace ReLearn
 			public const int icon = 2130837601;
 			
 			// aapt resource value: 0x7f020062
-			public const int MyDictionary = 2130837602;
+			public const int ItDictionary = 2130837602;
 			
 			// aapt resource value: 0x7f020063
-			public const int notification_action_background = 2130837603;
+			public const int MyDictionary = 2130837603;
 			
 			// aapt resource value: 0x7f020064
-			public const int notification_bg = 2130837604;
+			public const int NatureDictionary = 2130837604;
 			
 			// aapt resource value: 0x7f020065
-			public const int notification_bg_low = 2130837605;
+			public const int notification_action_background = 2130837605;
 			
 			// aapt resource value: 0x7f020066
-			public const int notification_bg_low_normal = 2130837606;
+			public const int notification_bg = 2130837606;
 			
 			// aapt resource value: 0x7f020067
-			public const int notification_bg_low_pressed = 2130837607;
+			public const int notification_bg_low = 2130837607;
 			
 			// aapt resource value: 0x7f020068
-			public const int notification_bg_normal = 2130837608;
+			public const int notification_bg_low_normal = 2130837608;
 			
 			// aapt resource value: 0x7f020069
-			public const int notification_bg_normal_pressed = 2130837609;
+			public const int notification_bg_low_pressed = 2130837609;
 			
 			// aapt resource value: 0x7f02006a
-			public const int notification_icon_background = 2130837610;
-			
-			// aapt resource value: 0x7f020077
-			public const int notification_template_icon_bg = 2130837623;
-			
-			// aapt resource value: 0x7f020078
-			public const int notification_template_icon_low_bg = 2130837624;
+			public const int notification_bg_normal = 2130837610;
 			
 			// aapt resource value: 0x7f02006b
-			public const int notification_tile_bg = 2130837611;
+			public const int notification_bg_normal_pressed = 2130837611;
 			
 			// aapt resource value: 0x7f02006c
-			public const int notify_panel_notification_icon_bg = 2130837612;
+			public const int notification_icon_background = 2130837612;
+			
+			// aapt resource value: 0x7f02007a
+			public const int notification_template_icon_bg = 2130837626;
+			
+			// aapt resource value: 0x7f02007b
+			public const int notification_template_icon_low_bg = 2130837627;
 			
 			// aapt resource value: 0x7f02006d
-			public const int PopularWordsDictionary = 2130837613;
+			public const int notification_tile_bg = 2130837613;
 			
 			// aapt resource value: 0x7f02006e
-			public const int seekbar_progressbar = 2130837614;
+			public const int notify_panel_notification_icon_bg = 2130837614;
 			
 			// aapt resource value: 0x7f02006f
-			public const int splash = 2130837615;
+			public const int PopularWordsDictionary = 2130837615;
 			
 			// aapt resource value: 0x7f020070
-			public const int Stat1 = 2130837616;
+			public const int seekbar_progressbar = 2130837616;
 			
 			// aapt resource value: 0x7f020071
-			public const int Stat2 = 2130837617;
+			public const int splash = 2130837617;
 			
 			// aapt resource value: 0x7f020072
-			public const int toolbar = 2130837618;
+			public const int Stat1 = 2130837618;
 			
 			// aapt resource value: 0x7f020073
-			public const int toolbarMain = 2130837619;
+			public const int Stat2 = 2130837619;
 			
 			// aapt resource value: 0x7f020074
-			public const int toolbarmainback = 2130837620;
+			public const int ThreeFormsOfVerbDictionary = 2130837620;
 			
 			// aapt resource value: 0x7f020075
-			public const int tooltip_frame_dark = 2130837621;
+			public const int toolbar = 2130837621;
 			
 			// aapt resource value: 0x7f020076
-			public const int tooltip_frame_light = 2130837622;
+			public const int toolbarMain = 2130837622;
+			
+			// aapt resource value: 0x7f020077
+			public const int toolbarmainback = 2130837623;
+			
+			// aapt resource value: 0x7f020078
+			public const int tooltip_frame_dark = 2130837624;
+			
+			// aapt resource value: 0x7f020079
+			public const int tooltip_frame_light = 2130837625;
 			
 			static Drawable()
 			{
@@ -2778,6 +2787,9 @@ namespace ReLearn
 		public partial class String
 		{
 			
+			// aapt resource value: 0x7f060056
+			public const int About_us = 2131099734;
+			
 			// aapt resource value: 0x7f060025
 			public const int Add_word = 2131099685;
 			
@@ -2792,6 +2804,12 @@ namespace ReLearn
 			
 			// aapt resource value: 0x7f060045
 			public const int Correct_answers = 2131099717;
+			
+			// aapt resource value: 0x7f060036
+			public const int DatabaseEmpty = 2131099702;
+			
+			// aapt resource value: 0x7f060037
+			public const int DatabaseNotConnect = 2131099703;
 			
 			// aapt resource value: 0x7f060044
 			public const int Degree_Of_Study = 2131099716;
@@ -2841,6 +2859,12 @@ namespace ReLearn
 			// aapt resource value: 0x7f060020
 			public const int Language = 2131099680;
 			
+			// aapt resource value: 0x7f06002f
+			public const int Language_eng = 2131099695;
+			
+			// aapt resource value: 0x7f060030
+			public const int Language_rus = 2131099696;
+			
 			// aapt resource value: 0x7f060054
 			public const int Last_testing = 2131099732;
 			
@@ -2864,6 +2888,9 @@ namespace ReLearn
 			
 			// aapt resource value: 0x7f060026
 			public const int Next = 2131099686;
+			
+			// aapt resource value: 0x7f060064
+			public const int NotRepeat = 2131099748;
 			
 			// aapt resource value: 0x7f06004f
 			public const int Number_Correct_Answers = 2131099727;
@@ -2889,6 +2916,12 @@ namespace ReLearn
 			// aapt resource value: 0x7f060052
 			public const int Number_Of_Tests = 2131099730;
 			
+			// aapt resource value: 0x7f060062
+			public const int Number_of_image_repeats = 2131099746;
+			
+			// aapt resource value: 0x7f060061
+			public const int Number_of_word_repeats = 2131099745;
+			
 			// aapt resource value: 0x7f060053
 			public const int Of = 2131099731;
 			
@@ -2900,6 +2933,9 @@ namespace ReLearn
 			
 			// aapt resource value: 0x7f060023
 			public const int Repeat = 2131099683;
+			
+			// aapt resource value: 0x7f060038
+			public const int RepeatedAllWords = 2131099704;
 			
 			// aapt resource value: 0x7f060035
 			public const int RuIsSelected = 2131099701;
@@ -2922,8 +2958,17 @@ namespace ReLearn
 			// aapt resource value: 0x7f06002d
 			public const int Statistics = 2131099693;
 			
+			// aapt resource value: 0x7f06005d
+			public const int Support_project = 2131099741;
+			
+			// aapt resource value: 0x7f060066
+			public const int ThreeFormsOfVerb = 2131099750;
+			
 			// aapt resource value: 0x7f060046
 			public const int Today = 2131099718;
+			
+			// aapt resource value: 0x7f060063
+			public const int Unknown = 2131099747;
 			
 			// aapt resource value: 0x7f06002e
 			public const int View_dictionary = 2131099694;
@@ -3042,47 +3087,14 @@ namespace ReLearn
 			// aapt resource value: 0x7f060010
 			public const int abc_toolbar_collapse_description = 2131099664;
 			
-			// aapt resource value: 0x7f060056
-			public const int about_us = 2131099734;
-			
 			// aapt resource value: 0x7f06001f
 			public const int app_name = 2131099679;
-			
-			// aapt resource value: 0x7f060036
-			public const int databaseEmpty = 2131099702;
-			
-			// aapt resource value: 0x7f060037
-			public const int databaseNotConnect = 2131099703;
-			
-			// aapt resource value: 0x7f06002f
-			public const int language_eng = 2131099695;
-			
-			// aapt resource value: 0x7f060030
-			public const int language_rus = 2131099696;
-			
-			// aapt resource value: 0x7f060064
-			public const int notRepeat = 2131099748;
-			
-			// aapt resource value: 0x7f060062
-			public const int number_of_image_repeats = 2131099746;
-			
-			// aapt resource value: 0x7f060061
-			public const int number_of_word_repeats = 2131099745;
-			
-			// aapt resource value: 0x7f060038
-			public const int repeatedAllWords = 2131099704;
 			
 			// aapt resource value: 0x7f060011
 			public const int search_menu_title = 2131099665;
 			
 			// aapt resource value: 0x7f06001e
 			public const int status_bar_notification_info_overflow = 2131099678;
-			
-			// aapt resource value: 0x7f06005d
-			public const int support_project = 2131099741;
-			
-			// aapt resource value: 0x7f060063
-			public const int unknown = 2131099747;
 			
 			static String()
 			{

@@ -12,7 +12,7 @@ namespace ReLearn
         Canvas The_canvas;
         Color Color_Diagram_1;
         Color Color_Diagram_2;
-        TableNames TabelName;
+        string TabelName;
         readonly Color background_color = new Color(Color.Argb(150, 16, 19, 38));
         readonly Paint paint_border = new Paint { StrokeWidth = 4, Color = Color.Argb(250, 215, 248, 254), AntiAlias = true };
         readonly Paint paint_text = new Paint { TextSize = 25, StrokeWidth = 4, Color = Color.Rgb(215, 248, 254), AntiAlias = true };
@@ -21,7 +21,7 @@ namespace ReLearn
         {
             Color_Diagram_1 = color_diagram_1;
             Color_Diagram_2 = color_diagram_2;
-            TabelName = (TableNames)Enum.Parse(typeof(TableNames), Table_Name);
+            TabelName = Table_Name;
         }
 
         void Abscissa(float left, float bottom, float width, Paint paint, int amount)
@@ -83,7 +83,7 @@ namespace ReLearn
         {
             The_canvas = canvas;            
             var database = DataBase.Connect(Database_Name.Statistics);
-            var Database_Stat = database.Query<Database_Statistics>("SELECT * FROM " + TabelName.ToString() + "_Statistics");// количество строк в БД
+            var Database_Stat = database.Query<Database_Statistics>("SELECT * FROM " + TabelName + "_Statistics");// количество строк в БД
             base.OnDraw(The_canvas);
 
             paint_text.TextSize = 2.5f * (The_canvas.Height + The_canvas.Width) / 200;
@@ -106,20 +106,20 @@ namespace ReLearn
                 LastStat.ProgressLine(The_canvas, Database_Stat[Database_Stat.Count - 1].True, Database_Stat[Database_Stat.Count - 1].False, Color_Diagram_1, Color_Diagram_2);
                 if (The_canvas.Height > The_canvas.Width)
                 {
-                    LastStat.DrawText(The_canvas, 25 * LastStat.Height / 100, Additional_functions.GetResourceString("Last_testing", this.Resources), 
+                    LastStat.DrawText(The_canvas, 25 * LastStat.Height / 100, Context.GetString(Resource.String.Last_testing), 
                         LastStat.Left + 7 * LastStat.Width / 100, LastStat.Top + LastStat.Height / 14);
-                    LastStat.DrawText(The_canvas, 15 * LastStat.Height / 100, Additional_functions.GetResourceString("Correct", this.Resources) 
+                    LastStat.DrawText(The_canvas, 15 * LastStat.Height / 100, Context.GetString(Resource.String.Correct)
                         + ": " + Convert.ToString(Database_Stat[Database_Stat.Count - 1].True)
-                        +", "+ Additional_functions.GetResourceString("Incorrect_Up", this.Resources)
+                        +", "+ Context.GetString(Resource.String.Incorrect_Up)
                         + ": " + Convert.ToString(Database_Stat[Database_Stat.Count - 1].False), LastStat.Left + 7 * LastStat.Width / 100, 
                         LastStat.Top + 25 * LastStat.Height / 100 + LastStat.Height / 7);
                 }
                 else 
-                    LastStat.DrawText(The_canvas, 40 * LastStat.Height / 100, 
-                        Additional_functions.GetResourceString("Last_testing", this.Resources)
-                        + "." + "   " + Additional_functions.GetResourceString("Correct", this.Resources)
-                        + ": " + Convert.ToString(Database_Stat[Database_Stat.Count - 1].True) +
-                        ", " + Additional_functions.GetResourceString("Incorrect_Up", this.Resources)
+                    LastStat.DrawText(The_canvas, 40 * LastStat.Height / 100,
+                         Context.GetString(Resource.String.Last_testing)
+                        + "." + "   " + Context.GetString(Resource.String.Correct)
+                        + ": " + Convert.ToString(Database_Stat[Database_Stat.Count - 1].True) 
+                        + ", " + Context.GetString(Resource.String.Incorrect_Up)
                         + ": " + Convert.ToString(Database_Stat[Database_Stat.Count - 1].False), 
                         LastStat.Left + 7 * LastStat.Width / 100, LastStat.Top + LastStat.Height / 14);
             }

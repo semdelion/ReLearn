@@ -33,7 +33,7 @@ namespace ReLearn
             if (state)
             {
                 Button_next.State = StateButton.Unknown;
-                Button_next.button.Text = Additional_functions.GetResourceString("unknown", this.Resources);               
+                Button_next.button.Text = GetString(Resource.String.Unknown);               
                 Button1.Background = GetDrawable(Resource.Drawable.button_style_standard);
                 Button2.Background = GetDrawable(Resource.Drawable.button_style_standard);
                 Button3.Background = GetDrawable(Resource.Drawable.button_style_standard);
@@ -42,7 +42,7 @@ namespace ReLearn
             else
             {
                 Button_next.State = StateButton.Next;
-                Button_next.button.Text = Additional_functions.GetResourceString("Next", this.Resources);
+                Button_next.button.Text = GetString(Resource.String.Next);
             }
         }
 
@@ -162,7 +162,7 @@ namespace ReLearn
                     CurrentWordNumber = rnd.Next(dataBase.Count);
                     NextWord();
                     Button_enable(true);
-                    Title_textView.Text = Convert.ToString(Additional_functions.GetResourceString("Repeat", this.Resources) + " " + (Count + 1) + "/" + Magic_constants.NumberOfRepeatsLanguage); // ПЕРЕДЕЛАЙ Костыль счётчик 
+                    Title_textView.Text = Convert.ToString(GetString(Resource.String.Repeat) + " " + (Count + 1) + "/" + Magic_constants.NumberOfRepeatsLanguage); // ПЕРЕДЕЛАЙ Костыль счётчик 
                 }
                 else
                 {
@@ -206,7 +206,7 @@ namespace ReLearn
             }
             catch
             {
-                Toast.MakeText(this, Additional_functions.GetResourceString("databaseNotConnect", this.Resources), ToastLength.Short).Show();
+                Toast.MakeText(this, GetString(Resource.String.DatabaseNotConnect), ToastLength.Short).Show();
             }
         }
 

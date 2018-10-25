@@ -18,7 +18,7 @@
 			android:paddingBottom="12dp"
 			android:layout_width="match_parent"
 			android:layout_height="match_parent"
-			android:text="@string/about_us" />
+			android:text="@string/About_us" />
 	</android.support.v7.widget.Toolbar >
 	<ScrollView
 		android:minWidth="25px"
@@ -42,7 +42,7 @@
 				android:defaultFocusHighlightEnabled="true"
 				android:layout_marginBottom="40.0dp" />
 			<Button
-				android:text="@string/support_project"
+				android:text="@string/Support_project"
 				android:layout_width="match_parent"
 				android:layout_height="55.0dp"
 				android:id="@+id/button_support_project"

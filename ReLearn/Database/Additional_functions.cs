@@ -162,7 +162,7 @@ namespace ReLearn
             catch
             {
                 return "Error: Error can't find string  - " + str;
-            }            
+            }
         }
 
         public static void Font()

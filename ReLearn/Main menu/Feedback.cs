@@ -15,7 +15,7 @@ namespace ReLearn
         {
             EditText editText_Feedback = FindViewById<EditText>(Resource.Id.editText_Feedback);
             if (editText_Feedback.Text == "")
-                Toast.MakeText(this, Additional_functions.GetResourceString("Enter_word", this.Resources), ToastLength.Short).Show();
+                Toast.MakeText(this, GetString(Resource.String.Enter_word), ToastLength.Short).Show();
             else
             {
                 var email = new Intent(Intent.ActionSend);

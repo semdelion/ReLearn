@@ -16,16 +16,16 @@
   <string name="My_Directly">Мой словарь</string>
   <string name="Statistics">Статистика</string>
   <string name="View_dictionary">Просмотр</string>
-  <string name="language_eng">Язык (en)</string>
-  <string name="language_rus">Язык (ru)</string>
+  <string name="Language_eng">Язык (en)</string>
+  <string name="Language_rus">Язык (ru)</string>
   <string name="Sort_descending">Сортировать ↓</string>
   <string name="Sort_Ascending">Сортировать ↑</string>
   <string name="Sort_alphabetically">Сортировать А→Я</string>
   <string name="EnIsSelected">Выбран английский язык</string>
   <string name="RuIsSelected">Выбран русский язык</string>
-  <string name="databaseEmpty">База данных пуста</string>
-  <string name="databaseNotConnect">Ошибка: невозможно подключиться к базе данных</string>
-  <string name="repeatedAllWords">Вы повторили все слова</string>
+  <string name="DatabaseEmpty">База данных пуста</string>
+  <string name="DatabaseNotConnect">Ошибка: невозможно подключиться к базе данных</string>
+  <string name="RepeatedAllWords">Вы повторили все слова</string>
   <string name="My_DirectlyIsSelected">Мой словарь выбран</string>
   <string name="Popular_WordsIsSelected">Выбран словарь популярных слов</string>
   <string name="HomeIsSelected">Выбран словарь "Дом и быт"</string>
@@ -55,7 +55,7 @@
   <string name="Of">из</string>
   <string name="Last_testing">Последнее тестирование</string>
   <string name="Incorrect_Up">Неверные</string>
-  <string name="about_us">О нас</string>
+  <string name="About_us">О нас</string>
   <string name="Feedback">Обратная связь</string>
   <string name="Feedback_comments">В данном разделе вы можете оставить свои пожелания, предложения, замечания</string>
   <string name="Send">Отправить</string>
@@ -70,14 +70,15 @@
     \n\n\t\t\t С уважением, команда SemdelionTeam
     \n\n\t\t\t Адрес: SemdelionTeam@gmail.com
   </string>
-  <string name="support_project">Поддержать проект</string>
+  <string name="Support_project">Поддержать проект</string>
   <string name="Education">Образование</string>
   <string name="Home">Дом и быт</string>
   <string name="Settings">Настройки</string>
-  <string name="number_of_word_repeats">Количество повторений слов</string>
-  <string name="number_of_image_repeats">Количество повторений изображений</string>
-  <string name="unknown">Не знаю</string>
-  <string name="notRepeat">Не повторять</string>
+  <string name="Number_of_word_repeats">Количество повторений слов</string>
+  <string name="Number_of_image_repeats">Количество повторений изображений</string>
+  <string name="Unknown">Не знаю</string>
+  <string name="NotRepeat">Не повторять</string>
   <string name="Dictionaries">Словари</string>
+  <string name="ThreeFormsOfVerb">Глаголы</string>
  
 </resources>

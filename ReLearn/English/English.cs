@@ -34,11 +34,11 @@ namespace ReLearn
                     StartActivity(intent_english_learn);
                 }
                 else
-                    Toast.MakeText(this, Additional_functions.GetResourceString("databaseEmpty", this.Resources), ToastLength.Short).Show();
+                    Toast.MakeText(this, GetString(Resource.String.DatabaseEmpty), ToastLength.Short).Show();
             }
             catch
             {
-                Toast.MakeText(this, Additional_functions.GetResourceString("databaseNotConnect", this.Resources), ToastLength.Short).Show();
+                Toast.MakeText(this, GetString(Resource.String.DatabaseNotConnect), ToastLength.Short).Show();
             }
         }
 
@@ -52,18 +52,18 @@ namespace ReLearn
                 var search_occurrences = database.Query<Database_Words>("SELECT * FROM  " + DataBase.TableNameLanguage);// поиск вхождения слова в БД
                 var search_numberlearn_null = database.Query<Database_Words>("SELECT * FROM  " + DataBase.TableNameLanguage + " WHERE NumberLearn = 0").Count;
                 if (search_occurrences.Count == search_numberlearn_null)
-                    Toast.MakeText(this, Additional_functions.GetResourceString("repeatedAllWords", this.Resources), ToastLength.Short).Show();
+                    Toast.MakeText(this, GetString(Resource.String.RepeatedAllWords), ToastLength.Short).Show();
                 else if (search_occurrences.Count != 0)
                 {
                     Intent intent_english_repeat = new Intent(this, typeof(English_Repeat));
                     StartActivity(intent_english_repeat);
                 }
                 else
-                    Toast.MakeText(this, Additional_functions.GetResourceString("databaseEmpty", this.Resources), ToastLength.Short).Show();              
+                    Toast.MakeText(this, GetString(Resource.String.DatabaseEmpty), ToastLength.Short).Show();              
             }
             catch
             {
-                Toast.MakeText(this, Additional_functions.GetResourceString("databaseNotConnect", this.Resources), ToastLength.Short).Show();
+                Toast.MakeText(this, GetString(Resource.String.DatabaseNotConnect), ToastLength.Short).Show();
             }
         }    
 

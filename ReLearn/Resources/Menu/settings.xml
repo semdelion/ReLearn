@@ -23,7 +23,7 @@ tools:context=".MainActivity">
          android:id="@+id/about_us"
          android:orderInCategory="103"
          app:showAsAction="never"
-         android:title="@string/about_us"/>
+         android:title="@string/About_us"/>
     </menu>
   </item>
 </menu>

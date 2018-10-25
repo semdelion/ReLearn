@@ -16,6 +16,8 @@ namespace ReLearn
             DataBase.Install_database_from_assets(Database_Name.English_DB);
             DataBase.Install_database_from_assets(Database_Name.Flags_DB);
             DataBase.Install_database_from_assets(Database_Name.Statistics);
+
+            DataBase.Сreating_newTable_in_database();
             Intent intent = new Intent(this, typeof(MainActivity));        
             StartActivity(typeof(MainActivity));
             this.Finish();

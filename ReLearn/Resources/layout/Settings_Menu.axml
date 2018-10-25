@@ -25,7 +25,7 @@
 	</android.support.v7.widget.Toolbar >
 	<TextView
 		android:id="@+id/TextView_number_of_word_repeats"
-		android:text="@string/number_of_word_repeats"
+		android:text="@string/Number_of_word_repeats"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:textColor="?android:attr/actionMenuTextColor"
@@ -47,7 +47,7 @@
 		android:thumb="@drawable/custom_thumb"/>
 	<TextView
 		android:id="@+id/TextView_number_of_image_repeats"
-		android:text="@string/number_of_image_repeats"
+		android:text="@string/Number_of_image_repeats"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:textColor="?android:attr/actionMenuTextColor"

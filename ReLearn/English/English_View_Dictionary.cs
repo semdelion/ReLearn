@@ -83,11 +83,11 @@ namespace ReLearn
                     int search_occurrences = database.Query<Database_Words>("SELECT * FROM " + DataBase.TableNameLanguage).Count;
 
                     if (search_occurrences == 0)
-                        Toast.MakeText(this, Additional_functions.GetResourceString("Word_Not_Exists", this.Resources), ToastLength.Short).Show();
+                        Toast.MakeText(this, GetString(Resource.String.Word_Not_Exists), ToastLength.Short).Show();
                     else
                     {
                         database.Query<Database_Words>("DELETE FROM " + DataBase.TableNameLanguage + " WHERE Word = ?", word.ToString());// поиск вхождения слова в БД
-                            Toast.MakeText(this, Additional_functions.GetResourceString("Word_Delete", this.Resources), ToastLength.Short).Show();
+                            Toast.MakeText(this, GetString(Resource.String.Word_Delete), ToastLength.Short).Show();
                     }
                 });
                 alert.Show();

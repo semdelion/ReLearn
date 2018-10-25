@@ -40,13 +40,13 @@ namespace ReLearn
             {
                 Voice_Enable = false;
                 button.SetImageDrawable(GetDrawable(Resource.Mipmap.speak_off));
-                Toast.MakeText(this, Additional_functions.GetResourceString("Voice_off", this.Resources), ToastLength.Short).Show();
+                Toast.MakeText(this, GetString(Resource.String.Voice_off), ToastLength.Short).Show();
             }
             else
             {
                 Voice_Enable = true;
                 button.SetImageDrawable(GetDrawable(Resource.Mipmap.speak_on));
-                Toast.MakeText(this, Additional_functions.GetResourceString("Voice_on", this.Resources), ToastLength.Short).Show();
+                Toast.MakeText(this, GetString(Resource.String.Voice_on), ToastLength.Short).Show();
             }
         }
        
@@ -55,7 +55,7 @@ namespace ReLearn
         {
             var db = DataBase.Connect(Database_Name.English_DB);
             db.Query<Database_Words>("UPDATE " + DataBase.TableNameLanguage + " SET NumberLearn = 0 WHERE Word = ?", Word);
-            Toast.MakeText(this, Additional_functions.GetResourceString("notRepeat", this.Resources) + ": " + Word, ToastLength.Short).Show();
+            Toast.MakeText(this, GetString(Resource.String.NotRepeat) + ": " + Word, ToastLength.Short).Show();
         }
 
         void NextRandomWord()
@@ -74,7 +74,7 @@ namespace ReLearn
             }
             catch
             {
-                Toast.MakeText(this, Additional_functions.GetResourceString("databaseNotConnect", this.Resources), ToastLength.Short).Show();
+                Toast.MakeText(this, GetString(Resource.String.DatabaseNotConnect), ToastLength.Short).Show();
             }
         }
 

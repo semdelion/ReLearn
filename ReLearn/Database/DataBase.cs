@@ -14,15 +14,20 @@ namespace ReLearn
         public static string Flags_DB { get => "database_image.db3"; }
     }
 
-    public enum TableNames
+    public enum TableNamesLanguage
     {
         My_Directly,
         Home,
         Education,
         Popular_Words,
-        Flags,
+        ThreeFormsOfVerb
     }
-    
+
+    public enum TableNamesImage
+    {
+        Flags
+    }
+
     public static class DataBase
     {
         public static string TableNameLanguage
@@ -30,7 +35,7 @@ namespace ReLearn
             get
             {
                 if (String.IsNullOrEmpty(CrossSettings.Current.GetValueOrDefault(Settings.DictionaryName.ToString(), null)))
-                    CrossSettings.Current.AddOrUpdateValue(Settings.DictionaryName.ToString(), TableNames.Popular_Words.ToString());
+                    CrossSettings.Current.AddOrUpdateValue(Settings.DictionaryName.ToString(), TableNamesLanguage.Popular_Words.ToString());
                 return CrossSettings.Current.GetValueOrDefault(Settings.DictionaryName.ToString(), null);
             }
             set
@@ -43,7 +48,7 @@ namespace ReLearn
             get
             {
                 if (String.IsNullOrEmpty(CrossSettings.Current.GetValueOrDefault(Settings.DictionaryNameImage.ToString(), null)))
-                    CrossSettings.Current.AddOrUpdateValue(Settings.DictionaryNameImage.ToString(), TableNames.Flags.ToString());
+                    CrossSettings.Current.AddOrUpdateValue(Settings.DictionaryNameImage.ToString(), TableNamesImage.Flags.ToString());
                 return CrossSettings.Current.GetValueOrDefault(Settings.DictionaryNameImage.ToString(), null);
             }
             set
@@ -56,6 +61,31 @@ namespace ReLearn
         {
             string databasePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), nameDB);
             return new SQLiteConnection(databasePath);
+        }
+
+        public static void Сreating_newTable_in_database()
+        {
+            var db = Connect(Database_Name.English_DB);
+            foreach (string tableName in Enum.GetNames(typeof(TableNamesLanguage)))
+            {
+                if (db.GetTableInfo(tableName).Count == 0)
+                {
+                    db.Query<Database_Words>("CREATE TABLE " + tableName + "(_id int PRIMARY KEY, Word string, TranslationWord string, NumberLearn int, DateRecurrence DateTime, Context string, Image string)");
+                    using (StreamReader reader = new StreamReader(Application.Context.Assets.Open("Database/" + tableName + ".txt")))
+                        while (reader.Peek() >= 0)
+                        {
+                            string str_line = reader.ReadLine();
+                            var list_en_ru = str_line.Split('|');
+
+                            db.Query<Database_Words>($"INSERT INTO " + tableName + " " + $"(Word, TranslationWord, NumberLearn, DateRecurrence) VALUES (\""
+                                + list_en_ru[0].ToLower() + "\",\"" + list_en_ru[1].ToLower() + "\"," + Magic_constants.StandardNumberOfRepeats + ", DATETIME('NOW'))");
+                        }
+
+                    var dbStatEn = Connect(Database_Name.Statistics);
+                    dbStatEn.Query<Database_Statistics>("CREATE TABLE " + tableName + "_Statistics (_id int PRIMARY KEY, True int, False int, DateOfTesting DateTime)");
+                }
+                var search = db.Query<Database_Words>("SELECT * FROM " + tableName);
+            }
         }
 
         public static void Install_database_from_assets(string sqliteFilename)

@@ -100,7 +100,7 @@
                 android:onClick="Button_English_Learn_Voice_Click"/>
 			</TableRow>
 		<Button
-			android:text="@string/notRepeat"
+			android:text="@string/NotRepeat"
 			android:layout_width="match_parent"
 			android:layout_height="55.0dp"
 			android:id="@+id/button_learn_en_ru"

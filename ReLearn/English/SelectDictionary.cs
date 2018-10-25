@@ -25,6 +25,7 @@ namespace ReLearn
         List<ImageView> DictionariesView { get; set; }
         
         int Width;
+
         private Bitmap CreateSingleImageFromMultipleImages(Bitmap firstImage, Bitmap secondImage, PointF C)
         {
             Bitmap result = Bitmap.CreateBitmap(firstImage.Width, firstImage.Height, firstImage.GetConfig());
@@ -33,7 +34,8 @@ namespace ReLearn
             canvas.DrawBitmap(secondImage, C.X, C.Y, null);
             return result;
         }
-        private float GetAVG_numberLearn_stat(TableNames name)
+
+        private float GetAVG_numberLearn_stat(TableNamesLanguage name)
         {
             var database = DataBase.Connect(Database_Name.English_DB);
             List<Database_for_stats> Database_NL_and_D = database.Query<Database_for_stats>("SELECT NumberLearn, DateRecurrence FROM " + name.ToString());
@@ -42,6 +44,7 @@ namespace ReLearn
                 Magic_constants.StandardNumberOfRepeats : r.NumberLearn) / (float)Database_NL_and_D.Count;
             return avg_numberLearn_stat;
         }
+
         private void Selected(string name)
         {
             for (int i = 0; i < DictionariesView.Count; i++)
@@ -63,6 +66,7 @@ namespace ReLearn
                     break;
                 }
         }
+
         private void SelectDictionaryClick(object sender, EventArgs e)
         {
             ImageView ImgV = sender as ImageView;
@@ -71,7 +75,7 @@ namespace ReLearn
             DataBase.UpdateWordsToRepeat();
         }
 
-        private Bitmap GetBitmap(int ImageId, TableNames name)
+        private Bitmap GetBitmap(int ImageId, TableNamesLanguage name)
         {
             Bitmap Image1 = Bitmap.CreateBitmap(Width, Width, Bitmap.Config.Argb4444);
             FrameStatistics FRAME = new FrameStatistics(0, 0, Image1.Width, Image1.Width, Color.Argb(150, 16, 19, 38));
@@ -87,7 +91,7 @@ namespace ReLearn
             return finalImage;
         }
 
-        public void CreateViewForDictionary(TableNames name, int ImageId, GravityFlags GF)
+        public void CreateViewForDictionary(TableNamesLanguage name, int ImageId, GravityFlags GF)
         {
             LinearLayout.LayoutParams parmsImage = new LinearLayout.LayoutParams(Width, Width)
                 {Gravity = GF, TopMargin = 10};
@@ -104,7 +108,7 @@ namespace ReLearn
 
             TextView DictionaryName = new TextView(this)
             {
-                Text = Additional_functions.GetResourceString(name.ToString(), this.Resources),
+                Text =  Additional_functions.GetResourceString(name.ToString(), this.Resources),
                 Gravity = GF
             };
             DictionaryName.SetTextColor(Color.Rgb(215, 248, 254));
@@ -123,10 +127,12 @@ namespace ReLearn
             DictionariesBitmap = new List<Bitmap>();
             DictionariesView = new List<ImageView>();
             Width = (int)(Resources.DisplayMetrics.WidthPixels / 3f);
-            CreateViewForDictionary(TableNames.Home, Resource.Drawable.homeDictionary, GravityFlags.Center);
-            CreateViewForDictionary(TableNames.Education, Resource.Drawable.EducationDictionary, GravityFlags.Center);
-            CreateViewForDictionary(TableNames.Popular_Words, Resource.Drawable.PopularWordsDictionary, GravityFlags.Center);
-            CreateViewForDictionary(TableNames.My_Directly, Resource.Drawable.MyDictionary, GravityFlags.Center);
+   
+            CreateViewForDictionary(TableNamesLanguage.Home, Resource.Drawable.homeDictionary, GravityFlags.Center);
+            CreateViewForDictionary(TableNamesLanguage.Education, Resource.Drawable.EducationDictionary, GravityFlags.Center);
+            CreateViewForDictionary(TableNamesLanguage.Popular_Words, Resource.Drawable.PopularWordsDictionary, GravityFlags.Center);
+            CreateViewForDictionary(TableNamesLanguage.ThreeFormsOfVerb, Resource.Drawable.ThreeFormsOfVerbDictionary, GravityFlags.Center);
+            CreateViewForDictionary(TableNamesLanguage.My_Directly, Resource.Drawable.MyDictionary, GravityFlags.Center);
             Selected(DataBase.TableNameLanguage);
         }
 

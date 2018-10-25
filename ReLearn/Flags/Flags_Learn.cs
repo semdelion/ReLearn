@@ -39,7 +39,7 @@ namespace ReLearn
             }
             catch
             {
-                Toast.MakeText(this, Additional_functions.GetResourceString("databaseNotConnect", this.Resources), ToastLength.Short).Show();             
+                Toast.MakeText(this, GetString(Resource.String.DatabaseNotConnect), ToastLength.Short).Show();             
             }
         }
 

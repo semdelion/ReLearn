@@ -22,7 +22,7 @@ namespace ReLearn
             Typeface face = Typeface.CreateFromAsset(Assets, Magic_constants.font);
             TextView textView = new TextView(ApplicationContext)
             {
-                Text = Additional_functions.GetResourceString("Statistics", this.Resources),
+                Text = GetString(Resource.String.Statistics),
                 Typeface = face,
                 Gravity = GravityFlags.CenterVertical
             };
