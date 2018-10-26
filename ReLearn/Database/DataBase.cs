@@ -30,30 +30,32 @@ namespace ReLearn
 
     public static class DataBase
     {
-        public static string TableNameLanguage
+        public static TableNamesLanguage TableNameLanguage
         {
             get
             {
-                if (String.IsNullOrEmpty(CrossSettings.Current.GetValueOrDefault(Settings.DictionaryName.ToString(), null)))
-                    CrossSettings.Current.AddOrUpdateValue(Settings.DictionaryName.ToString(), TableNamesLanguage.Popular_Words.ToString());
-                return CrossSettings.Current.GetValueOrDefault(Settings.DictionaryName.ToString(), null);
+                if (String.IsNullOrEmpty(CrossSettings.Current.GetValueOrDefault(Settings.DictionaryNameLanguages.ToString(), null)))
+                    CrossSettings.Current.AddOrUpdateValue(Settings.DictionaryNameLanguages.ToString(), TableNamesLanguage.Popular_Words.ToString());
+                Enum.TryParse(CrossSettings.Current.GetValueOrDefault(Settings.DictionaryNameLanguages.ToString(), null), out TableNamesLanguage name);
+                return name;
             }
             set
             {
-                CrossSettings.Current.AddOrUpdateValue(Settings.DictionaryName.ToString(), value);
+                CrossSettings.Current.AddOrUpdateValue(Settings.DictionaryNameLanguages.ToString(), value.ToString());
             }
         }
-        public static string TableNameImage
+        public static TableNamesImage TableNameImage
         {
             get
             {
                 if (String.IsNullOrEmpty(CrossSettings.Current.GetValueOrDefault(Settings.DictionaryNameImage.ToString(), null)))
                     CrossSettings.Current.AddOrUpdateValue(Settings.DictionaryNameImage.ToString(), TableNamesImage.Flags.ToString());
-                return CrossSettings.Current.GetValueOrDefault(Settings.DictionaryNameImage.ToString(), null);
+                    Enum.TryParse(CrossSettings.Current.GetValueOrDefault(Settings.DictionaryNameImage.ToString(), null), out TableNamesImage name);
+                return name;
             }
             set
             {
-                CrossSettings.Current.AddOrUpdateValue(Settings.DictionaryNameImage.ToString(), value);
+                CrossSettings.Current.AddOrUpdateValue(Settings.DictionaryNameImage.ToString(), value.ToString());
             }
         }
 
@@ -63,7 +65,7 @@ namespace ReLearn
             return new SQLiteConnection(databasePath);
         }
 
-        public static void Сreating_newTable_in_database()
+        public static void СreateNewTableToLanguagesDataBase()
         {
             var db = Connect(Database_Name.English_DB);
             foreach (string tableName in Enum.GetNames(typeof(TableNamesLanguage)))
@@ -199,8 +201,8 @@ namespace ReLearn
             return this;
         }
     }
-
-    public class Database_for_stats // Класс для считывания базы данных flags
+    
+    public class Database_for_stats // Класс для считывания базы данных Stats
     {
         public int NumberLearn { get; set; }
         public DateTime DateRecurrence { get; set; }

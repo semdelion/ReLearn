@@ -153,24 +153,26 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="English\SelectDictionary.cs" />
+    <Compile Include="SelectDictionary.cs" />
+    <Compile Include="Languages\Languages_SelectDictionary.cs" />
+    <Compile Include="Images\Flags_SelectDictionary.cs" />
     <Compile Include="Main menu\About_us.cs" />
     <Compile Include="Database\Additional_functions.cs" />
     <Compile Include="Database\DataBase.cs" />
-    <Compile Include="English\English.cs" />
-    <Compile Include="English\English_Add.cs" />
-    <Compile Include="English\English_View_Dictionary.cs" />
-    <Compile Include="English\English_Learn.cs" />
-    <Compile Include="English\English_Repeat.cs" />
-    <Compile Include="English\English_Stat.cs" />
+    <Compile Include="Languages\Languages.cs" />
+    <Compile Include="Languages\Languages_Add.cs" />
+    <Compile Include="Languages\Languages_ViewDictionary.cs" />
+    <Compile Include="Languages\Languages_Learn.cs" />
+    <Compile Include="Languages\Languages_Repeat.cs" />
+    <Compile Include="Languages\Languages_Stat.cs" />
     <Compile Include="Main menu\Feedback.cs" />
-    <Compile Include="Flags\Flags.cs" />
-    <Compile Include="Flags\Flags_Learn.cs" />
-    <Compile Include="Flags\Flags_Repeat.cs" />
-    <Compile Include="Flags\Flags_Stats.cs" />
-    <Compile Include="Flags\Flags_View_Dictionary.cs" />
+    <Compile Include="Images\Flags.cs" />
+    <Compile Include="Images\Flags_Learn.cs" />
+    <Compile Include="Images\Flags_Repeat.cs" />
+    <Compile Include="Images\Flags_Stats.cs" />
+    <Compile Include="Images\Flags_ViewDictionary.cs" />
     <Compile Include="Statistics\Graphics\FrameStatistics.cs" />
-    <Compile Include="Statistics\Graphics\Graph_General_Statistics.cs" />
+    <Compile Include="Statistics\Graphics\Graph_GeneralStatistics.cs" />
     <Compile Include="Statistics\Graphics\Graph_Statistics.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\CustomAdapter.cs" />
@@ -192,16 +194,16 @@
     <None Include="Properties\AndroidManifest.xml">
       <SubType>Designer</SubType>
     </None>
-    <AndroidResource Include="Resources\layout\English.axml">
+    <AndroidResource Include="Resources\layout\Languages.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\Flags.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\English_Repeat.axml">
+    <AndroidResource Include="Resources\layout\Languages_Repeat.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\English_Add.axml">
+    <AndroidResource Include="Resources\layout\Languages_Add.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\Flags_Learn.axml">
@@ -210,13 +212,13 @@
     <AndroidResource Include="Resources\layout\Flags_Repeat.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\English_Learn.axml">
+    <AndroidResource Include="Resources\layout\Languages_Learn.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\English_Stat.axml">
+    <AndroidResource Include="Resources\layout\Languages_Stat.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\English_View_Dictionary.axml">
+    <AndroidResource Include="Resources\layout\Languages_ViewDictionary.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\item_view_dictionary_image.axml">
@@ -1619,7 +1621,7 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\search.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\SelectDictionary.axml">
+    <AndroidResource Include="Resources\layout\Languages_SelectDictionary.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -1646,6 +1648,14 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\ThreeFormsOfVerbDictionary.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Flags_SelectDictionary.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\FlagDictionary.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Android.Support.Annotations.27.0.2.1\build\MonoAndroid81\Xamarin.Android.Support.Annotations.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Annotations.27.0.2.1\build\MonoAndroid81\Xamarin.Android.Support.Annotations.targets')" />

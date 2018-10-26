@@ -24,7 +24,7 @@ namespace ReLearn
     {      
         int CheckedItem()
         {
-            if (CrossSettings.Current.GetValueOrDefault(Settings.Language.ToString(), null) == Languages.en.ToString())
+            if (CrossSettings.Current.GetValueOrDefault(Settings.Language.ToString(), null) == Language.en.ToString())
             {
                 FindViewById<TextView>(Resource.Id.language).Text = $"{ GetString(Resource.String.Language) }:\t\t\tEnglish";
                 return 0;
@@ -50,12 +50,12 @@ namespace ReLearn
                 checkedItem = e.Which;
                 if (listLanguage[e.Which] == "English")
                 {
-                    CrossSettings.Current.AddOrUpdateValue(Settings.Language.ToString(), Languages.en.ToString());     
+                    CrossSettings.Current.AddOrUpdateValue(Settings.Language.ToString(), Language.en.ToString());     
                     Toast.MakeText(this, GetString(Resource.String.EnIsSelected), ToastLength.Short).Show();
                 }
                 else
                 {
-                    CrossSettings.Current.AddOrUpdateValue(Settings.Language.ToString(), Languages.ru.ToString());
+                    CrossSettings.Current.AddOrUpdateValue(Settings.Language.ToString(), Language.ru.ToString());
                     Toast.MakeText(this, GetString(Resource.String.RuIsSelected), ToastLength.Short).Show();
                 }
                 Additional_functions.Update_Configuration_Locale(this.Resources);

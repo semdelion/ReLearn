@@ -20,8 +20,8 @@ namespace ReLearn
         [Java.Interop.Export("Button_Language_Click")]
         public void Button_Language_Click(View v)
         {
-            Intent intent_english = new Intent(this, typeof(English));
-            StartActivity(intent_english);
+            Intent intent_language = new Intent(this, typeof(Languages));
+            StartActivity(intent_language);
         }
 
         [Java.Interop.Export("Button_Flags_Click")]

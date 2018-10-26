@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using SQLite;
 
 namespace ReLearn
@@ -32,6 +34,13 @@ namespace ReLearn
         {
             var database = DataBase.Connect(Database_Name.Statistics);
             database.Query<Database_Statistics>("INSERT INTO " + TableName + "_Statistics" + " (True, False, DateOfTesting) VALUES (" + True + "," + False + ", DATETIME('NOW'))");
+        }
+        public static float GetAverageNumberLearn(List<Database_for_stats> Database_NL_and_D)
+        {
+            float avg_numberLearn_stat = (float)Database_NL_and_D.Sum(
+                r => r.NumberLearn > Magic_constants.StandardNumberOfRepeats ?
+                Magic_constants.StandardNumberOfRepeats : r.NumberLearn) / (float)Database_NL_and_D.Count;
+            return avg_numberLearn_stat;
         }
     }
 

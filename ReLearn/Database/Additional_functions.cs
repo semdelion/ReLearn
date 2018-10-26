@@ -27,11 +27,11 @@ namespace ReLearn
         Language,
         Language_repeat_count,
         Images_repeat_count,
-        DictionaryName,
+        DictionaryNameLanguages,
         DictionaryNameImage
     }
 
-    enum Languages
+    enum Language
     {
         en,
         ru
@@ -122,7 +122,7 @@ namespace ReLearn
         }
 
         public static string Name_of_the_flag(Database_images word) => 
-            CrossSettings.Current.GetValueOrDefault(Settings.Language.ToString(), null) == Languages.en.ToString() ? word.Name_image_en : word.Name_image_ru;
+            CrossSettings.Current.GetValueOrDefault(Settings.Language.ToString(), null) == Language.en.ToString() ? word.Name_image_en : word.Name_image_ru;
         
         public static void Update_number_learn(List<Statistics> Stats, string identifier, int rand_word, int RepeatLearn)
         {
@@ -176,7 +176,7 @@ namespace ReLearn
         public static void Update_Configuration_Locale(Android.Content.Res.Resources resource)
         {
             if (System.String.IsNullOrEmpty(Plugin.Settings.CrossSettings.Current.GetValueOrDefault(Settings.Language.ToString(), null)))
-                Plugin.Settings.CrossSettings.Current.AddOrUpdateValue(Settings.Language.ToString(), Languages.en.ToString());
+                Plugin.Settings.CrossSettings.Current.AddOrUpdateValue(Settings.Language.ToString(), Language.en.ToString());
             Locale locale = new Locale(Plugin.Settings.CrossSettings.Current.GetValueOrDefault(Settings.Language.ToString(), null));
             Configuration conf = new Configuration { Locale = locale };
             resource.UpdateConfiguration(conf, resource.DisplayMetrics);
