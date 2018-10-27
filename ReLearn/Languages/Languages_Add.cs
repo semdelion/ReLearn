@@ -39,7 +39,7 @@ namespace ReLearn
                 else
                 {
                     database.Query<Database_Words>($"INSERT INTO "+ TableNamesLanguage.My_Directly.ToString() + " " + $"(Word, TranslationWord, NumberLearn, DateRecurrence) VALUES (\"" 
-                        + Word.ToLower() + "\",\"" + TranslationWord.ToLower() + "\","  + Magic_constants.StandardNumberOfRepeats + ", DATETIME('NOW'))");                   
+                        + Word.ToLower() + "\",\"" + TranslationWord.ToLower() + "\","  + Magic_constants.StandardNumberOfRepeats + ", date('now'))");                   
                     Toast.MakeText(this, GetString(Resource.String.Word_Added), ToastLength.Short).Show();
                 }
                 Word = TranslationWord = "";

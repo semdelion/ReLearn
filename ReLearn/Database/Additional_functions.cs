@@ -88,43 +88,40 @@ namespace ReLearn
 
         public static void SetColorForItems(int degreeOfStudy, TextView TView)
         {
-
             if (degreeOfStudy == Magic_constants.StandardNumberOfRepeats)
-                Additional_functions.Color_TextView(TView, new Color(238, 252, 255));
+                Color_TextView(TView, new Color(238, 252, 255));
             else if (degreeOfStudy > Magic_constants.StandardNumberOfRepeats) 
-                Additional_functions.Color_TextView(TView, new Color(230, 
+                Color_TextView(TView, new Color(230, 
                 200 - ((degreeOfStudy - Magic_constants.StandardNumberOfRepeats) * 180 / Magic_constants.StandardNumberOfRepeats), 20));     //  230, 20, 20   to   230, 200, 20
             else
-                Additional_functions.Color_TextView(TView, 
+                Color_TextView(TView, 
                     new Color(20 + (degreeOfStudy * 180 / (Magic_constants.StandardNumberOfRepeats - 1)), 230, 20));                        //  180, 230, 20   to   20,  230, 20
         }
 
-        public static void Random_4_numbers(int NotI, int count, out List<int> random_numbers)  // TODO ужас!!! 
+        public static void RandomFourNumbers(int NotI, int count, out List<int> random_numbers)
         {
+            const int four = 4;
             System.Random rand = new System.Random(unchecked((int)(DateTime.Now.Ticks)));
             random_numbers = new List<int> { NotI, 0, 0, 0 };
-            if (count > 4)
+            if (count > four)
             {
                 var array = Enumerable.Range(0, count).ToList();
-                array.Remove(random_numbers[0]);
-                random_numbers[1] = array[rand.Next(array.Count)];
-                array.Remove(random_numbers[1]);
-                random_numbers[2] = array[rand.Next(array.Count)];
-                array.Remove(random_numbers[2]);
-                random_numbers[3] = array[rand.Next(array.Count)];
+                for (int i = 1; i < four; i++)
+                {
+                    array.Remove(random_numbers[i - 1]);
+                    random_numbers[i] = array[rand.Next(array.Count)];
+                }
             }
             else
-            {
-                random_numbers[1] = (NotI + 1) % count;
-                random_numbers[2] = (NotI + 2) % count;
-                random_numbers[3] = (NotI + 3) % count;
-            }
+                for(int i = 1; i < four; i++)
+                    random_numbers[i] = (NotI + i) % count;
+            
         }
 
-        public static string Name_of_the_flag(Database_images word) => 
-            CrossSettings.Current.GetValueOrDefault(Settings.Language.ToString(), null) == Language.en.ToString() ? word.Name_image_en : word.Name_image_ru;
+        public static string NameOfTheFlag(Database_images image) => 
+            CrossSettings.Current.GetValueOrDefault(Settings.Language.ToString(), null) == Language.en.ToString() ? image.Name_image_en : image.Name_image_ru;
         
-        public static void Update_number_learn(List<Statistics> Stats, string identifier, int rand_word, int RepeatLearn)
+        public static void UpdateNumberLearn(List<Statistics> Stats, string identifier, int rand_word, int RepeatLearn)
         {
             for (int i = 0; i < Stats.Count; i++)
                 if (Stats[i].Word == identifier)
@@ -173,7 +170,7 @@ namespace ReLearn
                .Build());
         }
 
-        public static void Update_Configuration_Locale(Android.Content.Res.Resources resource)
+        public static void Update_Configuration_Locale(Android.Content.Res.Resources resource) //TODO
         {
             if (System.String.IsNullOrEmpty(Plugin.Settings.CrossSettings.Current.GetValueOrDefault(Settings.Language.ToString(), null)))
                 Plugin.Settings.CrossSettings.Current.AddOrUpdateValue(Settings.Language.ToString(), Language.en.ToString());

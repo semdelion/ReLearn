@@ -89,23 +89,19 @@ namespace ReLearn
             if (item.ItemId == Resource.Id.Stats){
                 Intent intent_english_stat = new Intent(this, typeof(Languages_Stat));
                 StartActivity(intent_english_stat);
-                return true;
             }
-            if(item.ItemId == Resource.Id.Deleteword){
+            else if(item.ItemId == Resource.Id.Deleteword){
                 Intent intent_english_add = new Intent(this, typeof(Languages_View_Dictionary));
                 StartActivity(intent_english_add);
-                return true;
             }
-            if (item.ItemId == Resource.Id.MenuEnglishSelectDictionary)
+            else if(item.ItemId == Resource.Id.MenuEnglishSelectDictionary)
             {
                 Intent intent_SelectDictionary = new Intent(this, typeof(Languages_SelectDictionary));
                 StartActivity(intent_SelectDictionary);
-                return true;
             }
-            if (item.ItemId == Android.Resource.Id.Home)
+            else if(item.ItemId == Android.Resource.Id.Home)
             {
                 this.Finish();
-                return true;
             }
             return true;
         }

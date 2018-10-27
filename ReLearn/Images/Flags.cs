@@ -42,27 +42,23 @@ namespace ReLearn
         }    
 
         public override bool OnOptionsItemSelected(IMenuItem item)
-        {         
-            int id = item.ItemId;
-            if (id == Resource.Id.Stats_Flags)
+        {
+            if (item.ItemId == Resource.Id.Stats_Flags)
             {
                 Intent intent_flags_stat = new Intent(this, typeof(Flags_Stats));
                 StartActivity(intent_flags_stat);
-                return true;
             }
-            if (item.ItemId == Resource.Id.MenuFlagsSelectDictionary)
+            else if (item.ItemId == Resource.Id.MenuFlagsSelectDictionary)
             {
                 Intent intent_SelectDictionary = new Intent(this, typeof(Flags_SelectDictionary));
                 StartActivity(intent_SelectDictionary);
-                return true;
             }
-            if (id == Resource.Id.View_dictionary_image)
+            else if(item.ItemId == Resource.Id.View_dictionary_image)
             {
                 Intent intent_flags_view = new Intent(this, typeof(Flags_View_Dictionary));
                 StartActivity(intent_flags_view);
-                return true;
             }
-            if (id == Android.Resource.Id.Home)
+            else if(item.ItemId == Android.Resource.Id.Home)
                 this.Finish();
             return true;
         }

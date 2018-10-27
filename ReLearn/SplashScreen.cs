@@ -13,9 +13,9 @@ namespace ReLearn
             Additional_functions.Update_Configuration_Locale(this.Resources);
             base.OnCreate(savedInstanceState);
             FrameStatistics.plain = Android.Graphics.Typeface.CreateFromAsset(Assets, Magic_constants.font);
-            DataBase.Install_database_from_assets(Database_Name.English_DB);
-            DataBase.Install_database_from_assets(Database_Name.Flags_DB);
-            DataBase.Install_database_from_assets(Database_Name.Statistics);
+            DataBase.InstallDatabaseFromAssets(Database_Name.English_DB);
+            DataBase.InstallDatabaseFromAssets(Database_Name.Flags_DB);
+            DataBase.InstallDatabaseFromAssets(Database_Name.Statistics);
             DataBase.СreateNewTableToLanguagesDataBase();
             Intent intent = new Intent(this, typeof(MainActivity));        
             StartActivity(typeof(MainActivity));

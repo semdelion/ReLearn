@@ -47,11 +47,11 @@ namespace ReLearn
 
         void Random_Button(Button B1, Button B2, Button B3, Button B4)   //загружаем варианты ответа в текст кнопок
         {
-            Additional_functions.Random_4_numbers(CurrentWordNumber, dataBase.Count, out List<int> random_numbers);
-            B1.Text = Additional_functions.Name_of_the_flag(dataBase[random_numbers[0]]);
-            B2.Text = Additional_functions.Name_of_the_flag(dataBase[random_numbers[1]]);
-            B3.Text = Additional_functions.Name_of_the_flag(dataBase[random_numbers[2]]);
-            B4.Text = Additional_functions.Name_of_the_flag(dataBase[random_numbers[3]]);
+            Additional_functions.RandomFourNumbers(CurrentWordNumber, dataBase.Count, out List<int> random_numbers);
+            B1.Text = Additional_functions.NameOfTheFlag(dataBase[random_numbers[0]]);
+            B2.Text = Additional_functions.NameOfTheFlag(dataBase[random_numbers[1]]);
+            B3.Text = Additional_functions.NameOfTheFlag(dataBase[random_numbers[2]]);
+            B4.Text = Additional_functions.NameOfTheFlag(dataBase[random_numbers[3]]);
         }
 
         void NextTest() //new test
@@ -84,20 +84,20 @@ namespace ReLearn
         void Answer(Button B1, Button B2, Button B3, Button B4) // подсвечиваем правильный ответ, если мы ошиблись подсвечиваем неправвильный и паравильный 
         {
             Button_enable(false);
-            if (B1.Text == Additional_functions.Name_of_the_flag(dataBase[CurrentWordNumber]))
+            if (B1.Text == Additional_functions.NameOfTheFlag(dataBase[CurrentWordNumber]))
             {
-                Additional_functions.Update_number_learn(Stats, Convert.ToString(dataBase[CurrentWordNumber].Image_name), CurrentWordNumber, dataBase[CurrentWordNumber].NumberLearn -= Magic_constants.TrueAnswer);
+                Additional_functions.UpdateNumberLearn(Stats, Convert.ToString(dataBase[CurrentWordNumber].Image_name), CurrentWordNumber, dataBase[CurrentWordNumber].NumberLearn -= Magic_constants.TrueAnswer);
                 Statistics.AnswerTrue++;
                 B1.Background = GetDrawable(Resource.Drawable.button_true);
             }
             else
             {
-                Additional_functions.Update_number_learn(Stats, Convert.ToString(dataBase[CurrentWordNumber].Image_name), CurrentWordNumber, dataBase[CurrentWordNumber].NumberLearn += Magic_constants.FalseAnswer);
+                Additional_functions.UpdateNumberLearn(Stats, Convert.ToString(dataBase[CurrentWordNumber].Image_name), CurrentWordNumber, dataBase[CurrentWordNumber].NumberLearn += Magic_constants.FalseAnswer);
                 Statistics.AnswerFalse++;
                 B1.Background = GetDrawable(Resource.Drawable.button_false);
-                if (B2.Text == Additional_functions.Name_of_the_flag(dataBase[CurrentWordNumber]))
+                if (B2.Text == Additional_functions.NameOfTheFlag(dataBase[CurrentWordNumber]))
                     B2.Background = GetDrawable(Resource.Drawable.button_true);
-                else if (B3.Text == Additional_functions.Name_of_the_flag(dataBase[CurrentWordNumber]))
+                else if (B3.Text == Additional_functions.NameOfTheFlag(dataBase[CurrentWordNumber]))
                     B3.Background = GetDrawable(Resource.Drawable.button_true);
                 else
                     B4.Background = GetDrawable(Resource.Drawable.button_true);
@@ -107,12 +107,12 @@ namespace ReLearn
         void Unknown()
         {
             Button tmp;
-            if (Button1.Text == Additional_functions.Name_of_the_flag(dataBase[CurrentWordNumber])) tmp = Button1;
-            else if (Button2.Text == Additional_functions.Name_of_the_flag(dataBase[CurrentWordNumber])) tmp = Button2;
-            else if (Button3.Text == Additional_functions.Name_of_the_flag(dataBase[CurrentWordNumber])) tmp = Button3;
+            if (Button1.Text == Additional_functions.NameOfTheFlag(dataBase[CurrentWordNumber])) tmp = Button1;
+            else if (Button2.Text == Additional_functions.NameOfTheFlag(dataBase[CurrentWordNumber])) tmp = Button2;
+            else if (Button3.Text == Additional_functions.NameOfTheFlag(dataBase[CurrentWordNumber])) tmp = Button3;
             else tmp = Button4;
             Statistics.AnswerFalse++;
-            Additional_functions.Update_number_learn(Stats, Convert.ToString(dataBase[CurrentWordNumber].Image_name), CurrentWordNumber, dataBase[CurrentWordNumber].NumberLearn += Magic_constants.NeutralAnswer);
+            Additional_functions.UpdateNumberLearn(Stats, Convert.ToString(dataBase[CurrentWordNumber].Image_name), CurrentWordNumber, dataBase[CurrentWordNumber].NumberLearn += Magic_constants.NeutralAnswer);
             tmp.Background = GetDrawable(Resource.Drawable.button_true);
         }
 

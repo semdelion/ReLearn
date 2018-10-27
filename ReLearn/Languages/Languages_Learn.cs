@@ -7,12 +7,16 @@ using Plugin.TextToSpeech;
 using Android.Content;
 using Calligraphy;
 using Android.Support.V7.App;
+using System.Collections.Generic;
 
 namespace ReLearn
 {
     [Activity(Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     class Languages_Learn : AppCompatActivity
     {
+        List<Database_Words> WordDatabase { get; set; }
+        
+        
         bool Voice_Enable = true;
         string Word
         {
@@ -35,47 +39,31 @@ namespace ReLearn
         [Java.Interop.Export("Button_Languages_Learn_Voice_Enable")]
         public void Button_Languages_Learn_Voice_Enable(View v)
         {
-            ImageButton button = FindViewById<ImageButton>(Resource.Id.Button_Speak_TurnOn_TurnOff);
-            if (Voice_Enable)
-            {
-                Voice_Enable = false;
-                button.SetImageDrawable(GetDrawable(Resource.Mipmap.speak_off));
-                Toast.MakeText(this, GetString(Resource.String.Voice_off), ToastLength.Short).Show();
-            }
-            else
-            {
-                Voice_Enable = true;
-                button.SetImageDrawable(GetDrawable(Resource.Mipmap.speak_on));
-                Toast.MakeText(this, GetString(Resource.String.Voice_on), ToastLength.Short).Show();
-            }
+            Voice_Enable = !Voice_Enable;
+            FindViewById<ImageButton>(Resource.Id.Button_Speak_TurnOn_TurnOff).SetImageDrawable(
+                GetDrawable(Voice_Enable?Resource.Mipmap.speak_off: Resource.Mipmap.speak_on));
         }
        
         [Java.Interop.Export(" Button_Languages_Learn_NotRepeat_Click")]
         public void Button_Languages_Learn_NotRepeat_Click(View v)
         {
             var db = DataBase.Connect(Database_Name.English_DB);
+            db.Query<Database_Words>("UPDATE " + DataBase.TableNameLanguage + " SET DateRecurrence = DATETIME('NOW') WHERE Word = ?", Word);
             db.Query<Database_Words>("UPDATE " + DataBase.TableNameLanguage + " SET NumberLearn = 0 WHERE Word = ?", Word);
-            Toast.MakeText(this, GetString(Resource.String.NotRepeat) + ": " + Word, ToastLength.Short).Show();
+            NextRandomWord();
         }
 
         void NextRandomWord()
         {
-            try
-            {
-                var db = DataBase.Connect(Database_Name.English_DB);
-                var dataBase = db.Query<Database_Words>("SELECT * FROM " + DataBase.TableNameLanguage + " WHERE NumberLearn != 0");
-                Random rnd = new Random(unchecked((int)(DateTime.Now.Ticks)));
-                int rand_word = rnd.Next(dataBase.Count);
-                Word = dataBase[rand_word].Word;
-                TranslationWord = dataBase[rand_word].TranslationWord;
+           
+            
+                //Word = WordDatabase[rand_word].Word;
+                //TranslationWord = WordDatabase[rand_word].TranslationWord;
+                //if (Voice_Enable)
+                //    CrossTextToSpeech.Current.Speak(Word);          
 
-                if (Voice_Enable)
-                    CrossTextToSpeech.Current.Speak(Word);          
-            }
-            catch
-            {
-                Toast.MakeText(this, GetString(Resource.String.DatabaseNotConnect), ToastLength.Short).Show();
-            }
+                //Toast.MakeText(this, GetString(Resource.String.DatabaseNotConnect), ToastLength.Short).Show();
+            
         }
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -86,6 +74,8 @@ namespace ReLearn
             var toolbarMain = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbarLanguagesLearn);
             SetSupportActionBar(toolbarMain);
             SupportActionBar.SetDisplayHomeAsUpEnabled(true); // отображаем кнопку домой
+            var db = DataBase.Connect(Database_Name.English_DB);
+            WordDatabase = db.Query<Database_Words>("SELECT * FROM " + DataBase.TableNameLanguage + " WHERE NumberLearn != 0 ORDER BY DateRecurrence ASC");
             NextRandomWord();              
         }
 

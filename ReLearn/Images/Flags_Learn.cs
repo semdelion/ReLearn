@@ -13,6 +13,7 @@ namespace ReLearn
     class Flags_Learn : AppCompatActivity
     {
         ImageView imageView;
+
         string ImageName
         {
             get { return FindViewById<TextView>(Resource.Id.textView_flag_learn).Text; }
@@ -20,9 +21,9 @@ namespace ReLearn
         }
 
         [Java.Interop.Export("Button_Flags_Learn_Next_Click")]
-        public void Button_Flags_Learn_Click(View v) => Random_Image();
+        public void Button_Flags_Learn_Click(View v) => RandomImage();
         
-        public void Random_Image()
+        public void RandomImage()
         {
             try
             {
@@ -35,7 +36,7 @@ namespace ReLearn
                 Bitmap bitmap = BitmapFactory.DecodeStream(his);
                 imageView.SetImageBitmap(bitmap);
 
-                ImageName = Additional_functions.Name_of_the_flag(dataBase[rand_word]);
+                ImageName = Additional_functions.NameOfTheFlag(dataBase[rand_word]);
             }
             catch
             {
@@ -54,7 +55,7 @@ namespace ReLearn
             SupportActionBar.SetDisplayHomeAsUpEnabled(true); // отображаем кнопку домой
 
             imageView = FindViewById<ImageView>(Resource.Id.imageView_Flags_learn);
-            Random_Image();        
+            RandomImage();        
         }
 
         public override bool OnOptionsItemSelected(IMenuItem item) // button home

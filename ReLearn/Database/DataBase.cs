@@ -90,14 +90,14 @@ namespace ReLearn
             }
         }
 
-        public static void Install_database_from_assets(string sqliteFilename)
+        public static void InstallDatabaseFromAssets(string FileName)
         {
             string documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            var path = Path.Combine(documentsPath, sqliteFilename);
+            var path = Path.Combine(documentsPath, FileName);
             if (!File.Exists(path))
             {
                 Context context = Application.Context;
-                using (var dbAssetStream = context.Assets.Open("Database/" + sqliteFilename))
+                using (var dbAssetStream = context.Assets.Open("Database/" + FileName))
                 {
                     using (var dbFileStream = new FileStream(path, FileMode.OpenOrCreate))
                     {
@@ -116,7 +116,7 @@ namespace ReLearn
             var toDay = DateTime.Today;
             var db = Connect(Database_Name.English_DB);
             var dataBase = db.Query<Database_Words>("SELECT * FROM " + TableNameLanguage + " WHERE NumberLearn = 0 AND DateRecurrence != DATETIME('NOW')");
-            foreach (var s in dataBase) // UPDATE Database
+            foreach (var s in dataBase)
             {
                 if (s.DateRecurrence.Month != toDay.Month && toDay.Day >= s.DateRecurrence.Day)
                 {
@@ -132,8 +132,7 @@ namespace ReLearn
             var toDay = DateTime.Today;
             var db = Connect(Database_Name.Flags_DB); 
             var dataBase = db.Query<Database_images>("SELECT * FROM " + TableNameImage + " WHERE NumberLearn = 0 AND DateRecurrence != DATETIME('NOW')");
-
-            foreach (var s in dataBase) // UPDATE Flags
+            foreach (var s in dataBase)
             {
                 if (s.DateRecurrence.Month != toDay.Month && toDay.Day >= s.DateRecurrence.Day)
                 {
