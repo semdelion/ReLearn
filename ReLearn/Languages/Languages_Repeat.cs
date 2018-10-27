@@ -120,11 +120,10 @@ namespace ReLearn
         void Update_Database() // изменение у BD элемента NumberLearn
         {
             var database = DataBase.Connect(Database_Name.English_DB);          
-            database.CreateTable<Database_Words>();
             for (int i = 0; i < Stats.Count; i++)
             {
-                database.Query<Database_Words>("UPDATE " + DataBase.TableNameLanguage + " SET DateRecurrence = DATETIME('NOW') WHERE Word = ?", Stats[i].Word);
-                database.Query<Database_Words>("UPDATE " + DataBase.TableNameLanguage + " SET NumberLearn = " + Stats[i].Learn + " WHERE Word = ?", Stats[i].Word);
+                var query = $"UPDATE " + DataBase.TableNameLanguage + " " + $" SET DateRecurrence = ?, NumberLearn = ? WHERE Word = ?";
+                database.Execute(query, DateTime.Now, Stats[i].Learn, Stats[i].Word);
             }
         }
 

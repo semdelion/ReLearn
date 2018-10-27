@@ -48,15 +48,14 @@ namespace ReLearn
         public void Button_Languages_Learn_NotRepeat_Click(View v)
         {
             var db = DataBase.Connect(Database_Name.English_DB);
-            db.Query<Database_Words>("UPDATE " + DataBase.TableNameLanguage + " SET DateRecurrence = DATETIME('NOW') WHERE Word = ?", Word);
-            db.Query<Database_Words>("UPDATE " + DataBase.TableNameLanguage + " SET NumberLearn = 0 WHERE Word = ?", Word);
+            var query = $"UPDATE " + DataBase.TableNameLanguage + " " + $" SET DateRecurrence = ?, NumberLearn = ? WHERE Word = ?";
+            db.Execute(query, DateTime.Now, 0, Word);
             NextRandomWord();
         }
 
         void NextRandomWord()
         {
-           
-            
+                      
                 //Word = WordDatabase[rand_word].Word;
                 //TranslationWord = WordDatabase[rand_word].TranslationWord;
                 //if (Voice_Enable)

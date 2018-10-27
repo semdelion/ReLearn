@@ -79,14 +79,13 @@ namespace ReLearn
                             string str_line = reader.ReadLine();
                             var list_en_ru = str_line.Split('|');
 
-                            db.Query<Database_Words>($"INSERT INTO " + tableName + " " + $"(Word, TranslationWord, NumberLearn, DateRecurrence) VALUES (\""
-                                + list_en_ru[0].ToLower() + "\",\"" + list_en_ru[1].ToLower() + "\"," + Magic_constants.StandardNumberOfRepeats + ", DATETIME('NOW'))");
+                            var query = $"INSERT INTO " + tableName + " " + $"(Word, TranslationWord, NumberLearn, DateRecurrence) VALUES (?, ?, ?, ?)";
+                            db.Execute(query, list_en_ru[0].ToLower(), list_en_ru[1].ToLower(), Magic_constants.StandardNumberOfRepeats, DateTime.Now);                            
                         }
 
                     var dbStatEn = Connect(Database_Name.Statistics);
                     dbStatEn.Query<Database_Statistics>("CREATE TABLE " + tableName + "_Statistics (_id int PRIMARY KEY, True int, False int, DateOfTesting DateTime)");
                 }
-                var search = db.Query<Database_Words>("SELECT * FROM " + tableName);
             }
         }
 
@@ -115,14 +114,16 @@ namespace ReLearn
         {
             var toDay = DateTime.Today;
             var db = Connect(Database_Name.English_DB);
-            var dataBase = db.Query<Database_Words>("SELECT * FROM " + TableNameLanguage + " WHERE NumberLearn = 0 AND DateRecurrence != DATETIME('NOW')");
+            var dataBase = db.Query<Database_Words>("SELECT * FROM " + TableNameLanguage + " WHERE NumberLearn = 0 AND DateRecurrence != ?", DateTime.Now);
             foreach (var s in dataBase)
             {
                 if (s.DateRecurrence.Month != toDay.Month && toDay.Day >= s.DateRecurrence.Day)
                 {
-                    // обновление БД, при условии, что месяцы не совпадают и NumberLearn == 0. изменяем месяц на текущий и NumberLearn++;                
-                    db.Query<Database_Words>("UPDATE " + TableNameLanguage + " SET DateRecurrence = DATETIME('NOW') WHERE Word = ?", s.Word);
-                    db.Query<Database_Words>("UPDATE " + TableNameLanguage + " SET NumberLearn = " + s.NumberLearn + 1 + " WHERE Word = ?", s.Word);
+                    // обновление БД, при условии, что месяцы не совпадают и NumberLearn == 0. изменяем месяц на текущий и NumberLearn++;  
+                    var query = $"UPDATE " + TableNameLanguage + " " + $" SET DateRecurrence = ?, NumberLearn = ? WHERE Word = ?";
+                    db.Execute(query, DateTime.Now, s.NumberLearn + 1, s.Word);
+                    //db.Query<Database_Words>("UPDATE " + TableNameLanguage + " SET DateRecurrence = DATETIME('NOW') WHERE Word = ?", s.Word);
+                    //db.Query<Database_Words>("UPDATE " + TableNameLanguage + " SET NumberLearn = " + s.NumberLearn + 1 + " WHERE Word = ?", s.Word);
                 }                       
             }
         }
@@ -131,13 +132,13 @@ namespace ReLearn
         {
             var toDay = DateTime.Today;
             var db = Connect(Database_Name.Flags_DB); 
-            var dataBase = db.Query<Database_images>("SELECT * FROM " + TableNameImage + " WHERE NumberLearn = 0 AND DateRecurrence != DATETIME('NOW')");
+            var dataBase = db.Query<Database_images>("SELECT * FROM " + TableNameImage + " WHERE NumberLearn = 0 AND DateRecurrence != ?", DateTime.Now);
             foreach (var s in dataBase)
             {
                 if (s.DateRecurrence.Month != toDay.Month && toDay.Day >= s.DateRecurrence.Day)
                 {
-                    db.Query<Database_images>("UPDATE " + TableNameImage + " SET DateRecurrence = DATETIME('NOW') WHERE Image_name = ?", s.Image_name);
-                    db.Query<Database_images>("UPDATE " + TableNameImage + " SET NumberLearn = " + s.NumberLearn + 1 + " WHERE Image_name = ?", s.Image_name);
+                    var query = $"UPDATE " + TableNameImage + " " + $" SET DateRecurrence = ?, NumberLearn = ? WHERE Word = ?";
+                    db.Execute(query, DateTime.Now, s.NumberLearn + 1, s.Image_name);
                 }
             }
         }    

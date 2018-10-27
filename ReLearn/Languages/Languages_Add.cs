@@ -5,6 +5,7 @@ using Android.Views;
 using Android.Widget;
 using Calligraphy;
 using Android.Support.V7.App;
+using System;
 
 namespace ReLearn
 {
@@ -38,8 +39,8 @@ namespace ReLearn
                     Toast.MakeText(this, GetString(Resource.String.Word_exists), ToastLength.Short).Show();               
                 else
                 {
-                    database.Query<Database_Words>($"INSERT INTO "+ TableNamesLanguage.My_Directly.ToString() + " " + $"(Word, TranslationWord, NumberLearn, DateRecurrence) VALUES (\"" 
-                        + Word.ToLower() + "\",\"" + TranslationWord.ToLower() + "\","  + Magic_constants.StandardNumberOfRepeats + ", date('now'))");                   
+                    var query = $"INSERT INTO " + TableNamesLanguage.My_Directly.ToString() + " " + $"(Word, TranslationWord, NumberLearn, DateRecurrence) VALUES (?, ?, ?, ?)";
+                    database.Execute(query, Word.ToLower(), TranslationWord.ToLower(), Magic_constants.StandardNumberOfRepeats, DateTime.Now);                                    
                     Toast.MakeText(this, GetString(Resource.String.Word_Added), ToastLength.Short).Show();
                 }
                 Word = TranslationWord = "";

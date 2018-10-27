@@ -6,6 +6,7 @@ using Android.Views;
 using Android.Widget;
 using Android.Graphics;
 using Android.Support.V7.App;
+using System.Collections.Generic;
 
 namespace ReLearn
 {
@@ -13,6 +14,7 @@ namespace ReLearn
     class Flags_Learn : AppCompatActivity
     {
         ImageView imageView;
+        List<Database_images> ImagesDatabase { get; set; }
 
         string ImageName
         {
@@ -26,17 +28,15 @@ namespace ReLearn
         public void RandomImage()
         {
             try
-            {
-                var db = DataBase.Connect(Database_Name.Flags_DB);        
-                var dataBase = db.Query<Database_images>("SELECT * FROM " + DataBase.TableNameImage);
+            {                
                 Random rnd = new Random(unchecked((int)(DateTime.Now.Ticks)));
-                int rand_word = rnd.Next(dataBase.Count);
+                int rand_word = rnd.Next(ImagesDatabase.Count);
 
-                var his = Application.Context.Assets.Open("ImageFlags/" + dataBase[rand_word].Image_name + ".png");
+                var his = Application.Context.Assets.Open("ImageFlags/" + ImagesDatabase[rand_word].Image_name + ".png");
                 Bitmap bitmap = BitmapFactory.DecodeStream(his);
                 imageView.SetImageBitmap(bitmap);
 
-                ImageName = Additional_functions.NameOfTheFlag(dataBase[rand_word]);
+                ImageName = Additional_functions.NameOfTheFlag(ImagesDatabase[rand_word]);
             }
             catch
             {
@@ -55,6 +55,10 @@ namespace ReLearn
             SupportActionBar.SetDisplayHomeAsUpEnabled(true); // отображаем кнопку домой
 
             imageView = FindViewById<ImageView>(Resource.Id.imageView_Flags_learn);
+
+            var db = DataBase.Connect(Database_Name.Flags_DB);
+            ImagesDatabase = db.Query<Database_images>("SELECT * FROM " + DataBase.TableNameImage + " WHERE NumberLearn != 0 ORDER BY DateRecurrence ASC");
+
             RandomImage();        
         }
 

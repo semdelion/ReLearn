@@ -71,10 +71,7 @@ namespace ReLearn
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
             if (item.ItemId == Android.Resource.Id.Home)
-            {
                 this.Finish();
-                return true;
-            }
             return true;
         }
         protected override void AttachBaseContext(Context newbase) => base.AttachBaseContext(CalligraphyContextWrapper.Wrap(newbase));

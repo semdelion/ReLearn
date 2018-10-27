@@ -121,8 +121,8 @@ namespace ReLearn
             var database = DataBase.Connect(Database_Name.Flags_DB);         
             for (int i = 0; i < Stats.Count; i++)
             {
-                database.Query<Database_images>("UPDATE " + DataBase.TableNameImage + " SET DateRecurrence = DATETIME('NOW') WHERE Image_name = ?", Stats[i].Word);
-                database.Query<Database_images>("UPDATE " + DataBase.TableNameImage + " SET NumberLearn = " + Stats[i].Learn + " WHERE Image_name = ?", Stats[i].Word);
+                var query = $"UPDATE " + DataBase.TableNameImage + " " + $" SET DateRecurrence = ?, NumberLearn = ? WHERE Image_name = ?";
+                database.Execute(query, DateTime.Now, Stats[i].Learn, Stats[i].Word);
             }
         }
 
