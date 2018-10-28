@@ -45,8 +45,9 @@ namespace ReLearn
             Android.App.AlertDialog.Builder alert = new Android.App.AlertDialog.Builder(this);
             alert.SetTitle(GetString(Resource.String.Language));
             alert.SetPositiveButton("Cancel", delegate { alert.Dispose(); });
-            alert.SetSingleChoiceItems(listLanguage, checkedItem, new EventHandler<DialogClickEventArgs>(delegate (object sender, DialogClickEventArgs e) {
-                var d = (sender as Android.App.AlertDialog);
+            alert.SetSingleChoiceItems(listLanguage, checkedItem, new EventHandler<DialogClickEventArgs>(delegate (object sender, DialogClickEventArgs e) 
+            {
+                var dialog = (sender as Android.App.AlertDialog);
                 checkedItem = e.Which;
                 if (listLanguage[e.Which] == "English")
                 {
@@ -62,7 +63,7 @@ namespace ReLearn
                 FindViewById<TextView>(Resource.Id.language).Text = $"{ GetString(Resource.String.Language) }:\t\t\t{listLanguage[e.Which]}";
                 StartActivity(new Intent(this, typeof(Settings_Menu)));
                 this.Finish();        
-                d.Dismiss();
+                dialog.Dismiss();
             }));          
             alert.Show();
         }
@@ -77,38 +78,35 @@ namespace ReLearn
             SetSupportActionBar(toolbarSettings);
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
 
-            SeekBar SB_Repeat_Language = FindViewById<SeekBar>(Resource.Id.SeekBarCountRepeatLenguage);
-            SeekBar SB_Repeat_Image = FindViewById<SeekBar>(Resource.Id.SeekBarCountRepeatImages);
-            TextView TV_Repeat_Language = FindViewById<TextView>(Resource.Id.TextView_number_of_word_repeats);
-            TextView TV_Repeat_Image = FindViewById<TextView>(Resource.Id.TextView_number_of_image_repeats);
+            SeekBar  SB_Repeat_Language = FindViewById<SeekBar> (Resource.Id.SeekBarCountRepeatLenguage),
+                     SB_Repeat_Image    = FindViewById<SeekBar> (Resource.Id.SeekBarCountRepeatImages);
+            TextView TV_Repeat_Language = FindViewById<TextView>(Resource.Id.TextView_number_of_word_repeats),
+                     TV_Repeat_Image    = FindViewById<TextView>(Resource.Id.TextView_number_of_image_repeats);
 
             SB_Repeat_Language.Progress = Magic_constants.NumberOfRepeatsLanguage - 5; 
-            SB_Repeat_Image.Progress = Magic_constants.NumberOfRepeatsImage - 5;
-
-            TV_Repeat_Language.Text = GetString(Resource.String.Number_of_word_repeats) + " " + Convert.ToString(5 + SB_Repeat_Language.Progress);
-            TV_Repeat_Image.Text = GetString(Resource.String.Number_of_image_repeats) + " " + Convert.ToString(5 + SB_Repeat_Image.Progress);
+            SB_Repeat_Image.Progress    = Magic_constants.NumberOfRepeatsImage    - 5;
+            TV_Repeat_Language.Text = GetString(Resource.String.Number_of_word_repeats)  + " " + Convert.ToString(5 + SB_Repeat_Language.Progress);
+            TV_Repeat_Image.Text    = GetString(Resource.String.Number_of_image_repeats) + " " + Convert.ToString(5 + SB_Repeat_Image.Progress);
 
             SB_Repeat_Language.ProgressChanged += (s, e) =>
             {
-                TV_Repeat_Language.Text = GetString(Resource.String.Number_of_word_repeats) + " " + Convert.ToString(5 + e.Progress);
+                TV_Repeat_Language.Text = GetString(Resource.String.Number_of_word_repeats)  + " " + Convert.ToString(5 + e.Progress);
                 Magic_constants.NumberOfRepeatsLanguage = e.Progress + 5;
             };
 
             SB_Repeat_Image.ProgressChanged += (s, e) =>
             {
-                TV_Repeat_Image.Text = GetString(Resource.String.Number_of_image_repeats) + " " + Convert.ToString(5 + e.Progress);
-                Magic_constants.NumberOfRepeatsImage = e.Progress + 5;
+                TV_Repeat_Image.Text    = GetString(Resource.String.Number_of_image_repeats) + " " + Convert.ToString(5 + e.Progress);
+                Magic_constants.NumberOfRepeatsImage    = e.Progress + 5;
             };
         }
 
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
-            int id = item.ItemId;
-            if (id == Android.Resource.Id.Home)
+            if (item.ItemId == Android.Resource.Id.Home)
             {
                 StartActivity(new Intent(this, typeof(MainActivity)));
                 this.Finish();
-                return true;
             }
             return true;
         }    

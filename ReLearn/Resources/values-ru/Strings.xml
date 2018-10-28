@@ -80,5 +80,6 @@
   <string name="NotRepeat">Не повторять</string>
   <string name="Dictionaries">Словари</string>
   <string name="ThreeFormsOfVerb">Глаголы</string>
+  <string name="DictionaryOver">Словарь закончился</string>
  
 </resources>

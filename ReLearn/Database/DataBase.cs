@@ -23,6 +23,12 @@ namespace ReLearn
         ThreeFormsOfVerb
     }
 
+    enum Language
+    {
+        en,
+        ru
+    }
+
     public enum TableNamesImage
     {
         Flags
@@ -109,33 +115,31 @@ namespace ReLearn
                 }
             }          
         }
-
+        //db.Query<Database_Words>("UPDATE " + TableNameLanguage + " SET DateRecurrence = DATETIME('NOW') WHERE Word = ?", s.Word);
+        //db.Query<Database_Words>("UPDATE " + TableNameLanguage + " SET NumberLearn = " + s.NumberLearn + 1 + " WHERE Word = ?", s.Word);
         public static void UpdateWordsToRepeat()
         {
-            var toDay = DateTime.Today;
+            var toDay = DateTime.Today.AddMonths(-1);
             var db = Connect(Database_Name.English_DB);
-            var dataBase = db.Query<Database_Words>("SELECT * FROM " + TableNameLanguage + " WHERE NumberLearn = 0 AND DateRecurrence != ?", DateTime.Now);
+            var dataBase = db.Query<Database_Words>("SELECT * FROM " + TableNameLanguage + " WHERE NumberLearn = 0 ");
             foreach (var s in dataBase)
             {
-                if (s.DateRecurrence.Month != toDay.Month && toDay.Day >= s.DateRecurrence.Day)
+                if (s.DateRecurrence < toDay )
                 {
-                    // обновление БД, при условии, что месяцы не совпадают и NumberLearn == 0. изменяем месяц на текущий и NumberLearn++;  
                     var query = $"UPDATE " + TableNameLanguage + " " + $" SET DateRecurrence = ?, NumberLearn = ? WHERE Word = ?";
                     db.Execute(query, DateTime.Now, s.NumberLearn + 1, s.Word);
-                    //db.Query<Database_Words>("UPDATE " + TableNameLanguage + " SET DateRecurrence = DATETIME('NOW') WHERE Word = ?", s.Word);
-                    //db.Query<Database_Words>("UPDATE " + TableNameLanguage + " SET NumberLearn = " + s.NumberLearn + 1 + " WHERE Word = ?", s.Word);
                 }                       
             }
         }
 
         public static void UpdateImagesToRepeat()
         {
-            var toDay = DateTime.Today;
+            var toDay = DateTime.Today.AddMonths(-1);
             var db = Connect(Database_Name.Flags_DB); 
-            var dataBase = db.Query<Database_images>("SELECT * FROM " + TableNameImage + " WHERE NumberLearn = 0 AND DateRecurrence != ?", DateTime.Now);
+            var dataBase = db.Query<Database_images>("SELECT * FROM " + TableNameImage + " WHERE NumberLearn = 0");
             foreach (var s in dataBase)
             {
-                if (s.DateRecurrence.Month != toDay.Month && toDay.Day >= s.DateRecurrence.Day)
+                if (s.DateRecurrence < toDay)
                 {
                     var query = $"UPDATE " + TableNameImage + " " + $" SET DateRecurrence = ?, NumberLearn = ? WHERE Word = ?";
                     db.Execute(query, DateTime.Now, s.NumberLearn + 1, s.Image_name);

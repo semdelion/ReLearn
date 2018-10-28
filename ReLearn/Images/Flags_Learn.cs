@@ -7,41 +7,53 @@ using Android.Widget;
 using Android.Graphics;
 using Android.Support.V7.App;
 using System.Collections.Generic;
+using Plugin.Settings;
 
 namespace ReLearn
 {
     [Activity(Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     class Flags_Learn : AppCompatActivity
     {
-        ImageView imageView;
+        int Count { get; set; }
         List<Database_images> ImagesDatabase { get; set; }
+        SQLite.SQLiteConnection DatabaseConnect { get; set; }
+
+        Bitmap ImageViewBox
+        {
+            set{ FindViewById<ImageView>(Resource.Id.imageView_Flags_learn).SetImageBitmap(value);}
+        }
 
         string ImageName
         {
             get { return FindViewById<TextView>(Resource.Id.textView_flag_learn).Text; }
             set { FindViewById<TextView>(Resource.Id.textView_flag_learn).Text = value; }
         }
+        
+
+        [Java.Interop.Export("Button_Images_Learn_NotRepeat_Click")]
+        public void Button_Languages_Learn_NotRepeat_Click(View v)
+        {
+            var query = $"UPDATE " + DataBase.TableNameImage + $" SET DateRecurrence = ?, NumberLearn = ? WHERE "; 
+            var tmp = CrossSettings.Current.GetValueOrDefault(Settings.Language.ToString(), null) == Language.en.ToString() ? $"Name_image_en = ?" : $"Name_image_ru = ?";
+            query += tmp;
+            DatabaseConnect.Execute(query, DateTime.Now, 0, ImageName);
+            Button_Flags_Learn_Next_Click(null);
+        }
 
         [Java.Interop.Export("Button_Flags_Learn_Next_Click")]
-        public void Button_Flags_Learn_Click(View v) => RandomImage();
-        
-        public void RandomImage()
+        public void Button_Flags_Learn_Next_Click(View v)
         {
-            try
-            {                
-                Random rnd = new Random(unchecked((int)(DateTime.Now.Ticks)));
-                int rand_word = rnd.Next(ImagesDatabase.Count);
-
-                var his = Application.Context.Assets.Open("ImageFlags/" + ImagesDatabase[rand_word].Image_name + ".png");
-                Bitmap bitmap = BitmapFactory.DecodeStream(his);
-                imageView.SetImageBitmap(bitmap);
-
-                ImageName = Additional_functions.NameOfTheFlag(ImagesDatabase[rand_word]);
-            }
-            catch
+            if (Count < ImagesDatabase.Count)
             {
-                Toast.MakeText(this, GetString(Resource.String.DatabaseNotConnect), ToastLength.Short).Show();             
+                var query = $"UPDATE " + DataBase.TableNameImage + $" SET DateRecurrence = ? WHERE Image_name = ?";
+                DatabaseConnect.Execute(query, DateTime.Now, ImagesDatabase[Count].Image_name);
+                ImageViewBox = BitmapFactory.DecodeStream(
+                    Application.Context.Assets.Open(
+                        "ImageFlags/" + ImagesDatabase[Count].Image_name + ".png"));
+                ImageName = Additional_functions.NameOfTheFlag(ImagesDatabase[Count++]);
             }
+            else
+                Toast.MakeText(this, GetString(Resource.String.DictionaryOver), ToastLength.Short).Show();
         }
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -49,17 +61,19 @@ namespace ReLearn
             Additional_functions.Font();
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Flags_Learn);
-
             var toolbarMain = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbarFlagsLearn);
             SetSupportActionBar(toolbarMain);
-            SupportActionBar.SetDisplayHomeAsUpEnabled(true); // отображаем кнопку домой
-
-            imageView = FindViewById<ImageView>(Resource.Id.imageView_Flags_learn);
-
-            var db = DataBase.Connect(Database_Name.Flags_DB);
-            ImagesDatabase = db.Query<Database_images>("SELECT * FROM " + DataBase.TableNameImage + " WHERE NumberLearn != 0 ORDER BY DateRecurrence ASC");
-
-            RandomImage();        
+            SupportActionBar.SetDisplayHomeAsUpEnabled(true);
+            try
+            {
+                DatabaseConnect = DataBase.Connect(Database_Name.Flags_DB);
+                ImagesDatabase = DatabaseConnect.Query<Database_images>("SELECT * FROM " + DataBase.TableNameImage + " WHERE NumberLearn != 0 ORDER BY DateRecurrence ASC");
+                Button_Flags_Learn_Next_Click(null);
+            }
+            catch
+            {
+                Toast.MakeText(this, GetString(Resource.String.DatabaseNotConnect), ToastLength.Short).Show();
+            }
         }
 
         public override bool OnOptionsItemSelected(IMenuItem item) // button home
@@ -71,3 +85,7 @@ namespace ReLearn
         protected override void AttachBaseContext(Context newbase) => base.AttachBaseContext(Calligraphy.CalligraphyContextWrapper.Wrap(newbase));
     }
 }
+
+        
+
+      

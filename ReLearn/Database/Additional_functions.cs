@@ -31,12 +31,6 @@ namespace ReLearn
         DictionaryNameImage
     }
 
-    enum Language
-    {
-        en,
-        ru
-    }
-
     class ButtonNext
     {
         public StateButton State { get; set; }

@@ -15,8 +15,8 @@ namespace ReLearn
     class Languages_Learn : AppCompatActivity
     {
         List<Database_Words> WordDatabase { get; set; }
-        
-        
+        SQLite.SQLiteConnection DatabaseConnect { get; set; }
+        int Count { get; set; }
         bool Voice_Enable = true;
         string Word
         {
@@ -31,7 +31,20 @@ namespace ReLearn
         }
 
         [Java.Interop.Export("Button_Languages_Learn_Next_Click")]
-        public void Button_Languages_Learn_Next_Click(View v) => NextRandomWord();              
+        public void Button_Languages_Learn_Next_Click(View v)
+        {
+            if (Count < WordDatabase.Count)
+            {
+                Word = WordDatabase[Count].Word;
+                TranslationWord = WordDatabase[Count++].TranslationWord;
+                if (Voice_Enable)
+                    CrossTextToSpeech.Current.Speak(Word);
+                var query = $"UPDATE " + DataBase.TableNameLanguage + $" SET DateRecurrence = ? WHERE Word = ?";
+                DatabaseConnect.Execute(query, DateTime.Now, Word);
+            }
+            else
+                Toast.MakeText(this, GetString(Resource.String.DictionaryOver), ToastLength.Short).Show();
+        }
         
         [Java.Interop.Export("Button_Languages_Learn_Voice_Click")]
         public void Button_Languages_Learn_Voice_Click(View v) => CrossTextToSpeech.Current.Speak(Word);
@@ -41,30 +54,17 @@ namespace ReLearn
         {
             Voice_Enable = !Voice_Enable;
             FindViewById<ImageButton>(Resource.Id.Button_Speak_TurnOn_TurnOff).SetImageDrawable(
-                GetDrawable(Voice_Enable?Resource.Mipmap.speak_off: Resource.Mipmap.speak_on));
+                GetDrawable(Voice_Enable ? Resource.Mipmap.speak_on:
+                                           Resource.Mipmap.speak_off));
         }
        
         [Java.Interop.Export(" Button_Languages_Learn_NotRepeat_Click")]
         public void Button_Languages_Learn_NotRepeat_Click(View v)
         {
-            var db = DataBase.Connect(Database_Name.English_DB);
-            var query = $"UPDATE " + DataBase.TableNameLanguage + " " + $" SET DateRecurrence = ?, NumberLearn = ? WHERE Word = ?";
-            db.Execute(query, DateTime.Now, 0, Word);
-            NextRandomWord();
+            var query = $"UPDATE " + DataBase.TableNameLanguage + $" SET DateRecurrence = ?, NumberLearn = ? WHERE Word = ?";
+            DatabaseConnect.Execute(query, DateTime.Now, 0, Word);
+            Button_Languages_Learn_Next_Click(null);
         }
-
-        void NextRandomWord()
-        {
-                      
-                //Word = WordDatabase[rand_word].Word;
-                //TranslationWord = WordDatabase[rand_word].TranslationWord;
-                //if (Voice_Enable)
-                //    CrossTextToSpeech.Current.Speak(Word);          
-
-                //Toast.MakeText(this, GetString(Resource.String.DatabaseNotConnect), ToastLength.Short).Show();
-            
-        }
-
         protected override void OnCreate(Bundle savedInstanceState)
         {
             Additional_functions.Font();
@@ -72,10 +72,17 @@ namespace ReLearn
             SetContentView(Resource.Layout.Languages_Learn);
             var toolbarMain = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbarLanguagesLearn);
             SetSupportActionBar(toolbarMain);
-            SupportActionBar.SetDisplayHomeAsUpEnabled(true); // отображаем кнопку домой
-            var db = DataBase.Connect(Database_Name.English_DB);
-            WordDatabase = db.Query<Database_Words>("SELECT * FROM " + DataBase.TableNameLanguage + " WHERE NumberLearn != 0 ORDER BY DateRecurrence ASC");
-            NextRandomWord();              
+            SupportActionBar.SetDisplayHomeAsUpEnabled(true);
+            try
+            {
+                DatabaseConnect = DataBase.Connect(Database_Name.English_DB);
+                WordDatabase = DatabaseConnect.Query<Database_Words>("SELECT * FROM " + DataBase.TableNameLanguage + " WHERE NumberLearn != 0 ORDER BY DateRecurrence ASC");
+                Button_Languages_Learn_Next_Click(null);
+            }
+            catch
+            {
+                Toast.MakeText(this, GetString(Resource.String.DatabaseNotConnect), ToastLength.Short).Show();
+            }
         }
 
         public override bool OnOptionsItemSelected(IMenuItem item)
