@@ -45,20 +45,18 @@ namespace ReLearn
             }
         }
 
-        void Random_Button(Button B1, Button B2, Button B3, Button B4)   //загружаем варианты ответа в текст кнопок
+        void Random_Button(params Button[] buttons)   //загружаем варианты ответа в текст кнопок
         {
             Additional_functions.RandomFourNumbers(CurrentWordNumber, dataBase.Count, out List<int> random_numbers);
-            B1.Text = Additional_functions.NameOfTheFlag(dataBase[random_numbers[0]]);
-            B2.Text = Additional_functions.NameOfTheFlag(dataBase[random_numbers[1]]);
-            B3.Text = Additional_functions.NameOfTheFlag(dataBase[random_numbers[2]]);
-            B4.Text = Additional_functions.NameOfTheFlag(dataBase[random_numbers[3]]);
+            for (int i = 0; i < buttons.Length; i++)
+                buttons[i].Text = Additional_functions.NameOfTheFlag(dataBase[random_numbers[i]]);
         }
 
         void NextTest() //new test
         {
             Random rnd = new Random(unchecked((int)(DateTime.Now.Ticks)));
-            var his = Application.Context.Assets.Open("ImageFlags/" + dataBase[CurrentWordNumber].Image_name+ ".png");
-            Bitmap bitmap = BitmapFactory.DecodeStream(his);
+            Bitmap bitmap = BitmapFactory.DecodeStream(Application.Context.Assets.Open(
+                $"ImageFlags/{dataBase[CurrentWordNumber].Image_name}.png"));
             ImageView_image.SetImageBitmap(bitmap);
             switch (rnd.Next(4))
             {                            
@@ -86,13 +84,17 @@ namespace ReLearn
             Button_enable(false);
             if (B1.Text == Additional_functions.NameOfTheFlag(dataBase[CurrentWordNumber]))
             {
-                Additional_functions.UpdateNumberLearn(Stats, Convert.ToString(dataBase[CurrentWordNumber].Image_name), CurrentWordNumber, dataBase[CurrentWordNumber].NumberLearn -= Magic_constants.TrueAnswer);
+                Additional_functions.UpdateNumberLearn(
+                    Stats, Convert.ToString(dataBase[CurrentWordNumber].Image_name),
+                    CurrentWordNumber, dataBase[CurrentWordNumber].NumberLearn -= Magic_constants.TrueAnswer);
                 Statistics.AnswerTrue++;
                 B1.Background = GetDrawable(Resource.Drawable.button_true);
             }
             else
             {
-                Additional_functions.UpdateNumberLearn(Stats, Convert.ToString(dataBase[CurrentWordNumber].Image_name), CurrentWordNumber, dataBase[CurrentWordNumber].NumberLearn += Magic_constants.FalseAnswer);
+                Additional_functions.UpdateNumberLearn(
+                    Stats, Convert.ToString(dataBase[CurrentWordNumber].Image_name), 
+                    CurrentWordNumber, dataBase[CurrentWordNumber].NumberLearn += Magic_constants.FalseAnswer);
                 Statistics.AnswerFalse++;
                 B1.Background = GetDrawable(Resource.Drawable.button_false);
                 if (B2.Text == Additional_functions.NameOfTheFlag(dataBase[CurrentWordNumber]))
@@ -121,7 +123,7 @@ namespace ReLearn
             var database = DataBase.Connect(Database_Name.Flags_DB);         
             for (int i = 0; i < Stats.Count; i++)
             {
-                var query = $"UPDATE " + DataBase.TableNameImage + " " + $" SET DateRecurrence = ?, NumberLearn = ? WHERE Image_name = ?";
+                var query = $"UPDATE {DataBase.TableNameImage} SET DateRecurrence = ?, NumberLearn = ? WHERE Image_name = ?";
                 database.Execute(query, DateTime.Now, Stats[i].Learn, Stats[i].Word);
             }
         }
@@ -180,10 +182,12 @@ namespace ReLearn
             Additional_functions.Font();
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Flags_Repeat);
+            
             var toolbarMain = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbarFlagsRepeat);
             Title_textView = toolbarMain.FindViewById<TextView>(Resource.Id.Repeat_toolbar_textview_fl);
             SetSupportActionBar(toolbarMain);
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
+
             Statistics.Statistics_update();
             ImageView_image = FindViewById<ImageView>(Resource.Id.imageView_Flags_repeat);
             Button1 = FindViewById<Button>(Resource.Id.button_F_choice1);
@@ -198,7 +202,7 @@ namespace ReLearn
             try
             {
                 SQLiteConnection db = DataBase.Connect(Database_Name.Flags_DB);
-                dataBase = db.Query<Database_images>("SELECT * FROM " + DataBase.TableNameImage + " WHERE NumberLearn > 0");
+                dataBase = db.Query<Database_images>($"SELECT * FROM {DataBase.TableNameImage} WHERE NumberLearn > 0");
                 Button_Flags_Next_Click(null);
             }
             catch

@@ -33,7 +33,8 @@ namespace ReLearn
         public static void Add_Statistics(int True, int False, string TableName)      // add stats to the database
         {
             var database = DataBase.Connect(Database_Name.Statistics);
-            database.Query<Database_Statistics>("INSERT INTO " + TableName + "_Statistics" + " (True, False, DateOfTesting) VALUES (" + True + "," + False + ", DATETIME('NOW'))");
+            var query = $"INSERT INTO {TableName}_Statistics (True, False, DateOfTesting) VALUES (?, ?, ?)";
+            database.Execute(query, True, False, DateTime.Now);
         }
         public static float GetAverageNumberLearn(List<Database_for_stats> Database_NL_and_D)
         {

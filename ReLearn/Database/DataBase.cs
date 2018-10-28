@@ -78,19 +78,19 @@ namespace ReLearn
             {
                 if (db.GetTableInfo(tableName).Count == 0)
                 {
-                    db.Query<Database_Words>("CREATE TABLE " + tableName + "(_id int PRIMARY KEY, Word string, TranslationWord string, NumberLearn int, DateRecurrence DateTime, Context string, Image string)");
-                    using (StreamReader reader = new StreamReader(Application.Context.Assets.Open("Database/" + tableName + ".txt")))
+                    db.Query<Database_Words>($"CREATE TABLE {tableName} (_id int PRIMARY KEY, Word string, TranslationWord string, NumberLearn int, DateRecurrence DateTime, Context string, Image string)");
+                    using (StreamReader reader = new StreamReader(Application.Context.Assets.Open($"Database/{tableName}.txt")))
                         while (reader.Peek() >= 0)
                         {
                             string str_line = reader.ReadLine();
                             var list_en_ru = str_line.Split('|');
 
-                            var query = $"INSERT INTO " + tableName + " " + $"(Word, TranslationWord, NumberLearn, DateRecurrence) VALUES (?, ?, ?, ?)";
+                            var query = $"INSERT INTO {tableName} (Word, TranslationWord, NumberLearn, DateRecurrence) VALUES (?, ?, ?, ?)";
                             db.Execute(query, list_en_ru[0].ToLower(), list_en_ru[1].ToLower(), Magic_constants.StandardNumberOfRepeats, DateTime.Now);                            
                         }
 
                     var dbStatEn = Connect(Database_Name.Statistics);
-                    dbStatEn.Query<Database_Statistics>("CREATE TABLE " + tableName + "_Statistics (_id int PRIMARY KEY, True int, False int, DateOfTesting DateTime)");
+                    dbStatEn.Query<Database_Statistics>($"CREATE TABLE {tableName}_Statistics (_id int PRIMARY KEY, True int, False int, DateOfTesting DateTime)");
                 }
             }
         }
@@ -102,7 +102,7 @@ namespace ReLearn
             if (!File.Exists(path))
             {
                 Context context = Application.Context;
-                using (var dbAssetStream = context.Assets.Open("Database/" + FileName))
+                using (var dbAssetStream = context.Assets.Open($"Database/{FileName}"))
                 {
                     using (var dbFileStream = new FileStream(path, FileMode.OpenOrCreate))
                     {
@@ -121,12 +121,12 @@ namespace ReLearn
         {
             var toDay = DateTime.Today.AddMonths(-1);
             var db = Connect(Database_Name.English_DB);
-            var dataBase = db.Query<Database_Words>("SELECT * FROM " + TableNameLanguage + " WHERE NumberLearn = 0 ");
+            var dataBase = db.Query<Database_Words>($"SELECT * FROM {TableNameLanguage} WHERE NumberLearn = 0 ");
             foreach (var s in dataBase)
             {
-                if (s.DateRecurrence < toDay )
+                if (s.DateRecurrence < toDay)
                 {
-                    var query = $"UPDATE " + TableNameLanguage + " " + $" SET DateRecurrence = ?, NumberLearn = ? WHERE Word = ?";
+                    var query = $"UPDATE {TableNameLanguage} SET DateRecurrence = ?, NumberLearn = ? WHERE Word = ?";
                     db.Execute(query, DateTime.Now, s.NumberLearn + 1, s.Word);
                 }                       
             }
@@ -136,12 +136,12 @@ namespace ReLearn
         {
             var toDay = DateTime.Today.AddMonths(-1);
             var db = Connect(Database_Name.Flags_DB); 
-            var dataBase = db.Query<Database_images>("SELECT * FROM " + TableNameImage + " WHERE NumberLearn = 0");
+            var dataBase = db.Query<Database_images>($"SELECT * FROM {TableNameImage} WHERE NumberLearn = 0");
             foreach (var s in dataBase)
             {
                 if (s.DateRecurrence < toDay)
                 {
-                    var query = $"UPDATE " + TableNameImage + " " + $" SET DateRecurrence = ?, NumberLearn = ? WHERE Word = ?";
+                    var query = $"UPDATE {TableNameImage} SET DateRecurrence = ?, NumberLearn = ? WHERE Word = ?";
                     db.Execute(query, DateTime.Now, s.NumberLearn + 1, s.Image_name);
                 }
             }

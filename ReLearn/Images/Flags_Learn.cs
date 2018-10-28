@@ -33,10 +33,9 @@ namespace ReLearn
         [Java.Interop.Export("Button_Images_Learn_NotRepeat_Click")]
         public void Button_Languages_Learn_NotRepeat_Click(View v)
         {
-            var query = $"UPDATE " + DataBase.TableNameImage + $" SET DateRecurrence = ?, NumberLearn = ? WHERE "; 
-            var tmp = CrossSettings.Current.GetValueOrDefault(Settings.Language.ToString(), null) == Language.en.ToString() ? $"Name_image_en = ?" : $"Name_image_ru = ?";
-            query += tmp;
-            DatabaseConnect.Execute(query, DateTime.Now, 0, ImageName);
+            var query = $"UPDATE {DataBase.TableNameImage} SET DateRecurrence = ?, NumberLearn = ? WHERE "; 
+            var tmp = CrossSettings.Current.GetValueOrDefault(Settings.Language.ToString(), null) == Language.en.ToString() ? "Name_image_en = ?" : "Name_image_ru = ?";
+            DatabaseConnect.Execute(query + tmp, DateTime.Now, 0, ImageName);
             Button_Flags_Learn_Next_Click(null);
         }
 
@@ -45,11 +44,11 @@ namespace ReLearn
         {
             if (Count < ImagesDatabase.Count)
             {
-                var query = $"UPDATE " + DataBase.TableNameImage + $" SET DateRecurrence = ? WHERE Image_name = ?";
+                var query = $"UPDATE {DataBase.TableNameImage} SET DateRecurrence = ? WHERE Image_name = ?";
                 DatabaseConnect.Execute(query, DateTime.Now, ImagesDatabase[Count].Image_name);
                 ImageViewBox = BitmapFactory.DecodeStream(
                     Application.Context.Assets.Open(
-                        "ImageFlags/" + ImagesDatabase[Count].Image_name + ".png"));
+                        $"ImageFlags/{ImagesDatabase[Count].Image_name}.png"));
                 ImageName = Additional_functions.NameOfTheFlag(ImagesDatabase[Count++]);
             }
             else
@@ -67,7 +66,7 @@ namespace ReLearn
             try
             {
                 DatabaseConnect = DataBase.Connect(Database_Name.Flags_DB);
-                ImagesDatabase = DatabaseConnect.Query<Database_images>("SELECT * FROM " + DataBase.TableNameImage + " WHERE NumberLearn != 0 ORDER BY DateRecurrence ASC");
+                ImagesDatabase = DatabaseConnect.Query<Database_images>($"SELECT * FROM {DataBase.TableNameImage} WHERE NumberLearn != 0 ORDER BY DateRecurrence ASC");
                 Button_Flags_Learn_Next_Click(null);
             }
             catch

@@ -83,7 +83,7 @@ namespace ReLearn
         {
             The_canvas = canvas;            
             var database = DataBase.Connect(Database_Name.Statistics);
-            var Database_Stat = database.Query<Database_Statistics>("SELECT * FROM " + TabelName + "_Statistics");// количество строк в БД
+            var Database_Stat = database.Query<Database_Statistics>($"SELECT * FROM {TabelName}_Statistics");// количество строк в БД
             base.OnDraw(The_canvas);
 
             paint_text.TextSize = 2.5f * (The_canvas.Height + The_canvas.Width) / 200;

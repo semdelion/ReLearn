@@ -35,7 +35,7 @@ namespace ReLearn
         public void CreateViewForDictionary(string name, int ImageId)
         {
             var database = DataBase.Connect(Database_Name.English_DB);
-            List<Database_for_stats> Database_NL_and_D = database.Query<Database_for_stats>("SELECT NumberLearn, DateRecurrence FROM " + name.ToString());
+            List<Database_for_stats> Database_NL_and_D = database.Query<Database_for_stats>($"SELECT NumberLearn, DateRecurrence FROM {name}");
             Dictionaries.DictionariesBitmap.Add(Dictionaries.CreateBitmapWithStats(BitmapFactory.DecodeResource(Resources, ImageId), Database_NL_and_D));
 
             ImageView DictionaryImage = new ImageView(this)

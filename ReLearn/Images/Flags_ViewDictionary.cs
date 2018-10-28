@@ -19,6 +19,7 @@ namespace ReLearn
         ListView listView_dictionary;
         List<Database_images> dataBase;
         CustomAdapter_ImageText Adapter;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             Additional_functions.Font();
@@ -31,7 +32,7 @@ namespace ReLearn
             listView_dictionary = FindViewById<ListView>(Resource.Id.listView_dictionary);
 
             var db = DataBase.Connect(Database_Name.Flags_DB);
-            dataBase = db.Query<Database_images>("SELECT * FROM " + DataBase.TableNameImage);
+            dataBase = db.Query<Database_images>($"SELECT * FROM {DataBase.TableNameImage}");
             SortNamesImages();
 
             Adapter = new CustomAdapter_ImageText(this, dataBase);
@@ -40,29 +41,27 @@ namespace ReLearn
 
         public override bool OnOptionsItemSelected(IMenuItem item) // button home
         {
-            int id = item.ItemId;
-            if (id == Resource.Id.increase)
+            if (item.ItemId == Resource.Id.increase)
             {
                 dataBase.Sort((x, y) => x.NumberLearn.CompareTo(y.NumberLearn));
                 Adapter = new CustomAdapter_ImageText(this, dataBase);
                 listView_dictionary.Adapter = Adapter;
             }
-            if (id == Resource.Id.decrease)
+            else if (item.ItemId == Resource.Id.decrease)
             {
                 dataBase.Sort((x, y) => y.NumberLearn.CompareTo(x.NumberLearn));
                 Adapter = new CustomAdapter_ImageText(this, dataBase);
                 listView_dictionary.Adapter = Adapter;
             }
-            if (id == Resource.Id.ABC)
+            else if (item.ItemId == Resource.Id.ABC)
             {
                 SortNamesImages();
                 Adapter = new CustomAdapter_ImageText(this, dataBase);
                 listView_dictionary.Adapter = Adapter;
             }
-            if (id == Android.Resource.Id.Home)
-            {
+            else if (item.ItemId == Android.Resource.Id.Home)
                 this.Finish();
-            }
+            
             return true;
         }
 

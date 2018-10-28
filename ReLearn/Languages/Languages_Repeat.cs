@@ -46,19 +46,17 @@ namespace ReLearn
             }
         }
 
-        void Random_Button(Button B1, Button B2, Button B3, Button B4)   //загружаем варианты ответа в текст кнопок
+        void Random_Button(params Button[] buttons)   //загружаем варианты ответа в текст кнопок
         {
             Additional_functions.RandomFourNumbers(CurrentWordNumber, dataBase.Count, out List<int> random_numbers);
-            B1.Text = dataBase[random_numbers[0]].TranslationWord;
-            B2.Text = dataBase[random_numbers[1]].TranslationWord;
-            B3.Text = dataBase[random_numbers[2]].TranslationWord;
-            B4.Text = dataBase[random_numbers[3]].TranslationWord;
+            for (int i = 0; i < buttons.Length; i++)
+                buttons[i].Text = dataBase[random_numbers[i]].TranslationWord;
         }
 
         void NextWord() //new
         {
             Random rnd = new Random(unchecked((int)(DateTime.Now.Ticks)));
-            textView.Text = dataBase[CurrentWordNumber].Word.ToString();
+            textView.Text = dataBase[CurrentWordNumber].Word;
             switch (rnd.Next(4))
             {                        
                 case 0:
@@ -122,7 +120,7 @@ namespace ReLearn
             var database = DataBase.Connect(Database_Name.English_DB);          
             for (int i = 0; i < Stats.Count; i++)
             {
-                var query = $"UPDATE " + DataBase.TableNameLanguage + " " + $" SET DateRecurrence = ?, NumberLearn = ? WHERE Word = ?";
+                var query = $"UPDATE {DataBase.TableNameLanguage} SET DateRecurrence = ?, NumberLearn = ? WHERE Word = ?";
                 database.Execute(query, DateTime.Now, Stats[i].Learn, Stats[i].Word);
             }
         }
@@ -161,7 +159,7 @@ namespace ReLearn
                     CurrentWordNumber = rnd.Next(dataBase.Count);
                     NextWord();
                     Button_enable(true);
-                    Title_textView.Text = Convert.ToString(GetString(Resource.String.Repeat) + " " + (Count + 1) + "/" + Magic_constants.NumberOfRepeatsLanguage); // ПЕРЕДЕЛАЙ Костыль счётчик 
+                    Title_textView.Text = Convert.ToString(GetString(Resource.String.Repeat) + " " + (Count + 1) + "/" + Magic_constants.NumberOfRepeatsLanguage);  
                 }
                 else
                 {
@@ -200,7 +198,7 @@ namespace ReLearn
             try
             {
                 SQLiteConnection db = DataBase.Connect(Database_Name.English_DB);
-                dataBase = db.Query<Database_Words>("SELECT * FROM " + DataBase.TableNameLanguage + " WHERE NumberLearn > 0");
+                dataBase = db.Query<Database_Words>($"SELECT * FROM {DataBase.TableNameLanguage} WHERE NumberLearn > 0");
                 Button_Languages_Next_Click(null);
             }
             catch

@@ -32,14 +32,14 @@ namespace ReLearn
             {
                 var database = DataBase.Connect(Database_Name.English_DB);
                 database.CreateTable<Database_Words>();
-                var search_occurrences = database.Query<Database_Words>("SELECT * FROM " + TableNamesLanguage.My_Directly.ToString() + " WHERE Word = ?", Word);// поиск вхождения слова в БД
+                var search_occurrences = database.Query<Database_Words>($"SELECT * FROM {TableNamesLanguage.My_Directly.ToString()} WHERE Word = ?", Word);// поиск вхождения слова в БД
                 if (Word == "" || TranslationWord == "")
                     Toast.MakeText(this, GetString(Resource.String.Enter_word), ToastLength.Short).Show();
                 else if (search_occurrences.Count != 0)
                     Toast.MakeText(this, GetString(Resource.String.Word_exists), ToastLength.Short).Show();               
                 else
                 {
-                    var query = $"INSERT INTO " + TableNamesLanguage.My_Directly.ToString() + " " + $"(Word, TranslationWord, NumberLearn, DateRecurrence) VALUES (?, ?, ?, ?)";
+                    var query = $"INSERT INTO {TableNamesLanguage.My_Directly.ToString()} (Word, TranslationWord, NumberLearn, DateRecurrence) VALUES (?, ?, ?, ?)";
                     database.Execute(query, Word.ToLower(), TranslationWord.ToLower(), Magic_constants.StandardNumberOfRepeats, DateTime.Now);                                    
                     Toast.MakeText(this, GetString(Resource.String.Word_Added), ToastLength.Short).Show();
                 }

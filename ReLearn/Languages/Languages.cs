@@ -27,7 +27,7 @@ namespace ReLearn
             {
                 var database = DataBase.Connect(Database_Name.English_DB);
                 database.CreateTable<Database_Words>();
-                int search_occurrences = database.Query<Database_Words>("SELECT * FROM " + DataBase.TableNameLanguage).Count;
+                int search_occurrences = database.Query<Database_Words>($"SELECT * FROM {DataBase.TableNameLanguage}").Count;
                 if (search_occurrences != 0)
                 {
                     Intent intent_english_learn = new Intent(this, typeof(Languages_Learn));
@@ -49,8 +49,8 @@ namespace ReLearn
             {
                 var database = DataBase.Connect(Database_Name.English_DB);
                 database.CreateTable<Database_Words>();
-                var search_occurrences = database.Query<Database_Words>("SELECT * FROM  " + DataBase.TableNameLanguage);// поиск вхождения слова в БД
-                var search_numberlearn_null = database.Query<Database_Words>("SELECT * FROM  " + DataBase.TableNameLanguage + " WHERE NumberLearn = 0").Count;
+                var search_occurrences = database.Query<Database_Words>($"SELECT * FROM {DataBase.TableNameLanguage}");// поиск вхождения слова в БД
+                var search_numberlearn_null = database.Query<Database_Words>($"SELECT * FROM {DataBase.TableNameLanguage} WHERE NumberLearn = 0").Count;
                 if (search_occurrences.Count == search_numberlearn_null)
                     Toast.MakeText(this, GetString(Resource.String.RepeatedAllWords), ToastLength.Short).Show();
                 else if (search_occurrences.Count != 0)
@@ -100,9 +100,8 @@ namespace ReLearn
                 StartActivity(intent_SelectDictionary);
             }
             else if(item.ItemId == Android.Resource.Id.Home)
-            {
                 this.Finish();
-            }
+            
             return true;
         }
 

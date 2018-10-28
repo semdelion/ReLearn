@@ -42,7 +42,7 @@ namespace ReLearn
 
             var database = DataBase.Connect(Database_Name.Flags_DB);
             ActionBar.SetStackedBackgroundDrawable(new ColorDrawable(Color.Transparent));
-            List<Database_for_stats> Database_NL_and_D = database.Query<Database_for_stats>("SELECT NumberLearn, DateRecurrence FROM " + DataBase.TableNameImage);// количество строк в БД
+            List<Database_for_stats> Database_NL_and_D = database.Query<Database_for_stats>($"SELECT NumberLearn, DateRecurrence FROM {DataBase.TableNameImage}");
 
             Graph_General_Statistics Stat2 = new Graph_General_Statistics(this, Color.Argb(255, 254, 166, 10), Color.Argb(255, 154, 66, 3), Database_NL_and_D, "Flags", DataBase.TableNameImage.ToString());
             Graph_Statistics Stat1 = new Graph_Statistics(this, Color.Argb(255, 254, 166, 10), Color.Argb(255, 154, 66, 3), DataBase.TableNameImage.ToString());

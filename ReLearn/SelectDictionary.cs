@@ -80,7 +80,6 @@ namespace ReLearn
             catch (OutOfMemoryException)
             {
                 return null;
-                
             }
             catch
             {

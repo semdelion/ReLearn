@@ -48,31 +48,26 @@ namespace ReLearn
       
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
-            int id = item.ItemId;
-            if (id == Resource.Id.about_us)
+            if(item.ItemId == Resource.Id.about_us)
             {
                 Intent intent_about_us = new Intent(this, typeof(About_us));
                 StartActivity(intent_about_us);
-                return true;
             }
-            if (id == Resource.Id.Settings_Menu)
+            else if(item.ItemId == Resource.Id.Settings_Menu)
             {
                 Intent intent_Settings_Menu = new Intent(this, typeof(Settings_Menu));
                 StartActivity(intent_Settings_Menu);
                 this.Finish();
-                return true;
+
             }
-            if (id == Resource.Id.Feedback)
+            else if(item.ItemId == Resource.Id.Feedback)
             {
                 Intent intent_Feedback = new Intent(this, typeof(Feedback));
                 StartActivity(intent_Feedback);
-                return true;
             }
-            if (id == Android.Resource.Id.Home)
-            {
+            else if (item.ItemId == Android.Resource.Id.Home)
                 this.Finish();
-                return true;
-            }
+ 
             return true;
         }      
 

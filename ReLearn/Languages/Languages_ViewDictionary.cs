@@ -29,7 +29,7 @@ namespace ReLearn
             listViewDel = FindViewById<ListView>(Resource.Id.listView_dictionary);    
             
             var db = DataBase.Connect(Database_Name.English_DB);
-            dataBase = db.Query<Database_Words>("SELECT * FROM " + DataBase.TableNameLanguage);
+            dataBase = db.Query<Database_Words>($"SELECT * FROM {DataBase.TableNameLanguage}");
             dataBase.Sort((x, y) => x.Word.CompareTo(y.Word));
             
             adapter = new CustomAdapter(this, dataBase);
@@ -70,7 +70,7 @@ namespace ReLearn
                     }
                 Android.App.AlertDialog.Builder alert = new Android.App.AlertDialog.Builder(this);
                 alert.SetTitle("");
-                alert.SetMessage("To delete : " + word.ToString() + " ? ");
+                alert.SetMessage($"To delete : {word.ToString()}? ");
                 alert.SetPositiveButton("Cancel", delegate { alert.Dispose(); });
                 alert.SetNeutralButton("ок", delegate
                 {
@@ -80,13 +80,13 @@ namespace ReLearn
 
                     var database = DataBase.Connect(Database_Name.English_DB);
                     database.CreateTable<Database_Words>();
-                    int search_occurrences = database.Query<Database_Words>("SELECT * FROM " + DataBase.TableNameLanguage).Count;
+                    int search_occurrences = database.Query<Database_Words>($"SELECT * FROM {DataBase.TableNameLanguage}").Count;
 
                     if (search_occurrences == 0)
                         Toast.MakeText(this, GetString(Resource.String.Word_Not_Exists), ToastLength.Short).Show();
                     else
                     {
-                        database.Query<Database_Words>("DELETE FROM " + DataBase.TableNameLanguage + " WHERE Word = ?", word.ToString());// поиск вхождения слова в БД
+                        database.Query<Database_Words>($"DELETE FROM {DataBase.TableNameLanguage} WHERE Word = ?", word.ToString());// поиск вхождения слова в БД
                             Toast.MakeText(this, GetString(Resource.String.Word_Delete), ToastLength.Short).Show();
                     }
                 });
@@ -97,29 +97,27 @@ namespace ReLearn
 
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
-            int id = item.ItemId;
-            if (id == Resource.Id.increase)
+            if (item.ItemId == Resource.Id.increase)
             {
                 dataBase.Sort((x, y) => x.NumberLearn.CompareTo(y.NumberLearn));
                 adapter = new CustomAdapter(this, dataBase);
                 listViewDel.Adapter = adapter;
             }
-            if (id == Resource.Id.decrease)
+            else if (item.ItemId == Resource.Id.decrease)
             {
                 dataBase.Sort((x, y) => y.NumberLearn.CompareTo(x.NumberLearn));
                 adapter = new CustomAdapter(this, dataBase);
                 listViewDel.Adapter = adapter;
             }
-            if (id == Resource.Id.ABC)
+            else if (item.ItemId == Resource.Id.ABC)
             {
                 dataBase.Sort((x, y) => x.Word.CompareTo(y.Word));
                 adapter = new CustomAdapter(this, dataBase);
                 listViewDel.Adapter = adapter;
             }
-            if (id == Android.Resource.Id.Home)
-            {
+            else if (item.ItemId == Android.Resource.Id.Home)
                 this.Finish();
-            }
+            
             return true;
         }
 

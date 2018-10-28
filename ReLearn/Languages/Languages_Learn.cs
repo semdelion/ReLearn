@@ -18,6 +18,7 @@ namespace ReLearn
         SQLite.SQLiteConnection DatabaseConnect { get; set; }
         int Count { get; set; }
         bool Voice_Enable = true;
+
         string Word
         {
             get { return FindViewById<TextView>(Resource.Id.textView_learn_en).Text; }
@@ -39,7 +40,7 @@ namespace ReLearn
                 TranslationWord = WordDatabase[Count++].TranslationWord;
                 if (Voice_Enable)
                     CrossTextToSpeech.Current.Speak(Word);
-                var query = $"UPDATE " + DataBase.TableNameLanguage + $" SET DateRecurrence = ? WHERE Word = ?";
+                var query = $"UPDATE {DataBase.TableNameLanguage} SET DateRecurrence = ? WHERE Word = ?";
                 DatabaseConnect.Execute(query, DateTime.Now, Word);
             }
             else
@@ -61,7 +62,7 @@ namespace ReLearn
         [Java.Interop.Export(" Button_Languages_Learn_NotRepeat_Click")]
         public void Button_Languages_Learn_NotRepeat_Click(View v)
         {
-            var query = $"UPDATE " + DataBase.TableNameLanguage + $" SET DateRecurrence = ?, NumberLearn = ? WHERE Word = ?";
+            var query = $"UPDATE {DataBase.TableNameLanguage} SET DateRecurrence = ?, NumberLearn = ? WHERE Word = ?";
             DatabaseConnect.Execute(query, DateTime.Now, 0, Word);
             Button_Languages_Learn_Next_Click(null);
         }
@@ -76,7 +77,7 @@ namespace ReLearn
             try
             {
                 DatabaseConnect = DataBase.Connect(Database_Name.English_DB);
-                WordDatabase = DatabaseConnect.Query<Database_Words>("SELECT * FROM " + DataBase.TableNameLanguage + " WHERE NumberLearn != 0 ORDER BY DateRecurrence ASC");
+                WordDatabase = DatabaseConnect.Query<Database_Words>($"SELECT * FROM {DataBase.TableNameLanguage} WHERE NumberLearn != 0 ORDER BY DateRecurrence ASC");
                 Button_Languages_Learn_Next_Click(null);
             }
             catch

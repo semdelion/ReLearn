@@ -32,13 +32,13 @@ namespace ReLearn
 
         float Average_True_Today(SQLite.SQLiteConnection database)
         {
-            var Database_Stat = database.Query<Database_Statistics>("SELECT * FROM " + TableName + "_Statistics" + " WHERE DateOfTesting >= date('now')");// количество строк в БД
+            var Database_Stat = database.Query<Database_Statistics>($"SELECT * FROM {TableName}_Statistics WHERE DateOfTesting >= ?", DateTime.Now);// количество строк в БД
             return Average_percent_true(Database_Stat);
         }
 
         float Average_True_Month(SQLite.SQLiteConnection database)
         {
-            var Database_Stat = database.Query<Database_Statistics>("SELECT * FROM " + TableName + "_Statistics" + " WHERE  STRFTIME ( '%Y%m', DateOfTesting) = STRFTIME ( '%Y%m', 'now')");// количество строк в БД
+            var Database_Stat = database.Query<Database_Statistics>($"SELECT * FROM {TableName}_Statistics WHERE  STRFTIME ( '%Y%m', DateOfTesting) = STRFTIME ( '%Y%m', 'now')");// количество строк в БД
             return Average_percent_true(Database_Stat);
         }
 
@@ -94,7 +94,7 @@ namespace ReLearn
             LW.DrawBorder(The_canvas, paint_border);
             LW.ProgressLine(The_canvas, numberLearned, Stats_database.Count - numberLearned, Start, End);
             LW.DrawText(The_canvas, font_up,
-                Additional_functions.GetResourceString("Number_Learned_" + Object_name, this.Resources),
+                Additional_functions.GetResourceString($"Number_Learned_{Object_name}", this.Resources),
                 LW.Left + 7f * LW.Width / 100, LW.Top + 7f * LW.Height / 100);
             LW.DrawText    (The_canvas, font_low, 
                 numberLearned + " " + Context.GetString(Resource.String.Of) + " " + Stats_database.Count, 
@@ -107,7 +107,7 @@ namespace ReLearn
             IW.DrawBorder(The_canvas, paint_border);
             IW.ProgressLine(The_canvas, numberInconvenient, Stats_database.Count - numberInconvenient, Start, End);
             IW.DrawText(The_canvas, font_up,
-                Additional_functions.GetResourceString("Number_Inconvenient_" + Object_name, this.Resources),
+                Additional_functions.GetResourceString($"Number_Inconvenient_{Object_name}", this.Resources),
                 IW.Left + 7f * IW.Width / 100, IW.Top + 7f * IW.Height / 100);
             IW.DrawText(The_canvas, font_low, 
                 numberInconvenient + " " + Context.GetString(Resource.String.Of) + " " + Stats_database.Count, 
@@ -140,7 +140,7 @@ namespace ReLearn
             paint_border.SetStyle(Paint.Style.Stroke);
             paint_text.TextSize = 2.5f * (The_canvas.Height + The_canvas.Width) / 200f;
             var database = DataBase.Connect(Database_Name.Statistics);
-            var Database_Stat = database.Query<Database_Statistics>("SELECT * FROM " + TableName + "_Statistics");// количество строк в БД
+            var Database_Stat = database.Query<Database_Statistics>($"SELECT * FROM {TableName}_Statistics");// количество строк в БД
 
             float height = (The_canvas.Height - 81f * The_canvas.Width / 100f) / 3f;
 
@@ -160,8 +160,7 @@ namespace ReLearn
             float avg_true_today = Average_True_Today(database),
                   avg_true_month = Average_True_Month(database),
                   avg_true = Average_percent_true(Database_Stat);
-                 
-                
+                    
             DegreeOfStudy_FRAME (DegreeOfStudy);
 
             CorrectAnswers_FRAME(CorrectAnswers, DegreeOfStudy.Width, DegreeOfStudy.Height, avg_true_today, avg_true_month, avg_true);
