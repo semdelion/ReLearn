@@ -34,7 +34,7 @@ namespace ReLearn
         public void Button_Languages_Learn_NotRepeat_Click(View v)
         {
             var query = $"UPDATE {DataBase.TableNameImage} SET DateRecurrence = ?, NumberLearn = ? WHERE "; 
-            var tmp = CrossSettings.Current.GetValueOrDefault(Settings.Language.ToString(), null) == Language.en.ToString() ? "Name_image_en = ?" : "Name_image_ru = ?";
+            var tmp = CrossSettings.Current.GetValueOrDefault(DBSettings.Language.ToString(), null) == Language.en.ToString() ? "Name_image_en = ?" : "Name_image_ru = ?";
             DatabaseConnect.Execute(query + tmp, DateTime.Now, 0, ImageName);
             Button_Flags_Learn_Next_Click(null);
         }

@@ -27,6 +27,12 @@ namespace ReLearn
     {
         en,
         ru
+
+    }
+    enum Pronunciation
+    {
+        en,
+        uk
     }
 
     public enum TableNamesImage
@@ -40,28 +46,28 @@ namespace ReLearn
         {
             get
             {
-                if (String.IsNullOrEmpty(CrossSettings.Current.GetValueOrDefault(Settings.DictionaryNameLanguages.ToString(), null)))
-                    CrossSettings.Current.AddOrUpdateValue(Settings.DictionaryNameLanguages.ToString(), TableNamesLanguage.Popular_Words.ToString());
-                Enum.TryParse(CrossSettings.Current.GetValueOrDefault(Settings.DictionaryNameLanguages.ToString(), null), out TableNamesLanguage name);
+                if (String.IsNullOrEmpty(CrossSettings.Current.GetValueOrDefault(DBSettings.DictionaryNameLanguages.ToString(), null)))
+                    CrossSettings.Current.AddOrUpdateValue(DBSettings.DictionaryNameLanguages.ToString(), TableNamesLanguage.Popular_Words.ToString());
+                Enum.TryParse(CrossSettings.Current.GetValueOrDefault(DBSettings.DictionaryNameLanguages.ToString(), null), out TableNamesLanguage name);
                 return name;
             }
             set
             {
-                CrossSettings.Current.AddOrUpdateValue(Settings.DictionaryNameLanguages.ToString(), value.ToString());
+                CrossSettings.Current.AddOrUpdateValue(DBSettings.DictionaryNameLanguages.ToString(), value.ToString());
             }
         }
         public static TableNamesImage TableNameImage
         {
             get
             {
-                if (String.IsNullOrEmpty(CrossSettings.Current.GetValueOrDefault(Settings.DictionaryNameImage.ToString(), null)))
-                    CrossSettings.Current.AddOrUpdateValue(Settings.DictionaryNameImage.ToString(), TableNamesImage.Flags.ToString());
-                    Enum.TryParse(CrossSettings.Current.GetValueOrDefault(Settings.DictionaryNameImage.ToString(), null), out TableNamesImage name);
+                if (String.IsNullOrEmpty(CrossSettings.Current.GetValueOrDefault(DBSettings.DictionaryNameImage.ToString(), null)))
+                    CrossSettings.Current.AddOrUpdateValue(DBSettings.DictionaryNameImage.ToString(), TableNamesImage.Flags.ToString());
+                Enum.TryParse(CrossSettings.Current.GetValueOrDefault(DBSettings.DictionaryNameImage.ToString(), null), out TableNamesImage name);
                 return name;
             }
             set
             {
-                CrossSettings.Current.AddOrUpdateValue(Settings.DictionaryNameImage.ToString(), value.ToString());
+                CrossSettings.Current.AddOrUpdateValue(DBSettings.DictionaryNameImage.ToString(), value.ToString());
             }
         }
 
@@ -86,7 +92,7 @@ namespace ReLearn
                             var list_en_ru = str_line.Split('|');
 
                             var query = $"INSERT INTO {tableName} (Word, TranslationWord, NumberLearn, DateRecurrence) VALUES (?, ?, ?, ?)";
-                            db.Execute(query, list_en_ru[0].ToLower(), list_en_ru[1].ToLower(), Magic_constants.StandardNumberOfRepeats, DateTime.Now);                            
+                            db.Execute(query, list_en_ru[0].ToLower(), list_en_ru[1].ToLower(), Settings.StandardNumberOfRepeats, DateTime.Now);
                         }
 
                     var dbStatEn = Connect(Database_Name.Statistics);
@@ -113,7 +119,7 @@ namespace ReLearn
                         dbFileStream.Flush();
                     }
                 }
-            }          
+            }
         }
         //db.Query<Database_Words>("UPDATE " + TableNameLanguage + " SET DateRecurrence = DATETIME('NOW') WHERE Word = ?", s.Word);
         //db.Query<Database_Words>("UPDATE " + TableNameLanguage + " SET NumberLearn = " + s.NumberLearn + 1 + " WHERE Word = ?", s.Word);
@@ -128,14 +134,14 @@ namespace ReLearn
                 {
                     var query = $"UPDATE {TableNameLanguage} SET DateRecurrence = ?, NumberLearn = ? WHERE Word = ?";
                     db.Execute(query, DateTime.Now, s.NumberLearn + 1, s.Word);
-                }                       
+                }
             }
         }
 
         public static void UpdateImagesToRepeat()
         {
             var toDay = DateTime.Today.AddMonths(-1);
-            var db = Connect(Database_Name.Flags_DB); 
+            var db = Connect(Database_Name.Flags_DB);
             var dataBase = db.Query<Database_images>($"SELECT * FROM {TableNameImage} WHERE NumberLearn = 0");
             foreach (var s in dataBase)
             {
@@ -145,7 +151,7 @@ namespace ReLearn
                     db.Execute(query, DateTime.Now, s.NumberLearn + 1, s.Image_name);
                 }
             }
-        }    
+        }
     }
 
     public class Database_Words //Класс для считывания базы данных English
@@ -161,7 +167,7 @@ namespace ReLearn
         {
             this.DateRecurrence = DateTime.Today;
             this.Word = "";
-            this.NumberLearn = Magic_constants.StandardNumberOfRepeats;
+            this.NumberLearn = Settings.StandardNumberOfRepeats;
             this.TranslationWord = "";
         }
 
@@ -205,7 +211,7 @@ namespace ReLearn
             return this;
         }
     }
-    
+
     public class Database_for_stats // Класс для считывания базы данных Stats
     {
         public int NumberLearn { get; set; }
@@ -215,7 +221,6 @@ namespace ReLearn
         {
             NumberLearn = 0;
             DateRecurrence = DateTime.Today;
-        }       
+        }
     }
 }
-

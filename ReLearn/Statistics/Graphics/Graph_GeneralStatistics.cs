@@ -49,7 +49,7 @@ namespace ReLearn
         {
             Degree.DrawBorder(The_canvas, paint_border);
             float avg_numberLearn_stat = Statistics.GetAverageNumberLearn(Stats_database);
-            Degree.DrawPieChartWithText(The_canvas, avg_numberLearn_stat, Magic_constants.StandardNumberOfRepeats, Start, End,
+            Degree.DrawPieChartWithText(The_canvas, avg_numberLearn_stat, Settings.StandardNumberOfRepeats, Start, End,
             new PointF(Degree.Left + Degree.Width / 2f, Degree.Bottom - 27.5f * The_canvas.Width / 100f), Degree.Width / 2.5f);
             Degree.DrawText(The_canvas, font_up, Context.GetString(Resource.String.Degree_Of_Study), 
                 Degree.Left + Degree.Width / 12, Degree.Top + Degree.Height / 20);
@@ -103,7 +103,7 @@ namespace ReLearn
 
         void InconvenientWords_FRAME(FrameStatistics IW)
         {
-            int numberInconvenient = Stats_database.Count(r => r.NumberLearn == Magic_constants.MaxNumberOfRepeats);
+            int numberInconvenient = Stats_database.Count(r => r.NumberLearn == Settings.MaxNumberOfRepeats);
             IW.DrawBorder(The_canvas, paint_border);
             IW.ProgressLine(The_canvas, numberInconvenient, Stats_database.Count - numberInconvenient, Start, End);
             IW.DrawText(The_canvas, font_up,

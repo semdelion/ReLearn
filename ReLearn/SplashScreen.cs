@@ -12,7 +12,7 @@ namespace ReLearn
         {
             Additional_functions.Update_Configuration_Locale(this.Resources);
             base.OnCreate(savedInstanceState);
-            FrameStatistics.plain = Android.Graphics.Typeface.CreateFromAsset(Assets, Magic_constants.font);
+            FrameStatistics.plain = Android.Graphics.Typeface.CreateFromAsset(Assets, Settings.font);
             DataBase.InstallDatabaseFromAssets(Database_Name.English_DB);
             DataBase.InstallDatabaseFromAssets(Database_Name.Flags_DB);
             DataBase.InstallDatabaseFromAssets(Database_Name.Statistics);

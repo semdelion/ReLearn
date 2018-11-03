@@ -19,7 +19,7 @@ namespace ReLearn
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Languages_Stat);
 
-            Typeface face = Typeface.CreateFromAsset(Assets, Magic_constants.font);
+            Typeface face = Typeface.CreateFromAsset(Assets, Settings.font);
             TextView textView = new TextView(ApplicationContext)
             {
                 Text = GetString(Resource.String.Statistics),

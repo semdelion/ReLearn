@@ -40,7 +40,7 @@ namespace ReLearn
                 else
                 {
                     var query = $"INSERT INTO {TableNamesLanguage.My_Directly.ToString()} (Word, TranslationWord, NumberLearn, DateRecurrence) VALUES (?, ?, ?, ?)";
-                    database.Execute(query, Word.ToLower(), TranslationWord.ToLower(), Magic_constants.StandardNumberOfRepeats, DateTime.Now);                                    
+                    database.Execute(query, Word.ToLower(), TranslationWord.ToLower(), Settings.StandardNumberOfRepeats, DateTime.Now);                                    
                     Toast.MakeText(this, GetString(Resource.String.Word_Added), ToastLength.Short).Show();
                 }
                 Word = TranslationWord = "";

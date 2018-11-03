@@ -1,13 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using Calligraphy;
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
 using Android.Widget;
 using Android.Graphics;
 using Plugin.Settings;
@@ -22,13 +16,14 @@ namespace ReLearn
         Unknown
     }
 
-    enum Settings
+    enum DBSettings
     {
         Language,
         Language_repeat_count,
         Images_repeat_count,
         DictionaryNameLanguages,
-        DictionaryNameImage
+        DictionaryNameImage,
+        Pronunciation
     }
 
     class ButtonNext
@@ -37,7 +32,7 @@ namespace ReLearn
         public Button button = null;
     }
 
-    static class Magic_constants // Маааагия!
+    static class Settings // Маааагия!
     {
         public const int MaxNumberOfRepeats = 12;
         public const int StandardNumberOfRepeats = 6;
@@ -46,26 +41,64 @@ namespace ReLearn
         public const int TrueAnswer = 1;
         public const string font = "fonts/Roboto-Regular.ttf";
 
-        public static int NumberOfRepeatsImage {
-            get{
-                if (System.String.IsNullOrEmpty(CrossSettings.Current.GetValueOrDefault(Settings.Images_repeat_count.ToString(), null)))
-                    CrossSettings.Current.AddOrUpdateValue(Settings.Images_repeat_count.ToString(), "20");
-                return Convert.ToInt32(CrossSettings.Current.GetValueOrDefault(Settings.Images_repeat_count.ToString(), null));
+        public static int NumberOfRepeatsImage
+        {
+            get
+            {
+                if (System.String.IsNullOrEmpty(
+                       CrossSettings.Current.GetValueOrDefault(DBSettings.Images_repeat_count.ToString(), null)))
+                    CrossSettings.Current.AddOrUpdateValue(DBSettings.Images_repeat_count.ToString(), "20");
+                return Convert.ToInt32(
+                       CrossSettings.Current.GetValueOrDefault(DBSettings.Images_repeat_count.ToString(), null));
             }
-            set{
-                CrossSettings.Current.AddOrUpdateValue(Settings.Images_repeat_count.ToString(), Convert.ToString(value));
+            set
+            {
+                CrossSettings.Current.AddOrUpdateValue(DBSettings.Images_repeat_count.ToString(), Convert.ToString(value));
             }
         }
 
-        public static int NumberOfRepeatsLanguage 
+        public static int NumberOfRepeatsLanguage
         {
-            get{ 
-                if (System.String.IsNullOrEmpty(CrossSettings.Current.GetValueOrDefault(Settings.Language_repeat_count.ToString(), null)))
-                    CrossSettings.Current.AddOrUpdateValue(Settings.Language_repeat_count.ToString(), "20");
-                return Convert.ToInt32(CrossSettings.Current.GetValueOrDefault(Settings.Language_repeat_count.ToString(), null));
+            get
+            {
+                if (System.String.IsNullOrEmpty(
+                       CrossSettings.Current.GetValueOrDefault(DBSettings.Language_repeat_count.ToString(), null)))
+                    CrossSettings.Current.AddOrUpdateValue(DBSettings.Language_repeat_count.ToString(), "20");
+                return Convert.ToInt32(
+                       CrossSettings.Current.GetValueOrDefault(DBSettings.Language_repeat_count.ToString(), null));
             }
-            set { 
-                CrossSettings.Current.AddOrUpdateValue(Settings.Language_repeat_count.ToString(), Convert.ToString(value));
+            set
+            {
+                CrossSettings.Current.AddOrUpdateValue(DBSettings.Language_repeat_count.ToString(), Convert.ToString(value));
+            }
+        }
+
+        public static string CurrentPronunciation
+        {
+            get
+            {
+                if (System.String.IsNullOrEmpty(
+                       CrossSettings.Current.GetValueOrDefault(DBSettings.Pronunciation.ToString(), null)))
+                    CrossSettings.Current.AddOrUpdateValue(DBSettings.Pronunciation.ToString(), Pronunciation.en.ToString());
+                return CrossSettings.Current.GetValueOrDefault(DBSettings.Pronunciation.ToString(), null);
+            }
+            set
+            {
+                CrossSettings.Current.AddOrUpdateValue(DBSettings.Pronunciation.ToString(), Convert.ToString(value));
+            }
+        }
+        public static string Currentlanguage
+        {
+            get
+            {
+                if (System.String.IsNullOrEmpty(
+                       CrossSettings.Current.GetValueOrDefault(DBSettings.Language.ToString(), null)))
+                    CrossSettings.Current.AddOrUpdateValue(DBSettings.Language.ToString(), Language.en.ToString());
+                return CrossSettings.Current.GetValueOrDefault(DBSettings.Language.ToString(), null);
+            }
+            set
+            {
+                CrossSettings.Current.AddOrUpdateValue(DBSettings.Language.ToString(), Convert.ToString(value));
             }
         }
     }
@@ -74,7 +107,7 @@ namespace ReLearn
     {
         static void Color_TextView(TextView TextV, Color color)
         {
-            int TextTransparence = 225, 
+            int TextTransparence = 225,
                 BackgroundTransparence = 10;
             TextV.SetTextColor(Color.Argb(TextTransparence, color.R, color.G, color.B));
             TextV.SetBackgroundColor(Color.Argb(BackgroundTransparence, color.R, color.G, color.B));
@@ -82,14 +115,14 @@ namespace ReLearn
 
         public static void SetColorForItems(int degreeOfStudy, TextView TView)
         {
-            if (degreeOfStudy == Magic_constants.StandardNumberOfRepeats)
+            if (degreeOfStudy == Settings.StandardNumberOfRepeats)
                 Color_TextView(TView, new Color(238, 252, 255));
-            else if (degreeOfStudy > Magic_constants.StandardNumberOfRepeats) 
-                Color_TextView(TView, new Color(230, 
-                200 - ((degreeOfStudy - Magic_constants.StandardNumberOfRepeats) * 180 / Magic_constants.StandardNumberOfRepeats), 20));     //  230, 20, 20   to   230, 200, 20
+            else if (degreeOfStudy > Settings.StandardNumberOfRepeats)
+                Color_TextView(TView, new Color(230,
+                200 - ((degreeOfStudy - Settings.StandardNumberOfRepeats) * 180 / Settings.StandardNumberOfRepeats), 20));     //  230, 20, 20   to   230, 200, 20
             else
-                Color_TextView(TView, 
-                    new Color(20 + (degreeOfStudy * 180 / (Magic_constants.StandardNumberOfRepeats - 1)), 230, 20));                        //  180, 230, 20   to   20,  230, 20
+                Color_TextView(TView,
+                    new Color(20 + (degreeOfStudy * 180 / (Settings.StandardNumberOfRepeats - 1)), 230, 20));                        //  180, 230, 20   to   20,  230, 20
         }
 
         public static void RandomFourNumbers(int NotI, int count, out List<int> random_numbers)
@@ -107,14 +140,14 @@ namespace ReLearn
                 }
             }
             else
-                for(int i = 1; i < four; i++)
+                for (int i = 1; i < four; i++)
                     random_numbers[i] = (NotI + i) % count;
-            
+
         }
 
-        public static string NameOfTheFlag(Database_images image) => 
-            CrossSettings.Current.GetValueOrDefault(Settings.Language.ToString(), null) == Language.en.ToString() ? image.Name_image_en : image.Name_image_ru;
-        
+        public static string NameOfTheFlag(Database_images image) =>
+            Settings.Currentlanguage == Language.en.ToString() ? image.Name_image_en : image.Name_image_ru;
+
         public static void UpdateNumberLearn(List<Statistics> Stats, string identifier, int rand_word, int RepeatLearn)
         {
             for (int i = 0; i < Stats.Count; i++)
@@ -159,16 +192,14 @@ namespace ReLearn
         public static void Font()
         {
             CalligraphyConfig.InitDefault(new CalligraphyConfig.Builder()
-               .SetDefaultFontPath(Magic_constants.font)
+               .SetDefaultFontPath(Settings.font)
                .SetFontAttrId(Resource.Attribute.fontPath)
                .Build());
         }
 
         public static void Update_Configuration_Locale(Android.Content.Res.Resources resource) //TODO
         {
-            if (System.String.IsNullOrEmpty(Plugin.Settings.CrossSettings.Current.GetValueOrDefault(Settings.Language.ToString(), null)))
-                Plugin.Settings.CrossSettings.Current.AddOrUpdateValue(Settings.Language.ToString(), Language.en.ToString());
-            Locale locale = new Locale(Plugin.Settings.CrossSettings.Current.GetValueOrDefault(Settings.Language.ToString(), null));
+            Locale locale = new Locale(Settings.Currentlanguage);
             Configuration conf = new Configuration { Locale = locale };
             resource.UpdateConfiguration(conf, resource.DisplayMetrics);
             //this.CreateConfigurationContext(conf);

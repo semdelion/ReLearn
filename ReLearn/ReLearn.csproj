@@ -167,6 +167,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MyTextToSpeech.cs" />
     <Compile Include="SelectDictionary.cs" />
     <Compile Include="Languages\Languages_SelectDictionary.cs" />
     <Compile Include="Images\Flags_SelectDictionary.cs" />

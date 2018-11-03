@@ -22,8 +22,8 @@ namespace ReLearn
             Position = position_new;
             Word = word_new;
 
-            if (Learn + Learn_new > Magic_constants.MaxNumberOfRepeats)
-                Learn = Magic_constants.MaxNumberOfRepeats;
+            if (Learn + Learn_new > Settings.MaxNumberOfRepeats)
+                Learn = Settings.MaxNumberOfRepeats;
             else if (Learn + Learn_new < 0)
                 Learn = 0;
             else
@@ -39,8 +39,8 @@ namespace ReLearn
         public static float GetAverageNumberLearn(List<Database_for_stats> Database_NL_and_D)
         {
             float avg_numberLearn_stat = (float)Database_NL_and_D.Sum(
-                r => r.NumberLearn > Magic_constants.StandardNumberOfRepeats ?
-                Magic_constants.StandardNumberOfRepeats : r.NumberLearn) / (float)Database_NL_and_D.Count;
+                r => r.NumberLearn > Settings.StandardNumberOfRepeats ?
+                Settings.StandardNumberOfRepeats : r.NumberLearn) / (float)Database_NL_and_D.Count;
             return avg_numberLearn_stat;
         }
     }

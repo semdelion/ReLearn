@@ -70,7 +70,7 @@ namespace ReLearn
                 Bitmap Image2 = Bitmap.CreateScaledBitmap(image,
                     (int)((Width / 2.5) * 2 - WidthLine), (int)((Width / 2.5) * 2 - WidthLine), false);
                 Canvas baseCan = new Canvas(Image1);
-                FRAME.DrawPieChart(baseCan, Statistics.GetAverageNumberLearn(Database_NL_and_D), Magic_constants.StandardNumberOfRepeats,
+                FRAME.DrawPieChart(baseCan, Statistics.GetAverageNumberLearn(Database_NL_and_D), Settings.StandardNumberOfRepeats,
                                    Color.Rgb(0, 255, 255), Color.Rgb(50, 60, 126), (float)(baseCan.Height / 2.5), WidthLine);
                 Bitmap finalImage = CreateSingleImageFromMultipleImages(Image1, Image2,
                     new PointF(((FRAME.Left + FRAME.Width) / 2) - (float)(baseCan.Height / 2.5) + WidthLine / 2,

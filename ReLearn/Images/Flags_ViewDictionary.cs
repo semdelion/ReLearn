@@ -79,7 +79,7 @@ namespace ReLearn
                 else
                 {
                     List<Database_images> FD = new List<Database_images>();
-                    if (CrossSettings.Current.GetValueOrDefault(Settings.Language.ToString(), null) == Language.en.ToString())
+                    if (CrossSettings.Current.GetValueOrDefault(DBSettings.Language.ToString(), null) == Language.en.ToString())
                         FD = SearchWithGetTypeField("Name_image_en", e);
                     else
                         FD = SearchWithGetTypeField("Name_image_ru", e);
@@ -102,7 +102,7 @@ namespace ReLearn
 
         public void SortNamesImages()
         {
-            if (CrossSettings.Current.GetValueOrDefault(Settings.Language.ToString(), null) == Language.en.ToString())
+            if (CrossSettings.Current.GetValueOrDefault(DBSettings.Language.ToString(), null) == Language.en.ToString())
                 dataBase.Sort((x, y) => x.Name_image_en.CompareTo(y.Name_image_en));
             else
                 dataBase.Sort((x, y) => x.Name_image_ru.CompareTo(y.Name_image_ru));

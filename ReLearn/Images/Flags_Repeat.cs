@@ -15,28 +15,27 @@ namespace ReLearn
     class Flags_Repeat : AppCompatActivity
     {
         ImageView ImageView_image;
-        Button Button1;
-        Button Button2;
-        Button Button3;
-        Button Button4;
+        List<Button> Buttons { get; set; }
         ButtonNext Button_next;
         readonly List<Statistics> Stats = new List<Statistics>();
         List<Database_images> dataBase;
-        TextView Title_textView;
+        
         int Count = -1;
         int CurrentWordNumber { get; set; }
 
+        string TitleCount
+        {
+            set { FindViewById<TextView>(Resource.Id.Repeat_toolbar_textview_fl).Text = value; }
+        }
+
         void Button_enable(bool state)
         {
-            Button1.Enabled = Button2.Enabled = Button3.Enabled = Button4.Enabled = state;
+            foreach (var button in Buttons) button.Enabled = state;
             if (state)
             {
                 Button_next.State = StateButton.Unknown;
                 Button_next.button.Text = GetString(Resource.String.Unknown);
-                Button1.Background = GetDrawable(Resource.Drawable.button_style_standard);
-                Button2.Background = GetDrawable(Resource.Drawable.button_style_standard);
-                Button3.Background = GetDrawable(Resource.Drawable.button_style_standard);
-                Button4.Background = GetDrawable(Resource.Drawable.button_style_standard);
+                foreach (var button in Buttons) button.Background = GetDrawable(Resource.Drawable.button_style_standard);
             }
             else
             {
@@ -54,68 +53,54 @@ namespace ReLearn
 
         void NextTest() //new test
         {
-            Random rnd = new Random(unchecked((int)(DateTime.Now.Ticks)));
             Bitmap bitmap = BitmapFactory.DecodeStream(Application.Context.Assets.Open(
                 $"ImageFlags/{dataBase[CurrentWordNumber].Image_name}.png"));
             ImageView_image.SetImageBitmap(bitmap);
-            switch (rnd.Next(4))
-            {                            
-                case 0:{
-                    Random_Button(Button1, Button2, Button3, Button4);
-                    break;
-                }
-                case 1:{
-                    Random_Button(Button2, Button1, Button3, Button4);
-                    break;
-                }
-                case 2:{
-                    Random_Button(Button3, Button1, Button2, Button4);
-                    break;
-                }
-                case 3:{
-                    Random_Button(Button4, Button1, Button2, Button3);
-                    break;
-                }
-            }
+            const int four = 4;
+            int first = new Random(unchecked((int)(DateTime.Now.Ticks))).Next(four);
+            List<int> random_numbers = new List<int> { first, 0, 0, 0 };
+            for (int i = 1; i < four; i++)
+                random_numbers[i] = (first + i) % four;
+            Random_Button(Buttons[random_numbers[0]], Buttons[random_numbers[1]], Buttons[random_numbers[2]], Buttons[random_numbers[3]]);
         }
 
-        void Answer(Button B1, Button B2, Button B3, Button B4) // подсвечиваем правильный ответ, если мы ошиблись подсвечиваем неправвильный и паравильный 
+        void Answer(params Button[] buttons) // подсвечиваем правильный ответ, если мы ошиблись подсвечиваем неправвильный и паравильный 
         {
             Button_enable(false);
-            if (B1.Text == Additional_functions.NameOfTheFlag(dataBase[CurrentWordNumber]))
+            if (buttons[0].Text == Additional_functions.NameOfTheFlag(dataBase[CurrentWordNumber]))
             {
                 Additional_functions.UpdateNumberLearn(
                     Stats, Convert.ToString(dataBase[CurrentWordNumber].Image_name),
-                    CurrentWordNumber, dataBase[CurrentWordNumber].NumberLearn -= Magic_constants.TrueAnswer);
+                    CurrentWordNumber, dataBase[CurrentWordNumber].NumberLearn -= Settings.TrueAnswer);
                 Statistics.AnswerTrue++;
-                B1.Background = GetDrawable(Resource.Drawable.button_true);
+                buttons[0].Background = GetDrawable(Resource.Drawable.button_true);
             }
             else
             {
                 Additional_functions.UpdateNumberLearn(
                     Stats, Convert.ToString(dataBase[CurrentWordNumber].Image_name), 
-                    CurrentWordNumber, dataBase[CurrentWordNumber].NumberLearn += Magic_constants.FalseAnswer);
+                    CurrentWordNumber, dataBase[CurrentWordNumber].NumberLearn += Settings.FalseAnswer);
                 Statistics.AnswerFalse++;
-                B1.Background = GetDrawable(Resource.Drawable.button_false);
-                if (B2.Text == Additional_functions.NameOfTheFlag(dataBase[CurrentWordNumber]))
-                    B2.Background = GetDrawable(Resource.Drawable.button_true);
-                else if (B3.Text == Additional_functions.NameOfTheFlag(dataBase[CurrentWordNumber]))
-                    B3.Background = GetDrawable(Resource.Drawable.button_true);
-                else
-                    B4.Background = GetDrawable(Resource.Drawable.button_true);
+                buttons[0].Background = GetDrawable(Resource.Drawable.button_false);
+                for (int i = 1; i < buttons.Length; i++)
+                    if (buttons[i].Text == Additional_functions.NameOfTheFlag(dataBase[CurrentWordNumber]))
+                    {
+                        buttons[i].Background = GetDrawable(Resource.Drawable.button_true);
+                        return;
+                    }
             }
         }
 
         void Unknown()
         {
-            Button tmp;
-            if (Button1.Text == Additional_functions.NameOfTheFlag(dataBase[CurrentWordNumber])) tmp = Button1;
-            else if (Button2.Text == Additional_functions.NameOfTheFlag(dataBase[CurrentWordNumber])) tmp = Button2;
-            else if (Button3.Text == Additional_functions.NameOfTheFlag(dataBase[CurrentWordNumber])) tmp = Button3;
-            else tmp = Button4;
             Statistics.AnswerFalse++;
-            Additional_functions.UpdateNumberLearn(Stats, Convert.ToString(dataBase[CurrentWordNumber].Image_name), CurrentWordNumber, dataBase[CurrentWordNumber].NumberLearn += Magic_constants.NeutralAnswer);
-            tmp.Background = GetDrawable(Resource.Drawable.button_true);
+            Additional_functions.UpdateNumberLearn(Stats, Convert.ToString(dataBase[CurrentWordNumber].Image_name), CurrentWordNumber, dataBase[CurrentWordNumber].NumberLearn += Settings.NeutralAnswer);
+            for (int i = 0; i < Buttons.Count; i++)
+                if (Buttons[i].Text == Additional_functions.NameOfTheFlag(dataBase[CurrentWordNumber]))
+                {
+                    Buttons[i].Background = GetDrawable(Resource.Drawable.button_true);
+                    return;
+                }
         }
 
         void Update_Database() // изменение у BD элемента NumberLearn
@@ -129,20 +114,19 @@ namespace ReLearn
         }
 
         [Java.Interop.Export("Button_Flags_1_Click")]
-        public void Button_Flags_1_Click(View v) => Answer(Button1, Button2, Button3, Button4);
+        public void Button_Flags_1_Click(View v) => Answer(Buttons[0], Buttons[1], Buttons[2], Buttons[3]);
 
 
         [Java.Interop.Export("Button_Flags_2_Click")]
-        public void Button_Flags_2_Click(View v) => Answer(Button2, Button1, Button3, Button4);
+        public void Button_Flags_2_Click(View v) => Answer(Buttons[1], Buttons[0], Buttons[2], Buttons[3]);
 
 
         [Java.Interop.Export("Button_Flags_3_Click")]
-        public void Button_Flags_3_Click(View v) => Answer(Button3, Button1, Button2, Button4);
+        public void Button_Flags_3_Click(View v) => Answer(Buttons[2], Buttons[0], Buttons[1], Buttons[3]);
 
 
         [Java.Interop.Export("Button_Flags_4_Click")]
-        public void Button_Flags_4_Click(View v) => Answer(Button4, Button1, Button2, Button3);
-
+        public void Button_Flags_4_Click(View v) => Answer(Buttons[3], Buttons[0], Buttons[1], Buttons[2]);
 
         [Java.Interop.Export("Button_Flags_Next_Click")]
         public void Button_Flags_Next_Click(View v)
@@ -156,14 +140,14 @@ namespace ReLearn
             }
             else
             {
-                if (Count < Magic_constants.NumberOfRepeatsImage - 1)
+                if (Count < Settings.NumberOfRepeatsImage - 1)
                 {
                     Count++;
                     Random rnd = new Random(unchecked((int)(DateTime.Now.Ticks)));
                     CurrentWordNumber = rnd.Next(dataBase.Count);
                     NextTest();
                     Button_enable(true);
-                    Title_textView.Text = Convert.ToString(GetString(Resource.String.Repeat) + " " + (Count + 1) + "/" + Magic_constants.NumberOfRepeatsImage);
+                    TitleCount = Convert.ToString(GetString(Resource.String.Repeat) + " " + (Count + 1) + "/" + Settings.NumberOfRepeatsImage);
                 }
                 else
                 {
@@ -184,16 +168,17 @@ namespace ReLearn
             SetContentView(Resource.Layout.Flags_Repeat);
             
             var toolbarMain = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbarFlagsRepeat);
-            Title_textView = toolbarMain.FindViewById<TextView>(Resource.Id.Repeat_toolbar_textview_fl);
             SetSupportActionBar(toolbarMain);
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
 
             Statistics.Statistics_update();
             ImageView_image = FindViewById<ImageView>(Resource.Id.imageView_Flags_repeat);
-            Button1 = FindViewById<Button>(Resource.Id.button_F_choice1);
-            Button2 = FindViewById<Button>(Resource.Id.button_F_choice2);
-            Button3 = FindViewById<Button>(Resource.Id.button_F_choice3);
-            Button4 = FindViewById<Button>(Resource.Id.button_F_choice4);
+            Buttons = new List<Button>{
+                FindViewById<Button>(Resource.Id.button_F_choice1),
+                FindViewById<Button>(Resource.Id.button_F_choice2),
+                FindViewById<Button>(Resource.Id.button_F_choice3),
+                FindViewById<Button>(Resource.Id.button_F_choice4)
+            };
             Button_next = new ButtonNext
             {
                 button = FindViewById<Button>(Resource.Id.button_F_Next),

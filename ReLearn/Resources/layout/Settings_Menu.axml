@@ -78,4 +78,14 @@
 		android:layout_marginRight="40.0dp"
 		android:layout_marginLeft="40.0dp"
 		android:onClick="TextView_Language_Click"/>
+	<TextView
+		android:id="@+id/pronunciation"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:textColor="?android:attr/actionMenuTextColor"
+		android:textSize="20dp"
+		android:layout_marginTop="30.0dp"
+		android:layout_marginRight="40.0dp"
+		android:layout_marginLeft="40.0dp"
+		android:onClick="TextView_Pronunciation_Click"/>
 </LinearLayout>
