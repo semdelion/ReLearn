@@ -14,14 +14,14 @@ namespace ReLearn
         Color Start { get; }
         Color End { get; }
         string Object_name { get;}
-        List<Database_for_stats> Stats_database { get; }
+        List<DBStatistics> Stats_database { get; }
         readonly Color background_color = new Color( Color.Argb(150, 16, 19, 38) );
         readonly Paint paint_border = new Paint { StrokeWidth = 4, Color = Color.Rgb(215, 248, 254), AntiAlias = true };
         readonly Paint paint_text = new Paint { TextSize = 25, StrokeWidth = 4, Color = Color.Rgb(215, 248, 254), AntiAlias = true };
         float font_up;
         float font_low;
 
-        public Graph_General_Statistics(Context context, Color start, Color end, List<Database_for_stats> stats_database, string object_name , string Table_Name ) : base(context)
+        public Graph_General_Statistics(Context context, Color start, Color end, List<DBStatistics> stats_database, string object_name , string Table_Name ) : base(context)
         {
             Stats_database = stats_database;
             Start = start;
@@ -94,7 +94,7 @@ namespace ReLearn
             LW.DrawBorder(The_canvas, paint_border);
             LW.ProgressLine(The_canvas, numberLearned, Stats_database.Count - numberLearned, Start, End);
             LW.DrawText(The_canvas, font_up,
-                Additional_functions.GetResourceString($"Number_Learned_{Object_name}", this.Resources),
+                AdditionalFunctions.GetResourceString($"Number_Learned_{Object_name}", this.Resources),
                 LW.Left + 7f * LW.Width / 100, LW.Top + 7f * LW.Height / 100);
             LW.DrawText    (The_canvas, font_low, 
                 numberLearned + " " + Context.GetString(Resource.String.Of) + " " + Stats_database.Count, 
@@ -107,7 +107,7 @@ namespace ReLearn
             IW.DrawBorder(The_canvas, paint_border);
             IW.ProgressLine(The_canvas, numberInconvenient, Stats_database.Count - numberInconvenient, Start, End);
             IW.DrawText(The_canvas, font_up,
-                Additional_functions.GetResourceString($"Number_Inconvenient_{Object_name}", this.Resources),
+                AdditionalFunctions.GetResourceString($"Number_Inconvenient_{Object_name}", this.Resources),
                 IW.Left + 7f * IW.Width / 100, IW.Top + 7f * IW.Height / 100);
             IW.DrawText(The_canvas, font_low, 
                 numberInconvenient + " " + Context.GetString(Resource.String.Of) + " " + Stats_database.Count, 

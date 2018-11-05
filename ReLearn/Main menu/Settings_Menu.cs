@@ -66,7 +66,7 @@ namespace ReLearn
                 else
                     Settings.Currentlanguage = Language.ru.ToString();
 
-                Additional_functions.Update_Configuration_Locale(this.Resources);
+                AdditionalFunctions.Update_Configuration_Locale(this.Resources);
                 LanguageText = $"{ GetString(Resource.String.Language) }:   {listLanguage[e.Which]}";
                 StartActivity(new Intent(this, typeof(Settings_Menu)));
                 this.Finish();
@@ -116,7 +116,7 @@ namespace ReLearn
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            Additional_functions.Font();
+            AdditionalFunctions.Font();
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Settings_Menu);
             CheckedItemLanguage();

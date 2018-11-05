@@ -35,12 +35,12 @@ namespace ReLearn
         public void CreateViewForDictionary(string name, int ImageId)
         {
             var database = DataBase.Connect(Database_Name.English_DB);
-            List<Database_for_stats> Database_NL_and_D = database.Query<Database_for_stats>($"SELECT NumberLearn, DateRecurrence FROM {name}");
+            List<DBStatistics> Database_NL_and_D = database.Query<DBStatistics>($"SELECT NumberLearn, DateRecurrence FROM {name}");
             Dictionaries.DictionariesBitmap.Add(Dictionaries.CreateBitmapWithStats(BitmapFactory.DecodeResource(Resources, ImageId), Database_NL_and_D));
 
             ImageView DictionaryImage = new ImageView(this)
             {
-                LayoutParameters = Dictionaries.parmsImage,
+                LayoutParameters = Dictionaries.ParmsImage,
                 Tag = name.ToString()
             };
             DictionaryImage.SetImageBitmap(Dictionaries.DictionariesBitmap[Dictionaries.DictionariesBitmap.Count - 1]);
@@ -49,8 +49,8 @@ namespace ReLearn
 
             TextView DictionaryName = new TextView(this)
             {
-                Text = Additional_functions.GetResourceString(name.ToString(), this.Resources),
-                Gravity = Dictionaries.parmsImage.Gravity
+                Text = AdditionalFunctions.GetResourceString(name.ToString(), this.Resources),
+                Gravity = Dictionaries.ParmsImage.Gravity
             };
             DictionaryName.SetTextColor(Color.Rgb(215, 248, 254));
             FindViewById<LinearLayout>(Resource.Id.Languages_SelectDictionary).AddView(DictionaryName);
@@ -59,7 +59,7 @@ namespace ReLearn
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            Additional_functions.Font();
+            AdditionalFunctions.Font();
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Languages_SelectDictionary);
             var toolbarMain = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbarLanguages_SelectDictionary);
@@ -79,7 +79,7 @@ namespace ReLearn
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
             if (item.ItemId == Android.Resource.Id.Home)
-                this.Finish();
+                Finish();
             return true;
         }
         protected override void AttachBaseContext(Context newbase) => base.AttachBaseContext(CalligraphyContextWrapper.Wrap(newbase));

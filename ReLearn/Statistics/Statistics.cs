@@ -11,12 +11,14 @@ namespace ReLearn
         public string Word { get; }                          //Word Ebglish or Flag - "name"
         public static int AnswerTrue = 0;                    //Answer ? true or false 
         public static int AnswerFalse = 0;
-        public int Learn { get; }
+        public int Learn { get; set; }
+
         public static void Statistics_update()
         {
             AnswerTrue = 0;                    
             AnswerFalse = 0;
         }
+
         public Statistics(int position_new, string word_new, int Learn_new)
         {
             Position = position_new;
@@ -30,18 +32,23 @@ namespace ReLearn
                 Learn = Learn_new;
         }
 
-        public static void Add_Statistics(int True, int False, string TableName)      // add stats to the database
-        {
-            var database = DataBase.Connect(Database_Name.Statistics);
-            var query = $"INSERT INTO {TableName}_Statistics (True, False, DateOfTesting) VALUES (?, ?, ?)";
-            database.Execute(query, True, False, DateTime.Now);
-        }
-        public static float GetAverageNumberLearn(List<Database_for_stats> Database_NL_and_D)
+        public static float GetAverageNumberLearn(List<DBStatistics> Database_NL_and_D)
         {
             float avg_numberLearn_stat = (float)Database_NL_and_D.Sum(
                 r => r.NumberLearn > Settings.StandardNumberOfRepeats ?
                 Settings.StandardNumberOfRepeats : r.NumberLearn) / (float)Database_NL_and_D.Count;
             return avg_numberLearn_stat;
+        }
+
+        public static void Add(List<Statistics> Stats, string identifier, int rand_word, int RepeatLearn, int answer)
+        {
+            foreach (var s in Stats)
+                if (s.Word == identifier)
+                {
+                    s.Learn += answer;
+                    return;
+                }
+            Stats.Add(new Statistics(rand_word, identifier, RepeatLearn + answer));
         }
     }
 

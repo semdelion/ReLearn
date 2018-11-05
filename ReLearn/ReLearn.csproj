@@ -167,12 +167,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Database\DatabaseStatistics.cs" />
+    <Compile Include="Database\DatabaseImages.cs" />
+    <Compile Include="Database\DatabaseWords.cs" />
     <Compile Include="MyTextToSpeech.cs" />
     <Compile Include="SelectDictionary.cs" />
     <Compile Include="Languages\Languages_SelectDictionary.cs" />
     <Compile Include="Images\Flags_SelectDictionary.cs" />
     <Compile Include="Main menu\About_us.cs" />
-    <Compile Include="Database\Additional_functions.cs" />
+    <Compile Include="AdditionalFunctions.cs" />
     <Compile Include="Database\DataBase.cs" />
     <Compile Include="Languages\Languages.cs" />
     <Compile Include="Languages\Languages_Add.cs" />
@@ -186,6 +189,7 @@
     <Compile Include="Images\Flags_Repeat.cs" />
     <Compile Include="Images\Flags_Stats.cs" />
     <Compile Include="Images\Flags_ViewDictionary.cs" />
+    <Compile Include="Database\Settings.cs" />
     <Compile Include="Statistics\Graphics\FrameStatistics.cs" />
     <Compile Include="Statistics\Graphics\Graph_GeneralStatistics.cs" />
     <Compile Include="Statistics\Graphics\Graph_Statistics.cs" />

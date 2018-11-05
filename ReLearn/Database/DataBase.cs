@@ -27,8 +27,8 @@ namespace ReLearn
     {
         en,
         ru
-
     }
+
     enum Pronunciation
     {
         en,
@@ -48,7 +48,7 @@ namespace ReLearn
             {
                 if (String.IsNullOrEmpty(CrossSettings.Current.GetValueOrDefault(DBSettings.DictionaryNameLanguages.ToString(), null)))
                     CrossSettings.Current.AddOrUpdateValue(DBSettings.DictionaryNameLanguages.ToString(), TableNamesLanguage.Popular_Words.ToString());
-                Enum.TryParse(CrossSettings.Current.GetValueOrDefault(DBSettings.DictionaryNameLanguages.ToString(), null), out TableNamesLanguage name);
+                    Enum.TryParse(CrossSettings.Current.GetValueOrDefault(DBSettings.DictionaryNameLanguages.ToString(), null), out TableNamesLanguage name);
                 return name;
             }
             set
@@ -56,6 +56,7 @@ namespace ReLearn
                 CrossSettings.Current.AddOrUpdateValue(DBSettings.DictionaryNameLanguages.ToString(), value.ToString());
             }
         }
+
         public static TableNamesImage TableNameImage
         {
             get
@@ -84,17 +85,17 @@ namespace ReLearn
             {
                 if (db.GetTableInfo(tableName).Count == 0)
                 {
-                    db.Query<Database_Words>($"CREATE TABLE {tableName} (_id int PRIMARY KEY, Word string, TranslationWord string, NumberLearn int, DateRecurrence DateTime, Context string, Image string)");
+                    db.Query<DBWords>($"CREATE TABLE {tableName} (_id int PRIMARY KEY, Word string, TranslationWord string, NumberLearn int, DateRecurrence DateTime, Context string, Image string)");
                     using (StreamReader reader = new StreamReader(Application.Context.Assets.Open($"Database/{tableName}.txt")))
-                        while (reader.Peek() >= 0)
+                    {
+                        string str_line;
+                        while ((str_line = reader.ReadLine()) != null)
                         {
-                            string str_line = reader.ReadLine();
                             var list_en_ru = str_line.Split('|');
-
                             var query = $"INSERT INTO {tableName} (Word, TranslationWord, NumberLearn, DateRecurrence) VALUES (?, ?, ?, ?)";
                             db.Execute(query, list_en_ru[0].ToLower(), list_en_ru[1].ToLower(), Settings.StandardNumberOfRepeats, DateTime.Now);
                         }
-
+                    }
                     var dbStatEn = Connect(Database_Name.Statistics);
                     dbStatEn.Query<Database_Statistics>($"CREATE TABLE {tableName}_Statistics (_id int PRIMARY KEY, True int, False int, DateOfTesting DateTime)");
                 }
@@ -121,13 +122,12 @@ namespace ReLearn
                 }
             }
         }
-        //db.Query<Database_Words>("UPDATE " + TableNameLanguage + " SET DateRecurrence = DATETIME('NOW') WHERE Word = ?", s.Word);
-        //db.Query<Database_Words>("UPDATE " + TableNameLanguage + " SET NumberLearn = " + s.NumberLearn + 1 + " WHERE Word = ?", s.Word);
+        
         public static void UpdateWordsToRepeat()
         {
             var toDay = DateTime.Today.AddMonths(-1);
             var db = Connect(Database_Name.English_DB);
-            var dataBase = db.Query<Database_Words>($"SELECT * FROM {TableNameLanguage} WHERE NumberLearn = 0 ");
+            var dataBase = db.Query<DBWords>($"SELECT * FROM {TableNameLanguage} WHERE NumberLearn = 0 ");
             foreach (var s in dataBase)
             {
                 if (s.DateRecurrence < toDay)
@@ -142,7 +142,7 @@ namespace ReLearn
         {
             var toDay = DateTime.Today.AddMonths(-1);
             var db = Connect(Database_Name.Flags_DB);
-            var dataBase = db.Query<Database_images>($"SELECT * FROM {TableNameImage} WHERE NumberLearn = 0");
+            var dataBase = db.Query<DBImages>($"SELECT * FROM {TableNameImage} WHERE NumberLearn = 0");
             foreach (var s in dataBase)
             {
                 if (s.DateRecurrence < toDay)
@@ -151,76 +151,6 @@ namespace ReLearn
                     db.Execute(query, DateTime.Now, s.NumberLearn + 1, s.Image_name);
                 }
             }
-        }
-    }
-
-    public class Database_Words //Класс для считывания базы данных English
-    {
-        [PrimaryKey, AutoIncrement, Column("_id")]
-        public int Id { get; set; }
-        public string Word { get; set; }
-        public string TranslationWord { get; set; }
-        public int NumberLearn { get; set; }
-        public DateTime DateRecurrence { get; set; }
-
-        public Database_Words()
-        {
-            this.DateRecurrence = DateTime.Today;
-            this.Word = "";
-            this.NumberLearn = Settings.StandardNumberOfRepeats;
-            this.TranslationWord = "";
-        }
-
-        public Database_Words(Database_Words x)
-        {
-            this.DateRecurrence = x.DateRecurrence;
-            this.Word = x.Word;
-            this.NumberLearn = x.NumberLearn;
-            this.TranslationWord = x.TranslationWord;
-        }
-
-        public Database_Words Find() => this;
-    }
-
-    public class Database_images // Класс для считывания базы данных flags
-    {
-        [PrimaryKey, AutoIncrement, Column("_id")]
-        public int Id { get; set; }
-        public string Image_name { get; set; }
-        public string Name_image_en { get; set; }
-        public string Name_image_ru { get; set; }
-        public int NumberLearn { get; set; }
-        public DateTime DateRecurrence { get; set; }
-
-        public Database_images()
-        {
-            Image_name = null;
-            Name_image_en = null;
-            Name_image_ru = null;
-            NumberLearn = 0;
-            DateRecurrence = DateTime.Today;
-        }
-
-        public Database_images Add(string image_n, string flag_en, string flag_ru, int nLearn, DateTime date)
-        {
-            this.Image_name = image_n;
-            this.Name_image_en = flag_en;
-            this.Name_image_ru = flag_ru;
-            this.NumberLearn = nLearn;
-            this.DateRecurrence = date;
-            return this;
-        }
-    }
-
-    public class Database_for_stats // Класс для считывания базы данных Stats
-    {
-        public int NumberLearn { get; set; }
-        public DateTime DateRecurrence { get; set; }
-
-        public Database_for_stats()
-        {
-            NumberLearn = 0;
-            DateRecurrence = DateTime.Today;
         }
     }
 }

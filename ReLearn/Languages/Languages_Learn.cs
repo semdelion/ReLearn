@@ -22,7 +22,7 @@ namespace ReLearn
     class Languages_Learn : AppCompatActivity
     {
         MyTextToSpeech MySpeech { get; set; }
-        List<Database_Words> WordDatabase { get; set; }
+        List<DBWords> WordDatabase { get; set; }
         SQLite.SQLiteConnection DatabaseConnect { get; set; }
         int Count { get; set; }
         bool Voice_Enable = true;
@@ -77,7 +77,7 @@ namespace ReLearn
         }
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            Additional_functions.Font();
+            AdditionalFunctions.Font();
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Languages_Learn);
             var toolbarMain = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbarLanguagesLearn);
@@ -87,7 +87,7 @@ namespace ReLearn
             try
             {
                 DatabaseConnect = DataBase.Connect(Database_Name.English_DB);
-                WordDatabase = DatabaseConnect.Query<Database_Words>($"SELECT * FROM {DataBase.TableNameLanguage} WHERE NumberLearn != 0 ORDER BY DateRecurrence ASC");
+                WordDatabase = DatabaseConnect.Query<DBWords>($"SELECT * FROM {DataBase.TableNameLanguage} WHERE NumberLearn != 0 ORDER BY DateRecurrence ASC");
                 Button_Languages_Learn_Next_Click(null);
             }
             catch

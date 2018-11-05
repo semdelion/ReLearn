@@ -21,7 +21,7 @@ namespace ReLearn
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            Additional_functions.Font();
+            AdditionalFunctions.Font();
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.About_us);
             var toolbarMain = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar_About_Us);

@@ -18,14 +18,14 @@ namespace ReLearn
         public List<Bitmap> DictionariesBitmap { get; set; }
         public List<ImageView> DictionariesView { get; set; }
         public int Width { get; set; }
-        public LinearLayout.LayoutParams parmsImage { get; set; } 
+        public LinearLayout.LayoutParams ParmsImage { get; set; } 
 
         public SelectDictionary(int width)
         {
             DictionariesBitmap = new List<Bitmap>();
             DictionariesView = new List<ImageView>();
             Width = width;
-            parmsImage  = new LinearLayout.LayoutParams(width, width)
+            ParmsImage  = new LinearLayout.LayoutParams(width, width)
             { Gravity = GravityFlags.Center, TopMargin = 10 };
         }
 
@@ -60,7 +60,7 @@ namespace ReLearn
                 }
         }
 
-        public Bitmap CreateBitmapWithStats(Bitmap image, List<Database_for_stats> Database_NL_and_D)
+        public Bitmap CreateBitmapWithStats(Bitmap image, List<DBStatistics> Database_NL_and_D)
         {
             try
             {

@@ -11,22 +11,15 @@ namespace ReLearn
     class Flags : AppCompatActivity
     {
         [Java.Interop.Export("Button_Flags_Learn_Click")]
-        public void Button_Flags_Learn_Click(View v)
-        {
-            Intent intent_flags_learn = new Intent(this, typeof(Flags_Learn));
-            StartActivity(intent_flags_learn);
-        }
+        public void Button_Flags_Learn_Click(View v) => StartActivity(new Intent(this, typeof(Flags_Learn)));
+        
 
         [Java.Interop.Export("Button_Flags_Repeat_Click")]
-        public void Button_Flags_Repeat_Click(View v)
-        {
-            Intent intent_flags_repeat = new Intent(this, typeof(Flags_Repeat));
-            StartActivity(intent_flags_repeat);
-        }      
-
+        public void Button_Flags_Repeat_Click(View v) => StartActivity(new Intent(this, typeof(Flags_Repeat)));
+             
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            Additional_functions.Font();
+            AdditionalFunctions.Font();
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Flags);
             var toolbarMain = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbarFlags);
@@ -44,22 +37,13 @@ namespace ReLearn
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
             if (item.ItemId == Resource.Id.Stats_Flags)
-            {
-                Intent intent_flags_stat = new Intent(this, typeof(Flags_Stats));
-                StartActivity(intent_flags_stat);
-            }
+                StartActivity(new Intent(this, typeof(Flags_Stats)));
             else if (item.ItemId == Resource.Id.MenuFlagsSelectDictionary)
-            {
-                Intent intent_SelectDictionary = new Intent(this, typeof(Flags_SelectDictionary));
-                StartActivity(intent_SelectDictionary);
-            }
+                StartActivity(new Intent(this, typeof(Flags_SelectDictionary)));
             else if(item.ItemId == Resource.Id.View_dictionary_image)
-            {
-                Intent intent_flags_view = new Intent(this, typeof(Flags_View_Dictionary));
-                StartActivity(intent_flags_view);
-            }
+                StartActivity(new Intent(this, typeof(Flags_View_Dictionary)));
             else if(item.ItemId == Android.Resource.Id.Home)
-                this.Finish();
+                Finish();
             return true;
         }
 

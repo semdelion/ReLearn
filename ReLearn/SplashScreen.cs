@@ -10,7 +10,7 @@ namespace ReLearn
     {     
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            Additional_functions.Update_Configuration_Locale(this.Resources);
+            AdditionalFunctions.Update_Configuration_Locale(this.Resources);
             base.OnCreate(savedInstanceState);
             FrameStatistics.plain = Android.Graphics.Typeface.CreateFromAsset(Assets, Settings.font);
             DataBase.InstallDatabaseFromAssets(Database_Name.English_DB);

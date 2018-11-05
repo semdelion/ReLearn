@@ -14,12 +14,11 @@ namespace ReLearn
     class Languages_View_Dictionary : AppCompatActivity
     {
         ListView listViewDel;
-        CustomAdapter adapter;
-        List<Database_Words> dataBase;
+        List<DBWords> dataBase;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            Additional_functions.Font();
+            AdditionalFunctions.Font();
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Languages_ViewDictionary);
             var toolbarMain = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbarLanguagesDelete);
@@ -29,11 +28,9 @@ namespace ReLearn
             listViewDel = FindViewById<ListView>(Resource.Id.listView_dictionary);    
             
             var db = DataBase.Connect(Database_Name.English_DB);
-            dataBase = db.Query<Database_Words>($"SELECT * FROM {DataBase.TableNameLanguage}");
+            dataBase = db.Query<DBWords>($"SELECT * FROM {DataBase.TableNameLanguage}");
             dataBase.Sort((x, y) => x.Word.CompareTo(y.Word));
-            
-            adapter = new CustomAdapter(this, dataBase);
-            listViewDel.Adapter = adapter;
+            listViewDel.Adapter = new CustomAdapter(this, dataBase);
         }
 
         public override bool OnPrepareOptionsMenu(IMenu menu)
@@ -49,19 +46,18 @@ namespace ReLearn
                     listViewDel.Adapter = new CustomAdapter(this, dataBase);
                 else
                 {
-                    List<Database_Words> FD = new List<Database_Words>();
+                    List<DBWords> FD = new List<DBWords>();
                     foreach (var word in dataBase)
                         if (word.Word.Substring(0, ((e.NewText.Length > word.Word.Length) ? 0 : e.NewText.Length)) == e.NewText)
                             FD.Add(word);
-                    var ad = new CustomAdapter(this, FD);
-                    listViewDel.Adapter = ad;
+                    listViewDel.Adapter = new CustomAdapter(this, FD);
                 }
             };
 
             listViewDel.ItemClick += (s, args) =>
             {
                 var word = listViewDel.Adapter.GetItem(args.Position);
-                Database_Words words = new Database_Words();
+                DBWords words = new DBWords();
                 foreach (var item in dataBase)
                     if (item.Word == word.ToString())
                     {
@@ -75,18 +71,17 @@ namespace ReLearn
                 alert.SetNeutralButton("ок", delegate
                 {
                     dataBase.Remove(words);
-                    adapter = new CustomAdapter(this, dataBase);
-                    listViewDel.Adapter = adapter;
+                    listViewDel.Adapter = new CustomAdapter(this, dataBase);
 
                     var database = DataBase.Connect(Database_Name.English_DB);
-                    database.CreateTable<Database_Words>();
-                    int search_occurrences = database.Query<Database_Words>($"SELECT * FROM {DataBase.TableNameLanguage}").Count;
+                    database.CreateTable<DBWords>();
+                    int search_occurrences = database.Query<DBWords>($"SELECT * FROM {DataBase.TableNameLanguage}").Count;
 
                     if (search_occurrences == 0)
                         Toast.MakeText(this, GetString(Resource.String.Word_Not_Exists), ToastLength.Short).Show();
                     else
                     {
-                        database.Query<Database_Words>($"DELETE FROM {DataBase.TableNameLanguage} WHERE Word = ?", word.ToString());// поиск вхождения слова в БД
+                        database.Query<DBWords>($"DELETE FROM {DataBase.TableNameLanguage} WHERE Word = ?", word.ToString());// поиск вхождения слова в БД
                             Toast.MakeText(this, GetString(Resource.String.Word_Delete), ToastLength.Short).Show();
                     }
                 });
@@ -100,23 +95,20 @@ namespace ReLearn
             if (item.ItemId == Resource.Id.increase)
             {
                 dataBase.Sort((x, y) => x.NumberLearn.CompareTo(y.NumberLearn));
-                adapter = new CustomAdapter(this, dataBase);
-                listViewDel.Adapter = adapter;
+                listViewDel.Adapter = new CustomAdapter(this, dataBase);
             }
             else if (item.ItemId == Resource.Id.decrease)
             {
                 dataBase.Sort((x, y) => y.NumberLearn.CompareTo(x.NumberLearn));
-                adapter = new CustomAdapter(this, dataBase);
-                listViewDel.Adapter = adapter;
+                listViewDel.Adapter = new CustomAdapter(this, dataBase);
             }
             else if (item.ItemId == Resource.Id.ABC)
             {
                 dataBase.Sort((x, y) => x.Word.CompareTo(y.Word));
-                adapter = new CustomAdapter(this, dataBase);
-                listViewDel.Adapter = adapter;
+                listViewDel.Adapter = new CustomAdapter(this, dataBase);
             }
             else if (item.ItemId == Android.Resource.Id.Home)
-                this.Finish();
+                Finish();
             
             return true;
         }

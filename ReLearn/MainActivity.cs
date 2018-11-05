@@ -18,22 +18,14 @@ namespace ReLearn
     public class MainActivity : AppCompatActivity
     {
         [Java.Interop.Export("Button_Language_Click")]
-        public void Button_Language_Click(View v)
-        {
-            Intent intent_language = new Intent(this, typeof(Languages));
-            StartActivity(intent_language);
-        }
-
+        public void Button_Language_Click(View v) => StartActivity(new Intent(this, typeof(Languages)));
+        
         [Java.Interop.Export("Button_Flags_Click")]
-        public void Button_Flags_Click(View v)
-        {
-            Intent intent_flags = new Intent(this, typeof(Flags));
-            StartActivity(intent_flags);
-        }    
-
+        public void Button_Flags_Click(View v) => StartActivity(new Intent(this, typeof(Flags)));
+          
         protected override void OnCreate(Bundle savedInstanceState)
         {          
-            Additional_functions.Font();
+            AdditionalFunctions.Font();
             SetContentView(Resource.Layout.Main);
             var toolbarMain = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbarMain);
             SetSupportActionBar(toolbarMain);
@@ -42,32 +34,23 @@ namespace ReLearn
 
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
-            this.MenuInflater.Inflate(Resource.Menu.settings, menu);
+            MenuInflater.Inflate(Resource.Menu.settings, menu);
             return base.OnCreateOptionsMenu(menu);
         }
       
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
             if(item.ItemId == Resource.Id.about_us)
-            {
-                Intent intent_about_us = new Intent(this, typeof(About_us));
-                StartActivity(intent_about_us);
-            }
-            else if(item.ItemId == Resource.Id.Settings_Menu)
-            {
-                Intent intent_Settings_Menu = new Intent(this, typeof(Settings_Menu));
-                StartActivity(intent_Settings_Menu);
-                this.Finish();
-
-            }
+                StartActivity(new Intent(this, typeof(About_us)));
             else if(item.ItemId == Resource.Id.Feedback)
-            {
-                Intent intent_Feedback = new Intent(this, typeof(Feedback));
-                StartActivity(intent_Feedback);
-            }
+                StartActivity(new Intent(this, typeof(Feedback)));
             else if (item.ItemId == Android.Resource.Id.Home)
-                this.Finish();
- 
+                Finish();
+            else if (item.ItemId == Resource.Id.Settings_Menu)
+            {
+                StartActivity(new Intent(this, typeof(Settings_Menu)));
+                Finish();
+            }
             return true;
         }      
 

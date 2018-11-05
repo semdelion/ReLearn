@@ -15,7 +15,7 @@ namespace ReLearn
     class Flags_Learn : AppCompatActivity
     {
         int Count { get; set; }
-        List<Database_images> ImagesDatabase { get; set; }
+        List<DBImages> ImagesDatabase { get; set; }
         SQLite.SQLiteConnection DatabaseConnect { get; set; }
 
         Bitmap ImageViewBox
@@ -49,7 +49,7 @@ namespace ReLearn
                 ImageViewBox = BitmapFactory.DecodeStream(
                     Application.Context.Assets.Open(
                         $"ImageFlags/{ImagesDatabase[Count].Image_name}.png"));
-                ImageName = Additional_functions.NameOfTheFlag(ImagesDatabase[Count++]);
+                ImageName = AdditionalFunctions.NameOfTheFlag(ImagesDatabase[Count++]);
             }
             else
                 Toast.MakeText(this, GetString(Resource.String.DictionaryOver), ToastLength.Short).Show();
@@ -57,7 +57,7 @@ namespace ReLearn
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            Additional_functions.Font();
+            AdditionalFunctions.Font();
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Flags_Learn);
             var toolbarMain = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbarFlagsLearn);
@@ -66,7 +66,7 @@ namespace ReLearn
             try
             {
                 DatabaseConnect = DataBase.Connect(Database_Name.Flags_DB);
-                ImagesDatabase = DatabaseConnect.Query<Database_images>($"SELECT * FROM {DataBase.TableNameImage} WHERE NumberLearn != 0 ORDER BY DateRecurrence ASC");
+                ImagesDatabase = DatabaseConnect.Query<DBImages>($"SELECT * FROM {DataBase.TableNameImage} WHERE NumberLearn != 0 ORDER BY DateRecurrence ASC");
                 Button_Flags_Learn_Next_Click(null);
             }
             catch
@@ -77,7 +77,7 @@ namespace ReLearn
 
         public override bool OnOptionsItemSelected(IMenuItem item) // button home
         {
-            this.Finish();
+            Finish();
             return true;
         }
 

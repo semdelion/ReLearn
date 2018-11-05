@@ -19,9 +19,9 @@ namespace ReLearn
     class CustomAdapter_ImageText : BaseAdapter
     {
         private Activity activity;
-        private List<Database_images> list;
+        private List<DBImages> list;
 
-        public CustomAdapter_ImageText(Activity activity, List<Database_images> list)
+        public CustomAdapter_ImageText(Activity activity, List<DBImages> list)
         {
             this.activity = activity;
             this.list = list;
@@ -55,7 +55,7 @@ namespace ReLearn
             Bitmap bitmap = BitmapFactory.DecodeStream(his);
             ImageView.SetImageBitmap(bitmap);
 
-            Additional_functions.SetColorForItems(list[position].NumberLearn, TextView);
+            AdditionalFunctions.SetColorForItems(list[position].NumberLearn, TextView);
 
             if (CrossSettings.Current.GetValueOrDefault(DBSettings.Language.ToString(), null) == Language.en.ToString())
                 TextView.Text = list[position].Name_image_en;

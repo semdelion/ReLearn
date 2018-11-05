@@ -16,9 +16,9 @@ namespace ReLearn.Resources
     public class CustomAdapter : BaseAdapter
     {
         private Activity activity;
-        private List<Database_Words> list;
+        private List<DBWords> list;
 
-        public CustomAdapter(Activity activity, List<Database_Words> list)
+        public CustomAdapter(Activity activity, List<DBWords> list)
         {
             this.activity = activity;
             this.list = list;
@@ -36,7 +36,7 @@ namespace ReLearn.Resources
             var view = convertView ?? activity.LayoutInflater.Inflate(Resource.Layout.item_view_dictionary_word, parent, false);
             var TView = view.FindViewById<TextView>(Resource.Id.item_view_dictionary);
 
-            Additional_functions.SetColorForItems(list[position].NumberLearn, TView);
+            AdditionalFunctions.SetColorForItems(list[position].NumberLearn, TView);
          
             TView.Text = list[position].Word +"  -  "+ list[position].TranslationWord;
             return view;

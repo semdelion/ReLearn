@@ -31,8 +31,8 @@ namespace ReLearn
             try
             {
                 var database = DataBase.Connect(Database_Name.English_DB);
-                database.CreateTable<Database_Words>();
-                var search_occurrences = database.Query<Database_Words>($"SELECT * FROM {TableNamesLanguage.My_Directly.ToString()} WHERE Word = ?", Word);// поиск вхождения слова в БД
+                database.CreateTable<DBWords>();
+                var search_occurrences = database.Query<DBWords>($"SELECT * FROM {TableNamesLanguage.My_Directly.ToString()} WHERE Word = ?", Word);// поиск вхождения слова в БД
                 if (Word == "" || TranslationWord == "")
                     Toast.MakeText(this, GetString(Resource.String.Enter_word), ToastLength.Short).Show();
                 else if (search_occurrences.Count != 0)
@@ -54,7 +54,7 @@ namespace ReLearn
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            Additional_functions.Font();
+            AdditionalFunctions.Font();
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Languages_Add);
             var toolbarMain = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbarEnglishAdd);
@@ -64,7 +64,7 @@ namespace ReLearn
 
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
-            this.Finish();
+            Finish();
             return true;
         }
 
