@@ -7,6 +7,7 @@ using Android.Graphics;
 using Plugin.Settings;
 using Java.Util;
 using Android.Content.Res;
+using Android.Content;
 
 namespace ReLearn
 {
@@ -175,6 +176,19 @@ namespace ReLearn
             }
             return numberChar;
         }
+
+        //public static int GetColor(Context context, int id)
+        //{
+        //    if (Android.OS.Build.VERSION.SdkInt >= Android.OS.Build.VERSION_CODES.M)
+        //    {
+        //        return context.GetColor(id);
+        //    }
+        //    else
+        //    {
+        //        //noinspection deprecation
+        //        return context.Resources.GetColor(id);
+        //    }
+        //}
 
         public static string GetResourceString(string str, Android.Content.Res.Resources resource)
         {

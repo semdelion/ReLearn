@@ -28,7 +28,7 @@ namespace ReLearn.Resources
         
         public override Java.Lang.Object GetItem(int position) => list[position].Word;
         
-        public override long GetItemId(int position)=> list[position].NumberLearn;
+        public override long GetItemId(int position) => list[position].NumberLearn;
 
 
         public override View GetView(int position, View convertView, ViewGroup parent)

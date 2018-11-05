@@ -41,7 +41,7 @@
 				android:layout_marginRight="25.0dp"
 				android:layout_marginLeft="25.0dp" />
             <Button
-                android:text=""
+                android:text="1"
                 android:layout_width="match_parent"
                 android:layout_height="55.0dp"
                 android:id="@+id/button_F_choice1"
@@ -56,7 +56,7 @@
 				android:onClick="Button_Flags_1_Click"
 				android:minHeight="60dp"/>
             <Button
-                android:text=""
+                android:text="2"
                 android:layout_width="match_parent"
                 android:layout_height="55.0dp"
                 android:layout_marginBottom="10dp"
@@ -70,7 +70,7 @@
 				android:onClick="Button_Flags_2_Click"
 				android:minHeight="60dp" />
             <Button
-                android:text=""
+                android:text="3"
                 android:layout_width="match_parent"
                 android:layout_height="55.0dp"
                 android:layout_marginBottom="10dp"
@@ -84,7 +84,7 @@
 				android:onClick="Button_Flags_3_Click"
 				android:minHeight="60dp" />
 			<Button
-				android:text=""
+				android:text="4"
 				android:layout_width="match_parent"
 				android:layout_height="55.0dp"
 				android:layout_marginRight="40dp"

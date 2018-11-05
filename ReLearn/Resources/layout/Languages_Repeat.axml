@@ -43,7 +43,7 @@
                 android:layout_marginTop="0.7dp"
                 android:textSize="25dp" />
 			<TextView
-				android:text=""
+				android:text="Word"
 				android:layout_width="match_parent"
 				android:layout_height="150.0dp"
 				android:id="@+id/textView_Eng_Word"
@@ -55,7 +55,7 @@
 				android:textColor="#d7f8fe"
 				android:gravity="center_horizontal" />
             <Button
-                android:text=""
+                android:text="1"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
                 android:id="@+id/button_Languages_choice1"
@@ -68,7 +68,7 @@
 				android:onClick="Button_Languages_1_Click"
                 android:textColor="#d7f8fe" />
             <Button
-                android:text=""
+                android:text="2"
                 android:layout_width="match_parent"
                 android:layout_height="55.0dp"
                 android:layout_marginBottom="10dp"
@@ -81,7 +81,7 @@
 				android:onClick="Button_Languages_2_Click"
                 android:textColor="#d7f8fe" />
             <Button
-                android:text=""
+                android:text="3"
                 android:layout_width="match_parent"
                 android:layout_height="55.0dp"
                 android:layout_marginBottom="10dp"
@@ -94,7 +94,7 @@
 				android:onClick="Button_Languages_3_Click"
                 android:textColor="#d7f8fe" />
             <Button
-                android:text=""
+                android:text="4"
                 android:layout_width="match_parent"
                 android:layout_height="55.0dp"
                 android:layout_marginRight="40dp"

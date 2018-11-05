@@ -16,7 +16,7 @@ namespace ReLearn
         string Object_name { get;}
         List<Database_for_stats> Stats_database { get; }
         readonly Color background_color = new Color( Color.Argb(150, 16, 19, 38) );
-        readonly Paint paint_border = new Paint { StrokeWidth = 4, Color = Color.Argb(250, 215, 248, 254), AntiAlias = true };
+        readonly Paint paint_border = new Paint { StrokeWidth = 4, Color = Color.Rgb(215, 248, 254), AntiAlias = true };
         readonly Paint paint_text = new Paint { TextSize = 25, StrokeWidth = 4, Color = Color.Rgb(215, 248, 254), AntiAlias = true };
         float font_up;
         float font_low;

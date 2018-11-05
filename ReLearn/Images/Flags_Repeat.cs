@@ -14,18 +14,21 @@ namespace ReLearn
     [Activity(Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     class Flags_Repeat : AppCompatActivity
     {
-        ImageView ImageView_image;
+        int Count = -1;
+        int CurrentWordNumber { get; set; }
         List<Button> Buttons { get; set; }
         ButtonNext Button_next;
         readonly List<Statistics> Stats = new List<Statistics>();
         List<Database_images> dataBase;
         
-        int Count = -1;
-        int CurrentWordNumber { get; set; }
-
         string TitleCount
         {
             set { FindViewById<TextView>(Resource.Id.Repeat_toolbar_textview_fl).Text = value; }
+        }
+
+        Bitmap CurrentImage
+        {
+            set{ FindViewById<ImageView>(Resource.Id.imageView_Flags_repeat).SetImageBitmap(value); }
         }
 
         void Button_enable(bool state)
@@ -55,7 +58,7 @@ namespace ReLearn
         {
             Bitmap bitmap = BitmapFactory.DecodeStream(Application.Context.Assets.Open(
                 $"ImageFlags/{dataBase[CurrentWordNumber].Image_name}.png"));
-            ImageView_image.SetImageBitmap(bitmap);
+            CurrentImage = bitmap;
             const int four = 4;
             int first = new Random(unchecked((int)(DateTime.Now.Ticks))).Next(four);
             List<int> random_numbers = new List<int> { first, 0, 0, 0 };
@@ -172,7 +175,6 @@ namespace ReLearn
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
 
             Statistics.Statistics_update();
-            ImageView_image = FindViewById<ImageView>(Resource.Id.imageView_Flags_repeat);
             Buttons = new List<Button>{
                 FindViewById<Button>(Resource.Id.button_F_choice1),
                 FindViewById<Button>(Resource.Id.button_F_choice2),
