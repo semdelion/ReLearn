@@ -29,15 +29,11 @@ namespace ReLearn
             Dictionaries.Selected(ImgV.Tag.ToString(), DataBase.TableNameLanguage.ToString());
             Enum.TryParse(ImgV.Tag.ToString(), out TableNamesLanguage name);
             DataBase.TableNameLanguage = name;
-            DataBase.UpdateWordsToRepeat();
         }
 
         public void CreateViewForDictionary(string name, int ImageId)
         {
-            var database = DataBase.Connect(Database_Name.English_DB);
-            List<DBStatistics> Database_NL_and_D = database.Query<DBStatistics>($"SELECT NumberLearn, DateRecurrence FROM {name}");
-            Dictionaries.DictionariesBitmap.Add(Dictionaries.CreateBitmapWithStats(BitmapFactory.DecodeResource(Resources, ImageId), Database_NL_and_D));
-
+            Dictionaries.DictionariesBitmap.Add(Dictionaries.CreateBitmapWithStats(BitmapFactory.DecodeResource(Resources, ImageId), DBStatistics.GetWords(name)));
             ImageView DictionaryImage = new ImageView(this)
             {
                 LayoutParameters = Dictionaries.ParmsImage,

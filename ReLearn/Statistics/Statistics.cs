@@ -52,7 +52,7 @@ namespace ReLearn
         }
     }
 
-    public class Database_Statistics                                // class for reading databse
+    public class DatabaseStatistics                                // class for reading databse
     {
         [PrimaryKey, AutoIncrement, Column("_id")]
         public int Id { get; set; }

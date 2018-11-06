@@ -12,6 +12,17 @@ namespace ReLearn
         DictionaryNameImage,
         Pronunciation
     }
+    enum Language
+    {
+        en,
+        ru
+    }
+
+    enum Pronunciation
+    {
+        en,
+        uk
+    }
 
     static class Settings // Маааагия!
     {
@@ -68,6 +79,7 @@ namespace ReLearn
                 CrossSettings.Current.AddOrUpdateValue(DBSettings.Pronunciation.ToString(), Convert.ToString(value));
             }
         }
+
         public static string Currentlanguage
         {
             get

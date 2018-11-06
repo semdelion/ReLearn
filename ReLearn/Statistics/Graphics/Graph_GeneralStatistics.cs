@@ -10,7 +10,7 @@ namespace ReLearn
     class Graph_General_Statistics : View
     {
         Canvas The_canvas;
-        string TableName;
+        string TableName { get; set; }
         Color Start { get; }
         Color End { get; }
         string Object_name { get;}
@@ -29,21 +29,6 @@ namespace ReLearn
             Object_name = object_name;
             TableName = Table_Name;
         }
-
-        float Average_True_Today(SQLite.SQLiteConnection database)
-        {
-            var Database_Stat = database.Query<Database_Statistics>($"SELECT * FROM {TableName}_Statistics WHERE DateOfTesting >= ?", DateTime.Now);// количество строк в БД
-            return Average_percent_true(Database_Stat);
-        }
-
-        float Average_True_Month(SQLite.SQLiteConnection database)
-        {
-            var Database_Stat = database.Query<Database_Statistics>($"SELECT * FROM {TableName}_Statistics WHERE  STRFTIME ( '%Y%m', DateOfTesting) = STRFTIME ( '%Y%m', 'now')");// количество строк в БД
-            return Average_percent_true(Database_Stat);
-        }
-
-        float Average_percent_true(List<Database_Statistics> Database_Stat) =>
-            Database_Stat.Count == 0 ? 0 : (Database_Stat.Sum(r => r.True) * (100 / (Database_Stat.Sum(r => r.True) + Database_Stat.Sum(r => r.False))));
 
         void DegreeOfStudy_FRAME(FrameStatistics Degree)
         {
@@ -114,7 +99,7 @@ namespace ReLearn
                 IW.Left + 7f * IW.Width / 100, IW.Top + 38f * IW.Height / 100);
         }
 
-        void TotalNumbers_FRAME(FrameStatistics TotalNumbers, List<Database_Statistics> Database_Stat)
+        void TotalNumbers_FRAME(FrameStatistics TotalNumbers, List<DatabaseStatistics> Database_Stat)
         {
             int numberTrue  = Database_Stat.Sum(r => r.True),
                 numberFalse = Database_Stat.Sum(r => r.False);
@@ -139,9 +124,7 @@ namespace ReLearn
             base.OnDraw(The_canvas);
             paint_border.SetStyle(Paint.Style.Stroke);
             paint_text.TextSize = 2.5f * (The_canvas.Height + The_canvas.Width) / 200f;
-            var database = DataBase.Connect(Database_Name.Statistics);
-            var Database_Stat = database.Query<Database_Statistics>($"SELECT * FROM {TableName}_Statistics");// количество строк в БД
-
+            var Database_Stat = DBStatistics.GetData(TableName);
             float height = (The_canvas.Height - 81f * The_canvas.Width / 100f) / 3f;
 
             FrameStatistics DegreeOfStudy =       new FrameStatistics(5f  * The_canvas.Width / 100f, 5f  * The_canvas.Width / 100f, 
@@ -157,9 +140,9 @@ namespace ReLearn
             font_up  = 7f * DegreeOfStudy.Width / 100;
             font_low = 5f * DegreeOfStudy.Width / 100;
 
-            float avg_true_today = Average_True_Today(database),
-                  avg_true_month = Average_True_Month(database),
-                  avg_true = Average_percent_true(Database_Stat);
+            float avg_true_today = DBStatistics.AverageTrueToday(TableName),
+                  avg_true_month = DBStatistics.AverageTrueMonth(TableName),
+                  avg_true = DBStatistics.AveragePercentTrue(Database_Stat);
                     
             DegreeOfStudy_FRAME (DegreeOfStudy);
 

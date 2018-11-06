@@ -26,6 +26,7 @@
   <string name="DatabaseEmpty">База данных пуста</string>
   <string name="DatabaseNotConnect">Ошибка: невозможно подключиться к базе данных</string>
   <string name="RepeatedAllWords">Вы повторили все слова</string>
+  <string name="RepeatedAllImages">Вы повторили все изображения</string>
   <string name="My_DirectlyIsSelected">Мой словарь выбран</string>
   <string name="Popular_WordsIsSelected">Выбран словарь популярных слов</string>
   <string name="HomeIsSelected">Выбран словарь "Дом и быт"</string>

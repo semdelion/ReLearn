@@ -7,41 +7,16 @@ using Plugin.Settings;
 
 namespace ReLearn
 {
-    public static class Database_Name
+    static class DataBase
     {
-        public static string Statistics { get => "database_statistics.db3"; }
-        public static string English_DB { get => "database_words.db3"; }
-        public static string Flags_DB { get => "database_image.db3"; }
-    }
+        const string Statistics_DB = "database_statistics.db3"; 
+        const string English_DB = "database_words.db3"; 
+        const string Flags_DB = "database_image.db3";
 
-    public enum TableNamesLanguage
-    {
-        My_Directly,
-        Home,
-        Education,
-        Popular_Words,
-        ThreeFormsOfVerb
-    }
+        public readonly static SQLiteConnection Languages = Connect(English_DB);
+        public readonly static SQLiteConnection Images = Connect(Flags_DB);
+        public readonly static SQLiteConnection Statistics = Connect(Statistics_DB);
 
-    enum Language
-    {
-        en,
-        ru
-    }
-
-    enum Pronunciation
-    {
-        en,
-        uk
-    }
-
-    public enum TableNamesImage
-    {
-        Flags
-    }
-
-    public static class DataBase
-    {
         public static TableNamesLanguage TableNameLanguage
         {
             get
@@ -72,37 +47,13 @@ namespace ReLearn
             }
         }
 
-        public static SQLiteConnection Connect(string nameDB)
+        static SQLiteConnection Connect(string nameDB)
         {
             string databasePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), nameDB);
             return new SQLiteConnection(databasePath);
         }
 
-        public static void СreateNewTableToLanguagesDataBase()
-        {
-            var db = Connect(Database_Name.English_DB);
-            foreach (string tableName in Enum.GetNames(typeof(TableNamesLanguage)))
-            {
-                if (db.GetTableInfo(tableName).Count == 0)
-                {
-                    db.Query<DBWords>($"CREATE TABLE {tableName} (_id int PRIMARY KEY, Word string, TranslationWord string, NumberLearn int, DateRecurrence DateTime, Context string, Image string)");
-                    using (StreamReader reader = new StreamReader(Application.Context.Assets.Open($"Database/{tableName}.txt")))
-                    {
-                        string str_line;
-                        while ((str_line = reader.ReadLine()) != null)
-                        {
-                            var list_en_ru = str_line.Split('|');
-                            var query = $"INSERT INTO {tableName} (Word, TranslationWord, NumberLearn, DateRecurrence) VALUES (?, ?, ?, ?)";
-                            db.Execute(query, list_en_ru[0].ToLower(), list_en_ru[1].ToLower(), Settings.StandardNumberOfRepeats, DateTime.Now);
-                        }
-                    }
-                    var dbStatEn = Connect(Database_Name.Statistics);
-                    dbStatEn.Query<Database_Statistics>($"CREATE TABLE {tableName}_Statistics (_id int PRIMARY KEY, True int, False int, DateOfTesting DateTime)");
-                }
-            }
-        }
-
-        public static void InstallDatabaseFromAssets(string FileName)
+        static void InstallDB(string FileName)
         {
             string documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
             var path = Path.Combine(documentsPath, FileName);
@@ -122,35 +73,12 @@ namespace ReLearn
                 }
             }
         }
-        
-        public static void UpdateWordsToRepeat()
-        {
-            var toDay = DateTime.Today.AddMonths(-1);
-            var db = Connect(Database_Name.English_DB);
-            var dataBase = db.Query<DBWords>($"SELECT * FROM {TableNameLanguage} WHERE NumberLearn = 0 ");
-            foreach (var s in dataBase)
-            {
-                if (s.DateRecurrence < toDay)
-                {
-                    var query = $"UPDATE {TableNameLanguage} SET DateRecurrence = ?, NumberLearn = ? WHERE Word = ?";
-                    db.Execute(query, DateTime.Now, s.NumberLearn + 1, s.Word);
-                }
-            }
-        }
 
-        public static void UpdateImagesToRepeat()
+        public static void InstallDatabaseFromAssets()
         {
-            var toDay = DateTime.Today.AddMonths(-1);
-            var db = Connect(Database_Name.Flags_DB);
-            var dataBase = db.Query<DBImages>($"SELECT * FROM {TableNameImage} WHERE NumberLearn = 0");
-            foreach (var s in dataBase)
-            {
-                if (s.DateRecurrence < toDay)
-                {
-                    var query = $"UPDATE {TableNameImage} SET DateRecurrence = ?, NumberLearn = ? WHERE Word = ?";
-                    db.Execute(query, DateTime.Now, s.NumberLearn + 1, s.Image_name);
-                }
-            }
+            InstallDB(Statistics_DB);
+            InstallDB(English_DB);
+            InstallDB(Flags_DB); 
         }
     }
 }

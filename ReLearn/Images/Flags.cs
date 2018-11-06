@@ -13,7 +13,6 @@ namespace ReLearn
         [Java.Interop.Export("Button_Flags_Learn_Click")]
         public void Button_Flags_Learn_Click(View v) => StartActivity(typeof(Flags_Learn));
         
-
         [Java.Interop.Export("Button_Flags_Repeat_Click")]
         public void Button_Flags_Repeat_Click(View v) => StartActivity(typeof(Flags_Repeat));
              
@@ -25,7 +24,6 @@ namespace ReLearn
             var toolbarMain = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbarFlags);
             SetSupportActionBar(toolbarMain);
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
-            DataBase.UpdateImagesToRepeat();          
         }
 
         public override bool OnPrepareOptionsMenu(IMenu menu)

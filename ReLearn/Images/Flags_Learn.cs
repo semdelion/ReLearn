@@ -16,7 +16,6 @@ namespace ReLearn
     {
         int Count { get; set; }
         List<DBImages> ImagesDatabase { get; set; }
-        SQLite.SQLiteConnection DatabaseConnect { get; set; }
 
         Bitmap ImageViewBox
         {
@@ -33,9 +32,7 @@ namespace ReLearn
         [Java.Interop.Export("Button_Images_Learn_NotRepeat_Click")]
         public void Button_Languages_Learn_NotRepeat_Click(View v)
         {
-            var query = $"UPDATE {DataBase.TableNameImage} SET DateRecurrence = ?, NumberLearn = ? WHERE "; 
-            var tmp = CrossSettings.Current.GetValueOrDefault(DBSettings.Language.ToString(), null) == Language.en.ToString() ? "Name_image_en = ?" : "Name_image_ru = ?";
-            DatabaseConnect.Execute(query + tmp, DateTime.Now, 0, ImageName);
+            DBImages.UpdateLearningNotRepeat(ImageName);
             Button_Flags_Learn_Next_Click(null);
         }
 
@@ -44,11 +41,17 @@ namespace ReLearn
         {
             if (Count < ImagesDatabase.Count)
             {
-                var query = $"UPDATE {DataBase.TableNameImage} SET DateRecurrence = ? WHERE Image_name = ?";
-                DatabaseConnect.Execute(query, DateTime.Now, ImagesDatabase[Count].Image_name);
-                ImageViewBox = BitmapFactory.DecodeStream(
-                    Application.Context.Assets.Open(
-                        $"ImageFlags/{ImagesDatabase[Count].Image_name}.png"));
+                DBImages.UpdateLearningNext(ImagesDatabase[Count].Image_name);
+                try
+                {
+                    ImageViewBox = BitmapFactory.DecodeStream(
+                        Application.Context.Assets.Open(
+                            $"ImageFlags/{ImagesDatabase[Count].Image_name}.png"));
+                }
+                catch(Exception ex)
+                {
+                    Toast.MakeText(this, ex.Message , ToastLength.Short).Show();
+                }
                 ImageName = AdditionalFunctions.NameOfTheFlag(ImagesDatabase[Count++]);
             }
             else
@@ -63,16 +66,14 @@ namespace ReLearn
             var toolbarMain = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbarFlagsLearn);
             SetSupportActionBar(toolbarMain);
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
-            try
+            ImagesDatabase = DBImages.GetDataNotLearned;
+            if (ImagesDatabase.Count == 0)
             {
-                DatabaseConnect = DataBase.Connect(Database_Name.Flags_DB);
-                ImagesDatabase = DatabaseConnect.Query<DBImages>($"SELECT * FROM {DataBase.TableNameImage} WHERE NumberLearn != 0 ORDER BY DateRecurrence ASC");
-                Button_Flags_Learn_Next_Click(null);
+                Toast.MakeText(this, GetString(Resource.String.RepeatedAllImages), ToastLength.Short).Show();
+                Finish();
+                return;
             }
-            catch
-            {
-                Toast.MakeText(this, GetString(Resource.String.DatabaseNotConnect), ToastLength.Short).Show();
-            }
+            Button_Flags_Learn_Next_Click(null);
         }
 
         public override bool OnOptionsItemSelected(IMenuItem item) // button home
@@ -84,7 +85,3 @@ namespace ReLearn
         protected override void AttachBaseContext(Context newbase) => base.AttachBaseContext(Calligraphy.CalligraphyContextWrapper.Wrap(newbase));
     }
 }
-
-        
-
-      

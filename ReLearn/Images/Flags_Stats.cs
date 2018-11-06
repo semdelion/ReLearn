@@ -40,11 +40,13 @@ namespace ReLearn
             ActionBar.NavigationMode = ActionBarNavigationMode.Tabs;
             SetContentView(Resource.Layout.Languages_Stat);
 
-            var database = DataBase.Connect(Database_Name.Flags_DB);
             ActionBar.SetStackedBackgroundDrawable(new ColorDrawable(Color.Transparent));
-            List<DBStatistics> Database_NL_and_D = database.Query<DBStatistics>($"SELECT NumberLearn, DateRecurrence FROM {DataBase.TableNameImage}");
+            
 
-            Graph_General_Statistics Stat2 = new Graph_General_Statistics(this, Color.Argb(255, 254, 166, 10), Color.Argb(255, 154, 66, 3), Database_NL_and_D, "Flags", DataBase.TableNameImage.ToString());
+            Graph_General_Statistics Stat2 = new Graph_General_Statistics(this, 
+                Color.Argb(255, 254, 166, 10), Color.Argb(255, 154, 66, 3), 
+                DBStatistics.GetImages(DataBase.TableNameImage.ToString()), 
+                "Flags", DataBase.TableNameImage.ToString());
             Graph_Statistics Stat1 = new Graph_Statistics(this, Color.Argb(255, 254, 166, 10), Color.Argb(255, 154, 66, 3), DataBase.TableNameImage.ToString());
 
             var tab = ActionBar.NewTab();

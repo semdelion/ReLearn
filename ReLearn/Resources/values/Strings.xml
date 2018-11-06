@@ -26,6 +26,7 @@
   <string name="DatabaseEmpty">The database is empty</string>
   <string name="DatabaseNotConnect">Error : can not connect to database</string>
   <string name="RepeatedAllWords">You repeated all the words</string>
+  <string name="RepeatedAllImages">You repeated all the images</string>
   <string name="My_DirectlyIsSelected">My dictionary is selected</string>
   <string name="Popular_WordsIsSelected">The dictionary of popular words is chosen</string>
   <string name="HomeIsSelected">Selected dictionary "Home"</string>

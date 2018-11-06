@@ -16,8 +16,8 @@ namespace ReLearn
     [Activity(Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     class Flags_View_Dictionary : AppCompatActivity
     {
-        ListView listView_dictionary;
-        List<DBImages> dataBase;
+        ListView DictionaryImages { get; set; }
+        List<DBImages> dataBase = DBImages.GetData;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -26,36 +26,32 @@ namespace ReLearn
             SetContentView(Resource.Layout.Languages_ViewDictionary);
             var toolbarMain = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbarLanguagesDelete);
             SetSupportActionBar(toolbarMain);
-            SupportActionBar.SetDisplayHomeAsUpEnabled(true); // отображаем кнопку домой
+            SupportActionBar.SetDisplayHomeAsUpEnabled(true); 
 
-            listView_dictionary = FindViewById<ListView>(Resource.Id.listView_dictionary);
-
-            var db = DataBase.Connect(Database_Name.Flags_DB);
-            dataBase = db.Query<DBImages>($"SELECT * FROM {DataBase.TableNameImage}");
+            DictionaryImages = FindViewById<ListView>(Resource.Id.listView_dictionary);
             SortNamesImages();
-            listView_dictionary.Adapter = new CustomAdapter_ImageText(this, dataBase);
+            DictionaryImages.Adapter = new CustomAdapter_ImageText(this, dataBase);
         }
 
-        public override bool OnOptionsItemSelected(IMenuItem item) // button home
+        public override bool OnOptionsItemSelected(IMenuItem item) 
         {
             if (item.ItemId == Resource.Id.increase)
             {
                 dataBase.Sort((x, y) => x.NumberLearn.CompareTo(y.NumberLearn));
-                listView_dictionary.Adapter = new CustomAdapter_ImageText(this, dataBase);
+                DictionaryImages.Adapter = new CustomAdapter_ImageText(this, dataBase);
             }
             else if (item.ItemId == Resource.Id.decrease)
             {
                 dataBase.Sort((x, y) => y.NumberLearn.CompareTo(x.NumberLearn));
-                listView_dictionary.Adapter = new CustomAdapter_ImageText(this, dataBase);
+                DictionaryImages.Adapter = new CustomAdapter_ImageText(this, dataBase);
             }
             else if (item.ItemId == Resource.Id.ABC)
             {
                 SortNamesImages();
-                listView_dictionary.Adapter = new CustomAdapter_ImageText(this, dataBase);
+                DictionaryImages.Adapter = new CustomAdapter_ImageText(this, dataBase);
             }
             else if (item.ItemId == Android.Resource.Id.Home)
                 Finish();
-            
             return true;
         }
 
@@ -68,7 +64,7 @@ namespace ReLearn
             _searchView.QueryTextChange += (sender, e) =>
             {
                 if (e.NewText == "")
-                    listView_dictionary.Adapter = new CustomAdapter_ImageText(this, dataBase);
+                    DictionaryImages.Adapter = new CustomAdapter_ImageText(this, dataBase);
                 else
                 {
                     List<DBImages> FD = new List<DBImages>();
@@ -77,7 +73,7 @@ namespace ReLearn
                     else
                         FD = SearchWithGetTypeField("Name_image_ru", e);
 
-                    listView_dictionary.Adapter = new CustomAdapter_ImageText(this, FD);
+                    DictionaryImages.Adapter = new CustomAdapter_ImageText(this, FD);
                 }
             };
             return true;

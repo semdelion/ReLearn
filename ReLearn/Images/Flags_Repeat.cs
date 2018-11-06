@@ -19,7 +19,7 @@ namespace ReLearn
         List<Button> Buttons { get; set; }
         ButtonNext Button_next;
         readonly List<Statistics> Stats = new List<Statistics>();
-        List<DBImages> dataBase;
+        List<DBImages> ImagesDatabase;
         
         string TitleCount
         {
@@ -51,15 +51,15 @@ namespace ReLearn
 
         void Random_Button(params Button[] buttons)   //загружаем варианты ответа в текст кнопок
         {
-            AdditionalFunctions.RandomFourNumbers(CurrentWordNumber, dataBase.Count, out List<int> random_numbers);
+            AdditionalFunctions.RandomFourNumbers(CurrentWordNumber, ImagesDatabase.Count, out List<int> random_numbers);
             for (int i = 0; i < buttons.Length; i++)
-                buttons[i].Text = AdditionalFunctions.NameOfTheFlag(dataBase[random_numbers[i]]);
+                buttons[i].Text = AdditionalFunctions.NameOfTheFlag(ImagesDatabase[random_numbers[i]]);
         }
 
         void NextTest() //new test
         {
             Bitmap bitmap = BitmapFactory.DecodeStream(Application.Context.Assets.Open(
-                $"ImageFlags/{dataBase[CurrentWordNumber].Image_name}.png"));
+                $"ImageFlags/{ImagesDatabase[CurrentWordNumber].Image_name}.png"));
             CurrentImage = bitmap;
             const int four = 4;
             int first = new Random(unchecked((int)(DateTime.Now.Ticks))).Next(four);
@@ -72,23 +72,23 @@ namespace ReLearn
         void Answer(params Button[] buttons) // подсвечиваем правильный ответ, если мы ошиблись подсвечиваем неправвильный и паравильный 
         {
             Button_enable(false);
-            if (buttons[0].Text == AdditionalFunctions.NameOfTheFlag(dataBase[CurrentWordNumber]))
+            if (buttons[0].Text == AdditionalFunctions.NameOfTheFlag(ImagesDatabase[CurrentWordNumber]))
             {
                 Statistics.Add(
-                    Stats, dataBase[CurrentWordNumber].Image_name, CurrentWordNumber, 
-                    dataBase[CurrentWordNumber].NumberLearn, -Settings.TrueAnswer);
+                    Stats, ImagesDatabase[CurrentWordNumber].Image_name, CurrentWordNumber, 
+                    ImagesDatabase[CurrentWordNumber].NumberLearn, -Settings.TrueAnswer);
                 Statistics.AnswerTrue++;
                 buttons[0].Background = GetDrawable(Resource.Drawable.button_true);
             }
             else
             {
                 Statistics.Add(
-                    Stats, dataBase[CurrentWordNumber].Image_name, CurrentWordNumber, 
-                    dataBase[CurrentWordNumber].NumberLearn, Settings.FalseAnswer);
+                    Stats, ImagesDatabase[CurrentWordNumber].Image_name, CurrentWordNumber, 
+                    ImagesDatabase[CurrentWordNumber].NumberLearn, Settings.FalseAnswer);
                 Statistics.AnswerFalse++;
                 buttons[0].Background = GetDrawable(Resource.Drawable.button_false);
                 for (int i = 1; i < buttons.Length; i++)
-                    if (buttons[i].Text == AdditionalFunctions.NameOfTheFlag(dataBase[CurrentWordNumber]))
+                    if (buttons[i].Text == AdditionalFunctions.NameOfTheFlag(ImagesDatabase[CurrentWordNumber]))
                     {
                         buttons[i].Background = GetDrawable(Resource.Drawable.button_true);
                         return;
@@ -99,9 +99,9 @@ namespace ReLearn
         void Unknown()
         {
             Statistics.AnswerFalse++;
-            Statistics.Add(Stats, dataBase[CurrentWordNumber].Image_name, CurrentWordNumber, dataBase[CurrentWordNumber].NumberLearn, Settings.NeutralAnswer);
+            Statistics.Add(Stats, ImagesDatabase[CurrentWordNumber].Image_name, CurrentWordNumber, ImagesDatabase[CurrentWordNumber].NumberLearn, Settings.NeutralAnswer);
             for (int i = 0; i < Buttons.Count; i++)
-                if (Buttons[i].Text == AdditionalFunctions.NameOfTheFlag(dataBase[CurrentWordNumber]))
+                if (Buttons[i].Text == AdditionalFunctions.NameOfTheFlag(ImagesDatabase[CurrentWordNumber]))
                 {
                     Buttons[i].Background = GetDrawable(Resource.Drawable.button_true);
                     return;
@@ -139,7 +139,7 @@ namespace ReLearn
                 {
                     Count++;
                     Random rnd = new Random(unchecked((int)(DateTime.Now.Ticks)));
-                    CurrentWordNumber = rnd.Next(dataBase.Count);
+                    CurrentWordNumber = rnd.Next(ImagesDatabase.Count);
                     NextTest();
                     Button_enable(true);
                     TitleCount = $"{GetString(Resource.String.Repeat)} {Count + 1}/{Settings.NumberOfRepeatsImage}";
@@ -177,16 +177,14 @@ namespace ReLearn
                 button = FindViewById<Button>(Resource.Id.button_F_Next),
                 State = StateButton.Next
             };
-            try
+            ImagesDatabase = DBImages.GetDataNotLearned;
+            if (ImagesDatabase.Count == 0)
             {
-                SQLiteConnection db = DataBase.Connect(Database_Name.Flags_DB);
-                dataBase = db.Query<DBImages>($"SELECT * FROM {DataBase.TableNameImage} WHERE NumberLearn > 0");
-                Button_Flags_Next_Click(null);
+                Toast.MakeText(this, GetString(Resource.String.RepeatedAllImages), ToastLength.Short).Show();
+                Finish();
+                return;
             }
-            catch
-            {
-                Toast.MakeText(this, GetString(Resource.String.DatabaseNotConnect), ToastLength.Short).Show();              
-            }
+            Button_Flags_Next_Click(null);
         }
 
         public override bool OnOptionsItemSelected(IMenuItem item)

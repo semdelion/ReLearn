@@ -28,28 +28,17 @@ namespace ReLearn
         public void Button_Languages_Add_Click(View button)
         {
             button.Enabled = false;
-            try
+            if (Word == "" || TranslationWord == "")
+                Toast.MakeText(this, GetString(Resource.String.Enter_word), ToastLength.Short).Show();
+            else if (DBWords.WordIsContained(Word))
+                Toast.MakeText(this, GetString(Resource.String.Word_exists), ToastLength.Short).Show();               
+            else
             {
-                var database = DataBase.Connect(Database_Name.English_DB);
-                database.CreateTable<DBWords>();
-                // поиск вхождения слова в БД
-                if (Word == "" || TranslationWord == "")
-                    Toast.MakeText(this, GetString(Resource.String.Enter_word), ToastLength.Short).Show();
-                else if (database.Query<DBWords>($"SELECT * FROM {TableNamesLanguage.My_Directly.ToString()} WHERE Word = ?", Word).Count != 0)
-                    Toast.MakeText(this, GetString(Resource.String.Word_exists), ToastLength.Short).Show();               
-                else
-                {
-                    var query = $"INSERT INTO {TableNamesLanguage.My_Directly.ToString()} (Word, TranslationWord, NumberLearn, DateRecurrence) VALUES (?, ?, ?, ?)";
-                    database.Execute(query, Word, TranslationWord, Settings.StandardNumberOfRepeats, DateTime.Now);                                    
-                    Toast.MakeText(this, GetString(Resource.String.Word_Added), ToastLength.Short).Show();
-                }
+                DBWords.Add(Word, TranslationWord);
                 Word = TranslationWord = "";
-                button.Enabled = true;
+                Toast.MakeText(this, GetString(Resource.String.Word_Added), ToastLength.Short).Show();
             }
-            catch
-            {
-                Toast.MakeText(this, GetString(Resource.String.DatabaseNotConnect), ToastLength.Short).Show();
-            }
+            button.Enabled = true;
         }
 
         protected override void OnCreate(Bundle savedInstanceState)

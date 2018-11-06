@@ -1,7 +1,5 @@
 ﻿using Android.App;
-using Android.Content;
 using Android.OS;
-using Plugin.Settings;
 
 namespace ReLearn
 {
@@ -13,12 +11,12 @@ namespace ReLearn
             AdditionalFunctions.Update_Configuration_Locale(this.Resources);
             base.OnCreate(savedInstanceState);
             FrameStatistics.Plain = Android.Graphics.Typeface.CreateFromAsset(Assets, Settings.font);
-            DataBase.InstallDatabaseFromAssets(Database_Name.English_DB);
-            DataBase.InstallDatabaseFromAssets(Database_Name.Flags_DB);
-            DataBase.InstallDatabaseFromAssets(Database_Name.Statistics);
-            DataBase.СreateNewTableToLanguagesDataBase();     
+            DataBase.InstallDatabaseFromAssets();
+            DBWords.СreateNewTableToLanguagesDataBase();
+            DBImages.UpdateDate();
+            DBWords.UpdateWordsToRepeat();
             StartActivity(typeof(MainActivity));
-            this.Finish();
+            Finish();
         }
     }
 }

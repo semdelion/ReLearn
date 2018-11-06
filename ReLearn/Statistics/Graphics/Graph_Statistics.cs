@@ -59,7 +59,7 @@ namespace ReLearn
                 The_canvas.DrawLine(left, bottom - height * j, right, bottom - height * j, paint);
         }
 
-        void Diagram(List<Database_Statistics> Database_Stat, float left, float right, float bottom, float top)
+        void Diagram(List<DatabaseStatistics> Database_Stat, float left, float right, float bottom, float top)
         {
             float step_width = (right - left) / 10f,
                   step_height = (bottom - top),
@@ -81,9 +81,8 @@ namespace ReLearn
 
         protected override void OnDraw(Canvas canvas)
         {
-            The_canvas = canvas;            
-            var database = DataBase.Connect(Database_Name.Statistics);
-            var Database_Stat = database.Query<Database_Statistics>($"SELECT * FROM {TabelName}_Statistics");// количество строк в БД
+            The_canvas = canvas;
+            var Database_Stat = DBStatistics.GetData(TabelName);
             base.OnDraw(The_canvas);
 
             paint_text.TextSize = 2.5f * (The_canvas.Height + The_canvas.Width) / 200;

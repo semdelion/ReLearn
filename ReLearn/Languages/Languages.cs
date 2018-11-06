@@ -17,45 +17,11 @@ namespace ReLearn
         public void Button_Languages_Add_Click(View v) => StartActivity(typeof(Languages_Add));
         
         [Java.Interop.Export("Button_Languages_Learn_Click")]
-        public void Button_Languages_Learn_Click(View v)
-        {
-            try
-            {
-                var database = DataBase.Connect(Database_Name.English_DB);
-                database.CreateTable<DBWords>();
-                if (database.Query<DBWords>($"SELECT * FROM {DataBase.TableNameLanguage}").Count != 0)
-                    StartActivity(typeof(Languages_Learn));
-                else
-                    Toast.MakeText(this, GetString(Resource.String.DatabaseEmpty), ToastLength.Short).Show();
-            }
-            catch
-            {
-                Toast.MakeText(this, GetString(Resource.String.DatabaseNotConnect), ToastLength.Short).Show();
-            }
-        }
+        public void Button_Languages_Learn_Click(View v) => StartActivity(typeof(Languages_Learn));
 
         [Java.Interop.Export("Button_Languages_Repeat_Click")]
-        public void Button_Languages_Repeat_Click(View v)
-        {
-            try
-            {
-                var database = DataBase.Connect(Database_Name.English_DB);
-                database.CreateTable<DBWords>();
-                var search_occurrences = database.Query<DBWords>($"SELECT * FROM {DataBase.TableNameLanguage}");// поиск вхождения слова в БД
-                var search_numberlearn_null = database.Query<DBWords>($"SELECT * FROM {DataBase.TableNameLanguage} WHERE NumberLearn = 0").Count;
-                if (search_occurrences.Count == search_numberlearn_null)
-                    Toast.MakeText(this, GetString(Resource.String.RepeatedAllWords), ToastLength.Short).Show();
-                else if (search_occurrences.Count != 0)
-                    StartActivity(typeof(Languages_Repeat));
-                else
-                    Toast.MakeText(this, GetString(Resource.String.DatabaseEmpty), ToastLength.Short).Show();              
-            }
-            catch
-            {
-                Toast.MakeText(this, GetString(Resource.String.DatabaseNotConnect), ToastLength.Short).Show();
-            }
-        }    
-
+        public void Button_Languages_Repeat_Click(View v) => StartActivity(typeof(Languages_Repeat));
+           
         protected override void OnCreate(Bundle savedInstanceState)
         {
             AdditionalFunctions.Font();
@@ -64,7 +30,6 @@ namespace ReLearn
             var toolbarMain = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbarLanguages);
             SetSupportActionBar(toolbarMain);
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
-            DataBase.UpdateWordsToRepeat();
         }
 
         public override bool OnPrepareOptionsMenu(IMenu menu)

@@ -15,7 +15,6 @@ namespace ReLearn
     {
         MyTextToSpeech MySpeech { get; set; }
         List<DBWords> WordDatabase { get; set; }
-        SQLite.SQLiteConnection DatabaseConnect { get; set; }
         int Count { get; set; }
         bool Voice_Enable = true;
 
@@ -38,10 +37,9 @@ namespace ReLearn
             {
                 Word = WordDatabase[Count].Word;
                 TranslationWord = WordDatabase[Count++].TranslationWord;
+                DBWords.UpdateLearningNext(Word);
                 if (Voice_Enable)
                     MySpeech.Speak(Word, this);
-                var query = $"UPDATE {DataBase.TableNameLanguage} SET DateRecurrence = ? WHERE Word = ?";
-                DatabaseConnect.Execute(query, DateTime.Now, Word);
             }
             else
                 Toast.MakeText(this, GetString(Resource.String.DictionaryOver), ToastLength.Short).Show();
@@ -63,8 +61,7 @@ namespace ReLearn
         [Java.Interop.Export(" Button_Languages_Learn_NotRepeat_Click")]
         public void Button_Languages_Learn_NotRepeat_Click(View v)
         {
-            var query = $"UPDATE {DataBase.TableNameLanguage} SET DateRecurrence = ?, NumberLearn = ? WHERE Word = ?";
-            DatabaseConnect.Execute(query, DateTime.Now, 0, Word);
+            DBWords.UpdateLearningNotRepeat(Word);
             Button_Languages_Learn_Next_Click(null);
         }
 
@@ -77,16 +74,16 @@ namespace ReLearn
             SetSupportActionBar(toolbarMain);
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
             MySpeech = new MyTextToSpeech();
-            try
+            WordDatabase = DBWords.GetDataNotLearned;
+
+            if (WordDatabase.Count == 0)
             {
-                DatabaseConnect = DataBase.Connect(Database_Name.English_DB);
-                WordDatabase = DatabaseConnect.Query<DBWords>($"SELECT * FROM {DataBase.TableNameLanguage} WHERE NumberLearn != 0 ORDER BY DateRecurrence ASC");
-                Button_Languages_Learn_Next_Click(null);
+                Toast.MakeText(this, GetString(Resource.String.RepeatedAllWords), ToastLength.Short).Show();
+                Finish();
+                return;
             }
-            catch
-            {
-                Toast.MakeText(this, GetString(Resource.String.DatabaseNotConnect), ToastLength.Short).Show();
-            }
+
+            Button_Languages_Learn_Next_Click(null);
         }
 
         public override bool OnOptionsItemSelected(IMenuItem item)
