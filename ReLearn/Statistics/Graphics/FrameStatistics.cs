@@ -13,7 +13,7 @@ namespace ReLearn
         public float Bottom { get; }
         public float Width { get => Right - Left; }
         public float Height { get => Bottom - Top; }
-        public static Typeface plain { get; set; }
+        public static Typeface Plain { get; set; }
         Paint P;
 
         public FrameStatistics(float left, float top, float right, float bottom, Color color)
@@ -118,7 +118,7 @@ namespace ReLearn
 
         public void DrawText(Canvas canvas, float font_size, string text, float left, float top, Color? c = null)
         {
-            Typeface bold = Typeface.Create(plain, TypefaceStyle.Normal);
+            Typeface bold = Typeface.Create(Plain, TypefaceStyle.Normal);
             Paint paint = new Paint
             {
                 AntiAlias = true,

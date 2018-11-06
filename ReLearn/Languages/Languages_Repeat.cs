@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+
+using Calligraphy;
+using SQLite;
+
+using Android.Views;
+using Android.Widget;
 using Android.App;
 using Android.Content;
 using Android.OS;
-using Calligraphy;
-using Android.Views;
-using Android.Widget;
-using SQLite;
 using Android.Support.V7.App;
 
 namespace ReLearn
@@ -144,19 +146,17 @@ namespace ReLearn
                 if (Count < Settings.NumberOfRepeatsLanguage - 1)
                 {
                     Count++;
-                    Random rnd = new System.Random(unchecked((int)(DateTime.Now.Ticks)));
-                    CurrentWordNumber = rnd.Next(DBWords.Count);
+                    CurrentWordNumber = new System.Random(unchecked((int)(DateTime.Now.Ticks))).Next(DBWords.Count);
                     NextWord();
                     Button_enable(true);
-                    TitleCount = Convert.ToString(GetString(Resource.String.Repeat) + " " + (Count + 1) + "/" + Settings.NumberOfRepeatsLanguage);
+                    TitleCount = $"{GetString(Resource.String.Repeat)} {Count + 1}/{Settings.NumberOfRepeatsLanguage}";
                 }
                 else
                 {
                     DBStatistics.Insert(Statistics.AnswerTrue, Statistics.AnswerFalse, DataBase.TableNameLanguage.ToString());
                     Update_Database();
-                    Intent intent_english_stat = new Intent(this, typeof(Languages_Stat));
-                    StartActivity(intent_english_stat);
-                    this.Finish();
+                    StartActivity(typeof(Languages_Stat));
+                    Finish();
                 }
             }
             Button_next.button.Enabled = true;
@@ -171,7 +171,7 @@ namespace ReLearn
            
             SetSupportActionBar(toolbarMain);
             SupportActionBar.SetDisplayHomeAsUpEnabled(true); // отображаем кнопку домой
-            Statistics.Statistics_update();
+            Statistics.CreateNewStatistics();
             MySpeech = new MyTextToSpeech();
             Buttons = new List<Button>{
                 FindViewById<Button>(Resource.Id.button_Languages_choice1),

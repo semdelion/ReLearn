@@ -68,8 +68,8 @@ namespace ReLearn
 
                 AdditionalFunctions.Update_Configuration_Locale(this.Resources);
                 LanguageText = $"{ GetString(Resource.String.Language) }:   {listLanguage[e.Which]}";
-                StartActivity(new Intent(this, typeof(Settings_Menu)));
-                this.Finish();
+                StartActivity(typeof(Settings_Menu));
+                Finish();
                 dialog.Dismiss();
             }));
             alert.Show();
@@ -79,7 +79,7 @@ namespace ReLearn
         {
             if (Settings.CurrentPronunciation == Pronunciation.en.ToString())
             {
-                PronunciationText = $"{ GetString(Resource.String.Pronunciation) }:  English";
+                PronunciationText = $"{ GetString(Resource.String.Pronunciation) }:  American";
                 return 0;
             }
             else
@@ -92,7 +92,7 @@ namespace ReLearn
         [Java.Interop.Export("TextView_Pronunciation_Click")]
         public void TextView_Pronunciation_Click(View v)
         {
-            string[] listPronunciation = { "English", "British" };
+            string[] listPronunciation = { "American", "British" };
             int checkedItem = CheckedItemPronunciation();
             Android.App.AlertDialog.Builder alert = new Android.App.AlertDialog.Builder(this);
             alert.SetTitle(GetString(Resource.String.Pronunciation));
@@ -101,14 +101,14 @@ namespace ReLearn
             {
                 var dialog = (sender as Android.App.AlertDialog);
                 checkedItem = e.Which;
-                if (listPronunciation[e.Which] == "English")
+                if (listPronunciation[e.Which] == "American")
                     Settings.CurrentPronunciation = Pronunciation.en.ToString();
                 else
                     Settings.CurrentPronunciation = Pronunciation.uk.ToString();
 
                 PronunciationText = $"{ GetString(Resource.String.Pronunciation) }:   {listPronunciation[e.Which]}";
-                StartActivity(new Intent(this, typeof(Settings_Menu)));
-                this.Finish();
+                StartActivity(typeof(Settings_Menu));
+                Finish();
                 dialog.Dismiss();
             }));
             alert.Show();
@@ -152,8 +152,8 @@ namespace ReLearn
         {
             if (item.ItemId == Android.Resource.Id.Home)
             {
-                StartActivity(new Intent(this, typeof(MainActivity)));
-                this.Finish();
+                StartActivity(typeof(MainActivity));
+                Finish();
             }
             return true;
         }

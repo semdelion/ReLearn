@@ -45,19 +45,13 @@ namespace ReLearn
             var TextView = view.FindViewById<TextView>(Resource.Id.textView_item_view_dictionary);
             var ImageView = view.FindViewById<ImageView>(Resource.Id.imageView_item_view_dictionary);
 
-            //var his = Application.Context.Assets.Open("ImageFlags/" + list[position].Image_name + ".png");
-            //Bitmap bitmap = BitmapFactory.DecodeStream(his);
-            //var stream = new System.IO.MemoryStream();
-            //bitmap.Compress(Bitmap.CompressFormat.Png, 10, stream);       
-            //ImageView.SetImageBitmap(bitmap);
-
-            var his = Application.Context.Assets.Open("ImageFlagsJpeg/" + list[position].Image_name + ".jpg");
+            var his = Application.Context.Assets.Open($"ImageFlagsJpeg/{list[position].Image_name}.jpg");
             Bitmap bitmap = BitmapFactory.DecodeStream(his);
             ImageView.SetImageBitmap(bitmap);
 
             AdditionalFunctions.SetColorForItems(list[position].NumberLearn, TextView);
 
-            if (CrossSettings.Current.GetValueOrDefault(DBSettings.Language.ToString(), null) == Language.en.ToString())
+            if (Settings.Currentlanguage == Language.en.ToString())
                 TextView.Text = list[position].Name_image_en;
             else
                 TextView.Text = list[position].Name_image_ru;            

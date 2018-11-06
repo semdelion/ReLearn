@@ -13,7 +13,7 @@ namespace ReLearn
         public static int AnswerFalse = 0;
         public int Learn { get; set; }
 
-        public static void Statistics_update()
+        public static void CreateNewStatistics()
         {
             AnswerTrue = 0;                    
             AnswerFalse = 0;

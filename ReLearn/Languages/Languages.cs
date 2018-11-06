@@ -14,7 +14,7 @@ namespace ReLearn
     class Languages : AppCompatActivity
     {
         [Java.Interop.Export("Button_Languages_Add_Click")]
-        public void Button_Languages_Add_Click(View v) => StartActivity(new Intent(this, typeof(Languages_Add)));
+        public void Button_Languages_Add_Click(View v) => StartActivity(typeof(Languages_Add));
         
         [Java.Interop.Export("Button_Languages_Learn_Click")]
         public void Button_Languages_Learn_Click(View v)
@@ -24,7 +24,7 @@ namespace ReLearn
                 var database = DataBase.Connect(Database_Name.English_DB);
                 database.CreateTable<DBWords>();
                 if (database.Query<DBWords>($"SELECT * FROM {DataBase.TableNameLanguage}").Count != 0)
-                    StartActivity(new Intent(this, typeof(Languages_Learn)));
+                    StartActivity(typeof(Languages_Learn));
                 else
                     Toast.MakeText(this, GetString(Resource.String.DatabaseEmpty), ToastLength.Short).Show();
             }
@@ -46,10 +46,7 @@ namespace ReLearn
                 if (search_occurrences.Count == search_numberlearn_null)
                     Toast.MakeText(this, GetString(Resource.String.RepeatedAllWords), ToastLength.Short).Show();
                 else if (search_occurrences.Count != 0)
-                {
-                    Intent intent_english_repeat = new Intent(this, typeof(Languages_Repeat));
-                    StartActivity(intent_english_repeat);
-                }
+                    StartActivity(typeof(Languages_Repeat));
                 else
                     Toast.MakeText(this, GetString(Resource.String.DatabaseEmpty), ToastLength.Short).Show();              
             }
@@ -79,11 +76,11 @@ namespace ReLearn
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
             if (item.ItemId == Resource.Id.Stats)
-                StartActivity(new Intent(this, typeof(Languages_Stat)));
+                StartActivity(typeof(Languages_Stat));
             else if(item.ItemId == Resource.Id.Deleteword)
-                StartActivity(new Intent(this, typeof(Languages_View_Dictionary)));
+                StartActivity(typeof(Languages_View_Dictionary));
             else if(item.ItemId == Resource.Id.MenuEnglishSelectDictionary)
-                StartActivity(new Intent(this, typeof(Languages_SelectDictionary)));
+                StartActivity(typeof(Languages_SelectDictionary));
             else if(item.ItemId == Android.Resource.Id.Home)
                 Finish();
             return true;

@@ -32,7 +32,7 @@ namespace ReLearn
         public override bool OnOptionsItemSelected(IMenuItem item)
         {      
             if (item.ItemId == Android.Resource.Id.Home)
-                this.Finish();
+                Finish();
             return true;
         }
 

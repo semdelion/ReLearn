@@ -7,14 +7,6 @@ using Android.Content;
 using Calligraphy;
 using Android.Support.V7.App;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
-using System.IO;
-using System.Net;
-using Android.Speech.Tts;
-using Java.Util;
-using Android.Runtime;
-using System.Threading.Tasks;
 
 namespace ReLearn
 {
@@ -75,6 +67,7 @@ namespace ReLearn
             DatabaseConnect.Execute(query, DateTime.Now, 0, Word);
             Button_Languages_Learn_Next_Click(null);
         }
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             AdditionalFunctions.Font();
@@ -98,7 +91,7 @@ namespace ReLearn
 
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
-            this.Finish();
+            Finish();
             return true;
         }
 

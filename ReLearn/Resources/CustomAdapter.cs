@@ -38,7 +38,7 @@ namespace ReLearn.Resources
 
             AdditionalFunctions.SetColorForItems(list[position].NumberLearn, TView);
          
-            TView.Text = list[position].Word +"  -  "+ list[position].TranslationWord;
+            TView.Text = $"{list[position].Word}  -  {list[position].TranslationWord}";
             return view;
         }
     }

@@ -25,7 +25,6 @@ namespace ReLearn
                 email.SetType("message/rfc822");
                 StartActivity(email);
                 editText_Feedback.Text = "";
-               // Toast.MakeText(this, Additional_functions.GetResourceString("Message_Sent", this.Resources), ToastLength.Short).Show();
             }
         }
 
@@ -42,7 +41,7 @@ namespace ReLearn
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
             if (item.ItemId == Android.Resource.Id.Home)
-                this.Finish();
+                Finish();
             return true;
         }
 

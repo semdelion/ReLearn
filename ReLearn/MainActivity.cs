@@ -18,10 +18,10 @@ namespace ReLearn
     public class MainActivity : AppCompatActivity
     {
         [Java.Interop.Export("Button_Language_Click")]
-        public void Button_Language_Click(View v) => StartActivity(new Intent(this, typeof(Languages)));
+        public void Button_Language_Click(View v) => StartActivity(typeof(Languages));
         
         [Java.Interop.Export("Button_Flags_Click")]
-        public void Button_Flags_Click(View v) => StartActivity(new Intent(this, typeof(Flags)));
+        public void Button_Flags_Click(View v) => StartActivity(typeof(Flags));
           
         protected override void OnCreate(Bundle savedInstanceState)
         {          
@@ -41,14 +41,14 @@ namespace ReLearn
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
             if(item.ItemId == Resource.Id.about_us)
-                StartActivity(new Intent(this, typeof(About_us)));
+                StartActivity(typeof(About_us));
             else if(item.ItemId == Resource.Id.Feedback)
-                StartActivity(new Intent(this, typeof(Feedback)));
+                StartActivity(typeof(Feedback));
             else if (item.ItemId == Android.Resource.Id.Home)
                 Finish();
             else if (item.ItemId == Resource.Id.Settings_Menu)
             {
-                StartActivity(new Intent(this, typeof(Settings_Menu)));
+                StartActivity(typeof(Settings_Menu));
                 Finish();
             }
             return true;

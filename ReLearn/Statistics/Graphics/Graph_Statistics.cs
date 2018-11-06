@@ -12,7 +12,7 @@ namespace ReLearn
         Canvas The_canvas;
         Color Color_Diagram_1;
         Color Color_Diagram_2;
-        string TabelName;
+        string TabelName { get; set; }
         readonly Color background_color = new Color(Color.Argb(150, 16, 19, 38));
         readonly Paint paint_border = new Paint { StrokeWidth = 4, Color = Color.Argb(250, 215, 248, 254), AntiAlias = true };
         readonly Paint paint_text = new Paint { TextSize = 25, StrokeWidth = 4, Color = Color.Rgb(215, 248, 254), AntiAlias = true };
@@ -110,7 +110,7 @@ namespace ReLearn
                         LastStat.Left + 7 * LastStat.Width / 100, LastStat.Top + LastStat.Height / 14);
                     LastStat.DrawText(The_canvas, 15 * LastStat.Height / 100, Context.GetString(Resource.String.Correct)
                         + ": " + Convert.ToString(Database_Stat[Database_Stat.Count - 1].True)
-                        +", "+ Context.GetString(Resource.String.Incorrect_Up)
+                        + ", " + Context.GetString(Resource.String.Incorrect_Up)
                         + ": " + Convert.ToString(Database_Stat[Database_Stat.Count - 1].False), LastStat.Left + 7 * LastStat.Width / 100, 
                         LastStat.Top + 25 * LastStat.Height / 100 + LastStat.Height / 7);
                 }

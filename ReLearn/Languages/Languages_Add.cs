@@ -14,14 +14,14 @@ namespace ReLearn
     {
         string Word
         {
-            get{ return FindViewById<EditText>(Resource.Id.editText_foreign_word).Text; }
-            set{ FindViewById<EditText>(Resource.Id.editText_foreign_word).Text = value; }
+            get{ return FindViewById<EditText>(Resource.Id.editText_foreign_word).Text.ToLower(); }
+            set{ FindViewById<EditText>(Resource.Id.editText_foreign_word).Text = value.ToLower(); }
         }
 
         string TranslationWord
         {
-            get { return FindViewById<EditText>(Resource.Id.editText_translation_word).Text; }
-            set { FindViewById<EditText>(Resource.Id.editText_translation_word).Text = value; }
+            get { return FindViewById<EditText>(Resource.Id.editText_translation_word).Text.ToLower(); }
+            set { FindViewById<EditText>(Resource.Id.editText_translation_word).Text = value.ToLower(); }
         }
 
         [Java.Interop.Export("Button_Languages_Add_Word_Click")]
@@ -32,15 +32,15 @@ namespace ReLearn
             {
                 var database = DataBase.Connect(Database_Name.English_DB);
                 database.CreateTable<DBWords>();
-                var search_occurrences = database.Query<DBWords>($"SELECT * FROM {TableNamesLanguage.My_Directly.ToString()} WHERE Word = ?", Word);// поиск вхождения слова в БД
+                // поиск вхождения слова в БД
                 if (Word == "" || TranslationWord == "")
                     Toast.MakeText(this, GetString(Resource.String.Enter_word), ToastLength.Short).Show();
-                else if (search_occurrences.Count != 0)
+                else if (database.Query<DBWords>($"SELECT * FROM {TableNamesLanguage.My_Directly.ToString()} WHERE Word = ?", Word).Count != 0)
                     Toast.MakeText(this, GetString(Resource.String.Word_exists), ToastLength.Short).Show();               
                 else
                 {
                     var query = $"INSERT INTO {TableNamesLanguage.My_Directly.ToString()} (Word, TranslationWord, NumberLearn, DateRecurrence) VALUES (?, ?, ?, ?)";
-                    database.Execute(query, Word.ToLower(), TranslationWord.ToLower(), Settings.StandardNumberOfRepeats, DateTime.Now);                                    
+                    database.Execute(query, Word, TranslationWord, Settings.StandardNumberOfRepeats, DateTime.Now);                                    
                     Toast.MakeText(this, GetString(Resource.String.Word_Added), ToastLength.Short).Show();
                 }
                 Word = TranslationWord = "";

@@ -36,9 +36,7 @@ namespace ReLearn
         public override bool OnPrepareOptionsMenu(IMenu menu)
         {
             MenuInflater.Inflate(Resource.Menu.search, menu);
-            var searchItem = menu.FindItem(Resource.Id.action_search);
-
-            var _searchView = searchItem.ActionView.JavaCast<Android.Support.V7.Widget.SearchView>();
+            var _searchView = menu.FindItem(Resource.Id.action_search).ActionView.JavaCast<Android.Support.V7.Widget.SearchView>();
 
             _searchView.QueryTextChange += (sender, e) =>
             {

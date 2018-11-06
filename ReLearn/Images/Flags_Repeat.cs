@@ -142,13 +142,13 @@ namespace ReLearn
                     CurrentWordNumber = rnd.Next(dataBase.Count);
                     NextTest();
                     Button_enable(true);
-                    TitleCount = Convert.ToString(GetString(Resource.String.Repeat) + " " + (Count + 1) + "/" + Settings.NumberOfRepeatsImage);
+                    TitleCount = $"{GetString(Resource.String.Repeat)} {Count + 1}/{Settings.NumberOfRepeatsImage}";
                 }
                 else
                 {
                     DBStatistics.Insert(Statistics.AnswerTrue, Statistics.AnswerFalse, DataBase.TableNameImage.ToString());
                     DBImages.Update(Stats);
-                    StartActivity(new Intent(this, typeof(Flags_Stats)));
+                    StartActivity(typeof(Flags_Stats));
                     this.Finish();
                 }
             }
@@ -165,7 +165,7 @@ namespace ReLearn
             SetSupportActionBar(toolbarMain);
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
 
-            Statistics.Statistics_update();
+            Statistics.CreateNewStatistics();
             Buttons = new List<Button>{
                 FindViewById<Button>(Resource.Id.button_F_choice1),
                 FindViewById<Button>(Resource.Id.button_F_choice2),
