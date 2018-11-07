@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+	<android.support.v7.widget.Toolbar 
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		android:id="@+id/toolbarDictionaryReplenishment"
+		android:layout_width="match_parent"
+       	android:layout_height="80dp"	
+		android:theme="@style/ToolbarStyle"	
+		android:background="@drawable/toolbar"    		
+		app:buttonGravity="bottom"
+		app:navigationIcon="@mipmap/arrow" >
+		<TextView
+			android:gravity="bottom"
+			android:paddingBottom="12dp"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:text="@string/Addition"    
+		/>
+	</android.support.v7.widget.Toolbar >
+
+	<!--<TableLayout 
+		android:layout_width="match_parent"           
+		android:layout_height="match_parent"
+        android:stretchColumns="2">
+		
+		<TableRow>
+			 <TextView
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"			
+				android:layout_marginLeft="10.0dp"
+				android:layout_marginTop="10.0dp"
+				android:layout_column="0"
+				android:textSize="20dp"
+				android:textColor="#d7f8fe"
+				android:text="@string/SeparatorWords"
+			/>
+			<Spinner
+				android:id="@+id/spinner_separator_words"
+				android:backgroundTint="#d7f8fe"
+				android:layout_marginRight="10.0dp"
+				android:layout_marginLeft="10.0dp"
+				android:layout_marginTop="10.0dp"
+				android:layout_width="100dp"
+				android:layout_height="wrap_content"
+				android:layout_column="1"
+				android:textSize="25dp"
+				android:prompt="@string/SeparatorWords"
+				android:popupBackground="#283544"/>
+				
+		</TableRow>
+	-->
+		<EditText
+			android:hint="@string/Insert_data"
+			android:textColorHint="#939393"
+			android:backgroundTint="#d7f8fe"
+			android:layout_width="match_parent"
+			android:layout_height="400.0dp"
+			android:layout_marginRight="10.0dp"
+			android:layout_marginLeft="10.0dp"
+			android:layout_marginTop="5.0dp"
+			android:id="@+id/editText_DictionaryReplenishment"
+			android:textSize="25dp"
+			android:textColor="#d7f8fe"
+			android:defaultFocusHighlightEnabled="true"
+			android:scrollbars="vertical" />
+		<Button
+			android:text="@string/Add_word"
+			android:layout_width="match_parent"
+			android:layout_height="55.0dp"
+			android:id="@+id/button_add_DictionaryReplenishment"
+			android:layout_marginRight="40.0dp"
+			android:layout_marginLeft="40.0dp"
+			android:layout_marginTop="10.0dp"
+			android:textColor="#d7f8fe"
+			android:textSize="20dp"
+			android:background="@drawable/button_style_standard"
+			android:gravity="center"
+			android:onClick="Button_Languages_Add_DictionaryReplenishment"
+			android:layout_gravity="bottom" 
+			/>
+		
+
+<!--	</TableLayout>-->
+
+	
+</LinearLayout>

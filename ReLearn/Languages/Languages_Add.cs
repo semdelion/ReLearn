@@ -34,7 +34,7 @@ namespace ReLearn
                 Toast.MakeText(this, GetString(Resource.String.Word_exists), ToastLength.Short).Show();               
             else
             {
-                DBWords.Add(Word, TranslationWord);
+                DBWords.Insert(Word, TranslationWord);
                 Word = TranslationWord = "";
                 Toast.MakeText(this, GetString(Resource.String.Word_Added), ToastLength.Short).Show();
             }
@@ -51,9 +51,18 @@ namespace ReLearn
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
         }
 
+        public override bool OnPrepareOptionsMenu(IMenu menu)
+        {
+            MenuInflater.Inflate(Resource.Menu.menu_english_add, menu);
+            return true;
+        }
+
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
-            Finish();
+            if (item.ItemId == Resource.Id.dictionary_replenishment)
+                StartActivity(typeof(Languages_DictionaryReplenishment));
+            else if (item.ItemId == Android.Resource.Id.Home)
+                Finish();
             return true;
         }
 

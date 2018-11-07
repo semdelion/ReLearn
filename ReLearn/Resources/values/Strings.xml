@@ -83,5 +83,16 @@
   <string name="ThreeFormsOfVerb">Verbs</string>
   <string name="DictionaryOver">Dictionary over</string>
   <string name="Pronunciation">Pronunciation</string>
+  <string name="SeparatorWords">Word separator:</string>
+  <string name="Insert_data">Insert data</string>
+  <string name="DataCorrectness">Data entered incorrectly</string>
+  <string name="WordsAdded">Words have been added to your dictionary</string>
+  <string name="Instruction">Instruction</string>
+
+  <string-array name="SeparatorLines_array">
+    <item>|</item>
+    <item>$</item>
+    <item>\@</item>
+  </string-array>
   
 </resources>

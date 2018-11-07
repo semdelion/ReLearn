@@ -93,9 +93,9 @@ namespace ReLearn
             DataBase.Languages.Query<DBWords>($"SELECT * FROM {TableNamesLanguage.My_Directly.ToString()} WHERE Word = ? LIMIT 1", Word).Count != 0 
             ? true : false;
 
-        public static void Add(string Word, string TranslationWord) =>
+        public static void Insert(string Word, string TranslationWord) =>
             DataBase.Languages.Execute(
-                $"INSERT INTO {TableNamesLanguage.My_Directly.ToString()} (Word, TranslationWord, NumberLearn, DateRecurrence) VALUES (?, ?, ?, ?)", 
+                $"INSERT INTO {TableNamesLanguage.My_Directly.ToString()} (Word, TranslationWord, NumberLearn, DateRecurrence) VALUES (?, ?, ?, ?)",
                 Word, TranslationWord, Settings.StandardNumberOfRepeats, DateTime.Now);
 
         public static List<DBWords> GetDataNotLearned => DataBase.Languages.Query<DBWords>(

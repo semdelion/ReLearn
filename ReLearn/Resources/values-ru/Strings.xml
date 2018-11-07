@@ -83,5 +83,10 @@
   <string name="ThreeFormsOfVerb">Глаголы</string>
   <string name="DictionaryOver">Словарь закончился</string>
   <string name="Pronunciation">Произношение</string>
+  <string name="SeparatorWords">Разделитель слов:</string>
+  <string name="Insert_data">Вставьте данные</string>
+  <string name="DataCorrectness">Данные введены некорректно</string>
+  <string name="WordsAdded">Слова были добавлены в ваш словарь</string>
+  <string name="Instruction">Инструкция</string>
  
 </resources>
