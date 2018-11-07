@@ -1,0 +1,130 @@
+﻿fan | вентилятор
+air conditioning | кондиционер
+apartment house|многоквартирный дом
+arbor | беседка
+armchair | кресло
+ashtray | пепельница
+attic | чердак
+balcony | балкон
+barn, shed |сарай; амбар
+barrack | барак
+bathroom | ванная комната
+bathtub, tub | ванна
+bed | кровать
+bedclothes | постельное белье
+bedroom | спальня
+bedspread, coverlet | покрывало
+blanket | одеяло
+blanket cover | пододеяльник
+blinds | шторы
+building | здание
+bungalow | бунгало
+bunk bed| двухъярусная кровать
+campsite | кемпинг
+carpet | ковер
+cellar | погреб; подвал
+chair| стул
+cloakroom | гардероб
+storeroom| кладовая
+comforter | стеганое пуховое одеяло
+cottage | коттедж; загородный дом
+couch, sofa | диван
+country house | деревенский дом
+cowshed | коровник
+crib, cot | детская кроватка
+cup| чашка
+curtain |занавес
+desk |письменный стол
+dining room | обеденный зал; столовая
+dormitory | общежитие
+double bed |двуспальная кровать
+double room | номер на двоих
+drawing room, sitting room | гостиная
+dwelling | жилище; дом
+dwelling place | местожительство
+entrance hall | прихожая
+flat, apartment | квартира
+flight of stairs | лестничный пролет
+floor, storey | этаж
+flower bed | клумба
+flower garden | цветник
+fork | вилка
+freezer | морозильник; морозильная камера
+front of the house | фасад дома
+furniture | мебель
+garage | гараж
+garbage can | мусорное ведро
+garden | сад
+garden plot | садовый участок
+guesthouse | домик для гостей
+hall | зал; холл
+hayloft | сеновал
+heating | отопление
+hedge | живая изгородь, плетень
+home | дом
+hotel | гостиница, отель
+hovel | лачуга
+hut | хижина
+inn | маленькая гостиница
+jacuzzi, hot tub | джакузи
+kennel | собачья будка
+key | ключ
+kitchen | кухня
+restroom, toilet | туалет, уборная
+lawn | лужайка; газон
+library | библиотека
+lift, elevator | лифт
+light bulb | лампочка
+living room |общая комната
+lodge | охотничий домик
+loft, garret | чердак
+mansion | особняк
+mattress | матрас
+motel | мотель
+mug | кружка
+multi-storey building| многоэтажное здание
+no vacancies | нет свободных мест
+playroom | игровая комната
+orchard | фруктовый сад
+oven | духовой шкаф; духовка
+pan| сковородка; кастрюля
+pantry | кладовая
+parapet | перила; парапет
+pigsty| свинарник; хлев
+pillow | подушка
+pillow case | наволочка
+plate | тарелка
+pond | пруд
+private residence | особняк
+quilt | стеганое покрывало
+reception | стойка регистрации
+refrigerator, fridge | холодильник
+resort |курорт
+roof | крыша; кровля
+room service | обслуживание номеров
+safe| сейф
+shampoo | шампунь
+sheet | простыня
+shower, bathtub | душ; ванная
+single room | номер на одного
+sink | раковина
+soap | мыло
+spoon | ложка
+stable | конюшня
+staircase , stairs | лестница
+stool | табурет
+stove | печка; печь
+study | рабочий кабинет
+suite | номер-люкс
+swimming pool | плавательный бассейн
+table | стол
+tablecloth | скатерть
+tap, faucet | водопроводный кран
+toilet tissue | туалетная бумага
+towel | полотенце
+vacancies |есть свободные места
+water bed | кровать на водяном матрасе
+water supply | водоснабжение
+yard | двор
+floor | пол, этаж
+wall | стена

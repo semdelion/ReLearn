@@ -48,7 +48,7 @@ namespace ReLearn
             TranslationWord = x.TranslationWord;
         }
 
-        public DBWords Find() => this;
+        public DBWords Find() => this;    
 
         public static void UpdateWordsToRepeat()
         {

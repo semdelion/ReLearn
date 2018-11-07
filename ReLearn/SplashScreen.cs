@@ -12,6 +12,7 @@ namespace ReLearn
             base.OnCreate(savedInstanceState);
             FrameStatistics.Plain = Android.Graphics.Typeface.CreateFromAsset(Assets, Settings.font);
             DataBase.InstallDatabaseFromAssets();
+            DataBase.SetupConnection();
             DBWords.СreateNewTableToLanguagesDataBase();
             DBImages.UpdateDate();
             DBWords.UpdateWordsToRepeat();

@@ -1,0 +1,178 @@
+﻿addition | сложение
+algebra| алгебра
+almanac | альманах
+angle | угол
+annotation | аннотация
+approximately | приблизительно
+atlas | атлас
+attendance | посещаемость
+audience | аудитория; слушатели
+auditorium | аудитория; зал
+author | автор
+bell | звонок
+binding | переплет
+biology | биология
+blackboard,  chalkboard | доска
+book | книга
+booklet |брошюра; буклет
+bookmark | закладка
+braces | фигурные скобки
+brackets | скобки
+break, recess | перемена; перерыв
+cafeteria | столовая
+chalk | мел
+chapter | глава
+chemistry | химия
+children's book |детская книга
+class | класс; занятия
+classroom| классная комната
+college  | колледж
+common denominator | общий знаменатель
+computer science | информатика
+contents| содержание; оглавление
+copybook, notebook | тетрадь
+course| курс
+cover | обложка
+crayon| цветной карандаш
+cube root|кубический корень
+dean | декан
+dean's office | деканат
+decimal fraction | десятичная дробь
+decimal point | десятичная точка
+degree | ученая степень
+denominator | знаменатель
+department | отдел
+dictionary | словарь
+difference | разность
+diploma |диплом
+division | деление
+drama | драма
+easel | мольберт
+economics |экономика
+encyclopedia | энциклопедия
+English |английский язык
+enrollment| поступление
+epilogue | эпилог
+equality | равенство
+equals |  равняться
+equation | уравнение
+eraser, rubber | ластик; резинка
+essay |очерк; эссе
+exam | экзамен
+fable| басня
+faculty | факультет
+fairy tale | сказка
+fantasy |фантастика
+fiction | художественная литература
+finals | выпускные экзамены
+form | форма
+fraction | дробь
+freshman | первокурсник
+geography | география
+geometry |геометрия
+glue | клей
+grade, mark | отметка; оценка
+graduation | окончание учебного заведения
+group | группа
+guide book | путеводитель
+handbook | справочник
+headmistress | директриса
+high school|средняя школа
+higher education | высшее образование
+history |история
+homework |домашняя работа
+horror|ужасы
+illustrate|иллюстрировать
+improper fraction | неправильная дробь
+inequality | неравенство
+infinity |бесконечность
+ink | чернила
+institute | институт
+introduction | введение
+lecture | лекция
+lecturer | лектор
+legend | легенда
+length | длина; расстояние
+less or equal | мельше или равно
+lesson | урок; занятие
+literature | литература
+lodgings|сдаваемая комната
+mathematical sign | математический знак
+maths | математика
+memoir, reminiscence| мемуары
+minus | минус
+more or equal |  больше или равно
+multiplication | умножение
+multiplication table|  таблица умножения
+music | музыка
+myth| миф
+negative sign |  знак отрицания
+nonfiction| документальная литература
+not equal |  не равный
+notes | заметка
+novel |роман
+number | число
+numerator| числитель
+ormitory | общежитие
+pamphlet, booklet | брошюра
+paper | бумага
+paper clip | скрепка для бумаг
+paragraph | абзац
+parallel |  параллельный
+parentheses|  круглые скобки
+passage | отрывок
+pen | ручка
+pencil | карандаш
+pencil sharpener| точилка
+percent | процент
+perpendicular | перпендикуляр
+physics | физика
+plus | плюс
+pocket edition | карманное издание
+poem | стихотворение
+poetry | поэзия
+preface | предисловие
+Primary School |начальная школа
+principal, headmaster|директор
+problem | задача
+professor | профессор
+prologue|пролог
+prose |проза
+psychology | психология
+pupil | ученик
+quotient |частное (при делении)
+reference book | справочник
+register | регистр
+remainder | остаток
+rhyme | рифма
+right angle| прямой угол
+ruler | линейка
+saga | сага
+satire | сатира
+school | школа
+science fiction| научная фантастика
+scissors | ножницы
+series of numbers | ряд чисел
+sociology | социология
+sonnet | сонет
+sophomore |второкурсник
+square brackets | квадратные скобки
+square root of | корень квадратный из
+stapler | степлер
+story | рассказ
+student | студент
+subtraction | вычитание
+sum | сумма
+table | стол; таблица
+teacher | преподаватель
+technical literature | техническая литература
+term, semester | четверть; семестр
+test | тест
+text| текст
+textbook | учебник
+title | заглавие
+transfer | перевод, передача
+translation | перевод
+university| университет
+volume |том
+writer | писатель

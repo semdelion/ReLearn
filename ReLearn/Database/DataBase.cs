@@ -13,9 +13,9 @@ namespace ReLearn
         const string English_DB = "database_words.db3"; 
         const string Flags_DB = "database_image.db3";
 
-        public readonly static SQLiteConnection Languages = Connect(English_DB);
-        public readonly static SQLiteConnection Images = Connect(Flags_DB);
-        public readonly static SQLiteConnection Statistics = Connect(Statistics_DB);
+        public static SQLiteConnection Languages;
+        public static SQLiteConnection Images;
+        public static SQLiteConnection Statistics;
 
         public static TableNamesLanguage TableNameLanguage
         {
@@ -51,6 +51,13 @@ namespace ReLearn
         {
             string databasePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), nameDB);
             return new SQLiteConnection(databasePath);
+        }
+
+        public static void SetupConnection()
+        {
+            Languages = Connect(English_DB);
+            Images = Connect(Flags_DB);
+            Statistics = Connect(Statistics_DB);
         }
 
         static void InstallDB(string FileName)
