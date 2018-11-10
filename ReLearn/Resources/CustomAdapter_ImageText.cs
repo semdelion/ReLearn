@@ -44,11 +44,11 @@ namespace ReLearn
             var view = convertView ?? activity.LayoutInflater.Inflate(Resource.Layout.item_view_dictionary_image, parent, false);
             var TextView = view.FindViewById<TextView>(Resource.Id.textView_item_view_dictionary);
             var ImageView = view.FindViewById<ImageView>(Resource.Id.imageView_item_view_dictionary);
-
-            var his = Application.Context.Assets.Open($"ImageFlagsJpeg/{list[position].Image_name}.jpg");
-            Bitmap bitmap = BitmapFactory.DecodeStream(his);
-            ImageView.SetImageBitmap(bitmap);
-
+            using (var his = Application.Context.Assets.Open($"Image{DataBase.TableNameImage}Mini/{list[position].Image_name}.jpg"))
+            {
+                Bitmap bitmap = BitmapFactory.DecodeStream(his);
+                ImageView.SetImageBitmap(bitmap);
+            }
             AdditionalFunctions.SetColorForItems(list[position].NumberLearn, TextView);
 
             if (Settings.Currentlanguage == Language.en.ToString())

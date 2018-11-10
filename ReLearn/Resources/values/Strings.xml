@@ -88,6 +88,8 @@
   <string name="DataCorrectness">Data entered incorrectly</string>
   <string name="WordsAdded">Words have been added to your dictionary</string>
   <string name="Instruction">Instruction</string>
+  <string name="ComputerScience">Computer Science</string>
+  <string name="Nature">Nature</string>
 
   <string-array name="SeparatorLines_array">
     <item>|</item>

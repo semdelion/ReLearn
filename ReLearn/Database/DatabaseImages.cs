@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 
@@ -30,12 +31,11 @@ namespace ReLearn
 
         public DBImages() => DateRecurrence = DateTime.Today;
 
-        public static void Update(List<Statistics> Stats) // изменение у BD элемента NumberLearn
+        public static void Update(string Image, int learn) // изменение у BD элемента NumberLearn
         {
-            for (int i = 0; i < Stats.Count; i++)
                 DataBase.Images.Execute(
                     $"UPDATE {DataBase.TableNameImage} SET DateRecurrence = ?, NumberLearn = ? WHERE Image_name = ?", 
-                    DateTime.Now, Stats[i].Learn, Stats[i].Word);
+                    DateTime.Now, learn, Image);
         }
 
         public static void UpdateDate()
@@ -52,6 +52,28 @@ namespace ReLearn
                     }
             }
         }
+
+        //public static void СreateTable()
+        //{
+        //    foreach (string tableName in Enum.GetNames(typeof(TableNamesImage)))
+        //    {
+        //        if (DataBase.Images.GetTableInfo(tableName).Count == 0)
+        //        {
+        //            DataBase.Images.Query<DBImages>($"CREATE TABLE {tableName} (_id int PRIMARY KEY, Word string, TranslationWord string, NumberLearn int, DateRecurrence DateTime, Context string, Image string)");
+        //            using (StreamReader reader = new StreamReader(Application.Context.Assets.Open($"Database/{tableName}.txt")))
+        //            {
+        //                string str_line;
+        //                while ((str_line = reader.ReadLine()) != null)
+        //                {
+        //                    var list_en_ru = str_line.Split('|');
+        //                    var query = $"INSERT INTO {tableName} (Word, TranslationWord, NumberLearn, DateRecurrence) VALUES (?, ?, ?, ?)";
+        //                    DataBase.Images.Execute(query, list_en_ru[0].ToLower(), list_en_ru[1].ToLower(), Settings.StandardNumberOfRepeats, DateTime.Now);
+        //                }
+        //            }
+        //            DataBase.Statistics.Query<DatabaseStatistics>($"CREATE TABLE {tableName}_Statistics (_id int PRIMARY KEY, True int, False int, DateOfTesting DateTime)");
+        //        }
+        //    }
+        //}
 
         public static void UpdateLearningNotRepeat(string ImageName)
         {

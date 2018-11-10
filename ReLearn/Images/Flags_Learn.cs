@@ -19,13 +19,13 @@ namespace ReLearn
 
         Bitmap ImageViewBox
         {
-            set{ FindViewById<ImageView>(Resource.Id.imageView_Flags_learn).SetImageBitmap(value);}
+            set => FindViewById<ImageView>(Resource.Id.imageView_Flags_learn).SetImageBitmap(value);
         }
 
         string ImageName
         {
-            get { return FindViewById<TextView>(Resource.Id.textView_flag_learn).Text; }
-            set { FindViewById<TextView>(Resource.Id.textView_flag_learn).Text = value; }
+            get => FindViewById<TextView>(Resource.Id.textView_flag_learn).Text; 
+            set => FindViewById<TextView>(Resource.Id.textView_flag_learn).Text = value; 
         }
         
 
@@ -44,15 +44,14 @@ namespace ReLearn
                 DBImages.UpdateLearningNext(ImagesDatabase[Count].Image_name);
                 try
                 {
-                    ImageViewBox = BitmapFactory.DecodeStream(
-                        Application.Context.Assets.Open(
-                            $"ImageFlags/{ImagesDatabase[Count].Image_name}.png"));
+                    using (ImageViewBox = BitmapFactory.DecodeStream(Application.Context.Assets.Open(
+                            $"Image{DataBase.TableNameImage}/{ImagesDatabase[Count].Image_name}.png")))
+                        ImageName = AdditionalFunctions.NameOfTheFlag(ImagesDatabase[Count++]);
                 }
                 catch(Exception ex)
                 {
                     Toast.MakeText(this, ex.Message , ToastLength.Short).Show();
                 }
-                ImageName = AdditionalFunctions.NameOfTheFlag(ImagesDatabase[Count++]);
             }
             else
                 Toast.MakeText(this, GetString(Resource.String.DictionaryOver), ToastLength.Short).Show();

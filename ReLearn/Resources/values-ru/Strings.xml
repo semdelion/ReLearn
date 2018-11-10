@@ -88,5 +88,6 @@
   <string name="DataCorrectness">Данные введены некорректно</string>
   <string name="WordsAdded">Слова были добавлены в ваш словарь</string>
   <string name="Instruction">Инструкция</string>
- 
+  <string name="ComputerScience">Информатика</string>
+  <string name="Nature">Природа</string>
 </resources>

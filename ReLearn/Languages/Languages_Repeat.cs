@@ -16,25 +16,21 @@ namespace ReLearn
     [Activity(Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     class Languages_Repeat : AppCompatActivity
     {
-        int Count = -1;
         int CurrentWordNumber { get; set; }
-
         List<Button> Buttons { get; set; }
         ButtonNext Button_next { get; set; }
         List<DBWords> WordDatabase { get; set; }
-        
         MyTextToSpeech MySpeech { get; set; }
-        readonly List<Statistics> Stats = new List<Statistics>();
 
         string TitleCount
         {
-            set { FindViewById<TextView>(Resource.Id.Repeat_toolbar_textview).Text = value; }
+            set => FindViewById<TextView>(Resource.Id.Repeat_toolbar_textview).Text = value; 
         }
 
         string Word
         {
-            get { return FindViewById<TextView>(Resource.Id.textView_Eng_Word).Text; }
-            set { FindViewById<TextView>(Resource.Id.textView_Eng_Word).Text = value; }
+            get => FindViewById<TextView>(Resource.Id.textView_Eng_Word).Text; 
+            set => FindViewById<TextView>(Resource.Id.textView_Eng_Word).Text = value; 
         }
 
         void Button_enable(bool state)
@@ -76,14 +72,14 @@ namespace ReLearn
             Button_enable(false);
             if (buttons[0].Text == WordDatabase[CurrentWordNumber].TranslationWord)
             {
-                Statistics.Add(Stats, WordDatabase[CurrentWordNumber].Word, CurrentWordNumber, WordDatabase[CurrentWordNumber].NumberLearn, -Settings.TrueAnswer);
-                Statistics.AnswerTrue++;
+                Statistics.Add(WordDatabase, CurrentWordNumber, -Settings.TrueAnswer);
+                Statistics.True++;
                 buttons[0].Background = GetDrawable(Resource.Drawable.button_true);
             }
             else
             {
-                Statistics.Add(Stats, WordDatabase[CurrentWordNumber].Word, CurrentWordNumber, WordDatabase[CurrentWordNumber].NumberLearn, Settings.FalseAnswer);
-                Statistics.AnswerFalse++;
+                Statistics.Add(WordDatabase, CurrentWordNumber, Settings.FalseAnswer);
+                Statistics.False++;
                 buttons[0].Background = GetDrawable(Resource.Drawable.button_false);
                 for (int i = 1; i < buttons.Length; i++)
                     if (buttons[i].Text == WordDatabase[CurrentWordNumber].TranslationWord)
@@ -96,8 +92,8 @@ namespace ReLearn
 
         void Unknown()
         {
-            Statistics.AnswerFalse++;
-            Statistics.Add(Stats, WordDatabase[CurrentWordNumber].Word, CurrentWordNumber, WordDatabase[CurrentWordNumber].NumberLearn, Settings.NeutralAnswer);
+            Statistics.False++;
+            Statistics.Add(WordDatabase, CurrentWordNumber, Settings.NeutralAnswer);
             for (int i = 0; i < Buttons.Count; i++)
                 if (Buttons[i].Text == WordDatabase[CurrentWordNumber].TranslationWord)
                 {
@@ -133,18 +129,19 @@ namespace ReLearn
             }
             else
             {
-                if (Count < Settings.NumberOfRepeatsLanguage - 1)
+                if (Statistics.Count < Settings.NumberOfRepeatsLanguage - 1)
                 {
-                    Count++;
+                    if (v != null)
+                        Statistics.Count++;
                     CurrentWordNumber = new System.Random(unchecked((int)(DateTime.Now.Ticks))).Next(WordDatabase.Count);
                     NextWord();
                     Button_enable(true);
-                    TitleCount = $"{GetString(Resource.String.Repeat)} {Count + 1}/{Settings.NumberOfRepeatsLanguage}";
+                    TitleCount = $"{GetString(Resource.String.Repeat)} {Statistics.Count + 1}/{Settings.NumberOfRepeatsLanguage}";
                 }
                 else
                 {
-                    DBStatistics.Insert(Statistics.AnswerTrue, Statistics.AnswerFalse, DataBase.TableNameLanguage.ToString());
-                    DBWords.Update(Stats);
+                    DBStatistics.Insert(Statistics.True, Statistics.False, DataBase.TableNameLanguage.ToString());
+                    Statistics.Count = Statistics.True = Statistics.False = 0;
                     StartActivity(typeof(Languages_Stat));
                     Finish();
                 }
@@ -161,23 +158,21 @@ namespace ReLearn
            
             SetSupportActionBar(toolbarMain);
             SupportActionBar.SetDisplayHomeAsUpEnabled(true); // отображаем кнопку домой
-            Statistics.CreateNewStatistics();
             MySpeech = new MyTextToSpeech();
-
+            WordDatabase = DBWords.GetDataNotLearned;
+            Statistics.Table = DataBase.TableNameLanguage.ToString();
             Buttons = new List<Button>{
                 FindViewById<Button>(Resource.Id.button_Languages_choice1),
                 FindViewById<Button>(Resource.Id.button_Languages_choice2),
                 FindViewById<Button>(Resource.Id.button_Languages_choice3),
                 FindViewById<Button>(Resource.Id.button_Languages_choice4),
             };
-            
+
             Button_next = new ButtonNext
             {
                 button = FindViewById<Button>(Resource.Id.button_Languages_Next),
                 State = StateButton.Next
             };
-
-            WordDatabase = DBWords.GetDataNotLearned;
             if (WordDatabase.Count == 0)
             {
                 Toast.MakeText(this, GetString(Resource.String.RepeatedAllWords), ToastLength.Short).Show();

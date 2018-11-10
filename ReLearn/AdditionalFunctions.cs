@@ -39,7 +39,7 @@ namespace ReLearn
                 Color_TextView(TView, new Color(238, 252, 255));
             else if (degreeOfStudy > Settings.StandardNumberOfRepeats)
                 Color_TextView(TView, new Color(230,
-                200 - ((degreeOfStudy - Settings.StandardNumberOfRepeats) * 180 / Settings.StandardNumberOfRepeats), 20));     //  230, 20, 20   to   230, 200, 20
+                200 - ((degreeOfStudy - Settings.StandardNumberOfRepeats) * 180 / Settings.StandardNumberOfRepeats), 20));           //  230, 20, 20   to   230, 200, 20
             else
                 Color_TextView(TView,
                     new Color(20 + (degreeOfStudy * 180 / (Settings.StandardNumberOfRepeats - 1)), 230, 20));                        //  180, 230, 20   to   20,  230, 20
@@ -62,7 +62,6 @@ namespace ReLearn
             else
                 for (int i = 1; i < four; i++)
                     random_numbers[i] = (NotI + i) % count;
-
         }
 
         public static string NameOfTheFlag(DBImages image) =>

@@ -6,11 +6,14 @@ namespace ReLearn
     enum DBSettings
     {
         Language,
+        Pronunciation,
         Language_repeat_count,
         Images_repeat_count,
         DictionaryNameLanguages,
         DictionaryNameImage,
-        Pronunciation
+        Count,
+        True,
+        False
     }
     enum Language
     {
@@ -35,64 +38,26 @@ namespace ReLearn
 
         public static int NumberOfRepeatsImage
         {
-            get
-            {
-                if (System.String.IsNullOrEmpty(
-                       CrossSettings.Current.GetValueOrDefault(DBSettings.Images_repeat_count.ToString(), null)))
-                    CrossSettings.Current.AddOrUpdateValue(DBSettings.Images_repeat_count.ToString(), "20");
-                return Convert.ToInt32(
-                       CrossSettings.Current.GetValueOrDefault(DBSettings.Images_repeat_count.ToString(), null));
-            }
-            set
-            {
-                CrossSettings.Current.AddOrUpdateValue(DBSettings.Images_repeat_count.ToString(), Convert.ToString(value));
-            }
+            get => Convert.ToInt32(CrossSettings.Current.GetValueOrDefault(DBSettings.Images_repeat_count.ToString(), "20"));
+            set => CrossSettings.Current.AddOrUpdateValue(DBSettings.Images_repeat_count.ToString(), Convert.ToString(value));
         }
 
         public static int NumberOfRepeatsLanguage
         {
-            get
-            {
-                if (System.String.IsNullOrEmpty(
-                       CrossSettings.Current.GetValueOrDefault(DBSettings.Language_repeat_count.ToString(), null)))
-                    CrossSettings.Current.AddOrUpdateValue(DBSettings.Language_repeat_count.ToString(), "20");
-                return Convert.ToInt32(
-                       CrossSettings.Current.GetValueOrDefault(DBSettings.Language_repeat_count.ToString(), null));
-            }
-            set
-            {
-                CrossSettings.Current.AddOrUpdateValue(DBSettings.Language_repeat_count.ToString(), Convert.ToString(value));
-            }
+            get => Convert.ToInt32(CrossSettings.Current.GetValueOrDefault(DBSettings.Language_repeat_count.ToString(), "20"));
+            set => CrossSettings.Current.AddOrUpdateValue(DBSettings.Language_repeat_count.ToString(), Convert.ToString(value));
         }
 
         public static string CurrentPronunciation
         {
-            get
-            {
-                if (System.String.IsNullOrEmpty(
-                       CrossSettings.Current.GetValueOrDefault(DBSettings.Pronunciation.ToString(), null)))
-                    CrossSettings.Current.AddOrUpdateValue(DBSettings.Pronunciation.ToString(), Pronunciation.en.ToString());
-                return CrossSettings.Current.GetValueOrDefault(DBSettings.Pronunciation.ToString(), null);
-            }
-            set
-            {
-                CrossSettings.Current.AddOrUpdateValue(DBSettings.Pronunciation.ToString(), Convert.ToString(value));
-            }
+            get => CrossSettings.Current.GetValueOrDefault(DBSettings.Pronunciation.ToString(), Pronunciation.en.ToString());
+            set => CrossSettings.Current.AddOrUpdateValue(DBSettings.Pronunciation.ToString(), Convert.ToString(value));
         }
 
         public static string Currentlanguage
         {
-            get
-            {
-                if (System.String.IsNullOrEmpty(
-                       CrossSettings.Current.GetValueOrDefault(DBSettings.Language.ToString(), null)))
-                    CrossSettings.Current.AddOrUpdateValue(DBSettings.Language.ToString(), Language.en.ToString());
-                return CrossSettings.Current.GetValueOrDefault(DBSettings.Language.ToString(), null);
-            }
-            set
-            {
-                CrossSettings.Current.AddOrUpdateValue(DBSettings.Language.ToString(), Convert.ToString(value));
-            }
+            get => CrossSettings.Current.GetValueOrDefault(DBSettings.Language.ToString(), Language.en.ToString());
+            set => CrossSettings.Current.AddOrUpdateValue(DBSettings.Language.ToString(), Convert.ToString(value));
         }
     }
 }

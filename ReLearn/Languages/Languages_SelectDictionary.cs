@@ -34,8 +34,7 @@ namespace ReLearn
         public void CreateViewForDictionary(string name, int ImageId)
         {
             Dictionaries.DictionariesBitmap.Add(Dictionaries.CreateBitmapWithStats(BitmapFactory.DecodeResource(Resources, ImageId), DBStatistics.GetWords(name)));
-            ImageView DictionaryImage = new ImageView(this)
-            {
+            ImageView DictionaryImage = new ImageView(this){
                 LayoutParameters = Dictionaries.ParmsImage,
                 Tag = name.ToString()
             };
@@ -43,8 +42,7 @@ namespace ReLearn
             DictionaryImage.Click += SelectDictionaryClick;
             FindViewById<LinearLayout>(Resource.Id.Languages_SelectDictionary).AddView(DictionaryImage);
 
-            TextView DictionaryName = new TextView(this)
-            {
+            TextView DictionaryName = new TextView(this){
                 Text = AdditionalFunctions.GetResourceString(name.ToString(), this.Resources),
                 Gravity = Dictionaries.ParmsImage.Gravity
             };
@@ -64,11 +62,13 @@ namespace ReLearn
 
             Dictionaries = new SelectDictionary((int)(Resources.DisplayMetrics.WidthPixels / 3f));
    
-            CreateViewForDictionary(TableNamesLanguage.Home.ToString(), Resource.Drawable.homeDictionary);
-            CreateViewForDictionary(TableNamesLanguage.Education.ToString(), Resource.Drawable.EducationDictionary);
-            CreateViewForDictionary(TableNamesLanguage.Popular_Words.ToString(), Resource.Drawable.PopularWordsDictionary);
-            CreateViewForDictionary(TableNamesLanguage.ThreeFormsOfVerb.ToString(), Resource.Drawable.ThreeFormsOfVerbDictionary);
-            CreateViewForDictionary(TableNamesLanguage.My_Directly.ToString(), Resource.Drawable.MyDictionary);
+            CreateViewForDictionary(TableNamesLanguage.Home.ToString(),            Resource.Drawable.homeDictionary);
+            CreateViewForDictionary(TableNamesLanguage.Education.ToString(),       Resource.Drawable.EducationDictionary);
+            CreateViewForDictionary(TableNamesLanguage.Popular_Words.ToString(),   Resource.Drawable.PopularWordsDictionary);
+            CreateViewForDictionary(TableNamesLanguage.ThreeFormsOfVerb.ToString(),Resource.Drawable.ThreeFormsOfVerbDictionary);
+            CreateViewForDictionary(TableNamesLanguage.ComputerScience.ToString(), Resource.Drawable.ComputerScience);
+            CreateViewForDictionary(TableNamesLanguage.Nature.ToString(),          Resource.Drawable.Nature);
+            CreateViewForDictionary(TableNamesLanguage.My_Directly.ToString(),     Resource.Drawable.MyDictionary);
             Dictionaries.Selected(DataBase.TableNameLanguage.ToString(), DataBase.TableNameLanguage.ToString());
         }
 

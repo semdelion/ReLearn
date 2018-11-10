@@ -1,36 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using SQLite;
-
+using Plugin.Settings;
 namespace ReLearn
 {
-    public class Statistics
-    {  
-        public int Position  { get; }                        //Posithoin  in table words,
-        public string Word { get; }                          //Word Ebglish or Flag - "name"
-        public static int AnswerTrue = 0;                    //Answer ? true or false 
-        public static int AnswerFalse = 0;
-        public int Learn { get; set; }
+    static class Statistics
+    {
+        public static string Table{set;get;}
 
-        public static void CreateNewStatistics()
+        public static int Count
         {
-            AnswerTrue = 0;                    
-            AnswerFalse = 0;
+            get => CrossSettings.Current.GetValueOrDefault($"{DBSettings.Count}{Table}", 0);
+            set => CrossSettings.Current.AddOrUpdateValue($"{DBSettings.Count}{Table}", value);
+        }
+        public static int True
+        {
+            get => CrossSettings.Current.GetValueOrDefault($"{DBSettings.True}{Table}", 0);
+            set => CrossSettings.Current.AddOrUpdateValue($"{DBSettings.True}{Table}", value);
+        }
+        public static int False
+        {
+            get => CrossSettings.Current.GetValueOrDefault($"{DBSettings.False}{Table}", 0);
+            set => CrossSettings.Current.AddOrUpdateValue($"{DBSettings.False}{Table}", value);
         }
 
-        public Statistics(int position_new, string word_new, int Learn_new)
-        {
-            Position = position_new;
-            Word = word_new;
-
-            if (Learn + Learn_new > Settings.MaxNumberOfRepeats)
-                Learn = Settings.MaxNumberOfRepeats;
-            else if (Learn + Learn_new < 0)
-                Learn = 0;
-            else
-                Learn = Learn_new;
-        }
 
         public static float GetAverageNumberLearn(List<DBStatistics> Database_NL_and_D)
         {
@@ -40,24 +33,25 @@ namespace ReLearn
             return avg_numberLearn_stat;
         }
 
-        public static void Add(List<Statistics> Stats, string identifier, int rand_word, int RepeatLearn, int answer)
+        public static void Add(List<DBWords> WordDatabase, int CurrentWordNumber, int answer)
         {
-            foreach (var s in Stats)
-                if (s.Word == identifier)
-                {
-                    s.Learn += answer;
-                    return;
-                }
-            Stats.Add(new Statistics(rand_word, identifier, RepeatLearn + answer));
+            WordDatabase[CurrentWordNumber].NumberLearn += answer;
+
+            int value = WordDatabase[CurrentWordNumber].NumberLearn > Settings.MaxNumberOfRepeats ?
+                        Settings.MaxNumberOfRepeats : WordDatabase[CurrentWordNumber].NumberLearn < 0 ? 
+                        0 : WordDatabase[CurrentWordNumber].NumberLearn;
+
+            DBWords.Update(WordDatabase[CurrentWordNumber].Word, value);
+        }
+        public static void Add(List<DBImages> ImagesDatabase, int CurrentWordNumber, int answer)
+        {
+            ImagesDatabase[CurrentWordNumber].NumberLearn += answer;
+
+            int value = ImagesDatabase[CurrentWordNumber].NumberLearn > Settings.MaxNumberOfRepeats ?
+                        Settings.MaxNumberOfRepeats : ImagesDatabase[CurrentWordNumber].NumberLearn < 0 ?
+                        0 : ImagesDatabase[CurrentWordNumber].NumberLearn;
+            DBImages.Update(ImagesDatabase[CurrentWordNumber].Image_name , value);
         }
     }
 
-    public class DatabaseStatistics                                // class for reading databse
-    {
-        [PrimaryKey, AutoIncrement, Column("_id")]
-        public int Id { get; set; }
-        public int True { get; set; }
-        public int False { get; set; }
-        public DateTime DateOfTesting { get; set; }
-    }
 }

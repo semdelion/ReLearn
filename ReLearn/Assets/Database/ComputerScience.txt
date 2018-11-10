@@ -1,0 +1,355 @@
+﻿accept|принимать
+access|доступ
+account|учётная запись
+advertisement|объявление
+agile methodology|гибкая методология
+air cooling|воздушное охлаждение
+algorithm|алгоритм
+application software|программное обеспечение
+architecture|архитектура
+argument|аргумент
+array|массив
+aspect-oriented programming (AOP)|аспектно-ориентированное программирование
+attachment|вложение
+attribute|атрибут
+authentication|аутентификация
+authorization|авторизация
+available|доступный
+avatar|аватар
+background|фон
+backup|резервная копия
+ban|блокировать доступ
+bandwidth|пропускная способность
+banner|баннер
+binary data|двоичные данные
+blog|блог
+bookmark|закладка
+bridge|мост
+broadband|широкополосный
+browser|браузер
+bug|дефект
+bundle|комплект
+bus|шина
+button|кнопка
+byte|байт
+cable|кабель
+cache|кэш
+cancel|отменять
+central processing unit (CPU)|центральный процессор
+chapter|глава
+chat|чат
+checkbox|флажок
+class|класс
+click|щелчок
+cloud computing|облачные вычисления
+cloud storage|облачное хранилище данных
+cluster|кластер
+code|код
+compatible|совместимый
+compile|компилировать
+compiler|компилятор
+compress|сжимать
+computer|компьютер
+computing|вычисление
+configuration|конфигурация
+connect|соединять
+connection|соединение
+constructor|конструктор
+contact|связаться
+content|содержание
+conversion|конверсия
+copy|копировать
+copyright|авторское право
+count|считать
+crack|взломать
+create|создавать
+current|текущий
+cursor|курсор
+customer|клиент
+customization|настройка
+cut|вырезать
+data processing|обработка данных
+data|данные, информация
+database|база данных
+debug|отлаживать
+debugger|отладчик
+decrypt|расшифровывать
+delete|удалять
+demand|требование
+deploy|развертывать
+design|дизайн
+desktop|рабочий стол
+destructor|деструктор
+develop|разрабатывать
+developer|разработчик
+device|устройство
+digital camera|цифровая камера
+digital|цифровой
+disable|отключать, деактивировать
+disconnect|разъединять, отключаться
+diskette|дискета
+display|дисплей
+distribute|распространять
+distributed system|распределенная система
+domain name system (DNS)|система доменных имен
+domain|домен
+download|загружать, скачивать
+drive|диск
+dummy|ламер
+edit|редактировать
+eject|извлекать (устройство)
+electronic|электронный
+email|электронная почта
+enable|включать, активировать
+encapsulation|инкапсуляция
+encoding|кодировка
+encrypt|шифровать, зашифровывать
+engine|двигатель, движок
+enhancement|улучшение
+enter|вводить
+erase|стереть
+error|ошибка
+event|событие
+example|пример
+execute|исполнять
+expand|развернуть
+extension|расширение
+extreme programming|экстремальное программирование
+failure|сбой
+fan|вентилятор охлаждения, кулер
+fault-tolerant|отказоустойчивость
+feature|характеристика
+file|файл
+firewall|брандмауэр
+firmware|прошивка, микропрограмма
+flash drive|флеш накопитель
+folder|папка
+font|шрифт
+format|форматировать
+forum|форум
+forward|переслать
+freeware|бесплатное программное обеспечение
+function|функция
+gadget|технологичное устройство
+gateway|шлюз
+graphical user interface (GUI)|графический пользовательский интерфейс
+graphics card|видеокарта
+graphics processing unit (GPU)|графический процессор
+hacker|хакер
+hard disk drive (HDD)|жесткий диск
+headline|заголовок
+headphones|наушники
+high availability|высока доступность
+high performance|высокая производительность
+hyperlink|гиперссылка
+icon|значок
+image|изображение
+implement|внедрять, реализовывать
+implementation|реализация
+import|импорт
+include|включение
+incremental development|инкрементная модель разработки
+infrared|инфракрасный
+initialize|инициализировать
+input|ввод
+insert|вставлять
+install|устанавливать
+instant|мгновенный
+instruction|инструкция
+integrate|интегрировать
+integrated development environment (IDE)|интегрированная среда разработки
+interactive|интерактивный
+interface|интерфейс
+Internet service provider (ISP)|интернет-провайдер
+interpreter|интерпретатор
+interrupt|прерывать
+iterative development|итеративная модель разработки
+joystick|джойстик
+kernel|ядро
+keyboard|клавиатура
+lamer|ламер
+language|язык
+laptop|ноутбук
+latency|задержка, период ожидания
+layer|слой
+layout|макет
+legal notes|юридическое заявление
+level|уровень
+library|библиотека
+life-cycle|жизненный цикл
+light-emitting diode (LED)|светодиод
+limit|предел
+link|ссылка
+liquid crystal display (LCD)|жидкокристаллический индикатор
+literal|литерал
+live Compact Disc|загрузочный компакт-диск
+load|загружать
+local area network (LAN)|локальная вычислительная сеть
+Local|местный
+localhost|локальное имя домена
+lock|замыкать
+log file|журнал сообщений
+loop|цикл
+low-level|низкоуровневый
+mail|почта
+maintain|поддерживать
+malicious software (malware)|вредоносное программное обеспечение
+manual|инструкция
+match|совпадение
+media access control (MAC)|аппаратный адрес
+member|член класса
+memory|память
+message|сообщение
+method|метод
+microphone|микрофон
+minimaze|свернуть
+mode|режим
+modem|модем
+moderator|модератор
+modify|видоизменять
+monitor|монитор
+motherboard|материнская плата
+mouse|мышь
+network card|сетевой адаптер
+network|сеть
+nickname|прозвище
+node|узел связи
+notebook|ноутбук
+object|объект
+object-oriented programming (OOP)|объектно-ориентированное программирование
+offline|не в сети
+offset|смещение
+online|в сети
+open source software|(ПО) с открытым исходным кодом
+operating system (OS)|операционная система
+operation|операция
+outdated|устаревший
+overload|перегрузка
+package|пакет
+password|пароль
+paste|вставлять
+patch cord|коммутационный кабель, патч-корд
+path|путь
+peer-to-peer (P2P)|одноранговая сеть, пиринговая сеть
+peripheral|периферийный
+permission|разрешение
+platform|платформа
+plug in|подключать
+plugin|плагин
+pop-up|всплывающий
+port|разъем, порт
+portable|портативный
+portal|портал
+post|публикация
+power supply unit (PSU)|блок питания
+prefix|префикс
+press|нажимать
+print|распечатать
+printer|принтер
+process|процесс
+processing|обработка
+programmer|программист
+programming|программирование
+protection|защита
+prototyping|прототипирование
+provide|предоставлять
+provider|провайдер
+quality|качество
+query|запрос
+quorum|кворум
+random|случайный
+random-access memory (RAM)|оперативная память (ОЗУ)
+rapid application development (RAD)|быстрая разработка приложений (методология)
+read-only memory (ROM)|постоянное запоминающее устройство (ПЗУ)
+reboot|перезагружать
+recovery|восстановление
+redirect|переадресовать
+register|регистрироваться
+regression testing|регрессионное тестирование
+remote|удалённый
+removable media|съемные носители информации
+replace|заменять
+replica|точная копия
+reply|ответить
+request|запрос
+reset|сброс
+restart|перезагрузить
+restore|восстанавливать
+router|маршрутизатор, роутер
+run|запускать
+saturation|насыщенность
+save|сохранять
+scale|масштаб
+scanner|сканер
+schedule|расписание
+screen|экран
+script|скрипт
+scroll|прокручивать
+search|поиск
+security|безопасность
+select|выбирать
+selector|селектор
+server software|серверное программное обеспечение
+session|сессия
+sign in|войти, зарегистрироваться
+sign out|выйти
+signature|подпись
+smartphone|смартфон
+snapshot|снимок состояния системы
+social|социальный
+software|программное обеспечение
+solid-state drive (SSD)|твердотельный накопитель
+sort|сортировать
+sound card (audio card)|звуковая карта
+source|исходник
+spam|спам
+speakers|колонки
+speech|речь
+spiral development|спиральная модель разработки
+spreadsheet|электронная таблица
+spyware|программа-шпион, шпионское программное обеспечение
+staff|штат
+statement|оператор
+static variable|статическая переменная
+status bar|строка состояния
+storage device|запоминающее устройство, накопитель
+storage|хранилище
+stream|транслировать
+subdomain|поддомен, субдомен
+subscribe|подписаться
+suspend|приостанавливать
+switch off|выключать
+switch on|включать
+switchboard|коммутатор
+table|таблица
+tablet|планшет
+tag|метка
+template|шаблон
+temporary|временный
+testing|тестирование
+text editor|текстовый редактор
+tool|инструмент
+touch screen|сенсорный экран
+twisted pair|витая пара
+uninstall|деинсталлировать, удалять
+unit testing|модульное (блочное, компонентное) тестирование
+unit|блок
+update|обновлять
+upgrade|модернизировать
+upload|загружать, закачивать
+usability|удобство использования
+user|пользователь
+utility|утилита
+variable|переменная
+verify|проверять
+version control system (VCS)|система контроля версий
+version|версия
+virtual|виртуальный
+virus|вирус
+water cooling|водяное охлаждение
+waterfall model|каскадная модель разработки
+web application|веб-приложение
+web-page | веб-страница
+website|веб-сайт
+wide area network (WAN)|глобальная сеть
+wireless network|беспроводная сеть

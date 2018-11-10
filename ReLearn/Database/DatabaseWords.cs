@@ -20,7 +20,9 @@ namespace ReLearn
         Home,
         Education,
         Popular_Words,
-        ThreeFormsOfVerb
+        ThreeFormsOfVerb,
+        ComputerScience,
+        Nature
     }
 
     public class DBWords //Класс для считывания базы данных English
@@ -57,17 +59,12 @@ namespace ReLearn
             {
                 var dataBase = DataBase.Languages.Query<DBWords>($"SELECT * FROM {tableName} WHERE NumberLearn = 0 ");
                 foreach (var s in dataBase)
-                {
                     if (s.DateRecurrence < toDay)
-                    {
-                        var query = $"UPDATE {tableName} SET DateRecurrence = ?, NumberLearn = ? WHERE Word = ?";
-                        DataBase.Languages.Execute(query, DateTime.Now, s.NumberLearn + 1, s.Word);
-                    }
-                }
+                        DataBase.Languages.Execute($"UPDATE {tableName} SET DateRecurrence = ?, NumberLearn = ? WHERE Word = ?", DateTime.Now, s.NumberLearn + 1, s.Word);
             }
         }
 
-        public static void СreateNewTableToLanguagesDataBase()
+        public static void СreateTable()
         {
             foreach (string tableName in Enum.GetNames(typeof(TableNamesLanguage)))
             {
@@ -108,12 +105,11 @@ namespace ReLearn
         public static void UpdateLearningNotRepeat(string Word) => DataBase.Languages.Execute(
             $"UPDATE {DataBase.TableNameLanguage} SET DateRecurrence = ?, NumberLearn = ? WHERE Word = ?", DateTime.Now, 0, Word);
 
-        public static void Update(List<Statistics> Stats) // изменение у BD элемента NumberLearn
+        public static void Update(string word, int learn) // изменение у BD элемента NumberLearn
         {
-            for (int i = 0; i < Stats.Count; i++)
                 DataBase.Languages.Execute(
                     $"UPDATE {DataBase.TableNameLanguage} SET DateRecurrence = ?, NumberLearn = ? WHERE Word = ?", 
-                    DateTime.Now, Stats[i].Learn, Stats[i].Word);       
+                    DateTime.Now, learn, word);       
         }
 
         public static List<DBWords> GetData => DataBase.Languages.Query<DBWords>($"SELECT * FROM {DataBase.TableNameLanguage.ToString()}");

@@ -14,21 +14,20 @@ namespace ReLearn
     [Activity(Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     class Flags_Repeat : AppCompatActivity
     {
-        int Count = -1;
+       
         int CurrentWordNumber { get; set; }
         List<Button> Buttons { get; set; }
         ButtonNext Button_next;
-        readonly List<Statistics> Stats = new List<Statistics>();
         List<DBImages> ImagesDatabase;
         
         string TitleCount
         {
-            set { FindViewById<TextView>(Resource.Id.Repeat_toolbar_textview_fl).Text = value; }
+            set => FindViewById<TextView>(Resource.Id.Repeat_toolbar_textview_fl).Text = value; 
         }
 
         Bitmap CurrentImage
         {
-            set{ FindViewById<ImageView>(Resource.Id.imageView_Flags_repeat).SetImageBitmap(value); }
+            set => FindViewById<ImageView>(Resource.Id.imageView_Flags_repeat).SetImageBitmap(value); 
         }
 
         void Button_enable(bool state)
@@ -58,9 +57,9 @@ namespace ReLearn
 
         void NextTest() //new test
         {
-            Bitmap bitmap = BitmapFactory.DecodeStream(Application.Context.Assets.Open(
-                $"ImageFlags/{ImagesDatabase[CurrentWordNumber].Image_name}.png"));
-            CurrentImage = bitmap;
+            using (Bitmap bitmap = BitmapFactory.DecodeStream(Application.Context.Assets.Open(
+                $"Image{DataBase.TableNameImage}/{ImagesDatabase[CurrentWordNumber].Image_name}.png")))
+                CurrentImage = bitmap;
             const int four = 4;
             int first = new Random(unchecked((int)(DateTime.Now.Ticks))).Next(four);
             List<int> random_numbers = new List<int> { first, 0, 0, 0 };
@@ -74,18 +73,14 @@ namespace ReLearn
             Button_enable(false);
             if (buttons[0].Text == AdditionalFunctions.NameOfTheFlag(ImagesDatabase[CurrentWordNumber]))
             {
-                Statistics.Add(
-                    Stats, ImagesDatabase[CurrentWordNumber].Image_name, CurrentWordNumber, 
-                    ImagesDatabase[CurrentWordNumber].NumberLearn, -Settings.TrueAnswer);
-                Statistics.AnswerTrue++;
+                Statistics.Add(ImagesDatabase, CurrentWordNumber, -Settings.TrueAnswer);
+                Statistics.True++;
                 buttons[0].Background = GetDrawable(Resource.Drawable.button_true);
             }
             else
             {
-                Statistics.Add(
-                    Stats, ImagesDatabase[CurrentWordNumber].Image_name, CurrentWordNumber, 
-                    ImagesDatabase[CurrentWordNumber].NumberLearn, Settings.FalseAnswer);
-                Statistics.AnswerFalse++;
+                Statistics.Add(ImagesDatabase,CurrentWordNumber, Settings.FalseAnswer);
+                Statistics.False++;
                 buttons[0].Background = GetDrawable(Resource.Drawable.button_false);
                 for (int i = 1; i < buttons.Length; i++)
                     if (buttons[i].Text == AdditionalFunctions.NameOfTheFlag(ImagesDatabase[CurrentWordNumber]))
@@ -98,8 +93,8 @@ namespace ReLearn
 
         void Unknown()
         {
-            Statistics.AnswerFalse++;
-            Statistics.Add(Stats, ImagesDatabase[CurrentWordNumber].Image_name, CurrentWordNumber, ImagesDatabase[CurrentWordNumber].NumberLearn, Settings.NeutralAnswer);
+            Statistics.False++;
+            Statistics.Add(ImagesDatabase, CurrentWordNumber, Settings.NeutralAnswer);
             for (int i = 0; i < Buttons.Count; i++)
                 if (Buttons[i].Text == AdditionalFunctions.NameOfTheFlag(ImagesDatabase[CurrentWordNumber]))
                 {
@@ -111,14 +106,11 @@ namespace ReLearn
         [Java.Interop.Export("Button_Flags_1_Click")]
         public void Button_Flags_1_Click(View v) => Answer(Buttons[0], Buttons[1], Buttons[2], Buttons[3]);
 
-
         [Java.Interop.Export("Button_Flags_2_Click")]
         public void Button_Flags_2_Click(View v) => Answer(Buttons[1], Buttons[0], Buttons[2], Buttons[3]);
 
-
         [Java.Interop.Export("Button_Flags_3_Click")]
         public void Button_Flags_3_Click(View v) => Answer(Buttons[2], Buttons[0], Buttons[1], Buttons[3]);
-
 
         [Java.Interop.Export("Button_Flags_4_Click")]
         public void Button_Flags_4_Click(View v) => Answer(Buttons[3], Buttons[0], Buttons[1], Buttons[2]);
@@ -135,19 +127,19 @@ namespace ReLearn
             }
             else
             {
-                if (Count < Settings.NumberOfRepeatsImage - 1)
+                if (Statistics.Count < Settings.NumberOfRepeatsImage - 1)
                 {
-                    Count++;
-                    Random rnd = new Random(unchecked((int)(DateTime.Now.Ticks)));
-                    CurrentWordNumber = rnd.Next(ImagesDatabase.Count);
+                    if (v != null)
+                        Statistics.Count++;
+                    CurrentWordNumber = new Random(unchecked((int)(DateTime.Now.Ticks))).Next(ImagesDatabase.Count);
                     NextTest();
                     Button_enable(true);
-                    TitleCount = $"{GetString(Resource.String.Repeat)} {Count + 1}/{Settings.NumberOfRepeatsImage}";
+                    TitleCount = $"{GetString(Resource.String.Repeat)} {Statistics.Count + 1}/{Settings.NumberOfRepeatsImage}";
                 }
                 else
                 {
-                    DBStatistics.Insert(Statistics.AnswerTrue, Statistics.AnswerFalse, DataBase.TableNameImage.ToString());
-                    DBImages.Update(Stats);
+                    DBStatistics.Insert(Statistics.True, Statistics.False, DataBase.TableNameImage.ToString());
+                    Statistics.Count = Statistics.True = Statistics.False = 0;
                     StartActivity(typeof(Flags_Stats));
                     this.Finish();
                 }
@@ -164,8 +156,8 @@ namespace ReLearn
             var toolbarMain = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbarFlagsRepeat);
             SetSupportActionBar(toolbarMain);
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
-
-            Statistics.CreateNewStatistics();
+            ImagesDatabase = DBImages.GetDataNotLearned;
+            Statistics.Table = DataBase.TableNameImage.ToString();
             Buttons = new List<Button>{
                 FindViewById<Button>(Resource.Id.button_F_choice1),
                 FindViewById<Button>(Resource.Id.button_F_choice2),
@@ -177,13 +169,14 @@ namespace ReLearn
                 button = FindViewById<Button>(Resource.Id.button_F_Next),
                 State = StateButton.Next
             };
-            ImagesDatabase = DBImages.GetDataNotLearned;
             if (ImagesDatabase.Count == 0)
             {
                 Toast.MakeText(this, GetString(Resource.String.RepeatedAllImages), ToastLength.Short).Show();
                 Finish();
                 return;
             }
+           
+            Statistics.Table = DataBase.TableNameImage.ToString();
             Button_Flags_Next_Click(null);
         }
 

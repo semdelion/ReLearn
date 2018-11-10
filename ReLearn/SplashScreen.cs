@@ -13,7 +13,7 @@ namespace ReLearn
             FrameStatistics.Plain = Android.Graphics.Typeface.CreateFromAsset(Assets, Settings.font);
             DataBase.InstallDatabaseFromAssets();
             DataBase.SetupConnection();
-            DBWords.СreateNewTableToLanguagesDataBase();
+            DBWords.СreateTable();
             DBImages.UpdateDate();
             DBWords.UpdateWordsToRepeat();
             StartActivity(typeof(MainActivity));

@@ -14,14 +14,14 @@ namespace ReLearn
     {
         string Word
         {
-            get{ return FindViewById<EditText>(Resource.Id.editText_foreign_word).Text.ToLower(); }
-            set{ FindViewById<EditText>(Resource.Id.editText_foreign_word).Text = value.ToLower(); }
+            get => FindViewById<EditText>(Resource.Id.editText_foreign_word).Text.ToLower(); 
+            set => FindViewById<EditText>(Resource.Id.editText_foreign_word).Text = value.ToLower(); 
         }
 
         string TranslationWord
         {
-            get { return FindViewById<EditText>(Resource.Id.editText_translation_word).Text.ToLower(); }
-            set { FindViewById<EditText>(Resource.Id.editText_translation_word).Text = value.ToLower(); }
+            get => FindViewById<EditText>(Resource.Id.editText_translation_word).Text.ToLower(); 
+            set => FindViewById<EditText>(Resource.Id.editText_translation_word).Text = value.ToLower(); 
         }
 
         [Java.Interop.Export("Button_Languages_Add_Word_Click")]

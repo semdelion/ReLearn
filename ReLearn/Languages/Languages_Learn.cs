@@ -20,14 +20,14 @@ namespace ReLearn
 
         string Word
         {
-            get { return FindViewById<TextView>(Resource.Id.textView_learn_en).Text; }
-            set { FindViewById<TextView>(Resource.Id.textView_learn_en).Text = value; }
+            get => FindViewById<TextView>(Resource.Id.textView_learn_en).Text; 
+            set => FindViewById<TextView>(Resource.Id.textView_learn_en).Text = value; 
         }
 
         string TranslationWord
         {
-            get { return FindViewById<TextView>(Resource.Id.textView_learn_ru).Text; }
-            set { FindViewById<TextView>(Resource.Id.textView_learn_ru).Text = value; }
+            get => FindViewById<TextView>(Resource.Id.textView_learn_ru).Text; 
+            set => FindViewById<TextView>(Resource.Id.textView_learn_ru).Text = value; 
         }
 
         [Java.Interop.Export("Button_Languages_Learn_Next_Click")]

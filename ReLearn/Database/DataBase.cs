@@ -21,30 +21,21 @@ namespace ReLearn
         {
             get
             {
-                if (String.IsNullOrEmpty(CrossSettings.Current.GetValueOrDefault(DBSettings.DictionaryNameLanguages.ToString(), null)))
-                    CrossSettings.Current.AddOrUpdateValue(DBSettings.DictionaryNameLanguages.ToString(), TableNamesLanguage.Popular_Words.ToString());
-                    Enum.TryParse(CrossSettings.Current.GetValueOrDefault(DBSettings.DictionaryNameLanguages.ToString(), null), out TableNamesLanguage name);
+                Enum.TryParse(CrossSettings.Current.GetValueOrDefault(DBSettings.DictionaryNameLanguages.ToString(), TableNamesLanguage.Popular_Words.ToString()), out TableNamesLanguage name);
                 return name;
             }
-            set
-            {
-                CrossSettings.Current.AddOrUpdateValue(DBSettings.DictionaryNameLanguages.ToString(), value.ToString());
-            }
+            set => CrossSettings.Current.AddOrUpdateValue(DBSettings.DictionaryNameLanguages.ToString(), value.ToString());
         }
 
         public static TableNamesImage TableNameImage
         {
             get
             {
-                if (String.IsNullOrEmpty(CrossSettings.Current.GetValueOrDefault(DBSettings.DictionaryNameImage.ToString(), null)))
-                    CrossSettings.Current.AddOrUpdateValue(DBSettings.DictionaryNameImage.ToString(), TableNamesImage.Flags.ToString());
-                Enum.TryParse(CrossSettings.Current.GetValueOrDefault(DBSettings.DictionaryNameImage.ToString(), null), out TableNamesImage name);
+                Enum.TryParse(CrossSettings.Current.GetValueOrDefault(DBSettings.DictionaryNameImage.ToString(), TableNamesImage.Flags.ToString()), out TableNamesImage name);
                 return name;
             }
-            set
-            {
-                CrossSettings.Current.AddOrUpdateValue(DBSettings.DictionaryNameImage.ToString(), value.ToString());
-            }
+            set => CrossSettings.Current.AddOrUpdateValue(DBSettings.DictionaryNameImage.ToString(), value.ToString());
+            
         }
 
         static SQLiteConnection Connect(string nameDB)

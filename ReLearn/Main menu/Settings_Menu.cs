@@ -24,14 +24,14 @@ namespace ReLearn
     {
         string PronunciationText
         {
-            get { return FindViewById<TextView>(Resource.Id.pronunciation).Text; }
-            set { FindViewById<TextView>(Resource.Id.pronunciation).Text = value; }
+            get => FindViewById<TextView>(Resource.Id.pronunciation).Text; 
+            set => FindViewById<TextView>(Resource.Id.pronunciation).Text = value; 
         }
 
         string LanguageText
         {
-            get { return FindViewById<TextView>(Resource.Id.language).Text; }
-            set { FindViewById<TextView>(Resource.Id.language).Text = value; }
+            get => FindViewById<TextView>(Resource.Id.language).Text; 
+            set => FindViewById<TextView>(Resource.Id.language).Text = value; 
         }
 
         int CheckedItemLanguage()
