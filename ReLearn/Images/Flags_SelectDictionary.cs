@@ -28,29 +28,70 @@ namespace ReLearn
             DataBase.TableNameImage = name;
         }
 
-        public void CreateViewForDictionary(string name, int ImageId)
+        void CreateViewForDictionary(string NameDictionarn, int ImageId, bool flag, bool separate)
         {
-            Dictionaries.DictionariesBitmap.Add(Dictionaries.CreateBitmapWithStats(
-                BitmapFactory.DecodeResource(Resources, ImageId), DBStatistics.GetImages(name)));
-            ImageView DictionaryImage = new ImageView(this)
+            var width = Resources.DisplayMetrics.WidthPixels / 100f;
+            LinearLayout DictionarylinearLayout = new LinearLayout(this)
             {
-                LayoutParameters = Dictionaries.ParmsImage,
-                Tag = name
+                LayoutParameters = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, LinearLayout.LayoutParams.WrapContent)
             };
-            DictionaryImage.SetImageBitmap(Dictionaries.DictionariesBitmap[Dictionaries.DictionariesBitmap.Count - 1]);
-            DictionaryImage.Click += SelectDictionaryClick;
-            FindViewById<LinearLayout>(Resource.Id.FlagsSelectDictionary).AddView(DictionaryImage);
+            Dictionaries.DictionariesBitmap.Add(Dictionaries.CreateBitmapWithStats(BitmapFactory.DecodeResource(Resources, ImageId), DBStatistics.GetImages(NameDictionarn)));
+            ImageView ImageDictionary = new ImageView(this) { Tag = NameDictionarn.ToString() };
+            ImageDictionary.LayoutParameters = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WrapContent, LinearLayout.LayoutParams.WrapContent)
+            {
+                Gravity = flag ? GravityFlags.Left : GravityFlags.Right
+            };
+            ImageDictionary.SetPadding((int)(5 * width), 0, (int)(5 * width), 0);
+            ImageDictionary.SetImageBitmap(Dictionaries.DictionariesBitmap[Dictionaries.DictionariesBitmap.Count - 1]);
+            ImageDictionary.Click += SelectDictionaryClick;
 
-            TextView DictionaryName = new TextView(this)
+            TextView Name = new TextView(this)
             {
-                Text = AdditionalFunctions.GetResourceString(name, this.Resources),
-                Gravity = Dictionaries.ParmsImage.Gravity
+                Text = AdditionalFunctions.GetResourceString(NameDictionarn, this.Resources),
+                TextSize = 20//(int)(3 * width)
             };
-            DictionaryName.SetTextColor(Color.Rgb(215, 248, 254));
-            FindViewById<LinearLayout>(Resource.Id.FlagsSelectDictionary).AddView(DictionaryName);
-            Dictionaries.DictionariesView.Add(DictionaryImage);
+            TextView CountWords = new TextView(this)
+            {
+                Text = $"{GetString(Resource.String.DatatypeImages)} {DBImages.Count(NameDictionarn)}",
+                TextSize = 14//(int)(2.1f * width)
+            };
+            TextView Description = new TextView(this)
+            {
+                Text = AdditionalFunctions.GetResourceString($"{NameDictionarn}Description", this.Resources),
+                TextSize = 11//(int)(1.7f * width)
+            };
+            LinearLayout TextlinearLayout = new LinearLayout(this)
+            {
+                LayoutParameters = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WrapContent, LinearLayout.LayoutParams.WrapContent),
+                Orientation = Android.Widget.Orientation.Vertical
+            };
+
+            Name.LayoutParameters = CountWords.LayoutParameters = Description.LayoutParameters =
+                new LinearLayout.LayoutParams(52 * Resources.DisplayMetrics.WidthPixels / 100, LinearLayout.LayoutParams.WrapContent);
+            Name.SetTextColor(Color.Rgb(215, 248, 254));
+            CountWords.SetTextColor(Color.Rgb(121, 150, 155));
+            Description.SetTextColor(Color.Rgb(121, 150, 155));
+            TextlinearLayout.AddView(Name);
+            TextlinearLayout.AddView(CountWords);
+            TextlinearLayout.AddView(Description);
+            TextlinearLayout.SetPadding(flag ? 0 : (int)(5 * width), 0, !flag ? 0 : (int)(5 * width), 0);
+
+            DictionarylinearLayout.AddView(flag == true ? (View)ImageDictionary : TextlinearLayout);
+            DictionarylinearLayout.AddView(flag == false ? (View)ImageDictionary : TextlinearLayout);
+
+            FindViewById<LinearLayout>(Resource.Id.FlagsSelectDictionary).AddView(DictionarylinearLayout);
+            if (separate)
+            {
+                View SeparateView = new View(this)
+                {
+                    LayoutParameters = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WrapContent, (int)(width / 2f))
+                        {TopMargin = (int)(2 * width),BottomMargin = (int)(2 * width)},
+                    Background = GetDrawable(Resource.Drawable.separator)
+                };
+                FindViewById<LinearLayout>(Resource.Id.FlagsSelectDictionary).AddView(SeparateView);
+            }
+            Dictionaries.DictionariesView.Add(ImageDictionary);
         }
-
         protected override void OnCreate(Bundle savedInstanceState)
         {
             AdditionalFunctions.Font();
@@ -60,7 +101,8 @@ namespace ReLearn
             SetSupportActionBar(toolbarMain);
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
             Dictionaries = new SelectDictionary((int)(Resources.DisplayMetrics.WidthPixels / 3f));
-            CreateViewForDictionary(TableNamesImage.Flags.ToString(), Resource.Drawable.FlagDictionary);
+            CreateViewForDictionary(TableNamesImage.Flags.ToString(), Resource.Drawable.FlagDictionary, true,true);
+            CreateViewForDictionary(TableNamesImage.Films.ToString(), Resource.Drawable.FilmDictionary, false,false);
             Dictionaries.Selected(DataBase.TableNameImage.ToString(), DataBase.TableNameImage.ToString());
         }
 

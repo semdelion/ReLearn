@@ -24,15 +24,14 @@
 		/>
 	</android.support.v7.widget.Toolbar>
 	<ScrollView
-		android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <LinearLayout
+        android:layout_height="wrap_content">
+		<LinearLayout
+			xmlns:android="http://schemas.android.com/apk/res/android"
 			android:id="@+id/FlagsSelectDictionary"
 			android:orientation="vertical"
-			android:antialias="true"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-        </LinearLayout>
-    </ScrollView>
+			android:layout_width="match_parent"
+			android:layout_height="match_parent">
+		</LinearLayout>	
+	</ScrollView>
 </LinearLayout>

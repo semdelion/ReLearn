@@ -52,7 +52,7 @@ namespace ReLearn
 
         public DBWords Find() => this;    
 
-        public static void UpdateWordsToRepeat()
+        public static void UpdateData()
         {
             var toDay = DateTime.Today.AddMonths(-1);
             foreach (string tableName in Enum.GetNames(typeof(TableNamesLanguage)))
@@ -116,6 +116,7 @@ namespace ReLearn
 
         public static void Delete(string Word) => DataBase.Languages.Query<DBWords>($"DELETE FROM {DataBase.TableNameLanguage} WHERE Word = ?", Word);
 
+        public static int Count(string TableName) => DataBase.Languages.Query<int>($"SELECT NumberLearn FROM {TableName}").Count;
     }
 }
 

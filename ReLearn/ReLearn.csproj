@@ -1755,8 +1755,1036 @@
     <AndroidResource Include="Resources\drawable\Nature.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Assets\ImageFilmsMini\" />
-    <Folder Include="Assets\ImageFilms\" />
+    <AndroidAsset Include="Assets\Database\Films.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\separator.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\10.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\100.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\101.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\102.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\103.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\104.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\105.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\106.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\107.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\108.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\109.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\11.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\110.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\111.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\112.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\113.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\114.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\115.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\116.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\117.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\118.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\119.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\12.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\120.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\121.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\122.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\123.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\124.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\125.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\126.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\127.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\128.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\129.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\13.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\130.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\131.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\132.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\133.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\134.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\135.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\136.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\137.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\138.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\139.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\14.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\140.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\141.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\142.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\143.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\144.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\145.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\146.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\147.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\148.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\149.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\15.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\150.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\151.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\152.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\153.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\154.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\155.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\156.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\157.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\158.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\159.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\16.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\160.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\161.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\162.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\163.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\164.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\165.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\166.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\167.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\168.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\169.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\17.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\170.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\18.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\19.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\20.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\21.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\22.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\23.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\24.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\25.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\26.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\27.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\28.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\30.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\31.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\32.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\33.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\34.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\35.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\36.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\37.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\38.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\39.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\40.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\41.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\42.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\43.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\44.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\45.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\46.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\47.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\48.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\49.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\50.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\51.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\52.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\53.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\54.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\55.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\56.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\57.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\58.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\59.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\6.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\60.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\61.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\62.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\63.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\64.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\65.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\66.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\67.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\68.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\69.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\7.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\70.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\71.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\72.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\73.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\74.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\75.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\76.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\77.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\78.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\79.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\8.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\80.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\81.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\82.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\83.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\84.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\85.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\86.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\87.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\88.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\89.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\9.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\90.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\91.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\92.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\93.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\94.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\95.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\96.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\97.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\98.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilmsMini\99.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\101.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\102.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\103.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\104.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\105.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\106.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\107.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\108.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\109.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\110.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\111.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\112.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\113.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\114.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\115.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\116.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\117.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\118.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\119.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\120.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\121.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\122.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\123.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\124.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\125.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\126.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\127.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\129.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\130.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\131.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\132.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\133.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\134.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\135.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\136.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\137.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\138.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\139.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\140.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\141.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\142.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\143.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\144.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\145.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\146.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\147.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\148.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\149.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\15.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\150.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\151.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\152.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\153.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\154.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\155.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\156.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\157.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\158.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\159.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\160.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\162.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\163.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\164.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\165.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\166.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\167.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\168.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\169.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\17.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\170.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\18.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\19.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\22.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\23.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\26.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\27.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\28.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\31.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\33.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\34.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\35.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\36.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\37.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\38.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\39.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\41.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\42.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\43.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\44.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\45.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\46.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\47.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\49.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\51.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\52.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\53.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\54.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\55.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\56.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\57.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\58.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\59.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\60.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\61.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\62.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\63.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\65.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\66.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\67.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\68.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\69.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\70.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\71.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\72.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\73.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\74.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\75.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\77.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\78.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\79.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\81.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\82.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\83.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\84.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\85.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\86.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\87.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\88.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\89.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\90.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\91.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\92.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\93.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\94.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\95.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\97.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\98.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\99.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Database\Flags.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\FilmDictionary.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\ImageFilms\76.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Android.Support.Annotations.28.0.0-preview4\build\monoandroid81\Xamarin.Android.Support.Annotations.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Annotations.28.0.0-preview4\build\monoandroid81\Xamarin.Android.Support.Annotations.targets')" />

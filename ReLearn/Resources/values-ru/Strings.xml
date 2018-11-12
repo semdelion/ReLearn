@@ -3,6 +3,7 @@
   <string name="app_name">ReLearn</string>
   <string name="Language">Язык</string>
   <string name="Flags">Флаги</string>
+  <string name="Images">Изображения</string>
   <string name="Addition">Добавить</string>
   <string name="Repeat">Повторить</string>
   <string name="Learn">Учить</string>
@@ -47,6 +48,8 @@
   <string name="Number_Inconvenient_Words">Количество затруднительных слов</string>
   <string name="Number_Learned_Flags">Количество изученных флагов</string>
   <string name="Number_Inconvenient_Flags">Количество затруднительных флагов</string>
+  <string name="Number_Learned_Films">Количество изученных фильмов</string>
+  <string name="Number_Inconvenient_Films">Количество затруднительных фильмов</string>
   <string name="Number_Learned_Images">Количество изученных изображений</string>
   <string name="Number_Inconvenient_Images">Количество затруднительных изображений</string>
   <string name="Number_Correct_Answers">Общее количество правильных ответов</string>
@@ -90,4 +93,16 @@
   <string name="Instruction">Инструкция</string>
   <string name="ComputerScience">Информатика</string>
   <string name="Nature">Природа</string>
+  <string name="My_DirectlyDescription">Содержит слова, которые вы добавляете в систему.</string>
+  <string name="HomeDescription">Дом - семейный очаг. Это символ надёжности и безопасности, уюта и тепла. Здесь содержатся слова, с помощью которых вы сможете рассказать о своем доме.</string>
+  <string name="EducationDescription">Образование играет очень важную роль в нашей жизни. Развивает все стороны человеческой личности, раскрывая его способности. </string>
+  <string name="Popular_WordsDescription">Это словарь для тех, кто хочет освоить наиболее нужные и популярные слова.</string>
+  <string name="ThreeFormsOfVerbDescription">Представлены наиболее употребляемые неправильные глаголы английского языка. </string>
+  <string name="ComputerScienceDescription">ИТ охватывают все области создания, передачи, хранения и восприятия информации, не ограничиваясь только компьютерными технологиями.</string>
+  <string name="NatureDescription">Природа – это все, что не создано деятельностью человека. Но она материальна, и окружает нас повсюду. Предлагаем ознакомиться со словами на эту тему.</string>
+  <string name="FlagsDescription">В словаре представлены флаги стран мира.</string>
+  <string name="FilmsDescription">Словарь состоит из списка лучших  фильмов по версии пользователей.</string>
+  <string name="Films">Фильмы</string>
+  <string name="DatatypeWords">Слов: </string>
+  <string name="DatatypeImages">Изображений: </string>
 </resources>

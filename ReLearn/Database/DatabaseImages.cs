@@ -16,7 +16,8 @@ namespace ReLearn
 {
     enum TableNamesImage
     {
-        Flags
+        Flags,
+        Films
     }
 
     public class DBImages // Класс для считывания базы данных flags
@@ -33,12 +34,12 @@ namespace ReLearn
 
         public static void Update(string Image, int learn) // изменение у BD элемента NumberLearn
         {
-                DataBase.Images.Execute(
+                 DataBase.Images.Execute(
                     $"UPDATE {DataBase.TableNameImage} SET DateRecurrence = ?, NumberLearn = ? WHERE Image_name = ?", 
                     DateTime.Now, learn, Image);
         }
 
-        public static void UpdateDate()
+        public static void UpdateData()
         {
             var toDay = DateTime.Today.AddMonths(-1);
             foreach (string tableName in Enum.GetNames(typeof(TableNamesImage)))
@@ -53,27 +54,27 @@ namespace ReLearn
             }
         }
 
-        //public static void СreateTable()
-        //{
-        //    foreach (string tableName in Enum.GetNames(typeof(TableNamesImage)))
-        //    {
-        //        if (DataBase.Images.GetTableInfo(tableName).Count == 0)
-        //        {
-        //            DataBase.Images.Query<DBImages>($"CREATE TABLE {tableName} (_id int PRIMARY KEY, Word string, TranslationWord string, NumberLearn int, DateRecurrence DateTime, Context string, Image string)");
-        //            using (StreamReader reader = new StreamReader(Application.Context.Assets.Open($"Database/{tableName}.txt")))
-        //            {
-        //                string str_line;
-        //                while ((str_line = reader.ReadLine()) != null)
-        //                {
-        //                    var list_en_ru = str_line.Split('|');
-        //                    var query = $"INSERT INTO {tableName} (Word, TranslationWord, NumberLearn, DateRecurrence) VALUES (?, ?, ?, ?)";
-        //                    DataBase.Images.Execute(query, list_en_ru[0].ToLower(), list_en_ru[1].ToLower(), Settings.StandardNumberOfRepeats, DateTime.Now);
-        //                }
-        //            }
-        //            DataBase.Statistics.Query<DatabaseStatistics>($"CREATE TABLE {tableName}_Statistics (_id int PRIMARY KEY, True int, False int, DateOfTesting DateTime)");
-        //        }
-        //    }
-        //}
+        public static void СreateTable()
+        {
+            foreach (string tableName in Enum.GetNames(typeof(TableNamesImage)))
+            {
+                if (DataBase.Images.GetTableInfo(tableName).Count == 0)
+                {
+                    DataBase.Images.Query<DBImages>($"CREATE TABLE {tableName} (_id int PRIMARY KEY, Image_name string, Name_image_en string, Name_image_ru string, NumberLearn int, DateRecurrence DateTime)");
+                    using (StreamReader reader = new StreamReader(Application.Context.Assets.Open($"Database/{tableName}.txt")))
+                    {
+                        string str_line;
+                        while ((str_line = reader.ReadLine()) != null)
+                        {
+                            var image = str_line.Split('|');
+                            var query = $"INSERT INTO {tableName} (Image_name, Name_image_en, Name_image_ru, NumberLearn, DateRecurrence) VALUES (?, ?, ?, ?, ?)";
+                            DataBase.Images.Execute(query, image[0], image[1], image[2], Settings.StandardNumberOfRepeats, DateTime.Now);
+                        }
+                    }
+                    DataBase.Statistics.Query<DatabaseStatistics>($"CREATE TABLE {tableName}_Statistics (_id int PRIMARY KEY, True int, False int, DateOfTesting DateTime)");
+                }
+            }
+        }
 
         public static void UpdateLearningNotRepeat(string ImageName)
         {
@@ -90,5 +91,7 @@ namespace ReLearn
             DateTime.Now, ImageName);
 
         public static List<DBImages> GetData => DataBase.Images.Query<DBImages>($"SELECT * FROM {DataBase.TableNameImage.ToString()}");
+
+        public static int Count(string TableName) => DataBase.Images.Query<DBImages>($"SELECT NumberLearn FROM {TableName}").Count;
     }
 }

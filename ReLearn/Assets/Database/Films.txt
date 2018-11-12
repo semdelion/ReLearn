@@ -1,0 +1,170 @@
+﻿1|The Shawshank Redemption|Побег из Шоушенка
+2|The Green Mile|Зеленая миля
+3|Forrest Gump|Форрест Гамп
+4|Schindler's List|Список Шиндлера
+5|Intouchables|1+1
+6|Leon|Леон
+7|Inception|Начало
+8|The Lion King|Король Лев
+9|Fight Club|Бойцовский клуб
+10|Life Is Beautiful|Жизнь прекрасна
+11|Knockin' on Heaven's Door|Достучаться до небес
+12|The Godfather|Крестный отец
+13|Pulp Fiction|Криминальное чтиво
+14|The Prestige|Престиж
+15|A Beautiful Mind|Игры разума
+16|Gladiator|Гладиатор
+17|Interstellar|Интерстеллар
+18|The Lord of the Rings: The Return of the King|Властелин колец: Возвращение Короля
+19|Back to the Future|Назад в будущее
+20|Lock, Stock and Two Smoking Barrels|Карты, деньги, два ствола
+21|Catch Me If You Can|Поймай меня, если сможешь
+22|The Matrix|Матрица
+23|The Departed|Отступники
+24|The Pianist|Пианист
+25|Coco|Тайна Коко
+26|The Lord of the Rings: The Fellowship of the Ring|Властелин колец: Братство кольца
+27|WALL·E|ВАЛЛ·И
+28|Snatch|Большой куш
+29|American History X|Американская история X
+30|Shutter Island|Остров проклятых
+31|The Dark Knight|Темный рыцарь
+32|Titanic|Титаник
+33|12 Angry Men|12 разгневанных мужчин
+34|Scent of a Woman|Запах женщины
+35|Awakenings|Пробуждение
+36|Hachi: A Dog's Tale|Хатико
+37|It's a Wonderful Life|Эта замечательная жизнь
+38|The Good, the Bad and the Ugly|Хороший, плохой, злой
+39|Spirited Away|Унесённые призраками
+40|The Chorus|Хористы
+41|Seven|Семь
+42|The Silence of the Lambs|Молчание ягнят
+43|The Truman Show|Шоу Трумана
+44|Django Unchained|Джанго освобожденный
+45|Cinderella Man|Нокдаун
+46|The Game|Игра
+47|Braveheart|Храброе сердце
+48|Whiplash|Одержимость
+49|Gran Torino|Гран Торино
+50|The Help|Прислуга
+51|Zootopia|Зверополис
+52|Rain Man|Человек дождя
+53|Cast Away|Изгой
+54|The Sixth Sense|Шестое чувство
+55|The Kid|Малыш
+56|The Pursuit of Happyness|В погоне за счастьем
+57|The Butterfly Effect|Эффект бабочки
+58|Beauty and the Beast|Красавица и чудовище
+59|The Taming of the Scoundrel|Укрощение строптивого
+60|Roman Holiday|Римские каникулы
+61|The Notebook|Дневник памяти
+62|Balto|Балто
+63|Gone with the Wind|Унесенные ветром
+64|The Lives of Others|Жизнь других
+65|Amadeus|Амадей
+66|The Devil's Advocate|Адвокат дьявола
+67|Rush|Гонка
+68|Inside I'm Dancing|А в душе я танцую
+69|Howl's Moving Castle|Ходячий замок
+70|Bohemian Rhapsody|Богемская рапсодия
+71|The Hobbit: An Unexpected Journey|Хоббит: Нежданное путешествие
+72|Brother|Брат
+73|Witness for the Prosecution|Свидетель обвинения
+74|Million Dollar Baby|Малышка на миллион
+75|Dead Poets Society|Общество мертвых поэтов
+76|Ocean's Eleven|Одиннадцать друзей Оушена
+77|Casino|Казино
+78|The Artist|Артист
+79|The Fifth Element|Пятый элемент
+80|Groundhog Day|День сурка
+81|Home Alone|Один дома
+82|Grave of the Fireflies|Могила светлячков
+83|Modern Times|Новые времена
+84|How to Steal a Million|Как украсть миллион
+85|The Blind Side|Невидимая сторона
+86|City of God|Город Бога
+87|The Legend of 1900|Легенда о пианисте
+88|Aladdin|Аладдин
+89|My Name Is Khan|Меня зовут Кхан
+90|Seven Pounds|Семь жизней
+91|Ray|Рэй
+92|The Sting|Афера
+93|The Life of David Gale|Жизнь Дэвида Гейла
+94|Dances with Wolves|Танцующий с волками
+95|Ghost|Привидение
+96|The World's Fastest Indian|Самый быстрый Indian
+97|Good Will Hunting|Умница Уилл Хантинг
+98|The Terminal|Терминал
+99|Goodfellas|Славные парни
+100|Scarface|Лицо со шрамом
+101|Front of the Class|Перед классом
+102|Inside Out|Головоломка
+103|The King's Speech|Король говорит!
+104|Ice Age|Ледниковый период
+105|Romeo and Juliet|Ромео и Джульетта
+106|Seven Samurai|Семь самураев
+107|K-PAX|Планета Ка-Пэкс
+108|Amelie|Амели
+109|Reservoir Dogs|Бешеные псы
+110|Pay It Forward|Заплати другому
+111|Sherlock Holmes|Шерлок Холмс
+112|Monsters, Inc.|Корпорация монстров
+113|Warrior|Воин
+114|Gandhi|Ганди
+115|Eight Below|Белый плен
+116|Apocalypse Now|Апокалипсис сегодня
+117|Your Name|Твое имя
+118|Coach Carter|Тренер Картер
+119|Freedom Writers|Писатели свободы
+120|American Beauty|Красота по-американски
+121|October Sky|Октябрьское небо
+122|Gone Girl|Исчезнувшая
+123|Psycho|Психо
+124|The Illusionist|Иллюзионист
+125|The Last Samurai|Последний самурай
+126|Shrek|Шрек
+127|The Hobbit: The Desolation of Smaug|Хоббит: Пустошь Смауга
+128|Interstate 60|Трасса 60
+129|Song of the Sea|Песнь моря
+130|Ratatouille|Рататуй
+131|Die Hard|Крепкий орешек
+132|Big Fish|Крупная рыба
+133|Meet Joe Black|Знакомьтесь, Джо Блэк
+134|Avatar|Аватар
+135|Up|Вверх
+136|Life of Pi|Жизнь Пи
+137|Mulan|Мулан
+138|La La Land|Ла-Ла Ленд
+139|The Little Mermaid|Русалочка
+140|Lady and the Tramp|Леди и бродяга
+141|Requiem for a Dream|Реквием по мечте
+142|The Fox and the Hound|Лис и пёс
+143|Edge of Tomorrow|Грань будущего
+144|Hacksaw Ridge|По соображениям совести
+145|Casablanca|Касабланка
+146|August Rush|Август Раш
+147|Into the Wild|В диких условиях
+148|Troy|Троя
+149|Men in Black|Люди в черном
+150|Sleepy Hollow|Сонная Лощина
+151|Love Actually|Реальная любовь
+152|Anastasia|Анастасия
+153|Legends of the Fall|Легенды осени
+154|The Mask|Маска
+155|The Painted Veil|Разрисованная вуаль
+156|Breakfast at Tiffany's|Завтрак у Тиффани
+157|The Breakfast Club|Клуб «Завтрак»
+158|All the Invisible Children|Невидимые дети
+159|The Best Offer|Лучшее предложение
+160|Madagascar|Мадагаскар
+161|Bicentennial Man|Двухсотлетний человек
+162|The Guardian|Спасатель
+163|Bambi|Бэмби
+164|Atonement|Искупление
+165|The Boat That Rocked|Рок-волна
+166|Maverick|Мэверик
+167|Memoirs of a Geisha|Мемуары гейши
+168|My Fair Lady|Моя прекрасная леди
+169|Robin Hood|Робин Гуд
+170|Interview with the Vampire|Интервью с вампиром

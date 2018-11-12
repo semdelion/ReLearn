@@ -3,7 +3,7 @@
 	xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
 	android:layout_width="match_parent"
-	android:layout_height="wrap_content">
+	android:layout_height="match_parent">
 	<android.support.v7.widget.Toolbar
 		xmlns:app="http://schemas.android.com/apk/res-auto"
 		android:id="@+id/toolbarFlags"
@@ -18,36 +18,46 @@
 			android:paddingBottom="12dp"
 			android:layout_width="match_parent"
 			android:layout_height="match_parent"
-			android:text="@string/Flags"    			
+			android:text="@string/Images"    			
 		/>
 	</android.support.v7.widget.Toolbar>
-	<Button
-		android:text="@string/Repeat"
+	<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
 		android:layout_width="match_parent"
-		android:layout_height="70dp"
-		android:id="@+id/button_flags_repeat"
-		android:layout_marginRight="40.0dp"
-		android:layout_marginLeft="40.0dp"
-		android:layout_marginTop="60dp"
-		android:layout_marginBottom="10.0dp"
-		android:textColor="#d7f8fe"
-		android:textSize="20dp"
-		android:background="@drawable/button_style_standard"
-		android:height="@android:dimen/notification_large_icon_width"
-		android:gravity="center"
-		android:onClick="Button_Flags_Repeat_Click"/>
-	<Button
-		android:text="@string/Learn"
-		android:layout_width="match_parent"
-		android:layout_height="70dp"
-		android:id="@+id/button_flags_learn"
-		android:layout_marginTop="6.0dp"
-		android:layout_marginLeft="40.0dp"
-		android:layout_marginRight="40.0dp"
-		android:textColor="#d7f8fe"
-		android:textSize="20dp"
-		android:background="@drawable/button_style_standard"
-		android:height="@android:dimen/notification_large_icon_width"
-		android:gravity="center"
-		android:onClick="Button_Flags_Learn_Click"/>
+		android:layout_height="match_parent" >
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_centerHorizontal="true"
+			android:layout_centerVertical="true"
+			android:orientation="vertical" >
+			<Button
+				android:text="@string/Repeat"
+				android:layout_width="match_parent"
+				android:layout_height="80dp"
+				android:id="@+id/button_flags_repeat"
+				android:layout_marginRight="25.0dp"
+				android:layout_marginLeft="25.0dp"
+				android:textColor="#d7f8fe"
+				android:textSize="20dp"
+				android:background="@drawable/button_style_standard"
+				android:height="@android:dimen/notification_large_icon_width"
+				android:gravity="center"
+				android:onClick="Button_Flags_Repeat_Click"/>
+			<Button
+				android:text="@string/Learn"
+				android:layout_width="match_parent"
+				android:layout_height="80dp"
+				android:id="@+id/button_flags_learn"
+				android:layout_marginLeft="25.0dp"
+				android:layout_marginRight="25.0dp"
+				android:layout_marginTop="20dp"
+				android:layout_marginBottom ="40dp"
+				android:textColor="#d7f8fe"
+				android:textSize="20dp"
+				android:background="@drawable/button_style_standard"
+				android:height="@android:dimen/notification_large_icon_width"
+				android:gravity="center"
+				android:onClick="Button_Flags_Learn_Click"/>
+		</LinearLayout>
+	</RelativeLayout>
 </LinearLayout>

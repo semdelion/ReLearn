@@ -31,13 +31,12 @@ namespace ReLearn
 
         public static Bitmap CreateSingleImageFromMultipleImages(Bitmap firstImage, Bitmap secondImage, PointF C)
         {
-            using (Bitmap result = Bitmap.CreateBitmap(firstImage.Width, firstImage.Height, firstImage.GetConfig()))
-            {
-                Canvas canvas = new Canvas(result);
-                canvas.DrawBitmap(firstImage, 0f, 0f, null);
-                canvas.DrawBitmap(secondImage, C.X, C.Y, null);
-                return result;
-            }
+            Bitmap result = Bitmap.CreateBitmap(firstImage.Width, firstImage.Height, firstImage.GetConfig());
+            Canvas canvas = new Canvas(result);
+            canvas.DrawBitmap(firstImage, 0f, 0f, null);
+            canvas.DrawBitmap(secondImage, C.X, C.Y, null);
+            return result;
+            
         }
 
         public void Selected(string NewTableName, string СurrentTableName)
@@ -76,9 +75,9 @@ namespace ReLearn
                         Canvas baseCan = new Canvas(Image1);
                         FRAME.DrawPieChart(baseCan, Statistics.GetAverageNumberLearn(Database_NL_and_D), Settings.StandardNumberOfRepeats,
                                            Color.Rgb(0, 255, 255), Color.Rgb(50, 60, 126), (float)(baseCan.Height / 2.5), WidthLine);
-                        using (Bitmap finalImage = CreateSingleImageFromMultipleImages(Image1, Image2,
+                        Bitmap finalImage = CreateSingleImageFromMultipleImages(Image1, Image2,
                             new PointF(((FRAME.Left + FRAME.Width) / 2) - (float)(baseCan.Height / 2.5) + WidthLine / 2,
-                                       ((FRAME.Top + FRAME.Height) / 2) - (float)(baseCan.Height / 2.5) + WidthLine / 2)))
+                                       ((FRAME.Top + FRAME.Height) / 2) - (float)(baseCan.Height / 2.5) + WidthLine / 2));
                         return finalImage;
                     }
                 }

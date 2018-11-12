@@ -39,12 +39,12 @@ namespace ReLearn
         public static List<DatabaseStatistics> GetData(string TableName) => DataBase.Statistics.Query<DatabaseStatistics>($"SELECT * FROM {TableName}_Statistics");
 
         public static float AverageTrueToday(string TableName) =>
-             AveragePercentTrue(DataBase.Statistics.Query<DatabaseStatistics>($"SELECT * FROM {TableName}_Statistics WHERE DateOfTesting >= ?", DateTime.Now));
+             AveragePercentTrue(DataBase.Statistics.Query<DatabaseStatistics>($"SELECT * FROM {TableName}_Statistics WHERE DateOfTesting >= ?", DateTime.Today.AddDays(-1)));
         
         public static float AverageTrueMonth(string TableName) => 
-            AveragePercentTrue(DataBase.Statistics.Query<DatabaseStatistics>($"SELECT * FROM {TableName}_Statistics WHERE  STRFTIME ( '%Y%m', DateOfTesting) = STRFTIME ( '%Y%m', 'now')"));
+            AveragePercentTrue(DataBase.Statistics.Query<DatabaseStatistics>($"SELECT * FROM {TableName}_Statistics WHERE  DateOfTesting >= ?", DateTime.Today.AddMonths(-1)));
         
         public static float AveragePercentTrue(List<DatabaseStatistics> Database_Stat) =>
-            Database_Stat.Count == 0 ? 0 : (Database_Stat.Sum(r => r.True) * (100 / (Database_Stat.Sum(r => r.True) + Database_Stat.Sum(r => r.False))));
+            Database_Stat.Count == 0 ? 0 : (Database_Stat.Sum(r => r.True) * (100f / (Database_Stat.Sum(r => r.True) + Database_Stat.Sum(r => r.False))));
     }
 }

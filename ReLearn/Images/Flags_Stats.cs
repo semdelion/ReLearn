@@ -46,7 +46,7 @@ namespace ReLearn
             Graph_General_Statistics Stat2 = new Graph_General_Statistics(this, 
                 Color.Argb(255, 254, 166, 10), Color.Argb(255, 154, 66, 3), 
                 DBStatistics.GetImages(DataBase.TableNameImage.ToString()), 
-                "Flags", DataBase.TableNameImage.ToString());
+                DataBase.TableNameImage.ToString(), DataBase.TableNameImage.ToString());
             Graph_Statistics Stat1 = new Graph_Statistics(this, Color.Argb(255, 254, 166, 10), Color.Argb(255, 154, 66, 3), DataBase.TableNameImage.ToString());
 
             var tab = ActionBar.NewTab();

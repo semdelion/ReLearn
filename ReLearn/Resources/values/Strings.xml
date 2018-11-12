@@ -3,6 +3,7 @@
   <string name="app_name">ReLearn</string>
   <string name="Language">Language</string>
   <string name="Flags">Flags</string>
+  <string name="Images">Images</string>
   <string name="Addition">Addition</string>
   <string name="Repeat">Repeat</string>
   <string name="Learn">Learn</string>
@@ -47,6 +48,8 @@
   <string name="Number_Inconvenient_Words">Number of inconvenient words</string>
   <string name="Number_Learned_Flags">Number of flags learned</string>
   <string name="Number_Inconvenient_Flags">Number of inconvenient flags</string>
+  <string name="Number_Learned_Films">Number of films learned</string>
+  <string name="Number_Inconvenient_Films">Number of inconvenient films</string>
   <string name="Number_Learned_Images">Number of images learned</string>
   <string name="Number_Inconvenient_Images">Number of inconvenient images</string>
   <string name="Number_Correct_Answers">The total number of correct answers</string>
@@ -90,7 +93,19 @@
   <string name="Instruction">Instruction</string>
   <string name="ComputerScience">Computer Science</string>
   <string name="Nature">Nature</string>
-
+  <string name="Films">Films</string>
+  <string name="My_DirectlyDescription">Contains the words you add to the system.</string>
+  <string name="HomeDescription">The house is a family hearth. It is a symbol of reliability and safety, comfort and warmth.It contains words that you can use to tell about your home.</string>
+  <string name="EducationDescription">Education plays a very important role in our life.Develops all aspects of the human personality, revealing his abilities.</string>
+  <string name="Popular_WordsDescription">This is a dictionary for those who want to master the most necessary and popular words.</string>
+  <string name="ThreeFormsOfVerbDescription">The most commonly used irregular verbs of the English language are presented.</string>
+  <string name="ComputerScienceDescription">IT covers all areas of the creation, transfer, storage and perception of information, not limited to computer technology.</string>
+  <string name="NatureDescription">Nature is all that is not created by human activity. But it is material, and surrounds us everywhere. We suggest to get acquainted with the words on this topic.</string>
+  <string name="FlagsDescription">The dictionary contains flags of the world.</string>
+  <string name="FilmsDescription">The dictionary consists of a list of the best movies according to users.</string>
+  <string name="DatatypeWords">Words: </string>
+  <string name="DatatypeImages">Images: </string>
+ 
   <string-array name="SeparatorLines_array">
     <item>|</item>
     <item>$</item>

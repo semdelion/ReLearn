@@ -38,11 +38,7 @@ namespace ReLearn
             
         }
 
-        static SQLiteConnection Connect(string nameDB)
-        {
-            string databasePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), nameDB);
-            return new SQLiteConnection(databasePath);
-        }
+        static SQLiteConnection Connect(string nameDB) => new SQLiteConnection(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), nameDB));
 
         public static void SetupConnection()
         {

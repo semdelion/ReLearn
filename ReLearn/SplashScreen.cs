@@ -14,8 +14,9 @@ namespace ReLearn
             DataBase.InstallDatabaseFromAssets();
             DataBase.SetupConnection();
             DBWords.СreateTable();
-            DBImages.UpdateDate();
-            DBWords.UpdateWordsToRepeat();
+            DBImages.СreateTable();
+            DBImages.UpdateData();
+            DBWords.UpdateData();
             StartActivity(typeof(MainActivity));
             Finish();
         }
