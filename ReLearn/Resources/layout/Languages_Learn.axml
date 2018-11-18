@@ -23,36 +23,23 @@
 			android:text="@string/Learn"  
 		/>
 	</android.support.v7.widget.Toolbar>
-	<TableLayout 
-		android:layout_width="match_parent"           
+	<TableLayout
+		android:layout_width="match_parent"
 		android:layout_height="match_parent"
-        android:stretchColumns="2">
+		android:stretchColumns="2">
 		<TextView
 			android:text="Text"
 			android:layout_width="match_parent"
-			android:layout_height="120dp"
+			android:layout_height="300dp"
 			android:minLines="2"
 			android:id="@+id/textView_learn_en"
 			android:textColor="#d7f8fe"
 			android:layout_marginRight="25.0dp"
 			android:layout_marginLeft="25.0dp"
-			android:layout_marginTop="10.0dp"
+			android:layout_marginTop="5.0dp"
 			android:textSize="30dp"
 			android:defaultFocusHighlightEnabled="true"
 			android:gravity="center|center_horizontal"/>
-		<TextView
-			android:text="Text"
-			android:layout_width="match_parent"
-			android:layout_height="120dp"
-			android:minLines="2"
-			android:id="@+id/textView_learn_ru"
-			android:textColor="#d7f8fe"
-			android:layout_marginRight="25.0dp"
-			android:layout_marginLeft="25.0dp"
-			android:layout_marginTop="10.0dp"
-			android:textSize="30dp"
-			android:defaultFocusHighlightEnabled="true"
-			android:gravity="center_horizontal|center" />
 		<Button
 			android:text="@string/Next"
 			android:layout_width="match_parent"
@@ -66,8 +53,8 @@
 			android:background="@drawable/button_style_standard"
 			android:gravity="center"
 			android:onClick="Button_Languages_Learn_Next_Click"
-			android:keyboardNavigationCluster="false" />		
-			<TableRow>
+			android:keyboardNavigationCluster="false" />
+		<TableRow>
 			<ImageButton
 				android:text=""
 				android:layout_column="0"
@@ -84,21 +71,21 @@
 				android:gravity="left|right|center"
 				android:onClick="Button_Languages_Learn_Voice_Enable"
 				android:scaleType="fitXY"/>
-            <Button
-                android:text="@string/Voice"
-                android:layout_column="1"
-                android:layout_width="0dp"
-                android:layout_weight="0.6"
-                android:layout_height="55.0dp"
-                android:layout_marginRight="25.0dp"
+			<Button
+				android:text="@string/Voice"
+				android:layout_column="1"
+				android:layout_width="0dp"
+				android:layout_weight="0.6"
+				android:layout_height="55.0dp"
+				android:layout_marginRight="25.0dp"
 				android:layout_marginTop="20.0dp"
-                android:id="@+id/button_voice"
-                android:textColor="#d7f8fe"
-                android:textSize="20dp"
-                android:background="@drawable/button_style_standard"
-                android:gravity="center"
-                android:onClick="Button_Languages_Learn_Voice_Click"/>
-			</TableRow>
+				android:id="@+id/button_voice"
+				android:textColor="#d7f8fe"
+				android:textSize="20dp"
+				android:background="@drawable/button_style_standard"
+				android:gravity="center"
+				android:onClick="Button_Languages_Learn_Voice_Click"/>
+		</TableRow>
 		<Button
 			android:text="@string/NotRepeat"
 			android:layout_width="match_parent"
@@ -112,6 +99,6 @@
 			android:background="@drawable/button_style_standard"
 			android:gravity="center"
 			android:onClick="Button_Languages_Learn_NotRepeat_Click"
-			android:keyboardNavigationCluster="false" />		
-       </TableLayout>
+			android:keyboardNavigationCluster="false" />
+	</TableLayout>
 </LinearLayout>

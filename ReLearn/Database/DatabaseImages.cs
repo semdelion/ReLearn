@@ -91,7 +91,5 @@ namespace ReLearn
             DateTime.Now, ImageName);
 
         public static List<DBImages> GetData => DataBase.Images.Query<DBImages>($"SELECT * FROM {DataBase.TableNameImage.ToString()}");
-
-        public static int Count(string TableName) => DataBase.Images.Query<DBImages>($"SELECT NumberLearn FROM {TableName}").Count;
     }
 }

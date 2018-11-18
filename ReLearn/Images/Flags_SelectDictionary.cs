@@ -31,11 +31,13 @@ namespace ReLearn
         void CreateViewForDictionary(string NameDictionarn, int ImageId, bool flag, bool separate)
         {
             var width = Resources.DisplayMetrics.WidthPixels / 100f;
+            var DB = DBStatistics.GetWords(NameDictionarn);
+            int count = DB.Count;
             LinearLayout DictionarylinearLayout = new LinearLayout(this)
             {
                 LayoutParameters = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, LinearLayout.LayoutParams.WrapContent)
             };
-            Dictionaries.DictionariesBitmap.Add(Dictionaries.CreateBitmapWithStats(BitmapFactory.DecodeResource(Resources, ImageId), DBStatistics.GetImages(NameDictionarn)));
+            Dictionaries.DictionariesBitmap.Add(Dictionaries.CreateBitmapWithStats(BitmapFactory.DecodeResource(Resources, ImageId), DB));
             ImageView ImageDictionary = new ImageView(this) { Tag = NameDictionarn.ToString() };
             ImageDictionary.LayoutParameters = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WrapContent, LinearLayout.LayoutParams.WrapContent)
             {
@@ -52,7 +54,7 @@ namespace ReLearn
             };
             TextView CountWords = new TextView(this)
             {
-                Text = $"{GetString(Resource.String.DatatypeImages)} {DBImages.Count(NameDictionarn)}",
+                Text = $"{GetString(Resource.String.DatatypeImages)} {count}",
                 TextSize = 14//(int)(2.1f * width)
             };
             TextView Description = new TextView(this)

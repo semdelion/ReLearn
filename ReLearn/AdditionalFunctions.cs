@@ -112,20 +112,6 @@ namespace ReLearn
             resource.UpdateConfiguration(conf, resource.DisplayMetrics);
             //this.CreateConfigurationContext(conf);
         }
-
-        //public static int GetColor(Context context, int id)
-        //{
-        //    if (Android.OS.Build.VERSION.SdkInt >= Android.OS.Build.VERSION_CODES.M)
-        //    {
-        //        return context.GetColor(id);
-        //    }
-        //    else
-        //    {
-        //        //noinspection deprecation
-        //        return context.Resources.GetColor(id);
-        //    }
-        //}
-
         //db.Query<Database_Words>("UPDATE " + TableNameLanguage + " SET DateRecurrence = DATETIME('NOW') WHERE Word = ?", s.Word);
         //db.Query<Database_Words>("UPDATE " + TableNameLanguage + " SET NumberLearn = " + s.NumberLearn + 1 + " WHERE Word = ?", s.Word);
     }

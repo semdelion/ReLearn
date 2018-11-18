@@ -15,6 +15,7 @@ namespace ReLearn
             DataBase.SetupConnection();
             DBWords.СreateTable();
             DBImages.СreateTable();
+            DBWords.ADDCOLUMN();
             DBImages.UpdateData();
             DBWords.UpdateData();
             StartActivity(typeof(MainActivity));

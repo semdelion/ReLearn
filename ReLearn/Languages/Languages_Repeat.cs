@@ -21,21 +21,14 @@ namespace ReLearn
         ButtonNext Button_next { get; set; }
         List<DBWords> WordDatabase { get; set; }
         MyTextToSpeech MySpeech { get; set; }
+        string Word { get; set; }
 
-        string TitleCount
-        {
-            set => FindViewById<TextView>(Resource.Id.Repeat_toolbar_textview).Text = value; 
-        }
-
-        string Word
-        {
-            get => FindViewById<TextView>(Resource.Id.textView_Eng_Word).Text; 
-            set => FindViewById<TextView>(Resource.Id.textView_Eng_Word).Text = value; 
-        }
+        string TitleCount { set => FindViewById<TextView>(Resource.Id.Repeat_toolbar_textview).Text = value;}
+        string Text { set => FindViewById<TextView>(Resource.Id.textView_Eng_Word).Text = value;}
 
         void Button_enable(bool state)
         {
-            foreach(var button in Buttons) button.Enabled = state;
+            foreach (var button in Buttons) button.Enabled = state;
             if (state)
             {
                 Button_next.State = StateButton.Unknown;
@@ -56,14 +49,15 @@ namespace ReLearn
                 buttons[i].Text = WordDatabase[random_numbers[i]].TranslationWord;
         }
 
-        void NextWord() 
+        void NextWord()
         {
             Word = WordDatabase[CurrentWordNumber].Word;
+            Text = $"{WordDatabase[CurrentWordNumber].Word}{(WordDatabase[CurrentWordNumber].Transcription==null ? "" :$"\n{WordDatabase[CurrentWordNumber].Transcription}")}";
             const int four = 4;
             int first = new Random(unchecked((int)(DateTime.Now.Ticks))).Next(four);
             List<int> random_numbers = new List<int> { first, 0, 0, 0 };
             for (int i = 1; i < four; i++)
-                random_numbers[i] = (first + i) % four;
+                random_numbers[i] = (first + i) % four; 
            Random_Button(Buttons[random_numbers[0]], Buttons[random_numbers[1]], Buttons[random_numbers[2]], Buttons[random_numbers[3]]);        
         }
 

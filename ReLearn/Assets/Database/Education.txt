@@ -1,178 +1,178 @@
-﻿addition | сложение
-algebra| алгебра
-almanac | альманах
-angle | угол
-annotation | аннотация
-approximately | приблизительно
-atlas | атлас
-attendance | посещаемость
-audience | аудитория; слушатели
-auditorium | аудитория; зал
-author | автор
-bell | звонок
-binding | переплет
-biology | биология
-blackboard,  chalkboard | доска
-book | книга
-booklet |брошюра; буклет
-bookmark | закладка
-braces | фигурные скобки
-brackets | скобки
-break, recess | перемена; перерыв
-cafeteria | столовая
-chalk | мел
-chapter | глава
-chemistry | химия
-children's book |детская книга
-class | класс; занятия
-classroom| классная комната
-college  | колледж
-common denominator | общий знаменатель
-computer science | информатика
-contents| содержание; оглавление
-copybook, notebook | тетрадь
-course| курс
-cover | обложка
-crayon| цветной карандаш
-cube root|кубический корень
-dean | декан
-dean's office | деканат
-decimal fraction | десятичная дробь
-decimal point | десятичная точка
-degree | ученая степень
-denominator | знаменатель
-department | отдел
-dictionary | словарь
-difference | разность
-diploma |диплом
-division | деление
-drama | драма
-easel | мольберт
-economics |экономика
-encyclopedia | энциклопедия
-English |английский язык
-enrollment| поступление
-epilogue | эпилог
-equality | равенство
-equals |  равняться
-equation | уравнение
-eraser, rubber | ластик; резинка
-essay |очерк; эссе
-exam | экзамен
-fable| басня
-faculty | факультет
-fairy tale | сказка
-fantasy |фантастика
-fiction | художественная литература
-finals | выпускные экзамены
-form | форма
-fraction | дробь
-freshman | первокурсник
-geography | география
-geometry |геометрия
-glue | клей
-grade, mark | отметка; оценка
-graduation | окончание учебного заведения
-group | группа
-guide book | путеводитель
-handbook | справочник
-headmistress | директриса
-high school|средняя школа
-higher education | высшее образование
-history |история
-homework |домашняя работа
-horror|ужасы
-illustrate|иллюстрировать
-improper fraction | неправильная дробь
-inequality | неравенство
-infinity |бесконечность
-ink | чернила
-institute | институт
-introduction | введение
-lecture | лекция
-lecturer | лектор
-legend | легенда
-length | длина; расстояние
-less or equal | мельше или равно
-lesson | урок; занятие
-literature | литература
-lodgings|сдаваемая комната
-mathematical sign | математический знак
-maths | математика
-memoir, reminiscence| мемуары
-minus | минус
-more or equal |  больше или равно
-multiplication | умножение
-multiplication table|  таблица умножения
-music | музыка
-myth| миф
-negative sign |  знак отрицания
-nonfiction| документальная литература
-not equal |  не равный
-notes | заметка
-novel |роман
-number | число
-numerator| числитель
-ormitory | общежитие
-pamphlet, booklet | брошюра
-paper | бумага
-paper clip | скрепка для бумаг
-paragraph | абзац
-parallel |  параллельный
-parentheses|  круглые скобки
-passage | отрывок
-pen | ручка
-pencil | карандаш
-pencil sharpener| точилка
-percent | процент
-perpendicular | перпендикуляр
-physics | физика
-plus | плюс
-pocket edition | карманное издание
-poem | стихотворение
-poetry | поэзия
-preface | предисловие
-Primary School |начальная школа
-principal, headmaster|директор
-problem | задача
-professor | профессор
-prologue|пролог
-prose |проза
-psychology | психология
-pupil | ученик
-quotient |частное (при делении)
-reference book | справочник
-register | регистр
-remainder | остаток
-rhyme | рифма
-right angle| прямой угол
-ruler | линейка
-saga | сага
-satire | сатира
-school | школа
-science fiction| научная фантастика
-scissors | ножницы
-series of numbers | ряд чисел
-sociology | социология
-sonnet | сонет
-sophomore |второкурсник
-square brackets | квадратные скобки
-square root of | корень квадратный из
-stapler | степлер
-story | рассказ
-student | студент
-subtraction | вычитание
-sum | сумма
-table | стол; таблица
-teacher | преподаватель
-technical literature | техническая литература
-term, semester | четверть; семестр
-test | тест
-text| текст
-textbook | учебник
-title | заглавие
-transfer | перевод, передача
-translation | перевод
-university| университет
-volume |том
-writer | писатель
+﻿addition|сложение|[əˈdɪʃn]
+algebra|алгебра|[ˈæl.dʒə.brə]
+almanac|альманах|[ˈɔːl.mə.næk]
+angle|угол|[ˈæŋɡl]
+annotation|аннотация|[ˈæn.ə.teɪt]
+approximately|приблизительно|[əˈprɒksɪmətli]
+atlas|атлас|[ˈæt.ləs]
+attendance|посещаемость|[əˈten.dəns]
+audience|аудитория; слушатели|[ˈɔːdiəns]
+auditorium|аудитория; зал|[ˌɔː.dɪˈtɔː.ri.əm]
+author|автор|[ˈɔːθə(r)]
+bell|звонок|[bel]
+binding|переплет|[ˈbaɪn.dɪŋ]
+biology|биология|[baɪˈɒlədʒi]
+blackboard,  chalkboard|доска|[ˈblæk.bɔːd] [ˈtʃɔːk.bɔːd]
+book|книга|[bʊk]
+booklet|брошюра; буклет|[ˈbʊk.lət]
+bookmark|закладка|[ˈbʊk.mɑːk]
+braces|фигурные скобки|[breɪs]
+brackets|скобки|[ˈbræk.ɪt]
+break, recess|перемена; перерыв|[breɪk] [rɪˈses]
+cafeteria|столовая|[ˌkæf.əˈtɪə.ri.ə]
+chalk|мел|[tʃɔːk]
+chapter|глава|[ˈtʃæptə(r)]
+chemistry|химия|[ˈkemɪstri]
+children's book|детская книга|[ˈtʃɪl.drəns] [bʊk]
+class|класс; занятия|[klɑːs]
+classroom|классная комната|[ˈklɑːsruːm]
+college|колледж|[ˈkɒlɪdʒ]
+common denominator|общий знаменатель|[ˈkɒmən] [dɪˈnɒm.ɪ.neɪ.tər]
+computer science|информатика|[kəmˈpjuːtə(r)] [ˈsaɪəns]
+contents|содержание; оглавление|[kənˈtent]
+copybook, notebook|тетрадь|[ˈkɒp.i.bʊk] [ˈnəʊt.bʊk]
+course|курс|[kɔːs]
+cover|обложка|[ˈkʌvə(r)]
+crayon|цветной карандаш|[ˈkreɪ.ɒn]
+cube root|кубический корень|[kjuːb] [ruːt]
+dean|декан|[diːn]
+dean's office|деканат|[diːns] [ˈɒfɪs]
+decimal fraction|десятичная дробь|[ˈdes.ɪ.məl] [ˈfræk.ʃən]
+decimal point|десятичная точка|[ˈdes.ɪ.məl] [pɔɪnt]
+degree|ученая степень|[dɪˈɡriː]
+denominator|знаменатель|[dɪˈnɒm.ɪ.neɪ.tər]
+department|отдел|[dɪˈpɑːtmənt]
+dictionary|словарь|[ˈdɪkʃənri]
+difference|разность|[ˈdɪfrəns]
+diploma|диплом|[dɪˈpləʊ.mə]
+division|деление|[dɪˈvɪʒn]
+drama|драма|[ˈdrɑːmə]
+easel|мольберт|[ˈiː.zəl]
+economics|экономика|[ˌiː.kəˈnɒm.ɪks]
+encyclopedia|энциклопедия|[ɪnˌsaɪ.kləˈpiː.di.ə]
+English|английский язык|[ˈɪŋ.ɡlɪʃ]
+enrollment|поступление|[ɪnˈrəʊlmənt]
+epilogue|эпилог|[ˈep.ɪ.lɒɡ]
+equality|равенство|[ɪˈkwɒl.ɪ.ti]
+equals|равняться|[ˈiː.kwəl]
+equation|уравнение|[ɪˈkweɪ.ʒən]
+eraser, rubber|ластик; резинка|[ɪˈreɪ.zər] [ˈrʌbə(r)]
+essay|очерк; эссе|[ˈeseɪ]
+exam|экзамен|[ɪɡˈzæm]
+fable|басня|[ˈfeɪ.bl̩]
+faculty|факультет|[ˈfæk.əl.ti]
+fairy tale|сказка|[ˈfeə.ri] [teɪl]
+fantasy|фантастика|[ˈfæn.tə.si]
+fiction|художественная литература|[ˈfɪk.ʃən]
+finals|выпускные экзамены|[ˈfaɪ.nəl]
+form|форма|[fɔːm]
+fraction|дробь|[ˈfræk.ʃən]
+freshman|первокурсник|[ˈfreʃ.mən]
+geography|география|[dʒiˈɒɡrəfi]
+geometry|геометрия|[dʒiˈɒm.ə.tri]
+glue|клей|[ɡluː]
+grade, mark|отметка; оценка|[ɡreɪd] [mɑːk]
+graduation|окончание учебного заведения|[ˌɡrædʒ.uˈeɪ.ʃən]
+group|группа|[ɡruːp]
+guide book|путеводитель|[ɡaɪd] [bʊk]
+handbook|справочник|[ˈhænd.bʊk]
+headmistress|директриса|[ˌhedˈmɪs.trəs]
+high school|средняя школа|[haɪ] [skuːl]
+higher education|высшее образование|[ˈhaɪ.ər] [ˌedʒuˈkeɪʃn]
+history|история|[ˈhɪstri]
+homework|домашняя работа|[ˈhəʊmwɜːk]
+horror|ужасы|[ˈhɒrə(r)]
+illustrate|иллюстрировать|[ˈɪləstreɪt]
+improper fraction|неправильная дробь|[ɪmˈprɒp.ər] [ˈfræk.ʃən]
+inequality|неравенство|[ˌɪn.ɪˈkwɒl.ə.ti]
+infinity|бесконечность|[ɪnˈfɪn.ɪ.ti]
+ink|чернила|[ɪŋk]
+institute|институт|[ˈɪnstɪtjuːt]
+introduction|введение|[ˌɪntrəˈdʌkʃn]
+lecture|лекция|[ˈlektʃə(r)]
+lecturer|лектор|[ˈlek.tʃər.ər]
+legend|легенда|[ˈledʒ.ənd]
+length|длина; расстояние|[leŋθ]
+less or equal|мельше или равно|[les] [ɔː(r)] [ˈiːkwəl]
+lesson|урок; занятие|[ˈlesn]
+literature|литература|[ˈlɪtrətʃə(r)]
+lodgings|сдаваемая комната|[ˈlɒdʒ.ɪŋ]
+mathematical sign|математический знак|[ˌmæθˈmæt.ɪks] [saɪn]
+maths|математика|[mæθs]
+memoir, reminiscence|мемуары|[ˈmem.wɑːr] [ˌrem.ɪˈnɪs.əns]
+minus|минус|[ˈmaɪ.nəs]
+more or equal|больше или равно|[mɔː(r)] [ɔː(r)] [ˈiːkwəl]
+multiplication|умножение|[mʌltɪplɪˈkeɪʃn]
+multiplication table|таблица умножения|[mʌltɪplɪˈkeɪʃn] [ˈteɪbl]
+music|музыка|[ˈmjuːzɪk]
+myth|миф|[mɪθ]
+negative sign|знак отрицания|[ˈneɡətɪv] [saɪn]
+nonfiction|документальная литература|[ˌnɒnˈfɪk.ʃən]
+not equal|не равный|[nɒt] [ˈiːkwəl]
+notes|заметка|[nəʊt]
+novel|роман|[ˈnɒvl]
+number|число|ˈnʌmbə(r)]
+numerator|числитель|[ˈnjuː.mə.reɪ.tər]
+dormitory|общежитие|[ˈdɔː.mɪ.tər.i]
+pamphlet, booklet|брошюра|[ˈpæm.flət] [ˈbʊk.lət]
+paper|бумага|[ˈpeɪpə(r)]
+paper clip|скрепка для бумаг|[ˈpeɪpə(r)] [klɪp]
+paragraph|абзац|[ˈpær.ə.ɡrɑːf]
+parallel|параллельный|[ˈpærəlel]
+parentheses|круглые скобки|[pəˈren.θə.siːz]
+passage|отрывок|[ˈpæsɪdʒ]
+pen|ручка|[pen]
+pencil|карандаш|[ˈpensl]
+pencil sharpener|точилка|[ˈpensl] [ˈʃɑː.pən.ər]
+percent|процент|[pəˈsent]
+perpendicular|перпендикуляр|[ˌpɜː.pənˈdɪk.jʊ.lər]
+physics|физика|[ˈfɪzɪks]
+plus|плюс|[plʌs]
+pocket edition|карманное издание|[ˈpɒkɪt] [ɪˈdɪʃn]
+poem|стихотворение|[ˈpəʊɪm]
+poetry|поэзия|[ˈpəʊətri]
+preface|предисловие|[ˈpref.ɪs]
+Primary School|начальная школа|[ˈpraɪməri] [skuːl]
+principal, headmaster|директор|[ˈprɪn.sɪ.pəl] [ˌhedˈmɑː.stər]
+problem|задача|[ˈprɒbləm]
+professor|профессор|[prəˈfesə(r)]
+prologue|пролог|[ˈprəʊ.lɒɡ]
+prose|проза|[prəʊz]
+psychology|психология|[saɪˈkɒl.ə.dʒi]
+pupil|ученик|[ˈpjuːpl]
+quotient|частное (при делении)|[ˈkwəʊ.ʃənt]
+reference book|справочник|[ˈrefrəns] [bʊk]
+register|регистр|[ˈredʒɪstə(r)]
+remainder|остаток|[rɪˈmeɪn.dər]
+rhyme|рифма|[raɪm]
+right angle|прямой угол|[raɪt] [ˈæŋɡl]
+ruler|линейка|[ˈruːlə(r)]
+saga|сага|[ˈsɑː.ɡə]
+satire|сатира|[ˈsæt.aɪər]
+school|школа|[skuːl]
+science fiction|научная фантастика|[ˈsaɪəns] [ˈfɪk.ʃən]
+scissors|ножницы|[ˈsɪzəz]
+series of numbers|ряд чисел|[ˈsɪəriːz] [əv] [ˈnʌm.bər]
+sociology|социология|[ˌsəʊ.siˈɒl.ə.dʒi]
+sonnet|сонет|[ˈsɒn.ɪt]
+sophomore|второкурсник|[ˈsɒf.ə.mɔːr]
+square brackets|квадратные скобки|[skweə(r)] [ˈbræk.ɪt]
+square root of|корень квадратный из|skweə(r)] [ruːt] [əv]
+stapler|степлер|[ˈsteɪ.plər]
+story|рассказ|[ˈstɔːri]
+student|студент|[ˈstjuːdnt]
+subtraction|вычитание|[səbˈtræk.ʃən]
+sum|сумма|[sʌm]
+table|стол; таблица|[ˈteɪbl]
+teacher|преподаватель|[ˈtiːtʃə(r)]
+technical literature|техническая литература|[ˈteknɪkl] [ˈlɪtrətʃə(r)]
+term, semester|четверть; семестр|[tɜːm] [sɪˈmes.tər]
+test|тест|[test]
+text|текст|[tekst]
+textbook|учебник|[ˈtekst.bʊk]
+title|заглавие|[ˈtaɪtl]
+transfer|перевод, передача|[trænsˈfɜː(r)]
+translation|перевод|[trænsˈleɪʃn]
+university|университет|[ˌjuːnɪˈvɜːsəti]
+volume|том|[ˈvɒljuːm]
+writer|писатель|[ˈraɪtə(r)]

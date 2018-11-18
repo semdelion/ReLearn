@@ -1,1055 +1,1054 @@
-of course|"конечно!"
-remember|(за)помнить; вспомнить
-apricot|абрикос
-August|август
-bus|автобус
-car|автомобиль
-lawyer|адвокат; юрист
-address|адрес
-battery|аккумулятор
-actor|актер
-pineapple|ананас
-England|Англия
-form|анкета; форма
-orange|апельсин; оранжевый
-April|апрель
-pharmacy|аптека
-watermelon|арбуз
-airport|аэропорт
-luggage|багаж
-trunk|багажник
-eggplant|баклажан
-balcony|балкон
-banana|банан
-bank|банк
-poor|бедный; плохой
-run, ran|бежать
-without|без
-squirrel|белка
-white|белый
-gas(oline)|бензин
-disturb|беспокоить; мешать
-worry|беспокойство
-useless|бесполезный
-mess|беспорядок
-businessman|бизнесмен
-ticket|билет
-thank|благодарить
-notebook|блокнот
-blouse|блузка
-saucer|блюдце
-beans|бобы
-rich|богатый
-more|более; еще (больше)
-sickness|болезнь
-pain|боль
-hospital|больница
-sick|больной
-most|большинство
-large|крупный; просторный
-big|большой
-beard|борода
-fight, fought|борьба; драка
-boss|босс
-boot|ботинок; сапог
-brother|брат
-take, took, taken|брать
-shave|брить
-eyebrow|бровь
-trousers|брюки; штаны
-wake, woke, woken|будить
-bun|булочка
-paper|бумага
-wallet|бумажник
-sandwich|бутерброд
-bottle|бутылка
-accountant|бухгалтер
-fast|быстро
-quick|быстрый; скорый
-appreciate|быть признательным
-be, was, been|быть; являться
-bra|бюстгальтер
-in|в; где
-per|в; за
-important|важный
-vase|ваза
-bathroom|ванная
-mitten|варежка
-jam|варенье
-cook|варить; готовить
-up|вверх
-bucket|ведро
-polite|вежливый
-century|век; столетие
-Great Britain|Великобритания
-bicycle|велосипед
-rope|веревка
-believe|верить
-probably|вероятно
-merry|веселый; радостный
-fun|веселье
-spring|весна
-lead, led|вести
-wind|ветер
-ham|ветчина
-evening|вечер
-party|вечеринка
-thing|вещь
-see, saw, seen|видеть
-fork|вилка
-wine|вино
-grape|виноград
-cherry|вишня
-tasty|вкусный
-influence|влияние; воздействие
-together|вместе
-down|вниз
-careful|внимательный; осторожный
-during|во время
-water|вода
-driver|водитель
-faucet|водопроводный кран
-return|возврат
-air|воздух
-balloon|воздушный шар
-near|возле; близко
-perhaps|возможно; может быть
-opportunity|возможность
-around|вокруг
-wolf|волк
-hair|волосы
-stink, stank, stunk|вонять; вонь
-question|вопрос
-eighteen|восемнадцать
-eight|восемь
-eighty|восемьдесят
-Sunday|воскресенье
-forward|вперед; передний
-doctor|врач
-season|время года; сезон
-time|время
-still|все еще
-yet|все же
-all|все; весь
-always|всегда
-get up|вставать
-meeting|встреча; собрание
-meet, met|встречать
-Tuesday|вторник
-second|второй; секунда
-entrance|вход
-yesterday|вчера
-choose, chose, chosen|выбирать
-choice|выбор
-switch|выключатель; переключать
-tall|высокий (о росте)
-high|высокий
-height|высота
-exit|выход
-newspaper|газета
-soda|газировка
-tie|галстук; привязывать
-wardrobe|гардероб
-where|где; куда
-eye|глаз
-depth|глубина
-stupid|глупый
-beef|говядина
-year|год
-head|голова
-headache|головная боль
-hungry|голодный
-blue|голубой; синий
-mountain|гора
-throat|горло
-city|город
-pea|горох
-bitter|горький
-hot|горячий
-hotel|гостиница
-guest|гость
-ready|готовый
-degree|градус; степень
-border|граница
-mushroom|гриб
-flu|грипп
-loud|громкий
-rude|грубый
-chest|грудь
-pear|груша
-dirty|грязный
-lips|губы
-walk|гулять; прогулка
-goose|гусь
-yes|да
-give, gave, given|давать; дарить
-even|даже
-far|далеко
-purse|дамская сумка
-birth date|дата рождения
-two|два
-twenty|двадцать
-twelve|двенадцать
-door|дверь
-move|двигать(ся); переезжать
-yard|двор
-cousin|двоюродный брат/сестра
-maiden name|девичья фамилия
-girl|девочка
-ninety|девяносто
-nineteen|девятнадцать
-nine|девять
-grandfather|дед
-really|действительно; "правда?"
-December|декабрь
-make, made|делать; изготовлять
-do, did, done|делать
-birthday|день рождения
-day|день
-money|деньги
-village|деревня; поселок
-tree|дерево
-hold, held|держать; удерживать
-ten|десять
-children|дети
-cheap|дешёвый
-jeans|джинсы
-sofa|диван
-length|длина
-long|длинный; долгий
-for|для; в течение
-good bye|до свидания
-before|до
-rain|дождь
-have to|должен; обязан
-must|должным; надо
-house|дом (здание)
-home|дом (место проживания)
-road|дорога
-expensive|дорогой (по цене)
-dear|дорогой; милый
-board|доска
-delivery|доставка
-enough|достаточно
-achievement|достижение
-profit|доход; польза
-daughter|дочь
-friend|друг
-think, thought|думать
-blow, blew, blown|дуть; удар; взрывать
-shower|душ
-soul|душа
-chimney|дымовая труба
-melon|дыня
-uncle|дядя
-his|его
-food|еда
-her|её
-if|если; ли
-complain|жаловаться
-fever|жар; температура
-wait|ждать
-wish|желать; желание
-yellow|жёлтый
-stomach|желудок; живот
-wife|жена
-married|женатый/замужняя
-woman|женщина
-women|женщины
-animal|животное
-life|жизнь
-giraffe|жираф
-live|жить
-magazine|журнал
-journalist|журналист
-fence|забор
-forget, forgot, forgotten|забывать
-tomorrow|завтра
-breakfast|завтрак
-task|задача
-delay|задержка; отсрочка
-order|заказ; порядок
-close|закрывать
-living room|зал
-curtain|занавес; штора
-busy|занятый
-note|записка; запись
-wrist|запястье
-shy|застенчивый
-call|звать; звонить
-ring, rang, rung|звонить; кольцо
-here|здесь; сюда
-health|здоровье
-hello|здравствуйте
-green|зелёный
-land|земля; участок
-mirror|зеркало
-winter|зима
-evil|злой; зло
-acquaintance|знакомый
-knowledge|знание
-know, knew, known|знать
-meaning|значение; смысл
-tooth|зуб
-and|и
-game|игра
-play|играть
-toy|игрушка
-go, went, gone|идти; ехать
-from|из
-avoid|избегать
-excuse|извинение; отговорка
-sorry|извините
-because of|из-за
-change|изменение; менять
-measure|измерение; мера
-or|или
-have, had, had|иметь
-name|имя
-engineer|инженер
-sometimes|иногда
-art|искусство
-their|их
-July|июль
-June|июнь
-yogurt|йогурт
-to|к; в (куда)
-squash|кабачок
-each|каждый (по отдельности)
-every|каждый
-what a pity|как жаль
-how|как
-calendar|календарь
-stone|камень
-cabbage|капуста
-hood|капюшон; капот
-pencil|карандаш
-map|карта
-picture|картина
-potatoes|картофель
-card|карточка
-pan|кастрюля
-cafe|кафе
-porridge|каша
-cough|кашель; кашлять
-flat|квартира
-throw, threw, thrown|кидать; бросать
-kilogram|килограмм
-kilometer|километр
-movie|кино
-cinema|кинотеатр
-sour|кислый
-keyboard|клавиатура
-lay, laid|класть; накрывать
-glue|клей
-client|клиент
-strawberry|клубника
-key|ключ; клавиша
-book|книга
-carpet|ковер
-when|когда
-sausage|колбаса
-tights|колготки
-knee|колено
-wheel|колесо
-colleague|коллега
-room|комната
-company|компания
-envelope|конверт
-certainly|конечно; безусловно
-competitor|конкурент
-ship|корабль
-hall|коридор
-brown|коричневый
-feed, fed|кормить
-box|коробка; ящик
-cow|корова
-short|короткий; низкий
-bone|кость
-suit|костюм
-cutlet|котлета
-coffee|кофе
-cardigan|кофта
-cat|кошка
-beautiful|красивая
-nice|красивый; хороший
-red|красный
-beauty|красота; красавица
-armchair|кресло
-shout|кричать; крик
-bed|кровать
-rabbit|кролик; заяц
-sneakers|кроссовки
-mug|кружка
-rat|крыса
-roof|крыша
-who|кто
-somebody|кто-то
-corn|кукуруза
-smoke|курить; дым
-piece|кусок; часть
-kitchen|кухня
-stove|кухонная плита
-eat, ate, eaten|кушать
-lamp|лампа
-noodles|лапша
-lie, lay, lain|лгать; ложь
-left|левый; cлева; налево
-easy|легкий; нетрудный
-light|лёгкий; светлый
-lazy|ленивый
-forest|лес
-fly, flew, flown|летать; муха
-summer|лето
-lemon|лимон
-ruler|линейка
-fox|лиса
-leaf|лист
-literature|литература
-face|лицо
-forehead|лоб
-catch, caught|ловить; подхватить
-spoon|ложка
-elbow|локоть
-break, broke, broken|ломать
-shovel|лопата; рыть
-horse|лошадь
-onion|лук (репчатый)
-moon|луна
-better|лучше; более подходящий
-best|лучший
-love|любовь; любить
-anybody|любой; кто-нибудь
-any|любые; всякий
-people|люди
-frog|лягушка
-shop|магазин
-May|май
-small|маленький
-raspberry|малина
-boy|мальчик
-mummy (mum)|мама
-mandarin|мандарин
-March|март
-butter|масло
-mother|мать
-machine|машина; механизм
-furniture|мебель
-honey|мёд
-bear|медведь
-slow|медленный
-nurse|медсестра
-between|между
-less|меньше; менее
-place|место
-month|месяц
-dream|мечта; сон
-microwave|микроволновка
-minute|минута
-world|мир (планета)
-peace|мир (покой)
-maybe|может быть
-my|мой
-young|молодой
-milk|молоко
-hammer|молоток
-sea|море
-carrot|морковь
-ice-cream|мороженое
-coast|морской берег
-bridge|мост
-can, could|мочь; может
-husband|муж
-man|мужчина
-men|мужчины
-music|музыка
-musician|музыкант
-flour|мука
-garbage|мусор
-we|мы
-soap|мыло
-thought|мысль
-wash|мыть; cтирать
-mouse|мышь
-soft|мягкий; нежный
-meat|мясо
-ball|мяч
-on|на
-above|над, выше
-put on|надевать
-hope|надеяться; надежда
-least|наименьший; меньше всего
-punish|наказывать
-cash|наличные
-intend|намереваться
-remind|напоминать
-enjoy|наслаждаться; нравиться
-running nose|насморк
-science|наука
-find, found|находить
-chief|начальник
-begin, began, begun|начинать
-our|наш
-not|не
-sky|небо
-recently|недавно
-week|неделя
-gentle|нежный
-some|некоторые; немного
-hate|ненавидеть
-necessary|необходимый
-wrong|неправильный
-several|несколько
-although|несмотря на то что
-carry|нести
-no|нет
-oil|нефть, масло
-underwear|нижнее белье
-low|низкий; низко
-never|никогда
-nobody|никто
-nothing|ничто
-but|но
-new|новый
-leg|нога; ножка
-foot|нога; ступня
-nail|ноготь; гвоздь
-knife|нож
-scissors|ножницы
-zero|ноль
-nose|нос
-wear, wore, worn|носить; одежда
-handkerchief|носовой платок
-sock|носок
-laptop|ноутбук
-night|ночь
-November|ноябрь
-like|нравиться; как
-about|о; около
-lunch|обед
-monkey|обезьяна
-provide|обеспечивать
-cloud|облако
-area|область, район
-circumstance|обстоятельство
-shoes|обувь
-explain|объяснять
-usually|обычно
-duty|обязанность
-widowed|овдовевший
-vegetables|овощи
-oatmeal|овсянка
-fire|огонь; пожар
-huge|огромный
-cucumber|огурец
-clothes|одежда
-blanket|одеяло
-one|один
-eleven|одиннадцать
-however|однако
-approve|одобрять
-lend, lent|одолжить
-expect|ожидать
-lake|озеро
-ocean|океан
-window|окно
-October|октябрь
-he|он
-she|она
-they|они
-it|оно
-danger|опасность
-describe|описывать
-experience|опыт; переживание
-nut|орех
-autumn|осень
-main|основной; главный
-especially|особенно
-stay|останавливаться
-stop|остановка
-island|остров
-spicy|острый (по вкусу)
-sharp|острый; диез
-answer|отвечать; ответ
-rest|отдыхать; отдых
-father|отец
-open|открывать; открытый
-excellent|отлично; превосходно
-relationship|отношение
-vacation|отпуск; каникулы
-waste|отходы
-office|офис
-waiter|официант
-mark|оценка; отметка
-obviously|очевидно
-delicious|очень вкусный
-very|очень
-glasses|очки
-mistake|ошибка
-fall, fell, fallen|падать
-toe|палец (ноги)
-finger|палец
-stick|палка
-coat|пальто
-memory|память; воспоминание
-daddy (dad)|папа
-pair|пара
-guy|парень
-park|парк
-Easter|Пасха
-smell|пахнуть; запах
-first|первый; сначала
-negotiation|переговоры
-in front of|перед
-crossroads|перекрёсток
-pepper|перец
-peach|персик
-glove|перчатка
-song|песня
-sand|песок
-sing, sang, sung|петь
-sadness|печаль
-sad|печальный
-cookie|печенье
-oven|духовка
-bake|печь
-jacket|пиджак; куртка
-pie|пирог; пирожок
-write, wrote, written|писать
-letter|письмо; буква
-drink, drank, drunk|пить
-swim, swam, swum|плавать
-pay, paid|платить
-dress|платье; одевать
-cry|плач; крик
-nephew|племянник
-niece|племянница
-shoulder|плечо
-bad|плохой
-square|площадь
-beach|пляж
-win, won|побеждать
-behavior|поведение
-turn|повернуть; очередь
-surface|поверхность; всплывать
-weather|погода
-below|под, ниже
-under|под
-gift|дар
-present|подарок
-chin|подбородок
-support|поддержка
-lift|поднимать(ся); лифт
-windowsill|подоконник
-pillow|подушка
-train|поезд
-trip|поездка; путешествие
-please|пожалуйста (прошу)
-the day before yesterday|позавчера
-behind|позади
-let|позволять
-late|поздний; поздно
-show, showed, shown|показывать
-leave, left|покидать; уходить
-buy, bought|покупать
-purchase|покупка
-floor|пол; этаж
-field|поле
-useful|полезный
-police|полиция
-shelf|полка
-towel|полотенце
-get, got|получать; добираться
-benefit|польза; выгода
-fit|поместиться; соответствовать
-put|помещать; класть
-tomato|помидор
-help|помогать; помощь
-Monday|понедельник
-visit|посещать; визит
-afternoon|после полудня
-after|после
-last|последний; прошлый
-the day after tomorrow|послезавтра
-dishes|посуда
-send, sent|посылать
-package|посылка; упаковка
-ceiling|потолок
-then|потом; тогда
-because|потому что; так как
-why|почему; зачем
-post office, mail|почта
-almost|почти
-right|правильный; справа
-holiday|праздник; отпуск
-celebrate|праздновать
-offer|предложение
-factory|предприятие
-introduce|представлять; знакомить
-advantage|преимущество
-hi|привет
-attractive|привлекательный
-habit|привычка
-invitation|приглашение
-decide|принимать решение
-bring, brought|приносить, привозить
-meal|принятие пищи, еда
-decision|принятие решения
-come, came|приходить; приезжать
-reason|причина
-problem|проблема
-check|проверка; чек
-spend, spent|проводить; тратить
-wire|проволока
-shop assistаnt|продавец
-just|просто; только что
-simple|простой
-sheet|простыня; листок
-against|против
-nasty|противный
-cool|прохладно; круто
-forgive, forgave, forgiven|прощать
-jump|прыгать; прыжок
-straight|прямой; прямо
-bird|птица
-travel|путешествовать
-try|пытаться; попытка
-heel|пятка; каблук
-fifteen|пятнадцать
-Friday|пятница
-fifth|пятый
-five|пять
-fifty|пятьдесят
-job|работа
-work|работать; работа
-worker|рабочий
-radio|радио
-glad|радостный
-joy|радость
-divorced|разведенный
-development|развитие
-talk|разговаривать; разговор
-speak, spoke, spoken|разговаривать
-size|размер
-permit|разрешать
-early|ранний; рано
-story|рассказ, история
-distance|расстояние
-plant|растение
-grow, grew, grown|расти, выращивать
-comb|расчёска; расчесывать
-child|ребенок
-seldom|редко
-cut|резать
-river|река
-advertising|реклама
-belt|ремень; пояс
-restaurant|ресторан
-solve|решать
-solution|решение
-rice|рис
-draw, drew, drawn|рисовать; чертить
-parents|родители
-birth|рождение
-Christmas|Рождество
-socket|розетка
-pink|розовый
-drop|ронять; падение
-Russia|Россия
-mouth|рот
-shirt|рубашка
-hand|рука; кисть
-steering wheel|руль
-pen|ручка
-fish|рыба
-market|рынок
-backpack|рюкзак
-with|с
-garden|сад
-salad|салат
-napkin|салфетка
-plane|самолет
-sugar|сахар
-wedding|свадьба
-beet|свекла
-pork|свинина
-pig|свинья
-sweater|свитер
-free|свободный; бесплатный
-kind|своего рода; тип
-tonight|сегодня вечером
-today|сегодня
-now|сейчас; теперь
-marital status|семейное положение
-seventeen|семнадцать
-seven|семь
-seventy|семьдесят
-family|семья
-September|сентябрь
-angry|сердитый
-heart|сердце
-grey|серый
-sister|сестра
-sit, sat|сидеть
-strength|сила
-strong|сильный; крепкий
-pretty|симпатичный; довольно
-bruise|синяк; ушиб; ушибить
-say, said|сказать
-discount|скидка
-frying pan|сковородка
-how much|сколько + е.ч
-how many|сколько + м.ч
-soon|скоро
-speed|скорость
-sculpture|скульптура
-weak|слабый
-sweet|сладкий
-consequence|следствие
-next|следующий
-plum|слива
-cream|сливки; крем
-dictionary|словарь
-word|слово
-elephant|слон
-case|случай; чехол
-listen|слушать
-hear, heard|слышать
-brave|смелый
-death|смерть
-laugh|смеяться
-watch|смотреть; наручные часы
-snow|снег
-take off|снимать одежду
-again|снова; опять
-dog|собака
-collect|собирать
-own|собственный; владеть
-event|событие
-advice|совет
-agree|соглашаться
-agreement|соглашение; договор
-juice|сок
-salty|соленый
-sun|солнце
-salt|соль
-match|соответствовать; матч
-forty|сорок
-neighbor|сосед
-sauce|соус
-bedroom|спальня
-save|спасать; сохранять
-thank|спасибо
-sleep, slept|спать
-spice|специя
-back|спина; назад
-list|список
-calm|спокойный
-argument|спор; аргумент
-argue|спорить
-ability|способность
-able|способный
-ask|спрашивать; просить
-Wednesday|среда
-among|среди
-means|средство; способ
-glass|стакан; стекло
-become, became|становиться
-station|станция; вокзал
-old|старый
-wall|стена
-hundred|сто
-cost|стоить
-table|стол
-stand, stood|стоять
-country|страна
-page|страница
-strange|чужой
-weird|странный
-passion|страсть; страстность
-fear|страх; бояться
-building|строительство
-build, built|строить
-student|студент
-chair|стул
-stairs|ступеньки; лестница
-Saturday|суббота
-bag|сумка
-soup|суп
-happy|счастливый
-happiness|счастье
-account|счет банковский
-bill|счёт
-count|считать; подсчитывать
-son|сын
-cheese|сыр
-full|сытый; полный
-so|так; поэтому
-also|также
-such|такой
-there|там; туда
-customs|таможня
-dance|танцевать
-dish|блюдо
-plate|тарелка
-hard|твёрдый; жесткий
-your|твой; ваш
-curd|творог
-those|те
-theater|театр
-TV|телевизор
-phone|телефон
-body|тело
-dark|тёмный
-temperature|температура
-warm|тёплый; тепло
-test|тест; испытание
-father-in-law|тесть
-copybook|тетрадь
-aunt|тетя
-quiet|тихий
-too|тоже; слишком
-thick|густой
-fat|толстый; жирный; жир
-only|только
-slim|тонкий; стройный
-thin|тонкий
-sink, sank, sunk|тонуть; погружаться
-cake|торт
-that|тот; что (союз)
-exactly|точно
-grass|трава
-tram|трамвай
-transport|транспорт
-third|третий
-three|три
-thirty|тридцать
-thirteen|тринадцать
-path|тропа
-sidewalk|тротуар
-pipe|труба; трубка
-difficult|трудный; тяжелый
-hard-working|трудолюбивый
-coward|трусливый; трус
-toilet|туалет
-fog|туман
-blunt|тупой (нож; человек)
-you|ты; вы
-pumpkin|тыква
-thousand|тысяча
-heavy|тяжёлый
-persuade|убеждать
-sure|уверенный
-hit|ударять
-luck|удача
-amazing|удивительный
-surprise|удивлять; сюрприз
-comfortable|удобный; уютный
-pleasure|удовольствие
-terrible|ужасный
-already|уже
-dinner|ужин
-narrow|узкий
-street|улица
-smile|улыбка
-die|умирать
-smart|умный
-university|университет
-exercise|упражнение
-ugly|уродливый
-lesson|урок
-effort|усилие
-success|успех
-tired|усталый
-mustache|усы
-duck|утка
-morning|утро
-iron|утюг; железо
-ear|ухо
-teacher|учитель
-learn|учить(ся)
-teach, taught|учить; обучать
-study|изучение
-torch|факел
-surname|фамилия
-February|февраль
-film|фильм; пленка
-purple|фиолетовый; пурпурный
-photo|фото
-camera|фотоаппарат
-fruit|фрукт
-pound|фунт
-t-shirt|футболка
-bread|хлеб
-fridge|холодильник
-cold|холодно
-single|холостой, незамужняя
-good|хороший; добрый
-well|хорошо; колодец
-want|хотеть
-keep, kept|хранить; держать
-artist|художник
-worst|худший
-worse|хуже; более плохой
-color|цвет
-flower|цветок
-goal|цель; гол
-price|цена
-center|центр
-church|церковь
-chicken|цыпленок
-tip|чаевые
-tea|чай
-kettle|чайник; котел
-hour|час
-often|часто
-clock|часы
-cup|чашка
-suitcase|чемодан
-through|через
-black|чёрный
-garlic|чеснок
-honest|честный
-Thursday|четверг
-fourth|четвертый
-four|четыре
-fourteen|четырнадцать
-number|число; номер
-clean|чистый; чистить
-read|читать
-sneeze|чихать
-something|что нибудь; нечто
-what|что; какой
-anything|что-нибудь; все
-feeling|чувство
-feel, felt|чувствовать
-miracle|чудо
-stockings|чулки
-step|шаг; ступать
-cap|шапка; кепка
-scarf|шарф
-sixteen|шестнадцать
-six|шесть
-sixty|шестьдесят
-neck|шея
-wide|широкий
-cabinet|шкаф
-school|школа
-pupil|школьник; ученик
-hat|шляпа
-chocolate|шоколад
-shorts|шорты
-noisy|шумный
-joke|шутка
-cheek|щека
-brush|щетка; кисть
-these|эти
-this|этот
-skirt|юбка
-I|я
-apple|яблоко
-lamb|ягненок
-berry|ягода
-language|язык
-egg|яйцо
-January|январь
+﻿of course|"конечно!"|[əv] [kɔːs]
+remember|(за)помнить; вспомнить|[rɪˈmembə(r)]
+apricot|абрикос|[ˈeɪ.prɪ.kɒt]
+August|август|[ˈɔːɡəst]
+bus|автобус|[bʌs]
+car|автомобиль|[kɑː(r)]
+lawyer|адвокат; юрист|[ˈlɔːjə(r)]
+address|адрес|[əˈdres]
+battery|аккумулятор|[ˈbætri]
+actor|актер|[ˈæktə(r)]
+pineapple|ананас|[ˈpaɪnˌæp.l̩]
+England|Англия|[ˈɪŋglənd]
+form|анкета; форма|[fɔːm]
+orange|апельсин; оранжевый|[ˈɒrɪndʒ]
+April|апрель|[ˈeɪprəl]
+pharmacy|аптека|[ˈfɑː.mə.si]
+watermelon|арбуз|[ˈwɔː.təˌmel.ən]
+airport|аэропорт|[ˈeəpɔːt]
+luggage|багаж|[ˈlʌɡɪdʒ]
+trunk|багажник|[trʌŋk]
+eggplant|баклажан|[ˈeɡ.plɑːnt]
+balcony|балкон|[ˈbæl.kə.ni]
+banana|банан|[bəˈnɑː.nə]
+bank|банк|[bæŋk]
+poor|бедный; плохой|[pɔː(r)]
+run|бежать|[rʌn]
+without|без|[wɪˈðaʊt]
+squirrel|белка|[ˈskwɪr.əl]
+white|белый|[waɪt]
+gas, gasoline|бензин|[ɡæs] [ˈɡæsəliːn]
+disturb|беспокоить; мешать|[dɪˈstɜːb]
+worry|беспокойство|[ˈwʌri]
+useless|бесполезный|[ˈjuːsləs]
+mess|беспорядок|[mes]
+businessman|бизнесмен|[ˈbɪznəsmæn]
+ticket|билет|[ˈtɪkɪt]
+thank|благодарить|[θæŋk]
+notebook|блокнот|[ˈnəʊt.bʊk]
+blouse|блузка|[blaʊz]
+saucer|блюдце|[ˈsɔː.sər]
+beans|бобы|[biːn]
+rich|богатый|[rɪtʃ]
+more|более; еще (больше)|[mɔː(r)]
+sickness|болезнь|[ˈsɪk.nəs]
+pain|боль|[peɪn]
+hospital|больница|[ˈhɒspɪtl]
+sick|больной|[sɪk]
+most|большинство|[məʊst]
+large|крупный; просторный|[lɑːdʒ]
+big|большой|[bɪɡ]
+beard|борода|[bɪəd]
+fight, fought|борьба; драка|[faɪt]
+boss|босс|[bɒs]
+boot|ботинок; сапог|[buːt]
+brother|брат|[ˈbrʌðə(r)]
+take|брать|[teɪk]
+shave|брить|[ʃeɪv]
+eyebrow|бровь|[ˈaɪ.braʊ]
+trousers|брюки; штаны|[ˈtraʊzəz]
+wake|будить|[weɪk]
+bun|булочка|[bʌn]
+paper|бумага|[ˈpeɪpə(r)]
+wallet|бумажник|[ˈwɒlɪt]
+sandwich|бутерброд|[ˈsæn.wɪdʒ]
+bottle|бутылка|[ˈbɒtl]
+accountant|бухгалтер|[əˈkaʊn.tənt]
+fast|быстро|[fɑːst]
+quick|быстрый; скорый|[kwɪk]
+appreciate|быть признательным|[əˈpriːʃieɪt]
+be|быть; являться|[bi]
+bra|бюстгальтер|[brɑː]
+in|в; где|[ɪn]
+per|в; за|[pə(r)]
+important|важный|[ɪmˈpɔːtnt]
+vase|ваза|[vɑːz]
+bathroom|ванная|[ˈbɑːθruːm]
+mitten|варежка|[ˈmɪt.ən]
+jam|варенье|[dʒæm]
+cook|варить; готовить|[kʊk]
+up|вверх|[ʌp]
+bucket|ведро|[ˈbʌk.ɪt]
+polite|вежливый|[pəˈlaɪt]
+century|век; столетие|[ˈsentʃəri]
+Great Britain|Великобритания|[ɡreɪt] [ˈbrɪt.ən]
+bicycle|велосипед|[ˈbaɪsɪkl]
+rope|веревка|[rəʊp]
+believe|верить|[bɪˈliːv]
+probably|вероятно|[ˈprɒbəbli]
+merry|веселый; радостный|[ˈmer.i]
+fun|веселье|[fʌn]
+spring|весна|[sprɪŋ]
+lead|вести|[liːd]
+wind|ветер|[wɪnd]
+ham|ветчина|[hæm]
+evening|вечер|[ˈiːvnɪŋ]
+party|вечеринка|[ˈpɑːti]
+thing|вещь|[θɪŋ]
+see|видеть|[siː]
+fork|вилка|[fɔːk]
+wine|вино|[waɪn]
+grape|виноград|[ɡreɪp]
+cherry|вишня|[ˈtʃer.i]
+tasty|вкусный|[ˈteɪ.sti]
+influence|влияние; воздействие|[ˈɪnfluəns]
+together|вместе|[təˈɡeðə(r)]
+down|вниз|[daʊn]
+careful|внимательный; осторожный|[ˈkeəfl]
+during|во время, в течение|[ˈdjʊərɪŋ]
+water|вода|[ˈwɔːtə(r)]
+driver|водитель|[ˈdraɪvə(r)]
+faucet|водопроводный кран|[ˈfɔːsɪt]
+return|возврат|[rɪˈtɜːn]
+air|воздух|[eə(r)]
+balloon|воздушный шар|[bəˈluːn]
+near|возле; близко|[nɪə(r)]
+perhaps|возможно; может быть|[pəˈhæps]
+opportunity|возможность|[ˌɒpəˈtjuːnəti]
+around|вокруг|[əˈraʊnd]
+wolf|волк|[wʊlf]
+hair|волосы|[heə(r)]
+stink|вонять; вонь|[stɪŋk]
+question|вопрос|[ˈkwestʃən]
+eighteen|восемнадцать|[ˌeɪˈtiːn]
+eight|восемь|[eɪt]
+eighty|восемьдесят|[ˈeɪti]
+Sunday|воскресенье|[ˈsʌndeɪ]
+forward|вперед; передний|[ˈfɔːwəd]
+doctor|врач|[ˈdɒktə(r)]
+season|время года; сезон|[ˈsiːzn]
+time|время|[taɪm]
+still|все еще|[stɪl]
+yet|все же|[jet]
+all|все; весь|[ɔːl]
+always|всегда|[ˈɔːlweɪz]
+get up|вставать|[ɡet] [ʌp]
+meeting|встреча; собрание|[ˈmiːtɪŋ]
+meet|встречать|[miːt]
+Tuesday|вторник|[ˈtjuːzdeɪ]
+second|второй; секунда|[ˈsekənd]
+entrance|вход|[ˈentrəns]
+yesterday|вчера|[ˈjestədeɪ]
+choose, chose, chosen|выбирать|[tʃuːz]
+choice|выбор|[tʃɔɪs]
+switch|выключатель; переключать|[swɪtʃ]
+tall|высокий (о росте)|[tɔːl]
+high|высокий|[haɪ]
+height|высота|[haɪt]
+exit|выход|[ˈeksɪt]
+newspaper|газета|[ˈnjuːzpeɪpə(r)]
+soda|газировка|[ˈsəʊ.də]
+tie|галстук; привязывать|[taɪ]
+wardrobe|гардероб|[ˈwɔː.drəʊb]
+where|где; куда|[weə(r)]
+eye|глаз|[aɪ]
+depth|глубина|[depθ]
+stupid|глупый|[ˈstjuːpɪd]
+beef|говядина|[biːf]
+year|год|[jɪə(r)]
+head|голова|[hed]
+headache|головная боль|[ˈhedeɪk]
+hungry|голодный|[ˈhʌŋɡri]
+blue|голубой; синий|[bluː]
+mountain|гора|[ˈmaʊntən]
+throat|горло|[θrəʊt]
+city|город|[ˈsɪti]
+pea|горох|[piː]
+bitter|горький|[ˈbɪtə(r)]
+hot|горячий|[hɒt]
+hotel|гостиница|[həʊˈtel]
+guest|гость|[həʊˈtel]
+ready|готовый|[ˈredi]
+degree|градус; степень|[dɪˈɡriː]
+border|граница|[ˈbɔːdə(r)]
+mushroom|гриб|[ˈmʌʃ.ruːm]
+flu|грипп|[fluː]
+loud|громкий|[laʊd]
+rude|грубый|[ruːd]
+chest|грудь|[tʃest]
+pear|груша|[peər]
+dirty|грязный|[ˈdɜːti]
+lips|губы|[lɪp]
+walk|гулять; прогулка|[wɔːk]
+goose|гусь|[ɡuːs]
+yes|да|[jes]
+give|давать; дарить|[ɡɪv]
+even|даже|[ˈiːvn]
+far|далеко|[fɑː(r)]
+purse|дамская сумка|[pɜːs]
+birth date|дата рождения|[bɜːθ] [deɪt]
+two|два|[tuː]
+twenty|двадцать|[ˈtwenti]
+twelve|двенадцать|[twelv]
+door|дверь|[dɔː(r)]
+move|двигать(ся); переезжать|[muːv]
+yard|двор|[jɑːd]
+cousin|двоюродный брат/сестра|[ˈkʌzn]
+maiden name|девичья фамилия|[ˈmeɪ.dən] [neɪm]
+girl|девочка|[ɡɜːl]
+ninety|девяносто|[ˈnaɪnti]
+nineteen|девятнадцать|[ˌnaɪnˈtiːn]
+nine|девять|[naɪn]
+grandfather|дед|[ˈɡrænfɑːðə(r)]
+really|действительно; "правда?"|[ˈriːəli]
+December|декабрь|[dɪˈsembə(r)]
+make|делать; изготовлять|[meɪk]
+do|делать|[du]
+birthday|день рождения|[ˈbɜːθdeɪ]
+day|день|[deɪ]
+money|деньги|[ˈmʌni]
+village|деревня; поселок|[ˈvɪlɪdʒ]
+tree|дерево|[triː]
+hold|держать; удерживать|[həʊld]
+ten|десять|[ten]
+children|дети|[ˈtʃɪl.drən]
+cheap|дешёвый|[tʃiːp]
+jeans|джинсы|[dʒiːnz]
+sofa|диван|[ˈsəʊ.fə]
+length|длина|[leŋθ]
+long|длинный; долгий|[lɒŋ]
+for|для; в течение|[fə(r)]
+good bye|до свидания|[ɡʊd] [baɪ]
+before|до|[bɪˈfɔː(r)]
+rain|дождь|[reɪn]
+have to|должен; обязан|[həv] [tə]
+must|должным; надо|[məst]
+house|дом (здание)|[haʊs]
+home|дом (место проживания)|[həʊm]
+road|дорога|[rəʊd]
+expensive|дорогой (по цене)|[ɪkˈspensɪv]
+dear|дорогой; милый|[dɪə(r)]
+board|доска|[bɔːd]
+delivery|доставка|[dɪˈlɪvəri]
+enough|достаточно|[ɪˈnʌf]
+achievement|достижение|[əˈtʃiːvmənt]
+profit|доход; польза|[ˈprɒfɪt]
+daughter|дочь|[ˈdɔːtə(r)]
+friend|друг|[frend]
+think|думать|[θɪŋk]
+blow|дуть; удар; взрывать|[bləʊ]
+shower|душ|[ˈʃaʊə(r)]
+soul|душа|[səʊl]
+chimney|дымовая труба|[ˈtʃɪm.ni]
+melon|дыня|[ˈmel.ən]
+uncle|дядя|[ˈʌŋkl]
+his|его|[hɪz]
+food|еда|[fuːd]
+her|её|[hə(r)]
+if|если; ли|[ɪf]
+complain|жаловаться|[kəmˈpleɪn]
+fever|жар; температура|[ˈfiːvə(r)]
+wait|ждать|[weɪt]
+wish|желать; желание|[wɪʃ]
+yellow|жёлтый|[ˈjeləʊ]
+stomach|желудок; живот|[ˈstʌmək]
+wife|жена|[waɪf]
+married|женатый/замужняя|[ˈmærid]
+woman|женщина|[ˈwʊmən]
+women|женщины|[ˈwɪmɪn]
+animal|животное|[ˈænɪml]
+life|жизнь|[laɪf]
+giraffe|жираф|[dʒɪˈrɑːf]
+live|жить|[lɪv]
+magazine|журнал|[ˌmæɡəˈziːn]
+journalist|журналист|[ˈdʒɜːnəlɪst]
+fence|забор|[fens]
+forget|забывать|[fəˈɡet]
+tomorrow|завтра|[təˈmɒrəʊ]
+breakfast|завтрак|[ˈbrekfəst]
+task|задача|[tɑːsk]
+delay|задержка; отсрочка|[dɪˈleɪ]
+order|заказ; порядок|[ˈɔːdə(r)]
+close|закрывать|[kləʊz]
+living room|зал|[ˈlɪvɪŋ] [ruːm]
+curtain|занавес; штора|[ˈkɜːtn]
+busy|занятый|[ˈbɪzi]
+note|записка; запись|[nəʊt]
+wrist|запястье|[rɪst]
+shy|застенчивый|[ʃaɪ]
+call|звать; звонить|[kɔːl]
+ring|звонить; кольцо|[rɪŋ]
+here|здесь; сюда|[hɪə(r)]
+health|здоровье|[helθ]
+hello|здравствуйте|[helˈəʊ]
+green|зелёный|[ɡriːn]
+land|земля; участок|[lænd]
+mirror|зеркало|[ˈmɪrə(r)]
+winter|зима|[ˈwɪntə(r)]
+evil|злой; зло|[ˈiːvl]
+acquaintance|знакомый|[əˈkweɪn.təns]
+knowledge|знание|[ˈnɒlɪdʒ]
+know|знать|[nəʊ]
+meaning|значение; смысл|[ˈmiːnɪŋ]
+tooth|зуб|[tuːθ]
+and|и|[ənd]
+game|игра|[ɡeɪm]
+play|играть|[pleɪ]
+toy|игрушка|[tɔɪ]
+go|идти; ехать|[ɡəʊ]
+from|из|[frəm]
+avoid|избегать|[əˈvɔɪd]
+excuse|извинение; отговорка|[ɪkˈskjuːs]
+sorry|извините|[ˈsɒri]
+because of|из-за|[bɪˈkɒz] [əv]
+change|изменение; менять|[tʃeɪndʒ]
+measure|измерение; мера|[ˈmeʒə(r)]
+or|или|[ɔː(r)]
+have|иметь|[həv]
+name|имя|[neɪm]
+engineer|инженер|[ˌendʒɪˈnɪə(r)]
+sometimes|иногда|[ˈsʌmtaɪmz]
+art|искусство|[ɑːt]
+their|их|[ðeə(r)]
+July|июль|[dʒuˈlaɪ]
+June|июнь|[dʒuːn]
+yogurt|йогурт|[ˈjɒɡ.ət]
+to|к; в (куда)|[tə]
+squash|кабачок|[skwɒʃ]
+each|каждый (по отдельности)|[iːtʃ]
+every|каждый|[ˈevri]
+what a pity|как жаль|[wɒt] [eɪ] [ˈpɪti]
+how|как|[haʊ]
+calendar|календарь|[ˈkæl.ɪn.dər]
+stone|камень|[stəʊn]
+cabbage|капуста|[ˈkæb.ɪdʒ]
+hood|капюшон; капот|[hʊd]
+pencil|карандаш|[ˈpensl]
+map|карта|[mæp]
+picture|картина|[ˈpɪktʃə(r)]
+potatoes|картофель|[pəˈteɪtəʊz]
+card|карточка|[kɑːd]
+pan|кастрюля|[pæn]
+cafe|кафе|[ˈkæf.eɪ]
+porridge|каша|[ˈpɒr.ɪdʒ]
+cough|кашель; кашлять|[kɒf]
+flat|квартира|[flæt]
+throw|кидать; бросать|[θrəʊ]
+kilogram|килограмм|[ˈkɪləɡræm]
+kilometer|километр|[ˈkɪl.əˌmiː.tər]
+movie|кино|[ˈmuːvi]
+cinema|кинотеатр|[ˈsɪnəmə]
+sour|кислый|[ˈsaʊə(r)]
+keyboard|клавиатура|[ˈkiːbɔːd]
+lay|класть; накрывать|[leɪ]
+glue|клей|[ɡluː]
+client|клиент|[ˈklaɪənt]
+strawberry|клубника|[ˈstrɔː.bər.i]
+key|ключ; клавиша|[kiː]
+book|книга|[bʊk]
+carpet|ковер|[ˈkɑːpɪt]
+when|когда|[wen]
+sausage|колбаса|[ˈsɒs.ɪdʒ]
+tights|колготки|[taɪts]
+knee|колено|[niː]
+wheel|колесо|[wiːl]
+colleague|коллега|[ˈkɒliːɡ]
+room|комната|[ruːm]
+company|компания|[ˈkʌmpəni]
+envelope|конверт|[ˈenvələʊp]
+certainly|конечно; безусловно|[ˈsɜːtnli]
+competitor|конкурент|[kəmˈpet.ɪ.tər]
+ship|корабль|[ʃɪp]
+hall|коридор|[hɔːl]
+brown|коричневый|[braʊn]
+feed|кормить|[fiːd]
+box|коробка; ящик|[bɒks]
+cow|корова|[kaʊ]
+short|короткий; низкий|[ʃɔːt]
+bone|кость|[bəʊn]
+suit|костюм|[suːt]
+cutlet|котлета|[ˈkʌt.lət]
+coffee|кофе|[ˈkɒfi]
+cardigan|кофта|[ˈkɑː.dɪ.ɡən]
+cat|кошка|[kæt]
+beautiful|красивая|[ˈbjuːtɪfl]
+nice|красивый; хороший|[naɪs]
+red|красный|[red]
+beauty|красота; красавица|[ˈbjuːti]
+armchair|кресло|[ˈɑːm.tʃeər]
+shout|кричать; крик|[ʃaʊt]
+bed|кровать|[bed]
+rabbit|кролик; заяц|[ˈræb.ɪt]
+sneakers|кроссовки|[ˈsniː.kər]
+mug|кружка|[mʌɡ]
+rat|крыса|[ræt]
+roof|крыша|[ruːf]
+who|кто|[huː]
+somebody|кто-то|[ˈsʌmbədi]
+corn|кукуруза|[kɔːn]
+smoke|курить; дым|[sməʊk]
+piece|кусок; часть|[piːs]
+kitchen|кухня|[ˈkɪtʃɪn]
+stove|кухонная плита|[stəʊv]
+eat|кушать|[iːt]
+lamp|лампа|[læmp]
+noodles|лапша|[ˈnuːdlz]
+lie|лгать; ложь|[laɪ]
+left|левый; cлева; налево|[left]
+easy|легкий; нетрудный|[ˈiːzi]
+light|лёгкий; светлый|[laɪt]
+lazy|ленивый|[ˈleɪzi]
+forest|лес|[ˈfɒrɪst]
+fly|летать; муха|[flaɪ]
+summer|лето|[ˈsʌmə(r)]
+lemon|лимон|[ˈlemən]
+ruler|линейка|[ˈruːlə(r)]
+fox|лиса|[fɒks]
+leaf|лист|[liːf]
+literature|литература|[ˈlɪtrətʃə(r)]
+face|лицо|[feɪs]
+forehead|лоб|[ˈfɒr.ɪd]
+catch|ловить; подхватить|[kætʃ]
+spoon|ложка|[spuːn]
+elbow|локоть|[ˈelbəʊ]
+break|ломать|[breɪk]
+shovel|лопата; рыть|[ˈʃʌv.əl]
+horse|лошадь|[hɔːs]
+onion|лук (репчатый)|[ˈʌnjən]
+moon|луна|[muːn]
+better|лучше; более подходящий|[ˈbetə(r)]
+best|лучший|[best]
+love|любовь; любить|[lʌv]
+anybody|любой; кто-нибудь|[ˈenibɒdi]
+any|любые; всякий|[ˈeni]
+people|люди|[ˈpiːpl]
+frog|лягушка|[frɒɡ]
+shop|магазин|[ʃɒp]
+May|май|[meɪ]
+small|маленький|[smɔːl]
+raspberry|малина|[ˈrɑːz.bər.i]
+boy|мальчик|[bɔɪ]
+mummy (mum)|мама|[ˈmʌm.i] [mʌm]
+mandarin|мандарин|[ˈmæn.dər.ɪn]
+March|март|[mɑːtʃ]
+butter|масло|[ˈbʌtə(r)]
+mother|мать|[ˈmʌðə(r)]
+machine|машина; механизм|[məˈʃiːn]
+furniture|мебель|[ˈfɜːnɪtʃə(r)]
+honey|мёд|[ˈhʌn.i]
+bear|медведь|[beə(r)]
+slow|медленный|[sləʊ]
+nurse|медсестра|[nɜːs]
+between|между|[bɪˈtwiːn]
+less|меньше; менее|[les]
+place|место|[pleɪs]
+month|месяц|[mʌnθ]
+dream|мечта; сон|[driːm]
+microwave|микроволновка|[ˈmaɪ.krə.weɪv]
+minute|минута|[ˈmɪnɪt]
+world|мир (планета)|[wɜːld]
+peace|мир (покой)|[piːs]
+maybe|может быть|[ˈmeɪbi]
+my|мой|[maɪ]
+young|молодой|[jʌŋ]
+milk|молоко|[mɪlk]
+hammer|молоток|[ˈhæmə(r)]
+sea|море|[siː]
+carrot|морковь|[ˈkærət]
+ice-cream|мороженое|[ˈaɪskriːm]
+coast|морской берег|[kəʊst]
+bridge|мост|[brɪdʒ]
+can|мочь; может|[kæn]
+husband|муж|[ˈhʌzbənd]
+man|мужчина|[mæn]
+men|мужчины|[men]
+music|музыка|[ˈmjuːzɪk]
+musician|музыкант|[mjuˈzɪʃn]
+flour|мука|[ˈflaʊə(r)]
+garbage|мусор|[ˈɡɑːbɪdʒ]
+we|мы|[wi]
+soap|мыло|[səʊp]
+thought|мысль|[θɔːt]
+wash|мыть; cтирать|[wɒʃ]
+mouse|мышь|[maʊs]
+soft|мягкий; нежный|[sɒft]
+meat|мясо|[miːt]
+ball|мяч|[bɔːl]
+on|на|[ɒn]
+above|над, выше|[əˈbʌv]
+put on|надевать|[pʊt] [ɒn]
+hope|надеяться; надежда|[həʊp]
+least|наименьший; меньше всего|[liːst]
+punish|наказывать|[ˈpʌnɪʃ]
+cash|наличные|[kæʃ]
+intend|намереваться|[ɪnˈtend]
+remind|напоминать|[rɪˈmaɪnd]
+enjoy|наслаждаться; нравиться|[ɪnˈdʒɔɪ]
+running nose|насморк|[ˈrʌnɪŋ] [nəʊz]
+science|наука|[ˈsaɪəns]
+find|находить|[faɪnd]
+chief|начальник|[tʃiːf]
+begin|начинать|[bɪˈɡɪn]
+our|наш|[ɑː(r)]
+not|не|[nɒt]
+sky|небо|[skaɪ]
+recently|недавно|[ˈriːsntli]
+week|неделя|[wiːk]
+gentle|нежный|[ˈdʒentl]
+some|некоторые; немного|[səm]
+hate|ненавидеть|[heɪt]
+necessary|необходимый|[ˈnesəsəri]
+wrong|неправильный|[rɒŋ]
+several|несколько|[ˈsevrəl]
+although|несмотря на то что|[ɔːlˈðəʊ]
+carry|нести|[ˈkæri]
+no|нет|[nəʊ]
+oil|нефть, масло|[ɔɪl]
+underwear|нижнее белье|[ˈʌndəweə(r)]
+low|низкий; низко|[ləʊ]
+never|никогда|[ˈnevə(r)]
+nobody|никто|[ˈnəʊbədi]
+nothing|ничто|[ˈnʌθɪŋ]
+but|но|[bət]
+new|новый|[njuː]
+leg|нога; ножка|[leɡ]
+foot|нога; ступня|[fʊt]
+nail|ноготь; гвоздь|[neɪl]
+knife|нож|[naɪf]
+scissors|ножницы|[ˈsɪzəz]
+zero|ноль|[ˈzɪərəʊ]
+nose|нос|[nəʊz]
+wear|носить; одежда|[weə(r)]
+handkerchief|носовой платок|[ˈhæŋ.kə.tʃiːf]
+sock|носок|[sɒk]
+laptop|ноутбук|[ˈlæp.tɒp]
+night|ночь|[naɪt]
+November|ноябрь|[nəʊˈvembə(r)]
+like|нравиться; как|[laɪk]
+about|о; около|[əˈbaʊt]
+lunch|обед|[lʌntʃ]
+monkey|обезьяна|[ˈmʌŋ.ki]
+provide|обеспечивать|[prəˈvaɪd]
+cloud|облако|[klaʊd]
+area|область, район|[ˈeəriə]
+circumstance|обстоятельство|[ˈsɜːkəmstəns]
+shoes|обувь|[ʃuː]
+explain|объяснять|[ɪkˈspleɪn]
+usually|обычно|[ˈjuːʒuəli]
+duty|обязанность|[ˈdjuːti]
+widowed|овдовевший|[ˈwɪd.əʊd]
+vegetables|овощи|[ˈvedʒ.tə.bl̩]
+oatmeal|овсянка|[ˈəʊt.miːl]
+fire|огонь; пожар|[ˈfaɪə(r)]
+huge|огромный|[hjuːdʒ]
+cucumber|огурец|[ˈkjuː.kʌm.bər]
+clothes|одежда|[kləʊðz]
+blanket|одеяло|[ˈblæŋ.kɪt]
+one|один|[wʌn]
+eleven|одиннадцать|[ɪˈlevn]
+however|однако|[haʊˈevə(r)]
+approve|одобрять|[əˈpruːv]
+lend|одолжить|[lend]
+expect|ожидать|[ɪkˈspekt]
+lake|озеро|[leɪk]
+ocean|океан|[ˈəʊʃn]
+window|окно|[ˈwɪndəʊ]
+October|октябрь|[ɒkˈtəʊbə(r)]
+he|он|[hi]
+she|она|[ʃi]
+they|они|[ðeɪ]
+it|оно|[ɪt]
+danger|опасность|[ˈdeɪndʒə(r)]
+describe|описывать|[dɪˈskraɪb]
+experience|опыт; переживание|[ɪkˈspɪəriəns]
+nut|орех|[nʌt]
+autumn|осень|[ˈɔːtəm]
+main|основной; главный|[meɪn]
+especially|особенно|[ɪˈspeʃəli]
+stay|останавливаться|[steɪ]
+stop|остановка|[stɒp]
+island|остров|[ˈaɪlənd]
+spicy|острый (по вкусу)|[ˈspaɪsi]
+sharp|острый; диез|[ʃɑːp]
+answer|отвечать; ответ|[ˈɑːnsə(r)]
+rest|отдыхать; отдых|[rest]
+father|отец|[ˈfɑːðə(r)]
+open|открывать; открытый|[ˈəʊpən]
+excellent|отлично; превосходно|[ˈeksələnt]
+relationship|отношение|[rɪˈleɪʃnʃɪp]
+vacation|отпуск; каникулы|[vəˈkeɪʃn]
+waste|отходы|[weɪst]
+office|офис|[ˈɒfɪs]
+waiter|официант|[ˈweɪtə(r)]
+mark|оценка; отметка|[mɑːk]
+obviously|очевидно|[ˈɒbviəsli]
+delicious|очень вкусный|[dɪˈlɪʃ.əs]
+very|очень|[ˈveri]
+glasses|очки|[ɡlɑːs]
+mistake|ошибка|[mɪˈsteɪk]
+fall|падать|[fɔːl]
+toe|палец (ноги)|[təʊ]
+finger|палец|[ˈfɪŋɡə(r)]
+stick|палка|[stɪk]
+coat|пальто|[kəʊt]
+memory|память; воспоминание|[ˈmeməri]
+daddy (dad)|папа|[ˈdæd.i] [dæd]
+pair|пара|[peə(r)]
+guy|парень|[ɡaɪ]
+park|парк|[pɑːk]
+Easter|Пасха|[ˈiː.stər]
+smell|пахнуть; запах|[smel]
+first|первый; сначала|[fɜːst]
+negotiation|переговоры|[nəˌɡəʊ.ʃiˈeɪ.ʃən]
+in front of|перед|[ɪn] [frʌnt] [əv]
+crossroads|перекрёсток|[ˈkrɒs.rəʊdz]
+pepper|перец|[ˈpepə(r)]
+peach|персик|[piːtʃ]
+glove|перчатка|[ɡlʌv]
+song|песня|[sɒŋ]
+sand|песок|[sænd]
+sing|петь|[sɪŋ]
+sadness|печаль|[ˈsædnəs]
+sad|печальный|[sæd]
+cookie|печенье|[ˈkʊki]
+oven|духовка|[ˈʌvn]
+bake|печь|[beɪk]
+jacket|пиджак; куртка|[ˈdʒækɪt]
+pie|пирог; пирожок|[paɪ]
+write|писать|[raɪt]
+letter|письмо; буква|[ˈletə(r)]
+drink|пить|[drɪŋk]
+swim|плавать|[swɪm]
+pay|платить|[peɪ]
+dress|платье; одевать|[dres]
+cry|плач; крик|[kraɪ]
+nephew|племянник|[ˈnefjuː]
+niece|племянница|[niːs]
+shoulder|плечо|[ˈʃəʊldə(r)]
+bad|плохой|[bæd]
+square|площадь|[skweə(r)]
+beach|пляж|[biːtʃ]
+win|побеждать|[wɪn]
+behavior|поведение|[bɪˈheɪ.vjər]
+turn|повернуть; очередь|[tɜːn]
+surface|поверхность; всплывать|[ˈsɜːfɪs]
+weather|погода|[ˈweðə(r)]
+below|под, ниже|[bɪˈləʊ]
+under|под|[ˈʌndə(r)]
+gift|дар,подарок|[ɡɪft]
+chin|подбородок|[tʃɪn]
+support|поддержка|[səˈpɔːt]
+lift|поднимать(ся); лифт|[lɪft]
+windowsill|подоконник|[ˈwɪn.dəʊ.sɪl]
+pillow|подушка|[ˈpɪl.əʊ]
+train|поезд|[treɪn]
+trip|поездка; путешествие|[trɪp]
+please|пожалуйста (прошу)|[pliːz]
+the day before yesterday|позавчера|[ðə] [deɪ] [bɪˈfɔː(r)] [ˈjestədeɪ]
+behind|позади|[bɪˈhaɪnd]
+let|позволять|[let]
+late|поздний; поздно|[leɪt]
+show|показывать|[ʃəʊ]
+leave|покидать; уходить|[liːv]
+buy|покупать|[baɪ]
+purchase|покупка|[ˈpɜːtʃəs]
+floor|пол; этаж|[flɔː(r)]
+field|поле|[fiːld]
+useful|полезный|[ˈjuːsfl]
+police|полиция|[pəˈliːs]
+shelf|полка|[ʃelf]
+towel|полотенце|[taʊəl]
+get|получать; добираться|[ɡet]
+benefit|польза; выгода|[ˈbenɪfɪt]
+fit|поместиться; соответствовать|[fɪt]
+put|помещать; класть|[pʊt]
+tomato|помидор|[təˈmɑːtəʊ]
+help|помогать; помощь|[help]
+Monday|понедельник|[ˈmʌndeɪ]
+visit|посещать; визит|[ˈvɪzɪt]
+afternoon|после полудня|[ˌɑːftəˈnuːn]
+after|после|[ˈɑːftə(r)]
+last|последний; прошлый|[lɑːst]
+the day after tomorrow|послезавтра|[ðə] [deɪ] [ˈɑːftə(r)] [təˈmɒrəʊ]
+dishes|посуда|[dɪʃ]
+send|посылать|[send]
+package|посылка; упаковка|[ˈpækɪdʒ]
+ceiling|потолок|[ˈsiːlɪŋ]
+then|потом; тогда|[ðen]
+because|потому что; так как|[bɪˈkɒz]
+why|почему; зачем|[waɪ]
+post office, mail|почта|[pəʊst] [ˈɒfɪs] [meɪl]
+almost|почти|[ˈɔːlməʊst]
+right|правильный; справа|[raɪt]
+holiday|праздник; отпуск|[ˈhɒlədeɪ]
+celebrate|праздновать|[ˈselɪbreɪt]
+offer|предложение|[ˈɒfə(r)]
+factory|предприятие|[ˈfæktri]
+introduce|представлять; знакомить|[ˌɪntrəˈdjuːs]
+advantage|преимущество|[ədˈvɑːntɪdʒ]
+hi|привет|[haɪ]
+attractive|привлекательный|[əˈtræktɪv]
+habit|привычка|[ˈhæbɪt]
+invitation|приглашение|[ˌɪnvɪˈteɪʃn]
+decide|принимать решение|[dɪˈsaɪd]
+bring|приносить, привозить|[brɪŋ]
+meal|принятие пищи, еда|[miːl]
+decision|принятие решения|[dɪˈsɪʒn]
+come|приходить; приезжать|[kʌm]
+reason|причина|[ˈriːzn]
+problem|проблема|[ˈprɒbləm]
+check|проверка; чек|[tʃek]
+spend|проводить; тратить|[spend]
+wire|проволока|[ˈwaɪə(r)]
+shop assistant|продавец|[ʃɒp] [əˈsɪstənt]
+just|просто; только что|[dʒʌst]
+simple|простой|[ˈsɪmpl]
+sheet|простыня; листок|[ʃiːt]
+against|против|[əˈɡenst]
+nasty|противный|[ˈnɑː.sti]
+cool|прохладно; круто|[kuːl]
+forgive|прощать|[fəˈɡɪv]
+jump|прыгать; прыжок|[dʒʌmp]
+straight|прямой; прямо|[streɪt]
+bird|птица|[bɜːd]
+travel|путешествовать|[ˈtrævl]
+try|пытаться; попытка|[traɪ]
+heel|пятка; каблук|[hiːl]
+fifteen|пятнадцать|[ˌfɪfˈtiːn]
+Friday|пятница|[ˈfraɪdeɪ]
+fifth|пятый|[fɪfθ]
+five|пять|[faɪv]
+fifty|пятьдесят|[ˈfɪfti]
+job|работа|[dʒɒb]
+work|работать; работа|[wɜːk]
+worker|рабочий|[ˈwɜːkə(r)]
+radio|радио|[ˈreɪdiəʊ]
+glad|радостный|[ɡlæd]
+joy|радость|[dʒɔɪ]
+divorced|разведенный|[dɪˈvɔːst]
+development|развитие|[dɪˈveləpmənt]
+talk|разговаривать; разговор|[tɔːk]
+speak|разговаривать|[spiːk]
+size|размер|[saɪz]
+permit|разрешать|[pəˈmɪt]
+early|ранний; рано|[ˈɜːli]
+story|рассказ, история|[ˈstɔːri]
+distance|расстояние|[ˈdɪstəns]
+plant|растение|[plɑːnt]
+grow|расти, выращивать|[ɡrəʊ]
+comb|расчёска; расчесывать|[kəʊm]
+child|ребенок|[tʃaɪld]
+seldom|редко|[ˈsel.dəm]
+cut|резать|[kʌt]
+river|река|[ˈrɪvə(r)]
+advertising|реклама|[ˈædvətaɪzɪŋ]
+belt|ремень; пояс|[belt]
+restaurant|ресторан|[ˈrestrɒnt]
+solve|решать|[sɒlv]
+solution|решение|[səˈluːʃn]
+rice|рис|[raɪs]
+draw|рисовать; чертить|[drɔː]
+parents|родители|[ˈpeə.rənt]
+birth|рождение|[bɜːθ]
+Christmas|Рождество|[ˈkrɪs.məs]
+socket|розетка|[ˈsɒk.ɪt]
+pink|розовый|[pɪŋk]
+drop|ронять; падение|[drɒp]
+Russia|Россия|[ˈrʌʃə]
+mouth|рот|[maʊθ]
+shirt|рубашка|[ʃɜːt]
+hand|рука; кисть|[hænd]
+steering wheel|руль|[stɪər] [wiːl]
+pen|ручка|[pen]
+fish|рыба|[fɪʃ]
+market|рынок|[ˈmɑːkɪt]
+backpack|рюкзак|[ˈbækpæk]
+with|с|[wɪð]
+garden|сад|[ˈɡɑːdn]
+salad|салат|[ˈsæləd]
+napkin|салфетка|[ˈnæp.kɪn]
+plane|самолет|[pleɪn]
+sugar|сахар|[ˈʃʊɡə(r)]
+wedding|свадьба|[ˈwedɪŋ]
+beet|свекла|[biːt]
+pork|свинина|[pɔːk]
+pig|свинья|[pɪɡ]
+sweater|свитер|[ˈswetə(r)]
+free|свободный; бесплатный|[friː]
+kind|своего рода; тип|[kaɪnd]
+tonight|сегодня вечером|[təˈnaɪt]
+today|сегодня|[təˈdeɪ]
+now|сейчас; теперь|[naʊ]
+marital status|семейное положение|[ˈmær.ɪ.təl] [ˈsteɪtəs]
+seventeen|семнадцать|[ˌsevnˈtiːn]
+seven|семь|[ˈsevn]
+seventy|семьдесят|[ˈsevnti]
+family|семья|[ˈfæməli]
+September|сентябрь|[sepˈtembə(r)]
+angry|сердитый|[ˈæŋɡri]
+heart|сердце|[hɑːt]
+grey|серый|[ɡreɪ]
+sister|сестра|[ˈsɪstə(r)]
+sit|сидеть|[sɪt]
+strength|сила|[streŋθ]
+strong|сильный; крепкий|[strɒŋ]
+pretty|симпатичный; довольно|[ˈprɪti]
+bruise|синяк; ушиб; ушибить|[bruːz]
+say|сказать|[seɪ]
+discount|скидка|[ˈdɪskaʊnt]
+frying pan|сковородка|[fraɪ] [pæn]
+how much|сколько + е.ч|[haʊ] [mʌtʃ]
+how many|сколько + м.ч|[haʊ] [ˈmeni]
+soon|скоро|[suːn]
+speed|скорость|[spiːd]
+sculpture|скульптура|[ˈskʌlp.tʃər]
+weak|слабый|[wiːk]
+sweet|сладкий|[swiːt]
+consequence|следствие|[ˈkɒnsɪkwəns]
+next|следующий|[nekst]
+plum|слива|[plʌm]
+cream|сливки; крем|[kriːm]
+dictionary|словарь|[ˈdɪkʃənri]
+word|слово|[wɜːd]
+elephant|слон|[ˈel.ɪ.fənt]
+case|случай; чехол|[keɪs]
+listen|слушать|[ˈlɪsn]
+hear|слышать|[hɪər]
+brave|смелый|[breɪv]
+death|смерть|[deθ]
+laugh|смеяться|[lɑːf]
+watch|смотреть; наручные часы|[wɒtʃ]
+snow|снег|[snəʊ]
+take off|снимать одежду|[teɪk] [ɒf]
+again|снова; опять|[əˈɡen]
+dog|собака|[dɒɡ]
+collect|собирать|[kəˈlekt]
+own|собственный; владеть|[əʊn]
+event|событие|[ɪˈvent]
+advice|совет|[ədˈvaɪs]
+agree|соглашаться|[əˈɡriː]
+agreement|соглашение; договор|[əˈɡriːmənt]
+juice|сок|[dʒuːs]
+salty|соленый|[ˈsɔːlti]
+sun|солнце|[sʌn]
+salt|соль|[sɔːlt]
+match|соответствовать; матч|[mætʃ]
+forty|сорок|[ˈfɔːti]
+neighbor|сосед|[ˈneɪ.bər]
+sauce|соус|[sɔːs]
+bedroom|спальня|[ˈbedruːm]
+save|спасать; сохранять|[seɪv]
+thank|спасибо|[θæŋk]
+sleep|спать|[sliːp]
+spice|специя|[spaɪs]
+back|спина; назад|[bæk]
+list|список|[lɪst]
+calm|спокойный|[kɑːm]
+argument|спор; аргумент|[ˈɑːɡjumənt]
+argue|спорить|[ˈɑːɡjuː]
+ability|способность|[əˈbɪləti]
+able|способный|[ˈeɪbl]
+ask|спрашивать; просить|[ɑːsk]
+Wednesday|среда|[ˈwenzdeɪ]
+among|среди|[əˈmʌŋ]
+means|средство; способ|[miːnz]
+glass|стакан; стекло|[ɡlɑːs]
+become|становиться|[bɪˈkʌm]
+station|станция; вокзал|[ˈsteɪʃn]
+old|старый|[əʊld]
+wall|стена|[wɔːl]
+hundred|сто|[ˈhʌndrəd]
+cost|стоить|[kɒst]
+table|стол|[ˈteɪbl]
+stand|стоять|[stænd]
+country|страна|[ˈkʌntri]
+page|страница|[peɪdʒ]
+strange|чужой|[streɪndʒ]
+weird|странный|[wɪəd]
+passion|страсть; страстность|[ˈpæʃ.ən]
+fear|страх; бояться|[fɪə(r)]
+building|строительство|[ˈbɪldɪŋ]
+build|строить|[bɪld]
+student|студент|[ˈstjuːdnt]
+chair|стул|[tʃeə(r)]
+stairs|ступеньки; лестница|[steər]
+Saturday|суббота|[ˈsætədeɪ]
+bag|сумка|[bæɡ]
+soup|суп|[suːp]
+happy|счастливый|[ˈhæpi]
+happiness|счастье|[ˈhæp.i.nəs]
+account|счет банковский|[əˈkaʊnt]
+bill|счёт|[bɪl]
+count|считать; подсчитывать|[kaʊnt]
+son|сын|[sʌn]
+cheese|сыр|[tʃiːz]
+full|сытый; полный|[fʊl]
+so|так; поэтому|[səʊ]
+also|также|[ˈɔːlsəʊ]
+such|такой|[sʌtʃ]
+there|там; туда|[ðeə(r)]
+customs|таможня|[ˈkʌstəmz]
+dance|танцевать|[dɑːns]
+dish|блюдо|[dɪʃ]
+plate|тарелка|[pleɪt]
+hard|твёрдый; жесткий|[hɑːd]
+your|твой; ваш|[jɔː(r)]
+curd|творог|[kɜːd]
+those|те|[ðəʊz]
+theater|театр|[ˈθɪə.tər]
+TV|телевизор|[ˌtiːˈviː]
+phone|телефон|[fəʊn]
+body|тело|[ˈbɒdi]
+dark|тёмный|[dɑːk]
+temperature|температура|[ˈtemprətʃə(r)]
+warm|тёплый; тепло|[wɔːm]
+test|тест; испытание|[test]
+father-in-law|тесть|[ˈfɑːðə(r)] [ɪn] [lɔː]
+copybook|тетрадь|[ˈkɒp.i.bʊk]
+aunt|тетя|[ɑːnt]
+quiet|тихий|[ˈkwaɪət]
+too|тоже; слишком|[tuː]
+thick|густой|[θɪk]
+fat|толстый; жирный; жир|[fæt]
+only|только|[ˈəʊnli]
+slim|тонкий; стройный|[slɪm]
+thin|тонкий|[θɪn]
+sink|тонуть; погружаться|[sɪŋk]
+cake|торт|[keɪk]
+that|тот; что (союз)|[ðæt]
+exactly|точно|[ɪɡˈzæktli]
+grass|трава|[ɡrɑːs]
+tram|трамвай|[træm]
+transport|транспорт|[ˈtrænspɔːt]
+third|третий|[θɜːd]
+three|три|[θriː]
+thirty|тридцать|[ˈθɜːti]
+thirteen|тринадцать|[ˌθɜːˈtiːn]
+path|тропа|[pɑːθ]
+sidewalk|тротуар|[ˈsaɪd.wɔːk]
+pipe|труба; трубка|[paɪp]
+difficult|трудный; тяжелый|[ˈdɪfɪkəlt]
+hard-working|трудолюбивый|[ˌhɑːdˈwɜː.kɪŋ]
+coward|трусливый; трус|[ˈkaʊ.əd]
+toilet|туалет|[ˈtɔɪlət]
+fog|туман|[fɒɡ]
+blunt|тупой (нож; человек)|[blʌnt]
+you|ты; вы|[ju]
+pumpkin|тыква|[ˈpʌmp.kɪn]
+thousand|тысяча|[ˈθaʊznd]
+heavy|тяжёлый|[ˈhevi]
+persuade|убеждать|[pəˈsweɪd]
+sure|уверенный|[ʃʊə(r)]
+hit|ударять|[hɪt]
+luck|удача|[lʌk]
+amazing|удивительный|[əˈmeɪzɪŋ]
+surprise|удивлять; сюрприз|[səˈpraɪz]
+comfortable|удобный; уютный|[ˈkʌmftəbl]
+pleasure|удовольствие|[ˈpleʒə(r)]
+terrible|ужасный|[ˈterəbl]
+already|уже|[ɔːlˈredi]
+dinner|ужин|[ˈdɪnə(r)]
+narrow|узкий|[ˈnærəʊ]
+street|улица|[striːt]
+smile|улыбка|[smaɪl]
+die|умирать|[smaɪl]
+smart|умный|[smɑːt]
+university|университет|[ˌjuːnɪˈvɜːsəti]
+exercise|упражнение|[ˈeksəsaɪz]
+ugly|уродливый|[ˈʌɡli]
+lesson|урок|[ˈlesn]
+effort|усилие|[ˈlesn]
+success|успех|[səkˈses]
+tired|усталый|[ˈtaɪəd]
+mustache|усы|[mʊˈstɑːʃ]
+duck|утка|[dʌk]
+morning|утро|[ˈmɔːnɪŋ]
+iron|утюг; железо|[ˈaɪən]
+ear|ухо|[ɪə(r)]
+teacher|учитель|[ˈtiːtʃə(r)]
+learn|учить(ся)|[lɜːn]
+teach|учить; обучать|[tiːtʃ]
+study|изучение|[ˈstʌdi]
+torch|факел|[tɔːtʃ]
+surname|фамилия|[ˈsɜːneɪm]
+February|февраль|[ˈfebruəri]
+film|фильм; пленка|[fɪlm]
+purple|фиолетовый; пурпурный|[ˈpɜːpl]
+photo|фото|[ˈfəʊtəʊ]
+camera|фотоаппарат|[ˈkæmərə]
+fruit|фрукт|[fruːt]
+pound|фунт|[paʊnd]
+t-shirt|футболка|[tʃɜːt]
+bread|хлеб|[bred]
+fridge|холодильник|[frɪdʒ]
+cold|холодно|[kəʊld]
+single|холостой, незамужняя|[ˈsɪŋɡl]
+good|хороший; добрый|[ɡʊd]
+well|хорошо; колодец|[wel]
+want|хотеть|[wɒnt]
+keep|хранить; держать|[kiːp]
+artist|художник|[ˈɑːtɪst]
+worst|худший|[wɜːst]
+worse|хуже; более плохой|[wɜːs]
+color|цвет|[ˈkʌl.ər]
+flower|цветок|[ˈflaʊə(r)]
+goal|цель; гол|[ɡəʊl]
+price|цена|[praɪs]
+center|центр|[ˈsen.tər]
+church|церковь|[tʃɜːtʃ]
+chicken|цыпленок|[ˈtʃɪkɪn]
+tip|чаевые|[tɪp]
+tea|чай|[tiː]
+kettle|чайник; котел|[ˈket.l̩]
+hour|час|[ˈaʊə(r)]
+often|часто|[ˈɒfn]
+clock|часы|[klɒk]
+cup|чашка|[kʌp]
+suitcase|чемодан|[ˈsuːtkeɪs]
+through|через|[θruː]
+black|чёрный|[blæk]
+garlic|чеснок|[ˈɡɑː.lɪk]
+honest|честный|[ˈɒnɪst]
+Thursday|четверг|[ˈθɜːzdeɪ]
+fourth|четвертый|[fɔːθ]
+four|четыре|[fɔː(r)]
+fourteen|четырнадцать|[ˌfɔːˈtiːn]
+number|число; номер|[ˈnʌmbə(r)]
+clean|чистый; чистить|[kliːn]
+read|читать|[riːd]
+sneeze|чихать|[sniːz]
+something|что нибудь; нечто|[ˈsʌmθɪŋ]
+what|что; какой|[wɒt]
+anything|что-нибудь; все|[ˈeniθɪŋ]
+feeling|чувство|[ˈfiːlɪŋ]
+feel|чувствовать|[fiːl]
+miracle|чудо|[ˈmɪr.ɪ.kl̩]
+stockings|чулки|[ˈstɒk.ɪŋ]
+step|шаг; ступать|[step]
+cap|шапка; кепка|[kæp]
+scarf|шарф|[skɑːf]
+sixteen|шестнадцать|[ˌsɪksˈtiːn]
+six|шесть|[sɪks]
+sixty|шестьдесят|[ˈsɪksti]
+neck|шея|[nek]
+wide|широкий|[waɪd]
+cabinet|шкаф|[ˈkæbɪnət]
+school|школа|[skuːl]
+pupil|школьник; ученик|[ˈpjuːpl]
+hat|шляпа|[hæt]
+chocolate|шоколад|[ˈtʃɒklət]
+shorts|шорты|[ʃɔːts]
+noisy|шумный|[ˈnɔɪzi]
+joke|шутка|[dʒəʊk]
+cheek|щека|[tʃiːk]
+brush|щетка; кисть|[brʌʃ]
+these|эти|[ðiːz]
+this|этот|[ðɪs]
+skirt|юбка|[skɜːt]
+I|я|[aɪ]
+apple|яблоко|[ˈæp.l̩]
+lamb|ягненок|[læm]
+berry|ягода|[ˈber.i]
+language|язык|[ˈlæŋɡwɪdʒ]
+egg|яйцо|[eɡ]
+January|январь|[ˈdʒænjuəri]

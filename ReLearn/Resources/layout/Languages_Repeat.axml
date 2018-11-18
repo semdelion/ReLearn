@@ -34,13 +34,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:stretchColumns="2">
-           
 			<TextView
 				android:text="Word"
 				android:layout_width="match_parent"
-				android:layout_height="180.0dp"
+				android:layout_height="190.0dp"
 				android:id="@+id/textView_Eng_Word"
-				android:textSize="35dp"
+				android:textSize="30dp"
 				android:layout_marginRight="25.0dp"
 				android:layout_marginLeft="25.0dp"
 				android:layout_marginTop="10.0dp"

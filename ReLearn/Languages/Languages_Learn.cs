@@ -18,16 +18,12 @@ namespace ReLearn
         int Count { get; set; }
         bool Voice_Enable = true;
 
-        string Word
-        {
-            get => FindViewById<TextView>(Resource.Id.textView_learn_en).Text; 
-            set => FindViewById<TextView>(Resource.Id.textView_learn_en).Text = value; 
-        }
+        string Word {get;set;}
 
-        string TranslationWord
+        string Text
         {
-            get => FindViewById<TextView>(Resource.Id.textView_learn_ru).Text; 
-            set => FindViewById<TextView>(Resource.Id.textView_learn_ru).Text = value; 
+            get => FindViewById<TextView>(Resource.Id.textView_learn_en).Text;
+            set => FindViewById<TextView>(Resource.Id.textView_learn_en).Text = value;
         }
 
         [Java.Interop.Export("Button_Languages_Learn_Next_Click")]
@@ -36,7 +32,9 @@ namespace ReLearn
             if (Count < WordDatabase.Count)
             {
                 Word = WordDatabase[Count].Word;
-                TranslationWord = WordDatabase[Count++].TranslationWord;
+                Text = $"{Word}" +
+                       $"{(WordDatabase[Count].Transcription == null ? "" : $"\n\n{WordDatabase[Count].Transcription}")}" +
+                       $"\n\n{WordDatabase[Count++].TranslationWord}";
                 DBWords.UpdateLearningNext(Word);
                 if (Voice_Enable)
                     MySpeech.Speak(Word, this);
