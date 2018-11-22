@@ -71,7 +71,7 @@ namespace ReLearn
             {
                 if (DataBase.Languages.GetTableInfo(tableName).Count == 0)
                 {
-                    DataBase.Languages.Query<DBWords>($"CREATE TABLE {tableName} (_id int PRIMARY KEY, Word string, TranslationWord string, Transcription string, NumberLearn int, DateRecurrence DateTime, Context string, Image string)");
+                    DataBase.Languages.Execute($"CREATE TABLE {tableName} (_id int PRIMARY KEY, Word string, TranslationWord string, Transcription string, NumberLearn int, DateRecurrence DateTime, Context string, Image string)");
                     using (StreamReader reader = new StreamReader(Application.Context.Assets.Open($"Database/{tableName}.txt")))
                     {
                         string str_line;
@@ -82,7 +82,7 @@ namespace ReLearn
                             DataBase.Languages.Execute(query, list[0].ToLower().Trim(), list[1].ToLower().Trim(), list[2].Trim(), Settings.StandardNumberOfRepeats, DateTime.Now);
                         }
                     }
-                    DataBase.Statistics.Query<DatabaseStatistics>($"CREATE TABLE {tableName}_Statistics (_id int PRIMARY KEY, True int, False int, DateOfTesting DateTime)");
+                    DataBase.Statistics.Execute($"CREATE TABLE {tableName}_Statistics (_id int PRIMARY KEY, True int, False int, DateOfTesting DateTime)");
                 }
             }
         }
@@ -159,7 +159,7 @@ namespace ReLearn
 
         public static List<DBWords> GetData => DataBase.Languages.Query<DBWords>($"SELECT * FROM {DataBase.TableNameLanguage.ToString()}");
 
-        public static void Delete(string Word) => DataBase.Languages.Query<DBWords>($"DELETE FROM {DataBase.TableNameLanguage} WHERE Word = ?", Word);
+        public static void Delete(string Word) => DataBase.Languages.Execute($"DELETE FROM {DataBase.TableNameLanguage} WHERE Word = ?", Word);
     }
 }
 

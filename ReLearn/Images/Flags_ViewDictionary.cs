@@ -10,6 +10,7 @@ using Android.Views;
 using Android.Widget;
 using Plugin.Settings;
 using Android.Support.V7.App;
+using Android.Graphics;
 
 namespace ReLearn
 {
@@ -17,7 +18,7 @@ namespace ReLearn
     class Flags_View_Dictionary : AppCompatActivity
     {
         ListView DictionaryImages { get; set; }
-        List<DBImages> dataBase = DBImages.GetData;
+        List<DBImages> dataBase = DBImages.GetData;    
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -61,6 +62,7 @@ namespace ReLearn
             var searchItem = menu.FindItem(Resource.Id.action_search);
             var _searchView = searchItem.ActionView.JavaCast<Android.Support.V7.Widget.SearchView>();
             _searchView.InputType = Convert.ToInt32(Android.Text.InputTypes.TextFlagCapWords);
+
             _searchView.QueryTextChange += (sender, e) =>
             {
                 if (e.NewText == "")
@@ -76,6 +78,34 @@ namespace ReLearn
                     DictionaryImages.Adapter = new CustomAdapter_ImageText(this, FD);
                 }
             };
+
+            //DictionaryImages.ItemClick += (s, args) =>
+            //{
+            //    var image = DictionaryImages.Adapter.GetItem(args.Position);
+            //    DBImages images = new DBImages();
+            //    foreach (var item in dataBase)
+            //        if (item.Image_name == image.ToString())
+            //        {
+            //            images = item.Find();
+            //            break;
+            //        }
+
+            //    View view = LayoutInflater.From(this).Inflate(Resource.Layout.item_alert_big_image, null);
+            //    Android.App.AlertDialog.Builder alert = new Android.App.AlertDialog.Builder(this);
+            //    alert.SetView(view);
+
+            //    var ImageView = view.FindViewById<ImageView>(Resource.Id.imageView_Alert_BigImage);
+            //    using (var his = Application.Context.Assets.Open($"Image{DataBase.TableNameImage}/{images.Image_name}.png"))
+            //    {
+            //        Bitmap bitmap = BitmapFactory.DecodeStream(his);
+            //        double imageWidthInPX = (double)ImageView.Width;
+            //        ImageView.SetImageBitmap(bitmap);
+            //    }
+    
+            //    alert.SetPositiveButton("Cancel", delegate { alert.Dispose(); });
+            //    alert.Show();
+            //};
+
             return true;
         }
 

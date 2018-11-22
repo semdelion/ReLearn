@@ -60,6 +60,7 @@ namespace ReLearn
                         break;
                     }
                 Android.App.AlertDialog.Builder alert = new Android.App.AlertDialog.Builder(this);
+               
                 alert.SetTitle("");
                 alert.SetMessage($"To delete : {word.ToString()}? ");
                 alert.SetPositiveButton("Cancel", delegate { alert.Dispose(); });

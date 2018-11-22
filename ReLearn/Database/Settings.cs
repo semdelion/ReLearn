@@ -50,7 +50,7 @@ namespace ReLearn
 
         public static string CurrentPronunciation
         {
-            get => CrossSettings.Current.GetValueOrDefault(DBSettings.Pronunciation.ToString(), Pronunciation.en.ToString());
+            get => CrossSettings.Current.GetValueOrDefault(DBSettings.Pronunciation.ToString(), Pronunciation.uk.ToString());
             set => CrossSettings.Current.AddOrUpdateValue(DBSettings.Pronunciation.ToString(), Convert.ToString(value));
         }
 

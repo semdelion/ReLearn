@@ -105,4 +105,6 @@
   <string name="Films">Фильмы</string>
   <string name="DatatypeWords">Слов: </string>
   <string name="DatatypeImages">Изображений: </string>
+  <string name="Achievements">Достижения</string>
+  <string name="sign_in">Войти в систему</string>
 </resources>

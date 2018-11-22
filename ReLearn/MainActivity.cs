@@ -11,6 +11,7 @@ using Android.Content.Res;
 using System;
 using Android.Support.V7.App;
 using Android.Graphics;
+using Android.Gms.Auth.Api;
 
 namespace ReLearn
 {
@@ -40,10 +41,12 @@ namespace ReLearn
       
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
-            if(item.ItemId == Resource.Id.about_us)
+            if (item.ItemId == Resource.Id.about_us)
                 StartActivity(typeof(About_us));
-            else if(item.ItemId == Resource.Id.Feedback)
+            else if (item.ItemId == Resource.Id.Feedback)
                 StartActivity(typeof(Feedback));
+            else if (item.ItemId == Resource.Id.achievements)
+                StartActivity(typeof(Achievements));
             else if (item.ItemId == Android.Resource.Id.Home)
                 Finish();
             else if (item.ItemId == Resource.Id.Settings_Menu)

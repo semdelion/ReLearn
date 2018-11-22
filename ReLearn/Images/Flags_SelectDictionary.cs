@@ -31,7 +31,7 @@ namespace ReLearn
         void CreateViewForDictionary(string NameDictionarn, int ImageId, bool flag, bool separate)
         {
             var width = Resources.DisplayMetrics.WidthPixels / 100f;
-            var DB = DBStatistics.GetWords(NameDictionarn);
+            var DB = DBStatistics.GetImages(NameDictionarn);
             int count = DB.Count;
             LinearLayout DictionarylinearLayout = new LinearLayout(this)
             {

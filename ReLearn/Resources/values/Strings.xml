@@ -111,5 +111,7 @@
     <item>$</item>
     <item>\@</item>
   </string-array>
+  <string name="Achievements">Achievements</string>
+  <string name="sign_in">Sign In</string>
   
 </resources>

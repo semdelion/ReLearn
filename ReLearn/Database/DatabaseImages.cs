@@ -32,6 +32,8 @@ namespace ReLearn
 
         public DBImages() => DateRecurrence = DateTime.Today;
 
+        public DBImages Find() => this;
+
         public static void Update(string Image, int learn) // изменение у BD элемента NumberLearn
         {
                  DataBase.Images.Execute(
@@ -60,7 +62,7 @@ namespace ReLearn
             {
                 if (DataBase.Images.GetTableInfo(tableName).Count == 0)
                 {
-                    DataBase.Images.Query<DBImages>($"CREATE TABLE {tableName} (_id int PRIMARY KEY, Image_name string, Name_image_en string, Name_image_ru string, NumberLearn int, DateRecurrence DateTime)");
+                    DataBase.Images.Execute($"CREATE TABLE {tableName} (_id int PRIMARY KEY, Image_name string, Name_image_en string, Name_image_ru string, NumberLearn int, DateRecurrence DateTime)");
                     using (StreamReader reader = new StreamReader(Application.Context.Assets.Open($"Database/{tableName}.txt")))
                     {
                         string str_line;
@@ -71,7 +73,7 @@ namespace ReLearn
                             DataBase.Images.Execute(query, image[0], image[1], image[2], Settings.StandardNumberOfRepeats, DateTime.Now);
                         }
                     }
-                    DataBase.Statistics.Query<DatabaseStatistics>($"CREATE TABLE {tableName}_Statistics (_id int PRIMARY KEY, True int, False int, DateOfTesting DateTime)");
+                    DataBase.Statistics.Execute($"CREATE TABLE {tableName}_Statistics (_id int PRIMARY KEY, True int, False int, DateOfTesting DateTime)");
                 }
             }
         }
@@ -91,5 +93,6 @@ namespace ReLearn
             DateTime.Now, ImageName);
 
         public static List<DBImages> GetData => DataBase.Images.Query<DBImages>($"SELECT * FROM {DataBase.TableNameImage.ToString()}");
+
     }
 }

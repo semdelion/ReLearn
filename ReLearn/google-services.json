@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "376847786823",
+    "firebase_url": "https://api-7529429096305614018-956847.firebaseio.com",
+    "project_id": "api-7529429096305614018-956847",
+    "storage_bucket": "api-7529429096305614018-956847.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:376847786823:android:7380f23b93f9d163",
+        "android_client_info": {
+          "package_name": "com.SemdelionTeam.ReLearn"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "376847786823-2l1egmfvju12algodbnagvvu352sg08s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXjO2SH1cnctHeQRXbcT7jVVsiebVw9CQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
