@@ -7,7 +7,6 @@ using Android.OS;
 using Android.Gms.Common.Apis;
 using Android.Support.V7.App;
 using Android.Gms.Common;
-using Android.Util;
 using Android.Gms.Auth.Api.SignIn;
 using Android.Gms.Auth.Api;
 using System;

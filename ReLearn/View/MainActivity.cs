@@ -1,17 +1,10 @@
 ﻿using Android.App;
-using Android.Widget;
 using Android.OS;
 using Android.Views;
 using Android.Content.PM;
-using Java.Util;
-using Plugin.Settings;
 using Android.Content;
 using Calligraphy;
-using Android.Content.Res;
-using System;
 using Android.Support.V7.App;
-using Android.Graphics;
-using Android.Gms.Auth.Api;
 
 namespace ReLearn
 {

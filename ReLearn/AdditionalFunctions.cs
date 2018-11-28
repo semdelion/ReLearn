@@ -1,14 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Calligraphy;
 using Android.Widget;
 using Android.Graphics;
-using Plugin.Settings;
-using Java.Util;
 using Android.Content.Res;
-using Android.Content;
-
+using Calligraphy;
+using Java.Util;
 namespace ReLearn
 {
     enum StateButton
@@ -21,6 +18,18 @@ namespace ReLearn
     {
         public StateButton State { get; set; }
         public Button button = null;
+    }
+
+    static class Colors
+    {
+        public readonly static Color Blue = new Color(Android.App.Application.Context.GetColor(Resource.Color.Blue));
+        public readonly static Color DarkBlue = new Color(Android.App.Application.Context.GetColor(Resource.Color.DarkBlue));
+        public readonly static Color Orange = new Color(Android.App.Application.Context.GetColor(Resource.Color.Orange));
+        public readonly static Color DarkOrange = new Color(Android.App.Application.Context.GetColor(Resource.Color.DarkOrange));
+        public readonly static Color White = new Color(Android.App.Application.Context.GetColor(Resource.Color.TextWhite));
+        public readonly static Color HintWhite = new Color(Android.App.Application.Context.GetColor(Resource.Color.HintTextWhite));
+        public readonly static Color FrameBackground = new Color(150, 16, 19, 38);
+        public readonly static Color FrameBorder = new Color(200, 215, 248, 254);
     }
 
     static class AdditionalFunctions
@@ -36,7 +45,7 @@ namespace ReLearn
         public static void SetColorForItems(int degreeOfStudy, TextView TView)
         {
             if (degreeOfStudy == Settings.StandardNumberOfRepeats)
-                Color_TextView(TView, new Color(238, 252, 255));
+                Color_TextView(TView, Colors.White);
             else if (degreeOfStudy > Settings.StandardNumberOfRepeats)
                 Color_TextView(TView, new Color(230,
                 200 - ((degreeOfStudy - Settings.StandardNumberOfRepeats) * 180 / Settings.StandardNumberOfRepeats), 20));           //  230, 20, 20   to   230, 200, 20

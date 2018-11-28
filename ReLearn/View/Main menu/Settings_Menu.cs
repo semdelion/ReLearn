@@ -125,25 +125,25 @@ namespace ReLearn
             SetSupportActionBar(toolbarSettings);
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
 
-            SeekBar  SB_Repeat_Language = FindViewById<SeekBar>(Resource.Id.SeekBarCountRepeatLenguage),
+            SeekBar SB_Repeat_Language = FindViewById<SeekBar>(Resource.Id.SeekBarCountRepeatLenguage),
                      SB_Repeat_Image = FindViewById<SeekBar>(Resource.Id.SeekBarCountRepeatImages);
             TextView TV_Repeat_Language = FindViewById<TextView>(Resource.Id.TextView_number_of_word_repeats),
                      TV_Repeat_Image = FindViewById<TextView>(Resource.Id.TextView_number_of_image_repeats);
 
             SB_Repeat_Language.Progress = Settings.NumberOfRepeatsLanguage - 5;
             SB_Repeat_Image.Progress = Settings.NumberOfRepeatsImage - 5;
-            TV_Repeat_Language.Text = GetString(Resource.String.Number_of_word_repeats) + " " + Convert.ToString(5 + SB_Repeat_Language.Progress);
-            TV_Repeat_Image.Text = GetString(Resource.String.Number_of_image_repeats) + " " + Convert.ToString(5 + SB_Repeat_Image.Progress);
+            TV_Repeat_Language.Text = $"{GetString(Resource.String.Number_of_word_repeats )} {Convert.ToString(5 + SB_Repeat_Language.Progress)}";
+            TV_Repeat_Image.Text    = $"{GetString(Resource.String.Number_of_image_repeats)} {Convert.ToString(5 + SB_Repeat_Image.Progress)}";
 
             SB_Repeat_Language.ProgressChanged += (s, e) =>
             {
-                TV_Repeat_Language.Text = GetString(Resource.String.Number_of_word_repeats) + " " + Convert.ToString(5 + e.Progress);
+                TV_Repeat_Language.Text = $"{GetString(Resource.String.Number_of_word_repeats)} {Convert.ToString(5 + e.Progress)}";
                 Settings.NumberOfRepeatsLanguage = e.Progress + 5;
             };
 
             SB_Repeat_Image.ProgressChanged += (s, e) =>
             {
-                TV_Repeat_Image.Text = GetString(Resource.String.Number_of_image_repeats) + " " + Convert.ToString(5 + e.Progress);
+                TV_Repeat_Image.Text =    $"{GetString(Resource.String.Number_of_image_repeats)} {Convert.ToString(5 + e.Progress)}";
                 Settings.NumberOfRepeatsImage = e.Progress + 5;
             };
         }

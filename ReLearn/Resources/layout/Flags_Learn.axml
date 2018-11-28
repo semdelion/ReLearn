@@ -1,85 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-	android:orientation="vertical"
-    android:minWidth="25px"
-    android:minHeight="25px">
+<LinearLayout 
+	xmlns:android			="http://schemas.android.com/apk/res/android"
+	xmlns:app				="http://schemas.android.com/apk/res-auto"
+    xmlns:tools				="http://schemas.android.com/tools"
+    android:layout_width	="match_parent"
+    android:layout_height	="match_parent"
+	android:orientation		="vertical">
+
 	<android.support.v7.widget.Toolbar
-		xmlns:app="http://schemas.android.com/apk/res-auto"
-		android:id="@+id/toolbarFlagsLearn"
-		android:layout_width="match_parent"
-		android:layout_height="80dp"	
-		android:theme="@style/ToolbarStyle"	
-		android:background="@drawable/toolbar"
-		app:buttonGravity="bottom"
-		app:navigationIcon="@mipmap/arrow" >
-		<TextView				
-			android:gravity="bottom"
-			android:paddingBottom="12dp"
-			android:layout_width="match_parent"
-			android:layout_height="match_parent"
-			android:text="@string/Learn" 
+		xmlns:app				="http://schemas.android.com/apk/res-auto"
+		android:id				="@+id/toolbarFlagsLearn"
+		android:theme			="@style/ToolbarStyle"	
+		android:background		="@drawable/toolbar"
+		app:navigationIcon		="@mipmap/arrow"
+		android:layout_width	="match_parent"
+		android:layout_height	="80dp"	
+		app:buttonGravity		="bottom">
+		<TextView		
+			android:text			="@string/Learn" 
+			android:gravity			="bottom"
+			android:paddingBottom	="12dp"
+			android:layout_width	="match_parent"
+			android:layout_height	="match_parent"
 		/>
 	</android.support.v7.widget.Toolbar>
+
 	<ScrollView
-        android:minWidth="25px"
-        android:minHeight="25px"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/scrollView2">
+		android:id				="@+id/scrollView2"
+        android:layout_width	="match_parent"
+        android:layout_height	="wrap_content">
         <TableLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:stretchColumns="1">
+            android:layout_width	="match_parent"
+            android:layout_height	="match_parent">
             <ImageView
-                android:id="@+id/imageView_Flags_learn"
-                android:layout_width="wrap_content"
-                android:layout_height="220.0dp"
-                android:src="@drawable/icon"
-                android:layout_marginTop="25.0dp"
-                android:layout_marginRight="7.0dp"
-                android:layout_marginLeft="7.0dp" />
+                android:id					="@+id/imageView_Flags_learn"
+				android:src					="@drawable/icon"
+                android:layout_width		="wrap_content"
+                android:layout_height		="220.0dp"
+                android:layout_marginTop	="25.0dp"
+                android:layout_marginRight	="7.0dp"
+                android:layout_marginLeft	="7.0dp" />
 			<TextView
-				android:text="Text"
-				android:layout_width="match_parent"
-				android:layout_height="80.0dp"
-				android:id="@+id/textView_flag_learn"
-				android:layout_marginRight="25.0dp"
-				android:layout_marginLeft="25.0dp"
-				android:layout_marginTop="20.0dp"
-				android:textSize="35dp"
-				android:gravity="center_horizontal"
-				android:textColor="#d7f8fe" />
+				android:id					="@+id/textView_flag_learn"
+				android:textColor			="@color/TextWhite"
+				android:text				="Text"
+				android:textSize			="35dp"
+				android:layout_width		="match_parent"
+				android:layout_height		="80.0dp"
+				android:layout_marginRight	="25.0dp"
+				android:layout_marginLeft	="25.0dp"
+				android:layout_marginTop	="20.0dp"
+				android:gravity				="center_horizontal"/>
             <Button
-                android:text="@string/Next"
-                android:layout_width="match_parent"
-                android:layout_height="55.0dp"
-                android:layout_marginRight="25.0dp"
-                android:layout_marginLeft="25.0dp"
-                android:layout_marginTop="20.0dp"
-                android:id="@+id/button_F_learn_Next"
-                android:textSize="20dp"
-                android:textColor="#d7f8fe"
-                android:background="@drawable/button_style_standard"
-                android:gravity="center"
-                android:onClick="Button_Flags_Learn_Next_Click"/>
+				android:onClick				="Button_Flags_Learn_Next_Click"
+				android:id					="@+id/button_F_learn_Next"
+                android:text				="@string/Next"
+				android:background			="@drawable/button_style_standard"
+				android:textColor			="@color/TextWhite"
+				android:textSize			="20dp"
+                android:layout_width		="match_parent"
+                android:layout_height		="55.0dp"
+                android:layout_marginRight	="25.0dp"
+                android:layout_marginLeft	="25.0dp"
+                android:layout_marginTop	="20.0dp"
+                android:gravity				="center"/>
 			<Button
-				android:text="@string/NotRepeat"
-				android:layout_width="match_parent"
-				android:layout_height="55.0dp"
-				android:id="@+id/button_NotRepeat_Images"
-				android:textColor="#d7f8fe"
-				android:textSize="20dp"
-				android:layout_marginRight="25.0dp"
-				android:layout_marginLeft="25.0dp"
-				android:layout_marginTop="20.0dp"
-				android:background="@drawable/button_style_standard"
-				android:gravity="center"
-				android:onClick="Button_Images_Learn_NotRepeat_Click"
-				android:keyboardNavigationCluster="false" />
+				android:onClick				="Button_Images_Learn_NotRepeat_Click"
+				android:id					="@+id/button_NotRepeat_Images"
+				android:text				="@string/NotRepeat"
+				android:background			="@drawable/button_style_standard"
+				android:textColor			="@color/TextWhite"
+				android:textSize			="20dp"
+				android:layout_width		="match_parent"
+				android:layout_height		="55.0dp"
+				android:layout_marginRight	="25.0dp"
+				android:layout_marginLeft	="25.0dp"
+				android:layout_marginTop	="20.0dp"
+				android:gravity				="center"
+				android:keyboardNavigationCluster="false" 
+			/>
         </TableLayout>
     </ScrollView>
+
 </LinearLayout>

@@ -184,41 +184,41 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Achievements\Achievements.cs" />
+    <Compile Include="View\Achievements\Achievements.cs" />
     <Compile Include="Database\DatabaseStatistics.cs" />
     <Compile Include="Database\DatabaseImages.cs" />
     <Compile Include="Database\DatabaseWords.cs" />
-    <Compile Include="Languages\Languages_DictionaryReplenishment.cs" />
+    <Compile Include="View\Languages\Languages_DictionaryReplenishment.cs" />
     <Compile Include="MyTextToSpeech.cs" />
     <Compile Include="SelectDictionary.cs" />
-    <Compile Include="Languages\Languages_SelectDictionary.cs" />
-    <Compile Include="Images\Flags_SelectDictionary.cs" />
-    <Compile Include="Main menu\About_us.cs" />
+    <Compile Include="View\Languages\Languages_SelectDictionary.cs" />
+    <Compile Include="View\Images\Flags_SelectDictionary.cs" />
+    <Compile Include="View\Main menu\About_us.cs" />
     <Compile Include="AdditionalFunctions.cs" />
     <Compile Include="Database\DataBase.cs" />
-    <Compile Include="Languages\Languages.cs" />
-    <Compile Include="Languages\Languages_Add.cs" />
-    <Compile Include="Languages\Languages_ViewDictionary.cs" />
-    <Compile Include="Languages\Languages_Learn.cs" />
-    <Compile Include="Languages\Languages_Repeat.cs" />
-    <Compile Include="Languages\Languages_Stat.cs" />
-    <Compile Include="Main menu\Feedback.cs" />
-    <Compile Include="Images\Flags.cs" />
-    <Compile Include="Images\Flags_Learn.cs" />
-    <Compile Include="Images\Flags_Repeat.cs" />
-    <Compile Include="Images\Flags_Stats.cs" />
-    <Compile Include="Images\Flags_ViewDictionary.cs" />
+    <Compile Include="View\Languages\Languages.cs" />
+    <Compile Include="View\Languages\Languages_Add.cs" />
+    <Compile Include="View\Languages\Languages_ViewDictionary.cs" />
+    <Compile Include="View\Languages\Languages_Learn.cs" />
+    <Compile Include="View\Languages\Languages_Repeat.cs" />
+    <Compile Include="View\Languages\Languages_Stat.cs" />
+    <Compile Include="View\Main menu\Feedback.cs" />
+    <Compile Include="View\Images\Flags.cs" />
+    <Compile Include="View\Images\Flags_Learn.cs" />
+    <Compile Include="View\Images\Flags_Repeat.cs" />
+    <Compile Include="View\Images\Flags_Stats.cs" />
+    <Compile Include="View\Images\Flags_ViewDictionary.cs" />
     <Compile Include="Database\Settings.cs" />
     <Compile Include="Statistics\Graphics\FrameStatistics.cs" />
     <Compile Include="Statistics\Graphics\Graph_GeneralStatistics.cs" />
     <Compile Include="Statistics\Graphics\Graph_Statistics.cs" />
-    <Compile Include="MainActivity.cs" />
+    <Compile Include="View\MainActivity.cs" />
     <Compile Include="Resources\CustomAdapter.cs" />
     <Compile Include="Resources\CustomAdapter_ImageText.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Main menu\Settings_Menu.cs" />
-    <Compile Include="SplashScreen.cs" />
+    <Compile Include="View\Main menu\Settings_Menu.cs" />
+    <Compile Include="View\SplashScreen.cs" />
     <Compile Include="Statistics\Statistics.cs" />
   </ItemGroup>
   <ItemGroup>

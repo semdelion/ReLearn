@@ -5,7 +5,6 @@ using Android.Views;
 using Android.Widget;
 using Calligraphy;
 using Android.Support.V7.App;
-using System;
 
 namespace ReLearn
 {

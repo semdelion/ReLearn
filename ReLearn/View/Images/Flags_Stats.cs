@@ -2,7 +2,6 @@
 using Android.OS;
 using Android.Views;
 using Android.Graphics;
-using System.Collections.Generic;
 using Android.Graphics.Drawables;
 using Android.Content;
 using Calligraphy;
@@ -27,7 +26,7 @@ namespace ReLearn
                 Gravity = GravityFlags.CenterVertical
             };
             textView.SetTextSize(Android.Util.ComplexUnitType.Dip, 25f);
-            textView.SetTextColor(Color.Rgb(215, 248, 254));
+            textView.SetTextColor(Colors.White);
 
             ActionBar.SetDisplayOptions(ActionBarDisplayOptions.ShowCustom, ActionBarDisplayOptions.ShowCustom | ActionBarDisplayOptions.ShowTitle);
             ActionBar.SetCustomView(textView, new ActionBar.LayoutParams(ViewGroup.LayoutParams.MatchParent, ViewGroup.LayoutParams.MatchParent));
@@ -41,13 +40,10 @@ namespace ReLearn
             SetContentView(Resource.Layout.Languages_Stat);
 
             ActionBar.SetStackedBackgroundDrawable(new ColorDrawable(Color.Transparent));
-            
-
-            Graph_General_Statistics Stat2 = new Graph_General_Statistics(this, 
-                Color.Argb(255, 254, 166, 10), Color.Argb(255, 154, 66, 3), 
+            Graph_General_Statistics Stat2 = new Graph_General_Statistics(this, Colors.Orange, Colors.DarkOrange, 
                 DBStatistics.GetImages(DataBase.TableNameImage.ToString()), 
                 DataBase.TableNameImage.ToString(), DataBase.TableNameImage.ToString());
-            Graph_Statistics Stat1 = new Graph_Statistics(this, Color.Argb(255, 254, 166, 10), Color.Argb(255, 154, 66, 3), DataBase.TableNameImage.ToString());
+            Graph_Statistics Stat1 = new Graph_Statistics(this, Colors.Orange, Colors.DarkOrange, DataBase.TableNameImage.ToString());
 
             var tab = ActionBar.NewTab();
             tab.SetIcon(Resource.Drawable.Stat1);/// icon 1

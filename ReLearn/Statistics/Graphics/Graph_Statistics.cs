@@ -1,7 +1,6 @@
 ﻿using Android.Content;
 using Android.Graphics;
 using Android.Views;
-using System;
 using System.Collections.Generic;
 using static Android.Graphics.Shader;
 
@@ -10,12 +9,12 @@ namespace ReLearn
     class Graph_Statistics : View
     {
         Canvas The_canvas;
-        Color Color_Diagram_1;
-        Color Color_Diagram_2;
-        string TabelName { get; set; }
+        readonly Color Color_Diagram_1;
+        readonly Color Color_Diagram_2;
+        readonly string TabelName;
         readonly Color background_color = new Color(Color.Argb(150, 16, 19, 38));
-        readonly Paint paint_border = new Paint { StrokeWidth = 4, Color = Color.Argb(250, 215, 248, 254), AntiAlias = true };
-        readonly Paint paint_text = new Paint { TextSize = 25, StrokeWidth = 4, Color = Color.Rgb(215, 248, 254), AntiAlias = true };
+        readonly Paint paint_border = new Paint { StrokeWidth = 4, Color = Colors.White, AntiAlias = true };
+        readonly Paint paint_text = new Paint { TextSize = 25, StrokeWidth = 4, Color = Colors.White, AntiAlias = true };
 
         public Graph_Statistics(Context context, Color color_diagram_1, Color color_diagram_2, string Table_Name) : base(context)
         {
@@ -33,7 +32,7 @@ namespace ReLearn
                 The_canvas.DrawLine(left + step * i, bottom, left + step * i, bottom + 1.5f * (The_canvas.Width + The_canvas.Height) / 200, paint);
 
             int count = amount >= 10 ? 10 : amount,
-                stat = amount >= 10 ? amount - 10 : 0;
+                stat  = amount >= 10 ? amount - 10 : 0;
             for (int i = 1; i <= count; i++)
                 The_canvas.DrawText((stat + i).ToString(), left + step * i, bottom + 4 * (The_canvas.Width + The_canvas.Height) / 200, paint);
         }
@@ -100,28 +99,24 @@ namespace ReLearn
 
             FrameStatistics LastStat = new FrameStatistics(7f * w_rate, bottom + 10f * h_rate, right, 95f * h_rate, background_color);
             LastStat.DrawBorder(The_canvas, paint_border);
+            int? True = null, False = null;
             if (Database_Stat.Count != 0)
             {
-                LastStat.ProgressLine(The_canvas, Database_Stat[Database_Stat.Count - 1].True, Database_Stat[Database_Stat.Count - 1].False, Color_Diagram_1, Color_Diagram_2);
-                if (The_canvas.Height > The_canvas.Width)
-                {
-                    LastStat.DrawText(The_canvas, 25 * LastStat.Height / 100, Context.GetString(Resource.String.Last_testing), 
-                        LastStat.Left + 7 * LastStat.Width / 100, LastStat.Top + LastStat.Height / 14);
-                    LastStat.DrawText(The_canvas, 15 * LastStat.Height / 100, Context.GetString(Resource.String.Correct)
-                        + ": " + Convert.ToString(Database_Stat[Database_Stat.Count - 1].True)
-                        + ", " + Context.GetString(Resource.String.Incorrect_Up)
-                        + ": " + Convert.ToString(Database_Stat[Database_Stat.Count - 1].False), LastStat.Left + 7 * LastStat.Width / 100, 
-                        LastStat.Top + 25 * LastStat.Height / 100 + LastStat.Height / 7);
-                }
-                else 
-                    LastStat.DrawText(The_canvas, 40 * LastStat.Height / 100,
-                         Context.GetString(Resource.String.Last_testing)
-                        + "." + "   " + Context.GetString(Resource.String.Correct)
-                        + ": " + Convert.ToString(Database_Stat[Database_Stat.Count - 1].True) 
-                        + ", " + Context.GetString(Resource.String.Incorrect_Up)
-                        + ": " + Convert.ToString(Database_Stat[Database_Stat.Count - 1].False), 
-                        LastStat.Left + 7 * LastStat.Width / 100, LastStat.Top + LastStat.Height / 14);
+                True = Database_Stat[Database_Stat.Count - 1].True;
+                False = Database_Stat[Database_Stat.Count - 1].False;
             }
+            LastStat.ProgressLine(The_canvas, True??0, False??1, Color_Diagram_1, Color_Diagram_2);
+            string TextLastStat = $"{Context.GetString(Resource.String.Correct)}: {True??0}, {Context.GetString(Resource.String.Incorrect_Up)}: {False??0}";
+            if (The_canvas.Height > The_canvas.Width)
+            {
+                LastStat.DrawText(The_canvas, 25 * LastStat.Height / 100, Context.GetString(Resource.String.Last_testing),
+                    LastStat.Left + 7 * LastStat.Width / 100, LastStat.Top + LastStat.Height / 14);
+                LastStat.DrawText(The_canvas, 15 * LastStat.Height / 100, TextLastStat, LastStat.Left + 7 * LastStat.Width / 100,
+                    LastStat.Top + 25 * LastStat.Height / 100 + LastStat.Height / 7);
+            }
+            else
+                LastStat.DrawText(The_canvas, 40 * LastStat.Height / 100, $"{Context.GetString(Resource.String.Last_testing)}.   {TextLastStat}",
+                    LastStat.Left + 7 * LastStat.Width / 100, LastStat.Top + LastStat.Height / 14);
         }
     }
 }

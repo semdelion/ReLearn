@@ -1,6 +1,5 @@
-﻿using Android.Content.Res;
+﻿using System;
 using Android.Graphics;
-using System;
 using static Android.Graphics.Shader;
 
 namespace ReLearn
@@ -97,7 +96,6 @@ namespace ReLearn
             canvas.Rotate(-90f, X, Y);
             canvas.DrawArc(new RectF(X - Radius, Y - Radius, X + Radius, Y + Radius), 0.5f, 360f - average * (360f / sum), false, paint1);
             canvas.Rotate(90f, X, Y);
-
         }
 
         public void DrawPieChartWithText(Canvas canvas, float average, float sum, Color Color_Diagram_1, Color Color_Diagram_2)
@@ -123,7 +121,7 @@ namespace ReLearn
             {
                 AntiAlias = true,
                 TextSize = font_size,
-                Color = c ?? Color.Rgb(215, 248, 254)
+                Color = c ?? Colors.White
             };
             paint.SetTypeface(bold);
             canvas.DrawText(Convert.ToString(text), left, top + font_size, paint);

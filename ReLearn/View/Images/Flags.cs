@@ -2,7 +2,6 @@
 using Android.Content;
 using Android.OS;
 using Android.Views;
-using Android.Widget;
 using Android.Support.V7.App;
 
 namespace ReLearn

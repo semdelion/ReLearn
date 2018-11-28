@@ -7,7 +7,6 @@ using Android.Widget;
 using Android.Graphics;
 using Android.Support.V7.App;
 using System.Collections.Generic;
-using Plugin.Settings;
 
 namespace ReLearn
 {

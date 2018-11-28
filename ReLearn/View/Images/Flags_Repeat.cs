@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using SQLite;
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -14,7 +13,6 @@ namespace ReLearn
     [Activity(Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     class Flags_Repeat : AppCompatActivity
     {
-       
         int CurrentWordNumber { get; set; }
         List<Button> Buttons { get; set; }
         ButtonNext Button_next;
@@ -70,6 +68,7 @@ namespace ReLearn
 
         void Answer(params Button[] buttons) // подсвечиваем правильный ответ, если мы ошиблись подсвечиваем неправвильный и паравильный 
         {
+            Statistics.Count++;
             Button_enable(false);
             if (buttons[0].Text == AdditionalFunctions.NameOfTheFlag(ImagesDatabase[CurrentWordNumber]))
             {
@@ -82,25 +81,18 @@ namespace ReLearn
                 Statistics.Add(ImagesDatabase,CurrentWordNumber, Settings.FalseAnswer);
                 Statistics.False++;
                 buttons[0].Background = GetDrawable(Resource.Drawable.button_false);
-                for (int i = 1; i < buttons.Length; i++)
-                    if (buttons[i].Text == AdditionalFunctions.NameOfTheFlag(ImagesDatabase[CurrentWordNumber]))
-                    {
-                        buttons[i].Background = GetDrawable(Resource.Drawable.button_true);
-                        return;
-                    }
+                int index = Buttons.FindIndex(s => s.Text == AdditionalFunctions.NameOfTheFlag(ImagesDatabase[CurrentWordNumber]));
+                Buttons[index].Background = GetDrawable(Resource.Drawable.button_true);
             }
         }
 
         void Unknown()
         {
+            Statistics.Count++;
             Statistics.False++;
             Statistics.Add(ImagesDatabase, CurrentWordNumber, Settings.NeutralAnswer);
-            for (int i = 0; i < Buttons.Count; i++)
-                if (Buttons[i].Text == AdditionalFunctions.NameOfTheFlag(ImagesDatabase[CurrentWordNumber]))
-                {
-                    Buttons[i].Background = GetDrawable(Resource.Drawable.button_true);
-                    return;
-                }
+            int index = Buttons.FindIndex(s => s.Text == AdditionalFunctions.NameOfTheFlag(ImagesDatabase[CurrentWordNumber]));
+            Buttons[index].Background = GetDrawable(Resource.Drawable.button_true);
         }
 
         [Java.Interop.Export("Button_Flags_1_Click")]
@@ -129,8 +121,6 @@ namespace ReLearn
             {
                 if (Statistics.Count < Settings.NumberOfRepeatsImage - 1)
                 {
-                    if (v != null)
-                        Statistics.Count++;
                     CurrentWordNumber = new Random(unchecked((int)(DateTime.Now.Ticks))).Next(ImagesDatabase.Count);
                     NextTest();
                     Button_enable(true);

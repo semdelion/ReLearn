@@ -1,9 +1,15 @@
 ﻿using Android.App;
+using Android.Graphics;
 using Android.OS;
 
 namespace ReLearn
 {
-    [Activity(Label = "@string/app_name", MainLauncher = true, Theme = "@style/SplashTheme", NoHistory = true)]
+    [Activity(
+        Label = "@string/app_name", 
+        MainLauncher = true, 
+        Theme = "@style/SplashTheme", 
+        NoHistory = true)]
+
     public class SplashScreen : Activity
     {     
         protected override void OnCreate(Bundle savedInstanceState)

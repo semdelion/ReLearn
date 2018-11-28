@@ -1,46 +1,80 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <!--For all properties see: http://developer.android.com/guide/topics/resources/menu-resource.html-->
 <menu
-xmlns:android ="http://schemas.android.com/apk/res/android"
-xmlns:tools ="http://schemas.android.com/tools"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-tools:context=".English">
+  xmlns:android   ="http://schemas.android.com/apk/res/android"
+  xmlns:tools     ="http://schemas.android.com/tools"
+  xmlns:app       ="http://schemas.android.com/apk/res-auto"
+  tools:context   =".English">
   <item 
-    android:id="@+id/action_search"
-    app:showAsAction="always"
-    android:icon="@+mipmap/search"
-    app:actionViewClass="android.support.v7.widget.SearchView"     
-    />
+    android:id          ="@+id/action_search"
+    app:showAsAction    ="always"
+    android:icon        ="@+mipmap/search"
+    app:actionViewClass ="android.support.v7.widget.SearchView"     
+  />
   <item
-    android:id="@+id/menuDelSort"
-    android:icon="@+mipmap/settings"
-    app:showAsAction="always">
+    android:id        ="@+id/menuDelSort"
+    android:icon      ="@+mipmap/settings"
+    app:showAsAction  ="always">
     <menu>
-      <!--возрастание-->
       <item
-        android:id="@+id/increase"
-        android:orderInCategory="101"
-        app:showAsAction="always"
-        android:title="@string/Sort_descending"
+        android:id              ="@+id/increase"
+        android:orderInCategory ="101"
+        app:showAsAction        ="always"
+        android:title           ="@string/Sort_descending"
       />
-      <!--убывание-->
       <item
-        android:id="@+id/decrease"
-        android:orderInCategory="102"
-        app:showAsAction="never"
-        android:title="@string/Sort_Ascending"
+        android:id              ="@+id/decrease"
+        android:orderInCategory ="102"
+        app:showAsAction        ="never"
+        android:title           ="@string/Sort_Ascending"
       />
-      <!--a to z-->
       <item
-        android:id="@+id/ABC"
-        android:orderInCategory="103"
-        app:showAsAction="never"
-        android:title="@string/Sort_alphabetically"
+        android:id              ="@+id/ABC"
+        android:orderInCategory ="103"
+        app:showAsAction        ="never"
+        android:title           ="@string/Sort_alphabetically"
       />
     </menu>
   </item>
 </menu>
-  
+
+
+
+<!--<item
+   android:id="@+id/menuDatabase"
+   android:icon="@+mipmap/dictionary"
+   android:scaleType="fitXY"
+   app:showAsAction="always"
+   android:title="main">
+    <menu>
+      <group 
+        android:checkableBehavior="single">
+        <item
+          android:id="@+id/menuDatabase_PopularWords"
+          android:orderInCategory="103"
+          app:showAsAction="never"
+          android:title="@string/Popular_Words"/>
+        <item
+          android:id="@+id/menuDatabase_Education"
+          android:orderInCategory="102"
+          android:showAsAction="always"
+          android:title="@string/Education"
+         />
+        <item
+         android:id="@+id/menuDatabase_Home"
+         android:orderInCategory="101"
+         app:showAsAction="always"
+         android:title="@string/Home"
+         />
+        <item
+          android:id="@+id/menuDatabase_MyDictionary"
+          android:orderInCategory="100"
+          app:showAsAction="never"
+          android:title="@string/My_Directly"/>
+      </group>
+    </menu>    
+  </item>-->
+
 
 
 <!-- Code to implement into Activity:

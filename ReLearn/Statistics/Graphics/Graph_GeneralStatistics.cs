@@ -1,23 +1,23 @@
-﻿using Android.Content;
-using Android.Graphics;
-using Android.Views;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Android.Content;
+using Android.Graphics;
+using Android.Views;
 
 namespace ReLearn
 {
     class Graph_General_Statistics : View
     {
-        Canvas The_canvas;
+        Canvas The_canvas = null;
         string TableName { get; set; }
         Color Start { get; }
         Color End { get; }
         string Object_name { get;}
         List<DBStatistics> Stats_database { get; }
-        readonly Color background_color = new Color( Color.Argb(150, 16, 19, 38) );
-        readonly Paint paint_border = new Paint { StrokeWidth = 4, Color = Color.Rgb(215, 248, 254), AntiAlias = true };
-        readonly Paint paint_text = new Paint { TextSize = 25, StrokeWidth = 4, Color = Color.Rgb(215, 248, 254), AntiAlias = true };
+        readonly Color background_color = Colors.FrameBackground;
+        readonly Paint paint_border = new Paint { StrokeWidth = 4, Color = Colors.White, AntiAlias = true };
+        readonly Paint paint_text = new Paint { TextSize = 25, StrokeWidth = 4, Color = Colors.White, AntiAlias = true };
         float font_up;
         float font_low;
 
@@ -43,34 +43,34 @@ namespace ReLearn
         void CorrectAnswers_FRAME(FrameStatistics CA,float Width, float Height, float avg_true_today, float avg_true_month, float avg_true)
         {
             CA.DrawBorder(The_canvas, paint_border);
-            float one_third     = Height - 12.5f * Height / 100;
+            float one_third = Height - 12.5f * Height / 100;
 
             CA.DrawText(The_canvas, font_up,
                 Context.GetString(Resource.String.Correct_answers), CA.Left + 7f * CA.Width / 100, CA.Top + Height / 20);
             CA.DrawText(The_canvas, font_low,
                 Context.GetString(Resource.String.Today), CA.Left + 7f * CA.Width / 100, CA.Top + 12.5f *  Height / 100);
             CA.DrawText(The_canvas, 1.9f * font_up, 
-                Math.Round(avg_true_today, 1) + "%", CA.Left + 7f * CA.Width / 100, CA.Top + 17.5f * Height / 100);
+                $"{Math.Round(avg_true_today, 1)}%", CA.Left + 7f * CA.Width / 100, CA.Top + 17.5f * Height / 100);
 
-            if (avg_true_today != 0)
+            if (avg_true_today != 0 && avg_true_today != avg_true_month)
                 CA.DrawText(The_canvas, 6f * Width / 100,
-                (avg_true_today - avg_true >= 0 ? "+" : "") + Math.Round(avg_true_today - avg_true, 1) + "%",
+                $"{(avg_true_today - avg_true >= 0 ? "+" : "")}{Math.Round(avg_true_today - avg_true, 1)}%",
                 CA.Left + 2f * CA.Width / 3, CA.Top + 20f * Height / 100, avg_true_today - avg_true >= 0 ? Color.Green : Color.Red);
 
             CA.DrawText(The_canvas, font_low,
                  Context.GetString(Resource.String.Month), CA.Left + 7f * CA.Width / 100, CA.Top + one_third / 3 + 12.5f * Height / 100);
-            CA.DrawText(The_canvas, 1.9f * font_up, 
-                Math.Round(avg_true_month, 1) + "%", CA.Left + 7f * CA.Width / 100, CA.Top + one_third / 3 + 17.5f * Height / 100);
+            CA.DrawText(The_canvas, 1.9f * font_up,
+                $"{Math.Round(avg_true_month, 1)}%", CA.Left + 7f * CA.Width / 100, CA.Top + one_third / 3 + 17.5f * Height / 100);
 
-            if (avg_true_month != 0)
+            if (avg_true_month != 0 && avg_true_month != avg_true)
                 CA.DrawText(The_canvas, 6f * Width / 100,
-                (avg_true_month - avg_true >= 0 ? "+" : "") + Math.Round(avg_true_month - avg_true, 1) + "%",
+                $"{(avg_true_month - avg_true >= 0 ? "+" : "")}{Math.Round(avg_true_month - avg_true, 1)}%",
                 CA.Left + 2f * CA.Width / 3, CA.Top + one_third / 3 + 20f * Height / 100, avg_true_month - avg_true >= 0 ? Color.Green : Color.Red);
 
             CA.DrawText(The_canvas, font_low,                 
                 Context.GetString(Resource.String.Average), CA.Left + 7f * CA.Width / 100, CA.Top + 2f * one_third / 3 + 12.5f * Height / 100);
-            CA.DrawText(The_canvas, 1.9f * font_up, 
-                Math.Round(avg_true, 1)       + "%", CA.Left + 7f * CA.Width / 100, CA.Top + 2f * one_third / 3 + 17.5f * Height / 100);
+            CA.DrawText(The_canvas, 1.9f * font_up,
+                $"{Math.Round(avg_true, 1)}%", CA.Left + 7f * CA.Width / 100, CA.Top + 2f * one_third / 3 + 17.5f * Height / 100);
         }
 
         void LearnedWords_FRAME(FrameStatistics LW)
@@ -82,7 +82,7 @@ namespace ReLearn
                 AdditionalFunctions.GetResourceString($"Number_Learned_{Object_name}", this.Resources),
                 LW.Left + 7f * LW.Width / 100, LW.Top + 7f * LW.Height / 100);
             LW.DrawText    (The_canvas, font_low, 
-                numberLearned + " " + Context.GetString(Resource.String.Of) + " " + Stats_database.Count, 
+                $"{numberLearned} {Context.GetString(Resource.String.Of)} {Stats_database.Count}", 
                 LW.Left + 7f * LW.Width / 100, LW.Top + 38f * LW.Height / 100);
         }
 
@@ -95,7 +95,7 @@ namespace ReLearn
                 AdditionalFunctions.GetResourceString($"Number_Inconvenient_{Object_name}", this.Resources),
                 IW.Left + 7f * IW.Width / 100, IW.Top + 7f * IW.Height / 100);
             IW.DrawText(The_canvas, font_low, 
-                numberInconvenient + " " + Context.GetString(Resource.String.Of) + " " + Stats_database.Count, 
+                $"{numberInconvenient} {Context.GetString(Resource.String.Of)} {Stats_database.Count}", 
                 IW.Left + 7f * IW.Width / 100, IW.Top + 38f * IW.Height / 100);
         }
 
@@ -105,16 +105,16 @@ namespace ReLearn
                 numberFalse = Database_Stat.Sum(r => r.False);
             TotalNumbers.DrawBorder(The_canvas, paint_border);
 
-            TotalNumbers.ProgressLine(The_canvas, numberTrue, numberFalse, Start, End);
+            TotalNumbers.ProgressLine(The_canvas, numberTrue, (numberFalse + numberTrue) == 0 ? 1 : numberFalse, Start, End);
 
             TotalNumbers.DrawText(The_canvas, font_up,
                 Context.GetString(Resource.String.Number_Correct_Answers), 
                 TotalNumbers.Left + 7f * TotalNumbers.Width / 100, TotalNumbers.Top + 7f * TotalNumbers.Height / 100);
 
             TotalNumbers.DrawText(The_canvas, font_low,
-                Context.GetString(Resource.String.Correct)         + " " + numberTrue  + ", " +
-                Context.GetString(Resource.String.Incorrect)       + " " + numberFalse + ", " +
-                Context.GetString(Resource.String.Number_Of_Tests) + " " + Database_Stat.Count, 
+                $"{Context.GetString(Resource.String.Correct)} {numberTrue}, " +
+                $"{Context.GetString(Resource.String.Incorrect)} {numberFalse}, " +
+                $"{Context.GetString(Resource.String.Number_Of_Tests)} {Database_Stat.Count}", 
                 TotalNumbers.Left + 7f * TotalNumbers.Width / 100, TotalNumbers.Top + 38f * TotalNumbers.Height / 100);
         }
 
@@ -125,18 +125,13 @@ namespace ReLearn
             paint_border.SetStyle(Paint.Style.Stroke);
             paint_text.TextSize = 2.5f * (The_canvas.Height + The_canvas.Width) / 200f;
             var Database_Stat = DBStatistics.GetData(TableName);
-            float height = (The_canvas.Height - 81f * The_canvas.Width / 100f) / 3f;
+            float height = (The_canvas.Height - 81f * The_canvas.Width / 100f) / 3f, pct = The_canvas.Width / 100f;
 
-            FrameStatistics DegreeOfStudy =       new FrameStatistics(5f  * The_canvas.Width / 100f, 5f  * The_canvas.Width / 100f, 
-                                                                      60f * The_canvas.Width / 100f, 70f * The_canvas.Width / 100f,  background_color);
-            FrameStatistics CorrectAnswers =      new FrameStatistics(62f * The_canvas.Width / 100f, 5f  * The_canvas.Width / 100f, 
-                                                                      95f * The_canvas.Width / 100f, 70f * The_canvas.Width / 100f,  background_color);
-            FrameStatistics LearnedWords =        new FrameStatistics(5f  * The_canvas.Width / 100f, 2f  * The_canvas.Width / 100f + CorrectAnswers.Bottom, 
-                                                                      95f * The_canvas.Width / 100f, 2f  * The_canvas.Width / 100f + CorrectAnswers.Bottom    + height, background_color);
-            FrameStatistics InconvenientWords =   new FrameStatistics(5f  * The_canvas.Width / 100f, 2f  * The_canvas.Width / 100f + LearnedWords.Bottom, 
-                                                                      95f * The_canvas.Width / 100f, 2f  * The_canvas.Width / 100f + LearnedWords.Bottom      + height, background_color);
-            FrameStatistics TotalNumbers =        new FrameStatistics(5f  * The_canvas.Width / 100f, 2f  * The_canvas.Width / 100f + InconvenientWords.Bottom, 
-                                                                      95f * The_canvas.Width / 100f, 2f  * The_canvas.Width / 100f + InconvenientWords.Bottom + height, background_color);
+            FrameStatistics DegreeOfStudy =       new FrameStatistics(5f  * pct, 5f  * pct, 60f * pct, 70f * pct,  background_color);
+            FrameStatistics CorrectAnswers =      new FrameStatistics(62f * pct, 5f  * pct, 95f * pct, 70f * pct,  background_color);
+            FrameStatistics LearnedWords =        new FrameStatistics(5f  * pct, 2f  * pct + CorrectAnswers.Bottom,     95f * pct, 2f  * pct + CorrectAnswers.Bottom    + height, background_color);
+            FrameStatistics InconvenientWords =   new FrameStatistics(5f  * pct, 2f  * pct + LearnedWords.Bottom,       95f * pct, 2f  * pct + LearnedWords.Bottom      + height, background_color);
+            FrameStatistics TotalNumbers =        new FrameStatistics(5f  * pct, 2f  * pct + InconvenientWords.Bottom,  95f * pct, 2f  * pct + InconvenientWords.Bottom + height, background_color);
             font_up  = 7f * DegreeOfStudy.Width / 100;
             font_low = 5f * DegreeOfStudy.Width / 100;
 

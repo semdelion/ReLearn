@@ -63,6 +63,7 @@ namespace ReLearn
 
         void Answer(params Button[] buttons) // подсвечиваем правильный ответ, если мы ошиблись подсвечиваем неправвильный и паравильный 
         {
+            Statistics.Count++;
             Button_enable(false);
             if (buttons[0].Text == WordDatabase[CurrentWordNumber].TranslationWord)
             {
@@ -75,25 +76,18 @@ namespace ReLearn
                 Statistics.Add(WordDatabase, CurrentWordNumber, Settings.FalseAnswer);
                 Statistics.False++;
                 buttons[0].Background = GetDrawable(Resource.Drawable.button_false);
-                for (int i = 1; i < buttons.Length; i++)
-                    if (buttons[i].Text == WordDatabase[CurrentWordNumber].TranslationWord)
-                    {
-                        buttons[i].Background = GetDrawable(Resource.Drawable.button_true);
-                        return;
-                    }
+                int index = Buttons.FindIndex(s => s.Text == WordDatabase[CurrentWordNumber].TranslationWord);
+                Buttons[index].Background = GetDrawable(Resource.Drawable.button_true);
             }
         }
 
         void Unknown()
         {
+            Statistics.Count++;
             Statistics.False++;
             Statistics.Add(WordDatabase, CurrentWordNumber, Settings.NeutralAnswer);
-            for (int i = 0; i < Buttons.Count; i++)
-                if (Buttons[i].Text == WordDatabase[CurrentWordNumber].TranslationWord)
-                {
-                    Buttons[i].Background = GetDrawable(Resource.Drawable.button_true);
-                    return;
-                }
+            int index =  Buttons.FindIndex(s => s.Text == WordDatabase[CurrentWordNumber].TranslationWord);
+            Buttons[index].Background = GetDrawable(Resource.Drawable.button_true);
         }
 
         [Java.Interop.Export("Button_Speak_Languages_Click")]
@@ -125,8 +119,6 @@ namespace ReLearn
             {
                 if (Statistics.Count < Settings.NumberOfRepeatsLanguage - 1)
                 {
-                    if (v != null)
-                        Statistics.Count++;
                     CurrentWordNumber = new System.Random(unchecked((int)(DateTime.Now.Ticks))).Next(WordDatabase.Count);
                     NextWord();
                     Button_enable(true);

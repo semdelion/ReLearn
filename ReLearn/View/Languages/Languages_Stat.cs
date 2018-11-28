@@ -2,7 +2,6 @@
 using Android.OS;
 using Android.Views;
 using Android.Graphics;
-using System.Collections.Generic;
 using Android.Graphics.Drawables;
 using Android.Content;
 using Calligraphy;
@@ -27,7 +26,7 @@ namespace ReLearn
                 Gravity = GravityFlags.CenterVertical
             };
             textView.SetTextSize(Android.Util.ComplexUnitType.Dip, 25f);                      
-            textView.SetTextColor(Color.Rgb(215,248,254));
+            textView.SetTextColor(Colors.White);
 
             ActionBar.SetDisplayOptions(ActionBarDisplayOptions.ShowCustom, ActionBarDisplayOptions.ShowCustom | ActionBarDisplayOptions.ShowTitle);
             ActionBar.SetCustomView(textView, new ActionBar.LayoutParams(ViewGroup.LayoutParams.MatchParent, ViewGroup.LayoutParams.MatchParent));
@@ -40,29 +39,22 @@ namespace ReLearn
             SetContentView(Resource.Layout.Languages_Stat);
 
             ActionBar.SetStackedBackgroundDrawable(new ColorDrawable(Color.Transparent));
-            
-
-            Graph_Statistics Stat1 = new Graph_Statistics(this, Color.Rgb(0, 255, 255), Color.Rgb(50, 60, 126), DataBase.TableNameLanguage.ToString());
+            Graph_Statistics Stat1 = new Graph_Statistics(this, Colors.Blue, Colors.DarkBlue, DataBase.TableNameLanguage.ToString());
 
             Graph_General_Statistics Stat2 = new Graph_General_Statistics(
-                this, Color.Rgb(0, 255, 255), Color.Rgb(50, 60, 126), 
+                this, Colors.Blue, Colors.DarkBlue,
                 DBStatistics.GetWords(DataBase.TableNameLanguage.ToString()),
                 "Words", DataBase.TableNameLanguage.ToString());
 
             var tab = ActionBar.NewTab();
             tab.SetIcon(Resource.Drawable.Stat1);/// icon 1
-            tab.TabSelected += (sender, args) =>
-            {
-                SetContentView(Stat1);
-            };
+            tab.TabSelected += (sender, args) => SetContentView(Stat1);
+            
             ActionBar.AddTab(tab);
 
             tab = ActionBar.NewTab();
             tab.SetIcon(Resource.Drawable.Stat2);/// icon 2
-            tab.TabSelected += (sender, args) =>
-            {
-                SetContentView(Stat2);
-            };
+            tab.TabSelected += (sender, args) => SetContentView(Stat2);
             ActionBar.AddTab(tab);
         }
         public override bool OnOptionsItemSelected(IMenuItem item)

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using Plugin.Settings;
 namespace ReLearn
@@ -27,6 +26,8 @@ namespace ReLearn
 
         public static float GetAverageNumberLearn(List<DBStatistics> Database_NL_and_D)
         {
+            if (Database_NL_and_D.Count == 0)
+                return Settings.StandardNumberOfRepeats;
             float avg_numberLearn_stat = (float)Database_NL_and_D.Sum(
                 r => r.NumberLearn > Settings.StandardNumberOfRepeats ?
                 Settings.StandardNumberOfRepeats : r.NumberLearn) / (float)Database_NL_and_D.Count;

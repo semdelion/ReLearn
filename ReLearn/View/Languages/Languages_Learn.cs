@@ -2,7 +2,6 @@
 using Android.OS;
 using Android.Views;
 using Android.Widget;
-using System;
 using Android.Content;
 using Calligraphy;
 using Android.Support.V7.App;
@@ -19,7 +18,6 @@ namespace ReLearn
         bool Voice_Enable = true;
 
         string Word {get;set;}
-
         string Text
         {
             get => FindViewById<TextView>(Resource.Id.textView_learn_en).Text;
@@ -32,8 +30,7 @@ namespace ReLearn
             if (Count < WordDatabase.Count)
             {
                 Word = WordDatabase[Count].Word;
-                Text = $"{Word}" +
-                       $"{(WordDatabase[Count].Transcription == null ? "" : $"\n\n{WordDatabase[Count].Transcription}")}" +
+                Text = $"{Word}{(WordDatabase[Count].Transcription == null ? "" : $"\n\n{WordDatabase[Count].Transcription}")}" +
                        $"\n\n{WordDatabase[Count++].TranslationWord}";
                 DBWords.UpdateLearningNext(Word);
                 if (Voice_Enable)

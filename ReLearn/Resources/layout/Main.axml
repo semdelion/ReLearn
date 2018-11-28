@@ -1,56 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-	xmlns:android="http://schemas.android.com/apk/res/android"
-	android:orientation="vertical"
-	android:layout_width="match_parent"
-	android:layout_height="match_parent"
-	android:baselineAligned="false">
+	xmlns:android			="http://schemas.android.com/apk/res/android"
+	android:orientation		="vertical"
+	android:layout_width	="match_parent"
+	android:layout_height	="match_parent"
+	android:baselineAligned	="false">
 	<android.support.v7.widget.Toolbar 
-		xmlns:app="http://schemas.android.com/apk/res-auto"		  
-		android:id="@+id/toolbarMain"
-		android:layout_width="match_parent"
-       	android:layout_height="80dp"	
-		android:theme="@style/ToolbarStyle"	
-        android:background="@drawable/toolbarMain"  
-        app:buttonGravity="bottom"	
+		xmlns:app				="http://schemas.android.com/apk/res-auto"		  
+		android:id				="@+id/toolbarMain"
+		android:theme			="@style/ToolbarStyle"	
+        android:background		="@drawable/toolbarMain" 
+		android:layout_width	="match_parent"
+       	android:layout_height	="80dp"	
+        app:buttonGravity		="bottom"	
 	/>
-	<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-		android:layout_width="match_parent"
-		android:layout_height="match_parent" >
+
+	<RelativeLayout 
+		xmlns:android			="http://schemas.android.com/apk/res/android"
+		android:layout_width	="match_parent"
+		android:layout_height	="match_parent" >
 		<LinearLayout
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:layout_centerHorizontal="true"
-			android:layout_centerVertical="true"
-			android:orientation="vertical" >
+			android:layout_width			="match_parent"
+			android:layout_height			="wrap_content"
+			android:layout_centerHorizontal	="true"
+			android:layout_centerVertical	="true"
+			android:orientation				="vertical" >
 			<Button
-				android:text="@string/Language"
-				android:layout_width="match_parent"
-				android:layout_height="80dp"
-				android:id="@+id/button_english"
-				android:layout_marginRight="25dp"
-				android:layout_marginLeft="25dp"
-				android:background="@drawable/button_style_standard"
-				android:textColor="#d7f8fe"
-				android:textSize="20dp"
-				android:height="@android:dimen/notification_large_icon_width"
-				android:gravity="center"
-				android:onClick="Button_Language_Click"/>
+				android:onClick				="Button_Language_Click"
+				android:id					="@+id/button_english"
+				android:text				="@string/Language"
+				android:background			="@drawable/button_style_standard"
+				android:height				="@android:dimen/notification_large_icon_width"			
+				android:textColor			="@color/TextWhite"
+				android:textSize			="20dp"
+				android:layout_width		="match_parent"
+				android:layout_height		="80dp"
+				android:layout_marginRight	="25dp"
+				android:layout_marginLeft	="25dp"
+				android:gravity				="center"/>
 			<Button
-				android:text="@string/Images"
-				android:layout_width="match_parent"
-				android:layout_height="80dp"
-				android:id="@+id/button_flags"
-				android:layout_marginRight="25dp"
-				android:layout_marginLeft="25dp"
-				android:layout_marginTop="20dp"
+				android:onClick				="Button_Flags_Click"
+				android:id					="@+id/button_flags"
+				android:height				="@android:dimen/notification_large_icon_width"
+				android:background			="@drawable/button_style_standard"
+				android:text				="@string/Images"
+				android:textColor			="@color/TextWhite"
+				android:textSize			="20dp"
+				android:layout_width		="match_parent"
+				android:layout_height		="80dp"
+				android:layout_marginRight	="25dp"
+				android:layout_marginLeft	="25dp"
+				android:layout_marginTop	="20dp"
 				android:layout_marginBottom ="40dp"
-				android:background="@drawable/button_style_standard"
-				android:textColor="#d7f8fe"
-				android:textSize="20dp"
-				android:height="@android:dimen/notification_large_icon_width"
-				android:gravity="center"
-				android:onClick="Button_Flags_Click"/>
+				android:gravity				="center"
+			/>
 		</LinearLayout>
 	</RelativeLayout>
 </LinearLayout>

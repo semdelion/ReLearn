@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:minWidth="25px"
-    android:minHeight="25px">
+<LinearLayout 
+	xmlns:android			="http://schemas.android.com/apk/res/android"
+    android:orientation		="vertical"
+    android:layout_width	="match_parent"
+    android:layout_height	="match_parent">
     <TextView
-		android:textSize = "25sp"
-        android:text="Text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/item_view_dictionary"/>
+		android:id				="@+id/item_view_dictionary"
+        android:text			="Text"
+		android:textSize		="25sp"
+        android:layout_width	="match_parent"
+        android:layout_height	="wrap_content"
+    />
 </LinearLayout>

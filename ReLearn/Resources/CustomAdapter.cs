@@ -1,15 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Android.Graphics;
+﻿using System.Collections.Generic;
 using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-using Java.Lang;
 
 namespace ReLearn.Resources
 {
@@ -29,7 +21,6 @@ namespace ReLearn.Resources
         public override Java.Lang.Object GetItem(int position) => list[position].Word;
         
         public override long GetItemId(int position) => list[position].NumberLearn;
-
 
         public override View GetView(int position, View convertView, ViewGroup parent)
         {

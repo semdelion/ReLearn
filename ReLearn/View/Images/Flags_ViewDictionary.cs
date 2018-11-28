@@ -1,16 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using Android.App;
-using Android.Content;
 using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-using Plugin.Settings;
 using Android.Support.V7.App;
-using Android.Graphics;
 
 namespace ReLearn
 {
@@ -68,15 +63,9 @@ namespace ReLearn
                 if (e.NewText == "")
                     DictionaryImages.Adapter = new CustomAdapter_ImageText(this, dataBase);
                 else
-                {
-                    List<DBImages> FD = new List<DBImages>();
-                    if (Settings.Currentlanguage == Language.en.ToString())
-                        FD = SearchWithGetTypeField("Name_image_en", e);
-                    else
-                        FD = SearchWithGetTypeField("Name_image_ru", e);
-
-                    DictionaryImages.Adapter = new CustomAdapter_ImageText(this, FD);
-                }
+                    DictionaryImages.Adapter = new CustomAdapter_ImageText(this, Settings.Currentlanguage == Language.en.ToString() ?
+                         SearchWithGetTypeField("Name_image_en", e) :
+                         SearchWithGetTypeField("Name_image_ru", e));
             };
 
             //DictionaryImages.ItemClick += (s, args) =>

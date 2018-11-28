@@ -1,11 +1,8 @@
-﻿using System;
-using Android.Content;
+﻿using Android.Content;
 using Calligraphy;
 using Android.App;
 using Android.OS;
 using Android.Views;
-using Android.Widget;
-using Plugin.Settings;
 using Android.Support.V7.App;
 
 namespace ReLearn

@@ -9,9 +9,9 @@ namespace ReLearn
 {
     static class DataBase
     {
-        const string Statistics_DB = "database_statistics.db3"; 
-        const string English_DB = "database_words.db3"; 
-        const string Flags_DB = "database_image.db3";
+        const string Statistics_DB  = "database_statistics.db3"; 
+        const string English_DB     = "database_words.db3"; 
+        const string Flags_DB       = "database_image.db3";
 
         public static SQLiteConnection Languages;
         public static SQLiteConnection Images;
