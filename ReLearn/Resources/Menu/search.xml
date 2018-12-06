@@ -34,6 +34,15 @@
         app:showAsAction        ="never"
         android:title           ="@string/Sort_alphabetically"
       />
+      <group
+       android:checkableBehavior="single">
+        <item
+          android:id="@+id/HideStudied"
+          android:orderInCategory="104"
+          android:checkable="true"
+          app:showAsAction="always"
+          android:title="@string/HideStudied"/>
+      </group>
     </menu>
   </item>
 </menu>
@@ -47,13 +56,7 @@
    app:showAsAction="always"
    android:title="main">
     <menu>
-      <group 
-        android:checkableBehavior="single">
-        <item
-          android:id="@+id/menuDatabase_PopularWords"
-          android:orderInCategory="103"
-          app:showAsAction="never"
-          android:title="@string/Popular_Words"/>
+     
         <item
           android:id="@+id/menuDatabase_Education"
           android:orderInCategory="102"

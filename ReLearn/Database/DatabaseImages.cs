@@ -12,7 +12,7 @@ namespace ReLearn
         Films
     }
 
-    public class DBImages // Класс для считывания базы данных flags
+    public class DBImages// Класс для считывания базы данных flags
     {
         [PrimaryKey, AutoIncrement, Column("_id")]
         public int Id { get; set; }

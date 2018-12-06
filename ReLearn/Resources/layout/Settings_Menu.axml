@@ -65,6 +65,27 @@
 		android:layout_marginRight	="20.0dp"
 		android:layout_marginLeft	="20.0dp"/>
 	<TextView
+		android:id					="@+id/TextView_TimeToBlitz"
+		android:text				="@string/Time_blitz"
+		android:textColor			="?android:attr/actionMenuTextColor"
+		android:textSize			="15dp"
+		android:layout_width		="match_parent"
+		android:layout_height		="wrap_content"
+		android:layout_marginTop	="30.0dp"
+		android:layout_marginRight	="40.0dp"
+		android:layout_marginLeft	="40.0dp"/>
+	<SeekBar
+		android:id					="@+id/SeekBarTimeToBlitz"
+		android:thumb				="@drawable/custom_thumb"
+		android:progressDrawable	="@drawable/seekbar_progressbar"
+		android:max					="90"
+		android:min					="15"
+		android:layout_marginTop	="10.0dp"
+		android:layout_width		="match_parent"
+		android:layout_height		="wrap_content"
+		android:layout_marginRight	="20.0dp"
+		android:layout_marginLeft	="20.0dp"/>
+	<TextView
 		android:onClick				="TextView_Language_Click"
 		android:id					="@+id/language"
 		android:textColor			="?android:attr/actionMenuTextColor"

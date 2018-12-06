@@ -1,8 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 
 <resources>
-  <style name   ="AppTheme" 
-         parent ="Theme.AppCompat.Light.DarkActionBar">
+  <style 
+    name   ="AppTheme" 
+    parent ="Theme.AppCompat.Light.DarkActionBar">
     <item name  ="android:windowBackground">@drawable/toolbarmainback</item>
     <item name  ="colorPrimary">@android:color/transparent</item>
     <item name  ="windowActionBar">false</item>
@@ -20,20 +21,21 @@
     <item name  ="android:colorPrimary">@android:color/transparent</item>
   </style>
   
-  <style name   ="ToolbarStyle" parent="Theme.AppCompat.NoActionBar">
+  <style  name  ="ToolbarStyle" 
+          parent="Theme.AppCompat.NoActionBar">
     <item name  ="android:textColor">#d7f8fe</item>
     <item name  ="android:colorBackground">#283544</item>
     <item name  ="android:elevation">10dp</item>    
   </style>
 
-  <style name ="ThemeStat" >
+  <style name   ="ThemeStat" >
     <item name  ="android:homeAsUpIndicator">@mipmap/arrow</item>
     <item name  ="android:itemBackground">#283544</item>
     <item name  ="android:colorPrimary">@android:color/transparent</item>
   </style>
 
-  <style name   ="MenuStyle" 
-         parent ="Theme.AppCompat.NoActionBar">
+  <style  name  ="MenuStyle" 
+          parent="Theme.AppCompat.NoActionBar">
     <item name  ="android:textColor">#d7f8fe</item>
     <item name  ="android:textSize">25dp</item>
     <item name  ="android:colorPrimary">#3F51B5</item>
@@ -42,8 +44,8 @@
     <item name  ="android:itemBackground">#283544</item>
   </style>
     
-  <style name   ="SplashTheme" 
-         parent ="@android:style/Theme.DeviceDefault.NoActionBar.TranslucentDecor">
+  <style  name  ="SplashTheme" 
+          parent="@android:style/Theme.DeviceDefault.NoActionBar.TranslucentDecor">
     <item name  ="android:windowBackground">@drawable/background_splash</item>
     <item name  ="android:windowNoTitle">true</item>
     <item name  ="android:windowFullscreen">true</item>

@@ -5,7 +5,7 @@ using SQLite;
 
 namespace ReLearn
 {
-    public class DatabaseStatistics                                // class for reading databse
+    public class DatabaseStatistics    // class for reading databse
     {
         [PrimaryKey, AutoIncrement, Column("_id")]
         public int Id { get; set; }
@@ -14,7 +14,7 @@ namespace ReLearn
         public DateTime DateOfTesting { get; set; }
     }
 
-    public class DBStatistics // Класс для считывания базы данных Stats
+    public class DBStatistics          // Класс для считывания базы данных Stats
     {
         public int NumberLearn { get; set; }
         public DateTime DateRecurrence { get; set; }

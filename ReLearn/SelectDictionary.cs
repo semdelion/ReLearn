@@ -6,14 +6,15 @@ using Android.Widget;
 
 namespace ReLearn
 {
-    class SelectDictionary
+    class Dictionaries
     {
+        public int Width { get; set; }
         public List<Bitmap> DictionariesBitmap { get; set; }
         public List<ImageView> DictionariesView { get; set; }
-        public int Width { get; set; }
+        
         public LinearLayout.LayoutParams ParmsImage { get; set; } 
 
-        public SelectDictionary(int width)
+        public Dictionaries(int width)
         {
             DictionariesBitmap = new List<Bitmap>();
             DictionariesView = new List<ImageView>();
@@ -30,21 +31,20 @@ namespace ReLearn
             canvas.DrawBitmap(firstImage, 0f, 0f, null);
             canvas.DrawBitmap(secondImage, C.X, C.Y, null);
             return result;
-            
         }
 
         public void Selected(string NewTableName, string СurrentTableName)
         {
-            int index = DictionariesView.FindIndex(s => s.Tag.ToString() == СurrentTableName);
-            DictionariesView[index].SetImageBitmap(DictionariesBitmap[index]);
+            int indexCurrent = DictionariesView.FindIndex(s => s.Tag.ToString() == СurrentTableName);
+            DictionariesView[indexCurrent].SetImageBitmap(DictionariesBitmap[indexCurrent]);
 
             using (Bitmap image1 = Bitmap.CreateBitmap(Width, Width, Bitmap.Config.Argb4444))
             {
                 Canvas baseCan = new Canvas(image1);
                 Paint paint2 = new Paint { Color = Colors.FrameBorder, AntiAlias = true };
                 baseCan.DrawCircle(Width / 2, Width / 2, Width / 2.5f, paint2);
-                int index2 = DictionariesView.FindIndex(s => s.Tag.ToString() == NewTableName);
-                DictionariesView[index2].SetImageBitmap(CreateSingleImageFromMultipleImages(image1, DictionariesBitmap[index2], new PointF(0, 0)));
+                int indexNew = DictionariesView.FindIndex(s => s.Tag.ToString() == NewTableName);
+                DictionariesView[indexNew].SetImageBitmap(CreateSingleImageFromMultipleImages(image1, DictionariesBitmap[indexNew], new PointF(0, 0)));
             }
         }
 
