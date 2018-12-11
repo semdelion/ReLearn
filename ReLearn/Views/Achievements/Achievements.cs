@@ -11,7 +11,7 @@ using Android.Gms.Auth.Api.SignIn;
 using Android.Gms.Auth.Api;
 using System;
 
-namespace ReLearn
+namespace ReLearn.Droid
 {
     [Activity(Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     [Register("com.xamarin.signinquickstart.Achievements")]

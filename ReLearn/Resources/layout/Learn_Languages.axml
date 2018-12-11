@@ -5,7 +5,6 @@
     android:orientation		="vertical"
     android:layout_width	="match_parent"
     android:layout_height	="fill_parent">
-
     <android.support.v7.widget.Toolbar
         xmlns:app				="http://schemas.android.com/apk/res-auto"		
         android:id				="@+id/toolbarLanguagesLearn"
@@ -23,10 +22,11 @@
 			android:layout_height	="match_parent"
 		/>
 	</android.support.v7.widget.Toolbar>
-
 	<TableLayout
 		android:layout_width		="match_parent"
 		android:layout_height		="match_parent"
+		android:layout_marginRight	="25.0dp"
+		android:layout_marginLeft	="25.0dp"
 		android:stretchColumns		="2">
 		<TextView
 			android:id					="@+id/textView_learn_en"
@@ -36,8 +36,6 @@
 			android:minLines			="2"
 			android:layout_width		="match_parent"
 			android:layout_height		="300dp"
-			android:layout_marginRight	="25.0dp"
-			android:layout_marginLeft	="25.0dp"
 			android:layout_marginTop	="5.0dp"
 			android:gravity				="center|center_horizontal"
 			android:defaultFocusHighlightEnabled="true"/>
@@ -50,8 +48,6 @@
 			android:textSize			="20dp"
 			android:layout_width		="match_parent"
 			android:layout_height		="55.0dp"
-			android:layout_marginRight	="25.0dp"
-			android:layout_marginLeft	="25.0dp"
 			android:layout_marginTop	="10.0dp"
 			android:gravity				="center"
 			android:keyboardNavigationCluster="false"/>
@@ -63,7 +59,6 @@
 				android:src					="@mipmap/speak_on"
 				android:layout_width		="60dp"
 				android:layout_height		="55.0dp"
-				android:layout_marginLeft	="25.0dp"
 				android:layout_marginTop	="10.0dp"
 				android:layout_gravity		="left|right|center"
 				android:gravity				="left|right|center"
@@ -78,8 +73,8 @@
 				android:layout_column		="1"
 				android:layout_width		="0dp"
 				android:layout_weight		="0.6"
+				android:layout_marginLeft	="25.0dp"
 				android:layout_height		="55.0dp"
-				android:layout_marginRight	="25.0dp"
 				android:layout_marginTop	="20.0dp"
 				android:gravity				="center"
 			/>
@@ -93,8 +88,6 @@
 			android:textSize				="20dp"
 			android:layout_width			="match_parent"
 			android:layout_height			="55.0dp"
-			android:layout_marginRight		="25.0dp"
-			android:layout_marginLeft		="25.0dp"
 			android:layout_marginTop		="20.0dp"
 			android:gravity					="center"
 			android:keyboardNavigationCluster="false" 

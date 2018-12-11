@@ -4,7 +4,7 @@ using System.IO;
 using Android.App;
 using SQLite;
 
-namespace ReLearn
+namespace ReLearn.Droid
 {
     enum TableNamesImage
     {
@@ -86,5 +86,6 @@ namespace ReLearn
 
         public static List<DBImages> GetData => DataBase.Images.Query<DBImages>($"SELECT * FROM {DataBase.TableNameImage.ToString()}");
 
+        public string ImageName { get => Settings.Currentlanguage == Language.en.ToString() ? Name_image_en : Name_image_ru; }
     }
 }

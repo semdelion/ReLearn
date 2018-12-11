@@ -8,6 +8,7 @@
   <string name="Images"             >Images</string>
   <string name="Addition"           >Addition</string>
   <string name="Repeat"             >Repeat</string>
+  <string name="Repeated"           >Repeated</string>
   <string name="Learn"              >Learn</string>
   <string name="Add_word"           >Add</string>
   <string name="Next"               >Next</string>
@@ -16,6 +17,7 @@
   <string name="Unknown"            >Unknown</string>
   <string name="NotRepeat"          >Not repeat</string>
   <string name="Instruction"        >Instruction</string>
+  <string name="Blitz"              >Blitz</string>
   <string name="Yes"                >Yes</string>
   <string name="No"                 >No</string>
   
@@ -53,6 +55,7 @@
   <string name="Number_of_word_repeats"       >Number of word repeats</string>
   <string name="Number_of_image_repeats"      >Number of image repeats</string>
   <string name="Time_blitz"           >Time to blitz</string>
+  <string name="Seconds"              >seconds</string>
   <string name="Settings"             >Settings</string>
   <string name="Language_eng"         >Language (en)</string>
   <string name="Language_rus"         >Language (ru)</string>

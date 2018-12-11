@@ -4,7 +4,7 @@ using System.IO;
 using Android.App;
 using SQLite;
 
-namespace ReLearn
+namespace ReLearn.Droid
 {
     enum TableNamesLanguage
     {

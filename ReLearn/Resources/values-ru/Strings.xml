@@ -6,7 +6,8 @@
   <string name="Language"       >Язык</string>
   <string name="Images"         >Изображения</string>
   <string name="Addition"       >Добавить</string>
-  <string name="Repeat"         >Повторино</string>
+  <string name="Repeat"         >Повторить</string>
+  <string name="Repeated"       >Повторино</string>
   <string name="Learn"          >Учить</string>
   <string name="Add_word"       >Добавить</string>
   <string name="Next"           >Дальше</string>
@@ -15,8 +16,9 @@
   <string name="Unknown"        >Не знаю</string>
   <string name="NotRepeat"      >Не повторять</string>
   <string name="Instruction"    >Инструкция</string>
-  <string name="Yes"                >Да</string>
-  <string name="No"                 >Нет</string>
+  <string name="Blitz"          >Блиц</string>
+  <string name="Yes"            >Да</string>
+  <string name="No"             >Нет</string>
 
   <!--Dictionary and description-->
 
@@ -52,6 +54,7 @@
   <string name="Number_of_word_repeats"    >Количество повторений слов</string>
   <string name="Number_of_image_repeats"   >Количество повторений изображений</string>
   <string name="Time_blitz"         >Время для блиц</string>
+  <string name="Seconds"            >секунд</string>
   <string name="Settings"           >Настройки</string>
   <string name="Language_eng"       >Язык (en)</string>
   <string name="Language_rus"       >Язык (ru)</string>

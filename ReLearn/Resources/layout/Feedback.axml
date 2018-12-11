@@ -4,7 +4,6 @@
     android:orientation		="vertical"
     android:layout_width	="match_parent"
     android:layout_height	="match_parent">
-
 	<android.support.v7.widget.Toolbar 
 		xmlns:app				="http://schemas.android.com/apk/res-auto"
 		android:id				="@+id/toolbar_Feedback"
@@ -22,13 +21,14 @@
 			android:layout_height	="match_parent"
 		/>
 	</android.support.v7.widget.Toolbar>
-
 	<ScrollView
         android:layout_width	="match_parent"
         android:layout_height	="wrap_content">
 		<TableLayout
-            android:layout_width	="match_parent"
-            android:layout_height	="match_parent">
+            android:layout_width		="match_parent"
+            android:layout_height		="match_parent"
+			android:layout_marginRight	="25.0dp"
+			android:layout_marginLeft	="25.0dp">
 			<TextView
 				android:id					="@+id/textView_Feedback"
 				android:text				="@string/Feedback_comments"
@@ -36,8 +36,6 @@
 				android:textSize			="20dp"
 				android:layout_width		="match_parent"
 				android:layout_height		="wrap_content"
-				android:layout_marginRight	="25.0dp"
-				android:layout_marginLeft	="25.0dp"
 				android:layout_marginTop	="25.0dp"
 				android:defaultFocusHighlightEnabled="true"/>
 			<EditText
@@ -50,8 +48,6 @@
 				android:textSize			="20dp"
 				android:layout_width		="match_parent"
 				android:layout_height		="229.5dp"
-				android:layout_marginRight	="25.0dp"
-				android:layout_marginLeft	="25.0dp"
 				android:layout_marginTop	="20dp"
 				android:defaultFocusHighlightEnabled="true"/>
 			<Button
@@ -65,12 +61,8 @@
 				android:gravity				="center"
 				android:layout_width		="match_parent"
 				android:layout_height		="55.0dp"
-				android:layout_marginLeft	="25.0dp"
-				android:layout_marginRight	="25.0dp"
 				android:layout_marginTop	="20dp"
-				android:layout_marginBottom	="20.0dp"
 			/>
 		</TableLayout>
 	</ScrollView>
-
 </LinearLayout>

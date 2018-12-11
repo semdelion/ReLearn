@@ -4,16 +4,29 @@ using Android.OS;
 using Android.Views;
 using Android.Support.V7.App;
 
-namespace ReLearn.Images
+namespace ReLearn.Droid.Images
 {
     [Activity(Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     class Images : AppCompatActivity
     {
         [Java.Interop.Export("Button_Images_Learn_Click")]
         public void Button_Images_Learn_Click(View v) => StartActivity(typeof(Learn));
-        
+
         [Java.Interop.Export("Button_Images_Repeat_Click")]
-        public void Button_Images_Repeat_Click(View v) => StartActivity(typeof(Repeat));
+        public void Button_Images_Repeat_Click(View v)
+        {
+            if (Settings.TypeOfRepetition == TypeOfRepetitions.Blitz && Statistics.Count == 0 && Settings.BlitzEnable)
+            {
+                Settings.TypeOfRepetition = TypeOfRepetitions.FourOptions;
+                StartActivity(typeof(BlitzPoll));
+                return;
+            }
+            else
+            {
+                Settings.TypeOfRepetition = TypeOfRepetitions.Blitz;
+                StartActivity(typeof(Repeat));
+            }
+        }
              
         protected override void OnCreate(Bundle savedInstanceState)
         {

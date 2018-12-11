@@ -1,7 +1,7 @@
 ﻿using System;
 using Plugin.Settings;
 
-namespace ReLearn
+namespace ReLearn.Droid
 {
     enum DBSettings
     {
@@ -15,8 +15,11 @@ namespace ReLearn
         Count,
         True,
         False,
-        HideStudied
+        HideStudied,
+        TypeOfRepetition,
+        BlitzEnable
     }
+
     enum Language
     {
         en,
@@ -27,6 +30,12 @@ namespace ReLearn
     {
         en,
         uk
+    }
+
+    enum TypeOfRepetitions
+    {
+        FourOptions,
+        Blitz
     }
 
     static class Settings // Маааагия!
@@ -52,7 +61,7 @@ namespace ReLearn
 
         public static int TimeToBlitz
         {
-            get => Convert.ToInt32(CrossSettings.Current.GetValueOrDefault(DBSettings.TimeToBlitz.ToString(), 45));
+            get => CrossSettings.Current.GetValueOrDefault(DBSettings.TimeToBlitz.ToString(), 45);
             set => CrossSettings.Current.AddOrUpdateValue(DBSettings.TimeToBlitz.ToString(), value);
         }
 
@@ -66,6 +75,22 @@ namespace ReLearn
         {
             get => CrossSettings.Current.GetValueOrDefault(DBSettings.Language.ToString(), Language.en.ToString());
             set => CrossSettings.Current.AddOrUpdateValue(DBSettings.Language.ToString(), Convert.ToString(value));
+        }
+
+        public static bool BlitzEnable
+        {
+            get => CrossSettings.Current.GetValueOrDefault(DBSettings.BlitzEnable.ToString(), true);
+            set => CrossSettings.Current.AddOrUpdateValue(DBSettings.BlitzEnable.ToString(), value);
+        }
+
+        public static TypeOfRepetitions TypeOfRepetition
+        {
+            get
+            {
+                Enum.TryParse(CrossSettings.Current.GetValueOrDefault(DBSettings.TypeOfRepetition.ToString(), TypeOfRepetitions.FourOptions.ToString()), out TypeOfRepetitions name);
+                return name;
+            }
+            set => CrossSettings.Current.AddOrUpdateValue(DBSettings.TypeOfRepetition.ToString(), Convert.ToString(value));
         }
     }
 }

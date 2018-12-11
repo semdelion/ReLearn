@@ -2,7 +2,7 @@
 using Android.Graphics;
 using Android.OS;
 
-namespace ReLearn
+namespace ReLearn.Droid
 {
     [Activity(
         Label = "@string/app_name", 

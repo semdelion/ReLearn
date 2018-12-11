@@ -2047,62 +2047,65 @@ namespace ReLearn
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f0c00e6
-			public const int ABC = 2131493094;
+			// aapt resource value: 0x7f0c00ec
+			public const int ABC = 2131493100;
 			
 			// aapt resource value: 0x7f0c002d
 			public const int ALT = 2131492909;
 			
+			// aapt resource value: 0x7f0c0082
+			public const int BlitzPoll_toolbar_textview = 2131492994;
+			
 			// aapt resource value: 0x7f0c007c
-			public const int BlitzPoll_toolbar_textview = 2131492988;
+			public const int BlitzPoll_toolbar_textview_images = 2131492988;
 			
-			// aapt resource value: 0x7f0c0081
-			public const int Button_SpeakBlitz_Languages = 2131492993;
+			// aapt resource value: 0x7f0c00cc
+			public const int Button_Speak_Languages = 2131493068;
 			
-			// aapt resource value: 0x7f0c00c7
-			public const int Button_Speak_Languages = 2131493063;
-			
-			// aapt resource value: 0x7f0c009d
-			public const int Button_Speak_TurnOn_TurnOff = 2131493021;
+			// aapt resource value: 0x7f0c00a2
+			public const int Button_Speak_TurnOn_TurnOff = 2131493026;
 			
 			// aapt resource value: 0x7f0c002e
 			public const int CTRL = 2131492910;
 			
-			// aapt resource value: 0x7f0c00dc
-			public const int Deleteword = 2131493084;
+			// aapt resource value: 0x7f0c00e2
+			public const int Deleteword = 2131493090;
 			
 			// aapt resource value: 0x7f0c002f
 			public const int FUNCTION = 2131492911;
 			
-			// aapt resource value: 0x7f0c00ea
-			public const int Feedback = 2131493098;
+			// aapt resource value: 0x7f0c00f0
+			public const int Feedback = 2131493104;
 			
-			// aapt resource value: 0x7f0c00ca
-			public const int FlagsSelectDictionary = 2131493066;
+			// aapt resource value: 0x7f0c00cf
+			public const int FlagsSelectDictionary = 2131493071;
 			
-			// aapt resource value: 0x7f0c00e7
-			public const int HideStudied = 2131493095;
+			// aapt resource value: 0x7f0c00ed
+			public const int HideStudied = 2131493101;
 			
-			// aapt resource value: 0x7f0c00cc
-			public const int LanguageSelectDictionary = 2131493068;
+			// aapt resource value: 0x7f0c00d1
+			public const int LanguageSelectDictionary = 2131493073;
 			
 			// aapt resource value: 0x7f0c0030
 			public const int META = 2131492912;
 			
-			// aapt resource value: 0x7f0c00da
-			public const int MenuEnglishSelectDictionary = 2131493082;
+			// aapt resource value: 0x7f0c00e0
+			public const int MenuEnglishSelectDictionary = 2131493088;
 			
-			// aapt resource value: 0x7f0c00df
-			public const int MenuFlagsSelectDictionary = 2131493087;
+			// aapt resource value: 0x7f0c00e5
+			public const int MenuFlagsSelectDictionary = 2131493093;
 			
 			// aapt resource value: 0x7f0c007a
-			public const int RelativeLayoutLanguagesBlitzPoll = 2131492986;
+			public const int RelativeLayoutImagesBlitzPoll = 2131492986;
 			
-			// aapt resource value: 0x7f0c00c0
-			public const int Repeat_toolbar_textview = 2131493056;
+			// aapt resource value: 0x7f0c0080
+			public const int RelativeLayoutLanguagesBlitzPoll = 2131492992;
 			
-			// aapt resource value: 0x7f0c00b7
-			public const int Repeat_toolbar_textview_fl = 2131493047;
+			// aapt resource value: 0x7f0c00c5
+			public const int Repeat_toolbar_textview = 2131493061;
+			
+			// aapt resource value: 0x7f0c00bc
+			public const int Repeat_toolbar_textview_fl = 2131493052;
 			
 			// aapt resource value: 0x7f0c0031
 			public const int SHIFT = 2131492913;
@@ -2110,44 +2113,47 @@ namespace ReLearn
 			// aapt resource value: 0x7f0c0032
 			public const int SYM = 2131492914;
 			
-			// aapt resource value: 0x7f0c00d1
-			public const int SeekBarCountRepeatImages = 2131493073;
+			// aapt resource value: 0x7f0c00d6
+			public const int SeekBarCountRepeatImages = 2131493078;
 			
-			// aapt resource value: 0x7f0c00cf
-			public const int SeekBarCountRepeatLenguage = 2131493071;
+			// aapt resource value: 0x7f0c00d4
+			public const int SeekBarCountRepeatLenguage = 2131493076;
+			
+			// aapt resource value: 0x7f0c00d8
+			public const int SeekBarTimeToBlitz = 2131493080;
+			
+			// aapt resource value: 0x7f0c00ef
+			public const int Settings_Menu = 2131493103;
+			
+			// aapt resource value: 0x7f0c00e3
+			public const int Stats = 2131493091;
+			
+			// aapt resource value: 0x7f0c00e7
+			public const int Stats_Flags = 2131493095;
+			
+			// aapt resource value: 0x7f0c00db
+			public const int SwitchBlitz = 2131493083;
+			
+			// aapt resource value: 0x7f0c00d7
+			public const int TextView_TimeToBlitz = 2131493079;
+			
+			// aapt resource value: 0x7f0c00d5
+			public const int TextView_number_of_image_repeats = 2131493077;
 			
 			// aapt resource value: 0x7f0c00d3
-			public const int SeekBarTimeToBlitz = 2131493075;
+			public const int TextView_number_of_word_repeats = 2131493075;
 			
-			// aapt resource value: 0x7f0c00e9
-			public const int Settings_Menu = 2131493097;
+			// aapt resource value: 0x7f0c00e6
+			public const int View_dictionary_image = 2131493094;
 			
-			// aapt resource value: 0x7f0c00dd
-			public const int Stats = 2131493085;
+			// aapt resource value: 0x7f0c00f1
+			public const int about_us = 2131493105;
 			
-			// aapt resource value: 0x7f0c00e1
-			public const int Stats_Flags = 2131493089;
+			// aapt resource value: 0x7f0c00ee
+			public const int achievements = 2131493102;
 			
-			// aapt resource value: 0x7f0c00d2
-			public const int TextView_TimeToBlitz = 2131493074;
-			
-			// aapt resource value: 0x7f0c00d0
-			public const int TextView_number_of_image_repeats = 2131493072;
-			
-			// aapt resource value: 0x7f0c00ce
-			public const int TextView_number_of_word_repeats = 2131493070;
-			
-			// aapt resource value: 0x7f0c00e0
-			public const int View_dictionary_image = 2131493088;
-			
-			// aapt resource value: 0x7f0c00eb
-			public const int about_us = 2131493099;
-			
-			// aapt resource value: 0x7f0c00e8
-			public const int achievements = 2131493096;
-			
-			// aapt resource value: 0x7f0c00a6
-			public const int action0 = 2131493030;
+			// aapt resource value: 0x7f0c00ab
+			public const int action0 = 2131493035;
 			
 			// aapt resource value: 0x7f0c0060
 			public const int action_bar = 2131492960;
@@ -2170,17 +2176,17 @@ namespace ReLearn
 			// aapt resource value: 0x7f0c003e
 			public const int action_bar_title = 2131492926;
 			
-			// aapt resource value: 0x7f0c00a3
-			public const int action_container = 2131493027;
+			// aapt resource value: 0x7f0c00a8
+			public const int action_container = 2131493032;
 			
 			// aapt resource value: 0x7f0c0061
 			public const int action_context_bar = 2131492961;
 			
-			// aapt resource value: 0x7f0c00aa
-			public const int action_divider = 2131493034;
+			// aapt resource value: 0x7f0c00af
+			public const int action_divider = 2131493039;
 			
-			// aapt resource value: 0x7f0c00a4
-			public const int action_image = 2131493028;
+			// aapt resource value: 0x7f0c00a9
+			public const int action_image = 2131493033;
 			
 			// aapt resource value: 0x7f0c0002
 			public const int action_menu_divider = 2131492866;
@@ -2197,14 +2203,14 @@ namespace ReLearn
 			// aapt resource value: 0x7f0c0040
 			public const int action_mode_close_button = 2131492928;
 			
-			// aapt resource value: 0x7f0c00e2
-			public const int action_search = 2131493090;
+			// aapt resource value: 0x7f0c00e8
+			public const int action_search = 2131493096;
 			
-			// aapt resource value: 0x7f0c00a5
-			public const int action_text = 2131493029;
+			// aapt resource value: 0x7f0c00aa
+			public const int action_text = 2131493034;
 			
-			// aapt resource value: 0x7f0c00b3
-			public const int actions = 2131493043;
+			// aapt resource value: 0x7f0c00b8
+			public const int actions = 2131493048;
 			
 			// aapt resource value: 0x7f0c0041
 			public const int activity_chooser_view_content = 2131492929;
@@ -2242,101 +2248,107 @@ namespace ReLearn
 			// aapt resource value: 0x7f0c0047
 			public const int buttonPanel = 2131492935;
 			
-			// aapt resource value: 0x7f0c00bd
-			public const int button_I_Next = 2131493053;
+			// aapt resource value: 0x7f0c00c2
+			public const int button_I_Next = 2131493058;
 			
-			// aapt resource value: 0x7f0c00b9
-			public const int button_I_choice1 = 2131493049;
+			// aapt resource value: 0x7f0c00be
+			public const int button_I_choice1 = 2131493054;
 			
-			// aapt resource value: 0x7f0c00ba
-			public const int button_I_choice2 = 2131493050;
+			// aapt resource value: 0x7f0c00bf
+			public const int button_I_choice2 = 2131493055;
 			
-			// aapt resource value: 0x7f0c00bb
-			public const int button_I_choice3 = 2131493051;
+			// aapt resource value: 0x7f0c00c0
+			public const int button_I_choice3 = 2131493056;
 			
-			// aapt resource value: 0x7f0c00bc
-			public const int button_I_choice4 = 2131493052;
+			// aapt resource value: 0x7f0c00c1
+			public const int button_I_choice4 = 2131493057;
 			
-			// aapt resource value: 0x7f0c0098
-			public const int button_I_learn_Next = 2131493016;
+			// aapt resource value: 0x7f0c009d
+			public const int button_I_learn_Next = 2131493021;
 			
-			// aapt resource value: 0x7f0c008b
-			public const int button_Images_learn = 2131493003;
-			
-			// aapt resource value: 0x7f0c008a
-			public const int button_Images_repeat = 2131493002;
-			
-			// aapt resource value: 0x7f0c00c8
-			public const int button_Languages_Next = 2131493064;
+			// aapt resource value: 0x7f0c007e
+			public const int button_Images_No = 2131492990;
 			
 			// aapt resource value: 0x7f0c007f
-			public const int button_Languages_No = 2131492991;
+			public const int button_Images_Yes = 2131492991;
 			
-			// aapt resource value: 0x7f0c0080
-			public const int button_Languages_Yes = 2131492992;
+			// aapt resource value: 0x7f0c0090
+			public const int button_Images_learn = 2131493008;
 			
-			// aapt resource value: 0x7f0c00c3
-			public const int button_Languages_choice1 = 2131493059;
+			// aapt resource value: 0x7f0c008f
+			public const int button_Images_repeat = 2131493007;
 			
-			// aapt resource value: 0x7f0c00c4
-			public const int button_Languages_choice2 = 2131493060;
+			// aapt resource value: 0x7f0c00cd
+			public const int button_Languages_Next = 2131493069;
 			
-			// aapt resource value: 0x7f0c00c5
-			public const int button_Languages_choice3 = 2131493061;
+			// aapt resource value: 0x7f0c0085
+			public const int button_Languages_No = 2131492997;
 			
-			// aapt resource value: 0x7f0c00c6
-			public const int button_Languages_choice4 = 2131493062;
+			// aapt resource value: 0x7f0c0086
+			public const int button_Languages_Yes = 2131492998;
 			
-			// aapt resource value: 0x7f0c0099
-			public const int button_NotRepeat_Images = 2131493017;
+			// aapt resource value: 0x7f0c00c8
+			public const int button_Languages_choice1 = 2131493064;
 			
-			// aapt resource value: 0x7f0c009f
-			public const int button_NotRepeat_languages = 2131493023;
+			// aapt resource value: 0x7f0c00c9
+			public const int button_Languages_choice2 = 2131493065;
 			
-			// aapt resource value: 0x7f0c0088
-			public const int button_Send = 2131493000;
+			// aapt resource value: 0x7f0c00ca
+			public const int button_Languages_choice3 = 2131493066;
 			
-			// aapt resource value: 0x7f0c0084
-			public const int button_add_DictionaryReplenishment = 2131492996;
+			// aapt resource value: 0x7f0c00cb
+			public const int button_Languages_choice4 = 2131493067;
+			
+			// aapt resource value: 0x7f0c009e
+			public const int button_NotRepeat_Images = 2131493022;
+			
+			// aapt resource value: 0x7f0c00a4
+			public const int button_NotRepeat_languages = 2131493028;
+			
+			// aapt resource value: 0x7f0c008d
+			public const int button_Send = 2131493005;
+			
+			// aapt resource value: 0x7f0c0089
+			public const int button_add_DictionaryReplenishment = 2131493001;
 			
 			// aapt resource value: 0x7f0c0078
 			public const int button_add_word = 2131492984;
 			
+			// aapt resource value: 0x7f0c00a6
+			public const int button_english = 2131493030;
+			
+			// aapt resource value: 0x7f0c00a7
+			public const int button_flags = 2131493031;
+			
+			// aapt resource value: 0x7f0c0098
+			public const int button_languages_add = 2131493016;
+			
+			// aapt resource value: 0x7f0c0097
+			public const int button_languages_learn = 2131493015;
+			
+			// aapt resource value: 0x7f0c0096
+			public const int button_languages_repeat = 2131493014;
+			
 			// aapt resource value: 0x7f0c00a1
-			public const int button_english = 2131493025;
-			
-			// aapt resource value: 0x7f0c00a2
-			public const int button_flags = 2131493026;
-			
-			// aapt resource value: 0x7f0c0093
-			public const int button_languages_add = 2131493011;
-			
-			// aapt resource value: 0x7f0c0092
-			public const int button_languages_learn = 2131493010;
-			
-			// aapt resource value: 0x7f0c0091
-			public const int button_languages_repeat = 2131493009;
-			
-			// aapt resource value: 0x7f0c009c
-			public const int button_learn_languages = 2131493020;
+			public const int button_learn_languages = 2131493025;
 			
 			// aapt resource value: 0x7f0c0071
 			public const int button_support_project = 2131492977;
 			
-			// aapt resource value: 0x7f0c009e
-			public const int button_voice = 2131493022;
+			// aapt resource value: 0x7f0c00a3
+			public const int button_voice = 2131493027;
 			
 			// aapt resource value: 0x7f0c000f
 			public const int calligraphy_tag_id = 2131492879;
 			
-			// aapt resource value: 0x7f0c00a7
-			public const int cancel_action = 2131493031;
+			// aapt resource value: 0x7f0c00ac
+			public const int cancel_action = 2131493036;
 			
 			// aapt resource value: 0x7f0c0057
 			public const int checkbox = 2131492951;
 			
-			// aapt resource value: 0x7f0c00af
-			public const int chronometer = 2131493039;
+			// aapt resource value: 0x7f0c00b4
+			public const int chronometer = 2131493044;
 			
 			// aapt resource value: 0x7f0c0034
 			public const int collapseActionView = 2131492916;
@@ -2359,26 +2371,26 @@ namespace ReLearn
 			// aapt resource value: 0x7f0c005e
 			public const int decor_content_parent = 2131492958;
 			
-			// aapt resource value: 0x7f0c00e5
-			public const int decrease = 2131493093;
+			// aapt resource value: 0x7f0c00eb
+			public const int decrease = 2131493099;
 			
 			// aapt resource value: 0x7f0c0044
 			public const int default_activity_button = 2131492932;
 			
-			// aapt resource value: 0x7f0c00de
-			public const int dictionary_replenishment = 2131493086;
+			// aapt resource value: 0x7f0c00e4
+			public const int dictionary_replenishment = 2131493092;
 			
-			// aapt resource value: 0x7f0c00d9
-			public const int dictionary_replenishment_instruction = 2131493081;
+			// aapt resource value: 0x7f0c00df
+			public const int dictionary_replenishment_instruction = 2131493087;
 			
 			// aapt resource value: 0x7f0c001c
 			public const int disableHome = 2131492892;
 			
-			// aapt resource value: 0x7f0c0083
-			public const int editText_DictionaryReplenishment = 2131492995;
+			// aapt resource value: 0x7f0c0088
+			public const int editText_DictionaryReplenishment = 2131493000;
 			
-			// aapt resource value: 0x7f0c0087
-			public const int editText_Feedback = 2131492999;
+			// aapt resource value: 0x7f0c008c
+			public const int editText_Feedback = 2131493004;
 			
 			// aapt resource value: 0x7f0c0076
 			public const int editText_foreign_word = 2131492982;
@@ -2392,8 +2404,8 @@ namespace ReLearn
 			// aapt resource value: 0x7f0c002b
 			public const int end = 2131492907;
 			
-			// aapt resource value: 0x7f0c00b5
-			public const int end_padder = 2131493045;
+			// aapt resource value: 0x7f0c00ba
+			public const int end_padder = 2131493050;
 			
 			// aapt resource value: 0x7f0c0042
 			public const int expand_activities_button = 2131492930;
@@ -2413,8 +2425,8 @@ namespace ReLearn
 			// aapt resource value: 0x7f0c0046
 			public const int icon = 2131492934;
 			
-			// aapt resource value: 0x7f0c00b4
-			public const int icon_group = 2131493044;
+			// aapt resource value: 0x7f0c00b9
+			public const int icon_group = 2131493049;
 			
 			// aapt resource value: 0x7f0c0013
 			public const int icon_only = 2131492883;
@@ -2425,35 +2437,35 @@ namespace ReLearn
 			// aapt resource value: 0x7f0c0043
 			public const int image = 2131492931;
 			
-			// aapt resource value: 0x7f0c008c
-			public const int imageView_Alert_BigImage = 2131493004;
+			// aapt resource value: 0x7f0c0091
+			public const int imageView_Alert_BigImage = 2131493009;
 			
-			// aapt resource value: 0x7f0c0096
-			public const int imageView_Images_learn = 2131493014;
+			// aapt resource value: 0x7f0c009b
+			public const int imageView_Images_learn = 2131493019;
 			
-			// aapt resource value: 0x7f0c00b8
-			public const int imageView_Images_repeat = 2131493048;
+			// aapt resource value: 0x7f0c00bd
+			public const int imageView_Images_repeat = 2131493053;
 			
-			// aapt resource value: 0x7f0c008d
-			public const int imageView_item_view_dictionary = 2131493005;
+			// aapt resource value: 0x7f0c0092
+			public const int imageView_item_view_dictionary = 2131493010;
 			
 			// aapt resource value: 0x7f0c0079
 			public const int imgCustomToast = 2131492985;
 			
-			// aapt resource value: 0x7f0c00e4
-			public const int increase = 2131493092;
+			// aapt resource value: 0x7f0c00ea
+			public const int increase = 2131493098;
 			
-			// aapt resource value: 0x7f0c00b0
-			public const int info = 2131493040;
+			// aapt resource value: 0x7f0c00b5
+			public const int info = 2131493045;
 			
 			// aapt resource value: 0x7f0c003d
 			public const int italic = 2131492925;
 			
-			// aapt resource value: 0x7f0c008f
-			public const int item_view_dictionary = 2131493007;
+			// aapt resource value: 0x7f0c0094
+			public const int item_view_dictionary = 2131493012;
 			
-			// aapt resource value: 0x7f0c00d4
-			public const int language = 2131493076;
+			// aapt resource value: 0x7f0c00d9
+			public const int language = 2131493081;
 			
 			// aapt resource value: 0x7f0c0018
 			public const int light = 2131492888;
@@ -2464,26 +2476,26 @@ namespace ReLearn
 			// aapt resource value: 0x7f0c000a
 			public const int line3 = 2131492874;
 			
-			// aapt resource value: 0x7f0c00be
-			public const int linearLayout1 = 2131493054;
+			// aapt resource value: 0x7f0c00c3
+			public const int linearLayout1 = 2131493059;
 			
 			// aapt resource value: 0x7f0c0019
 			public const int listMode = 2131492889;
 			
-			// aapt resource value: 0x7f0c00d8
-			public const int listView_dictionary = 2131493080;
+			// aapt resource value: 0x7f0c00de
+			public const int listView_dictionary = 2131493086;
 			
 			// aapt resource value: 0x7f0c0045
 			public const int list_item = 2131492933;
 			
-			// aapt resource value: 0x7f0c00a9
-			public const int media_actions = 2131493033;
+			// aapt resource value: 0x7f0c00ae
+			public const int media_actions = 2131493038;
 			
-			// aapt resource value: 0x7f0c00e3
-			public const int menuDelSort = 2131493091;
+			// aapt resource value: 0x7f0c00e9
+			public const int menuDelSort = 2131493097;
 			
-			// aapt resource value: 0x7f0c00d6
-			public const int message = 2131493078;
+			// aapt resource value: 0x7f0c00dc
+			public const int message = 2131493084;
 			
 			// aapt resource value: 0x7f0c002c
 			public const int middle = 2131492908;
@@ -2500,14 +2512,14 @@ namespace ReLearn
 			// aapt resource value: 0x7f0c001a
 			public const int normal = 2131492890;
 			
-			// aapt resource value: 0x7f0c00b2
-			public const int notification_background = 2131493042;
+			// aapt resource value: 0x7f0c00b7
+			public const int notification_background = 2131493047;
 			
-			// aapt resource value: 0x7f0c00ac
-			public const int notification_main_column = 2131493036;
+			// aapt resource value: 0x7f0c00b1
+			public const int notification_main_column = 2131493041;
 			
-			// aapt resource value: 0x7f0c00ab
-			public const int notification_main_column_container = 2131493035;
+			// aapt resource value: 0x7f0c00b0
+			public const int notification_main_column_container = 2131493040;
 			
 			// aapt resource value: 0x7f0c0049
 			public const int parentPanel = 2131492937;
@@ -2518,17 +2530,17 @@ namespace ReLearn
 			// aapt resource value: 0x7f0c0006
 			public const int progress_horizontal = 2131492870;
 			
-			// aapt resource value: 0x7f0c00d5
-			public const int pronunciation = 2131493077;
+			// aapt resource value: 0x7f0c00da
+			public const int pronunciation = 2131493082;
 			
 			// aapt resource value: 0x7f0c0059
 			public const int radio = 2131492953;
 			
-			// aapt resource value: 0x7f0c00b1
-			public const int right_icon = 2131493041;
+			// aapt resource value: 0x7f0c00b6
+			public const int right_icon = 2131493046;
 			
-			// aapt resource value: 0x7f0c00ad
-			public const int right_side = 2131493037;
+			// aapt resource value: 0x7f0c00b2
+			public const int right_side = 2131493042;
 			
 			// aapt resource value: 0x7f0c0024
 			public const int screen = 2131492900;
@@ -2542,11 +2554,11 @@ namespace ReLearn
 			// aapt resource value: 0x7f0c004c
 			public const int scrollView = 2131492940;
 			
-			// aapt resource value: 0x7f0c00c1
-			public const int scrollView1 = 2131493057;
+			// aapt resource value: 0x7f0c00c6
+			public const int scrollView1 = 2131493062;
 			
-			// aapt resource value: 0x7f0c0095
-			public const int scrollView2 = 2131493013;
+			// aapt resource value: 0x7f0c009a
+			public const int scrollView2 = 2131493018;
 			
 			// aapt resource value: 0x7f0c0064
 			public const int search_badge = 2131492964;
@@ -2581,8 +2593,8 @@ namespace ReLearn
 			// aapt resource value: 0x7f0c006e
 			public const int select_dialog_listview = 2131492974;
 			
-			// aapt resource value: 0x7f0c00db
-			public const int settings = 2131493083;
+			// aapt resource value: 0x7f0c00e1
+			public const int settings = 2131493089;
 			
 			// aapt resource value: 0x7f0c0058
 			public const int shortcut = 2131492952;
@@ -2617,8 +2629,8 @@ namespace ReLearn
 			// aapt resource value: 0x7f0c0014
 			public const int standard = 2131492884;
 			
-			// aapt resource value: 0x7f0c00a8
-			public const int status_bar_latest_event_content = 2131493032;
+			// aapt resource value: 0x7f0c00ad
+			public const int status_bar_latest_event_content = 2131493037;
 			
 			// aapt resource value: 0x7f0c005a
 			public const int submenuarrow = 2131492954;
@@ -2644,32 +2656,35 @@ namespace ReLearn
 			// aapt resource value: 0x7f0c004d
 			public const int textSpacerNoTitle = 2131492941;
 			
-			// aapt resource value: 0x7f0c00c2
-			public const int textView_Eng_Word = 2131493058;
+			// aapt resource value: 0x7f0c00c7
+			public const int textView_Eng_Word = 2131493063;
 			
-			// aapt resource value: 0x7f0c0086
-			public const int textView_Feedback = 2131492998;
+			// aapt resource value: 0x7f0c008b
+			public const int textView_Feedback = 2131493003;
 			
-			// aapt resource value: 0x7f0c0097
-			public const int textView_Images_learn = 2131493015;
+			// aapt resource value: 0x7f0c009c
+			public const int textView_Images_learn = 2131493020;
 			
 			// aapt resource value: 0x7f0c007d
-			public const int textView_Timer_language = 2131492989;
+			public const int textView_Timer_Images = 2131492989;
 			
-			// aapt resource value: 0x7f0c007e
-			public const int textView_Word_BlitzPoll = 2131492990;
+			// aapt resource value: 0x7f0c0083
+			public const int textView_Timer_language = 2131492995;
+			
+			// aapt resource value: 0x7f0c0084
+			public const int textView_Word_BlitzPoll = 2131492996;
 			
 			// aapt resource value: 0x7f0c0070
 			public const int textView_about_us = 2131492976;
 			
-			// aapt resource value: 0x7f0c008e
-			public const int textView_item_view_dictionary = 2131493006;
+			// aapt resource value: 0x7f0c0093
+			public const int textView_item_view_dictionary = 2131493011;
 			
-			// aapt resource value: 0x7f0c009b
-			public const int textView_learn_en = 2131493019;
+			// aapt resource value: 0x7f0c00a0
+			public const int textView_learn_en = 2131493024;
 			
-			// aapt resource value: 0x7f0c00ae
-			public const int time = 2131493038;
+			// aapt resource value: 0x7f0c00b3
+			public const int time = 2131493043;
 			
 			// aapt resource value: 0x7f0c000e
 			public const int title = 2131492878;
@@ -2680,47 +2695,50 @@ namespace ReLearn
 			// aapt resource value: 0x7f0c0053
 			public const int title_template = 2131492947;
 			
-			// aapt resource value: 0x7f0c0082
-			public const int toolbarDictionaryReplenishment = 2131492994;
+			// aapt resource value: 0x7f0c0087
+			public const int toolbarDictionaryReplenishment = 2131492999;
 			
 			// aapt resource value: 0x7f0c0075
 			public const int toolbarEnglishAdd = 2131492981;
 			
-			// aapt resource value: 0x7f0c00c9
-			public const int toolbarFlagsSelectDictionary = 2131493065;
+			// aapt resource value: 0x7f0c00ce
+			public const int toolbarFlagsSelectDictionary = 2131493070;
 			
-			// aapt resource value: 0x7f0c0089
-			public const int toolbarImages = 2131493001;
-			
-			// aapt resource value: 0x7f0c0094
-			public const int toolbarImagesLearn = 2131493012;
-			
-			// aapt resource value: 0x7f0c00b6
-			public const int toolbarImagesRepeat = 2131493046;
-			
-			// aapt resource value: 0x7f0c0090
-			public const int toolbarLanguages = 2131493008;
+			// aapt resource value: 0x7f0c008e
+			public const int toolbarImages = 2131493006;
 			
 			// aapt resource value: 0x7f0c007b
-			public const int toolbarLanguagesBlitzPoll = 2131492987;
+			public const int toolbarImagesBlitzPoll = 2131492987;
 			
-			// aapt resource value: 0x7f0c00d7
-			public const int toolbarLanguagesDelete = 2131493079;
+			// aapt resource value: 0x7f0c0099
+			public const int toolbarImagesLearn = 2131493017;
 			
-			// aapt resource value: 0x7f0c009a
-			public const int toolbarLanguagesLearn = 2131493018;
+			// aapt resource value: 0x7f0c00bb
+			public const int toolbarImagesRepeat = 2131493051;
 			
-			// aapt resource value: 0x7f0c00bf
-			public const int toolbarLanguagesRepeat = 2131493055;
+			// aapt resource value: 0x7f0c0095
+			public const int toolbarLanguages = 2131493013;
 			
-			// aapt resource value: 0x7f0c00cb
-			public const int toolbarLanguages_SelectDictionary = 2131493067;
+			// aapt resource value: 0x7f0c0081
+			public const int toolbarLanguagesBlitzPoll = 2131492993;
 			
-			// aapt resource value: 0x7f0c00a0
-			public const int toolbarMain = 2131493024;
+			// aapt resource value: 0x7f0c00dd
+			public const int toolbarLanguagesDelete = 2131493085;
 			
-			// aapt resource value: 0x7f0c00cd
-			public const int toolbarSetting = 2131493069;
+			// aapt resource value: 0x7f0c009f
+			public const int toolbarLanguagesLearn = 2131493023;
+			
+			// aapt resource value: 0x7f0c00c4
+			public const int toolbarLanguagesRepeat = 2131493060;
+			
+			// aapt resource value: 0x7f0c00d0
+			public const int toolbarLanguages_SelectDictionary = 2131493072;
+			
+			// aapt resource value: 0x7f0c00a5
+			public const int toolbarMain = 2131493029;
+			
+			// aapt resource value: 0x7f0c00d2
+			public const int toolbarSetting = 2131493074;
 			
 			// aapt resource value: 0x7f0c006f
 			public const int toolbar_About_Us = 2131492975;
@@ -2728,8 +2746,8 @@ namespace ReLearn
 			// aapt resource value: 0x7f0c0073
 			public const int toolbar_Achievements = 2131492979;
 			
-			// aapt resource value: 0x7f0c0085
-			public const int toolbar_Feedback = 2131492997;
+			// aapt resource value: 0x7f0c008a
+			public const int toolbar_Feedback = 2131493002;
 			
 			// aapt resource value: 0x7f0c0039
 			public const int top = 2131492921;
@@ -2890,118 +2908,121 @@ namespace ReLearn
 			public const int AlertImage = 2130968605;
 			
 			// aapt resource value: 0x7f04001e
-			public const int BlitzPoll_Languages = 2130968606;
+			public const int BlitzPoll_Image = 2130968606;
 			
 			// aapt resource value: 0x7f04001f
-			public const int DictionaryReplenishment_Languages = 2130968607;
+			public const int BlitzPoll_Languages = 2130968607;
 			
 			// aapt resource value: 0x7f040020
-			public const int Feedback = 2130968608;
+			public const int DictionaryReplenishment_Languages = 2130968608;
 			
 			// aapt resource value: 0x7f040021
-			public const int Images = 2130968609;
+			public const int Feedback = 2130968609;
 			
 			// aapt resource value: 0x7f040022
-			public const int ItemAlertBig_Images = 2130968610;
+			public const int Images = 2130968610;
 			
 			// aapt resource value: 0x7f040023
-			public const int ItemViewDictionary_Images = 2130968611;
+			public const int ItemAlertBig_Images = 2130968611;
 			
 			// aapt resource value: 0x7f040024
-			public const int ItemViewDictionary_Languages = 2130968612;
+			public const int ItemViewDictionary_Images = 2130968612;
 			
 			// aapt resource value: 0x7f040025
-			public const int Languages = 2130968613;
+			public const int ItemViewDictionary_Languages = 2130968613;
 			
 			// aapt resource value: 0x7f040026
-			public const int Learn_Images = 2130968614;
+			public const int Languages = 2130968614;
 			
 			// aapt resource value: 0x7f040027
-			public const int Learn_Languages = 2130968615;
+			public const int Learn_Images = 2130968615;
 			
 			// aapt resource value: 0x7f040028
-			public const int Main = 2130968616;
+			public const int Learn_Languages = 2130968616;
 			
 			// aapt resource value: 0x7f040029
-			public const int notification_action = 2130968617;
+			public const int Main = 2130968617;
 			
 			// aapt resource value: 0x7f04002a
-			public const int notification_action_tombstone = 2130968618;
+			public const int notification_action = 2130968618;
 			
 			// aapt resource value: 0x7f04002b
-			public const int notification_media_action = 2130968619;
+			public const int notification_action_tombstone = 2130968619;
 			
 			// aapt resource value: 0x7f04002c
-			public const int notification_media_cancel_action = 2130968620;
+			public const int notification_media_action = 2130968620;
 			
 			// aapt resource value: 0x7f04002d
-			public const int notification_template_big_media = 2130968621;
+			public const int notification_media_cancel_action = 2130968621;
 			
 			// aapt resource value: 0x7f04002e
-			public const int notification_template_big_media_custom = 2130968622;
+			public const int notification_template_big_media = 2130968622;
 			
 			// aapt resource value: 0x7f04002f
-			public const int notification_template_big_media_narrow = 2130968623;
+			public const int notification_template_big_media_custom = 2130968623;
 			
 			// aapt resource value: 0x7f040030
-			public const int notification_template_big_media_narrow_custom = 2130968624;
+			public const int notification_template_big_media_narrow = 2130968624;
 			
 			// aapt resource value: 0x7f040031
-			public const int notification_template_custom_big = 2130968625;
+			public const int notification_template_big_media_narrow_custom = 2130968625;
 			
 			// aapt resource value: 0x7f040032
-			public const int notification_template_icon_group = 2130968626;
+			public const int notification_template_custom_big = 2130968626;
 			
 			// aapt resource value: 0x7f040033
-			public const int notification_template_lines_media = 2130968627;
+			public const int notification_template_icon_group = 2130968627;
 			
 			// aapt resource value: 0x7f040034
-			public const int notification_template_media = 2130968628;
+			public const int notification_template_lines_media = 2130968628;
 			
 			// aapt resource value: 0x7f040035
-			public const int notification_template_media_custom = 2130968629;
+			public const int notification_template_media = 2130968629;
 			
 			// aapt resource value: 0x7f040036
-			public const int notification_template_part_chronometer = 2130968630;
+			public const int notification_template_media_custom = 2130968630;
 			
 			// aapt resource value: 0x7f040037
-			public const int notification_template_part_time = 2130968631;
+			public const int notification_template_part_chronometer = 2130968631;
 			
 			// aapt resource value: 0x7f040038
-			public const int Repeat_Images = 2130968632;
+			public const int notification_template_part_time = 2130968632;
 			
 			// aapt resource value: 0x7f040039
-			public const int Repeat_Languages = 2130968633;
+			public const int Repeat_Images = 2130968633;
 			
 			// aapt resource value: 0x7f04003a
-			public const int select_dialog_item_material = 2130968634;
+			public const int Repeat_Languages = 2130968634;
 			
 			// aapt resource value: 0x7f04003b
-			public const int select_dialog_multichoice_material = 2130968635;
+			public const int select_dialog_item_material = 2130968635;
 			
 			// aapt resource value: 0x7f04003c
-			public const int select_dialog_singlechoice_material = 2130968636;
+			public const int select_dialog_multichoice_material = 2130968636;
 			
 			// aapt resource value: 0x7f04003d
-			public const int SelectDictionary_Images = 2130968637;
+			public const int select_dialog_singlechoice_material = 2130968637;
 			
 			// aapt resource value: 0x7f04003e
-			public const int SelectDictionary_Languages = 2130968638;
+			public const int SelectDictionary_Images = 2130968638;
 			
 			// aapt resource value: 0x7f04003f
-			public const int Settings_Menu = 2130968639;
+			public const int SelectDictionary_Languages = 2130968639;
 			
 			// aapt resource value: 0x7f040040
-			public const int Statistics = 2130968640;
+			public const int Settings_Menu = 2130968640;
 			
 			// aapt resource value: 0x7f040041
-			public const int support_simple_spinner_dropdown_item = 2130968641;
+			public const int Statistics = 2130968641;
 			
 			// aapt resource value: 0x7f040042
-			public const int tooltip = 2130968642;
+			public const int support_simple_spinner_dropdown_item = 2130968642;
 			
 			// aapt resource value: 0x7f040043
-			public const int ViewDictionary_Languages = 2130968643;
+			public const int tooltip = 2130968643;
+			
+			// aapt resource value: 0x7f040044
+			public const int ViewDictionary_Languages = 2130968644;
 			
 			static Layout()
 			{
@@ -3087,287 +3108,296 @@ namespace ReLearn
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f070087
-			public const int About_us = 2131165319;
+			// aapt resource value: 0x7f07008a
+			public const int About_us = 2131165322;
 			
-			// aapt resource value: 0x7f07008e
-			public const int Achievements = 2131165326;
+			// aapt resource value: 0x7f070091
+			public const int Achievements = 2131165329;
 			
-			// aapt resource value: 0x7f070036
-			public const int Add_word = 2131165238;
+			// aapt resource value: 0x7f070037
+			public const int Add_word = 2131165239;
 			
 			// aapt resource value: 0x7f070033
 			public const int Addition = 2131165235;
 			
+			// aapt resource value: 0x7f07007a
+			public const int Average = 2131165306;
+			
+			// aapt resource value: 0x7f07003e
+			public const int Blitz = 2131165246;
+			
+			// aapt resource value: 0x7f07004d
+			public const int ComputerScience = 2131165261;
+			
+			// aapt resource value: 0x7f07004e
+			public const int ComputerScienceDescription = 2131165262;
+			
+			// aapt resource value: 0x7f070084
+			public const int Correct = 2131165316;
+			
 			// aapt resource value: 0x7f070077
-			public const int Average = 2131165303;
-			
-			// aapt resource value: 0x7f07004b
-			public const int ComputerScience = 2131165259;
-			
-			// aapt resource value: 0x7f07004c
-			public const int ComputerScienceDescription = 2131165260;
-			
-			// aapt resource value: 0x7f070081
-			public const int Correct = 2131165313;
-			
-			// aapt resource value: 0x7f070074
-			public const int Correct_answers = 2131165300;
-			
-			// aapt resource value: 0x7f070070
-			public const int DataCorrectness = 2131165296;
-			
-			// aapt resource value: 0x7f070065
-			public const int DatabaseEmpty = 2131165285;
-			
-			// aapt resource value: 0x7f070066
-			public const int DatabaseNotConnect = 2131165286;
-			
-			// aapt resource value: 0x7f070072
-			public const int DatatypeImages = 2131165298;
-			
-			// aapt resource value: 0x7f070071
-			public const int DatatypeWords = 2131165297;
+			public const int Correct_answers = 2131165303;
 			
 			// aapt resource value: 0x7f070073
-			public const int Degree_Of_Study = 2131165299;
+			public const int DataCorrectness = 2131165299;
 			
-			// aapt resource value: 0x7f070062
-			public const int Delete = 2131165282;
-			
-			// aapt resource value: 0x7f07003f
-			public const int Dictionaries = 2131165247;
-			
-			// aapt resource value: 0x7f07006f
-			public const int DictionaryOver = 2131165295;
-			
-			// aapt resource value: 0x7f070045
-			public const int Education = 2131165253;
-			
-			// aapt resource value: 0x7f070046
-			public const int EducationDescription = 2131165254;
-			
-			// aapt resource value: 0x7f07006e
-			public const int Enter_Message = 2131165294;
+			// aapt resource value: 0x7f070068
+			public const int DatabaseEmpty = 2131165288;
 			
 			// aapt resource value: 0x7f070069
-			public const int Enter_word = 2131165289;
+			public const int DatabaseNotConnect = 2131165289;
 			
-			// aapt resource value: 0x7f070088
-			public const int Feedback = 2131165320;
+			// aapt resource value: 0x7f070075
+			public const int DatatypeImages = 2131165301;
 			
-			// aapt resource value: 0x7f070089
-			public const int Feedback_comments = 2131165321;
+			// aapt resource value: 0x7f070074
+			public const int DatatypeWords = 2131165300;
 			
-			// aapt resource value: 0x7f07004f
-			public const int Films = 2131165263;
+			// aapt resource value: 0x7f070076
+			public const int Degree_Of_Study = 2131165302;
 			
-			// aapt resource value: 0x7f070050
-			public const int FilmsDescription = 2131165264;
+			// aapt resource value: 0x7f070065
+			public const int Delete = 2131165285;
 			
-			// aapt resource value: 0x7f070051
-			public const int Flags = 2131165265;
+			// aapt resource value: 0x7f070041
+			public const int Dictionaries = 2131165249;
 			
-			// aapt resource value: 0x7f070052
-			public const int FlagsDescription = 2131165266;
-			
-			// aapt resource value: 0x7f070061
-			public const int HideStudied = 2131165281;
+			// aapt resource value: 0x7f070072
+			public const int DictionaryOver = 2131165298;
 			
 			// aapt resource value: 0x7f070047
-			public const int Home = 2131165255;
+			public const int Education = 2131165255;
 			
 			// aapt resource value: 0x7f070048
-			public const int HomeDescription = 2131165256;
+			public const int EducationDescription = 2131165256;
+			
+			// aapt resource value: 0x7f070071
+			public const int Enter_Message = 2131165297;
+			
+			// aapt resource value: 0x7f07006c
+			public const int Enter_word = 2131165292;
+			
+			// aapt resource value: 0x7f07008b
+			public const int Feedback = 2131165323;
+			
+			// aapt resource value: 0x7f07008c
+			public const int Feedback_comments = 2131165324;
+			
+			// aapt resource value: 0x7f070051
+			public const int Films = 2131165265;
+			
+			// aapt resource value: 0x7f070052
+			public const int FilmsDescription = 2131165266;
+			
+			// aapt resource value: 0x7f070053
+			public const int Flags = 2131165267;
+			
+			// aapt resource value: 0x7f070054
+			public const int FlagsDescription = 2131165268;
+			
+			// aapt resource value: 0x7f070064
+			public const int HideStudied = 2131165284;
+			
+			// aapt resource value: 0x7f070049
+			public const int Home = 2131165257;
+			
+			// aapt resource value: 0x7f07004a
+			public const int HomeDescription = 2131165258;
 			
 			// aapt resource value: 0x7f070032
 			public const int Images = 2131165234;
 			
-			// aapt resource value: 0x7f070082
-			public const int Incorrect = 2131165314;
+			// aapt resource value: 0x7f070085
+			public const int Incorrect = 2131165317;
 			
-			// aapt resource value: 0x7f070086
-			public const int Incorrect_Up = 2131165318;
+			// aapt resource value: 0x7f070089
+			public const int Incorrect_Up = 2131165321;
 			
-			// aapt resource value: 0x7f070055
-			public const int Insert_data = 2131165269;
+			// aapt resource value: 0x7f070057
+			public const int Insert_data = 2131165271;
 			
-			// aapt resource value: 0x7f07003c
-			public const int Instruction = 2131165244;
+			// aapt resource value: 0x7f07003d
+			public const int Instruction = 2131165245;
 			
 			// aapt resource value: 0x7f070031
 			public const int Language = 2131165233;
 			
-			// aapt resource value: 0x7f07005a
-			public const int Language_eng = 2131165274;
+			// aapt resource value: 0x7f07005d
+			public const int Language_eng = 2131165277;
 			
-			// aapt resource value: 0x7f07005b
-			public const int Language_rus = 2131165275;
+			// aapt resource value: 0x7f07005e
+			public const int Language_rus = 2131165278;
 			
-			// aapt resource value: 0x7f070085
-			public const int Last_testing = 2131165317;
+			// aapt resource value: 0x7f070088
+			public const int Last_testing = 2131165320;
 			
-			// aapt resource value: 0x7f070035
-			public const int Learn = 2131165237;
-			
-			// aapt resource value: 0x7f07008a
-			public const int Message_Sent = 2131165322;
+			// aapt resource value: 0x7f070036
+			public const int Learn = 2131165238;
 			
 			// aapt resource value: 0x7f07008d
-			public const int Message_about_us = 2131165325;
+			public const int Message_Sent = 2131165325;
 			
-			// aapt resource value: 0x7f070076
-			public const int Month = 2131165302;
-			
-			// aapt resource value: 0x7f070043
-			public const int My_Directly = 2131165251;
-			
-			// aapt resource value: 0x7f070044
-			public const int My_DirectlyDescription = 2131165252;
-			
-			// aapt resource value: 0x7f07004d
-			public const int Nature = 2131165261;
-			
-			// aapt resource value: 0x7f07004e
-			public const int NatureDescription = 2131165262;
-			
-			// aapt resource value: 0x7f070037
-			public const int Next = 2131165239;
-			
-			// aapt resource value: 0x7f07003e
-			public const int No = 2131165246;
-			
-			// aapt resource value: 0x7f07003b
-			public const int NotRepeat = 2131165243;
-			
-			// aapt resource value: 0x7f070080
-			public const int Number_Correct_Answers = 2131165312;
-			
-			// aapt resource value: 0x7f07007d
-			public const int Number_Inconvenient_Films = 2131165309;
-			
-			// aapt resource value: 0x7f07007b
-			public const int Number_Inconvenient_Flags = 2131165307;
-			
-			// aapt resource value: 0x7f07007f
-			public const int Number_Inconvenient_Images = 2131165311;
+			// aapt resource value: 0x7f070090
+			public const int Message_about_us = 2131165328;
 			
 			// aapt resource value: 0x7f070079
-			public const int Number_Inconvenient_Words = 2131165305;
+			public const int Month = 2131165305;
 			
-			// aapt resource value: 0x7f07007c
-			public const int Number_Learned_Films = 2131165308;
+			// aapt resource value: 0x7f070045
+			public const int My_Directly = 2131165253;
 			
-			// aapt resource value: 0x7f07007a
-			public const int Number_Learned_Flags = 2131165306;
+			// aapt resource value: 0x7f070046
+			public const int My_DirectlyDescription = 2131165254;
 			
-			// aapt resource value: 0x7f07007e
-			public const int Number_Learned_Images = 2131165310;
+			// aapt resource value: 0x7f07004f
+			public const int Nature = 2131165263;
 			
-			// aapt resource value: 0x7f070078
-			public const int Number_Learned_Words = 2131165304;
+			// aapt resource value: 0x7f070050
+			public const int NatureDescription = 2131165264;
+			
+			// aapt resource value: 0x7f070038
+			public const int Next = 2131165240;
+			
+			// aapt resource value: 0x7f070040
+			public const int No = 2131165248;
+			
+			// aapt resource value: 0x7f07003c
+			public const int NotRepeat = 2131165244;
 			
 			// aapt resource value: 0x7f070083
-			public const int Number_Of_Tests = 2131165315;
+			public const int Number_Correct_Answers = 2131165315;
 			
-			// aapt resource value: 0x7f070057
-			public const int Number_of_image_repeats = 2131165271;
+			// aapt resource value: 0x7f070080
+			public const int Number_Inconvenient_Films = 2131165312;
 			
-			// aapt resource value: 0x7f070056
-			public const int Number_of_word_repeats = 2131165270;
+			// aapt resource value: 0x7f07007e
+			public const int Number_Inconvenient_Flags = 2131165310;
 			
-			// aapt resource value: 0x7f070084
-			public const int Of = 2131165316;
+			// aapt resource value: 0x7f070082
+			public const int Number_Inconvenient_Images = 2131165314;
 			
-			// aapt resource value: 0x7f070041
-			public const int Popular_Words = 2131165249;
+			// aapt resource value: 0x7f07007c
+			public const int Number_Inconvenient_Words = 2131165308;
 			
-			// aapt resource value: 0x7f070042
-			public const int Popular_WordsDescription = 2131165250;
+			// aapt resource value: 0x7f07007f
+			public const int Number_Learned_Films = 2131165311;
 			
-			// aapt resource value: 0x7f07005c
-			public const int Pronunciation = 2131165276;
+			// aapt resource value: 0x7f07007d
+			public const int Number_Learned_Flags = 2131165309;
+			
+			// aapt resource value: 0x7f070081
+			public const int Number_Learned_Images = 2131165313;
+			
+			// aapt resource value: 0x7f07007b
+			public const int Number_Learned_Words = 2131165307;
+			
+			// aapt resource value: 0x7f070086
+			public const int Number_Of_Tests = 2131165318;
+			
+			// aapt resource value: 0x7f070059
+			public const int Number_of_image_repeats = 2131165273;
+			
+			// aapt resource value: 0x7f070058
+			public const int Number_of_word_repeats = 2131165272;
+			
+			// aapt resource value: 0x7f070087
+			public const int Of = 2131165319;
+			
+			// aapt resource value: 0x7f070043
+			public const int Popular_Words = 2131165251;
+			
+			// aapt resource value: 0x7f070044
+			public const int Popular_WordsDescription = 2131165252;
+			
+			// aapt resource value: 0x7f07005f
+			public const int Pronunciation = 2131165279;
 			
 			// aapt resource value: 0x7f070034
 			public const int Repeat = 2131165236;
 			
-			// aapt resource value: 0x7f070068
-			public const int RepeatedAllImages = 2131165288;
-			
-			// aapt resource value: 0x7f070067
-			public const int RepeatedAllWords = 2131165287;
-			
-			// aapt resource value: 0x7f070039
-			public const int Send = 2131165241;
-			
-			// aapt resource value: 0x7f070060
-			public const int SeparatorWords = 2131165280;
-			
-			// aapt resource value: 0x7f070059
-			public const int Settings = 2131165273;
-			
-			// aapt resource value: 0x7f07005e
-			public const int Sort_Ascending = 2131165278;
-			
-			// aapt resource value: 0x7f07005f
-			public const int Sort_alphabetically = 2131165279;
-			
-			// aapt resource value: 0x7f07005d
-			public const int Sort_descending = 2131165277;
-			
-			// aapt resource value: 0x7f070063
-			public const int Statistics = 2131165283;
-			
-			// aapt resource value: 0x7f070040
-			public const int StudiedAt = 2131165248;
-			
-			// aapt resource value: 0x7f07008b
-			public const int Support_project = 2131165323;
-			
-			// aapt resource value: 0x7f070049
-			public const int ThreeFormsOfVerb = 2131165257;
-			
-			// aapt resource value: 0x7f07004a
-			public const int ThreeFormsOfVerbDescription = 2131165258;
-			
-			// aapt resource value: 0x7f070058
-			public const int Time_blitz = 2131165272;
-			
-			// aapt resource value: 0x7f070075
-			public const int Today = 2131165301;
-			
-			// aapt resource value: 0x7f07003a
-			public const int Unknown = 2131165242;
-			
-			// aapt resource value: 0x7f070064
-			public const int View_dictionary = 2131165284;
-			
-			// aapt resource value: 0x7f070038
-			public const int Voice = 2131165240;
+			// aapt resource value: 0x7f070035
+			public const int Repeated = 2131165237;
 			
 			// aapt resource value: 0x7f07006b
-			public const int Word_Added = 2131165291;
-			
-			// aapt resource value: 0x7f07006d
-			public const int Word_Delete = 2131165293;
-			
-			// aapt resource value: 0x7f070053
-			public const int Word_English = 2131165267;
-			
-			// aapt resource value: 0x7f07006c
-			public const int Word_Not_Exists = 2131165292;
-			
-			// aapt resource value: 0x7f070054
-			public const int Word_Rus = 2131165268;
+			public const int RepeatedAllImages = 2131165291;
 			
 			// aapt resource value: 0x7f07006a
-			public const int Word_exists = 2131165290;
+			public const int RepeatedAllWords = 2131165290;
 			
-			// aapt resource value: 0x7f07008c
-			public const int WordsAdded = 2131165324;
+			// aapt resource value: 0x7f07005b
+			public const int Seconds = 2131165275;
 			
-			// aapt resource value: 0x7f07003d
-			public const int Yes = 2131165245;
+			// aapt resource value: 0x7f07003a
+			public const int Send = 2131165242;
+			
+			// aapt resource value: 0x7f070063
+			public const int SeparatorWords = 2131165283;
+			
+			// aapt resource value: 0x7f07005c
+			public const int Settings = 2131165276;
+			
+			// aapt resource value: 0x7f070061
+			public const int Sort_Ascending = 2131165281;
+			
+			// aapt resource value: 0x7f070062
+			public const int Sort_alphabetically = 2131165282;
+			
+			// aapt resource value: 0x7f070060
+			public const int Sort_descending = 2131165280;
+			
+			// aapt resource value: 0x7f070066
+			public const int Statistics = 2131165286;
+			
+			// aapt resource value: 0x7f070042
+			public const int StudiedAt = 2131165250;
+			
+			// aapt resource value: 0x7f07008e
+			public const int Support_project = 2131165326;
+			
+			// aapt resource value: 0x7f07004b
+			public const int ThreeFormsOfVerb = 2131165259;
+			
+			// aapt resource value: 0x7f07004c
+			public const int ThreeFormsOfVerbDescription = 2131165260;
+			
+			// aapt resource value: 0x7f07005a
+			public const int Time_blitz = 2131165274;
+			
+			// aapt resource value: 0x7f070078
+			public const int Today = 2131165304;
+			
+			// aapt resource value: 0x7f07003b
+			public const int Unknown = 2131165243;
+			
+			// aapt resource value: 0x7f070067
+			public const int View_dictionary = 2131165287;
+			
+			// aapt resource value: 0x7f070039
+			public const int Voice = 2131165241;
+			
+			// aapt resource value: 0x7f07006e
+			public const int Word_Added = 2131165294;
+			
+			// aapt resource value: 0x7f070070
+			public const int Word_Delete = 2131165296;
+			
+			// aapt resource value: 0x7f070055
+			public const int Word_English = 2131165269;
+			
+			// aapt resource value: 0x7f07006f
+			public const int Word_Not_Exists = 2131165295;
+			
+			// aapt resource value: 0x7f070056
+			public const int Word_Rus = 2131165270;
+			
+			// aapt resource value: 0x7f07006d
+			public const int Word_exists = 2131165293;
+			
+			// aapt resource value: 0x7f07008f
+			public const int WordsAdded = 2131165327;
+			
+			// aapt resource value: 0x7f07003f
+			public const int Yes = 2131165247;
 			
 			// aapt resource value: 0x7f070011
 			public const int abc_action_bar_home_description = 2131165201;
@@ -3513,8 +3543,8 @@ namespace ReLearn
 			// aapt resource value: 0x7f070022
 			public const int search_menu_title = 2131165218;
 			
-			// aapt resource value: 0x7f07008f
-			public const int sign_in = 2131165327;
+			// aapt resource value: 0x7f070092
+			public const int sign_in = 2131165330;
 			
 			// aapt resource value: 0x7f07002f
 			public const int status_bar_notification_info_overflow = 2131165231;

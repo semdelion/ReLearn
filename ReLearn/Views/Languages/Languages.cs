@@ -5,7 +5,7 @@ using Android.OS;
 using Android.Views;
 using Android.Support.V7.App;
 
-namespace ReLearn.Languages
+namespace ReLearn.Droid.Languages
 {
     [Activity(Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     class Languages : AppCompatActivity
@@ -17,7 +17,20 @@ namespace ReLearn.Languages
         public void Button_Languages_Learn_Click(View v) => StartActivity(typeof(Learn));
 
         [Java.Interop.Export("Button_Languages_Repeat_Click")]
-        public void Button_Languages_Repeat_Click(View v) => StartActivity(typeof(BlitzPoll));
+        public void Button_Languages_Repeat_Click(View v)
+        {
+            if (Settings.TypeOfRepetition == TypeOfRepetitions.Blitz && Statistics.Count == 0 && Settings.BlitzEnable)
+            {
+                Settings.TypeOfRepetition = TypeOfRepetitions.FourOptions;
+                StartActivity(typeof(BlitzPoll));
+                return;
+            }
+            else
+            {
+                Settings.TypeOfRepetition = TypeOfRepetitions.Blitz;
+                StartActivity(typeof(Repeat));
+            }
+        }
            
         protected override void OnCreate(Bundle savedInstanceState)
         {

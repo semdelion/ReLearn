@@ -10,7 +10,7 @@ using Android.Widget;
 using Calligraphy;
 
 
-namespace ReLearn.Languages
+namespace ReLearn.Droid.Languages
 {
     [Activity(Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     class SelectDictionary : AppCompatActivity

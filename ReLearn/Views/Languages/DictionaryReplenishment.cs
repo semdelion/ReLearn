@@ -4,7 +4,7 @@ using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
 
-namespace ReLearn.Languages
+namespace ReLearn.Droid.Languages
 {
     [Activity(Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     class DictionaryReplenishment : AppCompatActivity

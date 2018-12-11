@@ -11,7 +11,7 @@ using Android.Content;
 using Android.OS;
 using Android.Support.V7.App;
 
-namespace ReLearn.Languages
+namespace ReLearn.Droid.Languages
 {
     [Activity(Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     class Repeat : AppCompatActivity
@@ -121,7 +121,7 @@ namespace ReLearn.Languages
                     CurrentWordNumber = new Random(unchecked((int)(DateTime.Now.Ticks))).Next(WordDatabase.Count);
                     NextWord();
                     Button_enable(true);
-                    TitleCount = $"{GetString(Resource.String.Repeat)} {Statistics.Count + 1}/{Settings.NumberOfRepeatsLanguage}";
+                    TitleCount = $"{GetString(Resource.String.Repeated)} {Statistics.Count + 1}/{Settings.NumberOfRepeatsLanguage}";
                 }
                 else
                 {

@@ -6,7 +6,7 @@ using Android.Content;
 using Calligraphy;
 using Android.Support.V7.App;
 
-namespace ReLearn
+namespace ReLearn.Droid
 {
     [Activity(Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait, ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.Locale)]
     public class MainActivity : AppCompatActivity

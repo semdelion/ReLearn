@@ -6,7 +6,6 @@
     android:layout_height	="match_parent"
     android:minWidth		="25px"
     android:minHeight		="25px">
-
 	<android.support.v7.widget.Toolbar 
 		xmlns:app				="http://schemas.android.com/apk/res-auto"
 		android:id				="@+id/toolbarEnglishAdd"
@@ -24,7 +23,6 @@
 			android:layout_height	="match_parent"
 		/>
 	</android.support.v7.widget.Toolbar>
-
 	<EditText
 		android:id					="@+id/editText_foreign_word"
 		android:hint				="@string/Word_English"
@@ -70,5 +68,4 @@
 		android:gravity				="center"
 		android:layout_gravity		="end|bottom" 
 	/>
-
 </LinearLayout>

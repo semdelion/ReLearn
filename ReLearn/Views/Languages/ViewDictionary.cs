@@ -5,11 +5,11 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-using ReLearn.Resources;
 using Android.Support.V7.App;
 using Plugin.Settings;
+using ReLearn.Droid.Resources;
 
-namespace ReLearn.Languages
+namespace ReLearn.Droid.Languages
 {
     [Activity( Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     class ViewDictionary : AppCompatActivity

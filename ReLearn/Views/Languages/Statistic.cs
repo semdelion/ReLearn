@@ -8,7 +8,7 @@ using Calligraphy;
 using Android.Widget;
 
 
-namespace ReLearn.Languages
+namespace ReLearn.Droid.Languages
 {
     [Activity( Theme = "@style/ThemeStat", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     class Statistic : Activity

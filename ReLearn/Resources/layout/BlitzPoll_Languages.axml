@@ -23,33 +23,18 @@
             android:layout_height	="match_parent"
 		/>
     </android.support.v7.widget.Toolbar>
-
-	<TextView
-		android:textColor			="@color/TextWhite"
-		android:text				="Timer"
-		android:textSize			="15dp"
-		android:textStyle			="bold"
-		android:layout_width		="match_parent"
-		android:layout_height		="wrap_content"
-		android:layout_marginRight	="25dp"
-		android:layout_marginLeft	="240.0dp"
-		android:layout_marginTop	="85.0dp"
-		android:gravity				= "center_horizontal|center"
-	/>
 	<TextView
 		android:id					="@+id/textView_Timer_language"
 		android:textColor			="@color/TextWhite"
 		android:background          ="@drawable/viewNeutral"
-		android:text				="60:00"
 		android:textSize			="30dp"
 		android:textStyle			="bold"
 		android:layout_width		="match_parent"
 		android:layout_height		="50dp"
-		android:layout_marginRight	="25.0dp"
-		android:layout_marginLeft	="240.0dp"
-		android:layout_marginTop	="105.0dp"
-		android:gravity				= "center_horizontal|center"
-	/>
+		android:layout_marginRight	="100.0dp"
+		android:layout_marginLeft	="100.0dp"
+		android:layout_marginTop	="95.0dp"
+		android:gravity				= "center_horizontal|center"/>
 	<TextView
 		android:id					="@+id/textView_Word_BlitzPoll"
 		android:textColor			="@color/TextWhite"
@@ -65,14 +50,13 @@
 		android:layout_marginBottom	="10.0dp"
 		android:layout_marginTop	="160.0dp"
 		android:gravity				= "center_horizontal|center"/>
-
 	<TableLayout
-		android:layout_width="match_parent"
-		android:layout_height="match_parent"
+		android:layout_width		="match_parent"
+		android:layout_height		="match_parent"
 		android:layout_marginRight	="25.0dp"
 		android:layout_marginLeft	="25.0dp"
 		android:layout_marginBottom	="25dp"
-		android:gravity="bottom">
+		android:gravity				="bottom">
 		<TableRow
 			android:layout_marginBottom	="25dp">
 			<Button
@@ -96,30 +80,8 @@
 				android:textSize			="20dp"
 				android:layout_width		="0dp"
 				android:layout_weight		="0.5"
-				android:layout_height		="55.0dp"/>
-		</TableRow>
-		<TableRow>
-			<ImageButton
-				android:onClick				="Button_SpeakBlitz_Languages_Click"
-				android:id					="@+id/Button_SpeakBlitz_Languages"
-				android:background			="@drawable/button_style_standard"
-				android:src					="@mipmap/speak_on"
-				android:layout_column		="0"
-				android:layout_width		="60dp"
 				android:layout_height		="55.0dp"
-				android:layout_marginRight	="120.0dp"
-				android:scaleType			="fitXY"/>
-			<!--<Button
-				android:onClick				="Button_Languages_Next_Click"
-				android:id					="@+id/button_Languages_Next"
-				android:background			="@drawable/button_style_standard"
-				android:text				="@string/Unknown"
-				android:textColor			="@color/TextWhite"
-				android:textSize			="20dp"
-				android:layout_width		="0dp"
-				android:layout_weight		="0.5"
-				android:layout_height		="55.0dp"
-			/>-->
+			/>
 		</TableRow>
 	</TableLayout>
 </RelativeLayout>

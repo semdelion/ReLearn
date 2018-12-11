@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2002
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReLearn", "ReLearn\ReLearn.csproj", "{FFC86E7F-8C0B-45E5-A37A-FBBF9292CEFB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReLearn.Droid", "ReLearn\ReLearn.Droid.csproj", "{FFC86E7F-8C0B-45E5-A37A-FBBF9292CEFB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReLearn.Core", "ReLearn.Core\ReLearn.Core.csproj", "{FE56DA2D-3D8B-4389-B7F0-BAD2FCE3A5FD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,6 +19,10 @@ Global
 		{FFC86E7F-8C0B-45E5-A37A-FBBF9292CEFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FFC86E7F-8C0B-45E5-A37A-FBBF9292CEFB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FFC86E7F-8C0B-45E5-A37A-FBBF9292CEFB}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{FE56DA2D-3D8B-4389-B7F0-BAD2FCE3A5FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE56DA2D-3D8B-4389-B7F0-BAD2FCE3A5FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE56DA2D-3D8B-4389-B7F0-BAD2FCE3A5FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE56DA2D-3D8B-4389-B7F0-BAD2FCE3A5FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

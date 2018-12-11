@@ -5,7 +5,6 @@
     android:orientation	    = "vertical"
     android:layout_width	= "match_parent"
     android:layout_height	= "match_parent">
-
 	<android.support.v7.widget.Toolbar 
 		android:id				="@+id/toolbar_About_Us"		
 		android:theme			="@style/ToolbarStyle"	
@@ -22,21 +21,20 @@
 			android:layout_height	="match_parent"
 		/>
 	</android.support.v7.widget.Toolbar >
-
 	<ScrollView
         android:layout_width		="match_parent"
         android:layout_height		="wrap_content">
 		<TableLayout
             android:layout_width	="match_parent"
-            android:layout_height	="match_parent">
+            android:layout_height	="match_parent"
+			android:layout_marginRight	="25.0dp"
+			android:layout_marginLeft	="25.0dp">
 			<TextView
 				android:id					="@+id/textView_about_us"
 				android:text				="@string/Message_about_us"
 				android:textColor			="@color/TextWhite"
 				android:layout_width		="match_parent"
 				android:layout_height		="wrap_content"
-				android:layout_marginRight	="25.0dp"
-				android:layout_marginLeft	="25.0dp"
 				android:layout_marginTop	="25.0dp"
 				android:textSize			="16dp"
 				android:layout_marginBottom	="40.0dp"
@@ -50,13 +48,8 @@
 				android:textSize			="20dp"
 				android:layout_width		="match_parent"
 				android:layout_height		="55.0dp"
-				android:layout_marginRight	="25.0dp"
-				android:layout_marginLeft	="25.0dp"
-				android:layout_marginTop	="10.0dp"
-				android:layout_marginBottom	="20.0dp"
 				android:gravity				="center"
 			/>
 		</TableLayout>
 	</ScrollView>
-
 </LinearLayout>

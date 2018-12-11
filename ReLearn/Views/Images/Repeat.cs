@@ -8,7 +8,7 @@ using Android.Widget;
 using Android.Graphics;
 using Android.Support.V7.App;
 
-namespace ReLearn.Images
+namespace ReLearn.Droid.Images
 {
     [Activity(Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     class Repeat : AppCompatActivity
@@ -50,7 +50,7 @@ namespace ReLearn.Images
         {
             AdditionalFunctions.RandomFourNumbers(CurrentWordNumber, ImagesDatabase.Count, out List<int> random_numbers);
             for (int i = 0; i < buttons.Length; i++)
-                buttons[i].Text = AdditionalFunctions.NameOfTheFlag(ImagesDatabase[random_numbers[i]]);
+                buttons[i].Text = ImagesDatabase[random_numbers[i]].ImageName;
         }
 
         void NextTest() //new test
@@ -70,7 +70,7 @@ namespace ReLearn.Images
         {
             Statistics.Count++;
             Button_enable(false);
-            if (buttons[0].Text == AdditionalFunctions.NameOfTheFlag(ImagesDatabase[CurrentWordNumber]))
+            if (buttons[0].Text == ImagesDatabase[CurrentWordNumber].ImageName)
             {
                 Statistics.Add(ImagesDatabase, CurrentWordNumber, -Settings.TrueAnswer);
                 Statistics.True++;
@@ -81,7 +81,7 @@ namespace ReLearn.Images
                 Statistics.Add(ImagesDatabase,CurrentWordNumber, Settings.FalseAnswer);
                 Statistics.False++;
                 buttons[0].Background = GetDrawable(Resource.Drawable.button_false);
-                int index = Buttons.FindIndex(s => s.Text == AdditionalFunctions.NameOfTheFlag(ImagesDatabase[CurrentWordNumber]));
+                int index = Buttons.FindIndex(s => s.Text == ImagesDatabase[CurrentWordNumber].ImageName);
                 Buttons[index].Background = GetDrawable(Resource.Drawable.button_true);
             }
         }
@@ -91,7 +91,7 @@ namespace ReLearn.Images
             Statistics.Count++;
             Statistics.False++;
             Statistics.Add(ImagesDatabase, CurrentWordNumber, Settings.NeutralAnswer);
-            int index = Buttons.FindIndex(s => s.Text == AdditionalFunctions.NameOfTheFlag(ImagesDatabase[CurrentWordNumber]));
+            int index = Buttons.FindIndex(s => s.Text == ImagesDatabase[CurrentWordNumber].ImageName);
             Buttons[index].Background = GetDrawable(Resource.Drawable.button_true);
         }
 
@@ -124,7 +124,7 @@ namespace ReLearn.Images
                     CurrentWordNumber = new Random(unchecked((int)(DateTime.Now.Ticks))).Next(ImagesDatabase.Count);
                     NextTest();
                     Button_enable(true);
-                    TitleCount = $"{GetString(Resource.String.Repeat)} {Statistics.Count + 1}/{Settings.NumberOfRepeatsImage}";
+                    TitleCount = $"{GetString(Resource.String.Repeated)} {Statistics.Count + 1}/{Settings.NumberOfRepeatsImage}";
                 }
                 else
                 {

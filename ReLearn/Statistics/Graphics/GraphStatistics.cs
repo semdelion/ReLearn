@@ -4,7 +4,7 @@ using Android.Views;
 using System.Collections.Generic;
 using static Android.Graphics.Shader;
 
-namespace ReLearn
+namespace ReLearn.Droid
 {
     class GraphStatistics : View
     {

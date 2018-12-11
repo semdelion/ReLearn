@@ -1,7 +1,7 @@
 ﻿using Android.Content;
 using Android.Speech.Tts;
 
-namespace ReLearn
+namespace ReLearn.Droid
 {
     class MyTextToSpeech : Java.Lang.Object, TextToSpeech.IOnInitListener
     {
@@ -24,6 +24,5 @@ namespace ReLearn
                 speaker.Speak(toSpeak, QueueMode.Flush, null, null);
             }
         }
-
     }
 }

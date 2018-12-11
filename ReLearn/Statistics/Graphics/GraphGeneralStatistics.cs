@@ -5,7 +5,7 @@ using Android.Content;
 using Android.Graphics;
 using Android.Views;
 
-namespace ReLearn
+namespace ReLearn.Droid
 {
     class GraphGeneralStatistics : View
     {

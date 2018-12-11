@@ -7,7 +7,7 @@ using Android.Content;
 using Calligraphy;
 using Android.Widget;
 
-namespace ReLearn.Images
+namespace ReLearn.Droid.Images
 {
     [Activity( Theme = "@style/ThemeStat", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     class Statistic : Activity

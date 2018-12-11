@@ -6,7 +6,7 @@ using Android.Widget;
 using Calligraphy;
 using Android.Support.V7.App;
 
-namespace ReLearn.Languages
+namespace ReLearn.Droid.Languages
 {
     [Activity(Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     class Add : AppCompatActivity

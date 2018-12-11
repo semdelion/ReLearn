@@ -9,7 +9,7 @@ using Android.Views;
 using Android.Widget;
 using Calligraphy;
 
-namespace ReLearn.Images
+namespace ReLearn.Droid.Images
 {
     [Activity(Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     class SelectDictionary: AppCompatActivity

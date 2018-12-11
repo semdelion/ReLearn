@@ -17,7 +17,7 @@ using Calligraphy;
 using Java.Util;
 using Plugin.Settings;
 
-namespace ReLearn
+namespace ReLearn.Droid
 {
     [Activity(Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class SettingsMenu : AppCompatActivity
@@ -132,28 +132,35 @@ namespace ReLearn
                      TV_Repeat_Image = FindViewById<TextView>(Resource.Id.TextView_number_of_image_repeats),
                      TV_TimeToBlitz = FindViewById<TextView>(Resource.Id.TextView_TimeToBlitz);
 
-            SB_Repeat_Language.Progress = Settings.NumberOfRepeatsLanguage - 5;
-            SB_Repeat_Image.Progress = Settings.NumberOfRepeatsImage - 5;
-            SB_Repeat_Image.Progress = Settings.TimeToBlitz;
-            TV_Repeat_Language.Text = $"{GetString(Resource.String.Number_of_word_repeats )} {Convert.ToString(5 + SB_Repeat_Language.Progress)}";
-            TV_Repeat_Image.Text    = $"{GetString(Resource.String.Number_of_image_repeats)} {Convert.ToString(5 + SB_Repeat_Image.Progress)}";
-            TV_TimeToBlitz          = $"{GetString(Resource.String.Time_blitz)} {Convert.ToString(SB_TimeToBlitz.Progress)}";
+            SB_Repeat_Language.Progress = (Settings.NumberOfRepeatsLanguage - 5)/5;
+            SB_Repeat_Image.Progress = (Settings.NumberOfRepeatsImage - 5)/5;
+            SB_TimeToBlitz.Progress = (Settings.TimeToBlitz - 15)/15 ;
+            TV_Repeat_Language.Text = $"{GetString(Resource.String.Number_of_word_repeats )} {Convert.ToString(5 + SB_Repeat_Language.Progress*5)}";
+            TV_Repeat_Image.Text    = $"{GetString(Resource.String.Number_of_image_repeats)} {Convert.ToString(5 + SB_Repeat_Image.Progress*5)}";
+            TV_TimeToBlitz.Text     = $"{GetString(Resource.String.Time_blitz)} {Convert.ToString(15 + SB_TimeToBlitz.Progress*15)} {GetString(Resource.String.Seconds)}";
 
             SB_Repeat_Language.ProgressChanged += (s, e) =>
             {
-                TV_Repeat_Language.Text = $"{GetString(Resource.String.Number_of_word_repeats)} {Convert.ToString(5 + e.Progress)}";
-                Settings.NumberOfRepeatsLanguage = e.Progress + 5;
+                TV_Repeat_Language.Text = $"{GetString(Resource.String.Number_of_word_repeats)} {Convert.ToString(5 + e.Progress*5)}";
+                Settings.NumberOfRepeatsLanguage = e.Progress*5 + 5;
             };
 
             SB_Repeat_Image.ProgressChanged += (s, e) =>
             {
-                TV_Repeat_Image.Text =    $"{GetString(Resource.String.Number_of_image_repeats)} {Convert.ToString(5 + e.Progress)}";
-                Settings.NumberOfRepeatsImage = e.Progress + 5;
+                TV_Repeat_Image.Text =    $"{GetString(Resource.String.Number_of_image_repeats)} {Convert.ToString(5 + e.Progress*5)}";
+                Settings.NumberOfRepeatsImage = e.Progress*5 + 5;
             };
             SB_TimeToBlitz.ProgressChanged += (s, e) =>
             {
-                TV_TimeToBlitz.Text = $"{GetString(Resource.String.Time_blitz)} {Convert.ToString(e.Progress)}";
-                Settings.NumberOfRepeatsImage = e.Progress;
+                TV_TimeToBlitz.Text = $"{GetString(Resource.String.Time_blitz)} {Convert.ToString(15 + e.Progress*15)}";
+                Settings.TimeToBlitz = e.Progress*15 + 15;
+            };
+
+            Switch switchBlitz = FindViewById<Switch>(Resource.Id.SwitchBlitz);
+            switchBlitz.Checked = Settings.BlitzEnable;
+            switchBlitz.CheckedChange += (s, e) =>
+            {
+                Settings.BlitzEnable = !Settings.BlitzEnable;
             };
         }
 

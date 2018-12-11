@@ -8,7 +8,7 @@ using Android.Graphics;
 using Android.Support.V7.App;
 using System.Collections.Generic;
 
-namespace ReLearn.Images
+namespace ReLearn.Droid.Images
 {
     [Activity(Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     class Learn : AppCompatActivity
@@ -44,7 +44,7 @@ namespace ReLearn.Images
                 {
                     using (ImageViewBox = BitmapFactory.DecodeStream(Application.Context.Assets.Open(
                             $"Image{DataBase.TableNameImage}/{ImagesDatabase[Count].Image_name}.png")))
-                        ImageName = AdditionalFunctions.NameOfTheFlag(ImagesDatabase[Count++]);
+                        ImageName = ImagesDatabase[Count++].ImageName;
                 }
                 catch(Exception ex)
                 {

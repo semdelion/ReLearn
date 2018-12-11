@@ -5,13 +5,13 @@ using Android.Content;
 using SQLite;
 using Plugin.Settings;
 
-namespace ReLearn
+namespace ReLearn.Droid
 {
     static class DataBase
     {
-        const string Statistics_DB  = "database_statistics.db3"; 
-        const string English_DB     = "database_words.db3"; 
-        const string Flags_DB       = "database_image.db3";
+        const string _statistics  = "database_statistics.db3"; 
+        const string _english     = "database_words.db3"; 
+        const string _flags       = "database_image.db3";
 
         public static SQLiteConnection Languages;
         public static SQLiteConnection Images;
@@ -38,13 +38,18 @@ namespace ReLearn
             
         }
 
-        static SQLiteConnection Connect(string nameDB) => new SQLiteConnection(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), nameDB));
-
         public static void SetupConnection()
         {
-            Languages = Connect(English_DB);
-            Images = Connect(Flags_DB);
-            Statistics = Connect(Statistics_DB);
+            Languages = Connect(_english);
+            Images = Connect(_flags);
+            Statistics = Connect(_statistics);
+        }
+
+        public static void InstallDatabaseFromAssets()
+        {
+            InstallDB(_statistics);
+            InstallDB(_english);
+            InstallDB(_flags); 
         }
 
         static void InstallDB(string FileName)
@@ -68,11 +73,6 @@ namespace ReLearn
             }
         }
 
-        public static void InstallDatabaseFromAssets()
-        {
-            InstallDB(Statistics_DB);
-            InstallDB(English_DB);
-            InstallDB(Flags_DB); 
-        }
+        static SQLiteConnection Connect(string nameDB) => new SQLiteConnection(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), nameDB));
     }
 }

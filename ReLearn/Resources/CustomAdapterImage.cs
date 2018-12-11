@@ -4,7 +4,7 @@ using Android.Graphics;
 using Android.Views;
 using Android.Widget;
 
-namespace ReLearn
+namespace ReLearn.Droid
 {
     class CustomAdapterImage : BaseAdapter
     {

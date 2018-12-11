@@ -3,7 +3,7 @@ using Android.App;
 using Android.Views;
 using Android.Widget;
 
-namespace ReLearn.Resources
+namespace ReLearn.Droid.Resources
 {
     public class CustomAdapterWord : BaseAdapter
     {

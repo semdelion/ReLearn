@@ -9,7 +9,7 @@ using Android.Support.V7.App;
 using Plugin.Settings;
 using System.Linq;
 
-namespace ReLearn.Images
+namespace ReLearn.Droid.Images
 {
     [Activity(Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     class ViewDictionary : AppCompatActivity

@@ -6,7 +6,9 @@ using Android.Graphics;
 using Android.Content.Res;
 using Calligraphy;
 using Java.Util;
-namespace ReLearn
+using Android.Util;
+
+namespace ReLearn.Droid
 {
     enum StateButton
     {
@@ -31,7 +33,6 @@ namespace ReLearn
         public readonly static Color FrameBackground= new Color(16, 19, 38, 150);
         public readonly static Color FrameBorder    = new Color(215, 248, 254, 200);
         public readonly static Color Red            = new Color(224, 56, 56);
-        
     }
 
     static class AdditionalFunctions
@@ -74,9 +75,6 @@ namespace ReLearn
                 for (int i = 1; i < four; i++)
                     random_numbers[i] = (NotI + i) % count;
         }
-
-        public static string NameOfTheFlag(DBImages image) =>
-            Settings.Currentlanguage == Language.en.ToString() ? image.Name_image_en : image.Name_image_ru;
 
         public static string RoundOfNumber(float number)
         {
@@ -123,6 +121,8 @@ namespace ReLearn
             resource.UpdateConfiguration(conf, resource.DisplayMetrics);
             //this.CreateConfigurationContext(conf);
         }
+
+        public static int DpToPX(float dp) => (int)TypedValue.ApplyDimension(ComplexUnitType.Dip, dp, Android.App.Application.Context.Resources.DisplayMetrics);
         //db.Query<Database_Words>("UPDATE " + TableNameLanguage + " SET DateRecurrence = DATETIME('NOW') WHERE Word = ?", s.Word);
         //db.Query<Database_Words>("UPDATE " + TableNameLanguage + " SET NumberLearn = " + s.NumberLearn + 1 + " WHERE Word = ?", s.Word);
     }

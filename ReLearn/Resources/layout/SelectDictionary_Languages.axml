@@ -4,7 +4,6 @@
 	android:orientation		="vertical"
 	android:layout_width	="match_parent"
 	android:layout_height	="match_parent">
-
 	<android.support.v7.widget.Toolbar
 		xmlns:app				="http://schemas.android.com/apk/res-auto"
 		android:id				="@+id/toolbarLanguages_SelectDictionary"
@@ -22,7 +21,6 @@
 			android:layout_height	="match_parent"
 		/>
 	</android.support.v7.widget.Toolbar>
-
 	<ScrollView
 		android:id				="@+id/scrollView1"
         android:layout_width	="match_parent"
