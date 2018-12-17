@@ -46,9 +46,9 @@ namespace ReLearn.Droid
                     StartActivity(typeof(SettingsMenu));
                     Finish();
                     return true;
-                case Resource.Id.achievements:
-                    StartActivity(typeof(Achievements));
-                    return true;
+                //case Resource.Id.achievements:
+                //    StartActivity(typeof(Achievements));
+                //    return true;
                 case Android.Resource.Id.Home:
                     Finish();
                     return true;

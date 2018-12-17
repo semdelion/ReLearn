@@ -2074,8 +2074,8 @@ namespace ReLearn
 			// aapt resource value: 0x7f0c002f
 			public const int FUNCTION = 2131492911;
 			
-			// aapt resource value: 0x7f0c00f0
-			public const int Feedback = 2131493104;
+			// aapt resource value: 0x7f0c00ef
+			public const int Feedback = 2131493103;
 			
 			// aapt resource value: 0x7f0c00cf
 			public const int FlagsSelectDictionary = 2131493071;
@@ -2122,8 +2122,8 @@ namespace ReLearn
 			// aapt resource value: 0x7f0c00d8
 			public const int SeekBarTimeToBlitz = 2131493080;
 			
-			// aapt resource value: 0x7f0c00ef
-			public const int Settings_Menu = 2131493103;
+			// aapt resource value: 0x7f0c00ee
+			public const int Settings_Menu = 2131493102;
 			
 			// aapt resource value: 0x7f0c00e3
 			public const int Stats = 2131493091;
@@ -2146,11 +2146,8 @@ namespace ReLearn
 			// aapt resource value: 0x7f0c00e6
 			public const int View_dictionary_image = 2131493094;
 			
-			// aapt resource value: 0x7f0c00f1
-			public const int about_us = 2131493105;
-			
-			// aapt resource value: 0x7f0c00ee
-			public const int achievements = 2131493102;
+			// aapt resource value: 0x7f0c00f0
+			public const int about_us = 2131493104;
 			
 			// aapt resource value: 0x7f0c00ab
 			public const int action0 = 2131493035;

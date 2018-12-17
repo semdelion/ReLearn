@@ -32,7 +32,7 @@ namespace ReLearn.Droid.Images
         bool answer;
         int CurrentWordNumber;
         string TitleCount { set => FindViewById<TextView>(Resource.Id.BlitzPoll_toolbar_textview_images).Text = value; }
-        int Time = Settings.TimeToBlitz * 100;
+        int Time = Settings.TimeToBlitz * 10;
         int True = 0, 
             False = 0;
 
@@ -146,7 +146,7 @@ namespace ReLearn.Droid.Images
 
         void TimerStart()
         {
-            timer = new System.Timers.Timer{ Interval = 10, Enabled = true };
+            timer = new System.Timers.Timer{ Interval = 100, Enabled = true };
             timer.Elapsed += Timer_Elapsed;
             timer.Start();
         }
@@ -159,25 +159,25 @@ namespace ReLearn.Droid.Images
 
         private void Timer_Elapsed(object sender, ElapsedEventArgs e)
         {
-
-            if (Time > 0)
+            RunOnUiThread(() =>
             {
-                Time--;
-                RunOnUiThread(() =>
+                if (Time > 0)
                 {
-                    string sec = (Time % 100) < 10 ? Convert.ToString("0" + (Time % 100)) : Convert.ToString(Time % 100);
-                    FindViewById<TextView>(Resource.Id.textView_Timer_Images).Text = $"{Time / 100}:{sec}";
-                });
-                if (Time == 500)
-                    FindViewById<TextView>(Resource.Id.textView_Timer_Images).SetTextColor(Colors.Red);
-            }
-            else
-            {
-                DBStatistics.Insert(True, False, DataBase.TableNameImage.ToString());
-                StartActivity(typeof(Statistic));
-                Cancel();
-                Finish();
-            }
+                    Time--;
+                    string sec = $"{Time % 10}0";
+                    FindViewById<TextView>(Resource.Id.textView_Timer_Images).Text = $"{Time / 10}:{sec}";
+
+                    if (Time == 50)
+                        FindViewById<TextView>(Resource.Id.textView_Timer_Images).SetTextColor(Colors.Red);
+                }
+                else
+                {
+                    DBStatistics.Insert(True, False, DataBase.TableNameImage.ToString());
+                    StartActivity(typeof(Statistic));
+                    Cancel();
+                    Finish();
+                }
+            });
         }
 
         public override bool OnOptionsItemSelected(IMenuItem item)

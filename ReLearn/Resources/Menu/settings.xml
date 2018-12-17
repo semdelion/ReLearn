@@ -4,11 +4,11 @@ xmlns:android   ="http://schemas.android.com/apk/res/android"
 xmlns:tools     ="http://schemas.android.com/tools"    
 xmlns:app       ="http://schemas.android.com/apk/res-auto"
 tools:context   =".MainActivity">
-  <item
+  <!--<item
    android:id       ="@+id/achievements"
    android:icon     ="@+mipmap/achiev"
    app:showAsAction ="always"
-  />  
+  />  -->
   <item  
     android:id        ="@+id/settings"
     android:icon      ="@+mipmap/settings"

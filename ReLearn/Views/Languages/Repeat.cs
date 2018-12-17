@@ -108,6 +108,7 @@ namespace ReLearn.Droid.Languages
         [Java.Interop.Export("Button_Languages_Next_Click")]
         public void Button_Languages_Next_Click(View v)
         {
+            Button_next.button.Enabled = false;
             if (Button_next.State == StateButton.Unknown)
             {
                 Button_next.State = StateButton.Next;
@@ -131,6 +132,7 @@ namespace ReLearn.Droid.Languages
                     Finish();
                 }
             }
+            Button_next.button.Enabled = true;
         }
 
         protected override void OnCreate(Bundle savedInstanceState)
