@@ -25,7 +25,6 @@
           parent="Theme.AppCompat.NoActionBar">
     <item name  ="android:textColor">#d7f8fe</item>
     <item name  ="android:colorBackground">#283544</item>
-    <item name  ="android:elevation">10dp</item>    
   </style>
 
   <style name   ="ThemeStat" >

@@ -5,22 +5,27 @@
     android:orientation	    = "vertical"
     android:layout_width	= "match_parent"
     android:layout_height	= "match_parent">
-	<android.support.v7.widget.Toolbar 
-		android:id				="@+id/toolbar_About_Us"		
-		android:theme			="@style/ToolbarStyle"	
-		android:background		="@drawable/toolbar"
-		app:navigationIcon		="@mipmap/arrow"
-		android:layout_width	="match_parent"
-		android:layout_height	="80dp"
-		app:buttonGravity		="bottom">
-		<TextView
-			android:text			="@string/About_us" 
-			android:gravity			="bottom"
-			android:paddingBottom	="12dp"
+	
+	<android.support.design.widget.AppBarLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
+		<android.support.v7.widget.Toolbar 
+			android:id				="@+id/toolbar_About_Us"		
+			android:theme			="@style/ToolbarStyle"	
+			android:background		="@drawable/toolbar"
+			app:navigationIcon		="@mipmap/arrow"
 			android:layout_width	="match_parent"
-			android:layout_height	="match_parent"
-		/>
-	</android.support.v7.widget.Toolbar >
+			android:layout_height	="80dp"
+			app:buttonGravity		="bottom">
+			<TextView
+				android:text			="@string/About_us" 
+				android:gravity			="bottom"
+				android:paddingBottom	="12dp"
+				android:layout_width	="match_parent"
+				android:layout_height	="match_parent"
+			/>
+		</android.support.v7.widget.Toolbar >
+	</android.support.design.widget.AppBarLayout>
 	<ScrollView
         android:layout_width		="match_parent"
         android:layout_height		="wrap_content">
