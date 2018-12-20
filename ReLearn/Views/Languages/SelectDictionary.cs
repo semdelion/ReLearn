@@ -28,6 +28,7 @@ namespace ReLearn.Droid.Languages
             Animation.SetStartVelocity(500);
             Animation.Start();
         }
+
         void CreateViewForDictionary(string NameDictionarn, int ImageId, bool flag, bool separate)
         {
             var width = Resources.DisplayMetrics.WidthPixels/100f;
@@ -108,6 +109,7 @@ namespace ReLearn.Droid.Languages
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
 
             Dictionaries = new Dictionaries((int)(Resources.DisplayMetrics.WidthPixels / 3f));
+
             CreateViewForDictionary(TableNamesLanguage.Home.ToString(), Resource.Drawable.homeDictionary, true , true);
             CreateViewForDictionary(TableNamesLanguage.Education.ToString(), Resource.Drawable.EducationDictionary, false, true);
             CreateViewForDictionary(TableNamesLanguage.Popular_Words.ToString(), Resource.Drawable.PopularWordsDictionary, true, true);
