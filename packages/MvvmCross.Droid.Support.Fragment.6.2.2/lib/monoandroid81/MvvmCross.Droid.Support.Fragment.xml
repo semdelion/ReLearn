@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MvvmCross.Droid.Support.Fragment</name>
+    </assembly>
+    <members>
+        <member name="M:MvvmCross.Droid.Support.V4.MvxFragment.NewInstance(Android.OS.Bundle)">
+            <summary>
+            Create new instance of a Fragment
+            </summary>
+            <param name="bundle">Usually this would be MvxViewModelRequest serialized</param>
+            <returns>Returns an instance of a MvxFragment</returns>
+        </member>
+    </members>
+</doc>
