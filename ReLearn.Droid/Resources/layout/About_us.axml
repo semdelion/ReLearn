@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+	xmlns:android			= "http://schemas.android.com/apk/res/android"
+	xmlns:app				= "http://schemas.android.com/apk/res-auto"	
+    android:orientation	    = "vertical"
+    android:layout_width	= "match_parent"
+    android:layout_height	= "match_parent">
+	
+	<android.support.design.widget.AppBarLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
+		<android.support.v7.widget.Toolbar 
+			android:id				="@+id/toolbar_About_Us"		
+			android:theme			="@style/ToolbarStyle"	
+			android:background		="@drawable/toolbar"
+			app:navigationIcon		="@mipmap/arrow"
+			android:layout_width	="match_parent"
+			android:layout_height	="80dp"
+			app:buttonGravity		="bottom">
+			<TextView
+				android:text			="@string/About_us" 
+				android:gravity			="bottom"
+				android:paddingBottom	="12dp"
+				android:layout_width	="match_parent"
+				android:layout_height	="match_parent"
+			/>
+		</android.support.v7.widget.Toolbar >
+	</android.support.design.widget.AppBarLayout>
+	<ScrollView
+        android:layout_width		="match_parent"
+        android:layout_height		="wrap_content">
+		<TableLayout
+            android:layout_width	="match_parent"
+            android:layout_height	="match_parent"
+			android:layout_marginRight	="25.0dp"
+			android:layout_marginLeft	="25.0dp">
+			<TextView
+				android:id					="@+id/textView_about_us"
+				android:text				="@string/Message_about_us"
+				android:textColor			="@color/TextWhite"
+				android:layout_width		="match_parent"
+				android:layout_height		="wrap_content"
+				android:layout_marginTop	="25.0dp"
+				android:textSize			="16dp"
+				android:layout_marginBottom	="40.0dp"
+				android:defaultFocusHighlightEnabled="true"/>
+			<Button
+				android:onClick				="Button_Support_Project_Click"
+				android:id					="@+id/button_support_project"
+				android:text				="@string/Support_project"
+				android:background			="@drawable/button_style_standard"
+				android:textColor			="@color/TextWhite"
+				android:textSize			="20dp"
+				android:layout_width		="match_parent"
+				android:layout_height		="55.0dp"
+				android:gravity				="center"
+			/>
+		</TableLayout>
+	</ScrollView>
+</LinearLayout>

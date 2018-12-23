@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <color name ="Blue">          #00ffff </color>
+  <color name ="DarkBlue">      #323c7e </color>
+  <color name ="Orange">        #fea60a </color>
+  <color name ="DarkOrange">    #9a4203 </color>
+  <color name ="TextWhite">     #d7f8fe </color>
+  <color name ="HintTextWhite"> #79969b </color>
+  <color name ="Transparent">   #00000000 </color>
+</resources>

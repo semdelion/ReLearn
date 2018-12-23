@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android			="http://schemas.android.com/apk/res/android"
+	xmlns:app				="http://schemas.android.com/apk/res-auto"
+    xmlns:tools				="http://schemas.android.com/tools"
+    android:layout_width	="match_parent"
+    android:layout_height	="match_parent"
+	android:orientation		="vertical">  
+	<android.support.design.widget.AppBarLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
+		<android.support.v7.widget.Toolbar
+			xmlns:app				="http://schemas.android.com/apk/res-auto"
+			android:id				="@+id/toolbarImagesRepeat"
+			android:theme			="@style/ToolbarStyle"	
+			android:background		="@drawable/toolbar"
+			app:navigationIcon		="@mipmap/arrow"
+			android:layout_width	="match_parent"
+			android:layout_height	="80dp"	
+			app:buttonGravity		="bottom">
+			<TextView
+				android:id				="@+id/Repeat_toolbar_textview_fl"
+				android:gravity			="bottom"
+				android:paddingBottom	="12dp"
+				android:layout_width	="match_parent"
+				android:layout_height	="match_parent"
+			/>
+		</android.support.v7.widget.Toolbar>
+	</android.support.design.widget.AppBarLayout>
+	<ScrollView
+        android:layout_width	="match_parent"
+        android:layout_height	="wrap_content">
+		<TableLayout
+            android:layout_width	="match_parent"
+            android:layout_height	="match_parent">
+			<ImageView
+				android:id					="@+id/imageView_Images_repeat"
+				android:src					="@drawable/icon"
+				android:layout_width		="wrap_content"
+				android:layout_height		="180.0dp"
+				android:layout_marginTop	="25.0dp"
+				android:layout_marginRight	="7.0dp"
+				android:layout_marginLeft	="7.0dp"/>
+            <Button
+				android:onClick				="Button_Images_1_Click"
+				android:id					="@+id/button_I_choice1"
+				android:background			="@drawable/button_style_standard"
+				android:textColor			="@color/TextWhite"
+				android:textStyle			="bold"
+                android:textSize			="20dp"
+                android:layout_width		="match_parent"
+                android:layout_height		="55.0dp"
+                android:layout_marginTop	="20.0dp"
+                android:layout_marginBottom	="10dp"
+                android:layout_marginRight	="25.0dp"
+                android:layout_marginLeft	="25.0dp"
+				android:minHeight			="60dp"/>
+            <Button
+				android:onClick				="Button_Images_2_Click"
+				android:id					="@+id/button_I_choice2"
+				android:background			="@drawable/button_style_standard"
+				android:textColor			="@color/TextWhite"
+				android:textStyle			="bold"
+                android:textSize			="20dp"
+                android:layout_width		="match_parent"
+                android:layout_height		="55.0dp"
+                android:layout_marginBottom	="10dp"
+                android:layout_marginRight	="25.0dp"
+                android:layout_marginLeft	="25.0dp"
+				android:minHeight			="60dp"/>
+            <Button
+				android:onClick				="Button_Images_3_Click"
+				android:id					="@+id/button_I_choice3"
+				android:background			="@drawable/button_style_standard"
+				android:textColor			="@color/TextWhite"
+				android:textStyle			="bold"
+                android:textSize			="20dp"
+                android:layout_width		="match_parent"
+                android:layout_height		="55.0dp"
+                android:layout_marginBottom	="10dp"
+                android:layout_marginRight	="25.0dp"
+                android:layout_marginLeft	="25.0dp"
+				android:minHeight			="60dp" />
+			<Button
+				android:onClick				="Button_Images_4_Click"
+				android:id					="@+id/button_I_choice4"
+				android:background			="@drawable/button_style_standard"
+				android:textColor			="@color/TextWhite"
+				android:textStyle			="bold"
+				android:textSize			="20dp"
+				android:layout_width		="match_parent"
+				android:layout_height		="55.0dp"
+				android:layout_marginRight	="25.0dp"
+				android:layout_marginLeft	="25.0dp"
+				android:layout_marginBottom	="10dp"
+				android:minHeight			="60dp"/>
+			<Button
+				android:onClick				="Button_Images_Next_Click"
+				android:id					="@+id/button_I_Next"
+				android:text				="@string/Next"
+				android:background			="@drawable/button_style_standard"
+				android:textColor			="@color/TextWhite"
+				android:textSize			="20dp"
+				android:layout_width		="match_parent"
+				android:layout_height		="55.0dp"
+				android:layout_marginRight	="25.0dp"
+				android:layout_marginLeft	="200dp"
+				android:layout_marginBottom	="20dp"
+				android:gravity				="center" 
+			/>
+        </TableLayout>
+    </ScrollView>
+</LinearLayout>

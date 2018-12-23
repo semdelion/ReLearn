@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+ 
+  <string name="app_name">ReLearn</string>
+  <!--buttons-->
+  <string name="Language"       >Язык</string>
+  <string name="Images"         >Изображения</string>
+  <string name="Addition"       >Добавить</string>
+  <string name="Repeat"         >Повторить</string>
+  <string name="Repeated"       >Повторино</string>
+  <string name="Learn"          >Учить</string>
+  <string name="Add_word"       >Добавить</string>
+  <string name="Next"           >Дальше</string>
+  <string name="Voice"          >Озвучить</string>
+  <string name="Send"           >Отправить</string>
+  <string name="Unknown"        >Не знаю</string>
+  <string name="NotRepeat"      >Не повторять</string>
+  <string name="Instruction"    >Инструкция</string>
+  <string name="Blitz"          >Блиц</string>
+  <string name="Yes"            >Да</string>
+  <string name="No"             >Нет</string>
+
+  <!--Dictionary and description-->
+
+  <string name="Dictionaries"   >Словари</string>
+  <string name="StudiedAt"      >изучен на: </string>
+  <string name="Popular_Words"  >Популярные слова</string>
+      <string name="Popular_WordsDescription"     >Это словарь для тех, кто хочет освоить наиболее нужные и популярные слова.</string>
+  <string name="My_Directly"                      >Мой словарь</string>
+      <string name="My_DirectlyDescription"       >Содержит слова, которые вы добавляете в систему.</string>
+  <string name="Education"                        >Образование</string>
+      <string name="EducationDescription"         >Образование играет очень важную роль в нашей жизни. Развивает все стороны человеческой личности, раскрывая его способности. </string>
+  <string name="Home"                             >Дом и быт</string>
+      <string name="HomeDescription"              >Дом - семейный очаг. Это символ надёжности и безопасности, уюта и тепла. Здесь содержатся слова, с помощью которых вы сможете рассказать о своем доме.</string>
+  <string name="ThreeFormsOfVerb"                 >Глаголы</string>
+      <string name="ThreeFormsOfVerbDescription"  >Представлены наиболее употребляемые неправильные глаголы английского языка. </string>
+  <string name="ComputerScience"                  >Информатика</string>
+      <string name="ComputerScienceDescription"   >ИТ охватывают все области создания, передачи, хранения и восприятия информации, не ограничиваясь только компьютерными технологиями.</string>
+  <string name="Nature"                           >Природа</string>
+      <string name="NatureDescription"            >Природа – это все, что не создано деятельностью человека. Но она материальна, и окружает нас повсюду. Предлагаем ознакомиться со словами на эту тему.</string>
+  <string name="Films"                            >Фильмы</string>
+      <string name="FilmsDescription"             >Словарь состоит из списка лучших  фильмов по версии пользователей.</string>
+  <string name="Flags"                            >Флаги</string>
+      <string name="FlagsDescription"             >В словаре представлены флаги стран мира.</string>
+  
+  <!--Hints -->
+
+  <string name="Word_English"   >Слово (Английский)</string>
+  <string name="Word_Rus"       >Слово (Русский)</string>
+  <string name="Insert_data"    >Вставьте данные</string>
+
+  <!--Menu settings-->
+  
+  <string name="Number_of_word_repeats"    >Количество повторений слов</string>
+  <string name="Number_of_image_repeats"   >Количество повторений изображений</string>
+  <string name="Time_blitz"         >Время для блиц</string>
+  <string name="Seconds"            >секунд</string>
+  <string name="Settings"           >Настройки</string>
+  <string name="Language_eng"       >Язык (en)</string>
+  <string name="Language_rus"       >Язык (ru)</string>
+  <string name="Pronunciation"      >Произношение</string>
+  <string name="SeparatorWords"     >Разделитель слов:</string>
+  <string name="Sort_descending"    >Сортировать ↓</string>
+  <string name="Sort_Ascending"     >Сортировать ↑</string>
+  <string name="Sort_alphabetically">Сортировать А→Я</string>
+  <string name="HideStudied"        >Скрыть изученные</string>
+  <string name="Delete"             >Удаление</string>
+  <string name="Statistics"         >Статистика</string>
+  <string name="View_dictionary"    >Просмотр</string>
+
+  <!--Errors and wornings-->
+
+  <string name="DatabaseEmpty"      >База данных пуста</string>
+  <string name="DatabaseNotConnect" >Ошибка: невозможно подключиться к базе данных</string>
+  <string name="RepeatedAllWords"   >Вы повторили все слова</string>
+  <string name="RepeatedAllImages"  >Вы повторили все изображения</string>
+  <string name="Enter_word"         >Введите слово!</string>
+  <string name="Word_exists"        >Слово уже существует!</string>
+  <string name="Word_Added"         >Слово добавлено!</string>
+  <string name="Word_Not_Exists"    >Слова не существуют!</string>
+  <string name="Word_Delete"        >Слово удалено!</string>
+  <string name="Enter_Message"      >Введите сообщение</string>
+  <string name="DictionaryOver"     >Словарь закончился</string>
+  <string name="DataCorrectness"    >Данные введены некорректно</string>
+
+  <!--Statistic-->
+
+  <string name="DatatypeWords"      >Слов: </string>
+  <string name="DatatypeImages"     >Изображений: </string>
+  <string name="Degree_Of_Study"    >Степень изученности</string>
+  <string name="Correct_answers"    >Верные ответы</string>
+  <string name="Today"              >Сегодня</string>
+  <string name="Month"              >Месяц</string>
+  <string name="Average"            >Среднее значение</string>
+  <string name="Number_Learned_Words"       >Количество изученных слов</string>
+  <string name="Number_Inconvenient_Words"  >Количество затруднительных слов</string>
+  <string name="Number_Learned_Flags"       >Количество изученных флагов</string>
+  <string name="Number_Inconvenient_Flags"  >Количество затруднительных флагов</string>
+  <string name="Number_Learned_Films"       >Количество изученных фильмов</string>
+  <string name="Number_Inconvenient_Films"  >Количество затруднительных фильмов</string>
+  <string name="Number_Learned_Images"      >Количество изученных изображений</string>
+  <string name="Number_Inconvenient_Images" >Количество затруднительных изображений</string>
+  <string name="Number_Correct_Answers"     >Общее количество правильных ответов</string>
+  <string name="Correct"            >Верные</string>
+  <string name="Incorrect"          >неверные </string>
+  <string name="Number_Of_Tests"    >количество тестов </string>
+  <string name="Of"                 >из</string>
+  <string name="Last_testing"       >Последнее тестирование</string>
+  <string name="Incorrect_Up"       >Неверные</string>
+
+  <!--main menu-->
+
+  <string name="About_us"           >О нас</string>
+  <string name="Feedback"           >Обратная связь</string>
+  <string name="Feedback_comments"  >В данном разделе вы можете оставить свои пожелания, предложения, замечания</string>
+  <string name="Message_Sent"       >Сообщение отправлено</string>
+  <string name="Support_project"    >Поддержать проект</string>
+
+  <!--Messsages-->
+
+  <string name="WordsAdded"         >Слова были добавлены в ваш словарь</string>
+  <string name="Message_about_us">
+    \t\t\tЗдравствуйте!
+    \n\t\t\tДанное приложение было разработано командой из двух человек. Приложение было хорошо встречено и помогло нам при изучении иностранных слов. По это причине было принято решение реализовать пожелание пользователей и опубликовать приложение.
+    \n\t\t\tТак как наш опыт разработки приложений под мобильные устройства составляет около 1 - 2 месяцев приложение может содержать ошибки.
+    В связи с этим мы принимаем Ваши сообщения с пожеланиями, предложениями и замечаниями (все сообщения будут рассмотрены и учтены).
+    \n\n\t\t\tБлагодарим за внимание!
+    \n\n\t\t\t С уважением, команда SemdelionTeam
+    \n\n\t\t\t Адрес: SemdelionTeam@gmail.com
+  </string>
+
+  <!--Achievements-->
+  <string name="Achievements"       >Достижения</string>
+  <string name="sign_in"            >Войти в систему</string>
+</resources>
+
+
+
+
+
+
+
+
+
+
+
+

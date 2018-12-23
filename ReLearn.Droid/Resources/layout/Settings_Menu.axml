@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android			="http://schemas.android.com/apk/res/android"
+	xmlns:app				="http://schemas.android.com/apk/res-auto"
+	android:orientation		="vertical"
+	android:layout_width	="match_parent"
+	android:layout_height	="match_parent">
+	<android.support.design.widget.AppBarLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
+		<android.support.v7.widget.Toolbar 
+			xmlns:app				="http://schemas.android.com/apk/res-auto"
+			android:id				="@+id/toolbarSetting"
+			app:navigationIcon		="@mipmap/arrow" 
+			android:theme			="@style/ToolbarStyle"		
+			android:background		="@drawable/toolbar"
+			android:layout_width	="match_parent"
+       		android:layout_height	="80dp"
+			app:buttonGravity		="bottom">
+			<TextView
+				android:text			="@string/Settings"
+				android:gravity			="bottom"
+				android:paddingBottom	="12dp"
+				android:layout_width	="match_parent"
+				android:layout_height	="match_parent"
+			/>
+		</android.support.v7.widget.Toolbar>
+	</android.support.design.widget.AppBarLayout>
+	<LinearLayout
+		android:orientation			="vertical"
+		android:layout_width		="match_parent"
+		android:layout_height		="match_parent"
+		android:layout_marginRight	="15.0dp"
+		android:layout_marginLeft	="15.0dp">
+		<TextView
+			android:id					="@+id/TextView_number_of_word_repeats"
+			android:text				="@string/Number_of_word_repeats"
+			android:textColor			="@color/TextWhite"
+			android:textSize			="15dp"
+			android:layout_width		="match_parent"
+			android:layout_height		="wrap_content"
+			android:layout_marginTop	="20.0dp"
+			android:layout_marginRight	="15.0dp"
+			android:layout_marginLeft	="15.0dp"/>
+		<SeekBar
+			android:id					="@+id/SeekBarCountRepeatLenguage"
+			android:progressDrawable	="@drawable/seekbar_progressbar"
+			android:thumb				="@drawable/custom_thumb"
+			android:max					="5"
+			android:layout_marginTop	="10.0dp"
+			android:layout_width		="match_parent"
+			android:layout_height		="wrap_content"/>
+		<TextView
+			android:id					="@+id/TextView_number_of_image_repeats"
+			android:text				="@string/Number_of_image_repeats"
+			android:textColor			="@color/TextWhite"
+			android:textSize			="15dp"
+			android:layout_width		="match_parent"
+			android:layout_height		="wrap_content"
+			android:layout_marginTop	="20.0dp"
+			android:layout_marginRight	="15.0dp"
+			android:layout_marginLeft	="15.0dp"/>
+		<SeekBar
+			android:id					="@+id/SeekBarCountRepeatImages"
+			android:thumb				="@drawable/custom_thumb"
+			android:progressDrawable	="@drawable/seekbar_progressbar"
+			android:max					="5"
+			android:layout_marginTop	="10.0dp"
+			android:layout_width		="match_parent"
+			android:layout_height		="wrap_content"/>
+		<TextView
+			android:id					="@+id/TextView_TimeToBlitz"
+			android:text				="@string/Time_blitz"
+			android:textColor			="@color/TextWhite"
+			android:textSize			="15dp"
+			android:layout_width		="match_parent"
+			android:layout_height		="wrap_content"
+			android:layout_marginTop	="20.0dp"
+			android:layout_marginRight	="15.0dp"
+			android:layout_marginLeft	="15.0dp"/>
+		<SeekBar
+			android:id					="@+id/SeekBarTimeToBlitz"
+			android:thumb				="@drawable/custom_thumb"
+			android:progressDrawable	="@drawable/seekbar_progressbar"
+			android:max					="5"
+			android:layout_marginTop	="10.0dp"
+			android:layout_width		="match_parent"
+			android:layout_height		="wrap_content"/>
+		<TextView
+			android:onClick				="TextView_Language_Click"
+			android:id					="@+id/language"
+			android:textColor			="@color/TextWhite"
+			android:text				="@string/Language"
+			android:textSize			="20dp"
+			android:layout_width		="match_parent"
+			android:layout_height		="wrap_content"
+			android:layout_marginTop	="20.0dp"
+            android:layout_marginRight	="15.0dp"
+			android:layout_marginLeft	="15.0dp"/>
+		<TextView
+			android:onClick				="TextView_Pronunciation_Click"
+			android:id					="@+id/pronunciation"
+			android:textColor			="@color/TextWhite"
+			android:text				="@string/Pronunciation"
+			android:textSize			="20dp"
+			android:layout_width		="match_parent"
+			android:layout_height		="wrap_content"
+			android:layout_marginTop	="30.0dp"
+			android:layout_marginRight	="15.0dp"
+			android:layout_marginLeft	="15.0dp"
+		/>
+		<TableLayout
+			android:layout_width		="match_parent"
+			android:layout_height		="match_parent"
+			android:layout_marginTop	="20.0dp"
+			android:layout_marginLeft	="15.0dp"
+			android:stretchColumns		="2">
+			<TableRow>
+				<TextView
+					android:text				="@string/Blitz"
+					android:textColor			="@color/TextWhite"
+					android:textSize			="20dp"
+					android:layout_column		="0"
+					android:layout_width		="0dp"
+					android:layout_weight		="0.8"/>
+				<Switch
+					android:id					="@+id/SwitchBlitz"
+					android:thumb				="@drawable/custom_thumb"
+					android:layout_width		="match_parent"
+					android:layout_height		="wrap_content"
+					android:layout_marginRight	="20.0dp"
+					android:layout_column		="1"
+				/>
+			</TableRow>
+		</TableLayout>
+	</LinearLayout>
+</LinearLayout>
