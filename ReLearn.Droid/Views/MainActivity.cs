@@ -1,32 +1,35 @@
-﻿using Android.App;
-using Android.OS;
-using Android.Views;
-using Android.Content.PM;
-using Android.Content;
-using Calligraphy;
-using Android.Support.V7.App;
-using MvvmCross.Droid.Support.V7.AppCompat;
-using ReLearn.Core.ViewModels;
-using MvvmCross.Platforms.Android.Presenters.Attributes;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 
-namespace ReLearn.Droid
+using Android.App;
+using Android.Content;
+using Android.Content.PM;
+using Android.OS;
+using Android.Runtime;
+using Android.Views;
+using Android.Widget;
+using Calligraphy;
+using MvvmCross.Droid.Support.V7.AppCompat;
+using MvvmCross.Platforms.Android.Presenters.Attributes;
+using MvvmCross.Platforms.Android.Views;
+using ReLearn.Core.ViewModels;
+
+namespace ReLearn.Droid.Views
 {
     [MvxActivityPresentation]
-    [Activity(Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait, ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.Locale)]
-    public class MainActivity : MvxAppCompatActivity <MainViewModel>
+    [Activity(Label = ""/*, ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait, ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.Locale*/)]
+    public class MainActivity : MvxAppCompatActivity<MainViewModel>
     {
-        [Java.Interop.Export("Button_Languages_Click")]
-        public void Button_Languages_Click(View v) => StartActivity(typeof(Languages.Languages));
-
-        [Java.Interop.Export("Button_Images_Click")]
-        public void Button_Images_Click(View v) => StartActivity(typeof(Images.Images));
-
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            AdditionalFunctions.Font();
-            SetContentView(Resource.Layout.ActivityMain);
-            SetSupportActionBar(FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbarMain));
             base.OnCreate(savedInstanceState);
+            AdditionalFunctions.Update_Configuration_Locale(this.Resources);
+            FrameStatistics.Plain = Android.Graphics.Typeface.CreateFromAsset(Assets, Settings.font);
+            AdditionalFunctions.Font();
+            SetContentView(Resource.Layout.MainActivity);
+            SetSupportActionBar(FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbarMain));
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
@@ -40,18 +43,18 @@ namespace ReLearn.Droid
             switch (item.ItemId)
             {
                 case Resource.Id.about_us:
-                    StartActivity(typeof(AboutUs));
+                    StartActivity(typeof(AboutUsActivity));
                     return true;
                 case Resource.Id.Feedback:
-                    StartActivity(typeof(Feedback));
+                    StartActivity(typeof(FeedbackActivity));
                     return true;
                 case Resource.Id.Settings_Menu:
-                    StartActivity(typeof(SettingsMenu));
+                    StartActivity(typeof(SettingsMenuActivity));
                     Finish();
                     return true;
-                //case Resource.Id.achievements:
-                //    StartActivity(typeof(Achievements));
-                //    return true;
+                //        //case Resource.Id.achievements:
+                //        //    StartActivity(typeof(Achievements));
+                //        //    return true;
                 case Android.Resource.Id.Home:
                     Finish();
                     return true;
@@ -63,4 +66,3 @@ namespace ReLearn.Droid
         protected override void AttachBaseContext(Context newbase) => base.AttachBaseContext(CalligraphyContextWrapper.Wrap(newbase));
     }
 }
-

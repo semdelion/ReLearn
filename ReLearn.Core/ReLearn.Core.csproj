@@ -8,4 +8,8 @@
     <PackageReference Include="MvvmCross" Version="6.2.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ReLearn.API\ReLearn.API.csproj" />
+  </ItemGroup>
+
 </Project>

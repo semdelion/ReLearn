@@ -45,7 +45,7 @@ namespace ReLearn.Droid
         public const int FalseAnswer = 3;
         public const int NeutralAnswer = 1;
         public const int TrueAnswer = 1;
-        public const string font = "fonts/Roboto-Regular.ttf";
+        public const string font = "fonts/MyriadProSemibold.ttf";
 
         public static int NumberOfRepeatsImage
         {

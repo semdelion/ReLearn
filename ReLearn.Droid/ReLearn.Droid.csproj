@@ -65,31 +65,31 @@
     <Compile Include="LinkerPleaseInclude.cs" />
     <Compile Include="MessageDroid.cs" />
     <Compile Include="MyTextToSpeech.cs" />
-    <Compile Include="Resources\CustomAdapterImage.cs" />
-    <Compile Include="Resources\CustomAdapterWord.cs" />
+    <Compile Include="Adapters\ImagesAdapter.cs" />
+    <Compile Include="Adapters\LanguagesAdapter.cs" />
     <Compile Include="SelectDictionary.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="Setup.cs" />
     <Compile Include="SplashScreen.cs" />
-    <Compile Include="Views\Images\BlitzPoll.cs" />
-    <Compile Include="Views\Images\Images.cs" />
-    <Compile Include="Views\Images\Learn.cs" />
-    <Compile Include="Views\Images\Repeat.cs" />
-    <Compile Include="Views\Images\SelectDictionary.cs" />
-    <Compile Include="Views\Images\Statistic.cs" />
-    <Compile Include="Views\Images\ViewDictionary.cs" />
-    <Compile Include="Views\Languages\Add.cs" />
-    <Compile Include="Views\Languages\BlitzPoll.cs" />
-    <Compile Include="Views\Languages\DictionaryReplenishment.cs" />
-    <Compile Include="Views\Languages\Languages.cs" />
-    <Compile Include="Views\Languages\Learn.cs" />
-    <Compile Include="Views\Languages\Repeat.cs" />
-    <Compile Include="Views\Languages\SelectDictionary.cs" />
-    <Compile Include="Views\Languages\Statistic.cs" />
-    <Compile Include="Views\Languages\ViewDictionary.cs" />
-    <Compile Include="Views\Main menu\AboutUs.cs" />
-    <Compile Include="Views\Main menu\Feedback.cs" />
-    <Compile Include="Views\Main menu\SettingsMenu.cs" />
+    <Compile Include="Views\Images\BlitzPollActivity.cs" />
+    <Compile Include="Views\Images\ImagesActivity.cs" />
+    <Compile Include="Views\Images\LearnActivity.cs" />
+    <Compile Include="Views\Images\RepeatActivity.cs" />
+    <Compile Include="Views\Images\SelectDictionaryActivity.cs" />
+    <Compile Include="Views\Images\StatisticActivity.cs" />
+    <Compile Include="Views\Images\ViewDictionaryActivity.cs" />
+    <Compile Include="Views\Languages\AddActivity.cs" />
+    <Compile Include="Views\Languages\BlitzPollActivity.cs" />
+    <Compile Include="Views\Languages\DictionaryReplenishmentActivity.cs" />
+    <Compile Include="Views\Languages\LanguagesActivity.cs" />
+    <Compile Include="Views\Languages\LearnActivity.cs" />
+    <Compile Include="Views\Languages\RepeatActivity.cs" />
+    <Compile Include="Views\Languages\SelectDictionaryActivity.cs" />
+    <Compile Include="Views\Languages\StatisticActivity.cs" />
+    <Compile Include="Views\Languages\ViewDictionaryActivity.cs" />
+    <Compile Include="Views\Main menu\AboutUsActivity.cs" />
+    <Compile Include="Views\Main menu\FeedbackActivity.cs" />
+    <Compile Include="Views\Main menu\SettingsMenuActivity.cs" />
     <Compile Include="Views\MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -104,6 +104,9 @@
     <AndroidAsset Include="Assets\Database\database_statistics.db3" />
     <AndroidAsset Include="Assets\Database\database_words.db3" />
     <AndroidAsset Include="Assets\fonts\Roboto-Regular.ttf" />
+    <AndroidAsset Include="Assets\fonts\MyriadProSemibold.ttf" />
+    <AndroidAsset Include="Assets\fonts\MyriadProRegular.ttf" />
+    <AndroidAsset Include="Assets\fonts\MyriadProBold.ttf" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Properties\AndroidManifest.xml" />
     <None Include="Assets\AboutAssets.txt" />
@@ -145,6 +148,9 @@
     <PackageReference Include="MvvmCross.Droid.Support.V7.AppCompat">
       <Version>6.2.2</Version>
     </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>12.0.1</Version>
+    </PackageReference>
     <PackageReference Include="sqlite-net-pcl">
       <Version>1.5.231</Version>
     </PackageReference>
@@ -169,76 +175,76 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\About_us.axml" />
+    <AndroidResource Include="Resources\layout\MenuAboutUsActivity.axml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\Achievements.axml" />
+    <AndroidResource Include="Resources\layout\MenuAchievementsActivity.axml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\ActivityMain.axml" />
+    <AndroidResource Include="Resources\layout\MainActivity.axml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\Add_Languages.axml" />
+    <AndroidResource Include="Resources\layout\LanguagesAddActivity.axml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\AlertImage.axml" />
+    <AndroidResource Include="Resources\layout\LanguagesAlertImageActivity.axml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\BlitzPoll_Image.axml" />
+    <AndroidResource Include="Resources\layout\ImagesBlitzPollActivity.axml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\BlitzPoll_Languages.axml" />
+    <AndroidResource Include="Resources\layout\LanguagesBlitzPollActivity.axml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\DictionaryReplenishment_Languages.axml" />
+    <AndroidResource Include="Resources\layout\LanguagesDictionaryReplenishmentActivity.axml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\Feedback.axml" />
+    <AndroidResource Include="Resources\layout\MenuFeedbackActivity.axml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\Images.axml" />
+    <AndroidResource Include="Resources\layout\ImagesActivity.axml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\ItemAlertBig_Images.axml" />
+    <AndroidResource Include="Resources\layout\ImagesItemAlertBig.axml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\ItemViewDictionary_Images.axml" />
+    <AndroidResource Include="Resources\layout\ImagesItemViewDictionaryActivity.axml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\ItemViewDictionary_Languages.axml" />
+    <AndroidResource Include="Resources\layout\LanguagesItemViewDictionaryActivity.axml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\Languages.axml" />
+    <AndroidResource Include="Resources\layout\LanguagesActivity.axml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\Learn_Images.axml" />
+    <AndroidResource Include="Resources\layout\ImagesLearnActivity.axml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\Learn_Languages.axml" />
+    <AndroidResource Include="Resources\layout\LanguagesLearnActivity.axml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\Repeat_Images.axml" />
+    <AndroidResource Include="Resources\layout\ImagesRepeatActivity.axml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\Repeat_Languages.axml" />
+    <AndroidResource Include="Resources\layout\LanguagesRepeatActivity.axml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\SelectDictionary_Images.axml" />
+    <AndroidResource Include="Resources\layout\ImagesSelectDictionaryActivity.axml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\SelectDictionary_Languages.axml" />
+    <AndroidResource Include="Resources\layout\LanguagesSelectDictionaryActivity.axml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\Settings_Menu.axml" />
+    <AndroidResource Include="Resources\layout\MenuSettingsActivity.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\SplashScreen.axml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\Statistics.axml" />
+    <AndroidResource Include="Resources\layout\StatisticsActivity.axml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\ViewDictionary_Languages.axml" />
+    <AndroidResource Include="Resources\layout\LanguagesViewDictionaryActivity.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\menu\menu_DictionaryReplenishment.xml" />
@@ -2746,6 +2752,10 @@
     <AndroidResource Include="Resources\drawable\viewTrue.xml" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ReLearn.API\ReLearn.API.csproj">
+      <Project>{2d3cfc8b-09ca-4612-a27a-939bb8bfd196}</Project>
+      <Name>ReLearn.API</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ReLearn.Core\ReLearn.Core.csproj">
       <Project>{40c0e6ea-c89f-46a9-99c7-fdd29ccb79e7}</Project>
       <Name>ReLearn.Core</Name>

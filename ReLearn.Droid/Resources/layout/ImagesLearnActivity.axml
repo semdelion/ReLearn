@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+	xmlns:android			="http://schemas.android.com/apk/res/android"
+	xmlns:local				="http://schemas.android.com/apk/res-auto"
+    xmlns:tools				="http://schemas.android.com/tools"
+    android:layout_width	="match_parent"
+    android:layout_height	="match_parent"
+	android:orientation		="vertical">
+	<android.support.design.widget.AppBarLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
+		<android.support.v7.widget.Toolbar
+			xmlns:local				="http://schemas.android.com/apk/res-auto"
+			android:id				="@+id/toolbarImagesLearn"
+			android:theme			="@style/ToolbarStyle"	
+			android:background		="@drawable/toolbar"
+			local:navigationIcon		="@mipmap/arrow"
+			android:layout_width	="match_parent"
+			android:layout_height	="80dp"	
+			local:buttonGravity		="bottom">
+			<TextView		
+				android:text			="@string/Learn" 
+				android:gravity			="bottom"
+				android:paddingBottom	="12dp"
+				android:layout_width	="match_parent"
+				android:layout_height	="match_parent"
+			/>
+		</android.support.v7.widget.Toolbar>
+	</android.support.design.widget.AppBarLayout>
+	<ScrollView
+		android:id				="@+id/scrollView2"
+        android:layout_width	="match_parent"
+        android:layout_height	="wrap_content">
+        <TableLayout
+            android:layout_width	="match_parent"
+            android:layout_height	="match_parent">
+            <ImageView
+                android:id					="@+id/imageView_Images_learn"
+				android:src					="@drawable/icon"
+                android:layout_width		="wrap_content"
+                android:layout_height		="220.0dp"
+                android:layout_marginTop	="25.0dp"
+                android:layout_marginRight	="7.0dp"
+                android:layout_marginLeft	="7.0dp" />
+			<TextView
+				android:id					="@+id/textView_Images_learn"
+				android:textColor			="@color/TextWhite"
+				android:text				="Text"
+				android:textSize			="35dp"
+				android:layout_width		="match_parent"
+				android:layout_height		="80.0dp"
+				android:layout_marginRight	="25.0dp"
+				android:layout_marginLeft	="25.0dp"
+				android:layout_marginTop	="20.0dp"
+				android:gravity				="center_horizontal"/>
+            <Button
+				android:onClick				="Button_Images_Learn_Next_Click"
+				android:id					="@+id/button_I_learn_Next"
+                android:text				="@string/Next"
+				android:background			="@drawable/button_style_standard"
+				android:textColor			="@color/TextWhite"
+				android:textSize			="20dp"
+                android:layout_width		="match_parent"
+                android:layout_height		="55.0dp"
+                android:layout_marginRight	="35.0dp"
+                android:layout_marginLeft	="35.0dp"
+                android:layout_marginTop	="20.0dp"
+                android:gravity				="center"/>
+			<Button
+				android:onClick				="Button_Images_Learn_NotRepeat_Click"
+				android:id					="@+id/button_NotRepeat_Images"
+				android:text				="@string/NotRepeat"
+				android:background			="@drawable/button_style_standard"
+				android:textColor			="@color/TextWhite"
+				android:textSize			="20dp"
+				android:layout_width		="match_parent"
+				android:layout_height		="55.0dp"
+				android:layout_marginRight	="35.0dp"
+				android:layout_marginLeft	="35.0dp"
+				android:layout_marginTop	="20.0dp"
+				android:gravity				="center"
+				android:keyboardNavigationCluster="false" 
+			/>
+        </TableLayout>
+    </ScrollView>
+</LinearLayout>
