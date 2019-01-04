@@ -139,7 +139,6 @@ namespace ReLearn.Droid.Languages
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            AdditionalFunctions.Font();
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.LanguagesRepeatActivity);
             var toolbarMain = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbarLanguagesRepeat);
@@ -175,7 +174,5 @@ namespace ReLearn.Droid.Languages
             Finish();
             return base.OnOptionsItemSelected(item);
         }
-
-        protected override void AttachBaseContext(Context newbase) => base.AttachBaseContext(CalligraphyContextWrapper.Wrap(newbase));
     }
 }

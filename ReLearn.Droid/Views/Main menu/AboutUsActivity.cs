@@ -13,7 +13,7 @@ namespace ReLearn.Droid
     [Activity(Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class AboutUsActivity : MvxAppCompatActivity<AboutUsViewModel>
     {
-        [Java.Interop.Export("Button_Support_Project_Click")]
+        [Java.Interop.Export("Button_Support_Project_Click")] //TODO 
         public void Button_Support_Project_Click(View v)
         {
             Intent browserIntent = new Intent(Intent.ActionView);
@@ -23,7 +23,6 @@ namespace ReLearn.Droid
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            AdditionalFunctions.Font();
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.MenuAboutUsActivity);
             var toolbarMain = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar_About_Us);

@@ -17,6 +17,12 @@ namespace ReLearn.Core.ViewModels.Images
         public IMvxAsyncCommand ToRepeat => _toRepeat ?? (_toRepeat = new MvxAsyncCommand(NavigateToRepeat));
         private IMvxAsyncCommand _toLearn;
         public IMvxAsyncCommand ToLearn => _toLearn ?? (_toLearn = new MvxAsyncCommand(NavigateToLearn));
+        private IMvxAsyncCommand _toStatistic;
+        public IMvxAsyncCommand ToStatistic => _toStatistic ?? (_toStatistic = new MvxAsyncCommand(NavigateToStatistic));
+        private IMvxAsyncCommand _toViewDictionary;
+        public IMvxAsyncCommand ToViewDictionary => _toViewDictionary ?? (_toViewDictionary = new MvxAsyncCommand(NavigateToViewDictionary));
+        private IMvxAsyncCommand _toSelectDictionary;
+        public IMvxAsyncCommand ToSelectDictionary => _toSelectDictionary ?? (_toSelectDictionary = new MvxAsyncCommand(NavigateToSelectDictionary));
         #endregion
 
         #region Properties
@@ -48,6 +54,10 @@ namespace ReLearn.Core.ViewModels.Images
             }
         }
         private Task<bool> NavigateToLearn() => NavigationService.Navigate<LearnViewModel>();
+
+        private Task<bool> NavigateToStatistic() => NavigationService.Navigate<StatisticViewModel>();
+        private Task<bool> NavigateToViewDictionary() => NavigationService.Navigate<ViewDictionaryViewModel>();
+        private Task<bool> NavigateToSelectDictionary() => NavigationService.Navigate<SelectDictionaryViewModel>();
         #endregion
 
         #region Protected

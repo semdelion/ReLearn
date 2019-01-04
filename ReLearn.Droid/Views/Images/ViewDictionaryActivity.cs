@@ -26,7 +26,6 @@ namespace ReLearn.Droid.Images
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            AdditionalFunctions.Font();
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.LanguagesViewDictionaryActivity);
             var toolbarMain = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbarLanguagesDelete);

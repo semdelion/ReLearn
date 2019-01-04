@@ -13,7 +13,6 @@ namespace ReLearn.Droid.Images
     {    
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            AdditionalFunctions.Font();
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.ImagesActivity);
             var toolbarMain = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbarImages);
@@ -32,13 +31,13 @@ namespace ReLearn.Droid.Images
             switch (item.ItemId)
             {
                 case Resource.Id.Stats_Flags:
-                    StartActivity(typeof(StatisticActivity));
+                    ViewModel.ToStatistic.Execute();
                     return true;
                 case Resource.Id.MenuFlagsSelectDictionary:
-                    StartActivity(typeof(SelectDictionaryActivity));
+                    ViewModel.ToSelectDictionary.Execute();
                     return true;
                 case Resource.Id.View_dictionary_image:
-                    StartActivity(typeof(ViewDictionaryActivity));
+                    ViewModel.ToViewDictionary.Execute();
                     return true;
                 case Android.Resource.Id.Home:
                     Finish();
@@ -47,8 +46,5 @@ namespace ReLearn.Droid.Images
                     return base.OnOptionsItemSelected(item);
             }
         }
-
-        protected override void AttachBaseContext(Context newbase) => base.AttachBaseContext(Calligraphy.CalligraphyContextWrapper.Wrap(newbase));
     }
-    
 }

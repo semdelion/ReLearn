@@ -16,15 +16,11 @@ namespace ReLearn.Droid.Images
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            AdditionalFunctions.Font();
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.StatisticsActivity);
-
-            Typeface face = Typeface.CreateFromAsset(Assets, Settings.font);
             TextView textView = new TextView(ApplicationContext)
             {
                 Text = GetString(Resource.String.Statistics),
-                Typeface = face,
                 Gravity = GravityFlags.CenterVertical
             };
             textView.SetTextSize(Android.Util.ComplexUnitType.Dip, 25f);
@@ -67,7 +63,5 @@ namespace ReLearn.Droid.Images
             Finish();
             return base.OnOptionsItemSelected(item);
         }
-
-        protected override void AttachBaseContext(Context newbase) => base.AttachBaseContext(CalligraphyContextWrapper.Wrap(newbase));
     }
 }

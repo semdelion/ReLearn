@@ -19,8 +19,6 @@ namespace ReLearn.Droid
     {
         public SplashScreen() : base(Resource.Layout.SplashScreen)
         {
-            // AdditionalFunctions.Update_Configuration_Locale(this.Resources);
-            //FrameStatistics.Plain = Typeface.CreateFromAsset(Assets, Settings.font);
             DataBase.InstallDatabaseFromAssets();
             DataBase.SetupConnection();
             DBWords.СreateTable();

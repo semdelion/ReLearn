@@ -9,7 +9,7 @@ namespace ReLearn.Droid
         protected override void InitializeFirstChance()
         {
             base.InitializeFirstChance();
-            Mvx.IoCProvider.RegisterType<IMessage>(() => new MessageDroid());
+            Mvx.IoCProvider.RegisterType<IMessageCore>(() => new MessageDroid());
         }
     }
 }

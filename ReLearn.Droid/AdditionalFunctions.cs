@@ -106,22 +106,6 @@ namespace ReLearn.Droid
             }
         }
 
-        public static void Font()
-        {
-            CalligraphyConfig.InitDefault(new CalligraphyConfig.Builder()
-               .SetDefaultFontPath(Settings.font)
-               .SetFontAttrId(Resource.Attribute.fontPath)
-               .Build());
-        }
-
-        public static void Update_Configuration_Locale(Android.Content.Res.Resources resource) //TODO
-        {
-            Locale locale = new Locale(Settings.Currentlanguage);
-            Configuration conf = new Configuration { Locale = locale };
-            resource.UpdateConfiguration(conf, resource.DisplayMetrics);
-            //this.CreateConfigurationContext(conf);
-        }
-
         public static int DpToPX(float dp) => (int)TypedValue.ApplyDimension(ComplexUnitType.Dip, dp, Android.App.Application.Context.Resources.DisplayMetrics);
         //db.Query<Database_Words>("UPDATE " + TableNameLanguage + " SET DateRecurrence = DATETIME('NOW') WHERE Word = ?", s.Word);
         //db.Query<Database_Words>("UPDATE " + TableNameLanguage + " SET NumberLearn = " + s.NumberLearn + 1 + " WHERE Word = ?", s.Word);

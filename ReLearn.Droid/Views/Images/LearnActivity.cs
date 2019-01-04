@@ -59,7 +59,6 @@ namespace ReLearn.Droid.Images
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            AdditionalFunctions.Font();
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.ImagesLearnActivity);
             SetSupportActionBar(FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbarImagesLearn));
@@ -79,7 +78,5 @@ namespace ReLearn.Droid.Images
             Finish();
             return base.OnOptionsItemSelected(item);
         }
-
-        protected override void AttachBaseContext(Context newbase) => base.AttachBaseContext(Calligraphy.CalligraphyContextWrapper.Wrap(newbase));
     }
 }

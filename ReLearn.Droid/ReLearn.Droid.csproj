@@ -103,13 +103,12 @@
     <AndroidAsset Include="Assets\Database\database_image.db3" />
     <AndroidAsset Include="Assets\Database\database_statistics.db3" />
     <AndroidAsset Include="Assets\Database\database_words.db3" />
-    <AndroidAsset Include="Assets\fonts\Roboto-Regular.ttf" />
-    <AndroidAsset Include="Assets\fonts\MyriadProSemibold.ttf" />
-    <AndroidAsset Include="Assets\fonts\MyriadProRegular.ttf" />
-    <AndroidAsset Include="Assets\fonts\MyriadProBold.ttf" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Properties\AndroidManifest.xml" />
     <None Include="Assets\AboutAssets.txt" />
+    <AndroidResource Include="Resources\font\myriadpro_bold.ttf" />
+    <AndroidResource Include="Resources\font\myriadpro.ttf" />
+    <AndroidResource Include="Resources\font\myriadpro_semibold.ttf" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\content_main.axml">
@@ -171,6 +170,12 @@
       <Version>28.0.0</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Android.Support.Media.Compat">
+      <Version>28.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Android.Support.v7.AppCompat">
+      <Version>28.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Android.Support.v7.RecyclerView">
       <Version>28.0.0</Version>
     </PackageReference>
   </ItemGroup>
@@ -2760,6 +2765,9 @@
       <Project>{40c0e6ea-c89f-46a9-99c7-fdd29ccb79e7}</Project>
       <Name>ReLearn.Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\spinner_item.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

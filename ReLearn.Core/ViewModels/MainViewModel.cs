@@ -1,9 +1,7 @@
 ﻿using MvvmCross.Commands;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using ReLearn.Core.ViewModels.MainMenu;
 using System.Threading.Tasks;
 
 namespace ReLearn.Core.ViewModels
@@ -18,6 +16,13 @@ namespace ReLearn.Core.ViewModels
         public IMvxAsyncCommand ToImages => _toImages ?? (_toImages = new MvxAsyncCommand(NavigateToImages));
         private IMvxAsyncCommand _toLanguages;
         public IMvxAsyncCommand ToLanguages => _toLanguages ?? (_toLanguages = new MvxAsyncCommand(NavigateToLanguages));
+        private IMvxAsyncCommand _toAboutUs;
+        public IMvxAsyncCommand ToAboutUs => _toAboutUs ?? (_toAboutUs = new MvxAsyncCommand(NavigateToAboutUs));
+        private IMvxAsyncCommand _toFeedback;
+        public IMvxAsyncCommand ToFeedback => _toFeedback ?? (_toFeedback = new MvxAsyncCommand(NavigateToFeedback));
+        private IMvxAsyncCommand _toSettingsMenu;
+        public IMvxAsyncCommand ToSettingsMenu => _toSettingsMenu ?? (_toSettingsMenu = new MvxAsyncCommand(NavigateToSettingsMenu));
+
         #endregion
 
         #region Properties
@@ -37,6 +42,9 @@ namespace ReLearn.Core.ViewModels
         #region Private
         private Task<bool> NavigateToImages() => NavigationService.Navigate<Images.ImagesViewModel>();
         private Task<bool> NavigateToLanguages() => NavigationService.Navigate<Languages.LanguagesViewModel>();
+        private Task<bool> NavigateToAboutUs() => NavigationService.Navigate<AboutUsViewModel>();
+        private Task<bool> NavigateToFeedback() => NavigationService.Navigate<FeedbackViewModel>();
+        private Task<bool> NavigateToSettingsMenu() => NavigationService.Navigate<SettingsMenuViewModel>();
         #endregion
 
         #region Protected

@@ -1,8 +1,11 @@
-﻿using MvvmCross.Navigation;
+﻿using MvvmCross;
+using MvvmCross.Commands;
+using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace ReLearn.Core.ViewModels.MainMenu
 {
@@ -15,17 +18,18 @@ namespace ReLearn.Core.ViewModels.MainMenu
         #endregion
 
         #region Properties
+        private string _message;
+        public string Message
+        {
+            get { return _message; }
+            set { SetProperty(ref _message, value); }
+        }
         #endregion
 
         #region Services
-        protected IMvxNavigationService NavigationService { get; }
         #endregion
 
         #region Constructors
-        public FeedbackViewModel(IMvxNavigationService navigationService)
-        {
-            NavigationService = navigationService;
-        }
         #endregion
 
         #region Private

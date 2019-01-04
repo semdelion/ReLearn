@@ -26,7 +26,6 @@ namespace ReLearn.Droid.Languages
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            AdditionalFunctions.Font();
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.LanguagesViewDictionaryActivity);
             var toolbarMain = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbarLanguagesDelete);
@@ -108,8 +107,6 @@ namespace ReLearn.Droid.Languages
                     return base.OnOptionsItemSelected(item);
             }
         }
-
-        protected override void AttachBaseContext(Context newbase) => base.AttachBaseContext(Calligraphy.CalligraphyContextWrapper.Wrap(newbase));
     }
 }
 

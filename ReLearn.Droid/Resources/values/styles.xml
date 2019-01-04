@@ -11,6 +11,7 @@
     <item name  ="android:textSize">25dp</item>
     <item name  ="android:actionMenuTextColor">#d7f8fe</item>
     <item name  ="android:statusBarColor">#80000000</item>
+    <item name  ="android:fontFamily">@font/myriadpro</item>
     <item name  ="android:windowTranslucentStatus">true</item>
   </style>
   
@@ -30,6 +31,12 @@
     <item name  ="android:homeAsUpIndicator">@mipmap/arrow</item>
     <item name  ="android:itemBackground">#283544</item>
     <item name  ="android:colorPrimary">@android:color/transparent</item>
+  </style>
+  <style name   ="Button" >
+    <item name  ="android:background">@drawable/button_style_standard</item>
+    <item name  ="android:textColor">@color/TextWhite</item>
+    <item name  ="android:textSize">30dp</item>
+    <item name  ="android:gravity">center</item>
   </style>
 
   <style  name  ="MenuStyle" 

@@ -141,7 +141,6 @@ namespace ReLearn.Droid.Images
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            AdditionalFunctions.Font();
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.ImagesRepeatActivity);
             
@@ -177,7 +176,5 @@ namespace ReLearn.Droid.Images
             Finish();
             return base.OnOptionsItemSelected(item);
         }
-
-        protected override void AttachBaseContext(Context newbase) => base.AttachBaseContext(Calligraphy.CalligraphyContextWrapper.Wrap(newbase));
     }
 }

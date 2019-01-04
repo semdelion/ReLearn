@@ -1,26 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.Views;
-using Android.App;
+﻿using Android.App;
 using Android.Content;
+using Android.Graphics;
 using Android.OS;
-using Android.Runtime;
-using Android.Support.V7.App;
+using Android.Support.Animation;
+using Android.Views;
 using Android.Widget;
 using Calligraphy;
-using Android.Support.Animation;
-using System.Threading;
-using System.Threading.Tasks;
-using Android.Util;
-using System.IO;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.Timers;
-using Android.Graphics;
 using MvvmCross.Droid.Support.V7.AppCompat;
 using ReLearn.Core.ViewModels.Images;
+using System;
+using System.Collections.Generic;
+using System.Timers;
 
 namespace ReLearn.Droid.Images
 {
@@ -127,7 +117,6 @@ namespace ReLearn.Droid.Images
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            AdditionalFunctions.Font();
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.ImagesBlitzPollActivity);
             var toolbarMain = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbarImagesBlitzPoll);
@@ -194,7 +183,5 @@ namespace ReLearn.Droid.Images
             Cancel();
             Finish();
         }
-
-        protected override void AttachBaseContext(Context newbase) => base.AttachBaseContext(CalligraphyContextWrapper.Wrap(newbase));
     }
 }

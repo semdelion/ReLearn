@@ -25,146 +25,35 @@ namespace ReLearn.Droid
     [Activity(Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class SettingsMenuActivity : MvxAppCompatActivity<SettingsMenuViewModel>
     {
-        string PronunciationText
+        private bool CreateAdapter(Spinner spinner, int textArrayResource)
         {
-            get => FindViewById<TextView>(Resource.Id.pronunciation).Text; 
-            set => FindViewById<TextView>(Resource.Id.pronunciation).Text = value; 
-        }
-
-        string LanguageText
-        {
-            get => FindViewById<TextView>(Resource.Id.language).Text; 
-            set => FindViewById<TextView>(Resource.Id.language).Text = value; 
-        }
-
-        int CheckedItemLanguage()
-        {
-            if (Settings.Currentlanguage == Language.en.ToString())
+            try
             {
-                LanguageText = $"{ GetString(Resource.String.Language) }:   English";
-                return 0;
+                var adapter = ArrayAdapter.CreateFromResource(this, textArrayResource, Resource.Drawable.spinner_item);
+                adapter.SetDropDownViewResource(Resource.Drawable.spinner_item);
+                spinner.Adapter = adapter;
+                return true;
             }
-            else
+            catch(Exception ex)
             {
-                LanguageText = $"{ GetString(Resource.String.Language) }:   Русский";
-                return 1;
+                throw new Exception(ex.Message);
             }
         }
 
-        [Java.Interop.Export("TextView_Language_Click")]
-        public void TextView_Language_Click(View v)
+        private void InitializationAdapters()
         {
-            string[] listLanguage = { "English", "Русский" };
-            int checkedItem = CheckedItemLanguage();
-
-            Android.App.AlertDialog.Builder alert = new Android.App.AlertDialog.Builder(this);
-            alert.SetTitle(GetString(Resource.String.Language));
-            alert.SetPositiveButton("Cancel", delegate { alert.Dispose(); });
-            alert.SetSingleChoiceItems(listLanguage, checkedItem, new EventHandler<DialogClickEventArgs>(delegate (object sender, DialogClickEventArgs e)
-            {
-                var dialog = (sender as Android.App.AlertDialog);
-                checkedItem = e.Which;
-                if (listLanguage[e.Which] == "English")
-                    Settings.Currentlanguage = Language.en.ToString();
-                else
-                    Settings.Currentlanguage = Language.ru.ToString();
-
-                AdditionalFunctions.Update_Configuration_Locale(this.Resources);
-                LanguageText = $"{ GetString(Resource.String.Language) }:   {listLanguage[e.Which]}";
-                StartActivity(typeof(SettingsMenuActivity));
-                Finish();
-                dialog.Dismiss();
-            }));
-            alert.Show();
-        }
-
-        int CheckedItemPronunciation()
-        {
-            if (Settings.CurrentPronunciation == Pronunciation.en.ToString())
-            {
-                PronunciationText = $"{ GetString(Resource.String.Pronunciation) }:  American";
-                return 0;
-            }
-            else
-            {
-                PronunciationText = $"{ GetString(Resource.String.Pronunciation) }:  British";
-                return 1;
-            }
-        }
-
-        [Java.Interop.Export("TextView_Pronunciation_Click")]
-        public void TextView_Pronunciation_Click(View v)
-        {
-            string[] listPronunciation = { "American", "British" };
-            int checkedItem = CheckedItemPronunciation();
-            Android.App.AlertDialog.Builder alert = new Android.App.AlertDialog.Builder(this);
-            alert.SetTitle(GetString(Resource.String.Pronunciation));
-            alert.SetPositiveButton("Cancel", delegate { alert.Dispose(); });
-            alert.SetSingleChoiceItems(listPronunciation, checkedItem, new EventHandler<DialogClickEventArgs>(delegate (object sender, DialogClickEventArgs e)
-            {
-                var dialog = (sender as Android.App.AlertDialog);
-                checkedItem = e.Which;
-                if (listPronunciation[e.Which] == "American")
-                    Settings.CurrentPronunciation = Pronunciation.en.ToString();
-                else
-                    Settings.CurrentPronunciation = Pronunciation.uk.ToString();
-
-                PronunciationText = $"{ GetString(Resource.String.Pronunciation) }:   {listPronunciation[e.Which]}";
-                StartActivity(typeof(SettingsMenuActivity));
-                Finish();
-                dialog.Dismiss();
-            }));
-            alert.Show();
+            CreateAdapter(FindViewById<Spinner>(Resource.Id.LanguageSpinner), Resource.Array.languages);
+            CreateAdapter(FindViewById<Spinner>(Resource.Id.PronunciationSpinner), Resource.Array.pronunciations);
         }
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            AdditionalFunctions.Font();
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.MenuSettingsActivity);
-            CheckedItemLanguage();
-            CheckedItemPronunciation();
             var toolbarSettings = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbarSetting);
             SetSupportActionBar(toolbarSettings);
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
-
-            SeekBar SB_Repeat_Language = FindViewById<SeekBar>(Resource.Id.SeekBarCountRepeatLenguage),
-                    SB_Repeat_Image = FindViewById<SeekBar>(Resource.Id.SeekBarCountRepeatImages),
-                    SB_TimeToBlitz = FindViewById<SeekBar>(Resource.Id.SeekBarTimeToBlitz);
-            TextView TV_Repeat_Language = FindViewById<TextView>(Resource.Id.TextView_number_of_word_repeats),
-                     TV_Repeat_Image = FindViewById<TextView>(Resource.Id.TextView_number_of_image_repeats),
-                     TV_TimeToBlitz = FindViewById<TextView>(Resource.Id.TextView_TimeToBlitz);
-
-            SB_Repeat_Language.Progress = (Settings.NumberOfRepeatsLanguage - 5)/5;
-            SB_Repeat_Image.Progress = (Settings.NumberOfRepeatsImage - 5)/5;
-            SB_TimeToBlitz.Progress = (Settings.TimeToBlitz - 15)/15 ;
-            TV_Repeat_Language.Text = $"{GetString(Resource.String.Number_of_word_repeats )} {Convert.ToString(5 + SB_Repeat_Language.Progress*5)}";
-            TV_Repeat_Image.Text    = $"{GetString(Resource.String.Number_of_image_repeats)} {Convert.ToString(5 + SB_Repeat_Image.Progress*5)}";
-            TV_TimeToBlitz.Text     = $"{GetString(Resource.String.Time_blitz)} {Convert.ToString(15 + SB_TimeToBlitz.Progress*15)} {GetString(Resource.String.Seconds)}";
-
-            SB_Repeat_Language.ProgressChanged += (s, e) =>
-            {
-                TV_Repeat_Language.Text = $"{GetString(Resource.String.Number_of_word_repeats)} {Convert.ToString(5 + e.Progress*5)}";
-                Settings.NumberOfRepeatsLanguage = e.Progress*5 + 5;
-            };
-
-            SB_Repeat_Image.ProgressChanged += (s, e) =>
-            {
-                TV_Repeat_Image.Text =    $"{GetString(Resource.String.Number_of_image_repeats)} {Convert.ToString(5 + e.Progress*5)}";
-                Settings.NumberOfRepeatsImage = e.Progress*5 + 5;
-            };
-            SB_TimeToBlitz.ProgressChanged += (s, e) =>
-            {
-                TV_TimeToBlitz.Text = $"{GetString(Resource.String.Time_blitz)} {Convert.ToString(15 + e.Progress*15)}";
-                Settings.TimeToBlitz = e.Progress*15 + 15;
-            };
-
-            Switch switchBlitz = FindViewById<Switch>(Resource.Id.SwitchBlitz);
-            switchBlitz.Checked = Settings.BlitzEnable;
-            switchBlitz.CheckedChange += (s, e) =>
-            {
-                Settings.BlitzEnable = !Settings.BlitzEnable;
-            };
+            InitializationAdapters();
         }
 
         public override bool OnOptionsItemSelected(IMenuItem item)
@@ -173,7 +62,5 @@ namespace ReLearn.Droid
             Finish();
             return base.OnOptionsItemSelected(item);
         }
-
-        protected override void AttachBaseContext(Context newbase) => base.AttachBaseContext(CalligraphyContextWrapper.Wrap(newbase));
     }
 }

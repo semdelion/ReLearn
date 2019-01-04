@@ -16,14 +16,13 @@ namespace ReLearn.Droid.Languages
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {      
-            AdditionalFunctions.Font();
             base.OnCreate(savedInstanceState);
 
-            Typeface face = Typeface.CreateFromAsset(Assets, Settings.font);
+            //Typeface face = Typeface.Create(Assets, Settings.font);
             TextView textView = new TextView(ApplicationContext)
             {
                 Text = GetString(Resource.String.Statistics),
-                Typeface = face,
+               // Typeface = face,
                 Gravity = GravityFlags.CenterVertical
             };
             textView.SetTextSize(Android.Util.ComplexUnitType.Dip, 25f);                      
@@ -63,7 +62,5 @@ namespace ReLearn.Droid.Languages
             Finish();
             return base.OnOptionsItemSelected(item);
         }
-
-        protected override void AttachBaseContext(Context newbase) => base.AttachBaseContext(CalligraphyContextWrapper.Wrap(newbase));
     }
 }

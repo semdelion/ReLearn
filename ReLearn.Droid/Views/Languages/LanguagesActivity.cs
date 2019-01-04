@@ -13,7 +13,6 @@ namespace ReLearn.Droid.Languages
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            AdditionalFunctions.Font();
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.LanguagesActivity);
             var toolbarMain = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbarLanguages);
@@ -32,13 +31,13 @@ namespace ReLearn.Droid.Languages
             switch (item.ItemId)
             {
                 case Resource.Id.Stats:
-                    StartActivity(typeof(StatisticActivity));
+                    ViewModel.ToStatistic.Execute();
                     return true;
                 case Resource.Id.Deleteword:
-                    StartActivity(typeof(ViewDictionaryActivity));
+                    ViewModel.ToViewDictionary.Execute();
                     return true;
                 case Resource.Id.MenuEnglishSelectDictionary:
-                    StartActivity(typeof(SelectDictionaryActivity));
+                    ViewModel.ToSelectDictionary.Execute();
                     return true;
                 case Android.Resource.Id.Home:
                     Finish();
@@ -47,7 +46,5 @@ namespace ReLearn.Droid.Languages
                     return base.OnOptionsItemSelected(item);
             }
         }
-
-        protected override void AttachBaseContext(Context newbase) => base.AttachBaseContext(CalligraphyContextWrapper.Wrap(newbase));
     }
 }

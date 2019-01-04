@@ -35,7 +35,6 @@
 			android:layout_marginRight	="35.0dp"
 			android:layout_marginLeft	="35.0dp">
 			<TextView
-				android:id					="@+id/textView_about_us"
 				android:text				="@string/Message_about_us"
 				android:textColor			="@color/TextWhite"
 				android:layout_width		="match_parent"
@@ -46,10 +45,10 @@
 				android:defaultFocusHighlightEnabled="true"/>
 			<Button
 				android:onClick				="Button_Support_Project_Click"
-				android:id					="@+id/button_support_project"
 				android:text				="@string/Support_project"
 				android:background			="@drawable/button_style_standard"
 				android:textColor			="@color/TextWhite"
+				android:fontFamily			="@font/myriadpro_semibold"
 				android:textSize			="25dp"
 				android:layout_width		="match_parent"
 				android:layout_height		="55.0dp"
