@@ -134,7 +134,7 @@ namespace ReLearn.Droid.Images
                 {
                     DBStatistics.Insert(Statistics.True, Statistics.False, DataBase.TableNameImage.ToString());
                     Statistics.Count = Statistics.True = Statistics.False = 0;
-                    StartActivity(typeof(StatisticActivity));
+                    ViewModel.ToStatistic.Execute();
                     this.Finish();
                 }
             }

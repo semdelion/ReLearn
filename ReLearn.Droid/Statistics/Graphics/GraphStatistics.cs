@@ -97,7 +97,7 @@ namespace ReLearn.Droid
             Graph_layout(left, bottom, top, right);
             Diagram(Database_Stat, left, right, bottom, top);
 
-            FrameStatistics LastStat = new FrameStatistics(7f * w_rate, bottom + 10f * h_rate, right, 95f * h_rate, background_color);
+            FrameStatistics LastStat = new FrameStatistics(7f * w_rate, bottom + 10f * h_rate, right, 96f * h_rate, background_color);
             LastStat.DrawBorder(TheCanvas, paint_border);
             int? True = null, False = null;
             if (Database_Stat.Count != 0)

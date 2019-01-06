@@ -17,17 +17,12 @@ namespace ReLearn.Droid.Views.Statistics
         public override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-
-            // Create your fragment here
         }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            // Use this to return your custom view for this Fragment
-            return inflater.Inflate(Resource.Layout.statistics_main_fragment, container, false);
-
-            //  return base.OnCreateView(inflater, container, savedInstanceState);
-
+            return new GraphStatistics(inflater.Inflate(Resource.Layout.statistics_main_fragment, container, false).Context, 
+                                                        Colors.Orange, Colors.DarkOrange, DataBase.TableNameImage.ToString());
         }
 
 

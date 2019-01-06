@@ -6445,8 +6445,8 @@ namespace ReLearn.Droid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f0a0108
-			public const int ABC = 2131362056;
+			// aapt resource value: 0x7f0a0109
+			public const int ABC = 2131362057;
 			
 			// aapt resource value: 0x7f0a0035
 			public const int ALT = 2131361845;
@@ -6466,20 +6466,20 @@ namespace ReLearn.Droid
 			// aapt resource value: 0x7f0a0036
 			public const int CTRL = 2131361846;
 			
-			// aapt resource value: 0x7f0a00fe
-			public const int Deleteword = 2131362046;
+			// aapt resource value: 0x7f0a00ff
+			public const int Deleteword = 2131362047;
 			
 			// aapt resource value: 0x7f0a0037
 			public const int FUNCTION = 2131361847;
 			
-			// aapt resource value: 0x7f0a010b
-			public const int Feedback = 2131362059;
+			// aapt resource value: 0x7f0a010c
+			public const int Feedback = 2131362060;
 			
 			// aapt resource value: 0x7f0a00b8
 			public const int FlagsSelectDictionary = 2131361976;
 			
-			// aapt resource value: 0x7f0a0109
-			public const int HideStudied = 2131362057;
+			// aapt resource value: 0x7f0a010a
+			public const int HideStudied = 2131362058;
 			
 			// aapt resource value: 0x7f0a00d7
 			public const int LanguageSelectDictionary = 2131362007;
@@ -6490,11 +6490,11 @@ namespace ReLearn.Droid
 			// aapt resource value: 0x7f0a0038
 			public const int META = 2131361848;
 			
-			// aapt resource value: 0x7f0a00fc
-			public const int MenuEnglishSelectDictionary = 2131362044;
+			// aapt resource value: 0x7f0a00fd
+			public const int MenuEnglishSelectDictionary = 2131362045;
 			
-			// aapt resource value: 0x7f0a0101
-			public const int MenuFlagsSelectDictionary = 2131362049;
+			// aapt resource value: 0x7f0a0102
+			public const int MenuFlagsSelectDictionary = 2131362050;
 			
 			// aapt resource value: 0x7f0a001d
 			public const int MvvmCrossTagId = 2131361821;
@@ -6523,20 +6523,20 @@ namespace ReLearn.Droid
 			// aapt resource value: 0x7f0a003a
 			public const int SYM = 2131361850;
 			
-			// aapt resource value: 0x7f0a010a
-			public const int Settings_Menu = 2131362058;
+			// aapt resource value: 0x7f0a010b
+			public const int Settings_Menu = 2131362059;
 			
-			// aapt resource value: 0x7f0a00ff
-			public const int Stats = 2131362047;
+			// aapt resource value: 0x7f0a0100
+			public const int Stats = 2131362048;
+			
+			// aapt resource value: 0x7f0a0104
+			public const int Stats_Flags = 2131362052;
 			
 			// aapt resource value: 0x7f0a0103
-			public const int Stats_Flags = 2131362051;
+			public const int View_dictionary_image = 2131362051;
 			
-			// aapt resource value: 0x7f0a0102
-			public const int View_dictionary_image = 2131362050;
-			
-			// aapt resource value: 0x7f0a010c
-			public const int about_us = 2131362060;
+			// aapt resource value: 0x7f0a010d
+			public const int about_us = 2131362061;
 			
 			// aapt resource value: 0x7f0a00e5
 			public const int action0 = 2131362021;
@@ -6589,8 +6589,8 @@ namespace ReLearn.Droid
 			// aapt resource value: 0x7f0a005f
 			public const int action_mode_close_button = 2131361887;
 			
-			// aapt resource value: 0x7f0a0104
-			public const int action_search = 2131362052;
+			// aapt resource value: 0x7f0a0105
+			public const int action_search = 2131362053;
 			
 			// aapt resource value: 0x7f0a00e4
 			public const int action_text = 2131362020;
@@ -6742,8 +6742,8 @@ namespace ReLearn.Droid
 			// aapt resource value: 0x7f0a007d
 			public const int decor_content_parent = 2131361917;
 			
-			// aapt resource value: 0x7f0a0107
-			public const int decrease = 2131362055;
+			// aapt resource value: 0x7f0a0108
+			public const int decrease = 2131362056;
 			
 			// aapt resource value: 0x7f0a0063
 			public const int default_activity_button = 2131361891;
@@ -6763,11 +6763,11 @@ namespace ReLearn.Droid
 			// aapt resource value: 0x7f0a0097
 			public const int design_navigation_view = 2131361943;
 			
-			// aapt resource value: 0x7f0a0100
-			public const int dictionary_replenishment = 2131362048;
+			// aapt resource value: 0x7f0a0101
+			public const int dictionary_replenishment = 2131362049;
 			
-			// aapt resource value: 0x7f0a00fb
-			public const int dictionary_replenishment_instruction = 2131362043;
+			// aapt resource value: 0x7f0a00fc
+			public const int dictionary_replenishment_instruction = 2131362044;
 			
 			// aapt resource value: 0x7f0a0023
 			public const int disableHome = 2131361827;
@@ -6847,8 +6847,8 @@ namespace ReLearn.Droid
 			// aapt resource value: 0x7f0a00bb
 			public const int imgCustomToast = 2131361979;
 			
-			// aapt resource value: 0x7f0a0106
-			public const int increase = 2131362054;
+			// aapt resource value: 0x7f0a0107
+			public const int increase = 2131362055;
 			
 			// aapt resource value: 0x7f0a00ef
 			public const int info = 2131362031;
@@ -6889,17 +6889,17 @@ namespace ReLearn.Droid
 			// aapt resource value: 0x7f0a0064
 			public const int list_item = 2131361892;
 			
-			// aapt resource value: 0x7f0a00fa
-			public const int masked = 2131362042;
+			// aapt resource value: 0x7f0a00fb
+			public const int masked = 2131362043;
 			
 			// aapt resource value: 0x7f0a00e8
 			public const int media_actions = 2131362024;
 			
-			// aapt resource value: 0x7f0a0105
-			public const int menuDelSort = 2131362053;
+			// aapt resource value: 0x7f0a0106
+			public const int menuDelSort = 2131362054;
 			
-			// aapt resource value: 0x7f0a00f8
-			public const int message = 2131362040;
+			// aapt resource value: 0x7f0a00f9
+			public const int message = 2131362041;
 			
 			// aapt resource value: 0x7f0a0034
 			public const int middle = 2131361844;
@@ -7033,8 +7033,8 @@ namespace ReLearn.Droid
 			// aapt resource value: 0x7f0a008d
 			public const int select_dialog_listview = 2131361933;
 			
-			// aapt resource value: 0x7f0a00fd
-			public const int settings = 2131362045;
+			// aapt resource value: 0x7f0a00fe
+			public const int settings = 2131362046;
 			
 			// aapt resource value: 0x7f0a0077
 			public const int shortcut = 2131361911;
@@ -7150,9 +7150,6 @@ namespace ReLearn.Droid
 			// aapt resource value: 0x7f0a0072
 			public const int title_template = 2131361906;
 			
-			// aapt resource value: 0x7f0a00f5
-			public const int toolbar = 2131362037;
-			
 			// aapt resource value: 0x7f0a00c2
 			public const int toolbarDictionaryReplenishment = 2131361986;
 			
@@ -7195,6 +7192,9 @@ namespace ReLearn.Droid
 			// aapt resource value: 0x7f0a00da
 			public const int toolbarMain = 2131362010;
 			
+			// aapt resource value: 0x7f0a00f5
+			public const int toolbarSelectDictionary = 2131362037;
+			
 			// aapt resource value: 0x7f0a00df
 			public const int toolbarSetting = 2131362015;
 			
@@ -7206,6 +7206,9 @@ namespace ReLearn.Droid
 			
 			// aapt resource value: 0x7f0a00de
 			public const int toolbar_Feedback = 2131362014;
+			
+			// aapt resource value: 0x7f0a00f8
+			public const int toolbar_statistics = 2131362040;
 			
 			// aapt resource value: 0x7f0a0041
 			public const int top = 2131361857;
@@ -7243,8 +7246,8 @@ namespace ReLearn.Droid
 			// aapt resource value: 0x7f0a0016
 			public const int view_offset_helper = 2131361814;
 			
-			// aapt resource value: 0x7f0a00f9
-			public const int visible = 2131362041;
+			// aapt resource value: 0x7f0a00fa
+			public const int visible = 2131362042;
 			
 			// aapt resource value: 0x7f0a003f
 			public const int withText = 2131361855;
@@ -7552,25 +7555,28 @@ namespace ReLearn.Droid
 			public const int select_dialog_singlechoice_material = 2131034192;
 			
 			// aapt resource value: 0x7f050051
-			public const int SplashScreen = 2131034193;
+			public const int select_dictionary = 2131034193;
 			
 			// aapt resource value: 0x7f050052
-			public const int Statistics = 2131034194;
+			public const int SplashScreen = 2131034194;
 			
 			// aapt resource value: 0x7f050053
-			public const int statistics_general_fragment = 2131034195;
+			public const int Statistics = 2131034195;
 			
 			// aapt resource value: 0x7f050054
-			public const int statistics_main_fragment = 2131034196;
+			public const int statistics_general_fragment = 2131034196;
 			
 			// aapt resource value: 0x7f050055
-			public const int StatisticsActivity = 2131034197;
+			public const int statistics_main_fragment = 2131034197;
 			
 			// aapt resource value: 0x7f050056
-			public const int support_simple_spinner_dropdown_item = 2131034198;
+			public const int StatisticsActivity = 2131034198;
 			
 			// aapt resource value: 0x7f050057
-			public const int tooltip = 2131034199;
+			public const int support_simple_spinner_dropdown_item = 2131034199;
+			
+			// aapt resource value: 0x7f050058
+			public const int tooltip = 2131034200;
 			
 			static Layout()
 			{
