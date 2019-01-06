@@ -13,35 +13,6 @@ namespace ReLearn.Droid.Languages
     [Activity(Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class AddActivity : MvxAppCompatActivity<AddViewModel>
     {
-        string Word
-        {
-            get => FindViewById<EditText>(Resource.Id.editText_foreign_word).Text.ToLower(); 
-            set => FindViewById<EditText>(Resource.Id.editText_foreign_word).Text = value.ToLower(); 
-        }
-
-        string TranslationWord
-        {
-            get => FindViewById<EditText>(Resource.Id.editText_translation_word).Text.ToLower(); 
-            set => FindViewById<EditText>(Resource.Id.editText_translation_word).Text = value.ToLower(); 
-        }
-
-        [Java.Interop.Export("Button_Languages_Add_Word_Click")]
-        public void Button_Languages_Add_Click(View button)
-        {
-            button.Enabled = false;
-            if (Word == "" || TranslationWord == "")
-                Toast.MakeText(this, GetString(Resource.String.Enter_word), ToastLength.Short).Show();
-            else if (DBWords.WordIsContained(Word))
-                Toast.MakeText(this, GetString(Resource.String.Word_exists), ToastLength.Short).Show();               
-            else
-            {
-                DBWords.Insert(Word, TranslationWord);
-                Word = TranslationWord = "";
-                Toast.MakeText(this, GetString(Resource.String.Word_Added), ToastLength.Short).Show();
-            }
-            button.Enabled = true;
-        }
-
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -62,7 +33,7 @@ namespace ReLearn.Droid.Languages
             switch (item.ItemId)
             {
                 case Resource.Id.dictionary_replenishment:
-                    StartActivity(typeof(DictionaryReplenishmentActivity));
+                    ViewModel.ToDictionaryReplenishment.Execute();
                     return true;
                 case Android.Resource.Id.Home:
                     Finish();
@@ -71,7 +42,5 @@ namespace ReLearn.Droid.Languages
                     return base.OnOptionsItemSelected(item);
             }
         }
-
-        protected override void AttachBaseContext(Context newbase) => base.AttachBaseContext(CalligraphyContextWrapper.Wrap(newbase));
     }
 }

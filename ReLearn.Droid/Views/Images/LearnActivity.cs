@@ -9,6 +9,8 @@ using Android.Support.V7.App;
 using System.Collections.Generic;
 using MvvmCross.Droid.Support.V7.AppCompat;
 using ReLearn.Core.ViewModels.Images;
+using Android.Util;
+using Android.Graphics.Drawables;
 
 namespace ReLearn.Droid.Images
 {
@@ -64,6 +66,15 @@ namespace ReLearn.Droid.Images
             SetSupportActionBar(FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbarImagesLearn));
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
             ImagesDatabase = DBImages.GetDataNotLearned;
+            DisplayMetrics displayMetrics = new DisplayMetrics();
+            WindowManager.DefaultDisplay.GetRealMetrics(displayMetrics);
+            var _background = new BitmapDrawable(Resources, Background.GetBackgroung(
+            displayMetrics.WidthPixels - AdditionalFunctions.DpToPX(20),
+            AdditionalFunctions.DpToPX(300)
+            ));
+            FindViewById<LinearLayout>(Resource.Id.learn_background).Background = _background;
+
+
             if (ImagesDatabase.Count == 0)
             {
                 Toast.MakeText(this, GetString(Resource.String.RepeatedAllImages), ToastLength.Short).Show();

@@ -10,40 +10,7 @@ namespace ReLearn.Droid.Languages
 {
     [Activity(Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class DictionaryReplenishmentActivity : MvxAppCompatActivity<DictionaryReplenishmentViewModel>
-    {
-
-        [Java.Interop.Export("Button_Languages_Add_DictionaryReplenishment")]
-        public void Button_Languages_Add_DictionaryReplenishment(View button)
-        {
-            var text = FindViewById<EditText>(Resource.Id.editText_DictionaryReplenishment).Text.Trim('\n').ToLower().Split('\n');
-            if (ValidationOfEnteredData(text))
-            {
-                for (int i = 0; i < text.Length; i++)
-                {
-                    var str = text[i].Split('|');
-                    if (!DBWords.WordIsContained(str[0].Trim()))
-                        DBWords.Insert(str[0].Trim(), str[1].Trim());
-                }
-
-                Toast.MakeText(this, GetString(Resource.String.WordsAdded), ToastLength.Short).Show();
-                FindViewById<EditText>(Resource.Id.editText_DictionaryReplenishment).Text = "";
-            }
-            else
-                Toast.MakeText(this, GetString(Resource.String.DataCorrectness), ToastLength.Short).Show();
-        }
-
-        public bool ValidationOfEnteredData(string[] text)
-        {
-            for (int i = 0; i < text.Length; i++)
-            {
-                if (text[i].Trim().Split('|').Length != 2)
-                    return false;
-                //else if (text[i].Split('|')[0].Any(wordByte => wordByte > 191) || text[i].Split('|')[1].Any(wordByte => wordByte > 164 && wordByte < 123 )) // первое - английское, второе - русское
-                //    return false;
-            }
-            return true;
-        }
-
+    {                                          
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);

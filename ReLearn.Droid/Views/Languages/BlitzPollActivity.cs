@@ -20,6 +20,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Timers;
 using MvvmCross.Droid.Support.V7.AppCompat;
 using ReLearn.Core.ViewModels.Languages;
+using Android.Graphics.Drawables;
 
 namespace ReLearn.Droid.Languages
 {
@@ -27,6 +28,7 @@ namespace ReLearn.Droid.Languages
     public class BlitzPollActivity : MvxAppCompatActivity<BlitzPollViewModel>
     {
         System.Timers.Timer timer;
+        BitmapDrawable _backgroundWord;
         TextView ViewPrev;
         TextView ViewCurrent;
         List<DBWords> WordDatabase { get; set; }
@@ -44,6 +46,7 @@ namespace ReLearn.Droid.Languages
                 RightMargin = AdditionalFunctions.DpToPX(25),
                 LeftMargin = AdditionalFunctions.DpToPX(25)
             };
+           
             CurrentWordNumber = new Random(unchecked((int)(DateTime.Now.Ticks))).Next(WordDatabase.Count);
             int randIndex = (CurrentWordNumber + new Random(unchecked((int)(DateTime.Now.Ticks))).Next(1, WordDatabase.Count))% WordDatabase.Count;
             answer = new Random(unchecked((int)(DateTime.Now.Ticks))).Next(2) == 1 ? true : false;
@@ -53,10 +56,11 @@ namespace ReLearn.Droid.Languages
                 TextSize        = 30,
                 Elevation       = AdditionalFunctions.DpToPX(10),
                 LayoutParameters= param,
-                Background      = GetDrawable(Resource.Drawable.viewNeutral),
                 Text            = $"{WordDatabase[CurrentWordNumber].Word}\n\n{TranslationWord}",
                 Gravity         = GravityFlags.CenterHorizontal | GravityFlags.Center
             };
+
+            textView.Background = _backgroundWord;
             textView.SetTextColor(Colors.White);
             return textView;
         }
@@ -100,6 +104,17 @@ namespace ReLearn.Droid.Languages
             SetSupportActionBar(toolbarMain);
             SupportActionBar.SetDisplayHomeAsUpEnabled(true); // отображаем кнопку домой
 
+            DisplayMetrics displayMetrics = new DisplayMetrics();
+            WindowManager.DefaultDisplay.GetRealMetrics(displayMetrics);
+
+            _backgroundWord = new BitmapDrawable(Resources, Background.GetBackgroung(
+                displayMetrics.WidthPixels - AdditionalFunctions.DpToPX(50),
+                AdditionalFunctions.DpToPX(300)));
+            var _backgroundTimer = new BitmapDrawable(Resources, Background.GetBackgroung(
+                displayMetrics.WidthPixels - AdditionalFunctions.DpToPX(200),
+                AdditionalFunctions.DpToPX(50)));
+
+            FindViewById<TextView>(Resource.Id.textView_Timer_language).Background = _backgroundTimer;
             WordDatabase = DBWords.GetDataNotLearned;
             if (WordDatabase.Count == 0)
             {
@@ -111,6 +126,8 @@ namespace ReLearn.Droid.Languages
             FindViewById<RelativeLayout>(Resource.Id.RelativeLayoutLanguagesBlitzPoll).AddView(ViewCurrent, 1);
             TitleCount = $"{GetString(Resource.String.Repeated)} {1}";
             TimerStart();
+            
+
         }
 
         void TimerStart()

@@ -9,6 +9,8 @@ using Android.Graphics;
 using Android.Support.V7.App;
 using MvvmCross.Droid.Support.V7.AppCompat;
 using ReLearn.Core.ViewModels.Images;
+using Android.Util;
+using Android.Graphics.Drawables;
 
 namespace ReLearn.Droid.Images
 {
@@ -148,6 +150,15 @@ namespace ReLearn.Droid.Images
             SetSupportActionBar(toolbarMain);
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
             ImagesDatabase = DBImages.GetDataNotLearned;
+
+            DisplayMetrics displayMetrics = new DisplayMetrics();
+            WindowManager.DefaultDisplay.GetRealMetrics(displayMetrics);
+            var _background = new BitmapDrawable(Resources, Background.GetBackgroung(
+            displayMetrics.WidthPixels - AdditionalFunctions.DpToPX(20),
+            AdditionalFunctions.DpToPX(190)));
+            FindViewById<LinearLayout>(Resource.Id.repeat_background).Background = _background;
+
+
             Statistics.Table = DataBase.TableNameImage.ToString();
             Buttons = new List<Button>{
                 FindViewById<Button>(Resource.Id.button_I_choice1),

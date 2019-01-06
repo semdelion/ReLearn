@@ -12,6 +12,8 @@ using Android.OS;
 using Android.Support.V7.App;
 using MvvmCross.Droid.Support.V7.AppCompat;
 using ReLearn.Core.ViewModels.Languages;
+using Android.Util;
+using Android.Graphics.Drawables;
 
 namespace ReLearn.Droid.Languages
 {
@@ -145,6 +147,14 @@ namespace ReLearn.Droid.Languages
            
             SetSupportActionBar(toolbarMain);
             SupportActionBar.SetDisplayHomeAsUpEnabled(true); // отображаем кнопку домой
+
+            DisplayMetrics displayMetrics = new DisplayMetrics();
+            WindowManager.DefaultDisplay.GetRealMetrics(displayMetrics);
+            var _background = new BitmapDrawable(Resources, Background.GetBackgroung(
+            displayMetrics.WidthPixels - AdditionalFunctions.DpToPX(70),
+            AdditionalFunctions.DpToPX(190)));
+            FindViewById<TextView>(Resource.Id.textView_Eng_Word).Background = _background;
+
             MySpeech = new MyTextToSpeech();
             WordDatabase = DBWords.GetDataNotLearned;
             Statistics.Table = DataBase.TableNameLanguage.ToString();

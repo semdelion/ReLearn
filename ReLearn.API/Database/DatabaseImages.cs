@@ -5,7 +5,7 @@ using SQLite;
 
 namespace ReLearn.API.Database
 {
-    enum TableNamesImage
+    public enum TableNamesImage
     {
         Flags,
         Films

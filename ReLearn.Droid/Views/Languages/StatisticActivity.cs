@@ -11,27 +11,27 @@ using ReLearn.Core.ViewModels.Languages;
 
 namespace ReLearn.Droid.Languages
 {
-    [Activity( Theme = "@style/ThemeStat", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    [Activity(Theme = "@style/ThemeStat", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class StatisticActivity : MvxActivity<StatisticViewModel>
     {
         protected override void OnCreate(Bundle savedInstanceState)
-        {      
+        {
             base.OnCreate(savedInstanceState);
 
             //Typeface face = Typeface.Create(Assets, Settings.font);
             TextView textView = new TextView(ApplicationContext)
             {
                 Text = GetString(Resource.String.Statistics),
-               // Typeface = face,
+                // Typeface = face,
                 Gravity = GravityFlags.CenterVertical
             };
-            textView.SetTextSize(Android.Util.ComplexUnitType.Dip, 25f);                      
+            textView.SetTextSize(Android.Util.ComplexUnitType.Dip, 25f);
             textView.SetTextColor(Colors.White);
 
             ActionBar.SetDisplayOptions(ActionBarDisplayOptions.ShowCustom, ActionBarDisplayOptions.ShowCustom | ActionBarDisplayOptions.ShowTitle);
             ActionBar.SetCustomView(textView, new ActionBar.LayoutParams(ViewGroup.LayoutParams.MatchParent, ViewGroup.LayoutParams.MatchParent));
             ActionBar.SetDisplayHomeAsUpEnabled(true); // отображаем кнопку домой
-       
+
             Window.SetBackgroundDrawable(GetDrawable(Resource.Drawable.backgroundEnFl));
             Window.AddFlags(WindowManagerFlags.DrawsSystemBarBackgrounds);
             Window.SetStatusBarColor(Android.Graphics.Color.Argb(128, 0, 0, 0));
@@ -49,7 +49,7 @@ namespace ReLearn.Droid.Languages
             var tab = ActionBar.NewTab();
             tab.SetIcon(Resource.Drawable.Stat1);/// icon 1
             tab.TabSelected += (sender, args) => SetContentView(Stat1);
-            
+
             ActionBar.AddTab(tab);
 
             tab = ActionBar.NewTab();

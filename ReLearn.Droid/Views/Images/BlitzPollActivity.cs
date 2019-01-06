@@ -1,8 +1,10 @@
 ﻿using Android.App;
 using Android.Content;
 using Android.Graphics;
+using Android.Graphics.Drawables;
 using Android.OS;
 using Android.Support.Animation;
+using Android.Util;
 using Android.Views;
 using Android.Widget;
 using Calligraphy;
@@ -18,6 +20,7 @@ namespace ReLearn.Droid.Images
     public class BlitzPollActivity : MvxAppCompatActivity<BlitzPollViewModel>
     {
         System.Timers.Timer timer;
+        BitmapDrawable _backgroundWord;
         LinearLayout ViewPrev;
         LinearLayout ViewCurrent;
         List<DBImages> ImageDatabase { get; set; }
@@ -78,8 +81,8 @@ namespace ReLearn.Droid.Images
             {
                 Orientation     = Orientation.Vertical,
                 LayoutParameters= param,
-                Background      = GetDrawable(Resource.Drawable.viewNeutral)
             };
+            linearLayout.Background = _backgroundWord;
             linearLayout.AddView(GetImage());
             linearLayout.AddView(GetTextView());
             return linearLayout;
@@ -122,6 +125,21 @@ namespace ReLearn.Droid.Images
             var toolbarMain = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbarImagesBlitzPoll);
             SetSupportActionBar(toolbarMain);
             SupportActionBar.SetDisplayHomeAsUpEnabled(true); // отображаем кнопку домой
+
+            DisplayMetrics displayMetrics = new DisplayMetrics();
+            WindowManager.DefaultDisplay.GetRealMetrics(displayMetrics);
+
+            _backgroundWord = new BitmapDrawable(Resources, Background.GetBackgroung(
+                displayMetrics.WidthPixels - AdditionalFunctions.DpToPX(20),
+                AdditionalFunctions.DpToPX(300)
+                ));
+            var _backgroundTimer = new BitmapDrawable(Resources, Background.GetBackgroung(
+                displayMetrics.WidthPixels - AdditionalFunctions.DpToPX(200),
+                AdditionalFunctions.DpToPX(50)
+                ));
+
+            FindViewById<TextView>(Resource.Id.textView_Timer_Images).Background = _backgroundTimer;
+
             ImageDatabase = DBImages.GetDataNotLearned;
             if (ImageDatabase.Count == 0)
             {

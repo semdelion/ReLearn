@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout 
 	xmlns:android			="http://schemas.android.com/apk/res/android"
+	xmlns:local				="http://schemas.android.com/apk/res-auto"
     android:orientation		="vertical"
     android:layout_width	="match_parent"
     android:layout_height	="match_parent">
@@ -8,7 +9,6 @@
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content">
 		<android.support.v7.widget.Toolbar 
-			xmlns:local				="http://schemas.android.com/apk/res-auto"
 			android:id				="@+id/toolbarDictionaryReplenishment"
 			android:theme			="@style/ToolbarStyle"	
 			android:background		="@drawable/toolbar"  
@@ -26,7 +26,7 @@
 		</android.support.v7.widget.Toolbar>
 	</android.support.design.widget.AppBarLayout>
 	<EditText
-		android:id					="@+id/editText_DictionaryReplenishment"
+		local:MvxBind               ="Text Words"
 		android:hint				="@string/Insert_data"
 		android:textColor			="@color/TextWhite"
 		android:textColorHint		="@color/HintTextWhite"
@@ -40,7 +40,7 @@
 		android:scrollbars			="vertical" 
 		android:defaultFocusHighlightEnabled="true"/>
 	<Button
-		android:onClick				="Button_Languages_Add_DictionaryReplenishment"
+		local:MvxBind				="Click AddWordsCommand"
 		android:id					="@+id/button_add_DictionaryReplenishment"
 		android:background			="@drawable/button_style_standard"
 		android:text				="@string/Add_word"

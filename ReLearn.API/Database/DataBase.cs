@@ -5,7 +5,7 @@ using Plugin.Settings;
 
 namespace ReLearn.API.Database
 {
-    static class DataBase
+    public static class DataBase
     {
         const string _statistics  = "database_statistics.db3"; 
         const string _english     = "database_words.db3"; 

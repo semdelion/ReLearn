@@ -8,6 +8,8 @@ using Android.Support.V7.App;
 using System.Collections.Generic;
 using MvvmCross.Droid.Support.V7.AppCompat;
 using ReLearn.Core.ViewModels.Languages;
+using Android.Util;
+using Android.Graphics.Drawables;
 
 namespace ReLearn.Droid.Languages
 {
@@ -69,6 +71,15 @@ namespace ReLearn.Droid.Languages
             var toolbarMain = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbarLanguagesLearn);
             SetSupportActionBar(toolbarMain);
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
+            DisplayMetrics displayMetrics = new DisplayMetrics();
+            WindowManager.DefaultDisplay.GetRealMetrics(displayMetrics);
+            var _background = new BitmapDrawable(Resources, Background.GetBackgroung(
+            displayMetrics.WidthPixels - AdditionalFunctions.DpToPX(70),
+            AdditionalFunctions.DpToPX(300)));
+
+            FindViewById<TextView>(Resource.Id.textView_learn_en).Background = _background;
+
+
             MySpeech = new MyTextToSpeech();
             WordDatabase = DBWords.GetDataNotLearned;
 

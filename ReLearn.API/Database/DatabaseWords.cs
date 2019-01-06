@@ -5,7 +5,7 @@ using SQLite;
 
 namespace ReLearn.API.Database
 {
-    enum TableNamesLanguage
+    public enum TableNamesLanguage
     {
         My_Directly,
         Home,

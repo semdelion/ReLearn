@@ -34,25 +34,35 @@
         <TableLayout
             android:layout_width	="match_parent"
             android:layout_height	="match_parent">
-            <ImageView
-                android:id					="@+id/imageView_Images_learn"
-				android:src					="@drawable/icon"
-                android:layout_width		="wrap_content"
-                android:layout_height		="220.0dp"
-                android:layout_marginTop	="25.0dp"
-                android:layout_marginRight	="7.0dp"
-                android:layout_marginLeft	="7.0dp" />
-			<TextView
-				android:id					="@+id/textView_Images_learn"
-				android:textColor			="@color/TextWhite"
-				android:text				="Text"
-				android:textSize			="35dp"
+			<LinearLayout
+				android:id					="@+id/learn_background"
+				android:layout_marginTop	="10.0dp"
 				android:layout_width		="match_parent"
-				android:layout_height		="80.0dp"
-				android:layout_marginRight	="25.0dp"
-				android:layout_marginLeft	="25.0dp"
-				android:layout_marginTop	="20.0dp"
-				android:gravity				="center_horizontal"/>
+				android:layout_height		="match_parent"
+				android:orientation			="vertical"
+				android:layout_marginRight	="10.0dp"
+                android:layout_marginLeft	="10.0dp">
+				<ImageView
+					android:id					="@+id/imageView_Images_learn"
+					android:src					="@drawable/icon"
+					android:layout_width		="match_parent"
+					android:layout_height		="220.0dp"
+					android:layout_marginTop	="10.0dp"
+					android:layout_marginRight	="3.0dp"
+					android:layout_marginLeft	="3.0dp"/>
+				<TextView
+					android:id					="@+id/textView_Images_learn"
+					android:textColor			="@color/TextWhite"
+					android:text				="Text"
+					android:textSize			="35dp"
+					android:layout_width		="match_parent"
+					android:layout_height		="80.0dp"
+					android:layout_marginRight	="3.0dp"
+					android:layout_marginLeft	="3.0dp"
+					android:layout_marginTop	="20.0dp"
+					android:layout_marginBottom	="5.0dp"
+					android:gravity				="center_horizontal"/>
+			</LinearLayout>
             <Button
 				android:onClick				="Button_Images_Learn_Next_Click"
 				android:id					="@+id/button_I_learn_Next"

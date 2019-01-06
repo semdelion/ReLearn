@@ -14,7 +14,7 @@
 			android:id				="@+id/toolbarImagesRepeat"
 			android:theme			="@style/ToolbarStyle"	
 			android:background		="@drawable/toolbar"
-			local:navigationIcon		="@mipmap/arrow"
+			local:navigationIcon	="@mipmap/arrow"
 			android:layout_width	="match_parent"
 			android:layout_height	="80dp"	
 			local:buttonGravity		="bottom">
@@ -33,14 +33,24 @@
 		<TableLayout
             android:layout_width	="match_parent"
             android:layout_height	="match_parent">
-			<ImageView
-				android:id					="@+id/imageView_Images_repeat"
-				android:src					="@drawable/icon"
-				android:layout_width		="wrap_content"
-				android:layout_height		="180.0dp"
-				android:layout_marginTop	="25.0dp"
-				android:layout_marginRight	="7.0dp"
-				android:layout_marginLeft	="7.0dp"/>
+			<LinearLayout
+				android:id					="@+id/repeat_background"
+				android:layout_marginTop	="10.0dp"
+				android:layout_width		="match_parent"
+				android:layout_height		="match_parent"
+				android:orientation			="vertical"
+				android:layout_marginRight	="10.0dp"
+                android:layout_marginLeft	="10.0dp">
+				<ImageView
+					android:id					="@+id/imageView_Images_repeat"
+					android:src					="@drawable/icon"
+					android:layout_width		="match_parent"
+					android:layout_height		="180.0dp"
+					android:layout_marginTop	="5.0dp"
+					android:layout_marginRight	="5.0dp"
+					android:layout_marginLeft	="5.0dp"
+					android:layout_marginBottom	="5.0dp"/>
+			</LinearLayout>
             <Button
 				android:onClick				="Button_Images_1_Click"
 				android:id					="@+id/button_I_choice1"

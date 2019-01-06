@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout 
 	xmlns:android			="http://schemas.android.com/apk/res/android"
+	xmlns:local				="http://schemas.android.com/apk/res-auto"
     android:orientation		="vertical"
     android:layout_width	="match_parent"
     android:layout_height	="match_parent"
@@ -10,11 +11,10 @@
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content">
 		<android.support.v7.widget.Toolbar 
-			xmlns:local				="http://schemas.android.com/apk/res-auto"
 			android:id				="@+id/toolbarEnglishAdd"
 			android:theme			="@style/ToolbarStyle"	
 			android:background		="@drawable/toolbar" 
-			local:navigationIcon		="@mipmap/arrow"
+			local:navigationIcon	="@mipmap/arrow"
 			android:layout_width	="match_parent"
 			android:layout_height	="80dp"	
 			local:buttonGravity		="bottom">
@@ -28,7 +28,7 @@
 		</android.support.v7.widget.Toolbar>
 	</android.support.design.widget.AppBarLayout>
 	<EditText
-		android:id					="@+id/editText_foreign_word"
+		local:MvxBind				="Text Word"
 		android:hint				="@string/Word_English"
 		android:textColor			="@color/TextWhite"
 		android:backgroundTint		="@color/TextWhite"
@@ -43,7 +43,7 @@
 		android:scrollbars			="vertical" 
 		android:defaultFocusHighlightEnabled="true"/>
 	<EditText
-		android:id					="@+id/editText_translation_word"
+		local:MvxBind				="Text TranslationWord"
 		android:hint				="@string/Word_Rus"
 		android:textColor			="@color/TextWhite"
 		android:textColorHint		="@color/HintTextWhite"
@@ -58,8 +58,7 @@
 		android:scrollbars			="vertical" 
 		android:defaultFocusHighlightEnabled="true"/>
 	<Button
-		android:onClick				="Button_Languages_Add_Word_Click"
-		android:id					="@+id/button_add_word"
+		local:MvxBind				="Click AddWordCommand"
 		android:background			="@drawable/button_style_standard"
 		android:text				="@string/Add_word"
 		android:textColor			="@color/TextWhite"
