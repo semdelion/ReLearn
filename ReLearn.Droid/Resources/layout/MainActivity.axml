@@ -17,6 +17,8 @@
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
     android:layout_gravity="start"
+	local:itemIconTint="#d7f8fe"  
+	local:itemTextColor="#d7f8fe"
     android:fitsSystemWindows="true"
     local:headerLayout="@layout/nav_header_main"
     local:menu="@menu/activity_main_drawer" />

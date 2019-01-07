@@ -13,32 +13,26 @@
        android:title="@string/Statistics" />
     <item
         android:id="@+id/view_dictionary"
-        android:icon="@+mipmap/ic_statistics"
+        android:icon="@+mipmap/ic_list_dictionary"
         android:title="@string/View_dictionary" />
     <item
         android:id="@+id/add_word"
-        android:icon="@+mipmap/ic_statistics"
+        android:icon="@+mipmap/ic_add_words_to_dictionary"
         android:title="@string/Add_word"/>
-    </menu>
-  </item>
-
-  <item android:title="@string/Settings">
-    <menu>
-      <item
-          android:id="@+id/settings_menu"
-          android:icon="@+mipmap/settings"
-          android:title="@string/Settings" />
-      <item
-         android:id="@+id/feedback"
-         android:icon="@+mipmap/settings"
-         android:title="@string/Feedback" />
-      <item
+    <item
+        android:id="@+id/settings_menu"
+        android:icon="@+mipmap/ic_settings"
+        android:title="@string/Settings" />
+    <item
+        android:id="@+id/feedback"
+        android:icon="@+mipmap/ic_feedback"
+        android:title="@string/Feedback" />
+    <item
         android:id="@+id/about_us"
-        android:icon="@+mipmap/settings"
+        android:icon="@+mipmap/ic_about_us"
         android:title="@string/About_us" />
     </menu>
   </item>
-
 </menu>
 
 <!--<item
