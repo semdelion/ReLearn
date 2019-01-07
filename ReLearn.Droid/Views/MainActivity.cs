@@ -1,6 +1,10 @@
 ﻿using Android.App;
 using Android.Content.PM;
 using Android.OS;
+using Android.Support.Design.Widget;
+using Android.Support.V4.View;
+using Android.Support.V4.Widget;
+using Android.Support.V7.App;
 using Android.Views;
 
 using MvvmCross.Droid.Support.V7.AppCompat;
@@ -11,13 +15,22 @@ namespace ReLearn.Droid.Views
 {
     [MvxActivityPresentation]
     [Activity(Label = "", ScreenOrientation = ScreenOrientation.Portrait, ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.Locale)]
-    public class MainActivity : MvxAppCompatActivity<MainViewModel>
+    public class MainActivity : MvxAppCompatActivity<MainViewModel>, NavigationView.IOnNavigationItemSelectedListener
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.MainActivity);
-            SetSupportActionBar(FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbarMain));
+            var toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbarMain);
+            SetSupportActionBar(toolbar);
+
+            DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
+            ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, Resource.String.navigation_drawer_open, Resource.String.navigation_drawer_close);
+            drawer.AddDrawerListener(toggle);
+            toggle.SyncState();
+
+            NavigationView navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
+            navigationView.SetNavigationItemSelectedListener(this);
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
@@ -33,31 +46,38 @@ namespace ReLearn.Droid.Views
                 case Resource.Id.MenuSelectDictionary:
                     ViewModel.ToSelectDictionary.Execute();
                     return true;
-                case Resource.Id.statistics:
-                    ViewModel.ToStatistic.Execute();
-                    return true;
-                case Resource.Id.view_dictionary:
-                    ViewModel.ToViewDictionary.Execute();
-                    return true;
-                case Resource.Id.Add_word:
-                    ViewModel.ToAddition.Execute();
-                    return true;
-                case Resource.Id.about_us:
-                    ViewModel.ToAboutUs.Execute();
-                    return true;
-                case Resource.Id.Feedback:
-                    ViewModel.ToFeedback.Execute();
-                    return true;
-                case Resource.Id.Settings_Menu:
-                    ViewModel.ToSettingsMenu.Execute();
-                    Finish();
-                    return true;
-                case Android.Resource.Id.Home:
-                    Finish();
-                    return true;
                 default:
                     return base.OnOptionsItemSelected(item);
             }
+        }
+
+        public bool OnNavigationItemSelected(IMenuItem menuItem)
+        {
+            switch (menuItem.ItemId)
+            {
+                case Resource.Id.statistics:
+                    ViewModel.ToStatistic.Execute();
+                    break;
+                case Resource.Id.view_dictionary:
+                    ViewModel.ToViewDictionary.Execute();
+                    break;
+                case Resource.Id.add_word:
+                    ViewModel.ToAddition.Execute();
+                    break;
+                case Resource.Id.about_us:
+                    ViewModel.ToAboutUs.Execute();
+                    break;
+                case Resource.Id.feedback:
+                    ViewModel.ToFeedback.Execute();
+                    break;
+                case Resource.Id.settings_menu:
+                    ViewModel.ToSettingsMenu.Execute();
+                    Finish();
+                    break; 
+            }
+            DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
+            drawer.CloseDrawer(GravityCompat.Start);
+            return true;
         }
     }
 }
