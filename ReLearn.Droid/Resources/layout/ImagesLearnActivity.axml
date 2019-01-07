@@ -54,7 +54,7 @@
 					android:id					="@+id/textView_Images_learn"
 					android:textColor			="@color/TextWhite"
 					android:text				="Text"
-					android:textSize			="35dp"
+					android:textSize			="25dp"
 					android:layout_width		="match_parent"
 					android:layout_height		="80.0dp"
 					android:layout_marginRight	="3.0dp"

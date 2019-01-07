@@ -19,7 +19,6 @@ namespace ReLearn.Droid
 {
     public static class Background
     {
-
         public static Bitmap GetBackgroung(float width, float height)
         {
             float rounding = AdditionalFunctions.DpToPX(10);

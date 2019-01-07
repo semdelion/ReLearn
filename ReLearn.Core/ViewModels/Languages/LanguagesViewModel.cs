@@ -19,12 +19,10 @@ namespace ReLearn.Core.ViewModels.Languages
         public IMvxAsyncCommand ToRepeat => _toRepeat ?? (_toRepeat = new MvxAsyncCommand(NavigateToRepeat));
         private IMvxAsyncCommand _toLearn;
         public IMvxAsyncCommand ToLearn => _toLearn ?? (_toLearn = new MvxAsyncCommand(NavigateToLearn));
-        private IMvxAsyncCommand _toAddition;
-        public IMvxAsyncCommand ToAddition => _toAddition ?? (_toAddition = new MvxAsyncCommand(NavigateToAddition));
+        
         private IMvxAsyncCommand _toStatistic;
         public IMvxAsyncCommand ToStatistic => _toStatistic ?? (_toStatistic = new MvxAsyncCommand(NavigateToStatistic));
-        private IMvxAsyncCommand _toViewDictionary;
-        public IMvxAsyncCommand ToViewDictionary => _toViewDictionary ?? (_toViewDictionary = new MvxAsyncCommand(NavigateToViewDictionary));
+       
         private IMvxAsyncCommand _toSelectDictionary;
         public IMvxAsyncCommand ToSelectDictionary => _toSelectDictionary ?? (_toSelectDictionary = new MvxAsyncCommand(NavigateToSelectDictionary));
         #endregion
@@ -58,9 +56,9 @@ namespace ReLearn.Core.ViewModels.Languages
             }
         }
         private Task<bool> NavigateToLearn() => NavigationService.Navigate<LearnViewModel>();
-        private Task<bool> NavigateToAddition() => NavigationService.Navigate<AddViewModel>();
+        
         private Task<bool> NavigateToStatistic() => NavigationService.Navigate<StatisticViewModel>();
-        private Task<bool> NavigateToViewDictionary() => NavigationService.Navigate<ViewDictionaryViewModel>();
+       
         private Task<bool> NavigateToSelectDictionary() => NavigationService.Navigate<SelectDictionaryViewModel>();
         #endregion
 

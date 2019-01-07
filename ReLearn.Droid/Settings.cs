@@ -17,7 +17,8 @@ namespace ReLearn.Droid
         False,
         HideStudied,
         TypeOfRepetition,
-        BlitzEnable
+        BlitzEnable,
+        DictionaryName
     }
 
     enum Language

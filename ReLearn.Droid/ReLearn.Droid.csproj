@@ -73,25 +73,19 @@
     <Compile Include="SplashScreen.cs" />
     <Compile Include="Views\Background.cs" />
     <Compile Include="Views\Images\BlitzPollActivity.cs" />
-    <Compile Include="Views\Images\ImagesActivity.cs" />
     <Compile Include="Views\Images\LearnActivity.cs" />
     <Compile Include="Views\Images\RepeatActivity.cs" />
-    <Compile Include="Views\Images\SelectDictionaryActivity.cs" />
-    <Compile Include="Views\Images\StatisticActivity.cs" />
     <Compile Include="Views\Images\ViewDictionaryActivity.cs" />
     <Compile Include="Views\Languages\AddActivity.cs" />
     <Compile Include="Views\Languages\BlitzPollActivity.cs" />
     <Compile Include="Views\Languages\DictionaryReplenishmentActivity.cs" />
-    <Compile Include="Views\Languages\LanguagesActivity.cs" />
     <Compile Include="Views\Languages\LearnActivity.cs" />
     <Compile Include="Views\Languages\RepeatActivity.cs" />
-    <Compile Include="Views\Languages\SelectDictionaryActivity.cs" />
-    <Compile Include="Views\Languages\StatisticActivity.cs" />
     <Compile Include="Views\Languages\ViewDictionaryActivity.cs" />
     <Compile Include="Views\Main menu\AboutUsActivity.cs" />
     <Compile Include="Views\Main menu\FeedbackActivity.cs" />
     <Compile Include="Views\Main menu\SettingsMenuActivity.cs" />
-    <Compile Include="MainActivity.cs" />
+    <Compile Include="Views\MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Statistics\Graphics\FrameStatistics.cs" />
@@ -216,9 +210,6 @@
     <AndroidResource Include="Resources\layout\MenuFeedbackActivity.axml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\ImagesActivity.axml" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\layout\ImagesItemAlertBig.axml" />
   </ItemGroup>
   <ItemGroup>
@@ -241,12 +232,6 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\LanguagesRepeatActivity.axml" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\layout\ImagesSelectDictionaryActivity.axml" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\layout\LanguagesSelectDictionaryActivity.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\MenuSettingsActivity.axml" />
@@ -2795,14 +2780,16 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\layout\select_dictionary_lanuage_fragment.xml">
-      <SubType>Designer</SubType>
-    </Content>
+    <AndroidResource Include="Resources\layout\select_dictionary_lanuage_fragment.xml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\layout\select_dictionary_image_fragment.xml">
-      <SubType>Designer</SubType>
-    </Content>
+    <AndroidResource Include="Resources\layout\select_dictionary_image_fragment.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\icon_language.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\icon_image.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

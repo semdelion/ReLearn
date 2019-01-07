@@ -26,14 +26,5 @@ namespace ReLearn.Droid.Views.Statistics
             }
             return null;
         }
-        //public override ICharSequence GetPageTitleFormatted(int position)
-        //{
-        //    switch (position)
-        //    {
-        //        case 0: return new Java.Lang.String("Tab 1");
-        //        case 1: return new Java.Lang.String("Tab 2");
-        //        default: return null;
-        //    }
-        //}
     }
 }

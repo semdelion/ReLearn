@@ -6,7 +6,7 @@ using Android.Widget;
 
 namespace ReLearn.Droid
 {
-    class Dictionaries
+    public class Dictionaries
     {
         public int Width { get; set; }
         public List<Bitmap> DictionariesBitmap { get; set; }

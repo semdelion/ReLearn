@@ -1,26 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.Views;
-using Android.App;
-using Android.Content;
+﻿using Android.App;
+using Android.Graphics.Drawables;
 using Android.OS;
-using Android.Runtime;
-using Android.Support.V7.App;
-using Android.Widget;
-using Calligraphy;
 using Android.Support.Animation;
-using System.Threading;
-using System.Threading.Tasks;
 using Android.Util;
-using System.IO;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.Timers;
+using Android.Views;
+using Android.Widget;
 using MvvmCross.Droid.Support.V7.AppCompat;
 using ReLearn.Core.ViewModels.Languages;
-using Android.Graphics.Drawables;
+using System;
+using System.Collections.Generic;
+using System.Timers;
 
 namespace ReLearn.Droid.Languages
 {
@@ -144,7 +133,6 @@ namespace ReLearn.Droid.Languages
                 if (Time > 0)
                 {
                     Time--;
-
                     string sec = $"{Time % 10}0";
                     FindViewById<TextView>(Resource.Id.textView_Timer_language).Text = $"{Time / 10}:{sec}";
                     if (Time == 50)
@@ -153,7 +141,7 @@ namespace ReLearn.Droid.Languages
                 else
                 {
                     DBStatistics.Insert(True, False, DataBase.TableNameLanguage.ToString());
-                    StartActivity(typeof(StatisticActivity));
+                    ViewModel.ToStatistic.Execute();
                     timer.Dispose();
                     Finish();
                 }

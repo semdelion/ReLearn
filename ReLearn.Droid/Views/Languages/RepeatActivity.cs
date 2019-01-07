@@ -132,7 +132,7 @@ namespace ReLearn.Droid.Languages
                 {
                     DBStatistics.Insert(Statistics.True, Statistics.False, DataBase.TableNameLanguage.ToString());
                     Statistics.Count = Statistics.True = Statistics.False = 0;
-                    StartActivity(typeof(StatisticActivity));
+                    ViewModel.ToStatistic.Execute();
                     Finish();
                 }
             }

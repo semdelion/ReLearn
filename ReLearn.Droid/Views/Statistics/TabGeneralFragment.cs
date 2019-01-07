@@ -20,9 +20,9 @@ namespace ReLearn.Droid.Views.Statistics
         }
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            return new GraphGeneralStatistics(inflater.Inflate(Resource.Layout.statistics_general_fragment, container, false).Context, Colors.Orange, Colors.DarkOrange,
-                DBStatistics.GetImages(DataBase.TableNameImage.ToString()), 
-                DataBase.TableNameImage.ToString(), DataBase.TableNameImage.ToString());
+            return new GraphGeneralStatistics(inflater.Inflate(Resource.Layout.statistics_general_fragment, container, false).Context,
+                Statistics.LightColor, Statistics.DarkColor, Statistics.StatisticsDB,
+                Statistics.DataTupe, DataBase.TableName.ToString());
         }
     }
 }

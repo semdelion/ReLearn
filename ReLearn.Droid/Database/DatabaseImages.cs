@@ -33,6 +33,14 @@ namespace ReLearn.Droid
                     DateTime.Now, learn, Image);
         }
 
+        public static bool DatabaseIsContain(string nameDB)
+        {
+            Enum.TryParse(nameDB, out TableNamesImage name);
+            if (nameDB != name.ToString())
+                return false;
+            return true;
+        }
+
         public static void UpdateData()
         {
             var toDay = DateTime.Today.AddMonths(-1);

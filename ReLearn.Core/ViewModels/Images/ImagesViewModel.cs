@@ -13,12 +13,8 @@ namespace ReLearn.Core.ViewModels.Images
         #endregion
 
         #region Commands
-        private IMvxAsyncCommand _toRepeat;
-        public IMvxAsyncCommand ToRepeat => _toRepeat ?? (_toRepeat = new MvxAsyncCommand(NavigateToRepeat));
-        private IMvxAsyncCommand _toLearn;
-        public IMvxAsyncCommand ToLearn => _toLearn ?? (_toLearn = new MvxAsyncCommand(NavigateToLearn));
-        private IMvxAsyncCommand _toStatistic;
-        public IMvxAsyncCommand ToStatistic => _toStatistic ?? (_toStatistic = new MvxAsyncCommand(NavigateToStatistic));
+       
+       
         private IMvxAsyncCommand _toViewDictionary;
         public IMvxAsyncCommand ToViewDictionary => _toViewDictionary ?? (_toViewDictionary = new MvxAsyncCommand(NavigateToViewDictionary));
         private IMvxAsyncCommand _toSelectDictionary;
@@ -40,22 +36,9 @@ namespace ReLearn.Core.ViewModels.Images
         #endregion
 
         #region Private
-        private Task<bool> NavigateToRepeat()
-        {
-            if (Settings.TypeOfRepetition == TypeOfRepetitions.Blitz && Statistics.Count == 0 && Settings.BlitzEnable)
-            {
-                Settings.TypeOfRepetition = TypeOfRepetitions.FourOptions;
-                return NavigationService.Navigate<BlitzPollViewModel>();
-            }
-            else
-            {
-                Settings.TypeOfRepetition = TypeOfRepetitions.Blitz;
-                return NavigationService.Navigate<RepeatViewModel>();
-            }
-        }
-        private Task<bool> NavigateToLearn() => NavigationService.Navigate<LearnViewModel>();
+       
 
-        private Task<bool> NavigateToStatistic() => NavigationService.Navigate<StatisticViewModel>();
+        
         private Task<bool> NavigateToViewDictionary() => NavigationService.Navigate<ViewDictionaryViewModel>();
         private Task<bool> NavigateToSelectDictionary() => NavigationService.Navigate<SelectDictionaryViewModel>();
         #endregion

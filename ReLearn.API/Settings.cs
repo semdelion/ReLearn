@@ -17,7 +17,8 @@ namespace ReLearn.API
         False,
         HideStudied,
         TypeOfRepetition,
-        BlitzEnable
+        BlitzEnable,
+        DictionaryName
     }
 
     public enum Language

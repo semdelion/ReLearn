@@ -7,6 +7,20 @@ using Plugin.Settings;
 
 namespace ReLearn.Droid
 {
+    public enum TableNames
+    {
+        Flags,
+        Films,
+        ///////////////////////////////////
+        My_Directly,
+        Home,
+        Education,
+        Popular_Words,
+        ThreeFormsOfVerb,
+        ComputerScience,
+        Nature
+    }
+
     static class DataBase
     {
         const string _statistics  = "database_statistics.db3"; 
@@ -16,6 +30,16 @@ namespace ReLearn.Droid
         public static SQLiteConnection Languages;
         public static SQLiteConnection Images;
         public static SQLiteConnection Statistics;
+
+        public static TableNames TableName
+        {
+            get
+            {
+                Enum.TryParse(CrossSettings.Current.GetValueOrDefault(DBSettings.DictionaryName.ToString(), TableNames.Popular_Words.ToString()), out TableNames name);
+                return name;
+            }
+            set => CrossSettings.Current.AddOrUpdateValue(DBSettings.DictionaryName.ToString(), value.ToString());
+        }
 
         public static TableNamesLanguage TableNameLanguage
         {

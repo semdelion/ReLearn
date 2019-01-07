@@ -26,46 +26,46 @@
 			/>
 		</android.support.v7.widget.Toolbar>
 	</android.support.design.widget.AppBarLayout>
-	<ScrollView
-        android:layout_width	="match_parent"
-        android:layout_height	="wrap_content">
-		<TableLayout
-            android:layout_width		="match_parent"
-            android:layout_height		="match_parent"
-			android:layout_marginRight	="35.0dp"
-			android:layout_marginLeft	="35.0dp">
-			<TextView
-				android:text				="@string/Feedback_comments"
-				android:textColor			="@color/TextWhite"
-				android:textSize			="20dp"
-				android:layout_width		="match_parent"
-				android:layout_height		="47.0dp"
-				android:layout_marginTop	="25.0dp"
-				android:defaultFocusHighlightEnabled="true"/>
-			<EditText
-				local:MvxBind				="Text Message"
-				android:hint				="@string/Enter_Message"
-				android:textColor			="@color/TextWhite"
-				android:textColorHint		="@color/HintTextWhite"
-				android:backgroundTint		="@color/TextWhite"
-				android:textSize			="20dp"
-				android:layout_width		="match_parent"
-				android:layout_height		="230dp"
-				android:layout_marginTop	="20dp"
-				android:defaultFocusHighlightEnabled="true"/>
-			<Button
-				android:onClick				="Button_Send_Click"
-				android:text				="@string/Send"
-				android:background			="@drawable/button_style_standard"
-				android:height				="@android:dimen/notification_large_icon_width"
-				android:textColor			="@color/TextWhite"
-				android:fontFamily			="@font/myriadpro_semibold"
-				android:textSize			="25dp"
-				android:gravity				="center"
-				android:layout_width		="match_parent"
-				android:layout_height		="55.0dp"
-				android:layout_marginTop	="20dp"
-			/>
-		</TableLayout>
-	</ScrollView>
+	<RelativeLayout
+		android:layout_marginRight	="35.0dp"
+		android:layout_marginLeft	="35.0dp"
+		android:layout_width		="match_parent"
+		android:layout_height		="match_parent">
+		<TextView
+			android:text				="@string/Feedback_comments"
+			android:textColor			="@color/TextWhite"
+			android:id					="@+id/textView"
+			android:textSize			="20dp"
+			android:layout_width		="match_parent"
+			android:layout_height		="47.0dp"
+			android:layout_marginTop	="25.0dp"
+			android:defaultFocusHighlightEnabled="true"/>
+		<EditText
+			local:MvxBind				="Text Message"
+			android:hint				="@string/Enter_Message"
+			android:textColor			="@color/TextWhite"
+			android:textColorHint		="@color/HintTextWhite"
+			android:backgroundTint		="@color/TextWhite"
+			android:textSize			="20dp"
+			android:layout_width		="match_parent"
+			android:layout_height		="350dp"
+			android:layout_marginTop	="100.0dp"
+			android:defaultFocusHighlightEnabled="true"/>
+		<Button
+			android:onClick				="Button_Send_Click"
+			android:id					="@+id/button"
+			android:text				="@string/Send"
+			android:background			="@drawable/button_style_standard"
+			android:height				="@android:dimen/notification_large_icon_width"
+			android:textColor			="@color/TextWhite"
+			android:fontFamily			="@font/myriadpro_semibold"
+			android:textSize			="25dp"
+			android:gravity				="center"
+			android:layout_width		="match_parent"
+			android:layout_height		="55.0dp"
+			android:layout_alignParentBottom="true"
+			android:layout_alignParentRight	="true"
+			android:layout_marginBottom		="35dp"
+		/>
+	</RelativeLayout>
 </LinearLayout>
