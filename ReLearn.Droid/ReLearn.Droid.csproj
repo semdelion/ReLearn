@@ -219,9 +219,6 @@
     <AndroidResource Include="Resources\layout\LanguagesItemViewDictionaryActivity.axml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\LanguagesActivity.axml" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\layout\ImagesLearnActivity.axml" />
   </ItemGroup>
   <ItemGroup>
@@ -238,9 +235,6 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\SplashScreen.axml" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\layout\StatisticsActivity.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\LanguagesViewDictionaryActivity.axml" />
@@ -2769,10 +2763,7 @@
     <AndroidResource Include="Resources\layout\statistics_main_fragment.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\Stat2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\Stat1.png" />
+    <AndroidResource Include="Resources\drawable\icon_main_statistics.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\select_dictionary.axml">
@@ -2790,6 +2781,9 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\icon_image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\icon_general_statistics.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

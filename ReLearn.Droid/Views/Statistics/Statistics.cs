@@ -44,8 +44,8 @@ namespace ReLearn.Droid.Views.Statistics
             TabLayout tabLayout = FindViewById<TabLayout>(Resource.Id.tablayout);
 
             tabLayout.SetupWithViewPager(viewPager);
-            tabLayout.GetTabAt(tabLayout.TabCount - 2).SetIcon(Resource.Drawable.Stat1);
-            tabLayout.GetTabAt(tabLayout.TabCount - 1).SetIcon(Resource.Drawable.Stat2);
+            tabLayout.GetTabAt(tabLayout.TabCount - 2).SetIcon(Resource.Drawable.icon_main_statistics);
+            tabLayout.GetTabAt(tabLayout.TabCount - 1).SetIcon(Resource.Drawable.icon_general_statistics);
         }
 
         public override bool OnOptionsItemSelected(IMenuItem item)

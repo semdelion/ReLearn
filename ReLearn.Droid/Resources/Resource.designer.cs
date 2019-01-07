@@ -6309,52 +6309,58 @@ namespace ReLearn.Droid
 			public const int icon = 2130837612;
 			
 			// aapt resource value: 0x7f02006d
-			public const int icon_image = 2130837613;
+			public const int icon_general_statistics = 2130837613;
 			
 			// aapt resource value: 0x7f02006e
-			public const int icon_language = 2130837614;
+			public const int icon_image = 2130837614;
 			
 			// aapt resource value: 0x7f02006f
-			public const int imageInstruction = 2130837615;
+			public const int icon_language = 2130837615;
 			
 			// aapt resource value: 0x7f020070
-			public const int ItDictionary = 2130837616;
+			public const int icon_main_statistics = 2130837616;
 			
 			// aapt resource value: 0x7f020071
-			public const int MyDictionary = 2130837617;
+			public const int imageInstruction = 2130837617;
 			
 			// aapt resource value: 0x7f020072
-			public const int Nature = 2130837618;
+			public const int ItDictionary = 2130837618;
 			
 			// aapt resource value: 0x7f020073
-			public const int NatureDictionary = 2130837619;
+			public const int MyDictionary = 2130837619;
 			
 			// aapt resource value: 0x7f020074
-			public const int navigation_empty_icon = 2130837620;
+			public const int Nature = 2130837620;
 			
 			// aapt resource value: 0x7f020075
-			public const int notification_action_background = 2130837621;
+			public const int NatureDictionary = 2130837621;
 			
 			// aapt resource value: 0x7f020076
-			public const int notification_bg = 2130837622;
+			public const int navigation_empty_icon = 2130837622;
 			
 			// aapt resource value: 0x7f020077
-			public const int notification_bg_low = 2130837623;
+			public const int notification_action_background = 2130837623;
 			
 			// aapt resource value: 0x7f020078
-			public const int notification_bg_low_normal = 2130837624;
+			public const int notification_bg = 2130837624;
 			
 			// aapt resource value: 0x7f020079
-			public const int notification_bg_low_pressed = 2130837625;
+			public const int notification_bg_low = 2130837625;
 			
 			// aapt resource value: 0x7f02007a
-			public const int notification_bg_normal = 2130837626;
+			public const int notification_bg_low_normal = 2130837626;
 			
 			// aapt resource value: 0x7f02007b
-			public const int notification_bg_normal_pressed = 2130837627;
+			public const int notification_bg_low_pressed = 2130837627;
 			
 			// aapt resource value: 0x7f02007c
-			public const int notification_icon_background = 2130837628;
+			public const int notification_bg_normal = 2130837628;
+			
+			// aapt resource value: 0x7f02007d
+			public const int notification_bg_normal_pressed = 2130837629;
+			
+			// aapt resource value: 0x7f02007e
+			public const int notification_icon_background = 2130837630;
 			
 			// aapt resource value: 0x7f02008f
 			public const int notification_template_icon_bg = 2130837647;
@@ -6362,32 +6368,26 @@ namespace ReLearn.Droid
 			// aapt resource value: 0x7f020090
 			public const int notification_template_icon_low_bg = 2130837648;
 			
-			// aapt resource value: 0x7f02007d
-			public const int notification_tile_bg = 2130837629;
-			
-			// aapt resource value: 0x7f02007e
-			public const int notify_panel_notification_icon_bg = 2130837630;
-			
 			// aapt resource value: 0x7f02007f
-			public const int PopularWordsDictionary = 2130837631;
+			public const int notification_tile_bg = 2130837631;
 			
 			// aapt resource value: 0x7f020080
-			public const int seekbar_progressbar = 2130837632;
+			public const int notify_panel_notification_icon_bg = 2130837632;
 			
 			// aapt resource value: 0x7f020081
-			public const int separator = 2130837633;
+			public const int PopularWordsDictionary = 2130837633;
 			
 			// aapt resource value: 0x7f020082
-			public const int spinner_item = 2130837634;
+			public const int seekbar_progressbar = 2130837634;
 			
 			// aapt resource value: 0x7f020083
-			public const int splash = 2130837635;
+			public const int separator = 2130837635;
 			
 			// aapt resource value: 0x7f020084
-			public const int Stat1 = 2130837636;
+			public const int spinner_item = 2130837636;
 			
 			// aapt resource value: 0x7f020085
-			public const int Stat2 = 2130837637;
+			public const int splash = 2130837637;
 			
 			// aapt resource value: 0x7f020086
 			public const int ThreeFormsOfVerbDictionary = 2130837638;
