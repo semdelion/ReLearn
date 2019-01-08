@@ -4,9 +4,6 @@
     xmlns:app       ="http://schemas.android.com/apk/res-auto"
     tools:context   =".MainActivity"
     tools:showIn="navigation_view">
-
-  <item android:title="@string/Settings">
-    <menu>
     <item
        android:id="@+id/statistics"
        android:icon="@+mipmap/ic_statistics"
@@ -31,8 +28,6 @@
         android:id="@+id/about_us"
         android:icon="@+mipmap/ic_about_us"
         android:title="@string/About_us" />
-    </menu>
-  </item>
 </menu>
 
 <!--<item
