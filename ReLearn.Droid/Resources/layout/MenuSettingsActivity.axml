@@ -142,12 +142,13 @@
 				android:textSize			="20dp"
 				android:layout_width		="match_parent"
 				android:layout_height		="wrap_content"/>
-			<Spinner
+			<MvxSpinner
 				android:id					="@+id/LanguageSpinner"
 				android:layout_width		="match_parent"
 				android:layout_height		="wrap_content"
 				android:popupBackground		="#1d2b3b"
-				android:entries				="@array/languages"
+				android:layout_marginRight	="5.0dp"
+				local:MvxBind				="ItemsSource  ItemsLanguages;SelectedItem SelectedItemLanguage"
 			/>
 		</LinearLayout>
 		<LinearLayout
@@ -163,13 +164,13 @@
 				android:textSize			="20dp"
 				android:layout_width		="match_parent"
 				android:layout_height		="wrap_content"/>
-			<Spinner
+			<MvxSpinner
 				android:id					="@+id/PronunciationSpinner"
 				android:layout_width		="match_parent"
 				android:layout_height		="wrap_content"
 				android:popupBackground		="#1d2b3b"
-				android:entries				="@array/pronunciations"
-				local:MvxBind				="SelectedItem SelectedItem" />
+				android:layout_marginRight	="5.0dp"
+				local:MvxBind				="ItemsSource  ItemsPronunciations;SelectedItem SelectedItemPronunciation"
 			/>
 		</LinearLayout>
 		<TableLayout

@@ -4038,25 +4038,6 @@ namespace ReLearn.Droid
 			}
 		}
 		
-		public partial class Array
-		{
-			
-			// aapt resource value: 0x7f100000
-			public const int languages = 2131755008;
-			
-			// aapt resource value: 0x7f100001
-			public const int pronunciations = 2131755009;
-			
-			static Array()
-			{
-				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
-			}
-			
-			private Array()
-			{
-			}
-		}
-		
 		public partial class Attribute
 		{
 			
@@ -7573,22 +7554,28 @@ namespace ReLearn.Droid
 			public const int select_dictionary_lanuage_fragment = 2131034193;
 			
 			// aapt resource value: 0x7f050052
-			public const int SplashScreen = 2131034194;
+			public const int spinner_dropdown_item = 2131034194;
 			
 			// aapt resource value: 0x7f050053
-			public const int Statistics = 2131034195;
+			public const int spinner_item = 2131034195;
 			
 			// aapt resource value: 0x7f050054
-			public const int statistics_general_fragment = 2131034196;
+			public const int SplashScreen = 2131034196;
 			
 			// aapt resource value: 0x7f050055
-			public const int statistics_main_fragment = 2131034197;
+			public const int Statistics = 2131034197;
 			
 			// aapt resource value: 0x7f050056
-			public const int support_simple_spinner_dropdown_item = 2131034198;
+			public const int statistics_general_fragment = 2131034198;
 			
 			// aapt resource value: 0x7f050057
-			public const int tooltip = 2131034199;
+			public const int statistics_main_fragment = 2131034199;
+			
+			// aapt resource value: 0x7f050058
+			public const int support_simple_spinner_dropdown_item = 2131034200;
+			
+			// aapt resource value: 0x7f050059
+			public const int tooltip = 2131034201;
 			
 			static Layout()
 			{
@@ -7603,23 +7590,23 @@ namespace ReLearn.Droid
 		public partial class Menu
 		{
 			
-			// aapt resource value: 0x7f110000
-			public const int activity_main_drawer = 2131820544;
+			// aapt resource value: 0x7f100000
+			public const int activity_main_drawer = 2131755008;
 			
-			// aapt resource value: 0x7f110001
-			public const int menu_DictionaryReplenishment = 2131820545;
+			// aapt resource value: 0x7f100001
+			public const int menu_DictionaryReplenishment = 2131755009;
 			
-			// aapt resource value: 0x7f110002
-			public const int menu_english = 2131820546;
+			// aapt resource value: 0x7f100002
+			public const int menu_english = 2131755010;
 			
-			// aapt resource value: 0x7f110003
-			public const int menu_english_add = 2131820547;
+			// aapt resource value: 0x7f100003
+			public const int menu_english_add = 2131755011;
 			
-			// aapt resource value: 0x7f110004
-			public const int search = 2131820548;
+			// aapt resource value: 0x7f100004
+			public const int search = 2131755012;
 			
-			// aapt resource value: 0x7f110005
-			public const int settings = 2131820549;
+			// aapt resource value: 0x7f100005
+			public const int settings = 2131755013;
 			
 			static Menu()
 			{

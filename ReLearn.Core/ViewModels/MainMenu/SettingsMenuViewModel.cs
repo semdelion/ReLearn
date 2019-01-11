@@ -10,6 +10,9 @@ namespace ReLearn.Core.ViewModels.MainMenu
     public class SettingsMenuViewModel : MvxViewModel
     {
         #region Fields
+        public static string XER = "fdfd";
+
+
         #endregion
 
         #region Commands
@@ -84,6 +87,56 @@ namespace ReLearn.Core.ViewModels.MainMenu
             {
                 SetProperty(ref _isActiveBlitz, value);
                 Settings.BlitzEnable = _isActiveBlitz;
+            }
+        }
+
+        public static List<string> _languages = new List<string>() { "English", "Русский" };
+        public List<string> ItemsLanguages
+        {
+            get => _languages;
+            set
+            {
+                _languages = value;
+                RaisePropertyChanged(() => ItemsLanguages);
+            }
+        }
+
+        public static string _selectedItemLanguage = Settings.Currentlanguage == Language.en.ToString() ? "English" : "Русский";
+        public string SelectedItemLanguage
+        {
+            get => _selectedItemLanguage;
+            set
+            {
+                _selectedItemLanguage = value;
+                Settings.Currentlanguage = value == "English" ?
+                    Language.en.ToString() :
+                    Language.ru.ToString();
+                RaisePropertyChanged(() => SelectedItemLanguage);
+            }
+        }
+
+        private static List<string> _pronunciations = new List<string>() { "English", "British" };
+        public List<string> ItemsPronunciations
+        {
+            get => _pronunciations;
+            set
+            {
+                _pronunciations = value;
+                RaisePropertyChanged(() => ItemsPronunciations);
+            }
+        }
+
+        private string _selectedItemPronunciation = Settings.CurrentPronunciation == Pronunciation.en.ToString() ? "English" : "British";
+        public string SelectedItemPronunciation
+        {
+            get => _selectedItemPronunciation;
+            set
+            {
+                _selectedItemPronunciation = value;
+                Settings.CurrentPronunciation = value == "English" ?
+                    Pronunciation.en.ToString() :
+                    Pronunciation.uk.ToString();
+                RaisePropertyChanged(() => SelectedItemPronunciation);
             }
         }
         #endregion

@@ -19,31 +19,33 @@ using Plugin.Settings;
 using ReLearn.Droid.Views;
 using MvvmCross.Droid.Support.V7.AppCompat;
 using ReLearn.Core.ViewModels.MainMenu;
+using MvvmCross.Platforms.Android.Binding.Views;
 
 namespace ReLearn.Droid
 {
     [Activity(Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class SettingsMenuActivity : MvxAppCompatActivity<SettingsMenuViewModel>
     {
-        private bool CreateAdapter(Spinner spinner, int textArrayResource)
-        {
-            try
-            {
-                var adapter = ArrayAdapter.CreateFromResource(this, textArrayResource, Resource.Drawable.spinner_item);
-                adapter.SetDropDownViewResource(Resource.Drawable.spinner_item);
-                spinner.Adapter = adapter;
-                return true;
-            }
-            catch(Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-        }
+        //private bool CreateAdapter(MvxSpinner spinner)
+        //{
+        //    //try
+        //    //{
+        //    //    var adapter = ArrayAdapter.CreateFromResource(this, Resource.Drawable.spinner_item);
+        //    //    adapter.SetDropDownViewResource(Resource.Drawable.spinner_item);
+        //    //    spinner.Adapter = adapter;
+        //    //    return true;
+        //    //}
+        //    //catch(Exception ex)
+        //    //{
+        //    //    throw new Exception(ex.Message);
+        //    //}
+        ////android: textColor = "@color/TextWhite"
+        //}
 
         private void InitializationAdapters()
         {
-            CreateAdapter(FindViewById<Spinner>(Resource.Id.LanguageSpinner), Resource.Array.languages);
-            CreateAdapter(FindViewById<Spinner>(Resource.Id.PronunciationSpinner), Resource.Array.pronunciations);
+            //FindViewById<MvxSpinner>(Resource.Id.LanguageSpinner).= Colors.DarkOrange;
+            //CreateAdapter(FindViewById<MvxSpinner>(Resource.Id.PronunciationSpinner));
         }
 
         protected override void OnCreate(Bundle savedInstanceState)
