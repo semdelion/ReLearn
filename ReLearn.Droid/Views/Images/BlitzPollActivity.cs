@@ -9,10 +9,12 @@ using Android.Views;
 using Android.Widget;
 using Calligraphy;
 using MvvmCross.Droid.Support.V7.AppCompat;
+using ReLearn.API.Database;
 using ReLearn.Core.ViewModels.Images;
 using System;
 using System.Collections.Generic;
 using System.Timers;
+using ReLearn.API;
 
 namespace ReLearn.Droid.Images
 {
@@ -60,10 +62,11 @@ namespace ReLearn.Droid.Images
                 RightMargin  = AdditionalFunctions.DpToPX(10),
                 LeftMargin   = AdditionalFunctions.DpToPX(10)
             };
-            var textView = new ImageView(this) {LayoutParameters = param1};
-            using (Bitmap bitmap = BitmapFactory.DecodeStream(Application.Context.Assets.Open($"Image{DataBase.TableNameImage}/{ImageDatabase[CurrentWordNumber].Image_name}.png")))
-                textView.SetImageBitmap(bitmap);
-            return textView;
+            var ImageView = new ImageView(this) {LayoutParameters = param1};
+            using (Bitmap bitmap = BitmapFactory.DecodeStream(Application.Context.Assets.Open($"Image{DataBase.TableName}/{ImageDatabase[CurrentWordNumber].Image_name}.png")))
+            using (var bitmapRounded = BitmapHandler.GetRoundedCornerBitmap(bitmap, AdditionalFunctions.DpToPX(5)))
+                ImageView.SetImageBitmap(bitmapRounded);
+            return ImageView;
         }
 
         LinearLayout GetLayout()
@@ -138,6 +141,38 @@ namespace ReLearn.Droid.Images
                 AdditionalFunctions.DpToPX(50)
                 ));
 
+            //float startX = 0;
+            //float webViewWidth = 0;
+
+            //FindViewById<RelativeLayout>(Resource.Id.RelativeLayoutImagesBlitzPoll).Touch += (sender, e) => {
+            //    if (e.Event.Action == Android.Views.MotionEventActions.Down)
+            //    {
+            //        webViewWidth = FindViewById<RelativeLayout>(Resource.Id.RelativeLayoutImagesBlitzPoll).Width;
+            //        startX = e.Event.GetX();
+            //    }
+            //    else if (e.Event.Action == Android.Views.MotionEventActions.Pointer1Up || e.Event.Action == Android.Views.MotionEventActions.PointerUp || e.Event.Action == Android.Views.MotionEventActions.Up)
+            //    {
+            //        float movement = e.Event.GetX() - startX;
+            //        float offset = webViewWidth / 2;
+
+            //        if (Math.Abs(movement) > offset)
+            //        {
+            //            if (movement < 0)
+            //            {
+            //                Answer(false);
+
+            //            }
+            //            else
+            //            {
+            //                Answer(true);
+
+            //            }
+            //        }
+            //    }
+                   
+            //    e.Handled = false;
+            //};
+
             FindViewById<TextView>(Resource.Id.textView_Timer_Images).Background = _backgroundTimer;
 
             ImageDatabase = DBImages.GetDataNotLearned;
@@ -181,7 +216,7 @@ namespace ReLearn.Droid.Images
                 }
                 else
                 {
-                    DBStatistics.Insert(True, False, DataBase.TableNameImage.ToString());
+                    DBStatistics.Insert(True, False, DataBase.TableName.ToString());
                     ViewModel.ToStatistic.Execute();
                     Cancel();
                     Finish();

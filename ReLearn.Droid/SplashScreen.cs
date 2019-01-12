@@ -6,6 +6,7 @@ using Android.App;
 using MvvmCross.Droid.Support.V7.AppCompat;
 using ReLearn.Core;
 using Android.Content.PM;
+using ReLearn.API.Database;
 
 namespace ReLearn.Droid
 {
@@ -19,11 +20,11 @@ namespace ReLearn.Droid
     {
         public SplashScreen() : base(Resource.Layout.SplashScreen)
         {
-            DataBase.InstallDatabaseFromAssets();
+            Database.InstallDatabaseFromAssets();
             DataBase.SetupConnection();
-            DBWords.СreateTable();
-            DBImages.СreateTable();
-            DBWords.ADDCOLUMN();
+            Database.СreateTableImage();
+            Database.СreateTableLanguage();
+            Database.ADDCOLUMN();
             DBImages.UpdateData();
             DBWords.UpdateData();
         }

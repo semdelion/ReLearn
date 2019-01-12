@@ -13,20 +13,20 @@ namespace ReLearn.Droid
         public float Width { get => Right - Left; }
         public float Height { get => Bottom - Top; }
         public static Typeface Plain { get; set; }
-        Paint P;
+        Paint PaintBackground;
 
         public FrameStatistics(float left, float top, float right, float bottom, Color color)
         {
             Left = left; Bottom = bottom; Right = right; Top = top;
-            P = new Paint { Color = color, AntiAlias = true };
+            PaintBackground = new Paint { Color = color, AntiAlias = true };
         }
 
         public FrameStatistics(float left, float top, float right, float bottom, Color color1, Color color2)
         {
             Left = left; Bottom = bottom; Right = right; Top = top;
-            P = new Paint { AntiAlias = true };
+            PaintBackground = new Paint { AntiAlias = true };
             Shader shader = new LinearGradient(0, Top, 0, Bottom, color1, color2, TileMode.Clamp);
-            P.SetShader(shader);
+            PaintBackground.SetShader(shader);
         }
 
         public void Draw(Canvas canvas)
@@ -36,7 +36,7 @@ namespace ReLearn.Droid
             Paint paint1 = new Paint { AntiAlias = true };
             paint1.SetShader(backlg);
             canvas.DrawRoundRect(new RectF(Left, Top, Right, Bottom), 6, 6, paint1);
-            canvas.DrawRoundRect(new RectF(Left, Top, Right, Bottom), 6, 6, P);
+            canvas.DrawRoundRect(new RectF(Left, Top, Right, Bottom), 6, 6, PaintBackground);
         }
 
         public void DrawBorder(Canvas canvas, Paint paint)
@@ -46,7 +46,7 @@ namespace ReLearn.Droid
             Paint paint1 = new Paint { AntiAlias = true };
             paint1.SetShader(backlg);
             canvas.DrawRoundRect(new RectF(Left, Top, Right, Bottom), 6, 6, paint1);
-            canvas.DrawRoundRect(new RectF(Left, Top, Right, Bottom), 6, 6, P);
+            canvas.DrawRoundRect(new RectF(Left, Top, Right, Bottom), 6, 6, PaintBackground);
             canvas.DrawRoundRect(new RectF(Left, Top, Right, Bottom), 6, 6, paint);
         }
 

@@ -10,6 +10,8 @@ using Plugin.Settings;
 using ReLearn.Droid.Resources;
 using MvvmCross.Droid.Support.V7.AppCompat;
 using ReLearn.Core.ViewModels.Languages;
+using ReLearn.API.Database;
+using ReLearn.API;
 
 namespace ReLearn.Droid.Languages
 {

@@ -1,6 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Plugin.Settings;
+using ReLearn.API;
+using ReLearn.API.Database;
+
 namespace ReLearn.Droid
 {
     static class Statistics

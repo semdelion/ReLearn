@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 using Calligraphy;
 using SQLite;
-
+using ReLearn.API;
 using Android.Views;
 using Android.Widget;
 using Android.App;
@@ -14,6 +14,7 @@ using MvvmCross.Droid.Support.V7.AppCompat;
 using ReLearn.Core.ViewModels.Languages;
 using Android.Util;
 using Android.Graphics.Drawables;
+using ReLearn.API.Database;
 
 namespace ReLearn.Droid.Languages
 {
@@ -130,7 +131,7 @@ namespace ReLearn.Droid.Languages
                 }
                 else
                 {
-                    DBStatistics.Insert(Statistics.True, Statistics.False, DataBase.TableNameLanguage.ToString());
+                    DBStatistics.Insert(Statistics.True, Statistics.False, DataBase.TableName.ToString());
                     Statistics.Count = Statistics.True = Statistics.False = 0;
                     ViewModel.ToStatistic.Execute();
                     Finish();
@@ -157,7 +158,7 @@ namespace ReLearn.Droid.Languages
 
             MySpeech = new MyTextToSpeech();
             WordDatabase = DBWords.GetDataNotLearned;
-            Statistics.Table = DataBase.TableNameLanguage.ToString();
+            Statistics.Table = DataBase.TableName.ToString();
             Buttons = new List<Button>{
                 FindViewById<Button>(Resource.Id.button_Languages_choice1),
                 FindViewById<Button>(Resource.Id.button_Languages_choice2),

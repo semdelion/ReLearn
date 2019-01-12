@@ -3,6 +3,8 @@ using Android.App;
 using Android.Graphics;
 using Android.Views;
 using Android.Widget;
+using ReLearn.API;
+using ReLearn.API.Database;
 
 namespace ReLearn.Droid
 {
@@ -34,7 +36,7 @@ namespace ReLearn.Droid
             var view = convertView ?? activity.LayoutInflater.Inflate(Resource.Layout.ImagesItemViewDictionaryActivity, parent, false);
             var TextView = view.FindViewById<TextView>(Resource.Id.textView_item_view_dictionary);
             var ImageView = view.FindViewById<ImageView>(Resource.Id.imageView_item_view_dictionary);
-            using (var his = Application.Context.Assets.Open($"Image{DataBase.TableNameImage}Mini/{list[position].Image_name}.jpg"))
+            using (var his = Application.Context.Assets.Open($"Image{DataBase.TableName}Mini/{list[position].Image_name}.jpg"))
             {
                 Bitmap bitmap = BitmapFactory.DecodeStream(his);
                 ImageView.SetImageBitmap(bitmap);

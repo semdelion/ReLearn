@@ -35,6 +35,9 @@
     <AndroidUseSharedRuntime>True</AndroidUseSharedRuntime>
     <AndroidLinkMode>None</AndroidLinkMode>
     <EmbedAssembliesIntoApk>False</EmbedAssembliesIntoApk>
+    <AotAssemblies>false</AotAssemblies>
+    <EnableLLVM>false</EnableLLVM>
+    <BundleAssemblies>false</BundleAssemblies>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>PdbOnly</DebugType>
@@ -58,17 +61,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdditionalFunctions.cs" />
-    <Compile Include="Database\DataBase.cs" />
-    <Compile Include="Database\DatabaseImages.cs" />
-    <Compile Include="Database\DatabaseStatistics.cs" />
-    <Compile Include="Database\DatabaseWords.cs" />
+    <Compile Include="BitmapHandler.cs" />
+    <Compile Include="Database.cs" />
     <Compile Include="LinkerPleaseInclude.cs" />
     <Compile Include="MessageDroid.cs" />
     <Compile Include="MyTextToSpeech.cs" />
     <Compile Include="Adapters\ImagesAdapter.cs" />
     <Compile Include="Adapters\LanguagesAdapter.cs" />
     <Compile Include="SelectDictionary.cs" />
-    <Compile Include="Settings.cs" />
     <Compile Include="Setup.cs" />
     <Compile Include="SplashScreen.cs" />
     <Compile Include="Views\Background.cs" />
@@ -2882,10 +2882,10 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_about_us.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\toolbarMain.png" />
+    <AndroidResource Include="Resources\drawable\toolbarMain111.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\ic_nav_header.png" />
+    <AndroidResource Include="Resources\drawable\ic_nav_header1111111.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\spinner_dropdown_item.axml">
@@ -2896,6 +2896,12 @@
     <AndroidResource Include="Resources\layout\spinner_item.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\ic_nav_header.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\toolbarMain.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

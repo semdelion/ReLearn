@@ -11,6 +11,8 @@ using MvvmCross.Droid.Support.V7.AppCompat;
 using ReLearn.Core.ViewModels.Images;
 using Android.Util;
 using Android.Graphics.Drawables;
+using static Android.Graphics.PorterDuff;
+using ReLearn.API.Database;
 
 namespace ReLearn.Droid.Images
 {
@@ -20,10 +22,7 @@ namespace ReLearn.Droid.Images
         int Count { get; set; }
         List<DBImages> ImagesDatabase { get; set; }
 
-        Bitmap ImageViewBox
-        {
-            set => FindViewById<ImageView>(Resource.Id.imageView_Images_learn).SetImageBitmap(value);
-        }
+        
 
         string ImageName
         {
@@ -45,9 +44,9 @@ namespace ReLearn.Droid.Images
             {
                 DBImages.UpdateLearningNext(ImagesDatabase[Count].Image_name);
                 try
-                {
-                    using (ImageViewBox = BitmapFactory.DecodeStream(Application.Context.Assets.Open(
-                            $"Image{DataBase.TableNameImage}/{ImagesDatabase[Count].Image_name}.png")))
+                {   using (var image = BitmapFactory.DecodeStream(Application.Context.Assets.Open( $"Image{DataBase.TableName}/{ImagesDatabase[Count].Image_name}.png")))
+                    using (var ImageViewBox = BitmapHandler.GetRoundedCornerBitmap(image, AdditionalFunctions.DpToPX(5)))
+                        FindViewById<ImageView>(Resource.Id.imageView_Images_learn).SetImageBitmap(ImageViewBox);
                         ImageName = ImagesDatabase[Count++].ImageName;
                 }
                 catch(Exception ex)

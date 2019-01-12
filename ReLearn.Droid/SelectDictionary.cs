@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using Android.Graphics;
 using Android.Views;
 using Android.Widget;
+using ReLearn.API.Database;
+using ReLearn.API;
 
 namespace ReLearn.Droid
 {

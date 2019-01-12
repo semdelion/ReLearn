@@ -3,9 +3,10 @@ using Android.OS;
 using Android.Support.Animation;
 using Android.Views;
 using Android.Widget;
+using ReLearn.API.Database;
 using System;
 using System.Collections.Generic;
-
+using ReLearn.API;
 
 namespace ReLearn.Droid.Views.SelectDictionary
 {

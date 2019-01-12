@@ -40,27 +40,6 @@ namespace ReLearn.API.Database
             set => CrossSettings.Current.AddOrUpdateValue(DBSettings.DictionaryName.ToString(), value.ToString());
         }
 
-        public static TableNamesLanguage TableNameLanguage
-        {
-            get
-            {
-                Enum.TryParse(CrossSettings.Current.GetValueOrDefault(DBSettings.DictionaryNameLanguages.ToString(), TableNamesLanguage.Popular_Words.ToString()), out TableNamesLanguage name);
-                return name;
-            }
-            set => CrossSettings.Current.AddOrUpdateValue(DBSettings.DictionaryNameLanguages.ToString(), value.ToString());
-        }
-
-        public static TableNamesImage TableNameImage
-        {
-            get
-            {
-                Enum.TryParse(CrossSettings.Current.GetValueOrDefault(DBSettings.DictionaryNameImage.ToString(), TableNamesImage.Flags.ToString()), out TableNamesImage name);
-                return name;
-            }
-            set => CrossSettings.Current.AddOrUpdateValue(DBSettings.DictionaryNameImage.ToString(), value.ToString());
-            
-        }
-
         public static void SetupConnection()
         {
             Languages = Connect(_english);

@@ -10,9 +10,6 @@ namespace ReLearn.Core.ViewModels.MainMenu
     public class SettingsMenuViewModel : MvxViewModel
     {
         #region Fields
-        public static string XER = "fdfd";
-
-
         #endregion
 
         #region Commands

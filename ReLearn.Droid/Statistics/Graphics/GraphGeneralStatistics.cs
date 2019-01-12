@@ -4,6 +4,8 @@ using System.Linq;
 using Android.Content;
 using Android.Graphics;
 using Android.Views;
+using ReLearn.API.Database;
+using ReLearn.API;
 
 namespace ReLearn.Droid
 {

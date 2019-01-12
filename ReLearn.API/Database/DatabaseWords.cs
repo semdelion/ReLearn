@@ -78,7 +78,7 @@ namespace ReLearn.API.Database
         //    }
         //}
 
-        static bool ContainColumn(string columnName, List <SQLiteConnection.ColumnInfo> columns)
+        public static bool ContainColumn(string columnName, List <SQLiteConnection.ColumnInfo> columns)
         {
             foreach (var column in columns)
                 if (column.Name == columnName)
@@ -86,41 +86,7 @@ namespace ReLearn.API.Database
             return false;      
         }
 
-        //public static void ADDCOLUMN()
-        //{
-        //    foreach (string tableName in Enum.GetNames(typeof(TableNamesLanguage)))
-        //    {
-        //        if (!ContainColumn("Transcription", DataBase.Languages.GetTableInfo(tableName)))
-        //        {
-                    
-        //            DataBase.Languages.Execute($"ALTER TABLE {tableName} ADD COLUMN Transcription string");
-        //            if (tableName != TableNamesLanguage.My_Directly.ToString())
-        //                using (StreamReader reader = new StreamReader(Application.Context.Assets.Open($"Database/{tableName}.txt")))
-        //                {
-        //                    string str_line;
-        //                    while ((str_line = reader.ReadLine()) != null)
-        //                    {
-        //                        var list = str_line.Split('|');
-        //                        int changes = DataBase.Languages.Execute($"UPDATE {tableName} SET Word = ?, Transcription = ? WHERE Word = ?", list[0].ToLower().Trim(), list[2].Trim(), list[0].ToLower().Trim())
-        //                                    + DataBase.Languages.Execute($"UPDATE {tableName} SET Word = ?, Transcription = ? WHERE Word = ?", list[0].ToLower().Trim(), list[2].Trim(), list[0].ToLower().Trim() + " ")
-        //                                    + DataBase.Languages.Execute($"UPDATE {tableName} SET Word = ?, Transcription = ? WHERE Word = ?", list[0].ToLower().Trim(), list[2].Trim(), list[0].ToLower().Trim() + "  ");
-        //                        if (changes == 0)
-        //                        {
-        //                            DataBase.Languages.Execute($"INSERT INTO {tableName} (Word, TranslationWord, Transcription, NumberLearn, DateRecurrence) VALUES (?, ?, ?, ?, ?)",
-        //                                list[0].ToLower().Trim(), list[1].ToLower().Trim(), list[2].Trim(), Settings.StandardNumberOfRepeats, DateTime.Now);
-        //                        }
-        //                        if (changes > 1) // из-за старых таблиц 
-        //                        {
-        //                            DataBase.Languages.Execute($"DELETE FROM {tableName} WHERE Word = ?", list[0].ToLower().Trim());
-        //                            DataBase.Languages.Execute($"INSERT INTO {tableName} (Word, TranslationWord, Transcription, NumberLearn, DateRecurrence) VALUES (?, ?, ?, ?, ?)",
-        //                                list[0].ToLower().Trim(), list[1].ToLower().Trim(), list[2].Trim(), Settings.StandardNumberOfRepeats, DateTime.Now);
-        //                        }
-        //                    }
-        //                    DataBase.Languages.Execute($"DELETE FROM {tableName} WHERE Transcription IS NULL OR trim(Transcription) = ''");
-        //                }
-        //        }
-        //    }
-        //}
+       
 
         public static bool WordIsContained(string Word) =>
             DataBase.Languages.Query<DBWords>($"SELECT * FROM {TableNamesLanguage.My_Directly.ToString()} WHERE Word = ? LIMIT 1", Word).Count != 0 
@@ -132,25 +98,25 @@ namespace ReLearn.API.Database
                 Word, TranslationWord, Settings.StandardNumberOfRepeats, DateTime.Now);
 
         public static List<DBWords> GetDataNotLearned => DataBase.Languages.Query<DBWords>(
-            $"SELECT * FROM {DataBase.TableNameLanguage} WHERE NumberLearn != 0 ORDER BY DateRecurrence ASC");
+            $"SELECT * FROM {DataBase.TableName} WHERE NumberLearn != 0 ORDER BY DateRecurrence ASC");
 
         public static void UpdateLearningNext(string Word) => DataBase.Languages.Execute(
-            $"UPDATE {DataBase.TableNameLanguage} SET DateRecurrence = ? WHERE Word = ?",
+            $"UPDATE {DataBase.TableName} SET DateRecurrence = ? WHERE Word = ?",
             DateTime.Now, Word);
 
         public static void UpdateLearningNotRepeat(string Word) => DataBase.Languages.Execute(
-            $"UPDATE {DataBase.TableNameLanguage} SET DateRecurrence = ?, NumberLearn = ? WHERE Word = ?", DateTime.Now, 0, Word);
+            $"UPDATE {DataBase.TableName} SET DateRecurrence = ?, NumberLearn = ? WHERE Word = ?", DateTime.Now, 0, Word);
 
         public static void Update(string word, int learn) // изменение у BD элемента NumberLearn
         {
                 DataBase.Languages.Execute(
-                    $"UPDATE {DataBase.TableNameLanguage} SET DateRecurrence = ?, NumberLearn = ? WHERE Word = ?", 
+                    $"UPDATE {DataBase.TableName} SET DateRecurrence = ?, NumberLearn = ? WHERE Word = ?", 
                     DateTime.Now, learn, word);       
         }
 
-        public static List<DBWords> GetData => DataBase.Languages.Query<DBWords>($"SELECT * FROM {DataBase.TableNameLanguage.ToString()}");
+        public static List<DBWords> GetData => DataBase.Languages.Query<DBWords>($"SELECT * FROM {DataBase.TableName.ToString()}");
 
-        public static void Delete(string Word) => DataBase.Languages.Execute($"DELETE FROM {DataBase.TableNameLanguage} WHERE Word = ?", Word);
+        public static void Delete(string Word) => DataBase.Languages.Execute($"DELETE FROM {DataBase.TableName} WHERE Word = ?", Word);
     }
 }
 

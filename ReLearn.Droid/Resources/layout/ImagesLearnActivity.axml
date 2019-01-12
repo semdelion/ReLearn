@@ -47,9 +47,9 @@
 					android:src					="@drawable/icon"
 					android:layout_width		="match_parent"
 					android:layout_height		="220.0dp"
-					android:layout_marginTop	="10.0dp"
-					android:layout_marginRight	="3.0dp"
-					android:layout_marginLeft	="3.0dp"/>
+					android:layout_marginTop	="5.0dp"
+					android:layout_marginRight	="5.0dp"
+					android:layout_marginLeft	="5.0dp"/>
 				<TextView
 					android:id					="@+id/textView_Images_learn"
 					android:textColor			="@color/TextWhite"

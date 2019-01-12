@@ -7,6 +7,7 @@ using Android.Support.V4.View;
 using Android.Views;
 using Android.Widget;
 using MvvmCross.Droid.Support.V7.AppCompat;
+using ReLearn.API.Database;
 using ReLearn.Core.ViewModels;
 using System;
 

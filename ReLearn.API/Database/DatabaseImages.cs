@@ -28,7 +28,7 @@ namespace ReLearn.API.Database
         public static void Update(string Image, int learn) // изменение у BD элемента NumberLearn
         {
                  DataBase.Images.Execute(
-                    $"UPDATE {DataBase.TableNameImage} SET DateRecurrence = ?, NumberLearn = ? WHERE Image_name = ?", 
+                    $"UPDATE {DataBase.TableName} SET DateRecurrence = ?, NumberLearn = ? WHERE Image_name = ?", 
                     DateTime.Now, learn, Image);
         }
 
@@ -79,19 +79,19 @@ namespace ReLearn.API.Database
 
         public static void UpdateLearningNotRepeat(string ImageName)
         {
-            var query = $"UPDATE {DataBase.TableNameImage} SET DateRecurrence = ?, NumberLearn = ? WHERE ";
+            var query = $"UPDATE {DataBase.TableName} SET DateRecurrence = ?, NumberLearn = ? WHERE ";
             var tmp = Settings.Currentlanguage == Language.en.ToString() ? "Name_image_en = ?" : "Name_image_ru = ?";
             DataBase.Images.Execute(query + tmp, DateTime.Now, 0, ImageName);
         }
 
         public static List<DBImages> GetDataNotLearned => DataBase.Images.Query<DBImages>(
-            $"SELECT * FROM {DataBase.TableNameImage} WHERE NumberLearn != 0 ORDER BY DateRecurrence ASC");
+            $"SELECT * FROM {DataBase.TableName} WHERE NumberLearn != 0 ORDER BY DateRecurrence ASC");
 
         public static void UpdateLearningNext(string ImageName) => DataBase.Images.Execute(
-            $"UPDATE {DataBase.TableNameImage} SET DateRecurrence = ? WHERE Image_name = ?", 
+            $"UPDATE {DataBase.TableName} SET DateRecurrence = ? WHERE Image_name = ?", 
             DateTime.Now, ImageName);
 
-        public static List<DBImages> GetData => DataBase.Images.Query<DBImages>($"SELECT * FROM {DataBase.TableNameImage.ToString()}");
+        public static List<DBImages> GetData => DataBase.Images.Query<DBImages>($"SELECT * FROM {DataBase.TableName.ToString()}");
 
         public string ImageName { get => Settings.Currentlanguage == Language.en.ToString() ? Name_image_en : Name_image_ru; }
     }

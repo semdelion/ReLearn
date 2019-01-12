@@ -7,6 +7,7 @@ using Android.Content.Res;
 using Calligraphy;
 using Java.Util;
 using Android.Util;
+using ReLearn.API;
 
 namespace ReLearn.Droid
 {

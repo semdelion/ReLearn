@@ -10,6 +10,8 @@ using Plugin.Settings;
 using System.Linq;
 using MvvmCross.Droid.Support.V7.AppCompat;
 using ReLearn.Core.ViewModels.Images;
+using ReLearn.API.Database;
+using ReLearn.API;
 
 namespace ReLearn.Droid.Images
 {

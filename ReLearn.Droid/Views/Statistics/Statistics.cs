@@ -10,6 +10,7 @@ using Android.Views;
 using ReLearn.Core.ViewModels;
 using Android.Graphics;
 using System.Collections.Generic;
+using ReLearn.API.Database;
 
 namespace ReLearn.Droid.Views.Statistics
 {

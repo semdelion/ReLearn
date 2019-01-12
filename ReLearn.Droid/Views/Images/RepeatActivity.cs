@@ -11,6 +11,8 @@ using MvvmCross.Droid.Support.V7.AppCompat;
 using ReLearn.Core.ViewModels.Images;
 using Android.Util;
 using Android.Graphics.Drawables;
+using ReLearn.API.Database;
+using ReLearn.API;
 
 namespace ReLearn.Droid.Images
 {
@@ -25,11 +27,6 @@ namespace ReLearn.Droid.Images
         string TitleCount
         {
             set => FindViewById<TextView>(Resource.Id.Repeat_toolbar_textview_fl).Text = value; 
-        }
-
-        Bitmap CurrentImage
-        {
-            set => FindViewById<ImageView>(Resource.Id.imageView_Images_repeat).SetImageBitmap(value); 
         }
 
         void Button_enable(bool state)
@@ -60,8 +57,10 @@ namespace ReLearn.Droid.Images
         void NextTest() //new test
         {
             using (Bitmap bitmap = BitmapFactory.DecodeStream(Application.Context.Assets.Open(
-                $"Image{DataBase.TableNameImage}/{ImagesDatabase[CurrentWordNumber].Image_name}.png")))
-                CurrentImage = bitmap;
+                $"Image{DataBase.TableName}/{ImagesDatabase[CurrentWordNumber].Image_name}.png")))
+            using (var bitmapRounded = BitmapHandler.GetRoundedCornerBitmap(bitmap, AdditionalFunctions.DpToPX(5)))
+                FindViewById<ImageView>(Resource.Id.imageView_Images_repeat).SetImageBitmap(bitmapRounded);
+
             const int four = 4;
             int first = new Random(unchecked((int)(DateTime.Now.Ticks))).Next(four);
             List<int> random_numbers = new List<int> { first, 0, 0, 0 };
@@ -76,7 +75,7 @@ namespace ReLearn.Droid.Images
             Button_enable(false);
             if (buttons[0].Text == ImagesDatabase[CurrentWordNumber].ImageName)
             {
-                Statistics.Add(ImagesDatabase, CurrentWordNumber, -Settings.TrueAnswer);
+                Statistics.Add(ImagesDatabase, CurrentWordNumber, - Settings.TrueAnswer);
                 Statistics.True++;
                 buttons[0].Background = GetDrawable(Resource.Drawable.button_true);
             }
@@ -132,7 +131,7 @@ namespace ReLearn.Droid.Images
                 }
                 else
                 {
-                    DBStatistics.Insert(Statistics.True, Statistics.False, DataBase.TableNameImage.ToString());
+                    DBStatistics.Insert(Statistics.True, Statistics.False, DataBase.TableName.ToString());
                     Statistics.Count = Statistics.True = Statistics.False = 0;
                     ViewModel.ToStatistic.Execute();
                     this.Finish();
@@ -159,7 +158,7 @@ namespace ReLearn.Droid.Images
             FindViewById<LinearLayout>(Resource.Id.repeat_background).Background = _background;
 
 
-            Statistics.Table = DataBase.TableNameImage.ToString();
+            Statistics.Table = DataBase.TableName.ToString();
             Buttons = new List<Button>{
                 FindViewById<Button>(Resource.Id.button_I_choice1),
                 FindViewById<Button>(Resource.Id.button_I_choice2),
@@ -178,7 +177,7 @@ namespace ReLearn.Droid.Images
                 return;
             }
            
-            Statistics.Table = DataBase.TableNameImage.ToString();
+            Statistics.Table = DataBase.TableName.ToString();
             Button_Images_Next_Click(null);
         }
 

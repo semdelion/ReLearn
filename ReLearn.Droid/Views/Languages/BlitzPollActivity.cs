@@ -6,10 +6,12 @@ using Android.Util;
 using Android.Views;
 using Android.Widget;
 using MvvmCross.Droid.Support.V7.AppCompat;
+using ReLearn.API.Database;
 using ReLearn.Core.ViewModels.Languages;
 using System;
 using System.Collections.Generic;
 using System.Timers;
+using ReLearn.API;
 
 namespace ReLearn.Droid.Languages
 {
@@ -140,7 +142,7 @@ namespace ReLearn.Droid.Languages
                 }
                 else
                 {
-                    DBStatistics.Insert(True, False, DataBase.TableNameLanguage.ToString());
+                    DBStatistics.Insert(True, False, DataBase.TableName.ToString());
                     ViewModel.ToStatistic.Execute();
                     timer.Dispose();
                     Finish();
