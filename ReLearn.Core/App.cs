@@ -13,6 +13,8 @@ namespace ReLearn.Core
         {
             RegisterAppStart<MainViewModel>();
             DataBase.SetupConnection();
+            DBImages.UpdateData();
+            DBWords.UpdateData();
         }
     }
 }

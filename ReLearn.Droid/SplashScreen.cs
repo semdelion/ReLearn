@@ -25,8 +25,6 @@ namespace ReLearn.Droid
             Database.СreateTableImage();
             Database.СreateTableLanguage();
             Database.ADDCOLUMN();
-            DBImages.UpdateData();
-            DBWords.UpdateData();
         }
     }
 }

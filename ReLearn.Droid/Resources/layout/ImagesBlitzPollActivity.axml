@@ -47,12 +47,11 @@
 		<TableLayout
 			android:layout_width		="match_parent"
 			android:layout_height		="match_parent"
-			android:layout_marginRight	="35.0dp"
-			android:layout_marginLeft	="35.0dp"
-			android:layout_marginBottom	="25dp"
+			android:layout_marginRight	="25.0dp"
+			android:layout_marginLeft	="25.0dp"
+			android:layout_marginBottom	="35dp"
 			android:gravity				="bottom">
-			<TableRow
-				android:layout_marginBottom	="25dp">
+			<TableRow>
 				<Button
 					android:onClick				="Button_Images_No_Click"
 					android:id					="@+id/button_Images_No"
@@ -64,6 +63,7 @@
 					android:layout_width		="0dp"
 					android:layout_weight		="0.5"
 					android:layout_height		="55.0dp"
+					android:layout_marginRight	="10dp" 
 					android:gravity				="center" />
 				<Button
 					android:onClick				="Button_Images_Yes_Click"
@@ -76,6 +76,7 @@
 					android:layout_width		="0dp"
 					android:layout_weight		="0.5"
 					android:layout_height		="55.0dp"
+					android:layout_marginLeft	="10dp" 
 					android:gravity				="center"/>
 			</TableRow>
 		</TableLayout>

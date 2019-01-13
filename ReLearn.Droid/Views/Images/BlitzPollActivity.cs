@@ -44,7 +44,7 @@ namespace ReLearn.Droid.Images
             int randIndex = (CurrentWordNumber + new Random(unchecked((int)(DateTime.Now.Ticks))).Next(1, ImageDatabase.Count)) % ImageDatabase.Count;
             var textView = new TextView(this)
             {
-                TextSize = 25,
+                TextSize = 20,
                 LayoutParameters = param1,
                 Text = $"{(ImageDatabase[answer ? CurrentWordNumber : randIndex]).ImageName}",
                 Gravity = GravityFlags.CenterHorizontal
@@ -73,7 +73,7 @@ namespace ReLearn.Droid.Images
         {
             CurrentWordNumber = new Random(unchecked((int)(DateTime.Now.Ticks))).Next(ImageDatabase.Count);
             answer = new Random(unchecked((int)(DateTime.Now.Ticks))).Next(2) == 1 ? true : false;
-            RelativeLayout.LayoutParams param = new RelativeLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, AdditionalFunctions.DpToPX(300))
+            RelativeLayout.LayoutParams param = new RelativeLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, AdditionalFunctions.DpToPX(320))
             {
                 TopMargin       = AdditionalFunctions.DpToPX(160),
                 BottomMargin    = AdditionalFunctions.DpToPX(10),
@@ -98,7 +98,7 @@ namespace ReLearn.Droid.Images
             flingAnimation.Start();
         }
 
-        void Answer(bool UserAnswer)
+        public void Answer(bool UserAnswer)
         {
             if (!(answer ^ UserAnswer))
                 True++;
@@ -141,38 +141,29 @@ namespace ReLearn.Droid.Images
                 AdditionalFunctions.DpToPX(50)
                 ));
 
-            //float startX = 0;
-            //float webViewWidth = 0;
-
-            //FindViewById<RelativeLayout>(Resource.Id.RelativeLayoutImagesBlitzPoll).Touch += (sender, e) => {
-            //    if (e.Event.Action == Android.Views.MotionEventActions.Down)
-            //    {
-            //        webViewWidth = FindViewById<RelativeLayout>(Resource.Id.RelativeLayoutImagesBlitzPoll).Width;
-            //        startX = e.Event.GetX();
-            //    }
-            //    else if (e.Event.Action == Android.Views.MotionEventActions.Pointer1Up || e.Event.Action == Android.Views.MotionEventActions.PointerUp || e.Event.Action == Android.Views.MotionEventActions.Up)
-            //    {
-            //        float movement = e.Event.GetX() - startX;
-            //        float offset = webViewWidth / 2;
-
-            //        if (Math.Abs(movement) > offset)
-            //        {
-            //            if (movement < 0)
-            //            {
-            //                Answer(false);
-
-            //            }
-            //            else
-            //            {
-            //                Answer(true);
-
-            //            }
-            //        }
-            //    }
-                   
-            //    e.Handled = false;
-            //};
-
+            float webViewWidth = Android.App.Application.Context.Resources.DisplayMetrics.WidthPixels;
+            float startX = 0;
+            FindViewById<RelativeLayout>(Resource.Id.RelativeLayoutImagesBlitzPoll).Touch += (s, e) =>
+            {
+                var handled = false;
+                if (e.Event.Action == MotionEventActions.Down)
+                {
+                    startX = e.Event.GetX();
+                    handled = true;
+                }
+                else if (e.Event.Action == MotionEventActions.Up)
+                {
+                    float movement = e.Event.GetX() - startX;
+                    float offset = webViewWidth/10;
+                    if (Math.Abs(movement) > offset)
+                        if (movement < 0)
+                            Answer(false);
+                        else
+                            Answer(true);
+                    handled = true;
+                }
+                e.Handled = handled;
+            };
             FindViewById<TextView>(Resource.Id.textView_Timer_Images).Background = _backgroundTimer;
 
             ImageDatabase = DBImages.GetDataNotLearned;

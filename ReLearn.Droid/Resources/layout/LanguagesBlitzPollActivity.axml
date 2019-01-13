@@ -2,7 +2,6 @@
 <RelativeLayout
     xmlns:android			="http://schemas.android.com/apk/res/android"
     xmlns:local				="http://schemas.android.com/apk/res-auto"
-	android:id				="@+id/RelativeLayoutLanguagesBlitzPoll"
     android:orientation		="vertical"
     android:layout_width	="match_parent"
     android:layout_height	="match_parent">
@@ -27,49 +26,59 @@
 			/>
 		</android.support.v7.widget.Toolbar>
 	</android.support.design.widget.AppBarLayout>
-	<TextView
-		android:id					="@+id/textView_Timer_language"
-		android:textColor			="@color/TextWhite"
-		android:textSize			="30dp"
-		android:textStyle			="bold"
-		android:layout_width		="match_parent"
-		android:layout_height		="50dp"
-		android:layout_marginRight	="100.0dp"
-		android:layout_marginLeft	="100.0dp"
-		android:layout_marginTop	="95.0dp"
-		android:gravity				= "center_horizontal|center"/>
-	<TableLayout
-		android:layout_width		="match_parent"
-		android:layout_height		="match_parent"
-		android:layout_marginRight	="35.0dp"
-		android:layout_marginLeft	="35.0dp"
-		android:layout_marginBottom	="25dp"
-		android:gravity				="bottom">
-		<TableRow
-			android:layout_marginBottom	="25dp">
-			<Button
-				android:onClick				="Button_Languages_No_Click"
-				android:id					="@+id/button_Languages_No"
-				android:background			="@drawable/button_style_standard"
-				android:textColor			="@color/TextWhite"
-				android:text				="@string/No"
-				android:textStyle			="bold"
-				android:textSize			="25dp"
-				android:layout_width		="0dp"
-				android:layout_weight		="0.5"
-				android:layout_height		="55.0dp"/>
-			<Button
-				android:onClick				="Button_Languages_Yes_Click"
-				android:id					="@+id/button_Languages_Yes"
-				android:background			="@drawable/button_style_standard"
-				android:textColor			="@color/TextWhite"
-				android:text				="@string/Yes"
-				android:textStyle			="bold"
-				android:textSize			="25dp"
-				android:layout_width		="0dp"
-				android:layout_weight		="0.5"
-				android:layout_height		="55.0dp"
-			/>
-		</TableRow>
-	</TableLayout>
+	<RelativeLayout
+		xmlns:android			="http://schemas.android.com/apk/res/android"
+		xmlns:local				="http://schemas.android.com/apk/res-auto"
+		android:id				="@+id/RelativeLayoutLanguagesBlitzPoll"
+		android:orientation		="vertical"
+		android:layout_width	="match_parent"
+		android:layout_height	="match_parent">
+		<TextView
+			android:id					="@+id/textView_Timer_language"
+			android:textColor			="@color/TextWhite"
+			android:textSize			="30dp"
+			android:textStyle			="bold"
+			android:layout_width		="match_parent"
+			android:layout_height		="50dp"
+			android:layout_marginRight	="100.0dp"
+			android:layout_marginLeft	="100.0dp"
+			android:layout_marginTop	="95.0dp"
+			android:gravity				= "center_horizontal|center"/>
+					
+		<TableLayout
+			android:layout_width		="match_parent"
+			android:layout_height		="match_parent"
+			android:layout_marginRight	="25.0dp"
+			android:layout_marginLeft	="25.0dp"
+			android:layout_marginBottom	="35dp"
+			android:gravity				="bottom">
+			<TableRow>
+				<Button
+					android:onClick				="Button_Languages_No_Click"
+					android:id					="@+id/button_Languages_No"
+					android:background			="@drawable/button_style_standard"
+					android:textColor			="@color/TextWhite"
+					android:text				="@string/No"
+					android:textStyle			="bold"
+					android:textSize			="25dp"
+					android:layout_width		="0dp"
+					android:layout_weight		="0.5"
+					android:layout_height		="55.0dp"
+					android:layout_marginRight	="10dp" />
+				<Button
+					android:onClick				="Button_Languages_Yes_Click"
+					android:id					="@+id/button_Languages_Yes"
+					android:background			="@drawable/button_style_standard"
+					android:textColor			="@color/TextWhite"
+					android:text				="@string/Yes"
+					android:textStyle			="bold"
+					android:textSize			="25dp"
+					android:layout_width		="0dp"
+					android:layout_weight		="0.5"
+					android:layout_height		="55.0dp"
+					android:layout_marginLeft	="10dp" 
+				/>
+			</TableRow>
+		</TableLayout>
+	</RelativeLayout>
 </RelativeLayout>

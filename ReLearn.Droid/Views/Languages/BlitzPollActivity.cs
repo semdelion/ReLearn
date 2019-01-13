@@ -30,12 +30,12 @@ namespace ReLearn.Droid.Languages
         int True = 0, False = 0;
         TextView GetTextView()
         {
-            RelativeLayout.LayoutParams param = new RelativeLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, AdditionalFunctions.DpToPX(300))
+            RelativeLayout.LayoutParams param = new RelativeLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, AdditionalFunctions.DpToPX(320))
             {
                 TopMargin = AdditionalFunctions.DpToPX(160),
                 BottomMargin = AdditionalFunctions.DpToPX(10),
-                RightMargin = AdditionalFunctions.DpToPX(25),
-                LeftMargin = AdditionalFunctions.DpToPX(25)
+                RightMargin = AdditionalFunctions.DpToPX(10),
+                LeftMargin = AdditionalFunctions.DpToPX(10)
             };
            
             CurrentWordNumber = new Random(unchecked((int)(DateTime.Now.Ticks))).Next(WordDatabase.Count);
@@ -105,6 +105,33 @@ namespace ReLearn.Droid.Languages
                 displayMetrics.WidthPixels - AdditionalFunctions.DpToPX(200),
                 AdditionalFunctions.DpToPX(50)));
 
+
+            float webViewWidth = Android.App.Application.Context.Resources.DisplayMetrics.WidthPixels;
+            float startX = 0;
+            FindViewById<RelativeLayout>(Resource.Id.RelativeLayoutLanguagesBlitzPoll).Touch += (s, e) =>
+            {
+                var handled = false;
+                if (e.Event.Action == MotionEventActions.Down)
+                {
+                    startX = e.Event.GetX();
+                    handled = true;
+                }
+                else if (e.Event.Action == MotionEventActions.Up)
+                {
+                    float movement = e.Event.GetX() - startX;
+                    float offset = webViewWidth / 10;
+
+                    if (Math.Abs(movement) > offset)
+                    {
+                        if (movement < 0)
+                            Answer(false);
+                        else
+                            Answer(true);
+                    }
+                    handled = true;
+                }
+                e.Handled = handled;
+            };
             FindViewById<TextView>(Resource.Id.textView_Timer_language).Background = _backgroundTimer;
             WordDatabase = DBWords.GetDataNotLearned;
             if (WordDatabase.Count == 0)
