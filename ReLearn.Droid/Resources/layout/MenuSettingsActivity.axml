@@ -140,16 +140,15 @@
 				android:textColor			="@color/TextWhite"
 				android:text				="@string/Language"
 				android:textSize			="20dp"
+				android:layout_marginRight	="10dp"
 				android:layout_width		="match_parent"
 				android:layout_height		="wrap_content"/>
-			<MvxSpinner
-				android:id					="@+id/LanguageSpinner"
+			<TextView
+				android:textColor			="@color/TextWhite"
+				android:textSize			="20dp"
 				android:layout_width		="match_parent"
 				android:layout_height		="wrap_content"
-				android:popupBackground		="#1d2b3b"
-				android:layout_marginRight	="5.0dp"
-				local:MvxBind				="ItemsSource  ItemsLanguages;SelectedItem SelectedItemLanguage"
-			/>
+				local:MvxBind				="Click SelectedItemLanguageCommand; Text Languages"/>
 		</LinearLayout>
 		<LinearLayout
 			android:layout_width		="wrap_content"
@@ -162,15 +161,15 @@
 				android:textColor			="@color/TextWhite"
 				android:text				="@string/Pronunciation"
 				android:textSize			="20dp"
+				android:layout_marginRight	="10dp"
 				android:layout_width		="match_parent"
 				android:layout_height		="wrap_content"/>
-			<MvxSpinner
-				android:id					="@+id/PronunciationSpinner"
+			<TextView
+				android:textColor			="@color/TextWhite"
+				android:textSize			="20dp"
 				android:layout_width		="match_parent"
 				android:layout_height		="wrap_content"
-				android:popupBackground		="#1d2b3b"
-				android:layout_marginRight	="5.0dp"
-				local:MvxBind				="ItemsSource  ItemsPronunciations;SelectedItem SelectedItemPronunciation"
+				local:MvxBind				="Click SelectedItemPronunciationCommand; Text Pronunciations"/>
 			/>
 		</LinearLayout>
 		<TableLayout

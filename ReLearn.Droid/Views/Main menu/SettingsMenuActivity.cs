@@ -20,6 +20,7 @@ using ReLearn.Droid.Views;
 using MvvmCross.Droid.Support.V7.AppCompat;
 using ReLearn.Core.ViewModels.MainMenu;
 using MvvmCross.Platforms.Android.Binding.Views;
+using Acr.UserDialogs;
 
 namespace ReLearn.Droid
 {
@@ -52,6 +53,9 @@ namespace ReLearn.Droid
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.MenuSettingsActivity);
+
+            UserDialogs.Init(this);
+
             var toolbarSettings = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbarSetting);
             SetSupportActionBar(toolbarSettings);
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);

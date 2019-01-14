@@ -1,4 +1,6 @@
 ﻿using System;
+using Acr.UserDialogs;
+using MvvmCross;
 using MvvmCross.ViewModels;
 using ReLearn.API;
 using ReLearn.API.Database;
@@ -11,6 +13,7 @@ namespace ReLearn.Core
 
         public override void Initialize()
         {
+            Mvx.IoCProvider.RegisterSingleton(() => UserDialogs.Instance);
             RegisterAppStart<MainViewModel>();
             DataBase.SetupConnection();
             DBImages.UpdateData();

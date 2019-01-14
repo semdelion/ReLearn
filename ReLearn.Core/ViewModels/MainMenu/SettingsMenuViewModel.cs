@@ -1,4 +1,7 @@
-﻿using MvvmCross.Navigation;
+﻿using Acr.UserDialogs;
+using MvvmCross;
+using MvvmCross.Commands;
+using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 using ReLearn.API;
 using System;
@@ -13,6 +16,8 @@ namespace ReLearn.Core.ViewModels.MainMenu
         #endregion
 
         #region Commands
+        public IMvxCommand SelectedItemLanguageCommand => new MvxCommand(SelectedItemLanguage);
+        public IMvxCommand SelectedItemPronunciationCommand => new MvxCommand(SelectedItemPronunciation);
         #endregion
 
         #region Properties
@@ -87,55 +92,44 @@ namespace ReLearn.Core.ViewModels.MainMenu
             }
         }
 
-        public static List<string> _languages = new List<string>() { "English", "Русский" };
-        public List<string> ItemsLanguages
+        private string _languages = Settings.Currentlanguage == Language.en.ToString() ? "English" : "Русский";
+        public string Languages
         {
-            get => _languages;
-            set
-            {
-                _languages = value;
-                RaisePropertyChanged(() => ItemsLanguages);
-            }
+            get { return _languages; }
+            set { SetProperty(ref _languages, value); }
         }
 
-        public static string _selectedItemLanguage = Settings.Currentlanguage == Language.en.ToString() ? "English" : "Русский";
-        public string SelectedItemLanguage
+        private string _pronunciations = Settings.CurrentPronunciation == Pronunciation.en.ToString() ? "English" : "British";
+        public string Pronunciations
         {
-            get => _selectedItemLanguage;
-            set
-            {
-                _selectedItemLanguage = value;
-                Settings.Currentlanguage = value == "English" ?
-                    Language.en.ToString() :
-                    Language.ru.ToString();
-                RaisePropertyChanged(() => SelectedItemLanguage);
-            }
+            get { return _pronunciations; }
+            set { SetProperty(ref _pronunciations, value); }
         }
 
-        private static List<string> _pronunciations = new List<string>() { "English", "British" };
-        public List<string> ItemsPronunciations
-        {
-            get => _pronunciations;
-            set
-            {
-                _pronunciations = value;
-                RaisePropertyChanged(() => ItemsPronunciations);
-            }
-        }
+        //public static List<string> _languages = new List<string>() { "English", "Русский" };
+        //public List<string> ItemsLanguages
+        //{
+        //    get => _languages;
+        //    set
+        //    {
+        //        _languages = value;
+        //        RaisePropertyChanged(() => ItemsLanguages);
+        //    }
+        //}
 
-        private string _selectedItemPronunciation = Settings.CurrentPronunciation == Pronunciation.en.ToString() ? "English" : "British";
-        public string SelectedItemPronunciation
-        {
-            get => _selectedItemPronunciation;
-            set
-            {
-                _selectedItemPronunciation = value;
-                Settings.CurrentPronunciation = value == "English" ?
-                    Pronunciation.en.ToString() :
-                    Pronunciation.uk.ToString();
-                RaisePropertyChanged(() => SelectedItemPronunciation);
-            }
-        }
+        //public static string _selectedItemLanguage = Settings.Currentlanguage == Language.en.ToString() ? "English" : "Русский";
+        //public string SelectedItemLanguage
+        //{
+        //    get => _selectedItemLanguage;
+        //    set
+        //    {
+        //        _selectedItemLanguage = value;
+        //        Settings.Currentlanguage = value == "English" ?
+        //            Language.en.ToString() :
+        //            Language.ru.ToString();
+        //        RaisePropertyChanged(() => SelectedItemLanguage);
+        //    }
+        //}
         #endregion
 
         #region Services
@@ -154,6 +148,39 @@ namespace ReLearn.Core.ViewModels.MainMenu
         #endregion
 
         #region Private
+        private void SelectedItemLanguage()
+        {
+            var actionSheetConfig = new ActionSheetConfig
+            {
+                Title = "Choose language",
+                UseBottomSheet = true,
+                Options = new List<ActionSheetOption>
+                {
+                    new ActionSheetOption("English", () => {Languages = "English";  Settings.Currentlanguage = Language.en.ToString();}),
+                    new ActionSheetOption("Русский", () => {Languages = "Русский";  Settings.Currentlanguage = Language.ru.ToString(); }),
+                },
+
+                Cancel = new ActionSheetOption("Cancel", () => { }),
+            };
+
+            Mvx.IoCProvider.Resolve<IUserDialogs>().ActionSheet(actionSheetConfig);
+        }
+        private void SelectedItemPronunciation()
+        {
+            var actionSheetConfig = new ActionSheetConfig
+            {
+                Title = "Choose pronunciation",
+                UseBottomSheet = true,
+                Options = new List<ActionSheetOption>
+                {
+                    new ActionSheetOption("English", () => {Pronunciations = "English";  Settings.CurrentPronunciation =  Pronunciation.en.ToString();}),
+                    new ActionSheetOption("British", () => {Pronunciations = "British";  Settings.CurrentPronunciation =  Pronunciation.uk.ToString(); }),
+                },
+                Cancel = new ActionSheetOption("Cancel", () => { }),
+            };
+            Mvx.IoCProvider.Resolve<IUserDialogs>().ActionSheet(actionSheetConfig);
+        }
+
         #endregion
 
         #region Protected
