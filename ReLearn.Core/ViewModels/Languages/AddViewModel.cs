@@ -2,6 +2,7 @@
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 using ReLearn.API.Database;
+using ReLearn.Core.Localization;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -54,14 +55,14 @@ namespace ReLearn.Core.ViewModels.Languages
         private async Task AddWord() //TODO - перевод, async db
         {
             if (Word == "" || Word == null || TranslationWord == null || TranslationWord == "")
-                Message.Toast("Resource.String.Enter_word");
+                Message.Toast(AppResources.AddViewModel_EnterWord);
             else if (await Task.Run(() => DBWords.WordIsContained(Word.ToLower())))
-                Message.Toast("Resource.String.Word_exists");
+                Message.Toast(AppResources.AddViewModel_WordExists);
             else
             {
                 await Task.Run(() => DBWords.Insert(Word.ToLower(), TranslationWord.ToLower()));
                 Word = TranslationWord = "";
-                Message.Toast("Resource.String.Word_Added");
+                Message.Toast(AppResources.AddViewModel_WordAdded);
             }
         }
         #endregion

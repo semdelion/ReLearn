@@ -27,8 +27,8 @@
 		</android.support.v7.widget.Toolbar>
 	</android.support.design.widget.AppBarLayout>
 	<RelativeLayout
-		android:layout_marginRight	="35.0dp"
-		android:layout_marginLeft	="35.0dp"
+		android:layout_marginRight	="25.0dp"
+		android:layout_marginLeft	="25.0dp"
 		android:layout_width		="match_parent"
 		android:layout_height		="match_parent">
 		<TextView
@@ -59,7 +59,7 @@
 			android:height				="@android:dimen/notification_large_icon_width"
 			android:textColor			="@color/TextWhite"
 			android:fontFamily			="@font/myriadpro_semibold"
-			android:textSize			="25dp"
+			android:textSize			="20dp"
 			android:gravity				="center"
 			android:layout_width		="match_parent"
 			android:layout_height		="55.0dp"

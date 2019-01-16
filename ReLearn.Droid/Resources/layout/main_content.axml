@@ -47,8 +47,8 @@
 					android:gravity				="center"/>
 				<Button
 					local:MvxBind				="Click ToLearn"
-					android:id					="@+id/button_Images_learn"
 					android:text				="@string/Learn"
+					android:id					="@+id/button_Images_learn"
 					android:background			="@drawable/button_style_standard"
 					android:textColor			="@color/TextWhite"
 					android:fontFamily			="@font/myriadpro_semibold"

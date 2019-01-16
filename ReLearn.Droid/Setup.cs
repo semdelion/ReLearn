@@ -1,5 +1,7 @@
 ﻿using MvvmCross;
+using MvvmCross.Converters;
 using MvvmCross.Droid.Support.V7.AppCompat;
+using MvvmCross.Localization;
 using ReLearn.Core;
 
 namespace ReLearn.Droid
@@ -10,6 +12,12 @@ namespace ReLearn.Droid
         {
             base.InitializeFirstChance();
             Mvx.IoCProvider.RegisterType<IMessageCore>(() => new MessageDroid());
+        }
+
+        protected override void FillValueConverters(IMvxValueConverterRegistry registry)
+        {
+            base.FillValueConverters(registry);
+            registry.AddOrOverwrite("Language", new MvxLanguageConverter());
         }
     }
 }

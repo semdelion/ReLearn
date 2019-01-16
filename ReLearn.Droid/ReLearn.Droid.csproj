@@ -2891,20 +2891,15 @@
     <AndroidResource Include="Resources\drawable\ic_nav_header1111111.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\spinner_dropdown_item.axml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\layout\spinner_item.axml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\drawable\ic_nav_header.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\toolbarMain.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\view_dictionary_language_item.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

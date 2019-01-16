@@ -84,32 +84,7 @@ namespace ReLearn.Droid.Images
                          SearchWithGetTypeField("Name_image_ru", e));
             };
             return base.OnPrepareOptionsMenu(menu);
-            //DictionaryImages.ItemClick += (s, args) =>
-            //{
-            //    var image = DictionaryImages.Adapter.GetItem(args.Position);
-            //    DBImages images = new DBImages();
-            //    foreach (var item in dataBase)
-            //        if (item.Image_name == image.ToString())
-            //        {
-            //            images = item.Find();
-            //            break;
-            //        }
 
-            //    View view = LayoutInflater.From(this).Inflate(Resource.Layout.item_alert_big_image, null);
-            //    Android.App.AlertDialog.Builder alert = new Android.App.AlertDialog.Builder(this);
-            //    alert.SetView(view);
-
-            //    var ImageView = view.FindViewById<ImageView>(Resource.Id.imageView_Alert_BigImage);
-            //    using (var his = Application.Context.Assets.Open($"Image{DataBase.TableNameImage}/{images.Image_name}.png"))
-            //    {
-            //        Bitmap bitmap = BitmapFactory.DecodeStream(his);
-            //        double imageWidthInPX = (double)ImageView.Width;
-            //        ImageView.SetImageBitmap(bitmap);
-            //    }
-    
-            //    alert.SetPositiveButton("Cancel", delegate { alert.Dispose(); });
-            //    alert.Show();
-            //};
         }
 
         public List<DBImages> SearchWithGetTypeField(string nameField, Android.Support.V7.Widget.SearchView.QueryTextChangeEventArgs e)

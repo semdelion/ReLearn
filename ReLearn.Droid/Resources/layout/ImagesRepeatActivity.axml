@@ -62,8 +62,8 @@
                 android:layout_height		="55.0dp"
                 android:layout_marginTop	="20.0dp"
                 android:layout_marginBottom	="10dp"
-                android:layout_marginRight	="35.0dp"
-                android:layout_marginLeft	="35.0dp"
+                android:layout_marginRight	="25.0dp"
+                android:layout_marginLeft	="25.0dp"
 				android:minHeight			="60dp"/>
             <Button
 				android:onClick				="Button_Images_2_Click"
@@ -75,8 +75,8 @@
                 android:layout_width		="match_parent"
                 android:layout_height		="55.0dp"
                 android:layout_marginBottom	="10dp"
-                android:layout_marginRight	="35.0dp"
-                android:layout_marginLeft	="35.0dp"
+                android:layout_marginRight	="25.0dp"
+                android:layout_marginLeft	="25.0dp"
 				android:minHeight			="60dp"/>
             <Button
 				android:onClick				="Button_Images_3_Click"
@@ -88,8 +88,8 @@
                 android:layout_width		="match_parent"
                 android:layout_height		="55.0dp"
                 android:layout_marginBottom	="10dp"
-                android:layout_marginRight	="35.0dp"
-                android:layout_marginLeft	="35.0dp"
+                android:layout_marginRight	="25.0dp"
+                android:layout_marginLeft	="25.0dp"
 				android:minHeight			="60dp" />
 			<Button
 				android:onClick				="Button_Images_4_Click"
@@ -100,8 +100,8 @@
 				android:textSize			="20dp"
 				android:layout_width		="match_parent"
 				android:layout_height		="55.0dp"
-				android:layout_marginRight	="35.0dp"
-				android:layout_marginLeft	="35.0dp"
+				android:layout_marginRight	="25.0dp"
+				android:layout_marginLeft	="25.0dp"
 				android:layout_marginBottom	="10dp"
 				android:minHeight			="60dp"/>
 			<Button
@@ -110,10 +110,11 @@
 				android:text				="@string/Next"
 				android:background			="@drawable/button_style_standard"
 				android:textColor			="@color/TextWhite"
-				android:textSize			="25dp"
+				android:textSize			="20dp"
+				android:textStyle			="bold"
 				android:layout_width		="match_parent"
 				android:layout_height		="55.0dp"
-				android:layout_marginRight	="35.0dp"
+				android:layout_marginRight	="25.0dp"
 				android:layout_marginLeft	="200dp"
 				android:layout_marginBottom	="20dp"
 				android:gravity				="center" 

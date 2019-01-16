@@ -1,4 +1,5 @@
-﻿using MvvmCross.Navigation;
+﻿using MvvmCross.Localization;
+using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -8,6 +9,7 @@ namespace ReLearn.Core.ViewModels.Languages
 {
     public  class LearnViewModel : MvxViewModel
     {
+        public IMvxLanguageBinder TextSource => new MvxLanguageBinder("", GetType().Name);
         #region Fields
         #endregion
 

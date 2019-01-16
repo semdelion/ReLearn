@@ -7,6 +7,7 @@ using MvvmCross.Droid.Support.V7.AppCompat;
 using ReLearn.Core;
 using Android.Content.PM;
 using ReLearn.API.Database;
+using System.Globalization;
 
 namespace ReLearn.Droid
 {

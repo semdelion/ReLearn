@@ -7,6 +7,7 @@
   <ItemGroup>
     <PackageReference Include="Acr.UserDialogs" Version="7.0.1" />
     <PackageReference Include="MvvmCross" Version="6.2.2" />
+    <PackageReference Include="MvvmCross.Plugin.ResxLocalization" Version="6.2.2" />
   </ItemGroup>
 
   <ItemGroup>
@@ -14,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Resources\AppResources.Designer.cs">
+    <Compile Update="Localization\AppResources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>AppResources.resx</DependentUpon>
@@ -22,9 +23,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Resources\AppResources.resx">
+    <EmbeddedResource Update="Localization\AppResources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Localization\AppResources.ru.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources.ru.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
 

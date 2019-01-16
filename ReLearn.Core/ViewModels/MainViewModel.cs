@@ -1,4 +1,5 @@
 ﻿using MvvmCross.Commands;
+using MvvmCross.Localization;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 using ReLearn.API;
@@ -11,6 +12,7 @@ namespace ReLearn.Core.ViewModels
     public class MainViewModel : MvxViewModel
     {
         #region Fields
+        
         #endregion
 
         #region Commands
@@ -35,13 +37,16 @@ namespace ReLearn.Core.ViewModels
         public IMvxAsyncCommand ToFeedback => _toFeedback ?? (_toFeedback = new MvxAsyncCommand(NavigateToFeedback));
         private IMvxAsyncCommand _toSettingsMenu;
         public IMvxAsyncCommand ToSettingsMenu => _toSettingsMenu ?? (_toSettingsMenu = new MvxAsyncCommand(NavigateToSettingsMenu));
+        public IMvxLanguageBinder TextSource => new MvxLanguageBinder("", GetType().Name);
         #endregion
 
         #region Properties
+
         #endregion
 
         #region Services
         protected IMvxNavigationService NavigationService { get; set; }
+
         #endregion
 
         #region Constructors

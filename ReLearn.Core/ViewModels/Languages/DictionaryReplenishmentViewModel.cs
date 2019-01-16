@@ -1,7 +1,9 @@
 ﻿using MvvmCross.Commands;
+using MvvmCross.Localization;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 using ReLearn.API.Database;
+using ReLearn.Core.Localization;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -16,8 +18,7 @@ namespace ReLearn.Core.ViewModels.Languages
 
         #region Commands
         public IMvxAsyncCommand AddWordsCommand => new MvxAsyncCommand(AddWords);
-        //<Button
-        //       local:MvxBind				="Click AddWordsCommand"
+        public IMvxLanguageBinder TextSource => new MvxLanguageBinder("", GetType().Name);
         #endregion
 
         #region Properties
@@ -57,11 +58,11 @@ namespace ReLearn.Core.ViewModels.Languages
                             DBWords.Insert(str[0].Trim(), str[1].Trim());
                     }
                 });
-                Message.Toast("Resource.String.WordsAdded");
+                Message.Toast(AppResources.DictionaryReplenishmentViewModel_WordsAdded);
                 Words = "";
             }
             else
-                Message.Toast("Resource.String.DataCorrectness");
+                Message.Toast(AppResources.DictionaryReplenishmentViewModel_DataCorrectness);
         }
 
         private bool ValidationOfEnteredData(string[] text)

@@ -27,39 +27,14 @@ namespace ReLearn.Droid
     [Activity(Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class SettingsMenuActivity : MvxAppCompatActivity<SettingsMenuViewModel>
     {
-        //private bool CreateAdapter(MvxSpinner spinner)
-        //{
-        //    //try
-        //    //{
-        //    //    var adapter = ArrayAdapter.CreateFromResource(this, Resource.Drawable.spinner_item);
-        //    //    adapter.SetDropDownViewResource(Resource.Drawable.spinner_item);
-        //    //    spinner.Adapter = adapter;
-        //    //    return true;
-        //    //}
-        //    //catch(Exception ex)
-        //    //{
-        //    //    throw new Exception(ex.Message);
-        //    //}
-        ////android: textColor = "@color/TextWhite"
-        //}
-
-        private void InitializationAdapters()
-        {
-            //FindViewById<MvxSpinner>(Resource.Id.LanguageSpinner).= Colors.DarkOrange;
-            //CreateAdapter(FindViewById<MvxSpinner>(Resource.Id.PronunciationSpinner));
-        }
-
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.MenuSettingsActivity);
-
             UserDialogs.Init(this);
-
             var toolbarSettings = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbarSetting);
             SetSupportActionBar(toolbarSettings);
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
-            InitializationAdapters();
         }
 
         public override bool OnOptionsItemSelected(IMenuItem item)

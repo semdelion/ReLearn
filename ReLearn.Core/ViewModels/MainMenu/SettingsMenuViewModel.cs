@@ -4,6 +4,7 @@ using MvvmCross.Commands;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 using ReLearn.API;
+using ReLearn.Core.Localization;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -16,6 +17,7 @@ namespace ReLearn.Core.ViewModels.MainMenu
         #endregion
 
         #region Commands
+
         public IMvxCommand SelectedItemLanguageCommand => new MvxCommand(SelectedItemLanguage);
         public IMvxCommand SelectedItemPronunciationCommand => new MvxCommand(SelectedItemPronunciation);
         #endregion
@@ -152,7 +154,7 @@ namespace ReLearn.Core.ViewModels.MainMenu
         {
             var actionSheetConfig = new ActionSheetConfig
             {
-                Title = "Choose language",
+                Title = AppResources.SettingsMenuViewModel_ChooseLanguage,
                 UseBottomSheet = true,
                 Options = new List<ActionSheetOption>
                 {
@@ -160,23 +162,22 @@ namespace ReLearn.Core.ViewModels.MainMenu
                     new ActionSheetOption("Русский", () => {Languages = "Русский";  Settings.Currentlanguage = Language.ru.ToString(); }),
                 },
 
-                Cancel = new ActionSheetOption("Cancel", () => { }),
+                Cancel = new ActionSheetOption(AppResources.SettingsMenuViewModel_Cancel, () => { }),
             };
-
             Mvx.IoCProvider.Resolve<IUserDialogs>().ActionSheet(actionSheetConfig);
         }
         private void SelectedItemPronunciation()
         {
             var actionSheetConfig = new ActionSheetConfig
             {
-                Title = "Choose pronunciation",
+                Title = AppResources.SettingsMenuViewModel_ChoosePronunciation,
                 UseBottomSheet = true,
                 Options = new List<ActionSheetOption>
                 {
                     new ActionSheetOption("English", () => {Pronunciations = "English";  Settings.CurrentPronunciation =  Pronunciation.en.ToString();}),
                     new ActionSheetOption("British", () => {Pronunciations = "British";  Settings.CurrentPronunciation =  Pronunciation.uk.ToString(); }),
                 },
-                Cancel = new ActionSheetOption("Cancel", () => { }),
+                Cancel = new ActionSheetOption( AppResources.SettingsMenuViewModel_Cancel, () => { }),
             };
             Mvx.IoCProvider.Resolve<IUserDialogs>().ActionSheet(actionSheetConfig);
         }
