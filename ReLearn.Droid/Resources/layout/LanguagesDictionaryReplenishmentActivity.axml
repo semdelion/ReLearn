@@ -39,12 +39,16 @@
 		android:layout_marginTop	="5.0dp"
 		android:scrollbars			="vertical" 
 		android:defaultFocusHighlightEnabled="true"/>
+	<RelativeLayout
+		android:layout_width		="match_parent"
+		android:layout_height		="match_parent">
 	<Button
 		local:MvxBind				="Click AddWordsCommand"
 		android:id					="@+id/button_add_DictionaryReplenishment"
 		android:background			="@drawable/button_style_standard"
 		android:text				="@string/Add_word"
 		android:textColor			="@color/TextWhite"
+		android:fontFamily			="@font/myriadpro_semibold"
 		android:textSize			="20dp"
 		android:layout_width		="match_parent"
 		android:layout_height		="55.0dp"
@@ -53,7 +57,9 @@
 		android:layout_marginTop	="10.0dp"
 		android:layout_gravity		="bottom" 
 		android:gravity				="center"
-	/>
+		android:layout_alignParentBottom="true"
+		android:layout_marginBottom		="35dp"/>
+	</RelativeLayout>
 </LinearLayout>
 
 <!--<TableLayout 

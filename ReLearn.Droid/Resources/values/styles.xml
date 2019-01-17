@@ -25,6 +25,9 @@
           parent="Theme.AppCompat.NoActionBar">
     <item name  ="android:textColor">#d7f8fe</item>
     <item name  ="android:colorBackground">#283544</item>
+    <item name  ="android:textColorPrimary">@color/TextWhite</item>
+    <item name  ="actionMenuTextColor">@color/TextWhite</item>
+    <item name  ="android:textColorSecondary">@color/TextWhite</item>
   </style>
 
   <style name   ="ThemeStat" >
@@ -55,10 +58,6 @@
     <item name  ="android:windowNoTitle">true</item>
     <item name  ="android:windowFullscreen">true</item>
   </style>
-  
-  
-  
-  
 </resources>
 
 <!--<style name="AppTheme" perent ="@Theme.AppCompat"  >

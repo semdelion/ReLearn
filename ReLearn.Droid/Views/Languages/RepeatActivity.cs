@@ -122,7 +122,7 @@ namespace ReLearn.Droid.Languages
             }
             else
             {
-                if (Statistics.Count < Settings.NumberOfRepeatsLanguage - 1)
+                if (Statistics.Count < Settings.NumberOfRepeatsLanguage)
                 {
                     CurrentWordNumber = new Random(unchecked((int)(DateTime.Now.Ticks))).Next(WordDatabase.Count);
                     NextWord();

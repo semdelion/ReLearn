@@ -36,7 +36,7 @@
 		android:minLines			="2"
 		android:textSize			="25dp"
 		android:layout_width		="match_parent"
-		android:layout_height		="140dp"
+		android:layout_height		="170dp"
 		android:layout_marginRight	="25.0dp"
 		android:layout_marginLeft	="25.0dp"
 		android:layout_marginTop	="25.0dp"
@@ -51,24 +51,29 @@
 		android:textSize			="25dp"
 		android:minLines			="2"
 		android:layout_width		="match_parent"
-		android:layout_height		="140dp"
+		android:layout_height		="170dp"
 		android:layout_marginRight	="25.0dp"
 		android:layout_marginLeft	="25.0dp"
 		android:layout_marginTop	="25.0dp"
 		android:scrollbars			="vertical" 
 		android:defaultFocusHighlightEnabled="true"/>
-	<Button
-		local:MvxBind				="Click AddWordCommand"
-		android:background			="@drawable/button_style_standard"
-		android:text				="@string/Add_word"
-		android:textColor			="@color/TextWhite"
-		android:textSize			="20dp"
+	<RelativeLayout
 		android:layout_width		="match_parent"
-		android:layout_height		="55.0dp"
-		android:layout_marginRight	="25.0dp"
-		android:layout_marginLeft	="25.0dp"
-		android:layout_marginTop	="20.0dp"
-		android:gravity				="center"
-		android:layout_gravity		="end|bottom" 
-	/>
+		android:layout_height		="match_parent">
+		<Button
+			local:MvxBind				="Click AddWordCommand"
+			android:background			="@drawable/button_style_standard"
+			android:text				="@string/Add_word"
+			android:textColor			="@color/TextWhite"
+			android:textSize			="20dp"
+			android:layout_width		="match_parent"
+			android:layout_height		="55.0dp"
+			android:layout_marginRight	="25.0dp"
+			android:layout_marginLeft	="25.0dp"
+			android:layout_marginTop	="20.0dp"
+			android:gravity				="center"
+			android:layout_alignParentBottom="true"
+			android:layout_marginBottom		="35dp"
+		/>
+	</RelativeLayout>
 </LinearLayout>

@@ -122,7 +122,7 @@ namespace ReLearn.Droid.Images
             }
             else
             {
-                if (Statistics.Count < Settings.NumberOfRepeatsImage - 1)
+                if (Statistics.Count < Settings.NumberOfRepeatsImage)
                 {
                     CurrentWordNumber = new Random(unchecked((int)(DateTime.Now.Ticks))).Next(ImagesDatabase.Count);
                     NextTest();

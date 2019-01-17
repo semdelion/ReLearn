@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using Plugin.Settings;
 
 namespace ReLearn.API
@@ -74,7 +75,7 @@ namespace ReLearn.API
 
         public static string Currentlanguage
         {
-            get => CrossSettings.Current.GetValueOrDefault(DBSettings.Language.ToString(), Language.en.ToString());
+            get => CrossSettings.Current.GetValueOrDefault(DBSettings.Language.ToString(), Thread.CurrentThread.CurrentCulture.Name == "ru-RU" ? Language.ru.ToString() : Language.en.ToString());
             set => CrossSettings.Current.AddOrUpdateValue(DBSettings.Language.ToString(), Convert.ToString(value));
         }
 
