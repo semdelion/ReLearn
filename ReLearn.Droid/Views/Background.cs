@@ -21,9 +21,9 @@ namespace ReLearn.Droid
     {
         public static Bitmap GetBackgroung(float width, float height)
         {
-            float rounding = AdditionalFunctions.DpToPX(10);
-            float stepGrad = AdditionalFunctions.DpToPX(4);
-            float strokeWidth = AdditionalFunctions.DpToPX(2);
+            float rounding = PixelConverter.DpToPX(10);
+            float stepGrad = PixelConverter.DpToPX(4);
+            float strokeWidth = PixelConverter.DpToPX(2);
 
             var backgroundPaint = new Paint { Color = new Color(Color.Argb(100, 16, 19, 38)), AntiAlias = true };
             Paint borderPaint = new Paint { StrokeWidth = strokeWidth, Color = Colors.White, AntiAlias = true };

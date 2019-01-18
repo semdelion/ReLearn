@@ -30,12 +30,12 @@ namespace ReLearn.Droid.Languages
         int True = 0, False = 0;
         TextView GetTextView()
         {
-            RelativeLayout.LayoutParams param = new RelativeLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, AdditionalFunctions.DpToPX(320))
+            RelativeLayout.LayoutParams param = new RelativeLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, PixelConverter.DpToPX(320))
             {
-                TopMargin = AdditionalFunctions.DpToPX(160),
-                BottomMargin = AdditionalFunctions.DpToPX(10),
-                RightMargin = AdditionalFunctions.DpToPX(10),
-                LeftMargin = AdditionalFunctions.DpToPX(10)
+                TopMargin = PixelConverter.DpToPX(160),
+                BottomMargin = PixelConverter.DpToPX(10),
+                RightMargin = PixelConverter.DpToPX(10),
+                LeftMargin = PixelConverter.DpToPX(10)
             };
            
             CurrentWordNumber = new Random(unchecked((int)(DateTime.Now.Ticks))).Next(WordDatabase.Count);
@@ -45,7 +45,7 @@ namespace ReLearn.Droid.Languages
             var textView = new TextView(this)
             {
                 TextSize        = 30,
-                Elevation       = AdditionalFunctions.DpToPX(10),
+                Elevation       = PixelConverter.DpToPX(10),
                 LayoutParameters= param,
                 Text            = $"{WordDatabase[CurrentWordNumber].Word}\n\n{TranslationWord}",
                 Gravity         = GravityFlags.CenterHorizontal | GravityFlags.Center
@@ -73,7 +73,7 @@ namespace ReLearn.Droid.Languages
             if (ViewPrev != null)
                 FindViewById<RelativeLayout>(Resource.Id.RelativeLayoutLanguagesBlitzPoll).RemoveView(ViewPrev);
             ViewCurrent.Background = GetDrawable(!(answer ^ UserAnswer) ? Resource.Drawable.viewTrue : Resource.Drawable.viewFalse);
-            RunAnimation((UserAnswer ? 1 : -1) * AdditionalFunctions.DpToPX(5000));
+            RunAnimation((UserAnswer ? 1 : -1) * PixelConverter.DpToPX(5000));
             ViewPrev = ViewCurrent;
             ViewCurrent = GetTextView();
             FindViewById<RelativeLayout>(Resource.Id.RelativeLayoutLanguagesBlitzPoll).AddView(ViewCurrent, 0);
@@ -99,11 +99,11 @@ namespace ReLearn.Droid.Languages
             WindowManager.DefaultDisplay.GetRealMetrics(displayMetrics);
 
             _backgroundWord = new BitmapDrawable(Resources, Background.GetBackgroung(
-                displayMetrics.WidthPixels - AdditionalFunctions.DpToPX(50),
-                AdditionalFunctions.DpToPX(300)));
+                displayMetrics.WidthPixels - PixelConverter.DpToPX(50),
+                PixelConverter.DpToPX(300)));
             var _backgroundTimer = new BitmapDrawable(Resources, Background.GetBackgroung(
-                displayMetrics.WidthPixels - AdditionalFunctions.DpToPX(200),
-                AdditionalFunctions.DpToPX(50)));
+                displayMetrics.WidthPixels - PixelConverter.DpToPX(200),
+                PixelConverter.DpToPX(50)));
 
 
             float webViewWidth = Android.App.Application.Context.Resources.DisplayMetrics.WidthPixels;

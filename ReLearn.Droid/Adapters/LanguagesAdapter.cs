@@ -3,6 +3,7 @@ using Android.App;
 using Android.Views;
 using Android.Widget;
 using ReLearn.API.Database;
+using ReLearn.Droid.Adapters;
 
 namespace ReLearn.Droid.Resources
 {
@@ -28,7 +29,7 @@ namespace ReLearn.Droid.Resources
             var view = convertView ?? activity.LayoutInflater.Inflate(Resource.Layout.LanguagesItemViewDictionaryActivity, parent, false);
             var TView = view.FindViewById<TextView>(Resource.Id.item_view_dictionary);
 
-            AdditionalFunctions.SetColorForItems(list[position].NumberLearn, TView);
+            BackgroundConstructor.SetColorForItems(list[position].NumberLearn, TView);
          
             TView.Text = $"{list[position].Word}  -  {list[position].TranslationWord}";
             return view;

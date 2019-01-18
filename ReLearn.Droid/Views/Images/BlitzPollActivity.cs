@@ -37,9 +37,9 @@ namespace ReLearn.Droid.Images
         {
             LinearLayout.LayoutParams param1 = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, LinearLayout.LayoutParams.MatchParent)
             {
-                BottomMargin    = AdditionalFunctions.DpToPX(20),
-                RightMargin     = AdditionalFunctions.DpToPX(10),
-                LeftMargin      = AdditionalFunctions.DpToPX(10)
+                BottomMargin    = PixelConverter.DpToPX(20),
+                RightMargin     = PixelConverter.DpToPX(10),
+                LeftMargin      = PixelConverter.DpToPX(10)
             };
             int randIndex = (CurrentWordNumber + new Random(unchecked((int)(DateTime.Now.Ticks))).Next(1, ImageDatabase.Count)) % ImageDatabase.Count;
             var textView = new TextView(this)
@@ -55,16 +55,16 @@ namespace ReLearn.Droid.Images
 
         ImageView GetImage()
         {
-            LinearLayout.LayoutParams param1 = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, AdditionalFunctions.DpToPX(200))
+            LinearLayout.LayoutParams param1 = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, PixelConverter.DpToPX(200))
             {
-                TopMargin    = AdditionalFunctions.DpToPX(15),
-                BottomMargin = AdditionalFunctions.DpToPX(20),
-                RightMargin  = AdditionalFunctions.DpToPX(10),
-                LeftMargin   = AdditionalFunctions.DpToPX(10)
+                TopMargin    = PixelConverter.DpToPX(15),
+                BottomMargin = PixelConverter.DpToPX(20),
+                RightMargin  = PixelConverter.DpToPX(10),
+                LeftMargin   = PixelConverter.DpToPX(10)
             };
             var ImageView = new ImageView(this) {LayoutParameters = param1};
             using (Bitmap bitmap = BitmapFactory.DecodeStream(Application.Context.Assets.Open($"Image{DataBase.TableName}/{ImageDatabase[CurrentWordNumber].Image_name}.png")))
-            using (var bitmapRounded = BitmapHandler.GetRoundedCornerBitmap(bitmap, AdditionalFunctions.DpToPX(5)))
+            using (var bitmapRounded = BitmapHandler.GetRoundedCornerBitmap(bitmap, PixelConverter.DpToPX(5)))
                 ImageView.SetImageBitmap(bitmapRounded);
             return ImageView;
         }
@@ -73,12 +73,12 @@ namespace ReLearn.Droid.Images
         {
             CurrentWordNumber = new Random(unchecked((int)(DateTime.Now.Ticks))).Next(ImageDatabase.Count);
             answer = new Random(unchecked((int)(DateTime.Now.Ticks))).Next(2) == 1 ? true : false;
-            RelativeLayout.LayoutParams param = new RelativeLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, AdditionalFunctions.DpToPX(320))
+            RelativeLayout.LayoutParams param = new RelativeLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, PixelConverter.DpToPX(320))
             {
-                TopMargin       = AdditionalFunctions.DpToPX(160),
-                BottomMargin    = AdditionalFunctions.DpToPX(10),
-                RightMargin     = AdditionalFunctions.DpToPX(10),
-                LeftMargin      = AdditionalFunctions.DpToPX(10)
+                TopMargin       = PixelConverter.DpToPX(160),
+                BottomMargin    = PixelConverter.DpToPX(10),
+                RightMargin     = PixelConverter.DpToPX(10),
+                LeftMargin      = PixelConverter.DpToPX(10)
             };
             var linearLayout = new LinearLayout(this)
             {
@@ -107,7 +107,7 @@ namespace ReLearn.Droid.Images
             if (ViewPrev!=null)
                 FindViewById<RelativeLayout>(Resource.Id.RelativeLayoutImagesBlitzPoll).RemoveView(ViewPrev);
             ViewCurrent.Background = GetDrawable(!(answer ^ UserAnswer) ? Resource.Drawable.viewTrue : Resource.Drawable.viewFalse);
-            RunAnimation((UserAnswer ? 1 : -1) * AdditionalFunctions.DpToPX(5000));
+            RunAnimation((UserAnswer ? 1 : -1) * PixelConverter.DpToPX(5000));
             ViewPrev = ViewCurrent;
             ViewCurrent = GetLayout();
             FindViewById<RelativeLayout>(Resource.Id.RelativeLayoutImagesBlitzPoll).AddView(ViewCurrent, 0);
@@ -133,12 +133,12 @@ namespace ReLearn.Droid.Images
             WindowManager.DefaultDisplay.GetRealMetrics(displayMetrics);
 
             _backgroundWord = new BitmapDrawable(Resources, Background.GetBackgroung(
-                displayMetrics.WidthPixels - AdditionalFunctions.DpToPX(20),
-                AdditionalFunctions.DpToPX(300)
+                displayMetrics.WidthPixels - PixelConverter.DpToPX(20),
+                PixelConverter.DpToPX(300)
                 ));
             var _backgroundTimer = new BitmapDrawable(Resources, Background.GetBackgroung(
-                displayMetrics.WidthPixels - AdditionalFunctions.DpToPX(200),
-                AdditionalFunctions.DpToPX(50)
+                displayMetrics.WidthPixels - PixelConverter.DpToPX(200),
+                PixelConverter.DpToPX(50)
                 ));
 
             float webViewWidth = Android.App.Application.Context.Resources.DisplayMetrics.WidthPixels;

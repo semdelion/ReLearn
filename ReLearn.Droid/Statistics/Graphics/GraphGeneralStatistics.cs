@@ -81,7 +81,7 @@ namespace ReLearn.Droid
             LW.DrawBorder(TheCanvas, paint_border);
             LW.ProgressLine(TheCanvas, numberLearned, Stats_database.Count - numberLearned, Start, End);
             LW.DrawText(TheCanvas, font_up,
-                AdditionalFunctions.GetResourceString($"Number_Learned_{Object_name}", this.Resources),
+                GetString.GetResourceString($"Number_Learned_{Object_name}", this.Resources),
                 LW.Left + 7f * LW.Width / 100, LW.Top + 7f * LW.Height / 100);
             LW.DrawText    (TheCanvas, font_low, 
                 $"{numberLearned} {Context.GetString(Resource.String.Of)} {Stats_database.Count}", 
@@ -94,7 +94,7 @@ namespace ReLearn.Droid
             IW.DrawBorder(TheCanvas, paint_border);
             IW.ProgressLine(TheCanvas, numberInconvenient, Stats_database.Count - numberInconvenient, Start, End);
             IW.DrawText(TheCanvas, font_up,
-                AdditionalFunctions.GetResourceString($"Number_Inconvenient_{Object_name}", this.Resources),
+                GetString.GetResourceString($"Number_Inconvenient_{Object_name}", this.Resources),
                 IW.Left + 7f * IW.Width / 100, IW.Top + 7f * IW.Height / 100);
             IW.DrawText(TheCanvas, font_low, 
                 $"{numberInconvenient} {Context.GetString(Resource.String.Of)} {Stats_database.Count}", 

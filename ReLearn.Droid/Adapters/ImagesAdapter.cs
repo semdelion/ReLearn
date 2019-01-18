@@ -5,6 +5,7 @@ using Android.Views;
 using Android.Widget;
 using ReLearn.API;
 using ReLearn.API.Database;
+using ReLearn.Droid.Adapters;
 
 namespace ReLearn.Droid
 {
@@ -41,7 +42,7 @@ namespace ReLearn.Droid
                 Bitmap bitmap = BitmapFactory.DecodeStream(his);
                 ImageView.SetImageBitmap(bitmap);
             }
-            AdditionalFunctions.SetColorForItems(list[position].NumberLearn, TextView);
+            BackgroundConstructor.SetColorForItems(list[position].NumberLearn, TextView);
 
             if (Settings.Currentlanguage == Language.en.ToString())
                 TextView.Text = list[position].Name_image_en;

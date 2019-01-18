@@ -49,7 +49,7 @@ namespace ReLearn.Droid.Images
 
         void Random_Button(params Button[] buttons)   //загружаем варианты ответа в текст кнопок
         {
-            AdditionalFunctions.RandomFourNumbers(CurrentWordNumber, ImagesDatabase.Count, out List<int> random_numbers);
+            RandomNumbers.RandomFourNumbers(CurrentWordNumber, ImagesDatabase.Count, out List<int> random_numbers);
             for (int i = 0; i < buttons.Length; i++)
                 buttons[i].Text = ImagesDatabase[random_numbers[i]].ImageName;
         }
@@ -58,7 +58,7 @@ namespace ReLearn.Droid.Images
         {
             using (Bitmap bitmap = BitmapFactory.DecodeStream(Application.Context.Assets.Open(
                 $"Image{DataBase.TableName}/{ImagesDatabase[CurrentWordNumber].Image_name}.png")))
-            using (var bitmapRounded = BitmapHandler.GetRoundedCornerBitmap(bitmap, AdditionalFunctions.DpToPX(5)))
+            using (var bitmapRounded = BitmapHandler.GetRoundedCornerBitmap(bitmap, PixelConverter.DpToPX(5)))
                 FindViewById<ImageView>(Resource.Id.imageView_Images_repeat).SetImageBitmap(bitmapRounded);
 
             const int four = 4;
@@ -153,8 +153,8 @@ namespace ReLearn.Droid.Images
             DisplayMetrics displayMetrics = new DisplayMetrics();
             WindowManager.DefaultDisplay.GetRealMetrics(displayMetrics);
             var _background = new BitmapDrawable(Resources, Background.GetBackgroung(
-            displayMetrics.WidthPixels - AdditionalFunctions.DpToPX(20),
-            AdditionalFunctions.DpToPX(190)));
+            displayMetrics.WidthPixels - PixelConverter.DpToPX(20),
+            PixelConverter.DpToPX(190)));
             FindViewById<LinearLayout>(Resource.Id.repeat_background).Background = _background;
 
 

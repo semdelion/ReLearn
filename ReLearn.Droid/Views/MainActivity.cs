@@ -75,8 +75,8 @@ namespace ReLearn.Droid.Views
                     Finish();
                     break; 
             }
-            DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
-            drawer.CloseDrawer(GravityCompat.Start);
+            //DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
+            //drawer.CloseDrawer(GravityCompat.Start);
             return true;
         }
     }

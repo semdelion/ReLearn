@@ -49,7 +49,7 @@ namespace ReLearn.Droid.Languages
 
         void Random_Button(params Button[] buttons)   //загружаем варианты ответа в текст кнопок
         {
-            AdditionalFunctions.RandomFourNumbers(CurrentWordNumber, WordDatabase.Count, out List<int> random_numbers);
+            RandomNumbers.RandomFourNumbers(CurrentWordNumber, WordDatabase.Count, out List<int> random_numbers);
             for (int i = 0; i < buttons.Length; i++)
                 buttons[i].Text = WordDatabase[random_numbers[i]].TranslationWord;
         }
@@ -152,8 +152,8 @@ namespace ReLearn.Droid.Languages
             DisplayMetrics displayMetrics = new DisplayMetrics();
             WindowManager.DefaultDisplay.GetRealMetrics(displayMetrics);
             var _background = new BitmapDrawable(Resources, Background.GetBackgroung(
-            displayMetrics.WidthPixels - AdditionalFunctions.DpToPX(70),
-            AdditionalFunctions.DpToPX(190)));
+            displayMetrics.WidthPixels - PixelConverter.DpToPX(70),
+            PixelConverter.DpToPX(190)));
             FindViewById<TextView>(Resource.Id.textView_Eng_Word).Background = _background;
 
             MySpeech = new MyTextToSpeech();

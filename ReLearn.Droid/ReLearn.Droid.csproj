@@ -60,14 +60,18 @@
     <Reference Include="Mono.Android" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdditionalFunctions.cs" />
+    <Compile Include="Adapters\BackgroundConstructor.cs" />
+    <Compile Include="GetString.cs" />
     <Compile Include="BitmapHandler.cs" />
+    <Compile Include="ButtonNext.cs" />
+    <Compile Include="Colors.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="LinkerPleaseInclude.cs" />
     <Compile Include="MessageDroid.cs" />
     <Compile Include="MyTextToSpeech.cs" />
     <Compile Include="Adapters\ImagesAdapter.cs" />
     <Compile Include="Adapters\LanguagesAdapter.cs" />
+    <Compile Include="PixelConverter.cs" />
     <Compile Include="SelectDictionary.cs" />
     <Compile Include="Setup.cs" />
     <Compile Include="SplashScreen.cs" />

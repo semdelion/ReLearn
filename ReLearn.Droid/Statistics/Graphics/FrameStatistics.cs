@@ -79,7 +79,7 @@ namespace ReLearn.Droid
             canvas.Rotate(-90f, Center.X, Center.Y);
             canvas.DrawArc(new RectF(Center.X - Radius, Center.Y - Radius, Center.X + Radius, Center.Y + Radius), 0.5f, 360f - average * (360f / sum), false, paint1);
             canvas.Rotate(90f, Center.X, Center.Y);
-            DrawText(canvas, Width * 22f / 100f, AdditionalFunctions.RoundOfNumber(100 - average * 100f / sum) + "%", Left + 2f * Width / 10f, Center.Y - 33f * Radius / 100);
+            DrawText(canvas, Width * 22f / 100f, RoundOfNumber(100 - average * 100f / sum) + "%", Left + 2f * Width / 10f, Center.Y - 33f * Radius / 100);
         }
 
         public void DrawPieChart(Canvas canvas, float average, float sum, Color Color_Diagram_1, Color Color_Diagram_2, float Radius, float width)
@@ -111,7 +111,7 @@ namespace ReLearn.Droid
             canvas.Rotate(-90f, Left + Width / 2, Top + Height / 2);
             canvas.DrawArc(new RectF(Left + rate * 10f, Top + rate * 10f, Right - rate * 10f, Bottom - rate * 10f), 0.5f, 360f - average * (360f / sum), false, paint1);
             canvas.Rotate(90f, Left + Width / 2f, Top + Height / 2);
-            DrawText(canvas, Width * 22f / 100f, AdditionalFunctions.RoundOfNumber(100 - average * 100f / sum) + "%", Left + 2f * Width / 10f, Top + 3.2f * Width / 10f);
+            DrawText(canvas, Width * 22f / 100f, RoundOfNumber(100 - average * 100f / sum) + "%", Left + 2f * Width / 10f, Top + 3.2f * Width / 10f);
         }
 
         public void DrawText(Canvas canvas, float font_size, string text, float left, float top, Color? c = null)
@@ -125,6 +125,23 @@ namespace ReLearn.Droid
             };
             paint.SetTypeface(bold);
             canvas.DrawText(Convert.ToString(text), left, top + font_size, paint);
+        }
+
+        private static string RoundOfNumber(float number)
+        {
+            var numberChar = Convert.ToString(number);
+            if (numberChar.Length > 4)
+                numberChar = numberChar.Remove(4);
+            else if (numberChar.Contains(","))
+                numberChar += "0";
+            else
+            {
+                if (numberChar.Length == 2)
+                    numberChar += ".0";
+                else if (numberChar.Length == 1)
+                    numberChar += ".00";
+            }
+            return numberChar;
         }
     }
 }

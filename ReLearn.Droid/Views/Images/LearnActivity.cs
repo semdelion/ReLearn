@@ -45,7 +45,7 @@ namespace ReLearn.Droid.Images
                 DBImages.UpdateLearningNext(ImagesDatabase[Count].Image_name);
                 try
                 {   using (var image = BitmapFactory.DecodeStream(Application.Context.Assets.Open( $"Image{DataBase.TableName}/{ImagesDatabase[Count].Image_name}.png")))
-                    using (var ImageViewBox = BitmapHandler.GetRoundedCornerBitmap(image, AdditionalFunctions.DpToPX(5)))
+                    using (var ImageViewBox = BitmapHandler.GetRoundedCornerBitmap(image, PixelConverter.DpToPX(5)))
                         FindViewById<ImageView>(Resource.Id.imageView_Images_learn).SetImageBitmap(ImageViewBox);
                         ImageName = ImagesDatabase[Count++].ImageName;
                 }
@@ -68,8 +68,8 @@ namespace ReLearn.Droid.Images
             DisplayMetrics displayMetrics = new DisplayMetrics();
             WindowManager.DefaultDisplay.GetRealMetrics(displayMetrics);
             var _background = new BitmapDrawable(Resources, Background.GetBackgroung(
-                                displayMetrics.WidthPixels - AdditionalFunctions.DpToPX(20),
-                                AdditionalFunctions.DpToPX(300)));
+                                displayMetrics.WidthPixels - PixelConverter.DpToPX(20),
+                                PixelConverter.DpToPX(300)));
             FindViewById<LinearLayout>(Resource.Id.learn_background).Background = _background;
 
             if (ImagesDatabase.Count == 0)
