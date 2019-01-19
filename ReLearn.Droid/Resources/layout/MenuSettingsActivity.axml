@@ -56,8 +56,8 @@
 		</LinearLayout>
 		<SeekBar
 			local:MvxBind				="Progress WordsNumber"
-			android:progressDrawable	="@drawable/seekbar_progressbar"
 			android:thumb				="@drawable/custom_thumb"
+			android:progressDrawable	="@drawable/seekbar_progressbar1"
 			android:max					="5"
 			android:layout_marginTop	="10.0dp"
 			android:layout_width		="match_parent"
@@ -87,7 +87,7 @@
 		<SeekBar
 			local:MvxBind				="Progress ImagesNumber"
 			android:thumb				="@drawable/custom_thumb"
-			android:progressDrawable	="@drawable/seekbar_progressbar"
+			android:progressDrawable	="@drawable/seekbar_progressbar2"
 			android:max					="5"
 			android:layout_marginTop	="10.0dp"
 			android:layout_width		="match_parent"
@@ -124,7 +124,7 @@
 		<SeekBar
 			local:MvxBind				="Progress TimeToBlitz"
 			android:thumb				="@drawable/custom_thumb"
-			android:progressDrawable	="@drawable/seekbar_progressbar"
+			android:progressDrawable	="@drawable/seekbar_progressbar3"
 			android:max					="5"
 			android:layout_marginTop	="10.0dp"
 			android:layout_width		="match_parent"

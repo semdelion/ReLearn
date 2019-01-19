@@ -2707,7 +2707,7 @@
     <AndroidResource Include="Resources\drawable\PopularWordsDictionary.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\seekbar_progressbar.xml" />
+    <AndroidResource Include="Resources\drawable\seekbar_progressbar1.xml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\separator.xml" />
@@ -2892,13 +2892,22 @@
     <AndroidResource Include="Resources\drawable\toolbarMain111.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\ic_nav_header1111111.png" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\drawable\ic_nav_header.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\toolbarMain.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\seekbar_progressbar2.xml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\seekbar_progressbar3.xml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
