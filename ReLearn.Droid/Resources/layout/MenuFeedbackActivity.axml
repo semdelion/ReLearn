@@ -37,7 +37,7 @@
 			android:id					="@+id/textView"
 			android:textSize			="20dp"
 			android:layout_width		="match_parent"
-			android:layout_height		="47.0dp"
+			android:layout_height		="55.0dp"
 			android:layout_marginTop	="25.0dp"
 			android:defaultFocusHighlightEnabled="true"/>
 		<EditText
@@ -48,8 +48,9 @@
 			android:backgroundTint		="@color/TextWhite"
 			android:textSize			="20dp"
 			android:layout_width		="match_parent"
-			android:layout_height		="350dp"
-			android:layout_marginTop	="100.0dp"
+			android:layout_height		="match_parent"
+			android:layout_marginTop	="95.0dp"
+			android:layout_marginBottom	="115dp"
 			android:defaultFocusHighlightEnabled="true"/>
 		<Button
 			android:onClick				="Button_Send_Click"

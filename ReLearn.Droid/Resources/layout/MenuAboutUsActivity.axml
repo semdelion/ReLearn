@@ -36,6 +36,7 @@
 			android:layout_width		="match_parent"
 			android:layout_height		="match_parent"
 			android:layout_marginTop	="25.0dp"
+			android:layout_marginBottom	="110dp"
 			android:textSize			="16dp"
 			android:defaultFocusHighlightEnabled="true"/>
 		<Button

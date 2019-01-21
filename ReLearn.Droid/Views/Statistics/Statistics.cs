@@ -27,7 +27,7 @@ namespace ReLearn.Droid.Views.Statistics
             bool isContain = DBImages.DatabaseIsContain(DataBase.TableName.ToString());
             LightColor   = isContain ? Colors.Orange     : Colors.Blue;
             DarkColor    = isContain ? Colors.DarkOrange : Colors.DarkBlue;
-            DataTupe     = isContain ?  "Flags" : "Words";
+            DataTupe     = isContain ? DataBase.TableName.ToString() : "Words";
             StatisticsDB = isContain ? DBStatistics.GetImages(DataBase.TableName.ToString()) :
                                        DBStatistics.GetWords(DataBase.TableName.ToString());
         }

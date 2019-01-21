@@ -41,7 +41,7 @@ namespace ReLearn.Droid.Views.SelectDictionary
             };
             TextView CountWords = new TextView(view.Context)
             {
-                Text = $"{GetString(Resource.String.DatatypeImages)} {count}, {GetString(Resource.String.StudiedAt)} " +
+                Text = $"{GetString(Resource.String.DatatypeWords)} {count}, {GetString(Resource.String.StudiedAt)} " +
                 $"{(int)(100 - ReLearn.Droid.Statistics.GetAverageNumberLearn(DB) * 100f / Settings.StandardNumberOfRepeats)}%",
                 TextSize = 14//(int)(2.1f * width)
             };

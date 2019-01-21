@@ -25,6 +25,11 @@
 			/>
 		</android.support.v7.widget.Toolbar>
 	</android.support.design.widget.AppBarLayout>
+	<RelativeLayout
+		android:layout_width		="match_parent"
+		android:layout_height		="match_parent"
+		android:layout_marginRight	="25.0dp"
+		android:layout_marginLeft	="25.0dp">
 	<EditText
 		local:MvxBind               ="Text Words"
 		android:hint				="@string/Insert_data"
@@ -33,15 +38,11 @@
 		android:backgroundTint		="@color/TextWhite"
 		android:textSize			="25dp"
 		android:layout_width		="match_parent"
-		android:layout_height		="400.0dp"
-		android:layout_marginRight	="25.0dp"
-		android:layout_marginLeft	="25.0dp"
-		android:layout_marginTop	="5.0dp"
+		android:layout_height		="match_parent"
+		android:layout_marginBottom	="115dp"
+		android:layout_marginTop	="25.0dp"
 		android:scrollbars			="vertical" 
 		android:defaultFocusHighlightEnabled="true"/>
-	<RelativeLayout
-		android:layout_width		="match_parent"
-		android:layout_height		="match_parent">
 	<Button
 		local:MvxBind				="Click AddWordsCommand"
 		android:id					="@+id/button_add_DictionaryReplenishment"
@@ -52,9 +53,6 @@
 		android:textSize			="20dp"
 		android:layout_width		="match_parent"
 		android:layout_height		="55.0dp"
-		android:layout_marginRight	="25.0dp"
-		android:layout_marginLeft	="25.0dp"
-		android:layout_marginTop	="10.0dp"
 		android:layout_gravity		="bottom" 
 		android:gravity				="center"
 		android:layout_alignParentBottom="true"
