@@ -6,14 +6,14 @@
     android:layout_width	="match_parent"
     android:layout_height	="match_parent">
 	<android.support.design.widget.AppBarLayout
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content">
+		android:layout_width	="match_parent"
+		android:layout_height	="wrap_content">
 		<android.support.v7.widget.Toolbar 
 			xmlns:local				="http://schemas.android.com/apk/res-auto"
 			android:id				="@+id/toolbar_Feedback"
 			android:theme			="@style/ToolbarStyle"	
 			android:background		="@drawable/toolbar"
-			local:navigationIcon		="@mipmap/arrow"
+			local:navigationIcon	="@mipmap/arrow"
 			android:layout_width	="match_parent"
 			android:layout_height	="80dp"	
 			local:buttonGravity="bottom">
@@ -27,17 +27,17 @@
 		</android.support.v7.widget.Toolbar>
 	</android.support.design.widget.AppBarLayout>
 	<RelativeLayout
-		android:layout_marginRight	="25.0dp"
-		android:layout_marginLeft	="25.0dp"
+		android:layout_marginRight	="20.0dp"
+		android:layout_marginLeft	="20.0dp"
 		android:layout_width		="match_parent"
 		android:layout_height		="match_parent">
 		<TextView
 			android:text				="@string/Feedback_comments"
 			android:textColor			="@color/TextWhite"
 			android:id					="@+id/textView"
-			android:textSize			="20dp"
+			android:textSize			="18dp"
 			android:layout_width		="match_parent"
-			android:layout_height		="55.0dp"
+			android:layout_height		="wrap_content"
 			android:layout_marginTop	="25.0dp"
 			android:defaultFocusHighlightEnabled="true"/>
 		<EditText
@@ -49,7 +49,7 @@
 			android:textSize			="20dp"
 			android:layout_width		="match_parent"
 			android:layout_height		="match_parent"
-			android:layout_marginTop	="95.0dp"
+			android:layout_marginTop	="115.0dp"
 			android:layout_marginBottom	="115dp"
 			android:defaultFocusHighlightEnabled="true"/>
 		<Button

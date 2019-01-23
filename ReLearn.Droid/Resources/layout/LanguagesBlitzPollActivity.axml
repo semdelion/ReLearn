@@ -43,14 +43,13 @@
 			android:layout_marginRight	="100.0dp"
 			android:layout_marginLeft	="100.0dp"
 			android:layout_marginTop	="95.0dp"
-			android:gravity				= "center_horizontal|center"/>
-					
+			android:gravity				= "center_horizontal|center"/>		
 		<TableLayout
 			android:layout_width		="match_parent"
 			android:layout_height		="match_parent"
-			android:layout_marginRight	="25.0dp"
-			android:layout_marginLeft	="25.0dp"
-			android:layout_marginBottom	="35dp"
+			android:layout_marginRight	="20.0dp"
+			android:layout_marginLeft	="20.0dp"
+			android:layout_marginBottom	="30dp"
 			android:gravity				="bottom">
 			<TableRow>
 				<Button
@@ -64,7 +63,7 @@
 					android:layout_width		="0dp"
 					android:layout_weight		="0.5"
 					android:layout_height		="55.0dp"
-					android:layout_marginRight	="10dp" />
+					android:layout_marginRight	="5dp" />
 				<Button
 					android:onClick				="Button_Languages_Yes_Click"
 					android:id					="@+id/button_Languages_Yes"
@@ -76,7 +75,7 @@
 					android:layout_width		="0dp"
 					android:layout_weight		="0.5"
 					android:layout_height		="55.0dp"
-					android:layout_marginLeft	="10dp" 
+					android:layout_marginLeft	="5dp"
 				/>
 			</TableRow>
 		</TableLayout>

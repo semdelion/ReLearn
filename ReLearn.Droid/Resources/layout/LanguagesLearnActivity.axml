@@ -26,10 +26,9 @@
 			/>
 		</android.support.v7.widget.Toolbar>
 	</android.support.design.widget.AppBarLayout>
-	<LinearLayout
+	<RelativeLayout
 		android:layout_width		="match_parent"
-		android:layout_height		="match_parent"
-		android:orientation			="vertical">
+		android:layout_height		="match_parent">
 		<TextView
 			android:id					="@+id/textView_learn_en"
 			android:textColor			="@color/TextWhite"
@@ -37,7 +36,7 @@
 			android:textSize			="30dp"
 			android:minLines			="2"
 			android:layout_width		="match_parent"
-			android:layout_height		="320dp"
+			android:layout_height		="280dp"
 			android:layout_marginTop	="25.0dp"
 			android:layout_marginRight	="5.0dp"
 			android:layout_marginLeft	="5.0dp"
@@ -46,19 +45,18 @@
 		<TableLayout
 			android:layout_width		="match_parent"
 			android:layout_height		="match_parent"
-			android:gravity				="bottom"
-			android:layout_marginRight	="25.0dp"
-			android:layout_marginLeft	="25.0dp"
-			android:layout_marginBottom	="35.0dp">
+			android:layout_marginRight	="20.0dp"
+			android:layout_marginLeft	="20.0dp"
+			android:layout_marginBottom	="30dp"
+			android:gravity				="bottom">
 			<TableRow>
 				<ImageButton
 					android:onClick				="Button_Languages_Learn_Voice_Enable"
 					android:id					="@+id/Button_Speak_TurnOn_TurnOff"
 					android:background			="@drawable/button_style_standard"
 					android:src					="@mipmap/speak_on"
-					android:layout_width		="60dp"
-					android:layout_height		="55.0dp"
-					android:layout_marginTop	="10.0dp"
+					android:layout_width		="55dp"
+					android:layout_height		="50.0dp"
 					android:layout_gravity		="left|right|center"
 					android:gravity				="left|right|center"
 					android:scaleType			="fitXY"/>
@@ -73,13 +71,12 @@
 					android:layout_column		="1"
 					android:layout_width		="0dp"
 					android:layout_weight		="0.6"
-					android:layout_marginLeft	="20.0dp"
-					android:layout_height		="55.0dp"
-					android:layout_marginTop	="20.0dp"
+					android:layout_marginLeft	="10.0dp"
+					android:layout_height		="50.0dp"
 					android:gravity				="center"
 				/>
 			</TableRow>
-			<TableRow android:layout_marginTop	="20.0dp">
+			<TableRow android:layout_marginTop	="10.0dp">
 				<Button
 					android:onClick				="Button_Languages_Learn_NotRepeat_Click"
 					android:id					="@+id/button_NotRepeat_languages"
@@ -90,8 +87,9 @@
 					android:textSize			="20dp"
 					android:layout_width		="0dp"
 					android:layout_weight		="0.5"
-					android:layout_height		="55.0dp"
-					android:layout_marginRight	="10dp" />
+					android:layout_height		="50.0dp"
+					android:layout_marginRight	="5dp" 
+				/>
 				<Button
 					android:onClick				="Button_Languages_Learn_Next_Click"
 					android:id					="@+id/button_learn_languages"
@@ -102,10 +100,10 @@
 					android:textSize			="20dp"
 					android:layout_width		="0dp"
 					android:layout_weight		="0.5"
-					android:layout_height		="55.0dp"
-					android:layout_marginLeft	="10dp" 
+					android:layout_height		="50.0dp"
+					android:layout_marginLeft	="5dp" 
 				/>
 			</TableRow>
 		</TableLayout>
-	</LinearLayout>
+	</RelativeLayout>
 </LinearLayout>

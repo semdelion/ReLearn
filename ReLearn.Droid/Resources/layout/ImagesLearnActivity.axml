@@ -27,11 +27,9 @@
 			/>
 		</android.support.v7.widget.Toolbar>
 	</android.support.design.widget.AppBarLayout>
-	<LinearLayout
-        android:layout_width	="match_parent"
-        android:layout_height	="match_parent"
-		android:orientation			="vertical"
-		android:layout_marginBottom	="35.0dp">
+	<RelativeLayout
+		android:layout_width		="match_parent"
+		android:layout_height		="match_parent">
 		<LinearLayout
 			android:id					="@+id/learn_background"
 			android:layout_marginTop	="25.0dp"
@@ -61,11 +59,12 @@
 				android:layout_marginBottom	="5.0dp"
 				android:gravity				="center_horizontal"/>
 		</LinearLayout>
-        <TableLayout
+		<TableLayout
 			android:layout_width		="match_parent"
 			android:layout_height		="match_parent"
-			android:layout_marginRight	="25.0dp"
-			android:layout_marginLeft	="25.0dp"
+			android:layout_marginRight	="20.0dp"
+			android:layout_marginLeft	="20.0dp"
+			android:layout_marginBottom	="30dp"
 			android:gravity				="bottom">
 			<TableRow>
 				<Button
@@ -79,7 +78,9 @@
 					android:layout_width		="0dp"
 					android:layout_weight		="0.5"
 					android:layout_height		="55.0dp"
-					android:layout_marginRight	="10dp" />
+					android:layout_marginRight	="5dp"
+					android:layout_alignParentBottom="true"
+				/>
 				<Button
 					android:onClick				="Button_Images_Learn_Next_Click"
 					android:id					="@+id/button_I_learn_Next"
@@ -91,9 +92,10 @@
 					android:layout_width		="0dp"
 					android:layout_weight		="0.5"
 					android:layout_height		="55.0dp"
-					android:layout_marginLeft	="10dp" 
+					android:layout_marginLeft	="5dp" 
+					android:layout_alignParentBottom="true"
 				/>
 			</TableRow>
 		</TableLayout>
-    </LinearLayout>
+    </RelativeLayout>
 </LinearLayout>

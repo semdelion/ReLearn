@@ -24,5 +24,6 @@ namespace ReLearn.Droid
         public readonly static Color Red = new Color(224, 56, 56);
         public readonly static Color FrameBackground = new Color(16, 19, 38, 150);
         public readonly static Color FrameBorder = new Color(215, 248, 254, 200);
+        public readonly static Color Transparent = new Color(0, 0, 0, 70);
     }
 }
