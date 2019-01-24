@@ -6727,8 +6727,8 @@ namespace ReLearn.Droid
 			// aapt resource value: 0x7f0a00a1
 			public const int button_Images_Yes = 2131361953;
 			
-			// aapt resource value: 0x7f0a00d6
-			public const int button_Images_learn = 2131362006;
+			// aapt resource value: 0x7f0a00d8
+			public const int button_Images_learn = 2131362008;
 			
 			// aapt resource value: 0x7f0a00ce
 			public const int button_Languages_Next = 2131361998;
@@ -6844,8 +6844,8 @@ namespace ReLearn.Droid
 			// aapt resource value: 0x7f0a0023
 			public const int disableHome = 2131361827;
 			
-			// aapt resource value: 0x7f0a00d7
-			public const int drawer_layout = 2131362007;
+			// aapt resource value: 0x7f0a00d5
+			public const int drawer_layout = 2131362005;
 			
 			// aapt resource value: 0x7f0a0081
 			public const int edit_query = 2131361921;
@@ -6997,8 +6997,8 @@ namespace ReLearn.Droid
 			// aapt resource value: 0x7f0a002b
 			public const int multiply = 2131361835;
 			
-			// aapt resource value: 0x7f0a00d8
-			public const int nav_view = 2131362008;
+			// aapt resource value: 0x7f0a00d6
+			public const int nav_view = 2131362006;
 			
 			// aapt resource value: 0x7f0a0096
 			public const int navigation_header_container = 2131361942;
@@ -7276,8 +7276,8 @@ namespace ReLearn.Droid
 			// aapt resource value: 0x7f0a00c6
 			public const int toolbarLanguagesRepeat = 2131361990;
 			
-			// aapt resource value: 0x7f0a00d5
-			public const int toolbarMain = 2131362005;
+			// aapt resource value: 0x7f0a00d7
+			public const int toolbarMain = 2131362007;
 			
 			// aapt resource value: 0x7f0a00f3
 			public const int toolbarSelectDictionary = 2131362035;
@@ -7480,7 +7480,7 @@ namespace ReLearn.Droid
 			public const int abc_select_dialog_material = 2131034137;
 			
 			// aapt resource value: 0x7f05001a
-			public const int content_main = 2131034138;
+			public const int content_main11111 = 2131034138;
 			
 			// aapt resource value: 0x7f05001b
 			public const int design_bottom_navigation_item = 2131034139;
@@ -7525,43 +7525,43 @@ namespace ReLearn.Droid
 			public const int design_text_input_password_icon = 2131034152;
 			
 			// aapt resource value: 0x7f050029
-			public const int ImagesBlitzPollActivity = 2131034153;
+			public const int images_blitz_poll_activity = 2131034153;
 			
 			// aapt resource value: 0x7f05002a
-			public const int ImagesItemAlertBig = 2131034154;
+			public const int images_item_alert_big = 2131034154;
 			
 			// aapt resource value: 0x7f05002b
-			public const int ImagesItemViewDictionaryActivity = 2131034155;
+			public const int images_item_view_dictionary_activity = 2131034155;
 			
 			// aapt resource value: 0x7f05002c
-			public const int ImagesLearnActivity = 2131034156;
+			public const int images_learn_activity = 2131034156;
 			
 			// aapt resource value: 0x7f05002d
-			public const int ImagesRepeatActivity = 2131034157;
+			public const int images_repeat_activity = 2131034157;
 			
 			// aapt resource value: 0x7f05002e
-			public const int LanguagesAddActivity = 2131034158;
+			public const int languages_add_activity = 2131034158;
 			
 			// aapt resource value: 0x7f05002f
-			public const int LanguagesAlertImageActivity = 2131034159;
+			public const int languages_alert_image_activity = 2131034159;
 			
 			// aapt resource value: 0x7f050030
-			public const int LanguagesBlitzPollActivity = 2131034160;
+			public const int languages_blitz_poll_activity = 2131034160;
 			
 			// aapt resource value: 0x7f050031
-			public const int LanguagesDictionaryReplenishmentActivity = 2131034161;
+			public const int languages_dictionary_replenishment_activity = 2131034161;
 			
 			// aapt resource value: 0x7f050032
-			public const int LanguagesItemViewDictionaryActivity = 2131034162;
+			public const int languages_item_view_dictionary_activity = 2131034162;
 			
 			// aapt resource value: 0x7f050033
-			public const int LanguagesLearnActivity = 2131034163;
+			public const int languages_learn_activity = 2131034163;
 			
 			// aapt resource value: 0x7f050034
-			public const int LanguagesRepeatActivity = 2131034164;
+			public const int languages_repeat_activity = 2131034164;
 			
 			// aapt resource value: 0x7f050035
-			public const int LanguagesViewDictionaryActivity = 2131034165;
+			public const int languages_view_dictionary_activity = 2131034165;
 			
 			// aapt resource value: 0x7f050036
 			public const int loading = 2131034166;
@@ -7573,25 +7573,25 @@ namespace ReLearn.Droid
 			public const int loadingprogress = 2131034168;
 			
 			// aapt resource value: 0x7f050039
-			public const int main_content = 2131034169;
+			public const int main_activity = 2131034169;
 			
 			// aapt resource value: 0x7f05003a
-			public const int MainActivity = 2131034170;
+			public const int main_content = 2131034170;
 			
 			// aapt resource value: 0x7f05003b
-			public const int MenuAboutUsActivity = 2131034171;
+			public const int menu_about_us_activity = 2131034171;
 			
 			// aapt resource value: 0x7f05003c
-			public const int MenuAchievementsActivity = 2131034172;
+			public const int menu_achievements_activity = 2131034172;
 			
 			// aapt resource value: 0x7f05003d
-			public const int MenuFeedbackActivity = 2131034173;
+			public const int menu_feedback_activity = 2131034173;
 			
 			// aapt resource value: 0x7f05003e
-			public const int MenuSettingsActivity = 2131034174;
+			public const int menu_settings_activity = 2131034174;
 			
 			// aapt resource value: 0x7f05003f
-			public const int nav_header_main = 2131034175;
+			public const int navigation_header_main = 2131034175;
 			
 			// aapt resource value: 0x7f050040
 			public const int notification_action = 2131034176;
@@ -7657,10 +7657,10 @@ namespace ReLearn.Droid
 			public const int select_dictionary_lanuage_fragment = 2131034196;
 			
 			// aapt resource value: 0x7f050055
-			public const int SplashScreen = 2131034197;
+			public const int splash_screen = 2131034197;
 			
 			// aapt resource value: 0x7f050056
-			public const int Statistics = 2131034198;
+			public const int statistics_activity = 2131034198;
 			
 			// aapt resource value: 0x7f050057
 			public const int statistics_general_fragment = 2131034199;

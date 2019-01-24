@@ -30,7 +30,7 @@ namespace ReLearn.Droid
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.MenuSettingsActivity);
+            SetContentView(Resource.Layout.menu_settings_activity);
             UserDialogs.Init(this);
             var toolbarSettings = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbarSetting);
             SetSupportActionBar(toolbarSettings);

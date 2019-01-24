@@ -26,7 +26,7 @@ namespace ReLearn.Droid.Resources
 
         public override View GetView(int position, View convertView, ViewGroup parent)
         {
-            var view = convertView ?? activity.LayoutInflater.Inflate(Resource.Layout.LanguagesItemViewDictionaryActivity, parent, false);
+            var view = convertView ?? activity.LayoutInflater.Inflate(Resource.Layout.languages_item_view_dictionary_activity, parent, false);
             var TView = view.FindViewById<TextView>(Resource.Id.item_view_dictionary);
 
             BackgroundConstructor.SetColorForItems(list[position].NumberLearn, TView);

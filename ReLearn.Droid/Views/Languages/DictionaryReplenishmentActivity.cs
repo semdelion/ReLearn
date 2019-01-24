@@ -14,7 +14,7 @@ namespace ReLearn.Droid.Languages
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.LanguagesDictionaryReplenishmentActivity);
+            SetContentView(Resource.Layout.languages_dictionary_replenishment_activity);
             var toolbarMain = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbarDictionaryReplenishment);
             SetSupportActionBar(toolbarMain);
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
@@ -33,7 +33,7 @@ namespace ReLearn.Droid.Languages
                 case Resource.Id.dictionary_replenishment_instruction:
                     Android.App.AlertDialog.Builder alert = new Android.App.AlertDialog.Builder(this);
                     LayoutInflater factory = LayoutInflater.From(this);
-                    alert.SetView(factory.Inflate(Resource.Layout.LanguagesAlertImageActivity, null));
+                    alert.SetView(factory.Inflate(Resource.Layout.languages_alert_image_activity, null));
                     alert.SetTitle(Resource.String.Instruction);
                     alert.SetPositiveButton("Cancel", delegate { alert.Dispose(); });
                     alert.Show();

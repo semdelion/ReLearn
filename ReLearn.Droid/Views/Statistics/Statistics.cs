@@ -35,7 +35,7 @@ namespace ReLearn.Droid.Views.Statistics
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.Statistics);
+            SetContentView(Resource.Layout.statistics_activity);
             SetSupportActionBar(FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar_statistics));
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
             GetDate();

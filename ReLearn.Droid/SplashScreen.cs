@@ -19,7 +19,7 @@ namespace ReLearn.Droid
         ScreenOrientation = ScreenOrientation.Portrait)]
     public class SplashScreen : MvxSplashScreenAppCompatActivity<Setup, App>
     {
-        public SplashScreen() : base(Resource.Layout.SplashScreen)
+        public SplashScreen() : base(Resource.Layout.splash_screen)
         {
             Database.InstallDatabaseFromAssets();
             DataBase.SetupConnection();

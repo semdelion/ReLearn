@@ -143,7 +143,7 @@ namespace ReLearn.Droid.Images
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.ImagesRepeatActivity);
+            SetContentView(Resource.Layout.images_repeat_activity);
             
             var toolbarMain = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbarImagesRepeat);
             SetSupportActionBar(toolbarMain);

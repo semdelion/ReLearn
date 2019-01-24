@@ -187,61 +187,61 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\MenuAboutUsActivity.axml" />
+    <AndroidResource Include="Resources\layout\menu_about_us_activity.axml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\MenuAchievementsActivity.axml" />
+    <AndroidResource Include="Resources\layout\menu_achievements_activity.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\main_content.axml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\LanguagesAddActivity.axml" />
+    <AndroidResource Include="Resources\layout\languages_add_activity.axml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\LanguagesAlertImageActivity.axml" />
+    <AndroidResource Include="Resources\layout\languages_alert_image_activity.axml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\ImagesBlitzPollActivity.axml" />
+    <AndroidResource Include="Resources\layout\images_blitz_poll_activity.axml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\LanguagesBlitzPollActivity.axml" />
+    <AndroidResource Include="Resources\layout\languages_blitz_poll_activity.axml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\LanguagesDictionaryReplenishmentActivity.axml" />
+    <AndroidResource Include="Resources\layout\languages_dictionary_replenishment_activity.axml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\MenuFeedbackActivity.axml" />
+    <AndroidResource Include="Resources\layout\menu_feedback_activity.axml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\ImagesItemAlertBig.axml" />
+    <AndroidResource Include="Resources\layout\images_item_alert_big.axml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\ImagesItemViewDictionaryActivity.axml" />
+    <AndroidResource Include="Resources\layout\images_item_view_dictionary_activity.axml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\LanguagesItemViewDictionaryActivity.axml" />
+    <AndroidResource Include="Resources\layout\languages_item_view_dictionary_activity.axml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\ImagesLearnActivity.axml" />
+    <AndroidResource Include="Resources\layout\images_learn_activity.axml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\LanguagesLearnActivity.axml" />
+    <AndroidResource Include="Resources\layout\languages_learn_activity.axml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\ImagesRepeatActivity.axml" />
+    <AndroidResource Include="Resources\layout\images_repeat_activity.axml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\LanguagesRepeatActivity.axml" />
+    <AndroidResource Include="Resources\layout\languages_repeat_activity.axml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\MenuSettingsActivity.axml" />
+    <AndroidResource Include="Resources\layout\menu_settings_activity.axml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\SplashScreen.axml" />
+    <AndroidResource Include="Resources\layout\splash_screen.axml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\LanguagesViewDictionaryActivity.axml" />
+    <AndroidResource Include="Resources\layout\languages_view_dictionary_activity.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\menu\menu_DictionaryReplenishment.xml" />
@@ -2747,7 +2747,7 @@
     <AndroidResource Include="Resources\drawable\spinner_item.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\Statistics.axml">
+    <AndroidResource Include="Resources\layout\statistics_activity.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -2781,22 +2781,17 @@
     <AndroidResource Include="Resources\drawable\icon_general_statistics.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\MainActivity.axml">
+    <AndroidResource Include="Resources\layout\main_activity.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\nav_header_main.axml">
+    <AndroidResource Include="Resources\layout\navigation_header_main.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\menu\activity_main_drawer.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\layout\content_main.axml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\mipmap-hdpi\ic_statistics.png" />

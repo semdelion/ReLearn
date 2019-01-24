@@ -90,7 +90,7 @@ namespace ReLearn.Droid.Languages
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.LanguagesBlitzPollActivity);
+            SetContentView(Resource.Layout.languages_blitz_poll_activity);
             var toolbarMain = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbarLanguagesBlitzPoll);
             SetSupportActionBar(toolbarMain);
             SupportActionBar.SetDisplayHomeAsUpEnabled(true); // отображаем кнопку домой

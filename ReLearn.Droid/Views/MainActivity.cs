@@ -20,7 +20,7 @@ namespace ReLearn.Droid.Views
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.MainActivity);
+            SetContentView(Resource.Layout.main_activity);
             var toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbarMain);
             SetSupportActionBar(toolbar);
             
