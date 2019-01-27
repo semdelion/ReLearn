@@ -95,10 +95,10 @@ namespace ReLearn.Core.ViewModels
             else
                 return NavigationService.Navigate<Languages.ViewDictionaryViewModel>();
         } 
-        private Task<bool> NavigateToAddition() => NavigationService.Navigate<Languages.AddViewModel>();
 
-        private Task<bool> NavigateToAboutUs() => NavigationService.Navigate<AboutUsViewModel>();
-        private Task<bool> NavigateToFeedback() => NavigationService.Navigate<FeedbackViewModel>();
+        private Task<bool> NavigateToAddition()     => NavigationService.Navigate<Languages.AddViewModel>();
+        private Task<bool> NavigateToAboutUs()      => NavigationService.Navigate<AboutUsViewModel>();
+        private Task<bool> NavigateToFeedback()     => NavigationService.Navigate<FeedbackViewModel>();
         private Task<bool> NavigateToSettingsMenu() => NavigationService.Navigate<SettingsMenuViewModel>();
         
         #endregion
@@ -111,6 +111,8 @@ namespace ReLearn.Core.ViewModels
         {
             base.ViewCreated();
         }
+        public void ShowMenu() => NavigationService.Navigate<MenuViewModel>();
+        
         #endregion
     }
 }
