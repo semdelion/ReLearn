@@ -4,10 +4,15 @@
     xmlns:app       ="http://schemas.android.com/apk/res-auto"
     tools:context   =".MainActivity"
     tools:showIn="navigation_view">
+  
     <item
-       android:id="@+id/statistics"
-       android:icon="@+mipmap/ic_statistics"
-       android:title="@string/Statistics" />
+        android:id="@+id/study"
+        android:icon="@+mipmap/ic_study"
+        android:title="@string/Study" />
+    <item
+        android:id="@+id/statistics"
+        android:icon="@+mipmap/ic_statistics"
+        android:title="@string/Statistics" />
     <item
         android:id="@+id/view_dictionary"
         android:icon="@+mipmap/ic_list_dictionary"

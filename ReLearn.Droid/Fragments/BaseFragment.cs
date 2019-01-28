@@ -35,7 +35,7 @@ namespace ReLearn.Droid.Fragments
 
 			var view = this.BindingInflate(FragmentId, null);
 
-			_toolbar = view.FindViewById<Toolbar>(Resource.Id.toolbar);
+			_toolbar = view.FindViewById<Toolbar>(Resource.Id.toolbarMain);
 			if (_toolbar != null)
 			{
 				ParentActivity.SetSupportActionBar(_toolbar);

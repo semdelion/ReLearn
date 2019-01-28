@@ -10,6 +10,6 @@ namespace ReLearn.Droid.Fragments
     [Register("relearn.droid.fragments.HomeFragment")]
     public class HomeFragment : BaseFragment<HomeViewModel>
     {
-        protected override int FragmentId => Resource.Layout.fragment_home;
+        protected override int FragmentId => Resource.Layout.main_content;
     }
 }

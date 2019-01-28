@@ -3,7 +3,7 @@
   <string name="app_name">ReLearn</string>
   
   <!--buttons-->
-  
+  <string name="Study"              >Study</string>
   <string name="Language"           >Language</string>
   <string name="Images"             >Images</string>
   <string name="Addition"           >Addition</string>
