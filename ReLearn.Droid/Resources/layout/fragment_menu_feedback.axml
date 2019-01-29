@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+	xmlns:android			="http://schemas.android.com/apk/res/android"
+	xmlns:local				="http://schemas.android.com/apk/res-auto"
+    android:orientation		="vertical"
+    android:layout_width	="match_parent"
+    android:layout_height	="match_parent">
+	<android.support.design.widget.AppBarLayout
+		android:layout_width	="match_parent"
+		android:layout_height	="wrap_content">
+		<android.support.v7.widget.Toolbar 
+			xmlns:local				="http://schemas.android.com/apk/res-auto"
+			android:id				="@+id/toolbar_Feedback"
+			android:theme			="@style/ToolbarStyle"	
+			android:background		="@drawable/toolbar"
+			local:navigationIcon	="@mipmap/arrow"
+			android:layout_width	="match_parent"
+			android:layout_height	="80dp"	
+			local:buttonGravity="bottom">
+			<TextView
+				android:text			="@string/Feedback"
+				android:gravity			="bottom"
+				android:paddingBottom	="12dp"
+				android:layout_width	="match_parent"
+				android:layout_height	="match_parent"
+			/>
+		</android.support.v7.widget.Toolbar>
+	</android.support.design.widget.AppBarLayout>
+	<RelativeLayout
+		android:layout_marginRight	="20.0dp"
+		android:layout_marginLeft	="20.0dp"
+		android:layout_width		="match_parent"
+		android:layout_height		="match_parent">
+		<TextView
+			android:text				="@string/Feedback_comments"
+			android:textColor			="@color/TextWhite"
+			android:id					="@+id/textView"
+			android:textSize			="18dp"
+			android:layout_width		="match_parent"
+			android:layout_height		="wrap_content"
+			android:layout_marginTop	="25.0dp"
+			android:defaultFocusHighlightEnabled="true"/>
+		<EditText
+			local:MvxBind				="Text Message"
+			android:hint				="@string/Enter_Message"
+			android:textColor			="@color/TextWhite"
+			android:textColorHint		="@color/HintTextWhite"
+			android:backgroundTint		="@color/TextWhite"
+			android:textSize			="20dp"
+			android:layout_width		="match_parent"
+			android:layout_height		="match_parent"
+			android:layout_marginTop	="115.0dp"
+			android:layout_marginBottom	="115dp"
+			android:defaultFocusHighlightEnabled="true"/>
+		<Button
+			android:onClick				="Button_Send_Click"
+			android:id					="@+id/button"
+			android:text				="@string/Send"
+			android:background			="@drawable/button_style_standard"
+			android:height				="@android:dimen/notification_large_icon_width"
+			android:textColor			="@color/TextWhite"
+			android:fontFamily			="@font/myriadpro_semibold"
+			android:textSize			="20dp"
+			android:gravity				="center"
+			android:layout_width		="match_parent"
+			android:layout_height		="55.0dp"
+			android:layout_alignParentBottom="true"
+			android:layout_alignParentRight	="true"
+			android:layout_marginBottom		="35dp"
+		/>
+	</RelativeLayout>
+</LinearLayout>

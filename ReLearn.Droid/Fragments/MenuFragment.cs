@@ -24,12 +24,10 @@ namespace ReLearn.Droid.Fragments
         public override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            ViewModel.ToHomeViewModel.Execute();
         }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            
             var ignore = base.OnCreateView(inflater, container, savedInstanceState);
 
             var view = this.BindingInflate(Resource.Layout.fragment_navigation, null);
@@ -38,6 +36,7 @@ namespace ReLearn.Droid.Fragments
             navigationView.SetNavigationItemSelectedListener(this);
             navigationView.Menu.FindItem(Resource.Id.study).SetChecked(true);
             
+            //ViewModel.ToHomeViewModel.Execute();
             return view;
         }
 
@@ -52,6 +51,12 @@ namespace ReLearn.Droid.Fragments
             {
                 case Resource.Id.study:
                     ViewModel.ToHomeViewModel.Execute();
+                    break;
+                case Resource.Id.feedback:
+                    ViewModel.ToFeedbackViewModel.Execute();
+                    break;
+                case Resource.Id.about_us:
+                    ViewModel.ToAboutUsViewModel.Execute();
                     break;
             }
             return true;

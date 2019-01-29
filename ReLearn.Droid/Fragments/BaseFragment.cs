@@ -13,9 +13,12 @@ using ReLearn.Droid.Services;
 
 namespace ReLearn.Droid.Fragments
 {
-    public abstract class BaseFragment : MvvmCross.Droid.Support.V4.MvxFragment
+    public abstract class BaseFragment : MvxFragment
     {
-        private Toolbar _toolbar;
+        public Toolbar _toolbar;
+        protected abstract int FragmentId { get; }
+        protected abstract int Toolbar { get; }
+
         private MvxActionBarDrawerToggle _drawerToggle;
 
 		public MvxAppCompatActivity ParentActivity { 
@@ -28,6 +31,12 @@ namespace ReLearn.Droid.Fragments
         {
             RetainInstance = true;
         }
+        public override void OnCreate(Bundle savedInstanceState)
+        {
+            base.OnCreate(savedInstanceState);
+            HasOptionsMenu = true;
+         
+        }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
@@ -35,10 +44,10 @@ namespace ReLearn.Droid.Fragments
 
 			var view = this.BindingInflate(FragmentId, null);
 
-			_toolbar = view.FindViewById<Toolbar>(Resource.Id.toolbarMain);
+			_toolbar = view.FindViewById<Toolbar>(Toolbar);
 			if (_toolbar != null)
 			{
-				ParentActivity.SetSupportActionBar(_toolbar);
+                ParentActivity.SetSupportActionBar(_toolbar);
 				ParentActivity.SupportActionBar.SetDisplayHomeAsUpEnabled(true);
 
 				_drawerToggle = new MvxActionBarDrawerToggle(
@@ -54,8 +63,6 @@ namespace ReLearn.Droid.Fragments
 
 			return view;
 		}
-
-        protected abstract int FragmentId { get; }
 
         public override void OnConfigurationChanged(Configuration newConfig)
         {

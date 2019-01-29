@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="Adapters\BackgroundConstructor.cs" />
     <Compile Include="Fragments\BaseFragment.cs" />
+    <Compile Include="Fragments\FeedbackFragment.cs" />
     <Compile Include="Fragments\HomeFragment.cs" />
     <Compile Include="Fragments\MenuFragment.cs" />
     <Compile Include="Fragments\AboutUsFragment.cs" />
@@ -91,8 +92,6 @@
     <Compile Include="Views\Languages\LearnActivity.cs" />
     <Compile Include="Views\Languages\RepeatActivity.cs" />
     <Compile Include="Views\Languages\ViewDictionaryActivity.cs" />
-    <Compile Include="Views\Main menu\AboutUsActivity.cs" />
-    <Compile Include="Views\Main menu\FeedbackActivity.cs" />
     <Compile Include="Views\Main menu\SettingsMenuActivity.cs" />
     <Compile Include="Views\MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
@@ -195,13 +194,10 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\menu_about_us_activity.axml" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\layout\menu_achievements_activity.axml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\main_content.axml" />
+    <AndroidResource Include="Resources\layout\fragment_main.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\languages_add_activity.axml" />
@@ -219,7 +215,7 @@
     <AndroidResource Include="Resources\layout\languages_dictionary_replenishment_activity.axml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\menu_feedback_activity.axml" />
+    <AndroidResource Include="Resources\layout\fragment_menu_feedback.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\images_item_alert_big.axml" />

@@ -10,13 +10,14 @@ using Android.Views.InputMethods;
 using MvvmCross.Droid.Support.V7.AppCompat;
 using MvvmCross.Platforms.Android.Presenters.Attributes;
 using ReLearn.Core.ViewModels;
+using ReLearn.Droid.Fragments;
 using ReLearn.Droid.Services;
 
 namespace ReLearn.Droid.Views
 {
     [MvxActivityPresentation]
     [Activity(Label = "", ScreenOrientation = ScreenOrientation.Portrait, ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.Locale)]
-    public class MainActivity : MvxAppCompatActivity<MainViewModel>, INavigationActivity
+    public class MainActivity : MvxAppCompatActivity<MainViewModel>, INavigationActivity, Android.Support.V4.App.FragmentManager.IOnBackStackChangedListener
     {
         public DrawerLayout DrawerLayout { get; set; }
 
@@ -27,8 +28,13 @@ namespace ReLearn.Droid.Views
             //var toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbarMain);
            // SetSupportActionBar(toolbar);
             DrawerLayout = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
-            if (savedInstanceState == null)
-                ViewModel.ShowMenu();
+            this.SupportFragmentManager.AddOnBackStackChangedListener(this);
+           // SupportFragmentManager.BeginTransaction().Replace(Resource.Id.content_frame, new HomeFragment(), "Home").Commit();
+            
+
+
+            //this.SupportFragmentManager.FindFragmentById(Resource.Layout.main_content);
+            ViewModel?.ShowMenu();
             //DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
             //ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, Resource.String.navigation_drawer_open, Resource.String.navigation_drawer_close);
             //drawer.AddDrawerListener(toggle);
@@ -65,6 +71,11 @@ namespace ReLearn.Droid.Views
                     return true;
             }
             return base.OnOptionsItemSelected(item);
+        }
+
+        public void OnBackStackChanged()
+        {
+           // SupportFragmentManager.RemoveOnBackStackChangedListener();
         }
 
 

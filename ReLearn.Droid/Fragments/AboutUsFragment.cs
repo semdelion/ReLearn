@@ -8,10 +8,13 @@ using ReLearn.Core.ViewModels.MainMenu;
 namespace ReLearn.Droid.Fragments
 {
     [MvxFragmentPresentation(typeof(MainViewModel), Resource.Id.content_frame, true)]
-    [Register("relearn.droid.fragments.SettingsFragment")]
+    [Register("relearn.droid.fragments.AboutUslFragment")]
     public class AboutUslFragment : BaseFragment<AboutUsViewModel>
     {
         protected override int FragmentId => Resource.Layout.fragment_about_us;
+
+        protected override int Toolbar => Resource.Id.toolbar_About_Us;
+
         [Java.Interop.Export("Button_Support_Project_Click")] //TODO 
         public void Button_Support_Project_Click(View v)
         {
@@ -19,6 +22,8 @@ namespace ReLearn.Droid.Fragments
             browserIntent.SetData(Android.Net.Uri.Parse("http://www.donationalerts.ru/r/semdelionteam"));
             StartActivity(browserIntent);
         }
+
+        
 
         //protected override void OnCreateView(Bundle savedInstanceState)
         //{
@@ -38,10 +43,17 @@ namespace ReLearn.Droid.Fragments
         
     }
 }
-
 //[Activity(Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
 //public class AboutUsActivity : MvxAppCompatActivity<AboutUsViewModel>
 //{
+//    [Java.Interop.Export("Button_Support_Project_Click")] //TODO 
+//    public void Button_Support_Project_Click(View v)
+//    {
+//        Intent browserIntent = new Intent(Intent.ActionView);
+//        browserIntent.SetData(Android.Net.Uri.Parse("http://www.donationalerts.ru/r/semdelionteam"));
+//        StartActivity(browserIntent);
+//    }
+
 //    protected override void OnCreate(Bundle savedInstanceState)
 //    {
 //        base.OnCreate(savedInstanceState);
