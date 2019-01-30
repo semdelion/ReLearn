@@ -68,6 +68,7 @@
     <Compile Include="Fragments\HomeFragment.cs" />
     <Compile Include="Fragments\MenuFragment.cs" />
     <Compile Include="Fragments\AboutUsFragment.cs" />
+    <Compile Include="Fragments\StatisticsFragment.cs" />
     <Compile Include="GetString.cs" />
     <Compile Include="BitmapHandler.cs" />
     <Compile Include="ButtonNext.cs" />

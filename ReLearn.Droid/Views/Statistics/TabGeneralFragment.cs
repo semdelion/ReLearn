@@ -10,6 +10,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using ReLearn.API.Database;
+using ReLearn.Droid.Fragments;
 
 namespace ReLearn.Droid.Views.Statistics
 {
@@ -22,8 +23,8 @@ namespace ReLearn.Droid.Views.Statistics
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             return new GraphGeneralStatistics(inflater.Inflate(Resource.Layout.statistics_general_fragment, container, false).Context,
-                Statistics.LightColor, Statistics.DarkColor, Statistics.StatisticsDB,
-                Statistics.DataTupe, DataBase.TableName.ToString());
+                StatisticsFragment.LightColor, StatisticsFragment.DarkColor, StatisticsFragment.StatisticsDB,
+                StatisticsFragment.DataTupe, DataBase.TableName.ToString());
         }
     }
 }

@@ -17,7 +17,7 @@ namespace ReLearn.Droid.Fragments
 {
     [MvxFragmentPresentation(typeof(MainViewModel), Resource.Id.content_frame, true)]
     [Register("relearn.droid.fragments.SettingsFragment")]
-    class SettingsFragment : BaseFragment<SettingsMenuViewModel>
+    class SettingsFragment : BaseFragment<SettingsViewModel>
     {
         protected override int FragmentId => Resource.Layout.fragment_settings;
 

@@ -52,11 +52,17 @@ namespace ReLearn.Droid.Fragments
                 case Resource.Id.study:
                     ViewModel.ToHomeViewModel.Execute();
                     break;
+                case Resource.Id.statistics:
+                    ViewModel.ToStatisticViewModel.Execute();
+                    break;
+                case Resource.Id.view_dictionary:
+                    ViewModel.ToViewDictionaryViewModel.Execute();
+                    break;
                 case Resource.Id.add_word:
                     ViewModel.ToAdditionViewModel.Execute();
                     break;
                 case Resource.Id.settings_menu:
-                    ViewModel.ToSettingsMenu.Execute();
+                    ViewModel.ToSettingsViewModel.Execute();
                     break;
                 case Resource.Id.feedback:
                     ViewModel.ToFeedbackViewModel.Execute();

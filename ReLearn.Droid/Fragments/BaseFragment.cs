@@ -10,16 +10,18 @@ using MvvmCross.Droid.Support.V7.AppCompat;
 using MvvmCross.Droid.Support.V4;
 using ReLearn.Droid.Views;
 using ReLearn.Droid.Services;
+using Android.App;
+using System;
 
 namespace ReLearn.Droid.Fragments
 {
     public abstract class BaseFragment : MvxFragment
     {
-        public Toolbar _toolbar;
+        protected Toolbar _toolbar;
         protected abstract int FragmentId { get; }
         protected abstract int Toolbar { get; }
 
-        private MvxActionBarDrawerToggle _drawerToggle;
+        protected MvxActionBarDrawerToggle _drawerToggle;
 
 		public MvxAppCompatActivity ParentActivity { 
 			get {
@@ -85,6 +87,11 @@ namespace ReLearn.Droid.Fragments
         {
             get { return (TViewModel)base.ViewModel; }
             set { base.ViewModel = value; }
+        }
+
+        internal void OnAttach(Activity activity)
+        {
+            throw new NotImplementedException();
         }
     }
 }

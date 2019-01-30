@@ -11,7 +11,7 @@ using System.Text;
 
 namespace ReLearn.Core.ViewModels.MainMenu
 {
-    public class SettingsMenuViewModel : MvxViewModel
+    public class SettingsViewModel : MvxViewModel
     {
         #region Fields
         #endregion
@@ -127,7 +127,7 @@ namespace ReLearn.Core.ViewModels.MainMenu
         #endregion
 
         #region Constructors
-        public SettingsMenuViewModel(IMvxNavigationService navigationService)
+        public SettingsViewModel(IMvxNavigationService navigationService)
         {
             NavigationService = navigationService;
             WordsNumber = (Settings.NumberOfRepeatsLanguage - 5) / 5;

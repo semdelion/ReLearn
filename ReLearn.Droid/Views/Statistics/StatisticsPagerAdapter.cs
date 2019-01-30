@@ -9,7 +9,7 @@ using Java.Lang;
 
 namespace ReLearn.Droid.Views.Statistics
 {
-    class StatisticsPagerAdapter : FragmentPagerAdapter
+    class StatisticsPagerAdapter : FragmentStatePagerAdapter
     {
         public StatisticsPagerAdapter(Android.Support.V4.App.FragmentManager fm) : base(fm) { }
 

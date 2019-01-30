@@ -11,26 +11,26 @@ namespace ReLearn.Core.ViewModels.MainMenu
 {
     public class MenuViewModel : MvxViewModel
     {
-        private IMvxAsyncCommand _toHomeViewModel;
-        public IMvxAsyncCommand ToHomeViewModel => _toHomeViewModel ?? (_toHomeViewModel = new MvxAsyncCommand(NavigateToHomeViewModel));
+        private IMvxAsyncCommand _toHome;
+        public IMvxAsyncCommand ToHomeViewModel => _toHome ?? (_toHome = new MvxAsyncCommand(NavigateToHomeViewModel));
 
         private IMvxAsyncCommand _toStatistic;
-        public IMvxAsyncCommand ToStatisticViewModel => _toStatistic ?? (_toStatistic = new MvxAsyncCommand(NavigateToStatistic));
+        public IMvxAsyncCommand ToStatisticViewModel => _toStatistic ?? (_toStatistic = new MvxAsyncCommand(NavigateToStatisticViewModel));
 
         private IMvxAsyncCommand _toViewDictionary;
-        public IMvxAsyncCommand ToViewDictionary => _toViewDictionary ?? (_toViewDictionary = new MvxAsyncCommand(NavigateToViewDictionary));
+        public IMvxAsyncCommand ToViewDictionaryViewModel => _toViewDictionary ?? (_toViewDictionary = new MvxAsyncCommand(NavigateToViewDictionaryViewModel));
 
-        private IMvxAsyncCommand _toSettingsMenu;
-        public IMvxAsyncCommand ToSettingsMenu => _toSettingsMenu ?? (_toSettingsMenu = new MvxAsyncCommand(NavigateToSettingsMenu));
+        private IMvxAsyncCommand _toSettings;
+        public IMvxAsyncCommand ToSettingsViewModel => _toSettings ?? (_toSettings = new MvxAsyncCommand(NavigateToSettingsViewModel));
 
         private IMvxAsyncCommand _toAddition;
-        public IMvxAsyncCommand ToAdditionViewModel => _toAddition ?? (_toAddition = new MvxAsyncCommand(NavigateToAddition));
+        public IMvxAsyncCommand ToAdditionViewModel => _toAddition ?? (_toAddition = new MvxAsyncCommand(NavigateToAdditionViewModel));
 
         private IMvxAsyncCommand _toFeedback;
-        public IMvxAsyncCommand ToFeedbackViewModel => _toFeedback ?? (_toFeedback = new MvxAsyncCommand(NavigateToFeedback));
+        public IMvxAsyncCommand ToFeedbackViewModel => _toFeedback ?? (_toFeedback = new MvxAsyncCommand(NavigateToFeedbackViewModel));
 
-        private IMvxAsyncCommand _toAboutUsViewModel;
-        public IMvxAsyncCommand ToAboutUsViewModel => _toAboutUsViewModel ?? (_toAboutUsViewModel = new MvxAsyncCommand(NavigateToAboutUsViewModel));
+        private IMvxAsyncCommand _toAboutUs;
+        public IMvxAsyncCommand ToAboutUsViewModel => _toAboutUs ?? (_toAboutUs = new MvxAsyncCommand(NavigateToAboutUsViewModel));
 
         protected IMvxNavigationService NavigationService { get; set; }
 
@@ -40,8 +40,8 @@ namespace ReLearn.Core.ViewModels.MainMenu
         }
 
         private Task<bool> NavigateToHomeViewModel() => NavigationService.Navigate<HomeViewModel>();
-        private Task<bool> NavigateToStatistic() => NavigationService.Navigate<StatisticViewModel>();
-        private Task<bool> NavigateToViewDictionary()
+        private Task<bool> NavigateToStatisticViewModel() => NavigationService.Navigate<StatisticViewModel>();
+        private Task<bool> NavigateToViewDictionaryViewModel()
         {
             if (DBImages.DatabaseIsContain(DataBase.TableName.ToString()))
                 return NavigationService.Navigate<Images.ViewDictionaryViewModel>();
@@ -50,8 +50,8 @@ namespace ReLearn.Core.ViewModels.MainMenu
         }
         private Task<bool> NavigateToAboutUsViewModel() => NavigationService.Navigate<AboutUsViewModel>();
       
-        private Task<bool> NavigateToAddition() => NavigationService.Navigate<AddViewModel>();
-        private Task<bool> NavigateToFeedback() => NavigationService.Navigate<FeedbackViewModel>();
-        private Task<bool> NavigateToSettingsMenu() => NavigationService.Navigate<SettingsMenuViewModel>();
+        private Task<bool> NavigateToAdditionViewModel() => NavigationService.Navigate<AddViewModel>();
+        private Task<bool> NavigateToFeedbackViewModel() => NavigationService.Navigate<FeedbackViewModel>();
+        private Task<bool> NavigateToSettingsViewModel() => NavigationService.Navigate<SettingsViewModel>();
     }
 }
