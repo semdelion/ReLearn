@@ -88,6 +88,22 @@ namespace ReLearn.Core.ViewModels.MainMenu
             {
                 SetProperty(ref _isActiveBlitz, value);
                 Settings.BlitzEnable = _isActiveBlitz;
+                if (!value)
+                    IsActiveQuiz = true;
+            }
+        }
+
+        private bool _isActiveQuiz;
+        public bool IsActiveQuiz
+        {
+            get { return _isActiveQuiz; }
+            set
+            {
+                SetProperty(ref _isActiveQuiz, value);
+                
+                Settings.QuizEnable = _isActiveQuiz;
+                if (!value)
+                    IsActiveBlitz = true;
             }
         }
 
@@ -118,6 +134,7 @@ namespace ReLearn.Core.ViewModels.MainMenu
             ImagesNumber = (Settings.NumberOfRepeatsImage - 5) / 5;
             TimeToBlitz = (Settings.TimeToBlitz - 15) / 15;
             IsActiveBlitz = Settings.BlitzEnable;
+            IsActiveQuiz = Settings.QuizEnable;
         }
         #endregion
 

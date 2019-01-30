@@ -19,6 +19,7 @@ namespace ReLearn.API
         HideStudied,
         TypeOfRepetition,
         BlitzEnable,
+        QuizEnable,
         DictionaryName
     }
 
@@ -83,6 +84,12 @@ namespace ReLearn.API
         {
             get => CrossSettings.Current.GetValueOrDefault(DBSettings.BlitzEnable.ToString(), true);
             set => CrossSettings.Current.AddOrUpdateValue(DBSettings.BlitzEnable.ToString(), value);
+        }
+
+        public static bool QuizEnable
+        {
+            get => CrossSettings.Current.GetValueOrDefault(DBSettings.QuizEnable.ToString(), true);
+            set => CrossSettings.Current.AddOrUpdateValue(DBSettings.QuizEnable.ToString(), value);
         }
 
         public static TypeOfRepetitions TypeOfRepetition

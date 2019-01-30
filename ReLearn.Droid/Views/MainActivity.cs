@@ -1,4 +1,6 @@
-﻿using Android.App;
+﻿using Acr.UserDialogs;
+using Android.App;
+using Android.Content;
 using Android.Content.PM;
 using Android.OS;
 using Android.Support.Design.Widget;
@@ -7,6 +9,7 @@ using Android.Support.V4.Widget;
 using Android.Support.V7.App;
 using Android.Views;
 using Android.Views.InputMethods;
+using Android.Widget;
 using MvvmCross.Droid.Support.V7.AppCompat;
 using MvvmCross.Platforms.Android.Presenters.Attributes;
 using ReLearn.Core.ViewModels;
@@ -25,8 +28,9 @@ namespace ReLearn.Droid.Views
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.main_activity);
+            UserDialogs.Init(this);
             //var toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbarMain);
-           // SetSupportActionBar(toolbar);
+            // SetSupportActionBar(toolbar);
             DrawerLayout = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
             this.SupportFragmentManager.AddOnBackStackChangedListener(this);
            // SupportFragmentManager.BeginTransaction().Replace(Resource.Id.content_frame, new HomeFragment(), "Home").Commit();
@@ -43,6 +47,39 @@ namespace ReLearn.Droid.Views
             //NavigationView navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
             //navigationView.SetNavigationItemSelectedListener(this);
         }
+
+
+        [Java.Interop.Export("Button_Support_Project_Click")] //TODO 
+        public void Button_Support_Project_Click(View v)
+        {
+            Intent browserIntent = new Intent(Intent.ActionView);
+            browserIntent.SetData(Android.Net.Uri.Parse("http://www.donationalerts.ru/r/semdelionteam"));
+            StartActivity(browserIntent);
+        }
+
+        //[Java.Interop.Export("Button_Send_Click")]
+        //public void Button_Send_Click(View v)
+        //{
+        //    if (ViewModel.Message == "" || ViewModel.Message == null)
+        //        Toast.MakeText(this, GetString(Resource.String.Enter_word), ToastLength.Short).Show();//TODO android Intent;
+        //    else
+        //    {
+        //        var email = new Intent(Intent.ActionSend);
+        //        email.PutExtra(Intent.ExtraEmail, new string[] { "SemdelionTeam@gmail.com" });
+        //        email.PutExtra(Intent.ExtraSubject, "Hello, SemdelionTeam!");
+        //        email.PutExtra(Intent.ExtraText, Fragment.Message);
+        //        email.SetType("message/rfc822");
+        //        try
+        //        {
+        //            StartActivity(email);
+        //            ViewModel.Message = "";
+        //        }
+        //        catch
+        //        {
+        //            //Toast.MakeText(this, "There are no email applications installed.", ToastLength.Long).Show();
+        //        }
+        //    }
+        //}
 
         public override void OnBackPressed()
         {

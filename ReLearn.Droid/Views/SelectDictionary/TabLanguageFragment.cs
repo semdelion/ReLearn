@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using ReLearn.API;
-using Android.App;
-using Android.Content;
-using Android.Graphics;
+﻿using Android.Graphics;
 using Android.OS;
-using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using ReLearn.API;
 using ReLearn.API.Database;
+using System.Collections.Generic;
 
 namespace ReLearn.Droid.Views.SelectDictionary
 {
@@ -42,7 +36,7 @@ namespace ReLearn.Droid.Views.SelectDictionary
             TextView CountWords = new TextView(view.Context)
             {
                 Text = $"{GetString(Resource.String.DatatypeWords)} {count}, {GetString(Resource.String.StudiedAt)} " +
-                $"{(int)(100 - ReLearn.Droid.Statistics.GetAverageNumberLearn(DB) * 100f / Settings.StandardNumberOfRepeats)}%",
+                $"{(int)(100 - API.Statistics.GetAverageNumberLearn(DB) * 100f / Settings.StandardNumberOfRepeats)}%",
                 TextSize = 14//(int)(2.1f * width)
             };
             TextView Description = new TextView(view.Context)

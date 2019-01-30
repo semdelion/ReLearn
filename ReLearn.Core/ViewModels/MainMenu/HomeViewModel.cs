@@ -22,23 +22,36 @@ namespace ReLearn.Core.ViewModels.MainMenu
         {
             NavigationService = navigationService;
         }
+        private Task<bool> Quiz(bool isImage)
+        {
+            Settings.TypeOfRepetition = TypeOfRepetitions.Blitz;
+            return isImage ?
+                NavigationService.Navigate<Images.RepeatViewModel>() :
+                NavigationService.Navigate<Languages.RepeatViewModel>();
+        }
+        private Task<bool> Blitz(bool isImage)
+        {
+            Settings.TypeOfRepetition = TypeOfRepetitions.FourOptions;
+            return isImage ?
+                NavigationService.Navigate<Images.BlitzPollViewModel>() :
+                NavigationService.Navigate<Languages.BlitzPollViewModel>();
+        }
 
         private Task<bool> NavigateToRepeat()
         {
             bool isImage = DBImages.DatabaseIsContain(DataBase.TableName.ToString());
-            if (Settings.TypeOfRepetition == TypeOfRepetitions.Blitz && Statistics.Count == 0 && Settings.BlitzEnable)
-            {
-                Settings.TypeOfRepetition = TypeOfRepetitions.FourOptions;
-                return isImage ?
-                    NavigationService.Navigate<Images.BlitzPollViewModel>() :
-                    NavigationService.Navigate<Languages.BlitzPollViewModel>();
-            }
+            if (Settings.QuizEnable && Settings.BlitzEnable)
+                if (Statistics.Count != 0)
+                    return Quiz(isImage);
+                else
+                    return Settings.TypeOfRepetition == TypeOfRepetitions.Blitz ? Blitz(isImage) : Quiz(isImage);
+            else if (Settings.QuizEnable)
+                return Quiz(isImage);
             else
             {
-                Settings.TypeOfRepetition = TypeOfRepetitions.Blitz;
-                return isImage ?
-                    NavigationService.Navigate<Images.RepeatViewModel>() :
-                    NavigationService.Navigate<Languages.RepeatViewModel>();
+                if (Statistics.Count != 0)
+                    Statistics.Delete();
+                return Blitz(isImage);
             }
         }
         private Task<bool> NavigateToLearn()

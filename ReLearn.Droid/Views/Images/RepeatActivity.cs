@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using Android.App;
-using Android.Content;
 using Android.OS;
 using Android.Views;
 using Android.Widget;
 using Android.Graphics;
-using Android.Support.V7.App;
 using MvvmCross.Droid.Support.V7.AppCompat;
 using ReLearn.Core.ViewModels.Images;
 using Android.Util;
@@ -132,7 +130,7 @@ namespace ReLearn.Droid.Images
                 else
                 {
                     DBStatistics.Insert(Statistics.True, Statistics.False, DataBase.TableName.ToString());
-                    Statistics.Count = Statistics.True = Statistics.False = 0;
+                    Statistics.Delete();
                     ViewModel.ToStatistic.Execute();
                     this.Finish();
                 }
@@ -157,8 +155,6 @@ namespace ReLearn.Droid.Images
             PixelConverter.DpToPX(190)));
             FindViewById<LinearLayout>(Resource.Id.repeat_background).Background = _background;
 
-
-            Statistics.Table = DataBase.TableName.ToString();
             Buttons = new List<Button>{
                 FindViewById<Button>(Resource.Id.button_I_choice1),
                 FindViewById<Button>(Resource.Id.button_I_choice2),
@@ -177,7 +173,6 @@ namespace ReLearn.Droid.Images
                 return;
             }
            
-            Statistics.Table = DataBase.TableName.ToString();
             Button_Images_Next_Click(null);
         }
 

@@ -50,7 +50,7 @@ namespace ReLearn.Core.ViewModels.MainMenu
         }
         private Task<bool> NavigateToAboutUsViewModel() => NavigationService.Navigate<AboutUsViewModel>();
       
-        private Task<bool> NavigateToAddition() => NavigationService.Navigate<Languages.AddViewModel>();
+        private Task<bool> NavigateToAddition() => NavigationService.Navigate<AddViewModel>();
         private Task<bool> NavigateToFeedback() => NavigationService.Navigate<FeedbackViewModel>();
         private Task<bool> NavigateToSettingsMenu() => NavigationService.Navigate<SettingsMenuViewModel>();
     }

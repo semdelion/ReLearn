@@ -2,6 +2,7 @@
 using Android.OS;
 using Android.Runtime;
 using Android.Views;
+using Android.Widget;
 using MvvmCross.Platforms.Android.Presenters.Attributes;
 using ReLearn.Core.ViewModels;
 using ReLearn.Core.ViewModels.MainMenu;
@@ -15,13 +16,15 @@ namespace ReLearn.Droid.Fragments
         protected override int FragmentId => Resource.Layout.fragment_menu_feedback;
 
         protected override int Toolbar => Resource.Id.toolbar_Feedback;
+
         [Java.Interop.Export("Button_Send_Click")] 
         public void Button_Send_Click(View v)
         {
-           // if (ViewModel.Message == "" || ViewModel.Message == null)
-                //Toast.MakeText(this, GetString(Resource.String.Enter_word), ToastLength.Short).Show();//TODO android Intent;
-            //else
-            //{
+            if (ViewModel.Message == "" || ViewModel.Message == null)
+                return;
+            //Toast.MakeText(this, GetString(Resource.String.Enter_word), ToastLength.Short).Show();//TODO android Intent;
+            else
+            {
                 var email = new Intent(Intent.ActionSend);
                 email.PutExtra(Intent.ExtraEmail, new string[] { "SemdelionTeam@gmail.com" });
                 email.PutExtra(Intent.ExtraSubject, "Hello, SemdelionTeam!");
@@ -34,10 +37,11 @@ namespace ReLearn.Droid.Fragments
                 }
                 catch
                 {
-                    //Toast.MakeText(this, "There are no email applications installed.", ToastLength.Long).Show();
+                    // Toast.MakeText(this, "There are no email applications installed.", ToastLength.Long).Show();
                 }
-           // }
+            }
         }
+
         public override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);

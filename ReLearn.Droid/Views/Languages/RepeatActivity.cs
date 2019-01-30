@@ -132,7 +132,7 @@ namespace ReLearn.Droid.Languages
                 else
                 {
                     DBStatistics.Insert(Statistics.True, Statistics.False, DataBase.TableName.ToString());
-                    Statistics.Count = Statistics.True = Statistics.False = 0;
+                    Statistics.Delete();
                     ViewModel.ToStatistic.Execute();
                     Finish();
                 }
@@ -158,7 +158,6 @@ namespace ReLearn.Droid.Languages
 
             MySpeech = new MyTextToSpeech();
             WordDatabase = DBWords.GetDataNotLearned;
-            Statistics.Table = DataBase.TableName.ToString();
             Buttons = new List<Button>{
                 FindViewById<Button>(Resource.Id.button_Languages_choice1),
                 FindViewById<Button>(Resource.Id.button_Languages_choice2),
