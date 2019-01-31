@@ -72,7 +72,7 @@ namespace ReLearn.Droid.Fragments
             }
             GetDate();
             ViewPager viewPager = view.FindViewById<ViewPager>(Resource.Id.pager);
-            StatisticsPagerAdapter myPagerAdapter = new StatisticsPagerAdapter(ParentActivity.SupportFragmentManager);
+            StatisticsPagerAdapter myPagerAdapter = new StatisticsPagerAdapter(ChildFragmentManager);
             viewPager.Adapter = myPagerAdapter;
             TabLayout tabLayout = view.FindViewById<TabLayout>(Resource.Id.tablayout);
 
