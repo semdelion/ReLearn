@@ -32,8 +32,8 @@ namespace ReLearn.Droid.Views
             UserDialogs.Init(this);
             DrawerLayout = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
             this.SupportFragmentManager.AddOnBackStackChangedListener(this);
-            
-            //var fragmentManager = SupportFragmentManager.BeginTransaction();
+            ViewModel?.ShowMenu();
+            var fragmentManager = SupportFragmentManager.BeginTransaction();
             //fragmentManager.Replace(Resource.Id.content_frame, );
         }
 
@@ -78,7 +78,7 @@ namespace ReLearn.Droid.Views
 
         public void OnBackStackChanged()
         {
-           // SupportFragmentManager.RemoveOnBackStackChangedListener();
+          // SupportFragmentManager.RemoveOnBackStackChangedListener();
         }
 
 

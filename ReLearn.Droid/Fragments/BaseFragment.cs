@@ -36,8 +36,8 @@ namespace ReLearn.Droid.Fragments
         public override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+            //(Activity as MainActivity)?.SupportFragmentManager.BeginTransaction().Add(Resource.Id.content_frame, this);
             HasOptionsMenu = true;
-         
         }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -87,11 +87,6 @@ namespace ReLearn.Droid.Fragments
         {
             get { return (TViewModel)base.ViewModel; }
             set { base.ViewModel = value; }
-        }
-
-        internal void OnAttach(Activity activity)
-        {
-            throw new NotImplementedException();
         }
     }
 }
