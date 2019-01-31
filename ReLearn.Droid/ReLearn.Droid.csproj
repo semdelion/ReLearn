@@ -69,6 +69,8 @@
     <Compile Include="Fragments\MenuFragment.cs" />
     <Compile Include="Fragments\AboutUsFragment.cs" />
     <Compile Include="Fragments\StatisticsFragment.cs" />
+    <Compile Include="Fragments\ViewDictionaryImagesFragment.cs" />
+    <Compile Include="Fragments\ViewDictionaryLanguagesFragment.cs" />
     <Compile Include="GetString.cs" />
     <Compile Include="BitmapHandler.cs" />
     <Compile Include="ButtonNext.cs" />
@@ -88,12 +90,10 @@
     <Compile Include="Views\Images\BlitzPollActivity.cs" />
     <Compile Include="Views\Images\LearnActivity.cs" />
     <Compile Include="Views\Images\RepeatActivity.cs" />
-    <Compile Include="Views\Images\ViewDictionaryActivity.cs" />
     <Compile Include="Views\Languages\BlitzPollActivity.cs" />
     <Compile Include="Views\Languages\DictionaryReplenishmentActivity.cs" />
     <Compile Include="Views\Languages\LearnActivity.cs" />
     <Compile Include="Views\Languages\RepeatActivity.cs" />
-    <Compile Include="Views\Languages\ViewDictionaryActivity.cs" />
     <Compile Include="Views\MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -105,7 +105,6 @@
     <Compile Include="Views\SelectDictionary\SelectDictionaryPagerAdapter.cs" />
     <Compile Include="Views\SelectDictionary\TabImageFragment.cs" />
     <Compile Include="Views\SelectDictionary\TabLanguageFragment.cs" />
-    <Compile Include="Views\Statistics\Statistics.cs" />
     <Compile Include="Views\Statistics\StatisticsPagerAdapter.cs" />
     <Compile Include="Views\Statistics\TabGeneralFragment.cs" />
     <Compile Include="Views\Statistics\TabMainFragment.cs" />

@@ -13,6 +13,7 @@ using Android.Widget;
 using MvvmCross.Droid.Support.V7.AppCompat;
 using MvvmCross.Platforms.Android.Presenters.Attributes;
 using ReLearn.Core.ViewModels;
+using ReLearn.Core.ViewModels.MainMenu;
 using ReLearn.Droid.Fragments;
 using ReLearn.Droid.Services;
 
@@ -29,23 +30,11 @@ namespace ReLearn.Droid.Views
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.main_activity);
             UserDialogs.Init(this);
-            //var toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbarMain);
-            // SetSupportActionBar(toolbar);
             DrawerLayout = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
             this.SupportFragmentManager.AddOnBackStackChangedListener(this);
-           // SupportFragmentManager.BeginTransaction().Replace(Resource.Id.content_frame, new HomeFragment(), "Home").Commit();
             
-
-
-            //this.SupportFragmentManager.FindFragmentById(Resource.Layout.main_content);
-            ViewModel?.ShowMenu();
-            //DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
-            //ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, Resource.String.navigation_drawer_open, Resource.String.navigation_drawer_close);
-            //drawer.AddDrawerListener(toggle);
-            //toggle.SyncState();
-
-            //NavigationView navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
-            //navigationView.SetNavigationItemSelectedListener(this);
+            //var fragmentManager = SupportFragmentManager.BeginTransaction();
+            //fragmentManager.Replace(Resource.Id.content_frame, );
         }
 
 
@@ -57,29 +46,6 @@ namespace ReLearn.Droid.Views
             StartActivity(browserIntent);
         }
 
-        //[Java.Interop.Export("Button_Send_Click")]
-        //public void Button_Send_Click(View v)
-        //{
-        //    if (ViewModel.Message == "" || ViewModel.Message == null)
-        //        Toast.MakeText(this, GetString(Resource.String.Enter_word), ToastLength.Short).Show();//TODO android Intent;
-        //    else
-        //    {
-        //        var email = new Intent(Intent.ActionSend);
-        //        email.PutExtra(Intent.ExtraEmail, new string[] { "SemdelionTeam@gmail.com" });
-        //        email.PutExtra(Intent.ExtraSubject, "Hello, SemdelionTeam!");
-        //        email.PutExtra(Intent.ExtraText, Fragment.Message);
-        //        email.SetType("message/rfc822");
-        //        try
-        //        {
-        //            StartActivity(email);
-        //            ViewModel.Message = "";
-        //        }
-        //        catch
-        //        {
-        //            //Toast.MakeText(this, "There are no email applications installed.", ToastLength.Long).Show();
-        //        }
-        //    }
-        //}
 
         public override void OnBackPressed()
         {

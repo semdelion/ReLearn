@@ -21,8 +21,7 @@ namespace ReLearn.Droid.Fragments
         public void Button_Send_Click(View v)
         {
             if (ViewModel.Message == "" || ViewModel.Message == null)
-                return;
-            //Toast.MakeText(this, GetString(Resource.String.Enter_word), ToastLength.Short).Show();//TODO android Intent;
+                Toast.MakeText(ParentActivity, GetString(Resource.String.Enter_word), ToastLength.Short).Show();//TODO android Intent;
             else
             {
                 var email = new Intent(Intent.ActionSend);
@@ -37,7 +36,7 @@ namespace ReLearn.Droid.Fragments
                 }
                 catch
                 {
-                    // Toast.MakeText(this, "There are no email applications installed.", ToastLength.Long).Show();
+                    Toast.MakeText(ParentActivity, "There are no email applications installed.", ToastLength.Long).Show();
                 }
             }
         }
@@ -48,23 +47,3 @@ namespace ReLearn.Droid.Fragments
         }
     }
 }
-
-//[Activity(Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
-//public class FeedbackActivity : MvxAppCompatActivity<FeedbackViewModel>
-//{
-//   
-//    protected override void OnCreate(Bundle savedInstanceState)
-//    {
-//        base.OnCreate(savedInstanceState);
-//        SetContentView(Resource.Layout.menu_feedback_activity);
-//        var toolbarMain = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar_Feedback);
-//        SetSupportActionBar(toolbarMain);
-//        SupportActionBar.SetDisplayHomeAsUpEnabled(true);
-//    }
-
-//    public override bool OnOptionsItemSelected(IMenuItem item)
-//    {
-//        Finish();
-//        return base.OnOptionsItemSelected(item);
-//    }
-//}
