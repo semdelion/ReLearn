@@ -2,15 +2,12 @@
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-using MvvmCross.Droid.Support.V7.AppCompat;
-using MvvmCross.Platforms.Android.Binding.BindingContext;
 using MvvmCross.Platforms.Android.Presenters.Attributes;
 using Plugin.Settings;
 using ReLearn.API;
 using ReLearn.API.Database;
 using ReLearn.Core.ViewModels;
 using ReLearn.Core.ViewModels.Images;
-using ReLearn.Droid.Services;
 using ReLearn.Droid.Views.Menu;
 using System;
 using System.Collections.Generic;
