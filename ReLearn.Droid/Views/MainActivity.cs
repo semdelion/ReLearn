@@ -32,14 +32,6 @@ namespace ReLearn.Droid.Views
             ////fragmentManager.Replace(Resource.Id.content_frame, );
         }
 
-        [Java.Interop.Export("Button_Support_Project_Click")] //TODO 
-        public void Button_Support_Project_Click(View v)
-        {
-            Intent browserIntent = new Intent(Intent.ActionView);
-            browserIntent.SetData(Android.Net.Uri.Parse("http://www.donationalerts.ru/r/semdelionteam"));
-            StartActivity(browserIntent);
-        }
-
         public override void OnBackPressed()
         {
             if (DrawerLayout != null && DrawerLayout.IsDrawerOpen(GravityCompat.Start))

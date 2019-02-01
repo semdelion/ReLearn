@@ -40,7 +40,7 @@
 			android:textSize			="16dp"
 			android:defaultFocusHighlightEnabled="true"/>
 		<Button
-			android:onClick				="Button_Support_Project_Click"
+			local:MvxBind				="Click SupportProjectCommand"
 			android:text				="@string/Support_project"
 			android:background			="@drawable/button_style_standard"
 			android:textColor			="@color/TextWhite"
