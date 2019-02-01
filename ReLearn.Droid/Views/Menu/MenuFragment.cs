@@ -1,21 +1,17 @@
-﻿using System;
-using System.Threading.Tasks;
-using Android.OS;
+﻿using Android.OS;
 using Android.Runtime;
 using Android.Support.Design.Widget;
 using Android.Views;
-using MvvmCross.Platforms.Android.Presenters.Attributes;
-using Android;
-using MvvmCross.Platforms.Android.Binding.BindingContext;
 using MvvmCross.Droid.Support.V4;
+using MvvmCross.Platforms.Android.Binding.BindingContext;
+using MvvmCross.Platforms.Android.Presenters.Attributes;
 using ReLearn.Core.ViewModels;
 using ReLearn.Core.ViewModels.MainMenu;
-using ReLearn.Droid.Views;
 
-namespace ReLearn.Droid.Fragments
+namespace ReLearn.Droid.Views.Menu
 {
     [MvxFragmentPresentation(typeof(MainViewModel), Resource.Id.navigation_frame)]
-    [Register("relearn.droid.fragments.MenuFragment")]
+    [Register("relearn.droid.views.menu.MenuFragment")]
     public class MenuFragment : MvxFragment<MenuViewModel>, NavigationView.IOnNavigationItemSelectedListener
     {
         private NavigationView navigationView;

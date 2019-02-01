@@ -1,5 +1,4 @@
 ﻿using Android.App;
-using Android.Graphics;
 using Android.OS;
 using Android.Support.Animation;
 using Android.Support.Design.Widget;

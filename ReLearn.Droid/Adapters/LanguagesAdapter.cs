@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
-using Android.App;
+﻿using Android.App;
 using Android.Views;
 using Android.Widget;
 using ReLearn.API.Database;
 using ReLearn.Droid.Adapters;
+using System.Collections.Generic;
 
 namespace ReLearn.Droid.Resources
 {

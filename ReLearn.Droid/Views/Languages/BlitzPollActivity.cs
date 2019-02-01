@@ -6,12 +6,12 @@ using Android.Util;
 using Android.Views;
 using Android.Widget;
 using MvvmCross.Droid.Support.V7.AppCompat;
+using ReLearn.API;
 using ReLearn.API.Database;
 using ReLearn.Core.ViewModels.Languages;
 using System;
 using System.Collections.Generic;
 using System.Timers;
-using ReLearn.API;
 
 namespace ReLearn.Droid.Languages
 {

@@ -1,11 +1,8 @@
-﻿using System;
-using System.Globalization;
-using Acr.UserDialogs;
+﻿using Acr.UserDialogs;
 using MvvmCross;
 using MvvmCross.Localization;
 using MvvmCross.Plugin.ResxLocalization;
 using MvvmCross.ViewModels;
-using ReLearn.API;
 using ReLearn.API.Database;
 using ReLearn.Core.Localization;
 using ReLearn.Core.ViewModels;

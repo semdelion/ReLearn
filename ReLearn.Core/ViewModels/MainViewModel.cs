@@ -1,11 +1,7 @@
-﻿using MvvmCross.Commands;
-using MvvmCross.Localization;
+﻿using MvvmCross.Localization;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
-using ReLearn.API;
-using ReLearn.API.Database;
 using ReLearn.Core.ViewModels.MainMenu;
-using System.Threading.Tasks;
 
 namespace ReLearn.Core.ViewModels
 {

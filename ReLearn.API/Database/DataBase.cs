@@ -1,7 +1,7 @@
-﻿using System;
-using System.IO;
+﻿using Plugin.Settings;
 using SQLite;
-using Plugin.Settings;
+using System;
+using System.IO;
 
 namespace ReLearn.API.Database
 {

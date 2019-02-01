@@ -1,5 +1,5 @@
-﻿using System;
-using Android.Graphics;
+﻿using Android.Graphics;
+using System;
 using static Android.Graphics.Shader;
 
 namespace ReLearn.Droid

@@ -1,6 +1,6 @@
-﻿using System;
+﻿using Plugin.Settings;
+using System;
 using System.Threading;
-using Plugin.Settings;
 
 namespace ReLearn.API
 {

@@ -1,32 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
-using Android.Content;
-using Android.Graphics;
+﻿using Android.Graphics;
 using Android.OS;
 using Android.Runtime;
 using Android.Support.Design.Widget;
-using Android.Support.V4.App;
 using Android.Support.V4.View;
 using Android.Views;
-using Android.Widget;
 using MvvmCross.Droid.Support.V7.AppCompat;
 using MvvmCross.Platforms.Android.Binding.BindingContext;
 using MvvmCross.Platforms.Android.Presenters.Attributes;
 using ReLearn.API.Database;
 using ReLearn.Core.ViewModels;
-using ReLearn.Core.ViewModels.MainMenu;
 using ReLearn.Droid.Services;
-using ReLearn.Droid.Views;
+using ReLearn.Droid.Views.Menu;
 using ReLearn.Droid.Views.Statistics;
+using System.Collections.Generic;
 
-namespace ReLearn.Droid.Fragments
+namespace ReLearn.Droid.Views.Fragments
 {
     [MvxFragmentPresentation(typeof(MainViewModel), Resource.Id.content_frame, true)]
-    [Register("relearn.droid.fragments.StatisticsFragment")]
+    [Register("relearn.droid.views.statistics.StatisticsFragment")]
     public class StatisticsFragment : BaseFragment<StatisticViewModel>
     {
         protected override int FragmentId => Resource.Layout.statistics_activity;

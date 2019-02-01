@@ -1,9 +1,9 @@
-﻿using System;
-using Android.App;
+﻿using Android.App;
+using Android.Widget;
 using MvvmCross;
 using MvvmCross.Platforms.Android;
 using ReLearn.Core;
-using Android.Widget;
+using System;
 
 namespace ReLearn.Droid
 {

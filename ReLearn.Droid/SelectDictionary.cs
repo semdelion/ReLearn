@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using Android.Graphics;
+﻿using Android.Graphics;
 using Android.Views;
 using Android.Widget;
-using ReLearn.API.Database;
 using ReLearn.API;
+using ReLearn.API.Database;
+using System;
+using System.Collections.Generic;
 
 namespace ReLearn.Droid
 {

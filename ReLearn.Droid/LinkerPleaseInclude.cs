@@ -1,7 +1,6 @@
 ﻿using Android.App;
 using Android.Views;
 using Android.Widget;
-using MvvmCross.Binding.BindingContext;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 using System;

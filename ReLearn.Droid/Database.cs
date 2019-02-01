@@ -1,11 +1,9 @@
-﻿using System;
-using System.IO;
-using Android.App;
+﻿using Android.App;
 using Android.Content;
-using SQLite;
-using Plugin.Settings;
-using ReLearn.API.Database;
 using ReLearn.API;
+using ReLearn.API.Database;
+using System;
+using System.IO;
 
 namespace ReLearn.Droid
 {

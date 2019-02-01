@@ -1,12 +1,4 @@
-﻿using Android.Graphics;
-using Android.Util;
-using Android.Widget;
-using ReLearn.API;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace ReLearn.Droid
+﻿namespace ReLearn.Droid
 {
 
     static class GetString

@@ -1,28 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using Android.App;
-using Android.OS;
+﻿using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-using Android.Support.V7.App;
-using Plugin.Settings;
-using System.Linq;
 using MvvmCross.Droid.Support.V7.AppCompat;
-using ReLearn.Core.ViewModels.Images;
-using ReLearn.API.Database;
-using ReLearn.API;
-using MvvmCross.Platforms.Android.Presenters.Attributes;
-using ReLearn.Core.ViewModels;
 using MvvmCross.Platforms.Android.Binding.BindingContext;
+using MvvmCross.Platforms.Android.Presenters.Attributes;
+using Plugin.Settings;
+using ReLearn.API;
+using ReLearn.API.Database;
+using ReLearn.Core.ViewModels;
+using ReLearn.Core.ViewModels.Images;
 using ReLearn.Droid.Services;
-using ReLearn.Droid.Views;
+using ReLearn.Droid.Views.Menu;
+using System;
+using System.Collections.Generic;
 
-namespace ReLearn.Droid.Fragments
+namespace ReLearn.Droid.Views.Images
 {
     [MvxFragmentPresentation(typeof(MainViewModel), Resource.Id.content_frame, true)]
-    [Register("relearn.droid.fragments.ViewDictionaryImagesFragment")]
-    public class ViewDictionaryImagesFragment : BaseFragment<ViewDictionaryViewModel>
+    [Register("relearn.droid.views.images.ViewDictionaryFragment")]
+    public class ViewDictionaryFragment : BaseFragment<ViewDictionaryViewModel>
     {
         protected override int FragmentId => Resource.Layout.languages_view_dictionary_activity;
 

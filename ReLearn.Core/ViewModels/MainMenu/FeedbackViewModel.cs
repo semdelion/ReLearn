@@ -1,9 +1,8 @@
-﻿using MvvmCross.Navigation;
-using MvvmCross.ViewModels;
+﻿using MvvmCross.ViewModels;
 
-namespace ReLearn.Core.ViewModels.Languages
+namespace ReLearn.Core.ViewModels.MainMenu
 {
-    public class ViewDictionaryViewModel : MvxViewModel
+    public class FeedbackViewModel : MvxViewModel
     {
         #region Fields
         #endregion
@@ -12,17 +11,18 @@ namespace ReLearn.Core.ViewModels.Languages
         #endregion
 
         #region Properties
+        private string _message;
+        public string Message
+        {
+            get { return _message; }
+            set { SetProperty(ref _message, value); }
+        }
         #endregion
 
         #region Services
-        protected IMvxNavigationService NavigationService { get; }
         #endregion
 
         #region Constructors
-        public ViewDictionaryViewModel(IMvxNavigationService navigationService)
-        {
-            NavigationService = navigationService;
-        }
         #endregion
 
         #region Private

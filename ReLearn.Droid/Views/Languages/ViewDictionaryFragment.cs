@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
-using Android.Content;
-using Android.OS;
+﻿using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
@@ -19,13 +12,14 @@ using ReLearn.Core.ViewModels;
 using ReLearn.Core.ViewModels.Languages;
 using ReLearn.Droid.Resources;
 using ReLearn.Droid.Services;
-using ReLearn.Droid.Views;
+using ReLearn.Droid.Views.Menu;
+using System.Collections.Generic;
 
-namespace ReLearn.Droid.Fragments
+namespace ReLearn.Droid.Views.Languages
 {
     [MvxFragmentPresentation(typeof(MainViewModel), Resource.Id.content_frame, true)]
-    [Register("relearn.droid.fragments.ViewDictionaryLanguagesFragment")]
-    public class ViewDictionaryLanguagesFragment : BaseFragment<ViewDictionaryViewModel>
+    [Register("relearn.droid.views.languages.ViewDictionaryFragment")]
+    public class ViewDictionaryFragment : BaseFragment<ViewDictionaryViewModel>
     {
         protected override int FragmentId => Resource.Layout.languages_view_dictionary_activity;
 

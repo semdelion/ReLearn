@@ -2,18 +2,13 @@
 using Android.OS;
 using Android.Support.V7.Widget;
 using Android.Views;
-using MvvmCross.ViewModels;
-using MvvmCross.Platforms.Android.Binding.BindingContext;
-using Android;
-using MvvmCross.Droid.Support.V7.AppCompat;
-
 using MvvmCross.Droid.Support.V4;
-using ReLearn.Droid.Views;
+using MvvmCross.Droid.Support.V7.AppCompat;
+using MvvmCross.Platforms.Android.Binding.BindingContext;
+using MvvmCross.ViewModels;
 using ReLearn.Droid.Services;
-using Android.App;
-using System;
 
-namespace ReLearn.Droid.Fragments
+namespace ReLearn.Droid.Views.Menu
 {
     public abstract class BaseFragment : MvxFragment
     {

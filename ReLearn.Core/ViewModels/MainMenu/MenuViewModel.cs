@@ -2,9 +2,6 @@
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 using ReLearn.API.Database;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace ReLearn.Core.ViewModels.MainMenu

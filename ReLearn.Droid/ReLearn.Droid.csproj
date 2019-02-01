@@ -61,16 +61,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Adapters\BackgroundConstructor.cs" />
-    <Compile Include="Fragments\AddFragment.cs" />
-    <Compile Include="Fragments\BaseFragment.cs" />
-    <Compile Include="Fragments\FeedbackFragment.cs" />
-    <Compile Include="Fragments\SettingsFragment.cs" />
-    <Compile Include="Fragments\HomeFragment.cs" />
-    <Compile Include="Fragments\MenuFragment.cs" />
-    <Compile Include="Fragments\AboutUsFragment.cs" />
-    <Compile Include="Fragments\StatisticsFragment.cs" />
-    <Compile Include="Fragments\ViewDictionaryImagesFragment.cs" />
-    <Compile Include="Fragments\ViewDictionaryLanguagesFragment.cs" />
+    <Compile Include="Views\Menu\AddFragment.cs" />
+    <Compile Include="Views\Menu\BaseFragment.cs" />
+    <Compile Include="Views\Menu\FeedbackFragment.cs" />
+    <Compile Include="Views\Menu\SettingsFragment.cs" />
+    <Compile Include="Views\Menu\HomeFragment.cs" />
+    <Compile Include="Views\Menu\MenuFragment.cs" />
+    <Compile Include="Views\Menu\AboutUsFragment.cs" />
+    <Compile Include="Views\Statistics\StatisticsFragment.cs" />
+    <Compile Include="Views\Images\ViewDictionaryFragment.cs" />
+    <Compile Include="Views\Languages\ViewDictionaryFragment.cs" />
     <Compile Include="GetString.cs" />
     <Compile Include="BitmapHandler.cs" />
     <Compile Include="ButtonNext.cs" />

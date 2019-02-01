@@ -1,7 +1,6 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
-using System.IO;
-using SQLite;
 
 namespace ReLearn.API.Database
 {

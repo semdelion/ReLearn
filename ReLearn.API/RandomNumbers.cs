@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace ReLearn.API
 {
@@ -10,7 +9,7 @@ namespace ReLearn.API
         public static void RandomFourNumbers(int NotI, int count, out List<int> random_numbers)
         {
             const int four = 4;
-            System.Random rand = new System.Random(unchecked((int)(DateTime.Now.Ticks)));
+            Random rand = new Random(unchecked((int)(DateTime.Now.Ticks)));
             random_numbers = new List<int> { NotI, 0, 0, 0 };
             if (count > four)
             {

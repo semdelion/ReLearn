@@ -1,14 +1,13 @@
-﻿using Android.Content;
-using Android.Runtime;
+﻿using Android.Runtime;
 using Android.Views;
 using MvvmCross.Platforms.Android.Presenters.Attributes;
 using ReLearn.Core.ViewModels;
 using ReLearn.Core.ViewModels.MainMenu;
 
-namespace ReLearn.Droid.Fragments
+namespace ReLearn.Droid.Views.Menu
 {
     [MvxFragmentPresentation(typeof(MainViewModel), Resource.Id.content_frame, true)]
-    [Register("relearn.droid.fragments.AboutUslFragment")]
+    [Register("relearn.droid.views.menu.AboutUslFragment")]
     public class AboutUslFragment : BaseFragment<AboutUsViewModel>
     {
         protected override int FragmentId => Resource.Layout.fragment_about_us;

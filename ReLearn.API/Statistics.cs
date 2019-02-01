@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using Plugin.Settings;
+﻿using Plugin.Settings;
 using ReLearn.API.Database;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace ReLearn.API
 {

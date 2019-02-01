@@ -1,5 +1,4 @@
 ﻿using Android.App;
-using Android.Content;
 using Android.Graphics;
 using Android.Graphics.Drawables;
 using Android.OS;
@@ -7,14 +6,13 @@ using Android.Support.Animation;
 using Android.Util;
 using Android.Views;
 using Android.Widget;
-using Calligraphy;
 using MvvmCross.Droid.Support.V7.AppCompat;
+using ReLearn.API;
 using ReLearn.API.Database;
 using ReLearn.Core.ViewModels.Images;
 using System;
 using System.Collections.Generic;
 using System.Timers;
-using ReLearn.API;
 
 namespace ReLearn.Droid.Images
 {

@@ -1,10 +1,4 @@
-﻿using System;
-using Android.Views;
-using Android.Widget;
-using Android.Support.V4.App;
-using Android.Runtime;
-using MvvmCross.Droid.Support.V7.AppCompat;
-using Java.Lang;
+﻿using Android.Support.V4.App;
 
 
 namespace ReLearn.Droid.Views.Statistics
