@@ -66,7 +66,6 @@ namespace ReLearn.Droid.Views.Menu
                 case Resource.Id.about_us:
                     ViewModel.ToAboutUsViewModel.Execute();
                     break;
-              
             }
             return true;
         }

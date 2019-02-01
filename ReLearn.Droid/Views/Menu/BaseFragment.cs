@@ -18,20 +18,13 @@ namespace ReLearn.Droid.Views.Menu
 
         protected MvxActionBarDrawerToggle _drawerToggle;
 
-		public MvxAppCompatActivity ParentActivity { 
-			get {
-				return (MvxAppCompatActivity)Activity;
-			}
-		}
+		public MvxAppCompatActivity ParentActivity { get => (MvxAppCompatActivity)Activity; }
 
-        protected BaseFragment()
-        {
-            RetainInstance = true;
-        }
+        protected BaseFragment() => RetainInstance = true;
+        
         public override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            //(Activity as MainActivity)?.SupportFragmentManager.BeginTransaction().Add(Resource.Id.content_frame, this);
             HasOptionsMenu = true;
         }
 

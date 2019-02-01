@@ -19,7 +19,7 @@ namespace ReLearn.Droid.Views.SelectDictionary
         public static void SelectDictionaryClick(object sender, EventArgs e)
         {
             ImageView ImgV = sender as ImageView;
-            SelectDictionary.Dictionaries.Selected(ImgV.Tag.ToString(), DataBase.TableName.ToString());
+            Dictionaries.Selected(ImgV.Tag.ToString(), DataBase.TableName.ToString());
             Enum.TryParse(ImgV.Tag.ToString(), out TableNames name);
             DataBase.TableName = name;
             var Animation = new SpringAnimation(ImgV, DynamicAnimation.Rotation, 0);

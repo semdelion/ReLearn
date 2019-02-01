@@ -13,10 +13,5 @@ namespace ReLearn.Droid.Views.Menu
         protected override int FragmentId => Resource.Layout.fragment_about_us;
 
         protected override int Toolbar => Resource.Id.toolbar_About_Us;
-
-        public override bool OnOptionsItemSelected(IMenuItem item)
-        {
-            return base.OnOptionsItemSelected(item);
-        }
     }
 }

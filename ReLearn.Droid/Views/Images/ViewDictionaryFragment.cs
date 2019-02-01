@@ -35,26 +35,7 @@ namespace ReLearn.Droid.Views.Images
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            base.OnCreateView(inflater, container, savedInstanceState);
-
-            var view = this.BindingInflate(FragmentId, null);
-
-            _toolbar = view.FindViewById<Android.Support.V7.Widget.Toolbar>(Toolbar);
-            if (_toolbar != null)
-            {
-                ParentActivity.SetSupportActionBar(_toolbar);
-                ParentActivity.SupportActionBar.SetDisplayHomeAsUpEnabled(true);
-
-                _drawerToggle = new MvxActionBarDrawerToggle(
-                    Activity,                               // host Activity
-                    (ParentActivity as INavigationActivity).DrawerLayout,  // DrawerLayout object
-                    _toolbar,                               // nav drawer icon to replace 'Up' caret
-                    Resource.String.navigation_drawer_open,
-                    Resource.String.navigation_drawer_close
-                );
-                _drawerToggle.DrawerOpened += (object sender, ActionBarDrawerEventArgs e) => (Activity as MainActivity)?.HideSoftKeyboard();
-                (ParentActivity as INavigationActivity).DrawerLayout.AddDrawerListener(_drawerToggle);
-            }
+            var view = base.OnCreateView(inflater, container, savedInstanceState);
             DictionaryImages = view.FindViewById<ListView>(Resource.Id.listView_dictionary);
             SortNamesImages();
             DictionaryImages.Adapter = new CustomAdapterImage(ParentActivity, HideStudied ? dataBase.FindAll(obj => obj.NumberLearn != 0) : dataBase);
