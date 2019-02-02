@@ -6538,8 +6538,8 @@ namespace ReLearn.Droid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f0a010d
-			public const int ABC = 2131362061;
+			// aapt resource value: 0x7f0a010f
+			public const int ABC = 2131362063;
 			
 			// aapt resource value: 0x7f0a0035
 			public const int ALT = 2131361845;
@@ -6562,8 +6562,8 @@ namespace ReLearn.Droid
 			// aapt resource value: 0x7f0a0037
 			public const int FUNCTION = 2131361847;
 			
-			// aapt resource value: 0x7f0a010e
-			public const int HideStudied = 2131362062;
+			// aapt resource value: 0x7f0a0110
+			public const int HideStudied = 2131362064;
 			
 			// aapt resource value: 0x7f0a00de
 			public const int ImageSelectDictionary = 2131362014;
@@ -6574,8 +6574,8 @@ namespace ReLearn.Droid
 			// aapt resource value: 0x7f0a0038
 			public const int META = 2131361848;
 			
-			// aapt resource value: 0x7f0a010f
-			public const int MenuSelectDictionary = 2131362063;
+			// aapt resource value: 0x7f0a0111
+			public const int MenuSelectDictionary = 2131362065;
 			
 			// aapt resource value: 0x7f0a001d
 			public const int MvvmCrossTagId = 2131361821;
@@ -6601,8 +6601,8 @@ namespace ReLearn.Droid
 			// aapt resource value: 0x7f0a003a
 			public const int SYM = 2131361850;
 			
-			// aapt resource value: 0x7f0a0106
-			public const int about_us = 2131362054;
+			// aapt resource value: 0x7f0a0108
+			public const int about_us = 2131362056;
 			
 			// aapt resource value: 0x7f0a00ed
 			public const int action0 = 2131362029;
@@ -6655,8 +6655,8 @@ namespace ReLearn.Droid
 			// aapt resource value: 0x7f0a005f
 			public const int action_mode_close_button = 2131361887;
 			
-			// aapt resource value: 0x7f0a0109
-			public const int action_search = 2131362057;
+			// aapt resource value: 0x7f0a010b
+			public const int action_search = 2131362059;
 			
 			// aapt resource value: 0x7f0a00ec
 			public const int action_text = 2131362028;
@@ -6670,8 +6670,8 @@ namespace ReLearn.Droid
 			// aapt resource value: 0x7f0a002a
 			public const int add = 2131361834;
 			
-			// aapt resource value: 0x7f0a0103
-			public const int add_word = 2131362051;
+			// aapt resource value: 0x7f0a0104
+			public const int add_word = 2131362052;
 			
 			// aapt resource value: 0x7f0a0073
 			public const int alertTitle = 2131361907;
@@ -6817,8 +6817,8 @@ namespace ReLearn.Droid
 			// aapt resource value: 0x7f0a007d
 			public const int decor_content_parent = 2131361917;
 			
-			// aapt resource value: 0x7f0a010c
-			public const int decrease = 2131362060;
+			// aapt resource value: 0x7f0a010e
+			public const int decrease = 2131362062;
 			
 			// aapt resource value: 0x7f0a0063
 			public const int default_activity_button = 2131361891;
@@ -6838,11 +6838,14 @@ namespace ReLearn.Droid
 			// aapt resource value: 0x7f0a00c9
 			public const int design_navigation_view = 2131361993;
 			
-			// aapt resource value: 0x7f0a0108
-			public const int dictionary_replenishment = 2131362056;
+			// aapt resource value: 0x7f0a0101
+			public const int dictionaries = 2131362049;
 			
-			// aapt resource value: 0x7f0a0107
-			public const int dictionary_replenishment_instruction = 2131362055;
+			// aapt resource value: 0x7f0a010a
+			public const int dictionary_replenishment = 2131362058;
+			
+			// aapt resource value: 0x7f0a0109
+			public const int dictionary_replenishment_instruction = 2131362057;
 			
 			// aapt resource value: 0x7f0a0023
 			public const int disableHome = 2131361827;
@@ -6874,8 +6877,8 @@ namespace ReLearn.Droid
 			// aapt resource value: 0x7f0a0075
 			public const int expanded_menu = 2131361909;
 			
-			// aapt resource value: 0x7f0a0105
-			public const int feedback = 2131362053;
+			// aapt resource value: 0x7f0a0107
+			public const int feedback = 2131362055;
 			
 			// aapt resource value: 0x7f0a0053
 			public const int fill = 2131361875;
@@ -6925,8 +6928,8 @@ namespace ReLearn.Droid
 			// aapt resource value: 0x7f0a00c0
 			public const int imgCustomToast = 2131361984;
 			
-			// aapt resource value: 0x7f0a010b
-			public const int increase = 2131362059;
+			// aapt resource value: 0x7f0a010d
+			public const int increase = 2131362061;
 			
 			// aapt resource value: 0x7f0a00f7
 			public const int info = 2131362039;
@@ -6985,8 +6988,8 @@ namespace ReLearn.Droid
 			// aapt resource value: 0x7f0a00f0
 			public const int media_actions = 2131362032;
 			
-			// aapt resource value: 0x7f0a010a
-			public const int menuDelSort = 2131362058;
+			// aapt resource value: 0x7f0a010c
+			public const int menuDelSort = 2131362060;
 			
 			// aapt resource value: 0x7f0a00fd
 			public const int message = 2131362045;
@@ -6999,6 +7002,9 @@ namespace ReLearn.Droid
 			
 			// aapt resource value: 0x7f0a002b
 			public const int multiply = 2131361835;
+			
+			// aapt resource value: 0x7f0a0105
+			public const int nav_footer = 2131362053;
 			
 			// aapt resource value: 0x7f0a00d7
 			public const int nav_view = 2131362007;
@@ -7129,8 +7135,8 @@ namespace ReLearn.Droid
 			// aapt resource value: 0x7f0a008d
 			public const int select_dialog_listview = 2131361933;
 			
-			// aapt resource value: 0x7f0a0104
-			public const int settings_menu = 2131362052;
+			// aapt resource value: 0x7f0a0106
+			public const int settings_menu = 2131362054;
 			
 			// aapt resource value: 0x7f0a0077
 			public const int shortcut = 2131361911;
@@ -7177,8 +7183,8 @@ namespace ReLearn.Droid
 			// aapt resource value: 0x7f0a004e
 			public const int start = 2131361870;
 			
-			// aapt resource value: 0x7f0a0101
-			public const int statistics = 2131362049;
+			// aapt resource value: 0x7f0a0102
+			public const int statistics = 2131362050;
 			
 			// aapt resource value: 0x7f0a00ef
 			public const int status_bar_latest_event_content = 2131362031;
@@ -7339,8 +7345,8 @@ namespace ReLearn.Droid
 			// aapt resource value: 0x7f0a0029
 			public const int useLogo = 2131361833;
 			
-			// aapt resource value: 0x7f0a0102
-			public const int view_dictionary = 2131362050;
+			// aapt resource value: 0x7f0a0103
+			public const int view_dictionary = 2131362051;
 			
 			// aapt resource value: 0x7f0a0016
 			public const int view_offset_helper = 2131361814;
@@ -7731,13 +7737,13 @@ namespace ReLearn.Droid
 			public const int arrow = 2130903041;
 			
 			// aapt resource value: 0x7f030002
-			public const int dictionary = 2130903042;
+			public const int ic_about_us = 2130903042;
 			
 			// aapt resource value: 0x7f030003
-			public const int ic_about_us = 2130903043;
+			public const int ic_add_words_to_dictionary = 2130903043;
 			
 			// aapt resource value: 0x7f030004
-			public const int ic_add_words_to_dictionary = 2130903044;
+			public const int ic_dictionary = 2130903044;
 			
 			// aapt resource value: 0x7f030005
 			public const int ic_feedback = 2130903045;

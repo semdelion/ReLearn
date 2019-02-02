@@ -18,15 +18,15 @@ namespace ReLearn.Droid.Views.SelectDictionary
             {
                 LayoutParameters = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, LinearLayout.LayoutParams.WrapContent)
             };
-            SelectDictionary.Dictionaries.DictionariesBitmap.Add(SelectDictionary.Dictionaries.CreateBitmapWithStats(BitmapFactory.DecodeResource(Resources, ImageId), DB, lightColor, darkColor));//////fail color
+            SelectDictionaryFragment.Dictionaries.DictionariesBitmap.Add(SelectDictionaryFragment.Dictionaries.CreateBitmapWithStats(BitmapFactory.DecodeResource(Resources, ImageId), DB, lightColor, darkColor));//////fail color
             ImageView ImageDictionary = new ImageView(view.Context) { Tag = NameDictionary.ToString() };
             ImageDictionary.LayoutParameters = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WrapContent, LinearLayout.LayoutParams.WrapContent)
             {
                 Gravity = flag
             };
             ImageDictionary.SetPadding((int)(5 * width), 0, (int)(5 * width), 0);
-            ImageDictionary.SetImageBitmap(SelectDictionary.Dictionaries.DictionariesBitmap[SelectDictionary.Dictionaries.DictionariesBitmap.Count - 1]);
-            ImageDictionary.Click += SelectDictionary.SelectDictionaryClick;
+            ImageDictionary.SetImageBitmap(SelectDictionaryFragment.Dictionaries.DictionariesBitmap[SelectDictionaryFragment.Dictionaries.DictionariesBitmap.Count - 1]);
+            ImageDictionary.Click += SelectDictionaryFragment.SelectDictionaryClick;
 
             TextView Name = new TextView(view.Context)
             {
@@ -74,7 +74,7 @@ namespace ReLearn.Droid.Views.SelectDictionary
                 };
                 view.FindViewById<LinearLayout>(Resource.Id.ImageSelectDictionary).AddView(SeparateView);
             }
-            SelectDictionary.Dictionaries.DictionariesView.Add(ImageDictionary);
+            SelectDictionaryFragment.Dictionaries.DictionariesView.Add(ImageDictionary);
 
             return view;
         }
@@ -92,7 +92,7 @@ namespace ReLearn.Droid.Views.SelectDictionary
                 $"{TableNamesImage.Films}", 
                 Resource.Drawable.FilmDictionary,
                 GravityFlags.Right, false, Colors.Orange, Colors.DarkOrange);
-            SelectDictionary.Dictionaries.Selected($"{DataBase.TableName}",$"{DataBase.TableName}");
+            SelectDictionaryFragment.Dictionaries.Selected($"{DataBase.TableName}",$"{DataBase.TableName}");
             return view; 
         }
     }

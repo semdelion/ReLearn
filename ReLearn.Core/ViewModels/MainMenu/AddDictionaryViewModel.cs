@@ -6,7 +6,7 @@ using ReLearn.API.Database;
 using ReLearn.Core.Localization;
 using System.Threading.Tasks;
 
-namespace ReLearn.Core.ViewModels.Languages
+namespace ReLearn.Core.ViewModels.MainMenu
 {
     public class AddDictionaryViewModel : MvxViewModel
     {

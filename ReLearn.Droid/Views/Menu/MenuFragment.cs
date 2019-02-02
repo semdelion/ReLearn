@@ -43,6 +43,9 @@ namespace ReLearn.Droid.Views.Menu
                 case Resource.Id.study:
                     ViewModel.ToHomeViewModel.Execute();
                     break;
+                case Resource.Id.dictionaries:
+                    ViewModel.ToSelectDictionary.Execute();
+                    break;
                 case Resource.Id.statistics:
                     ViewModel.ToStatisticViewModel.Execute();
                     break;

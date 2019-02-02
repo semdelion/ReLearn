@@ -11,6 +11,9 @@ namespace ReLearn.Core.ViewModels.MainMenu
         private IMvxAsyncCommand _toHome;
         public IMvxAsyncCommand ToHomeViewModel => _toHome ?? (_toHome = new MvxAsyncCommand(NavigateToHomeViewModel));
 
+        private IMvxAsyncCommand _toSelectDictionary;
+        public IMvxAsyncCommand ToSelectDictionary => _toSelectDictionary ?? (_toSelectDictionary = new MvxAsyncCommand(NavigateToSelectDictionary));
+
         private IMvxAsyncCommand _toStatistic;
         public IMvxAsyncCommand ToStatisticViewModel => _toStatistic ?? (_toStatistic = new MvxAsyncCommand(NavigateToStatisticViewModel));
 
@@ -37,19 +40,20 @@ namespace ReLearn.Core.ViewModels.MainMenu
             NavigateToHomeViewModel();
         }
 
-        private Task<bool> NavigateToHomeViewModel() => NavigationService.Navigate<HomeViewModel>();
-        private Task<bool> NavigateToStatisticViewModel() => NavigationService.Navigate<StatisticViewModel>();
+        private Task<bool> NavigateToHomeViewModel()        => NavigationService.Navigate<HomeViewModel>();
+        private Task<bool> NavigateToSelectDictionary()     => NavigationService.Navigate<SelectDictionaryViewModel>();
+        private Task<bool> NavigateToStatisticViewModel()   => NavigationService.Navigate<StatisticViewModel>();
         private Task<bool> NavigateToViewDictionaryViewModel()
         {
-            if (DBImages.DatabaseIsContain(DataBase.TableName.ToString()))
+            if (DBImages.DatabaseIsContain($"{DataBase.TableName}"))
                 return NavigationService.Navigate<Images.ViewDictionaryViewModel>();
             else
                 return NavigationService.Navigate<Languages.ViewDictionaryViewModel>();
         }
-        private Task<bool> NavigateToAboutUsViewModel() => NavigationService.Navigate<AboutUsViewModel>();
-      
-        private Task<bool> NavigateToAdditionViewModel() => NavigationService.Navigate<AddViewModel>();
-        private Task<bool> NavigateToFeedbackViewModel() => NavigationService.Navigate<FeedbackViewModel>();
-        private Task<bool> NavigateToSettingsViewModel() => NavigationService.Navigate<SettingsViewModel>();
+        private Task<bool> NavigateToAboutUsViewModel()     => NavigationService.Navigate<AboutUsViewModel>();
+        private Task<bool> NavigateToAdditionViewModel()    => NavigationService.Navigate<AddViewModel>();
+        private Task<bool> NavigateToFeedbackViewModel()    => NavigationService.Navigate<FeedbackViewModel>();
+        private Task<bool> NavigateToSettingsViewModel()    => NavigationService.Navigate<SettingsViewModel>();
+
     }
 }

@@ -101,7 +101,7 @@
     <Compile Include="Statistics\Graphics\GraphGeneralStatistics.cs" />
     <Compile Include="Statistics\Graphics\GraphStatistics.cs" />
     <Compile Include="Views\Achievements\Achievements.cs" />
-    <Compile Include="Views\SelectDictionary\SelectDictionary.cs" />
+    <Compile Include="Views\SelectDictionary\SelectDictionaryFragment.cs" />
     <Compile Include="Views\SelectDictionary\SelectDictionaryPagerAdapter.cs" />
     <Compile Include="Views\SelectDictionary\TabImageFragment.cs" />
     <Compile Include="Views\SelectDictionary\TabLanguageFragment.cs" />
@@ -259,7 +259,7 @@
     <AndroidResource Include="Resources\mipmap-hdpi\arrow.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-hdpi\dictionary.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_dictionary.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\mipmap-hdpi\instruction.png" />
@@ -283,7 +283,7 @@
     <AndroidResource Include="Resources\mipmap-mdpi\arrow.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-mdpi\dictionary.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\ic_dictionary.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\mipmap-mdpi\instruction.png" />
@@ -307,7 +307,7 @@
     <AndroidResource Include="Resources\mipmap-xhdpi\arrow.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xhdpi\dictionary.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\ic_dictionary.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\mipmap-xhdpi\instruction.png" />
@@ -331,7 +331,7 @@
     <AndroidResource Include="Resources\mipmap-xxhdpi\arrow.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xxhdpi\dictionary.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\ic_dictionary.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\mipmap-xxhdpi\instruction.png" />
@@ -355,7 +355,7 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\arrow.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xxxhdpi\dictionary.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_dictionary.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\mipmap-xxxhdpi\instruction.png" />

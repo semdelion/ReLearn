@@ -1,11 +1,8 @@
-﻿using Android.App;
-using Android.OS;
-using Android.Runtime;
+﻿using Android.Runtime;
 using Android.Views;
-using MvvmCross.Droid.Support.V7.AppCompat;
 using MvvmCross.Platforms.Android.Presenters.Attributes;
 using ReLearn.Core.ViewModels;
-using ReLearn.Core.ViewModels.Languages;
+using ReLearn.Core.ViewModels.MainMenu;
 
 namespace ReLearn.Droid.Views.Menu
 {

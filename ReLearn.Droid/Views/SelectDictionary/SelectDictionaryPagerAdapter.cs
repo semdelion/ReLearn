@@ -4,13 +4,13 @@ namespace ReLearn.Droid.Views.SelectDictionary
 {
     class SelectDictionaryPagerAdapter : FragmentPagerAdapter
     {
-        public SelectDictionaryPagerAdapter(Android.Support.V4.App.FragmentManager fm) : base(fm) { }
+        public SelectDictionaryPagerAdapter(FragmentManager fm) : base(fm) { }
 
         public override int Count
         {
             get => 2;
         }
-        public override Android.Support.V4.App.Fragment GetItem(int position)
+        public override Fragment GetItem(int position)
         {
             switch (position)
             {

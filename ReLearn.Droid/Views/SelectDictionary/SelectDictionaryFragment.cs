@@ -1,21 +1,30 @@
 ﻿using Android.App;
 using Android.OS;
+using Android.Runtime;
 using Android.Support.Animation;
 using Android.Support.Design.Widget;
 using Android.Support.V4.View;
 using Android.Views;
 using Android.Widget;
 using MvvmCross.Droid.Support.V7.AppCompat;
+using MvvmCross.Platforms.Android.Presenters.Attributes;
 using ReLearn.API.Database;
 using ReLearn.Core.ViewModels;
+using ReLearn.Droid.Views.Menu;
 using System;
 
 namespace ReLearn.Droid.Views.SelectDictionary
 {
-    [Activity(Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
-    public class SelectDictionary : MvxAppCompatActivity<SelectDictionaryViewModel>
+    [MvxFragmentPresentation(typeof(MainViewModel), Resource.Id.content_frame, true)]
+    [Register("relearn.droid.views.selectdictionary.SelectDictionaryFragment")]
+    public class SelectDictionaryFragment : BaseFragment<SelectDictionaryViewModel>
     {
         public static Dictionaries Dictionaries;
+
+        protected override int FragmentId => Resource.Layout.fragment_select_dictionary;
+
+        protected override int Toolbar => Resource.Id.toolbarSelectDictionary;
+
         public static void SelectDictionaryClick(object sender, EventArgs e)
         {
             ImageView ImgV = sender as ImageView;
@@ -27,27 +36,18 @@ namespace ReLearn.Droid.Views.SelectDictionary
             Animation.SetStartVelocity(500);
             Animation.Start();
         }
-
-        protected override void OnCreate(Bundle savedInstanceState)
+        public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.fragment_select_dictionary);
-            SetSupportActionBar(FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbarSelectDictionary));
-            SupportActionBar.SetDisplayHomeAsUpEnabled(true);
+            var view = base.OnCreateView(inflater, container, savedInstanceState);
             Dictionaries = new Dictionaries((int)(Resources.DisplayMetrics.WidthPixels / 3f));
-            ViewPager viewPager = FindViewById<ViewPager>(Resource.Id.pager);
-            SelectDictionaryPagerAdapter myPagerAdapter = new SelectDictionaryPagerAdapter(SupportFragmentManager);
+            ViewPager viewPager = view.FindViewById<ViewPager>(Resource.Id.pager);
+            SelectDictionaryPagerAdapter myPagerAdapter = new SelectDictionaryPagerAdapter(ChildFragmentManager);
             viewPager.Adapter = myPagerAdapter;
-            TabLayout tabLayout = FindViewById<TabLayout>(Resource.Id.tablayout);
+            TabLayout tabLayout = view.FindViewById<TabLayout>(Resource.Id.tablayout);
             tabLayout.SetupWithViewPager(viewPager);
             tabLayout.GetTabAt(tabLayout.TabCount - 2).SetIcon(Resource.Drawable.icon_language);
             tabLayout.GetTabAt(tabLayout.TabCount - 1).SetIcon(Resource.Drawable.icon_image);
-        }
-
-        public override bool OnOptionsItemSelected(IMenuItem item)
-        {
-            Finish();
-            return base.OnOptionsItemSelected(item);
+            return view;
         }
     }
 }

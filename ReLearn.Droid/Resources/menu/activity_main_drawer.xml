@@ -1,14 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
+<menu xmlns:android ="http://schemas.android.com/apk/res/android"
     xmlns:tools     ="http://schemas.android.com/tools"
     xmlns:app       ="http://schemas.android.com/apk/res-auto"
     tools:context   =".MainActivity"
-    tools:showIn="navigation_view">
-  
+    tools:showIn    ="navigation_view">
     <item
         android:id="@+id/study"
         android:icon="@+mipmap/ic_study"
         android:title="@string/Study" />
+    <item
+        android:id="@+id/dictionaries"
+        android:icon="@+mipmap/ic_dictionary"
+        android:title="@string/Dictionaries" />
     <item
         android:id="@+id/statistics"
         android:icon="@+mipmap/ic_statistics"
