@@ -8,7 +8,7 @@
         <item name="windowActionBar"                >false</item>
         <item name="windowNoTitle"                  >true</item>
         <item name="android:textSize"               >25dp</item>
-        <item name="android:actionMenuTextColor"    >@color/TextWhite</item>
+        <item name="android:actionMenuTextColor"    >@color/text_white</item>
         <item name="android:statusBarColor"         >#80000000</item>
         <item name="android:fontFamily"             >@font/myriadpro</item>
         <item name="android:windowTranslucentStatus">true</item>
@@ -17,7 +17,7 @@
   
     <style 
         name="myPopupTheme">
-        <item name="android:textColor"              >@color/TextWhite</item>
+        <item name="android:textColor"              >@color/text_white</item>
         <item name="android:background"             >#283544</item>
         <item name="android:colorPrimary"           >@android:color/transparent</item>
     </style>
@@ -25,11 +25,11 @@
     <style  
         name  ="ToolbarStyle" 
         parent="Theme.AppCompat.NoActionBar">
-        <item name="android:textColor"              >@color/TextWhite</item>
+        <item name="android:textColor"              >@color/text_white</item>
         <item name="android:colorBackground"        >#283544</item>
-        <item name="android:textColorPrimary"       >@color/TextWhite</item>
-        <item name="actionMenuTextColor"            >@color/TextWhite</item>
-        <item name="android:textColorSecondary"     >@color/TextWhite</item>
+        <item name="android:textColorPrimary"       >@color/text_white</item>
+        <item name="actionMenuTextColor"            >@color/text_white</item>
+        <item name="android:textColorSecondary"     >@color/text_white</item>
     </style>
 
     <style name="ThemeStat" >
@@ -40,7 +40,7 @@
   
     <style name="Button" >
         <item name="android:background"             >@drawable/button_style_standard</item>
-        <item name="android:textColor"              >@color/TextWhite</item>
+        <item name="android:textColor"              >@color/text_white</item>
         <item name="android:textSize"               >30dp</item>
         <item name="android:gravity"                >center</item>
     </style>
@@ -48,7 +48,7 @@
     <style  
         name  ="MenuStyle" 
         parent="Theme.AppCompat.NoActionBar">
-        <item name  ="android:textColor"            >@color/TextWhite</item>
+        <item name  ="android:textColor"            >@color/text_white</item>
         <item name  ="android:textSize"             >25dp</item>
         <item name  ="android:colorPrimary"         >#3F51B5</item>
         <item name  ="android:colorPrimaryDark"     >#303F9F</item>

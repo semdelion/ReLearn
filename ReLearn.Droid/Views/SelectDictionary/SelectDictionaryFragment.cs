@@ -45,8 +45,8 @@ namespace ReLearn.Droid.Views.SelectDictionary
             viewPager.Adapter = myPagerAdapter;
             TabLayout tabLayout = view.FindViewById<TabLayout>(Resource.Id.tablayout);
             tabLayout.SetupWithViewPager(viewPager);
-            tabLayout.GetTabAt(tabLayout.TabCount - 2).SetIcon(Resource.Drawable.icon_language);
-            tabLayout.GetTabAt(tabLayout.TabCount - 1).SetIcon(Resource.Drawable.icon_image);
+            tabLayout.GetTabAt(tabLayout.TabCount - 2).SetIcon(Resource.Drawable.ic_dictionary_languages);
+            tabLayout.GetTabAt(tabLayout.TabCount - 1).SetIcon(Resource.Drawable.ic_dictionary_images);
             return view;
         }
     }

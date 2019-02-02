@@ -41,14 +41,14 @@
 			android:orientation			="horizontal">
 			<TextView
 				android:text				="@string/Number_of_word_repeats"
-				android:textColor			="@color/TextWhite"
+				android:textColor			="@color/text_white"
 				android:textSize			="15dp"
 				android:layout_width		="wrap_content"
 				android:layout_height		="wrap_content"
 				android:layout_marginRight	="5.0dp"/>
 			<TextView
 				local:MvxBind				="Text WordsNumberText"
-				android:textColor			="@color/TextWhite"
+				android:textColor			="@color/text_white"
 				android:textSize			="15dp"
 				android:layout_width		="wrap_content"
 				android:layout_height		="wrap_content"
@@ -71,14 +71,14 @@
 			android:orientation			="horizontal">
 			<TextView
 				android:text				="@string/Number_of_image_repeats"
-				android:textColor			="@color/TextWhite"
+				android:textColor			="@color/text_white"
 				android:textSize			="15dp"
 				android:layout_width		="wrap_content"
 				android:layout_height		="wrap_content"
 				android:layout_marginRight	="5.0dp"/>
 			<TextView
 				local:MvxBind				="Text ImagesNumberText"
-				android:textColor			="@color/TextWhite"
+				android:textColor			="@color/text_white"
 				android:textSize			="15dp"
 				android:layout_width		="wrap_content"
 				android:layout_height		="wrap_content"
@@ -101,21 +101,21 @@
 			android:orientation			="horizontal">
 			<TextView
 				android:text				="@string/Time_blitz"
-				android:textColor			="@color/TextWhite"
+				android:textColor			="@color/text_white"
 				android:textSize			="15dp"
 				android:layout_width		="wrap_content"
 				android:layout_height		="wrap_content"
 				android:layout_marginRight	="5.0dp"/>
 			<TextView
 				local:MvxBind				="Text TimeToBlitzText"
-				android:textColor			="@color/TextWhite"
+				android:textColor			="@color/text_white"
 				android:textSize			="15dp"
 				android:layout_width		="wrap_content"
 				android:layout_height		="wrap_content"
 				android:layout_marginRight	="5.0dp"/>
 			<TextView
 				android:text				="@string/Seconds"
-				android:textColor			="@color/TextWhite"
+				android:textColor			="@color/text_white"
 				android:textSize			="15dp"
 				android:layout_width		="wrap_content"
 				android:layout_height		="wrap_content"
@@ -137,14 +137,14 @@
 			android:layout_marginTop	="15.0dp"
 			android:orientation			="horizontal">
 			<TextView
-				android:textColor			="@color/TextWhite"
+				android:textColor			="@color/text_white"
 				android:text				="@string/Language"
 				android:textSize			="18dp"
 				android:layout_marginRight	="10dp"
 				android:layout_width		="match_parent"
 				android:layout_height		="wrap_content"/>
 			<TextView
-				android:textColor			="@color/TextWhite"
+				android:textColor			="@color/text_white"
 				android:textSize			="18dp"
 				android:layout_width		="match_parent"
 				android:layout_height		="wrap_content"
@@ -158,14 +158,14 @@
 			android:layout_marginTop	="15.0dp"
 			android:orientation			="horizontal">
 			<TextView
-				android:textColor			="@color/TextWhite"
+				android:textColor			="@color/text_white"
 				android:text				="@string/Pronunciation"
 				android:textSize			="18dp"
 				android:layout_marginRight	="10dp"
 				android:layout_width		="match_parent"
 				android:layout_height		="wrap_content"/>
 			<TextView
-				android:textColor			="@color/TextWhite"
+				android:textColor			="@color/text_white"
 				android:textSize			="18dp"
 				android:layout_width		="match_parent"
 				android:layout_height		="wrap_content"
@@ -181,7 +181,7 @@
 			<TableRow>
 				<TextView
 					android:text				="@string/Blitz"
-					android:textColor			="@color/TextWhite"
+					android:textColor			="@color/text_white"
 					android:textSize			="18dp"
 					android:layout_column		="0"
 					android:layout_width		="0dp"
@@ -206,7 +206,7 @@
 			<TableRow>
 				<TextView
 					android:text				="@string/Quiz"
-					android:textColor			="@color/TextWhite"
+					android:textColor			="@color/text_white"
 					android:textSize			="18dp"
 					android:layout_column		="0"
 					android:layout_width		="0dp"

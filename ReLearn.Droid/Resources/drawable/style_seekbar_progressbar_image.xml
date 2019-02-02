@@ -17,8 +17,8 @@
         <corners android:radius ="3dp" />
         <gradient
           android:angle       ="180"
-          android:endColor    ="@color/DarkBlue"
-          android:startColor  ="@color/Blue"
+          android:endColor    ="@color/dark_blue"
+          android:startColor  ="@color/blue"
         />
       </shape>                
     </clip>
@@ -29,8 +29,8 @@
         <corners android:radius ="3dp" />
         <gradient
           android:angle       ="180"
-          android:endColor    ="@color/DarkBlue"
-          android:startColor  ="@color/Blue"
+          android:endColor    ="@color/dark_blue"
+          android:startColor  ="@color/blue"
         />
       </shape>
     </clip>

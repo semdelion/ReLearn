@@ -20,7 +20,7 @@
 			<TextView
 				android:text			="@string/Dictionaries"
 				android:gravity			="bottom"
-				android:textColor		="@color/TextWhite"
+				android:textColor		="@color/text_white"
 				android:textSize		="25dp"
 				android:layout_width	="match_parent"
 				android:layout_height	="match_parent"

@@ -32,7 +32,7 @@
 		android:layout_height		="match_parent">
 		<TextView
 			android:text				="@string/Message_about_us"
-			android:textColor			="@color/TextWhite"
+			android:textColor			="@color/text_white"
 			android:layout_width		="match_parent"
 			android:layout_height		="match_parent"
 			android:layout_marginTop	="25.0dp"
@@ -43,7 +43,7 @@
 			local:MvxBind					="Click SupportProjectCommand"
 			android:text					="@string/Support_project"
 			android:background				="@drawable/button_style_standard"
-			android:textColor				="@color/TextWhite"
+			android:textColor				="@color/text_white"
 			android:fontFamily				="@font/myriadpro_semibold"
 			android:textSize				="20dp"
 			android:layout_width			="match_parent"

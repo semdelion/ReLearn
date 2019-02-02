@@ -33,7 +33,7 @@
 		android:layout_height		="match_parent">
 		<TextView
 			android:text				="@string/Feedback_comments"
-			android:textColor			="@color/TextWhite"
+			android:textColor			="@color/text_white"
 			android:id					="@+id/textView"
 			android:textSize			="18dp"
 			android:layout_width		="match_parent"
@@ -43,9 +43,9 @@
 		<EditText
 			local:MvxBind				="Text Message"
 			android:hint				="@string/Enter_Message"
-			android:textColor			="@color/TextWhite"
-			android:textColorHint		="@color/HintTextWhite"
-			android:backgroundTint		="@color/TextWhite"
+			android:textColor			="@color/text_white"
+			android:textColorHint		="@color/hint_text_white"
+			android:backgroundTint		="@color/text_white"
 			android:textSize			="20dp"
 			android:layout_width		="match_parent"
 			android:layout_height		="match_parent"
@@ -58,7 +58,7 @@
 			android:text					="@string/Send"
 			android:background				="@drawable/button_style_standard"
 			android:height					="@android:dimen/notification_large_icon_width"
-			android:textColor				="@color/TextWhite"
+			android:textColor				="@color/text_white"
 			android:fontFamily				="@font/myriadpro_semibold"
 			android:textSize				="20dp"
 			android:gravity					="center"

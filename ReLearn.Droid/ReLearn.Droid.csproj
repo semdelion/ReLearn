@@ -2674,13 +2674,10 @@
     <AndroidResource Include="Resources\drawable\background_main.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\viewFalse.xml" />
+    <AndroidResource Include="Resources\drawable\view_false.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\viewNeutral.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\viewTrue.xml" />
+    <AndroidResource Include="Resources\drawable\view_true.xml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ReLearn.API\ReLearn.API.csproj">
@@ -2707,7 +2704,7 @@
     <AndroidResource Include="Resources\layout\fragment_tab_statistics_main.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\icon_main_statistics.png" />
+    <AndroidResource Include="Resources\drawable\ic_statistics_main.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\fragment_select_dictionary.axml">
@@ -2721,13 +2718,13 @@
     <AndroidResource Include="Resources\layout\fragment_tab_images_dictionary.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\icon_language.png" />
+    <AndroidResource Include="Resources\drawable\ic_dictionary_languages.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\icon_image.png" />
+    <AndroidResource Include="Resources\drawable\ic_dictionary_images.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\icon_general_statistics.png" />
+    <AndroidResource Include="Resources\drawable\ic_statistics_general.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\activity_main.axml">

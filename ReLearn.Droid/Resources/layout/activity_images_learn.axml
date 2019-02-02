@@ -48,7 +48,7 @@
 				android:layout_marginLeft	="5.0dp"/>
 			<TextView
 				android:id					="@+id/textView_Images_learn"
-				android:textColor			="@color/TextWhite"
+				android:textColor			="@color/text_white"
 				android:text				="Text"
 				android:textSize			="25dp"
 				android:layout_width		="match_parent"
@@ -71,7 +71,7 @@
 					android:onClick				="Button_Images_Learn_NotRepeat_Click"
 					android:id					="@+id/button_NotRepeat_Images"
 					android:background			="@drawable/button_style_standard"
-					android:textColor			="@color/TextWhite"
+					android:textColor			="@color/text_white"
 					android:text				="@string/NotRepeat"
 					android:textStyle			="bold"
 					android:textSize			="20dp"
@@ -85,7 +85,7 @@
 					android:onClick				="Button_Images_Learn_Next_Click"
 					android:id					="@+id/button_I_learn_Next"
 					android:background			="@drawable/button_style_standard"
-					android:textColor			="@color/TextWhite"
+					android:textColor			="@color/text_white"
 					android:text				="@string/Next"
 					android:textStyle			="bold"
 					android:textSize			="20dp"

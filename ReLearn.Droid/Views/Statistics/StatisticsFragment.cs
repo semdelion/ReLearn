@@ -46,8 +46,8 @@ namespace ReLearn.Droid.Views.Fragments
             TabLayout tabLayout = view.FindViewById<TabLayout>(Resource.Id.tablayout);
 
             tabLayout.SetupWithViewPager(viewPager);
-            tabLayout.GetTabAt(tabLayout.TabCount - 2).SetIcon(Resource.Drawable.icon_main_statistics);
-            tabLayout.GetTabAt(tabLayout.TabCount - 1).SetIcon(Resource.Drawable.icon_general_statistics);
+            tabLayout.GetTabAt(tabLayout.TabCount - 2).SetIcon(Resource.Drawable.ic_statistics_main);
+            tabLayout.GetTabAt(tabLayout.TabCount - 1).SetIcon(Resource.Drawable.ic_statistics_general);
 
             return view;
         }
