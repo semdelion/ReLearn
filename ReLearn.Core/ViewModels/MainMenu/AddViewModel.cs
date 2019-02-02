@@ -49,7 +49,7 @@ namespace ReLearn.Core.ViewModels.MainMenu
         #endregion
 
         #region Private
-        private Task<bool> NavigateToDictionaryReplenishment() => NavigationService.Navigate<DictionaryReplenishmentViewModel>();
+        private Task<bool> NavigateToDictionaryReplenishment() => NavigationService.Navigate<AddDictionaryViewModel>();
         private async Task AddWord() //TODO - перевод, async db
         {
             if (Word == "" || Word == null || TranslationWord == null || TranslationWord == "")

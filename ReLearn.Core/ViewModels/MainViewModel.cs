@@ -31,19 +31,15 @@ namespace ReLearn.Core.ViewModels
         #endregion
 
         #region Private
-       
+
         #endregion
 
         #region Protected
         #endregion
 
         #region Public
-        public override void ViewCreated()
-        {
-            base.ViewCreated();
-        }
+
         public void ShowMenu() => NavigationService.Navigate<MenuViewModel>();
-        
         #endregion
     }
 }

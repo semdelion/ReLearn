@@ -91,7 +91,7 @@
     <Compile Include="Views\Images\LearnActivity.cs" />
     <Compile Include="Views\Images\RepeatActivity.cs" />
     <Compile Include="Views\Languages\BlitzPollActivity.cs" />
-    <Compile Include="Views\Languages\DictionaryReplenishmentActivity.cs" />
+    <Compile Include="Views\Menu\AddDictionaryFragment.cs" />
     <Compile Include="Views\Languages\LearnActivity.cs" />
     <Compile Include="Views\Languages\RepeatActivity.cs" />
     <Compile Include="Views\MainActivity.cs" />
@@ -199,7 +199,7 @@
     <AndroidResource Include="Resources\layout\fragment_main.axml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\languages_alert_image_activity.axml" />
+    <AndroidResource Include="Resources\layout\alert_dictionary.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\images_blitz_poll_activity.axml" />
@@ -208,19 +208,16 @@
     <AndroidResource Include="Resources\layout\languages_blitz_poll_activity.axml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\languages_dictionary_replenishment_activity.axml" />
+    <AndroidResource Include="Resources\layout\fragment_add_dictionary.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\fragment_menu_feedback.axml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\images_item_alert_big.axml" />
+    <AndroidResource Include="Resources\layout\item_view_dictionary_image.axml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\images_item_view_dictionary_activity.axml" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\layout\languages_item_view_dictionary_activity.axml" />
+    <AndroidResource Include="Resources\layout\item_view_dictionary_languages.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\images_learn_activity.axml" />
@@ -238,7 +235,7 @@
     <AndroidResource Include="Resources\layout\splash_screen.axml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\languages_view_dictionary_activity.axml" />
+    <AndroidResource Include="Resources\layout\fragment_view_dictionary.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\menu\menu_DictionaryReplenishment.xml" />
@@ -274,9 +271,6 @@
     <AndroidResource Include="Resources\mipmap-hdpi\search.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-hdpi\settings.png" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\mipmap-hdpi\speak_off.png" />
   </ItemGroup>
   <ItemGroup>
@@ -299,9 +293,6 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\mipmap-mdpi\search.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-mdpi\settings.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\mipmap-mdpi\speak_off.png" />
@@ -328,9 +319,6 @@
     <AndroidResource Include="Resources\mipmap-xhdpi\search.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xhdpi\settings.png" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\mipmap-xhdpi\speak_off.png" />
   </ItemGroup>
   <ItemGroup>
@@ -355,9 +343,6 @@
     <AndroidResource Include="Resources\mipmap-xxhdpi\search.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xxhdpi\settings.png" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\mipmap-xxhdpi\speak_off.png" />
   </ItemGroup>
   <ItemGroup>
@@ -380,9 +365,6 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\mipmap-xxxhdpi\search.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xxxhdpi\settings.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\mipmap-xxxhdpi\speak_off.png" />
@@ -2935,6 +2917,21 @@
     <AndroidResource Include="Resources\layout\fragment_settings.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_sort.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-mdpi\ic_sort.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-xhdpi\ic_sort.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-xxhdpi\ic_sort.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_sort.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

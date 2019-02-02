@@ -29,7 +29,7 @@ namespace ReLearn.Core.ViewModels.MainMenu
             set
             {
                 SetProperty(ref _wordsNumber, value);
-                WordsNumberText = $"{Convert.ToString(5 + _wordsNumber * 5)}";
+                WordsNumberText = $"{5 + _wordsNumber * 5}";
                 Settings.NumberOfRepeatsLanguage = _wordsNumber * 5 + 5;
             }
         }
@@ -48,7 +48,7 @@ namespace ReLearn.Core.ViewModels.MainMenu
             set
             {
                 SetProperty(ref _imagesNumber, value);
-                ImagesNumberText = $"{Convert.ToString(5 + _imagesNumber * 5)}";
+                ImagesNumberText = $"{5 + _imagesNumber * 5}";
                 Settings.NumberOfRepeatsImage = _imagesNumber * 5 + 5;
             }
         }
@@ -74,7 +74,7 @@ namespace ReLearn.Core.ViewModels.MainMenu
             set
             {
                 SetProperty(ref _timeToBlitz, value);
-                TimeToBlitzText = $"{Convert.ToString(15 + _timeToBlitz * 15)}";
+                TimeToBlitzText = $"{15 + _timeToBlitz * 15}";
                 Settings.TimeToBlitz = _timeToBlitz * 15 + 15;
             }
         }
@@ -106,14 +106,14 @@ namespace ReLearn.Core.ViewModels.MainMenu
             }
         }
 
-        private string _languages = Settings.Currentlanguage == Language.en.ToString() ? "English" : "Русский";
+        private string _languages = Settings.Currentlanguage == $"{Language.en}" ? "English" : "Русский";
         public string Languages
         {
             get { return _languages; }
             set { SetProperty(ref _languages, value); }
         }
 
-        private string _pronunciations = Settings.CurrentPronunciation == Pronunciation.en.ToString() ? "English" : "British";
+        private string _pronunciations = Settings.CurrentPronunciation == $"{Pronunciation.en}" ? "English" : "British";
         public string Pronunciations
         {
             get { return _pronunciations; }
@@ -146,8 +146,8 @@ namespace ReLearn.Core.ViewModels.MainMenu
                 UseBottomSheet = true,
                 Options = new List<ActionSheetOption>
                 {
-                    new ActionSheetOption("English", () => {Languages = "English";  Settings.Currentlanguage = Language.en.ToString();}),
-                    new ActionSheetOption("Русский", () => {Languages = "Русский";  Settings.Currentlanguage = Language.ru.ToString(); }),
+                    new ActionSheetOption("English", () => {Languages = "English";  Settings.Currentlanguage = $"{Language.en}";}),
+                    new ActionSheetOption("Русский", () => {Languages = "Русский";  Settings.Currentlanguage = $"{Language.ru}"; }),
                 },
 
                 Cancel = new ActionSheetOption(AppResources.SettingsMenuViewModel_Cancel, () => { }),
@@ -162,8 +162,8 @@ namespace ReLearn.Core.ViewModels.MainMenu
                 UseBottomSheet = true,
                 Options = new List<ActionSheetOption>
                 {
-                    new ActionSheetOption("English", () => {Pronunciations = "English";  Settings.CurrentPronunciation =  Pronunciation.en.ToString();}),
-                    new ActionSheetOption("British", () => {Pronunciations = "British";  Settings.CurrentPronunciation =  Pronunciation.uk.ToString(); }),
+                    new ActionSheetOption("English", () => {Pronunciations = "English";  Settings.CurrentPronunciation =  $"{Pronunciation.en}";}),
+                    new ActionSheetOption("British", () => {Pronunciations = "British";  Settings.CurrentPronunciation =  $"{Pronunciation.uk}"; }),
                 },
                 Cancel = new ActionSheetOption( AppResources.SettingsMenuViewModel_Cancel, () => { }),
             };

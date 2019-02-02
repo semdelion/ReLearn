@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ReLearn.Core.ViewModels.Languages
 {
-    public class DictionaryReplenishmentViewModel : MvxViewModel
+    public class AddDictionaryViewModel : MvxViewModel
     {
         #region Fields
         #endregion
@@ -33,7 +33,7 @@ namespace ReLearn.Core.ViewModels.Languages
         #endregion
 
         #region Constructors
-        public DictionaryReplenishmentViewModel(IMvxNavigationService navigationService, IMessageCore imessage)
+        public AddDictionaryViewModel(IMvxNavigationService navigationService, IMessageCore imessage)
         {
             NavigationService = navigationService;
             Message = imessage;

@@ -20,13 +20,6 @@ namespace ReLearn.Core
             DataBase.SetupConnection();
             DBImages.UpdateData();
             DBWords.UpdateData();
-
-            //AppResources.Culture = new System.Globalization.CultureInfo("en");
-
-            //CultureInfo.CurrentUICulture = new System.Globalization.CultureInfo("en");
-            //CultureInfo.CurrentCulture = new System.Globalization.CultureInfo("en");
-            //CultureInfo.DefaultThreadCurrentCulture = new System.Globalization.CultureInfo("en");
-            //CultureInfo.DefaultThreadCurrentUICulture = new System.Globalization.CultureInfo("en");
         }
     }
 }

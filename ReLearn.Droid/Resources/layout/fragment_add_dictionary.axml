@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+	xmlns:android			="http://schemas.android.com/apk/res/android"
+	xmlns:local				="http://schemas.android.com/apk/res-auto"
+    android:orientation		="vertical"
+    android:layout_width	="match_parent"
+    android:layout_height	="match_parent">
+	<android.support.design.widget.AppBarLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
+		<android.support.v7.widget.Toolbar 
+			android:id				="@+id/toolbarDictionaryReplenishment"
+			android:theme			="@style/ToolbarStyle"	
+			android:background		="@drawable/toolbar"  
+			local:navigationIcon		="@mipmap/arrow"
+			android:layout_width	="match_parent"
+       		android:layout_height	="80dp"	
+			local:buttonGravity		="bottom">
+			<TextView
+				android:text			="@string/Addition"
+				android:gravity			="bottom"
+				android:paddingBottom	="12dp"
+				android:layout_width	="match_parent"
+				android:layout_height	="match_parent"
+			/>
+		</android.support.v7.widget.Toolbar>
+	</android.support.design.widget.AppBarLayout>
+	<RelativeLayout
+		android:layout_width		="match_parent"
+		android:layout_height		="match_parent"
+		android:layout_marginRight	="20.0dp"
+		android:layout_marginLeft	="20.0dp">
+	<EditText
+		local:MvxBind               ="Text Words"
+		android:hint				="@string/Insert_data"
+		android:textColor			="@color/TextWhite"
+		android:textColorHint		="@color/HintTextWhite"
+		android:backgroundTint		="@color/TextWhite"
+		android:textSize			="25dp"
+		android:layout_width		="match_parent"
+		android:layout_height		="match_parent"
+		android:layout_marginBottom	="115dp"
+		android:layout_marginTop	="25.0dp"
+		android:scrollbars			="vertical" 
+		android:defaultFocusHighlightEnabled="true"/>
+	<Button
+		local:MvxBind				="Click AddWordsCommand"
+		android:id					="@+id/button_add_DictionaryReplenishment"
+		android:background			="@drawable/button_style_standard"
+		android:text				="@string/Add_word"
+		android:textColor			="@color/TextWhite"
+		android:fontFamily			="@font/myriadpro_semibold"
+		android:textSize			="20dp"
+		android:layout_width		="match_parent"
+		android:layout_height		="55.0dp"
+		android:layout_gravity		="bottom" 
+		android:gravity				="center"
+		android:layout_alignParentBottom="true"
+		android:layout_marginBottom		="30dp"/>
+	</RelativeLayout>
+</LinearLayout>
+
+<!--<TableLayout 
+		android:layout_width="match_parent"           
+		android:layout_height="match_parent"
+        android:stretchColumns="2">
+		
+		<TableRow>
+			 <TextView
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"			
+				android:layout_marginLeft="10.0dp"
+				android:layout_marginTop="10.0dp"
+				android:layout_column="0"
+				android:textSize="20dp"
+				android:textColor="#d7f8fe"
+				android:text="@string/SeparatorWords"
+			/>
+			<Spinner
+				android:id="@+id/spinner_separator_words"
+				android:backgroundTint="#d7f8fe"
+				android:layout_marginRight="10.0dp"
+				android:layout_marginLeft="10.0dp"
+				android:layout_marginTop="10.0dp"
+				android:layout_width="100dp"
+				android:layout_height="wrap_content"
+				android:layout_column="1"
+				android:textSize="25dp"
+				android:prompt="@string/SeparatorWords"
+				android:popupBackground="#283544"/>
+				
+		</TableRow>
+	-->
+<!--	</TableLayout>-->

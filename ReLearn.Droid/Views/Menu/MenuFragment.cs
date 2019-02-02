@@ -1,4 +1,5 @@
-﻿using Android.OS;
+﻿using Android.App;
+using Android.OS;
 using Android.Runtime;
 using Android.Support.Design.Widget;
 using Android.Views;
@@ -17,11 +18,6 @@ namespace ReLearn.Droid.Views.Menu
         private NavigationView navigationView;
         private IMenuItem previousMenuItem;
 
-        public override void OnCreate(Bundle savedInstanceState)
-        {
-            base.OnCreate(savedInstanceState);
-        }
-
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             var ignore = base.OnCreateView(inflater, container, savedInstanceState);
@@ -32,7 +28,6 @@ namespace ReLearn.Droid.Views.Menu
             navigationView.SetNavigationItemSelectedListener(this);
             navigationView.Menu.FindItem(Resource.Id.study).SetChecked(true);
             
-            //ViewModel.ToHomeViewModel.Execute();
             return view;
         }
 

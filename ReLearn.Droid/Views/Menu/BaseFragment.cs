@@ -50,8 +50,7 @@ namespace ReLearn.Droid.Views.Menu
 				_drawerToggle.DrawerOpened += (object sender, ActionBarDrawerEventArgs e) => (Activity as MainActivity)?.HideSoftKeyboard();
 				(ParentActivity as INavigationActivity).DrawerLayout.AddDrawerListener(_drawerToggle);
 			}
-
-			return view;
+            return view;
 		}
 
         public override void OnConfigurationChanged(Configuration newConfig)

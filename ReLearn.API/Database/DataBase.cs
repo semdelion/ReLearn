@@ -34,10 +34,10 @@ namespace ReLearn.API.Database
         {
             get
             {
-                Enum.TryParse(CrossSettings.Current.GetValueOrDefault(DBSettings.DictionaryName.ToString(), TableNames.Popular_Words.ToString()), out TableNames name);
+                Enum.TryParse(CrossSettings.Current.GetValueOrDefault($"{DBSettings.DictionaryName}", $"{TableNames.Popular_Words}"), out TableNames name);
                 return name;
             }
-            set => CrossSettings.Current.AddOrUpdateValue(DBSettings.DictionaryName.ToString(), value.ToString());
+            set => CrossSettings.Current.AddOrUpdateValue($"{DBSettings.DictionaryName}", $"{value}");
         }
 
         public static void SetupConnection()
@@ -46,34 +46,6 @@ namespace ReLearn.API.Database
             Images = Connect(_flags);
             Statistics = Connect(_statistics);
         }
-
-        //public static void InstallDatabaseFromAssets()
-        //{
-        //    InstallDB(_statistics);
-        //    InstallDB(_english);
-        //    InstallDB(_flags); 
-        //}
-
-        //static void InstallDB(string FileName)
-        //{
-        //    string documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-        //    var path = Path.Combine(documentsPath, FileName);
-        //    if (!File.Exists(path))
-        //    {
-        //        Context context = Application.Context;
-        //        using (var dbAssetStream = context.Assets.Open($"Database/{FileName}"))
-        //        {
-        //            using (var dbFileStream = new FileStream(path, FileMode.OpenOrCreate))
-        //            {
-        //                var buffer = new byte[1024];
-        //                int length;
-        //                while ((length = dbAssetStream.Read(buffer, 0, buffer.Length)) > 0)
-        //                    dbFileStream.Write(buffer, 0, length);
-        //                dbFileStream.Flush();
-        //            }
-        //        }
-        //    }
-        //}
 
         static SQLiteConnection Connect(string nameDB) => new SQLiteConnection(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), nameDB));
     }

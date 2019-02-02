@@ -34,6 +34,7 @@ namespace ReLearn.Core.ViewModels.MainMenu
         public MenuViewModel(IMvxNavigationService navigationService)
         {
             NavigationService = navigationService;
+            NavigateToHomeViewModel();
         }
 
         private Task<bool> NavigateToHomeViewModel() => NavigationService.Navigate<HomeViewModel>();

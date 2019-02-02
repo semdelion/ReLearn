@@ -52,54 +52,54 @@ namespace ReLearn.API
 
         public static int NumberOfRepeatsImage
         {
-            get => Convert.ToInt32(CrossSettings.Current.GetValueOrDefault(DBSettings.Images_repeat_count.ToString(), "20"));
-            set => CrossSettings.Current.AddOrUpdateValue(DBSettings.Images_repeat_count.ToString(), Convert.ToString(value));
+            get => Convert.ToInt32(CrossSettings.Current.GetValueOrDefault($"{DBSettings.Images_repeat_count}", "20"));
+            set => CrossSettings.Current.AddOrUpdateValue($"{DBSettings.Images_repeat_count}", $"{value}");
         }
 
         public static int NumberOfRepeatsLanguage
         {
-            get => Convert.ToInt32(CrossSettings.Current.GetValueOrDefault(DBSettings.Language_repeat_count.ToString(), "20"));
-            set => CrossSettings.Current.AddOrUpdateValue(DBSettings.Language_repeat_count.ToString(), Convert.ToString(value));
+            get => Convert.ToInt32(CrossSettings.Current.GetValueOrDefault($"{DBSettings.Language_repeat_count}", "20"));
+            set => CrossSettings.Current.AddOrUpdateValue($"{DBSettings.Language_repeat_count}", $"{value}");
         }
 
         public static int TimeToBlitz
         {
-            get => CrossSettings.Current.GetValueOrDefault(DBSettings.TimeToBlitz.ToString(), 45);
-            set => CrossSettings.Current.AddOrUpdateValue(DBSettings.TimeToBlitz.ToString(), value);
+            get => CrossSettings.Current.GetValueOrDefault($"{DBSettings.TimeToBlitz}", 45);
+            set => CrossSettings.Current.AddOrUpdateValue($"{DBSettings.TimeToBlitz}", value);
         }
 
         public static string CurrentPronunciation
         {
-            get => CrossSettings.Current.GetValueOrDefault(DBSettings.Pronunciation.ToString(), Pronunciation.uk.ToString());
-            set => CrossSettings.Current.AddOrUpdateValue(DBSettings.Pronunciation.ToString(), Convert.ToString(value));
+            get => CrossSettings.Current.GetValueOrDefault($"{DBSettings.Pronunciation}", $"{Pronunciation.uk}");
+            set => CrossSettings.Current.AddOrUpdateValue($"{DBSettings.Pronunciation}", $"{value}");
         }
 
         public static string Currentlanguage
         {
-            get => CrossSettings.Current.GetValueOrDefault(DBSettings.Language.ToString(), Thread.CurrentThread.CurrentCulture.Name == "ru-RU" ? Language.ru.ToString() : Language.en.ToString());
-            set => CrossSettings.Current.AddOrUpdateValue(DBSettings.Language.ToString(), Convert.ToString(value));
+            get => CrossSettings.Current.GetValueOrDefault($"{DBSettings.Language}", Thread.CurrentThread.CurrentCulture.Name == "ru-RU" ? $"{Language.ru}" : $"{Language.en}");
+            set => CrossSettings.Current.AddOrUpdateValue($"{DBSettings.Language}", $"{value}");
         }
 
         public static bool BlitzEnable
         {
-            get => CrossSettings.Current.GetValueOrDefault(DBSettings.BlitzEnable.ToString(), true);
-            set => CrossSettings.Current.AddOrUpdateValue(DBSettings.BlitzEnable.ToString(), value);
+            get => CrossSettings.Current.GetValueOrDefault($"{DBSettings.BlitzEnable}", true);
+            set => CrossSettings.Current.AddOrUpdateValue($"{DBSettings.BlitzEnable}", value);
         }
 
         public static bool QuizEnable
         {
-            get => CrossSettings.Current.GetValueOrDefault(DBSettings.QuizEnable.ToString(), true);
-            set => CrossSettings.Current.AddOrUpdateValue(DBSettings.QuizEnable.ToString(), value);
+            get => CrossSettings.Current.GetValueOrDefault($"{DBSettings.QuizEnable}", true);
+            set => CrossSettings.Current.AddOrUpdateValue($"{DBSettings.QuizEnable}", value);
         }
 
         public static TypeOfRepetitions TypeOfRepetition
         {
             get
             {
-                Enum.TryParse(CrossSettings.Current.GetValueOrDefault(DBSettings.TypeOfRepetition.ToString(), TypeOfRepetitions.FourOptions.ToString()), out TypeOfRepetitions name);
+                Enum.TryParse(CrossSettings.Current.GetValueOrDefault($"{DBSettings.TypeOfRepetition}", $"{TypeOfRepetitions.FourOptions}"), out TypeOfRepetitions name);
                 return name;
             }
-            set => CrossSettings.Current.AddOrUpdateValue(DBSettings.TypeOfRepetition.ToString(), Convert.ToString(value));
+            set => CrossSettings.Current.AddOrUpdateValue($"{DBSettings.TypeOfRepetition}", $"{value}");
         }
     }
 }

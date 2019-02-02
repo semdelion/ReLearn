@@ -9,18 +9,18 @@ namespace ReLearn.API
     {
         public static int Count
         {
-            get => CrossSettings.Current.GetValueOrDefault($"{DBSettings.Count}{DataBase.TableName.ToString()}", 0);
-            set => CrossSettings.Current.AddOrUpdateValue($"{DBSettings.Count}{DataBase.TableName.ToString()}", value);
+            get => CrossSettings.Current.GetValueOrDefault($"{DBSettings.Count}{DataBase.TableName}", 0);
+            set => CrossSettings.Current.AddOrUpdateValue($"{DBSettings.Count}{DataBase.TableName}", value);
         }
         public static int True
         {
-            get => CrossSettings.Current.GetValueOrDefault($"{DBSettings.True}{DataBase.TableName.ToString()}", 0);
-            set => CrossSettings.Current.AddOrUpdateValue($"{DBSettings.True}{DataBase.TableName.ToString()}", value);
+            get => CrossSettings.Current.GetValueOrDefault($"{DBSettings.True}{DataBase.TableName}", 0);
+            set => CrossSettings.Current.AddOrUpdateValue($"{DBSettings.True}{DataBase.TableName}", value);
         }
         public static int False
         {
-            get => CrossSettings.Current.GetValueOrDefault($"{DBSettings.False}{DataBase.TableName.ToString()}", 0);
-            set => CrossSettings.Current.AddOrUpdateValue($"{DBSettings.False}{DataBase.TableName.ToString()}", value);
+            get => CrossSettings.Current.GetValueOrDefault($"{DBSettings.False}{DataBase.TableName}", 0);
+            set => CrossSettings.Current.AddOrUpdateValue($"{DBSettings.False}{DataBase.TableName}", value);
         }
 
         public static float GetAverageNumberLearn(List<DBStatistics> Database_NL_and_D)
