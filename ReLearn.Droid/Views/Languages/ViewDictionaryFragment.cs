@@ -14,7 +14,7 @@ using System.Collections.Generic;
 
 namespace ReLearn.Droid.Views.Languages
 {
-    [MvxFragmentPresentation(typeof(MainViewModel), Resource.Id.content_frame, true)]
+    [MvxFragmentPresentation(typeof(MainViewModel), Resource.Id.content_frame, false)]
     [Register("relearn.droid.views.languages.ViewDictionaryFragment")]
     public class ViewDictionaryFragment : BaseFragment<ViewDictionaryViewModel>
     {

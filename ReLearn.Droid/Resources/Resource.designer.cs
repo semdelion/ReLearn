@@ -5394,6 +5394,9 @@ namespace ReLearn.Droid
 			// aapt resource value: 0x7f0e0015
 			public const int dim_foreground_material_light = 2131623957;
 			
+			// aapt resource value: 0x7f0e0065
+			public const int drawer_item = 2131624037;
+			
 			// aapt resource value: 0x7f0e0016
 			public const int error_color_material = 2131623958;
 			
@@ -5505,11 +5508,11 @@ namespace ReLearn.Droid
 			// aapt resource value: 0x7f0e0036
 			public const int switch_thumb_disabled_material_light = 2131623990;
 			
-			// aapt resource value: 0x7f0e0065
-			public const int switch_thumb_material_dark = 2131624037;
-			
 			// aapt resource value: 0x7f0e0066
-			public const int switch_thumb_material_light = 2131624038;
+			public const int switch_thumb_material_dark = 2131624038;
+			
+			// aapt resource value: 0x7f0e0067
+			public const int switch_thumb_material_light = 2131624039;
 			
 			// aapt resource value: 0x7f0e0037
 			public const int switch_thumb_normal_material_dark = 2131623991;
@@ -8763,6 +8766,9 @@ namespace ReLearn.Droid
 			
 			// aapt resource value: 0x7f0c0185
 			public const int MenuStyle = 2131493253;
+			
+			// aapt resource value: 0x7f0c0187
+			public const int NavigationDrawerStyle = 2131493255;
 			
 			// aapt resource value: 0x7f0c001e
 			public const int Platform_AppCompat = 2131492894;

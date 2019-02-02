@@ -15,7 +15,7 @@ using System;
 
 namespace ReLearn.Droid.Views.SelectDictionary
 {
-    [MvxFragmentPresentation(typeof(MainViewModel), Resource.Id.content_frame, true)]
+    [MvxFragmentPresentation(typeof(MainViewModel), Resource.Id.content_frame, false)]
     [Register("relearn.droid.views.selectdictionary.SelectDictionaryFragment")]
     public class SelectDictionaryFragment : BaseFragment<SelectDictionaryViewModel>
     {

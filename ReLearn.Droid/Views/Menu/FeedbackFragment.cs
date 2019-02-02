@@ -9,7 +9,7 @@ using ReLearn.Core.ViewModels.MainMenu;
 
 namespace ReLearn.Droid.Views.Menu
 {
-    [MvxFragmentPresentation(typeof(MainViewModel), Resource.Id.content_frame, true)]
+    [MvxFragmentPresentation(typeof(MainViewModel), Resource.Id.content_frame, false)]
     [Register("relearn.droid.views.menu.FeedbackFragment")]
     public class FeedbackFragment : BaseFragment<FeedbackViewModel>
     {

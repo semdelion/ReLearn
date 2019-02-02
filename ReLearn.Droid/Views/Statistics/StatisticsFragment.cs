@@ -13,7 +13,7 @@ using System.Collections.Generic;
 
 namespace ReLearn.Droid.Views.Fragments
 {
-    [MvxFragmentPresentation(typeof(MainViewModel), Resource.Id.content_frame, true)]
+    [MvxFragmentPresentation(typeof(MainViewModel), Resource.Id.content_frame, false)]
     [Register("relearn.droid.views.statistics.StatisticsFragment")]
     public class StatisticsFragment : BaseFragment<StatisticViewModel>
     {

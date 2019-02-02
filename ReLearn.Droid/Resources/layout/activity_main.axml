@@ -16,8 +16,8 @@
             android:layout_centerInParent	="true" />
     </android.support.design.widget.CoordinatorLayout>
     <FrameLayout
-        android:id				="@+id/navigation_frame"
-        android:layout_height	="match_parent"
-        android:layout_width	="wrap_content"
-        android:layout_gravity	="left|start" />
+        android:id					="@+id/navigation_frame"
+        android:layout_height		="match_parent"
+        android:layout_width		="wrap_content"
+        android:layout_gravity		="left|start" />
 </android.support.v4.widget.DrawerLayout>
