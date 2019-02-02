@@ -29,9 +29,9 @@
     <!-- create gradient you want to use with the angle you want to use -->
     <shape android:shape  ="rectangle" >
       <gradient
-          android:centerColor ="#cc00ffff"
-          android:endColor    ="#1e00ffff"
-          android:startColor  ="#1e00ffff" />
+          android:centerColor ="#323c7e"
+          android:endColor    ="#6e09D3D3"
+          android:startColor  ="#6e09D3D3" />
       <corners android:radius ="8dp"/>
     </shape>
   </item>

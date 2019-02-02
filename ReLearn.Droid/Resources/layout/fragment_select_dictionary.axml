@@ -15,7 +15,7 @@
 			android:id				="@+id/toolbarSelectDictionary"
 			android:theme			="@style/ToolbarStyle"
 			android:background		="@drawable/toolbar"
-			local:navigationIcon	="@mipmap/arrow"
+			local:navigationIcon	="@mipmap/ic_arrow_back"
 			local:buttonGravity		="bottom">
 			<TextView
 				android:text			="@string/Dictionaries"

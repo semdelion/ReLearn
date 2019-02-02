@@ -62,9 +62,14 @@ namespace ReLearn.Droid.Views
 
         public void OnBackStackChanged()
         {
-
-            //DrawerLayout
-            // SupportFragmentManager.RemoveOnBackStackChangedListener();
+            //if(SupportFragmentManager.BackStackEntryCount >= 1)
+            //{
+            //    if (SupportFragmentManager.BackStackEntryCount == 1)
+            //    {
+            //        SupportActionBar.SetDisplayHomeAsUpEnabled(true);
+            //    }
+            //    SupportFragmentManager.PopBackStack();
+            //}
         }
     }
 }

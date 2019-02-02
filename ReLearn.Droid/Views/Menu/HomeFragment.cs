@@ -21,6 +21,8 @@ namespace ReLearn.Droid.Views.Menu
         }
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
+            MenuFragment.NavigationView.Menu.FindItem(Resource.Id.study).SetChecked(false);
+            MenuFragment.NavigationView.Menu.FindItem(Resource.Id.dictionaries).SetChecked(true);
             switch (item.ItemId)
             {
                 case Resource.Id.MenuSelectDictionary:

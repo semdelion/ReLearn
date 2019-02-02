@@ -1,51 +1,12 @@
-﻿<!--<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-
-  <item>
-    <shape android:shape="rectangle">
-      <gradient>
-        android:type="radial"
-        android:startColor="#20E9E9E9"
-        android:endColor="#80D4D4D4">
-      </gradient>
-          <corners android:radius="8dp"/>
-    </shape>
-  </item>
-  
-  <item
-      android:bottom="20dp"
-      android:left="20dp"
-      android:right="20dp"
-      android:top="20dp">
-    <shape android:shape="rectangle">
-      <stroke
-          android:width="2dp"
-          android:color="#ff0000" />
-      <corners android:radius="8dp"/>
-    </shape>
-  </item>
-</layer-list>-->
+﻿
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
-
-  <item>
-    <!-- create gradient you want to use with the angle you want to use -->
+<item>
     <shape android:shape  ="rectangle" >
-      <gradient
-          android:centerColor ="#ccff0000"
-          android:endColor    ="#1eff0000"
-          android:startColor  ="#1eff0000" />
-      <corners android:radius ="8dp"/>
+        <gradient
+            android:centerColor ="#BC0C42"
+            android:endColor    ="#6EDC6388"
+            android:startColor  ="#6EDC6388" />
+        <corners android:radius ="8dp"/>
     </shape>
-  </item>
-  <!-- create the stroke for top, left, bottom and right with the dp you want -->
-  <!--<item
-      android:bottom  ="8dp"
-      android:left    ="8dp"
-      android:right   ="8dp"
-      android:top     ="8dp">
-    <shape android:shape  ="rectangle" >
-      <solid android:color    ="#ee1d2b3b" />
-      <corners android:radius ="8dp"/>
-    </shape>
-  </item>-->
-
+</item>
 </layer-list>

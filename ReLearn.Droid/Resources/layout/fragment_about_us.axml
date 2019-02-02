@@ -12,7 +12,7 @@
 			android:id				="@+id/toolbar_About_Us"
 			android:theme			="@style/ToolbarStyle"
 			android:background		="@drawable/toolbar"
-			local:navigationIcon	="@mipmap/arrow"
+			local:navigationIcon	="@mipmap/ic_arrow_back"
 			android:layout_width	="match_parent"
 			android:layout_height	="80dp"
 			local:buttonGravity		="bottom">

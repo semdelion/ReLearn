@@ -15,7 +15,7 @@
 			android:theme			="@style/ToolbarStyle"
 			android:id				="@+id/toolbar_statistics"
 			android:background		="@drawable/toolbar"
-			local:navigationIcon	="@mipmap/arrow"
+			local:navigationIcon	="@mipmap/ic_arrow_back"
 			local:buttonGravity		="bottom">
 			<TextView
 				android:text			="@string/Statistics"

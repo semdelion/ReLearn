@@ -11,7 +11,7 @@
 		<android.support.v7.widget.Toolbar 
 			xmlns:local				="http://schemas.android.com/apk/res-auto"
 			android:id				="@+id/toolbarSetting"
-			local:navigationIcon	="@mipmap/arrow" 
+			local:navigationIcon	="@mipmap/ic_arrow_back" 
 			android:theme			="@style/ToolbarStyle"		
 			android:background		="@drawable/toolbar"
 			android:layout_width	="match_parent"

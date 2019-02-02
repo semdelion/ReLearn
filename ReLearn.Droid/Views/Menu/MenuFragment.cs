@@ -15,8 +15,8 @@ namespace ReLearn.Droid.Views.Menu
     [Register("relearn.droid.views.menu.MenuFragment")]
     public class MenuFragment : MvxFragment<MenuViewModel>, NavigationView.IOnNavigationItemSelectedListener
     {
-        private NavigationView navigationView;
-        private IMenuItem previousMenuItem;
+        public static NavigationView NavigationView { get; private set; }
+        private IMenuItem _previousMenuItem;
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
@@ -24,9 +24,9 @@ namespace ReLearn.Droid.Views.Menu
 
             var view = this.BindingInflate(Resource.Layout.fragment_navigation, null);
 
-            navigationView = view.FindViewById<NavigationView>(Resource.Id.nav_view);
-            navigationView.SetNavigationItemSelectedListener(this);
-            navigationView.Menu.FindItem(Resource.Id.study).SetChecked(true);
+            NavigationView = view.FindViewById<NavigationView>(Resource.Id.nav_view);
+            NavigationView.SetNavigationItemSelectedListener(this);
+            NavigationView.Menu.FindItem(Resource.Id.study).SetChecked(true);
             
             return view;
         }
@@ -35,8 +35,8 @@ namespace ReLearn.Droid.Views.Menu
         {
             item.SetCheckable(true);
             item.SetChecked(true);
-            previousMenuItem?.SetChecked(false);
-            previousMenuItem = item;
+            _previousMenuItem?.SetChecked(false);
+            _previousMenuItem = item;
             ((MainActivity)Activity).DrawerLayout.CloseDrawers();
             switch (item.ItemId)
             {

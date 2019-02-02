@@ -6284,26 +6284,26 @@ namespace ReLearn.Droid
 			// aapt resource value: 0x7f020053
 			public const int avd_hide_password = 2130837587;
 			
+			// aapt resource value: 0x7f020097
+			public const int avd_hide_password_1 = 2130837655;
+			
 			// aapt resource value: 0x7f020098
-			public const int avd_hide_password_1 = 2130837656;
+			public const int avd_hide_password_2 = 2130837656;
 			
 			// aapt resource value: 0x7f020099
-			public const int avd_hide_password_2 = 2130837657;
-			
-			// aapt resource value: 0x7f02009a
-			public const int avd_hide_password_3 = 2130837658;
+			public const int avd_hide_password_3 = 2130837657;
 			
 			// aapt resource value: 0x7f020054
 			public const int avd_show_password = 2130837588;
 			
+			// aapt resource value: 0x7f02009a
+			public const int avd_show_password_1 = 2130837658;
+			
 			// aapt resource value: 0x7f02009b
-			public const int avd_show_password_1 = 2130837659;
+			public const int avd_show_password_2 = 2130837659;
 			
 			// aapt resource value: 0x7f02009c
-			public const int avd_show_password_2 = 2130837660;
-			
-			// aapt resource value: 0x7f02009d
-			public const int avd_show_password_3 = 2130837661;
+			public const int avd_show_password_3 = 2130837660;
 			
 			// aapt resource value: 0x7f020055
 			public const int background_splash = 2130837589;
@@ -6437,11 +6437,11 @@ namespace ReLearn.Droid
 			// aapt resource value: 0x7f020080
 			public const int notification_icon_background = 2130837632;
 			
-			// aapt resource value: 0x7f020096
-			public const int notification_template_icon_bg = 2130837654;
+			// aapt resource value: 0x7f020095
+			public const int notification_template_icon_bg = 2130837653;
 			
-			// aapt resource value: 0x7f020097
-			public const int notification_template_icon_low_bg = 2130837655;
+			// aapt resource value: 0x7f020096
+			public const int notification_template_icon_low_bg = 2130837654;
 			
 			// aapt resource value: 0x7f020081
 			public const int notification_tile_bg = 2130837633;
@@ -6486,25 +6486,22 @@ namespace ReLearn.Droid
 			public const int toolbarMain = 2130837646;
 			
 			// aapt resource value: 0x7f02008f
-			public const int toolbarMain111 = 2130837647;
+			public const int toolbarmainback = 2130837647;
 			
 			// aapt resource value: 0x7f020090
-			public const int toolbarmainback = 2130837648;
+			public const int tooltip_frame_dark = 2130837648;
 			
 			// aapt resource value: 0x7f020091
-			public const int tooltip_frame_dark = 2130837649;
+			public const int tooltip_frame_light = 2130837649;
 			
 			// aapt resource value: 0x7f020092
-			public const int tooltip_frame_light = 2130837650;
+			public const int viewFalse = 2130837650;
 			
 			// aapt resource value: 0x7f020093
-			public const int viewFalse = 2130837651;
+			public const int viewNeutral = 2130837651;
 			
 			// aapt resource value: 0x7f020094
-			public const int viewNeutral = 2130837652;
-			
-			// aapt resource value: 0x7f020095
-			public const int viewTrue = 2130837653;
+			public const int viewTrue = 2130837652;
 			
 			static Drawable()
 			{
@@ -7737,13 +7734,13 @@ namespace ReLearn.Droid
 			public const int achiev = 2130903040;
 			
 			// aapt resource value: 0x7f030001
-			public const int arrow = 2130903041;
+			public const int ic_about_us = 2130903041;
 			
 			// aapt resource value: 0x7f030002
-			public const int ic_about_us = 2130903042;
+			public const int ic_add_words_to_dictionary = 2130903042;
 			
 			// aapt resource value: 0x7f030003
-			public const int ic_add_words_to_dictionary = 2130903043;
+			public const int ic_arrow_back = 2130903043;
 			
 			// aapt resource value: 0x7f030004
 			public const int ic_dictionary = 2130903044;
