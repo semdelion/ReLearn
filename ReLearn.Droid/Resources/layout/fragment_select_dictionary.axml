@@ -14,7 +14,7 @@
 			android:layout_height	="80dp"
 			android:id				="@+id/toolbarSelectDictionary"
 			android:theme			="@style/ToolbarStyle"
-			android:background		="@drawable/toolbar"
+			android:background		="@drawable/background_toolbar"
 			local:navigationIcon	="@mipmap/ic_arrow_back"
 			local:buttonGravity		="bottom">
 			<TextView

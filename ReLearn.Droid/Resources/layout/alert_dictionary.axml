@@ -6,7 +6,7 @@
     android:layout_height	="match_parent">
 	<ImageView
 		android:id					="@+id/imgCustomToast"
-		android:background			="@drawable/imageInstruction"
+		android:background			="@drawable/image_instruction"
 		android:layout_width		="170dp"
 		android:layout_height		="220dp"
 		android:layout_gravity		="center"

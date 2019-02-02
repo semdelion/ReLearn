@@ -86,11 +86,11 @@ namespace ReLearn.Droid.Views.SelectDictionary
             var DBStatFilms = DBStatistics.GetImages($"{TableNamesImage.Films}");
             CreateViewForDictionary(view, DBStatFlag,   
                 $"{TableNamesImage.Flags}", 
-                Resource.Drawable.FlagDictionary,
+                Resource.Drawable.image_dictionary_flags,
                 GravityFlags.Left,  true, Colors.Orange, Colors.DarkOrange);
             CreateViewForDictionary(view, DBStatFilms,  
                 $"{TableNamesImage.Films}", 
-                Resource.Drawable.FilmDictionary,
+                Resource.Drawable.image_dictionary_films,
                 GravityFlags.Right, false, Colors.Orange, Colors.DarkOrange);
             SelectDictionaryFragment.Dictionaries.Selected($"{DataBase.TableName}",$"{DataBase.TableName}");
             return view; 

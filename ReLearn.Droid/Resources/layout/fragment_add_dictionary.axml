@@ -11,7 +11,7 @@
 		<android.support.v7.widget.Toolbar 
 			android:id				="@+id/toolbarDictionaryReplenishment"
 			android:theme			="@style/ToolbarStyle"	
-			android:background		="@drawable/toolbar"  
+			android:background		="@drawable/background_toolbar"  
 			local:navigationIcon	="@mipmap/ic_arrow_back"
 			android:layout_width	="match_parent"
        		android:layout_height	="80dp"	

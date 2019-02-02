@@ -2008,7 +2008,7 @@
     <AndroidAsset Include="Assets\ImageFlags\zw.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\background_splash.xml" />
+    <AndroidResource Include="Resources\drawable\style_background_splash.xml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\ImageFlagsMini\ad.jpg" />
@@ -2605,12 +2605,6 @@
     <AndroidAsset Include="Assets\ImageFlagsMini\zw.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\backgroundEnFl.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\blitzbackground.png" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\drawable\button_enabled.png" />
   </ItemGroup>
   <ItemGroup>
@@ -2626,67 +2620,58 @@
     <AndroidResource Include="Resources\drawable\button_true.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\buttonBeforeClicking.png" />
+    <AndroidResource Include="Resources\drawable\button_before_clicking.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\ComputerScience.png" />
+    <AndroidResource Include="Resources\drawable\image_dictionary_computer_science.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\custom_thumb.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\editBorder.xml" />
+    <AndroidResource Include="Resources\drawable\image_dictionary_education.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\EducationDictionary.png" />
+    <AndroidResource Include="Resources\drawable\image_dictionary_films.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\FilmDictionary.png" />
+    <AndroidResource Include="Resources\drawable\image_dictionary_flags.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\FlagDictionary.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\homeDictionary.png" />
+    <AndroidResource Include="Resources\drawable\image_dictionary_home.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\imageInstruction.png" />
+    <AndroidResource Include="Resources\drawable\image_instruction.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\ItDictionary.png" />
+    <AndroidResource Include="Resources\drawable\image_dictionary_my.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\MyDictionary.png" />
+    <AndroidResource Include="Resources\drawable\image_dictionary_nature.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\Nature.png" />
+    <AndroidResource Include="Resources\drawable\image_dictionary_popular_words.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\NatureDictionary.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\PopularWordsDictionary.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\seekbar_progressbar1.xml" />
+    <AndroidResource Include="Resources\drawable\style_seekbar_progressbar_language.xml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\separator.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\splash.png" />
+    <AndroidResource Include="Resources\drawable\background_splash.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\ThreeFormsOfVerbDictionary.png" />
+    <AndroidResource Include="Resources\drawable\image_dictionary_three_forms_of_verb.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\toolbar.png" />
+    <AndroidResource Include="Resources\drawable\background_toolbar.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\toolbarmainback.png" />
+    <AndroidResource Include="Resources\drawable\background_main.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\viewFalse.xml" />
@@ -2848,19 +2833,19 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_about_us.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\ic_nav_header.png" />
+    <AndroidResource Include="Resources\drawable\background_navigation_header.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\toolbarMain.png" />
+    <AndroidResource Include="Resources\drawable\background_toolbar_home.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\seekbar_progressbar2.xml">
+    <AndroidResource Include="Resources\drawable\style_seekbar_progressbar_image.xml">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\seekbar_progressbar3.xml">
+    <AndroidResource Include="Resources\drawable\style_seekbar_progressbar_blitz.xml">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
       <SubType>Designer</SubType>
     </AndroidResource>

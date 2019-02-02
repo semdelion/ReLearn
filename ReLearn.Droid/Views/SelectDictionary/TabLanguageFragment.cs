@@ -91,31 +91,31 @@ namespace ReLearn.Droid.Views.SelectDictionary
             var My_Directly      = DBStatistics.GetWords($"{TableNamesLanguage.My_Directly}");
             CreateViewForDictionary(view, Home,
                 $"{TableNamesLanguage.Home}",
-                Resource.Drawable.homeDictionary,
+                Resource.Drawable.image_dictionary_home,
                 GravityFlags.Left,  true, Colors.Blue, Colors.DarkBlue);
             CreateViewForDictionary(view, Education,        
                 $"{TableNamesLanguage.Education}",
-                Resource.Drawable.EducationDictionary,
+                Resource.Drawable.image_dictionary_education,
                 GravityFlags.Right, true, Colors.Blue, Colors.DarkBlue);
             CreateViewForDictionary(view, Popular_Words,    
                 $"{TableNamesLanguage.Popular_Words}",   
-                Resource.Drawable.PopularWordsDictionary,
+                Resource.Drawable.image_dictionary_popular_words,
                 GravityFlags.Left,  true, Colors.Blue, Colors.DarkBlue);
             CreateViewForDictionary(view, ThreeFormsOfVerb, 
                 $"{TableNamesLanguage.ThreeFormsOfVerb}", 
-                Resource.Drawable.ThreeFormsOfVerbDictionary,
+                Resource.Drawable.image_dictionary_three_forms_of_verb,
                 GravityFlags.Right, true, Colors.Blue, Colors.DarkBlue);
             CreateViewForDictionary(view, ComputerScience,  
                 $"{TableNamesLanguage.ComputerScience}", 
-                Resource.Drawable.ComputerScience,
+                Resource.Drawable.image_dictionary_computer_science,
                 GravityFlags.Left,  true, Colors.Blue, Colors.DarkBlue);
             CreateViewForDictionary(view, Nature,           
                 $"{TableNamesLanguage.Nature}",           
-                Resource.Drawable.Nature,
+                Resource.Drawable.image_dictionary_nature,
                 GravityFlags.Right, true, Colors.Blue, Colors.DarkBlue);
             CreateViewForDictionary(view, My_Directly,     
                 $"{TableNamesLanguage.My_Directly}",      
-                Resource.Drawable.MyDictionary,
+                Resource.Drawable.image_dictionary_my,
                 GravityFlags.Left, false, Colors.Blue, Colors.DarkBlue);
             return view;
         }
