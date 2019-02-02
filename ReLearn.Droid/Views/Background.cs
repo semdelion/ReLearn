@@ -12,7 +12,7 @@ namespace ReLearn.Droid
             float strokeWidth = PixelConverter.DpToPX(2);
 
             var backgroundPaint = new Paint { Color = new Color(Color.Argb(100, 16, 19, 38)), AntiAlias = true };
-            Paint borderPaint = new Paint { StrokeWidth = strokeWidth, Color = Colors.White, AntiAlias = true };
+            var borderPaint = new Paint { StrokeWidth = strokeWidth, Color = Colors.White, AntiAlias = true };
             borderPaint.SetStyle(Paint.Style.Stroke);
             var bitmap = Bitmap.CreateBitmap((int)width, (int)height, Bitmap.Config.Argb4444);
             var canvas = new Canvas(bitmap);

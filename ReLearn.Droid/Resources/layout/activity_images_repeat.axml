@@ -7,8 +7,8 @@
     android:layout_height	="match_parent"
 	android:orientation		="vertical">  
 	<android.support.design.widget.AppBarLayout
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content">
+		android:layout_width	="match_parent"
+		android:layout_height	="wrap_content">
 		<android.support.v7.widget.Toolbar
 			xmlns:local				="http://schemas.android.com/apk/res-auto"
 			android:id				="@+id/toolbarImagesRepeat"
@@ -55,16 +55,16 @@
 			android:layout_marginRight	="20.0dp"
 			android:layout_marginLeft	="20.0dp">
 			<Button
-				android:onClick				="Button_Images_1_Click"
-				android:id					="@+id/button_I_choice1"
-				android:background			="@drawable/button_style_standard"
-				android:textColor			="@color/TextWhite"
-				android:textAllCaps			="false"
-				android:textSize			="18dp"
-				android:layout_width		="match_parent"
-				android:layout_height		="50.0dp"
-				android:layout_marginTop	="20.0dp"
-				android:layout_marginBottom	="250dp"
+				android:onClick					="Button_Images_1_Click"
+				android:id						="@+id/button_I_choice1"
+				android:background				="@drawable/button_style_standard"
+				android:textColor				="@color/TextWhite"
+				android:textAllCaps				="false"
+				android:textSize				="18dp"
+				android:layout_width			="match_parent"
+				android:layout_height			="50.0dp"
+				android:layout_marginTop		="20.0dp"
+				android:layout_marginBottom		="250dp"
 				android:layout_alignParentBottom="true"
 			/>
 			<Button

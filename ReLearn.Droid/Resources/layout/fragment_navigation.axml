@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
  <android.support.design.widget.NavigationView
-	xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:local="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_view"
-    android:layout_width="wrap_content"
-    android:layout_height="match_parent"
-    android:layout_gravity="start"
-	local:itemIconTint="#d7f8fe"  
-	local:itemTextColor="#d7f8fe"
-    android:fitsSystemWindows="true"
-    local:headerLayout="@layout/navigation_main_header"
-    local:menu="@menu/activity_main_drawer" />
+	xmlns:android				="http://schemas.android.com/apk/res/android"
+    xmlns:local					="http://schemas.android.com/apk/res-auto"
+	local:headerLayout			="@layout/navigation_main_header"
+    local:menu					="@menu/activity_main_drawer" 
+    android:id					="@+id/nav_view"
+	local:itemIconTint			="@color/TextWhite" 
+	local:itemTextColor			="@color/TextWhite"
+    android:layout_width		="wrap_content"
+    android:layout_height		="match_parent"
+    android:layout_gravity		="start"
+    android:fitsSystemWindows	="true"
+/>

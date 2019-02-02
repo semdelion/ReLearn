@@ -6,13 +6,13 @@
 	android:layout_width	= "match_parent"
 	android:layout_height	= "match_parent">
 	<android.support.design.widget.AppBarLayout
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content">
+		android:layout_width	="match_parent"
+		android:layout_height	="wrap_content">
 		<android.support.v7.widget.Toolbar
 			android:id				="@+id/toolbar_About_Us"
 			android:theme			="@style/ToolbarStyle"
 			android:background		="@drawable/toolbar"
-			local:navigationIcon		="@mipmap/arrow"
+			local:navigationIcon	="@mipmap/arrow"
 			android:layout_width	="match_parent"
 			android:layout_height	="80dp"
 			local:buttonGravity		="bottom">
@@ -40,15 +40,15 @@
 			android:textSize			="16dp"
 			android:defaultFocusHighlightEnabled="true"/>
 		<Button
-			local:MvxBind				="Click SupportProjectCommand"
-			android:text				="@string/Support_project"
-			android:background			="@drawable/button_style_standard"
-			android:textColor			="@color/TextWhite"
-			android:fontFamily			="@font/myriadpro_semibold"
-			android:textSize			="20dp"
-			android:layout_width		="match_parent"
-			android:layout_height		="55.0dp"
-			android:gravity				="center"
+			local:MvxBind					="Click SupportProjectCommand"
+			android:text					="@string/Support_project"
+			android:background				="@drawable/button_style_standard"
+			android:textColor				="@color/TextWhite"
+			android:fontFamily				="@font/myriadpro_semibold"
+			android:textSize				="20dp"
+			android:layout_width			="match_parent"
+			android:layout_height			="55.0dp"
+			android:gravity					="center"
 			android:layout_alignParentBottom="true"
             android:layout_alignParentRight	="true"
 			android:layout_marginBottom		="35dp"

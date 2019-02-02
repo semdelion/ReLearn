@@ -10,7 +10,7 @@ namespace ReLearn.Droid.Views.SelectDictionary
 {
     class TabImageFragment : Android.Support.V4.App.Fragment
     {
-        public View CreateViewForDictionary(View view, List<DBStatistics> DB, string NameDictionary, int ImageId, bool flag, bool separate, Color lightColor, Color darkColor)
+        public View CreateViewForDictionary(View view, List<DBStatistics> DB, string NameDictionary, int ImageId, GravityFlags flag, bool separate, Color lightColor, Color darkColor)
         {
             var width = Resources.DisplayMetrics.WidthPixels / 100f;
             int count = DB.Count;
@@ -22,7 +22,7 @@ namespace ReLearn.Droid.Views.SelectDictionary
             ImageView ImageDictionary = new ImageView(view.Context) { Tag = NameDictionary.ToString() };
             ImageDictionary.LayoutParameters = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WrapContent, LinearLayout.LayoutParams.WrapContent)
             {
-                Gravity = flag ? GravityFlags.Left : GravityFlags.Right
+                Gravity = flag
             };
             ImageDictionary.SetPadding((int)(5 * width), 0, (int)(5 * width), 0);
             ImageDictionary.SetImageBitmap(SelectDictionary.Dictionaries.DictionariesBitmap[SelectDictionary.Dictionaries.DictionariesBitmap.Count - 1]);
@@ -58,10 +58,10 @@ namespace ReLearn.Droid.Views.SelectDictionary
             TextlinearLayout.AddView(Name);
             TextlinearLayout.AddView(CountWords);
             TextlinearLayout.AddView(Description);
-            TextlinearLayout.SetPadding(flag ? 0 : (int)(5 * width), 0, !flag ? 0 : (int)(5 * width), 0);
+            TextlinearLayout.SetPadding(flag == GravityFlags.Left ? 0 : (int)(5 * width), 0, flag == GravityFlags.Right ? 0 : (int)(5 * width), 0);
 
-            DictionarylinearLayout.AddView(flag == true ? (View)ImageDictionary : TextlinearLayout);
-            DictionarylinearLayout.AddView(flag == false ? (View)ImageDictionary : TextlinearLayout);
+            DictionarylinearLayout.AddView(flag == GravityFlags.Left ? (View)ImageDictionary : TextlinearLayout);
+            DictionarylinearLayout.AddView(flag == GravityFlags.Right ? (View)ImageDictionary : TextlinearLayout);
 
             view.FindViewById<LinearLayout>(Resource.Id.ImageSelectDictionary).AddView(DictionarylinearLayout);
             if (separate)
@@ -79,18 +79,20 @@ namespace ReLearn.Droid.Views.SelectDictionary
             return view;
         }
 
-        public override void OnCreate(Bundle savedInstanceState)
-        {
-            base.OnCreate(savedInstanceState);
-        }
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            var DBStatFlag = DBStatistics.GetImages(TableNamesImage.Flags.ToString());
-            var DBStatFilms = DBStatistics.GetImages(TableNamesImage.Films.ToString());
             var view = inflater.Inflate(Resource.Layout.fragment_tab_images_dictionary, container, false);
-            CreateViewForDictionary(view, DBStatFlag, TableNamesImage.Flags.ToString(), Resource.Drawable.FlagDictionary, true, true, Colors.Orange, Colors.DarkOrange);
-            CreateViewForDictionary(view, DBStatFilms, TableNamesImage.Films.ToString(), Resource.Drawable.FilmDictionary, false, false, Colors.Orange, Colors.DarkOrange);
-            SelectDictionary.Dictionaries.Selected(DataBase.TableName.ToString(), DataBase.TableName.ToString());
+            var DBStatFlag  = DBStatistics.GetImages($"{TableNamesImage.Flags}");
+            var DBStatFilms = DBStatistics.GetImages($"{TableNamesImage.Films}");
+            CreateViewForDictionary(view, DBStatFlag,   
+                $"{TableNamesImage.Flags}", 
+                Resource.Drawable.FlagDictionary,
+                GravityFlags.Left,  true, Colors.Orange, Colors.DarkOrange);
+            CreateViewForDictionary(view, DBStatFilms,  
+                $"{TableNamesImage.Films}", 
+                Resource.Drawable.FilmDictionary,
+                GravityFlags.Right, false, Colors.Orange, Colors.DarkOrange);
+            SelectDictionary.Dictionaries.Selected($"{DataBase.TableName}",$"{DataBase.TableName}");
             return view; 
         }
     }

@@ -9,9 +9,9 @@ namespace ReLearn.Droid
 {
     static class Database
     {
-        const string _statistics = "database_statistics.db3";
-        const string _english = "database_words.db3";
-        const string _flags = "database_image.db3";
+        const string _statistics    = "database_statistics.db3";
+        const string _english       = "database_words.db3";
+        const string _flags         = "database_image.db3";
 
         public static void InstallDatabaseFromAssets()
         {

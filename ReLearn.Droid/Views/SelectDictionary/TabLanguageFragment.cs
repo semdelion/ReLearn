@@ -10,7 +10,7 @@ namespace ReLearn.Droid.Views.SelectDictionary
 {
     class TabLanguageFragment : Android.Support.V4.App.Fragment
     {
-        public View CreateViewForDictionary(View view, List<DBStatistics> DB, string NameDictionary, int ImageId, bool flag, bool separate, Color lightColor, Color darkColor)
+        public View CreateViewForDictionary(View view, List<DBStatistics> DB, string NameDictionary, int ImageId, GravityFlags flag, bool separate, Color lightColor, Color darkColor)
         {
             var width = Resources.DisplayMetrics.WidthPixels / 100f;
             int count = DB.Count;
@@ -22,7 +22,7 @@ namespace ReLearn.Droid.Views.SelectDictionary
             ImageView ImageDictionary = new ImageView(view.Context) { Tag = NameDictionary.ToString() };
             ImageDictionary.LayoutParameters = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WrapContent, LinearLayout.LayoutParams.WrapContent)
             {
-                Gravity = flag ? GravityFlags.Left : GravityFlags.Right
+                Gravity = flag
             };
             ImageDictionary.SetPadding((int)(5 * width), 0, (int)(5 * width), 0);
             ImageDictionary.SetImageBitmap(SelectDictionary.Dictionaries.DictionariesBitmap[SelectDictionary.Dictionaries.DictionariesBitmap.Count - 1]);
@@ -58,10 +58,10 @@ namespace ReLearn.Droid.Views.SelectDictionary
             TextlinearLayout.AddView(Name);
             TextlinearLayout.AddView(CountWords);
             TextlinearLayout.AddView(Description);
-            TextlinearLayout.SetPadding(flag ? 0 : (int)(5 * width), 0, !flag ? 0 : (int)(5 * width), 0);
+            TextlinearLayout.SetPadding(flag == GravityFlags.Left ? 0 : (int)(5 * width), 0, flag == GravityFlags.Right ? 0 : (int)(5 * width), 0);
 
-            DictionarylinearLayout.AddView(flag == true ? (View)ImageDictionary : TextlinearLayout);
-            DictionarylinearLayout.AddView(flag == false ? (View)ImageDictionary : TextlinearLayout);
+            DictionarylinearLayout.AddView(flag == GravityFlags.Left ? (View)ImageDictionary : TextlinearLayout);
+            DictionarylinearLayout.AddView(flag == GravityFlags.Right ? (View)ImageDictionary : TextlinearLayout);
 
             view.FindViewById<LinearLayout>(Resource.Id.LanguageSelectDictionary).AddView(DictionarylinearLayout);
             if (separate)
@@ -79,28 +79,44 @@ namespace ReLearn.Droid.Views.SelectDictionary
             return view;
         }
 
-        public override void OnCreate(Bundle savedInstanceState)
-        {
-            base.OnCreate(savedInstanceState);
-        }
-
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            var Home = DBStatistics.GetWords(TableNamesLanguage.Home.ToString());
-            var Education = DBStatistics.GetWords(TableNamesLanguage.Education.ToString());
-            var Popular_Words = DBStatistics.GetWords(TableNamesLanguage.Popular_Words.ToString());
-            var ThreeFormsOfVerb = DBStatistics.GetWords(TableNamesLanguage.ThreeFormsOfVerb.ToString());
-            var ComputerScience = DBStatistics.GetWords(TableNamesLanguage.ComputerScience.ToString());
-            var Nature = DBStatistics.GetWords(TableNamesLanguage.Nature.ToString());
-            var My_Directly = DBStatistics.GetWords(TableNamesLanguage.My_Directly.ToString());
             var view = inflater.Inflate(Resource.Layout.fragment_tab_languages_dictionary, container, false);
-            CreateViewForDictionary(view, Home, TableNamesLanguage.Home.ToString(), Resource.Drawable.homeDictionary, true, true, Colors.Blue, Colors.DarkBlue);
-            CreateViewForDictionary(view, Education, TableNamesLanguage.Education.ToString(), Resource.Drawable.EducationDictionary, false, true, Colors.Blue, Colors.DarkBlue);
-            CreateViewForDictionary(view, Popular_Words, TableNamesLanguage.Popular_Words.ToString(), Resource.Drawable.PopularWordsDictionary, true, true, Colors.Blue, Colors.DarkBlue);
-            CreateViewForDictionary(view, ThreeFormsOfVerb, TableNamesLanguage.ThreeFormsOfVerb.ToString(), Resource.Drawable.ThreeFormsOfVerbDictionary, false, true, Colors.Blue, Colors.DarkBlue);
-            CreateViewForDictionary(view, ComputerScience, TableNamesLanguage.ComputerScience.ToString(), Resource.Drawable.ComputerScience, true, true, Colors.Blue, Colors.DarkBlue);
-            CreateViewForDictionary(view, Nature, TableNamesLanguage.Nature.ToString(), Resource.Drawable.Nature, false, true, Colors.Blue, Colors.DarkBlue);
-            CreateViewForDictionary(view, My_Directly, TableNamesLanguage.My_Directly.ToString(), Resource.Drawable.MyDictionary, true, false, Colors.Blue, Colors.DarkBlue);
+            var Home             = DBStatistics.GetWords($"{TableNamesLanguage.Home}");
+            var Education        = DBStatistics.GetWords($"{TableNamesLanguage.Education}");
+            var Popular_Words    = DBStatistics.GetWords($"{TableNamesLanguage.Popular_Words}");
+            var ThreeFormsOfVerb = DBStatistics.GetWords($"{TableNamesLanguage.ThreeFormsOfVerb}");
+            var ComputerScience  = DBStatistics.GetWords($"{TableNamesLanguage.ComputerScience}");
+            var Nature           = DBStatistics.GetWords($"{TableNamesLanguage.Nature}");
+            var My_Directly      = DBStatistics.GetWords($"{TableNamesLanguage.My_Directly}");
+            CreateViewForDictionary(view, Home,
+                $"{TableNamesLanguage.Home}",
+                Resource.Drawable.homeDictionary,
+                GravityFlags.Left,  true, Colors.Blue, Colors.DarkBlue);
+            CreateViewForDictionary(view, Education,        
+                $"{TableNamesLanguage.Education}",
+                Resource.Drawable.EducationDictionary,
+                GravityFlags.Right, true, Colors.Blue, Colors.DarkBlue);
+            CreateViewForDictionary(view, Popular_Words,    
+                $"{TableNamesLanguage.Popular_Words}",   
+                Resource.Drawable.PopularWordsDictionary,
+                GravityFlags.Left,  true, Colors.Blue, Colors.DarkBlue);
+            CreateViewForDictionary(view, ThreeFormsOfVerb, 
+                $"{TableNamesLanguage.ThreeFormsOfVerb}", 
+                Resource.Drawable.ThreeFormsOfVerbDictionary,
+                GravityFlags.Right, true, Colors.Blue, Colors.DarkBlue);
+            CreateViewForDictionary(view, ComputerScience,  
+                $"{TableNamesLanguage.ComputerScience}", 
+                Resource.Drawable.ComputerScience,
+                GravityFlags.Left,  true, Colors.Blue, Colors.DarkBlue);
+            CreateViewForDictionary(view, Nature,           
+                $"{TableNamesLanguage.Nature}",           
+                Resource.Drawable.Nature,
+                GravityFlags.Right, true, Colors.Blue, Colors.DarkBlue);
+            CreateViewForDictionary(view, My_Directly,     
+                $"{TableNamesLanguage.My_Directly}",      
+                Resource.Drawable.MyDictionary,
+                GravityFlags.Left, false, Colors.Blue, Colors.DarkBlue);
             return view;
         }
     }

@@ -9,12 +9,14 @@ namespace ReLearn.Droid.Views.Statistics
     {
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            return new GraphGeneralStatistics(inflater.Inflate(Resource.Layout.fragment_tab_statistics_general, container, false).Context,
+            return new GraphGeneralStatistics(inflater.Inflate( 
+                Resource.Layout.fragment_tab_statistics_general, container, false).Context,
                 StatisticsFragment.LightColor, 
                 StatisticsFragment.DarkColor, 
                 StatisticsFragment.StatisticsDB,
                 StatisticsFragment.DataTupe, 
-                DataBase.TableName.ToString());
+                DataBase.TableName.ToString()
+                );
         }
     }
 }
