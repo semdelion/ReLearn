@@ -93,7 +93,7 @@ namespace ReLearn.Droid.Views.SelectDictionary
             var ComputerScience = DBStatistics.GetWords(TableNamesLanguage.ComputerScience.ToString());
             var Nature = DBStatistics.GetWords(TableNamesLanguage.Nature.ToString());
             var My_Directly = DBStatistics.GetWords(TableNamesLanguage.My_Directly.ToString());
-            var view = inflater.Inflate(Resource.Layout.select_dictionary_lanuage_fragment, container, false);
+            var view = inflater.Inflate(Resource.Layout.fragment_tab_languages_dictionary, container, false);
             CreateViewForDictionary(view, Home, TableNamesLanguage.Home.ToString(), Resource.Drawable.homeDictionary, true, true, Colors.Blue, Colors.DarkBlue);
             CreateViewForDictionary(view, Education, TableNamesLanguage.Education.ToString(), Resource.Drawable.EducationDictionary, false, true, Colors.Blue, Colors.DarkBlue);
             CreateViewForDictionary(view, Popular_Words, TableNamesLanguage.Popular_Words.ToString(), Resource.Drawable.PopularWordsDictionary, true, true, Colors.Blue, Colors.DarkBlue);

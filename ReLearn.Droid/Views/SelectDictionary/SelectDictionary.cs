@@ -31,7 +31,7 @@ namespace ReLearn.Droid.Views.SelectDictionary
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.select_dictionary);
+            SetContentView(Resource.Layout.fragment_select_dictionary);
             SetSupportActionBar(FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbarSelectDictionary));
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
             Dictionaries = new Dictionaries((int)(Resources.DisplayMetrics.WidthPixels / 3f));

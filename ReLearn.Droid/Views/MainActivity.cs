@@ -24,7 +24,7 @@ namespace ReLearn.Droid.Views
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.main_activity);
+            SetContentView(Resource.Layout.activity_main);
             UserDialogs.Init(this);
             DrawerLayout = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
             this.SupportFragmentManager.AddOnBackStackChangedListener(this);

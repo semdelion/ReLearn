@@ -138,7 +138,7 @@ namespace ReLearn.Droid.Languages
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.languages_repeat_activity);
+            SetContentView(Resource.Layout.activity_languages_repeat);
             var toolbarMain = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbarLanguagesRepeat);
            
             SetSupportActionBar(toolbarMain);

@@ -34,7 +34,7 @@ namespace ReLearn.Droid
 
         public override View GetView(int position, View convertView, ViewGroup parent)
         {
-            var view = convertView ?? activity.LayoutInflater.Inflate(Resource.Layout.item_view_dictionary_image, parent, false);
+            var view = convertView ?? activity.LayoutInflater.Inflate(Resource.Layout.item_image_view_dictionary, parent, false);
             var TextView = view.FindViewById<TextView>(Resource.Id.textView_item_view_dictionary);
             var ImageView = view.FindViewById<ImageView>(Resource.Id.imageView_item_view_dictionary);
             using (var his = Application.Context.Assets.Open($"Image{DataBase.TableName}Mini/{list[position].Image_name}.jpg"))

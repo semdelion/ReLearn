@@ -17,7 +17,7 @@ namespace ReLearn.Droid.Views.Fragments
     [Register("relearn.droid.views.statistics.StatisticsFragment")]
     public class StatisticsFragment : BaseFragment<StatisticViewModel>
     {
-        protected override int FragmentId => Resource.Layout.statistics_activity;
+        protected override int FragmentId => Resource.Layout.fragment_statistics;
 
         protected override int Toolbar => Resource.Id.toolbar_statistics;
 

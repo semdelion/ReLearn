@@ -9,5 +9,5 @@
 	local:itemIconTint="#d7f8fe"  
 	local:itemTextColor="#d7f8fe"
     android:fitsSystemWindows="true"
-    local:headerLayout="@layout/navigation_header_main"
+    local:headerLayout="@layout/navigation_main_header"
     local:menu="@menu/activity_main_drawer" />
