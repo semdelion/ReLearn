@@ -2,7 +2,7 @@
 using Android.Speech.Tts;
 using ReLearn.API;
 
-namespace ReLearn.Droid
+namespace ReLearn.Droid.Helpers
 {
     class MyTextToSpeech : Java.Lang.Object, TextToSpeech.IOnInitListener
     {
@@ -21,7 +21,7 @@ namespace ReLearn.Droid
         {
             if (status.Equals(OperationResult.Success))
             {
-                speaker.SetLanguage(Settings.CurrentPronunciation == Pronunciation.en.ToString() ? Java.Util.Locale.Us : Java.Util.Locale.Uk);
+                speaker.SetLanguage(Settings.CurrentPronunciation == $"{Pronunciation.en}" ? Java.Util.Locale.Us : Java.Util.Locale.Uk);
                 speaker.Speak(toSpeak, QueueMode.Flush, null, null);
             }
         }

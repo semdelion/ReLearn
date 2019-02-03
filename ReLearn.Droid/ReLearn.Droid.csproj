@@ -61,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Adapters\BackgroundConstructor.cs" />
+    <Compile Include="Helpers\RandomNumbers.cs" />
     <Compile Include="Views\Menu\AddFragment.cs" />
     <Compile Include="Views\Menu\BaseFragment.cs" />
     <Compile Include="Views\Menu\FeedbackFragment.cs" />
@@ -71,18 +72,18 @@
     <Compile Include="Views\Statistics\StatisticsFragment.cs" />
     <Compile Include="Views\Images\ViewDictionaryFragment.cs" />
     <Compile Include="Views\Languages\ViewDictionaryFragment.cs" />
-    <Compile Include="GetString.cs" />
-    <Compile Include="BitmapHandler.cs" />
-    <Compile Include="ButtonNext.cs" />
-    <Compile Include="Colors.cs" />
-    <Compile Include="Database.cs" />
+    <Compile Include="Helpers\GetString.cs" />
+    <Compile Include="Helpers\BitmapHandler.cs" />
+    <Compile Include="Helpers\ButtonNext.cs" />
+    <Compile Include="Helpers\Colors.cs" />
+    <Compile Include="Helpers\Database.cs" />
     <Compile Include="LinkerPleaseInclude.cs" />
-    <Compile Include="MessageDroid.cs" />
-    <Compile Include="MyTextToSpeech.cs" />
+    <Compile Include="Helpers\MessageDroid.cs" />
+    <Compile Include="Helpers\MyTextToSpeech.cs" />
     <Compile Include="Adapters\ImagesAdapter.cs" />
     <Compile Include="Adapters\LanguagesAdapter.cs" />
-    <Compile Include="PixelConverter.cs" />
-    <Compile Include="SelectDictionary.cs" />
+    <Compile Include="Helpers\PixelConverter.cs" />
+    <Compile Include="Views\SelectDictionary\SelectDictionary.cs" />
     <Compile Include="Services\INavigationActivity.cs" />
     <Compile Include="Setup.cs" />
     <Compile Include="SplashScreen.cs" />
@@ -208,7 +209,7 @@
     <AndroidResource Include="Resources\layout\activity_languages_blitz_poll.axml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\fragment_add_dictionary.axml" />
+    <AndroidResource Include="Resources\layout\fragment_menu_add_dictionary.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\fragment_menu_feedback.axml" />
@@ -235,7 +236,7 @@
     <AndroidResource Include="Resources\layout\splash_screen.axml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\fragment_view_dictionary.axml" />
+    <AndroidResource Include="Resources\layout\fragment_menu_view_dictionary.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\menu\menu_DictionaryReplenishment.xml" />
@@ -2693,7 +2694,7 @@
     <AndroidResource Include="Resources\drawable\spinner_item.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\fragment_statistics.axml">
+    <AndroidResource Include="Resources\layout\fragment_menu_statistics.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -2707,7 +2708,7 @@
     <AndroidResource Include="Resources\drawable\ic_statistics_main.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\fragment_select_dictionary.axml">
+    <AndroidResource Include="Resources\layout\fragment_menu_select_dictionary.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -2853,7 +2854,7 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\fragment_about_us.axml">
+    <AndroidResource Include="Resources\layout\fragment_menu_about_us.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -2873,12 +2874,12 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_study.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\fragment_add.axml">
+    <AndroidResource Include="Resources\layout\fragment_menu_add.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\fragment_settings.axml">
+    <AndroidResource Include="Resources\layout\fragment_menu_settings.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

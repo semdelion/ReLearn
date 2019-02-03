@@ -5,7 +5,7 @@ using ReLearn.API.Database;
 using System;
 using System.IO;
 
-namespace ReLearn.Droid
+namespace ReLearn.Droid.Helpers
 {
     static class Database
     {

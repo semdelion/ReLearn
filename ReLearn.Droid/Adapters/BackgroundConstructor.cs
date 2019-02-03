@@ -1,6 +1,7 @@
 ﻿using Android.Graphics;
 using Android.Widget;
 using ReLearn.API;
+using ReLearn.Droid.Helpers;
 
 namespace ReLearn.Droid.Adapters
 {

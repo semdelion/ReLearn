@@ -3,6 +3,7 @@ using Android.Content.PM;
 using MvvmCross.Droid.Support.V7.AppCompat;
 using ReLearn.API.Database;
 using ReLearn.Core;
+using ReLearn.Droid.Helpers;
 
 namespace ReLearn.Droid
 {

@@ -1,6 +1,6 @@
 ﻿using Android.Graphics;
 
-namespace ReLearn.Droid
+namespace ReLearn.Droid.Helpers
 {
     static class Colors
     {

@@ -9,8 +9,8 @@ namespace ReLearn.Droid.Views.Menu
     [Register("relearn.droid.views.menu.SettingsFragment")]
     class SettingsFragment : BaseFragment<SettingsViewModel>
     {
-        protected override int FragmentId => Resource.Layout.fragment_settings;
+        protected override int FragmentId => Resource.Layout.fragment_menu_settings;
 
-        protected override int Toolbar => Resource.Id.toolbarSetting;
+        protected override int Toolbar => Resource.Id.toolbar_setting;
     }
 }

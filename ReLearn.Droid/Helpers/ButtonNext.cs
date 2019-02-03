@@ -1,6 +1,6 @@
 ﻿using Android.Widget;
 
-namespace ReLearn.Droid
+namespace ReLearn.Droid.Helpers
 {
     enum StateButton
     {

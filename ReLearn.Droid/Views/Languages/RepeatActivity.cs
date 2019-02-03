@@ -8,6 +8,7 @@ using MvvmCross.Droid.Support.V7.AppCompat;
 using ReLearn.API;
 using ReLearn.API.Database;
 using ReLearn.Core.ViewModels.Languages;
+using ReLearn.Droid.Helpers;
 using System;
 using System.Collections.Generic;
 
@@ -126,7 +127,7 @@ namespace ReLearn.Droid.Languages
                 }
                 else
                 {
-                    DBStatistics.Insert(Statistics.True, Statistics.False, DataBase.TableName.ToString());
+                    DBStatistics.Insert(Statistics.True, Statistics.False, $"{DataBase.TableName}");
                     Statistics.Delete();
                     ViewModel.ToStatistic.Execute();
                     Finish();
@@ -139,7 +140,7 @@ namespace ReLearn.Droid.Languages
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.activity_languages_repeat);
-            var toolbarMain = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbarLanguagesRepeat);
+            var toolbarMain = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar_languages_repeat);
            
             SetSupportActionBar(toolbarMain);
             SupportActionBar.SetDisplayHomeAsUpEnabled(true); // отображаем кнопку домой

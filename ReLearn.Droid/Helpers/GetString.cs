@@ -1,4 +1,4 @@
-﻿namespace ReLearn.Droid
+﻿namespace ReLearn.Droid.Helpers
 {
 
     static class GetString

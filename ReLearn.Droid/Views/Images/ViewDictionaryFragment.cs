@@ -18,9 +18,9 @@ namespace ReLearn.Droid.Views.Images
     [Register("relearn.droid.views.images.ViewDictionaryFragment")]
     public class ViewDictionaryFragment : BaseFragment<ViewDictionaryViewModel>
     {
-        protected override int FragmentId => Resource.Layout.fragment_view_dictionary;
+        protected override int FragmentId => Resource.Layout.fragment_menu_view_dictionary;
 
-        protected override int Toolbar => Resource.Id.toolbarLanguagesDelete;
+        protected override int Toolbar => Resource.Id.toolbar_view_dictionary;
         ListView DictionaryImages { get; set; }
         List<DBImages> dataBase = DBImages.GetData;
         public static bool HideStudied

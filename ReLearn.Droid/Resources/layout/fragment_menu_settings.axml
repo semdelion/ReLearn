@@ -10,7 +10,7 @@
 		android:layout_height	="wrap_content">
 		<android.support.v7.widget.Toolbar 
 			xmlns:local				="http://schemas.android.com/apk/res-auto"
-			android:id				="@+id/toolbarSetting"
+			android:id				="@+id/toolbar_setting"
 			local:navigationIcon	="@mipmap/ic_arrow_back" 
 			android:theme			="@style/ToolbarStyle"		
 			android:background		="@drawable/background_toolbar"

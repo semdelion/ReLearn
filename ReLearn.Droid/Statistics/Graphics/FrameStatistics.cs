@@ -1,4 +1,5 @@
 ﻿using Android.Graphics;
+using ReLearn.Droid.Helpers;
 using System;
 using static Android.Graphics.Shader;
 

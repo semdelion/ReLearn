@@ -7,6 +7,7 @@ using Android.Widget;
 using MvvmCross.Droid.Support.V7.AppCompat;
 using ReLearn.API.Database;
 using ReLearn.Core.ViewModels.Languages;
+using ReLearn.Droid.Helpers;
 using System.Collections.Generic;
 
 namespace ReLearn.Droid.Languages
@@ -66,7 +67,7 @@ namespace ReLearn.Droid.Languages
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.activity_languages_learn);
-            var toolbarMain = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbarLanguagesLearn);
+            var toolbarMain = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar_languages_learn);
             SetSupportActionBar(toolbarMain);
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
             DisplayMetrics displayMetrics = new DisplayMetrics();

@@ -15,6 +15,6 @@ namespace ReLearn.Droid.Views.Menu
     {
         protected override int FragmentId => Resource.Layout.fragment_menu_feedback;
 
-        protected override int Toolbar => Resource.Id.toolbar_Feedback; 
+        protected override int Toolbar => Resource.Id.toolbar_feedback; 
     }
 }

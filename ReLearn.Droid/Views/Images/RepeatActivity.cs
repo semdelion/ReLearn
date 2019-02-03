@@ -9,6 +9,7 @@ using MvvmCross.Droid.Support.V7.AppCompat;
 using ReLearn.API;
 using ReLearn.API.Database;
 using ReLearn.Core.ViewModels.Images;
+using ReLearn.Droid.Helpers;
 using System;
 using System.Collections.Generic;
 
@@ -129,7 +130,7 @@ namespace ReLearn.Droid.Images
                 }
                 else
                 {
-                    DBStatistics.Insert(Statistics.True, Statistics.False, DataBase.TableName.ToString());
+                    DBStatistics.Insert(Statistics.True, Statistics.False, $"{DataBase.TableName}");
                     Statistics.Delete();
                     ViewModel.ToStatistic.Execute();
                     this.Finish();
@@ -143,7 +144,7 @@ namespace ReLearn.Droid.Images
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.activity_images_repeat);
             
-            var toolbarMain = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbarImagesRepeat);
+            var toolbarMain = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar_images_repeat);
             SetSupportActionBar(toolbarMain);
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
             ImagesDatabase = DBImages.GetDataNotLearned;

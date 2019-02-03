@@ -1,6 +1,6 @@
 ﻿using Android.Util;
 
-namespace ReLearn.Droid
+namespace ReLearn.Droid.Helpers
 {
     public static class PixelConverter
     {

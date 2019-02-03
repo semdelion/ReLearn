@@ -10,9 +10,9 @@ namespace ReLearn.Droid.Views.Menu
     [Register("relearn.droid.views.menu.AddFragment")]
     public class AddFragment : BaseFragment<AddViewModel>
     {
-        protected override int FragmentId => Resource.Layout.fragment_add;
+        protected override int FragmentId => Resource.Layout.fragment_menu_add;
 
-        protected override int Toolbar => Resource.Id.toolbarEnglishAdd;
+        protected override int Toolbar => Resource.Id.toolbar_add;
 
         public override void OnCreateOptionsMenu(IMenu menu, MenuInflater inflater)
         {

@@ -21,9 +21,9 @@ namespace ReLearn.Droid.Views.SelectDictionary
     {
         public static Dictionaries Dictionaries;
 
-        protected override int FragmentId => Resource.Layout.fragment_select_dictionary;
+        protected override int FragmentId => Resource.Layout.fragment_menu_select_dictionary;
 
-        protected override int Toolbar => Resource.Id.toolbarSelectDictionary;
+        protected override int Toolbar => Resource.Id.toolbar_select_dictionary;
 
         public static void SelectDictionaryClick(object sender, EventArgs e)
         {

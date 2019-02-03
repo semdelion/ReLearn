@@ -18,9 +18,9 @@ namespace ReLearn.Droid.Views.Languages
     [Register("relearn.droid.views.languages.ViewDictionaryFragment")]
     public class ViewDictionaryFragment : BaseFragment<ViewDictionaryViewModel>
     {
-        protected override int FragmentId => Resource.Layout.fragment_view_dictionary;
+        protected override int FragmentId => Resource.Layout.fragment_menu_view_dictionary;
 
-        protected override int Toolbar => Resource.Id.toolbarLanguagesDelete;
+        protected override int Toolbar => Resource.Id.toolbar_view_dictionary;
         ListView DictionaryWords { get; set; }
         List<DBWords> WordDatabase = DBWords.GetData;
         public static bool HideStudied

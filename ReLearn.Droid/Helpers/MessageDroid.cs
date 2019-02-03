@@ -5,7 +5,7 @@ using MvvmCross.Platforms.Android;
 using ReLearn.Core;
 using System;
 
-namespace ReLearn.Droid
+namespace ReLearn.Droid.Helpers
 {
     class MessageDroid : IMessageCore
     {

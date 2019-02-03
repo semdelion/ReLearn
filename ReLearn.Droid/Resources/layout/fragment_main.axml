@@ -15,7 +15,7 @@
 			android:layout_width	="match_parent"
 			android:layout_height	="wrap_content">
 			<android.support.v7.widget.Toolbar 
-				android:id				="@+id/background_toolbar_home"
+				android:id				="@+id/toolbar_home"
 				android:background		="@drawable/background_toolbar_home" 
 				android:theme			="@style/ToolbarStyle"	
 				android:layout_width	="match_parent"

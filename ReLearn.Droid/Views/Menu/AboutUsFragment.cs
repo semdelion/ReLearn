@@ -10,8 +10,8 @@ namespace ReLearn.Droid.Views.Menu
     [Register("relearn.droid.views.menu.AboutUslFragment")]
     public class AboutUslFragment : BaseFragment<AboutUsViewModel>
     {
-        protected override int FragmentId => Resource.Layout.fragment_about_us;
+        protected override int FragmentId => Resource.Layout.fragment_menu_about_us;
 
-        protected override int Toolbar => Resource.Id.toolbar_About_Us;
+        protected override int Toolbar => Resource.Id.toolbar_about_us;
     }
 }

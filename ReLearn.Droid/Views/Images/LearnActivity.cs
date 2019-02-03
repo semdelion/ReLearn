@@ -8,6 +8,7 @@ using Android.Widget;
 using MvvmCross.Droid.Support.V7.AppCompat;
 using ReLearn.API.Database;
 using ReLearn.Core.ViewModels.Images;
+using ReLearn.Droid.Helpers;
 using System;
 using System.Collections.Generic;
 
@@ -57,7 +58,7 @@ namespace ReLearn.Droid.Images
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.activity_images_learn);
-            SetSupportActionBar(FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbarImagesLearn));
+            SetSupportActionBar(FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar_images_learn));
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
             ImagesDatabase = DBImages.GetDataNotLearned;
             DisplayMetrics displayMetrics = new DisplayMetrics();

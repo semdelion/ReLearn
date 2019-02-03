@@ -12,7 +12,7 @@ namespace ReLearn.Droid.Views.Menu
     {
         protected override int FragmentId => Resource.Layout.fragment_main;
 
-        protected override int Toolbar => Resource.Id.background_toolbar_home;
+        protected override int Toolbar => Resource.Id.toolbar_home;
 
         public override void OnCreateOptionsMenu(IMenu menu, MenuInflater inflater)
         {

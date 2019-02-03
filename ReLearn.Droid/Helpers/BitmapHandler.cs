@@ -1,7 +1,7 @@
 ﻿using Android.Graphics;
 using static Android.Graphics.PorterDuff;
 
-namespace ReLearn.Droid
+namespace ReLearn.Droid.Helpers
 {
     public static class BitmapHandler
     {

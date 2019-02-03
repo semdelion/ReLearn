@@ -7,6 +7,7 @@ using Android.Views;
 using MvvmCross.Platforms.Android.Presenters.Attributes;
 using ReLearn.API.Database;
 using ReLearn.Core.ViewModels;
+using ReLearn.Droid.Helpers;
 using ReLearn.Droid.Views.Menu;
 using ReLearn.Droid.Views.Statistics;
 using System.Collections.Generic;
@@ -17,7 +18,7 @@ namespace ReLearn.Droid.Views.Fragments
     [Register("relearn.droid.views.statistics.StatisticsFragment")]
     public class StatisticsFragment : BaseFragment<StatisticViewModel>
     {
-        protected override int FragmentId => Resource.Layout.fragment_statistics;
+        protected override int FragmentId => Resource.Layout.fragment_menu_statistics;
 
         protected override int Toolbar => Resource.Id.toolbar_statistics;
 

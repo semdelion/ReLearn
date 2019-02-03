@@ -1,6 +1,7 @@
 ﻿using Android.Graphics;
 using Android.OS;
 using Android.Views;
+using ReLearn.Droid.Helpers;
 using Android.Widget;
 using ReLearn.API;
 using ReLearn.API.Database;
@@ -30,7 +31,7 @@ namespace ReLearn.Droid.Views.SelectDictionary
 
             TextView Name = new TextView(view.Context)
             {
-                Text = Droid.GetString.GetResourceString(NameDictionary, this.Resources),
+                Text = Helpers.GetString.GetResourceString(NameDictionary, this.Resources),
                 TextSize = 20//(int)(3 * width)
             };
             TextView CountWords = new TextView(view.Context)
@@ -41,7 +42,7 @@ namespace ReLearn.Droid.Views.SelectDictionary
             };
             TextView Description = new TextView(view.Context)
             {
-                Text = Droid.GetString.GetResourceString($"{NameDictionary}Description", this.Resources),
+                Text = Helpers.GetString.GetResourceString($"{NameDictionary}Description", this.Resources),
                 TextSize = 11//(int)(1.7f * width)
             };
             LinearLayout TextlinearLayout = new LinearLayout(view.Context)

@@ -3,6 +3,7 @@ using MvvmCross.Converters;
 using MvvmCross.Droid.Support.V7.AppCompat;
 using MvvmCross.Localization;
 using ReLearn.Core;
+using ReLearn.Droid.Helpers;
 
 namespace ReLearn.Droid
 {
