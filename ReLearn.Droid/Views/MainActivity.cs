@@ -49,26 +49,12 @@ namespace ReLearn.Droid.Views
             CurrentFocus.ClearFocus();
         }
 
-        public override bool OnOptionsItemSelected(IMenuItem item)
-        {
-            switch (item.ItemId)
-            {
-                case Android.Resource.Id.Home:
-                    DrawerLayout.OpenDrawer(GravityCompat.Start);
-                    return true;
-            }
-            return base.OnOptionsItemSelected(item);
-        }
-
         public void OnBackStackChanged()
         {
-            //if(SupportFragmentManager.BackStackEntryCount >= 1)
+            //if (SupportFragmentManager.BackStackEntryCount >= 1)
             //{
-            //    if (SupportFragmentManager.BackStackEntryCount == 1)
-            //    {
-            //        SupportActionBar.SetDisplayHomeAsUpEnabled(true);
-            //    }
             //    SupportFragmentManager.PopBackStack();
+            //    return true;
             //}
         }
     }

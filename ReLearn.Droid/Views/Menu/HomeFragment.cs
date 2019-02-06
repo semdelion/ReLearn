@@ -1,5 +1,7 @@
-﻿using Android.Runtime;
+﻿using Android.Animation;
+using Android.Runtime;
 using Android.Views;
+using Android.Views.Animations;
 using MvvmCross.Platforms.Android.Presenters.Attributes;
 using ReLearn.Core.ViewModels;
 using ReLearn.Core.ViewModels.MainMenu;
@@ -34,3 +36,6 @@ namespace ReLearn.Droid.Views.Menu
         }
     }
 }
+
+
+    
