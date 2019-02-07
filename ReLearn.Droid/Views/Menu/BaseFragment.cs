@@ -39,20 +39,19 @@ namespace ReLearn.Droid.Views.Menu
             if (_toolbar != null)
             {
                 ParentActivity.SetSupportActionBar(_toolbar);
-                ParentActivity.SupportActionBar.SetHomeButtonEnabled(true);
-                ParentActivity.SupportActionBar.SetDisplayHomeAsUpEnabled(true);
+                //ParentActivity.SupportActionBar.SetHomeButtonEnabled(true);
+                //ParentActivity.SupportActionBar.SetDisplayHomeAsUpEnabled(true);
                 _drawerToggle = new MvxActionBarDrawerToggle(
 				Activity,                               // host Activity
 				(ParentActivity as INavigationActivity).DrawerLayout,  // DrawerLayout object
 				_toolbar,                               // nav drawer icon to replace 'Up' caret
                 Resource.String.navigation_drawer_open, 
                 Resource.String.navigation_drawer_close);
-				_drawerToggle.DrawerOpened += (object sender, ActionBarDrawerEventArgs e) => (Activity as MainActivity)?.HideSoftKeyboard();
+				//_drawerToggle.DrawerOpened += (object sender, ActionBarDrawerEventArgs e) => (Activity as MainActivity)?.HideSoftKeyboard();
 				(ParentActivity as INavigationActivity).DrawerLayout.AddDrawerListener(_drawerToggle);
                
             }
-            var backArrow = ParentActivity.SupportFragmentManager.BackStackEntryCount == 0 ? false : true;
-            SetHomeAsUp(backArrow);
+            SetHomeAsUp(ParentActivity.SupportFragmentManager.BackStackEntryCount == 0 ? false : true);
             return view;
 		}
 
@@ -78,7 +77,7 @@ namespace ReLearn.Droid.Views.Menu
         {
             base.OnActivityCreated(savedInstanceState);
             if (_toolbar != null)
-                _drawerToggle.SyncState();
+                _drawerToggle?.SyncState();
         }
 
         protected void SetHomeAsUp(bool isHomeAsUp)
