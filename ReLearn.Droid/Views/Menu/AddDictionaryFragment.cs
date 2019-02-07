@@ -48,24 +48,22 @@ namespace ReLearn.Droid.Views.Menu
 
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
+            if (item.ItemId == Resource.Id.dictionary_replenishment_instruction)
+            {
+                Android.App.AlertDialog.Builder alert = new Android.App.AlertDialog.Builder(ParentActivity);
+                LayoutInflater factory = LayoutInflater.From(ParentActivity);
+                alert.SetView(factory.Inflate(Resource.Layout.alert_dictionary, null));
+                alert.SetTitle(Resource.String.Instruction);
+                alert.SetPositiveButton("Cancel", delegate { alert.Dispose(); });
+                alert.Show();
+                return true;
+            }
             if (ParentActivity.SupportFragmentManager.BackStackEntryCount >= 1)
             {
                 ParentActivity.SupportFragmentManager.PopBackStack();
                 return true;
             }
-            switch (item.ItemId)
-            {
-                case Resource.Id.dictionary_replenishment_instruction:
-                    Android.App.AlertDialog.Builder alert = new Android.App.AlertDialog.Builder(ParentActivity);
-                    LayoutInflater factory = LayoutInflater.From(ParentActivity);
-                    alert.SetView(factory.Inflate(Resource.Layout.alert_dictionary, null));
-                    alert.SetTitle(Resource.String.Instruction);
-                    alert.SetPositiveButton("Cancel", delegate { alert.Dispose(); });
-                    alert.Show();
-                    return true;
-                default:
-                    return base.OnOptionsItemSelected(item);
-            }
+            return false;
         }
     }
 }

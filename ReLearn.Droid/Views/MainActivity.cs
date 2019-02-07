@@ -42,15 +42,15 @@ namespace ReLearn.Droid.Views
                 base.OnBackPressed();
         }
 
-        //public void HideSoftKeyboard()
-        //{
-        //    if (CurrentFocus == null) return;
+        public void HideSoftKeyboard()
+        {
+            if (CurrentFocus == null) return;
 
-        //    InputMethodManager inputMethodManager = (InputMethodManager)GetSystemService(InputMethodService);
-        //    inputMethodManager.HideSoftInputFromWindow(CurrentFocus.WindowToken, 0);
+            InputMethodManager inputMethodManager = (InputMethodManager)GetSystemService(InputMethodService);
+            inputMethodManager.HideSoftInputFromWindow(CurrentFocus.WindowToken, 0);
 
-        //    CurrentFocus.ClearFocus();
-        //}
+            CurrentFocus.ClearFocus();
+        }
 
         public void OnBackStackChanged(){}
     }
