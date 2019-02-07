@@ -27,8 +27,8 @@
 		</android.support.v7.widget.Toolbar>
 	</android.support.design.widget.AppBarLayout>
 	<RelativeLayout
-		android:layout_marginRight	="20.0dp"
-		android:layout_marginLeft	="20.0dp"
+		android:layout_marginRight	="@dimen/margin_right"
+		android:layout_marginLeft	="@dimen/margin_left"
 		android:layout_width		="match_parent"
 		android:layout_height		="match_parent">
 		<TextView
@@ -63,7 +63,7 @@
 			android:textSize				="20dp"
 			android:gravity					="center"
 			android:layout_width			="match_parent"
-			android:layout_height			="55.0dp"
+			android:layout_height			="@dimen/button_height"
 			android:layout_alignParentBottom="true"
 			android:layout_alignParentRight	="true"
 			android:layout_marginBottom		="35dp"

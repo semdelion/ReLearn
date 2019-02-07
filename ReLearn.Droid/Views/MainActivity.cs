@@ -33,7 +33,6 @@ namespace ReLearn.Droid.Views
 
         public override void OnBackPressed()
         {
-
             if (DrawerLayout != null && DrawerLayout.IsDrawerOpen(GravityCompat.Start))
                 DrawerLayout.CloseDrawers();
             else if (SupportFragmentManager.BackStackEntryCount >= 1)
@@ -45,10 +44,8 @@ namespace ReLearn.Droid.Views
         public void HideSoftKeyboard()
         {
             if (CurrentFocus == null) return;
-
             InputMethodManager inputMethodManager = (InputMethodManager)GetSystemService(InputMethodService);
             inputMethodManager.HideSoftInputFromWindow(CurrentFocus.WindowToken, 0);
-
             CurrentFocus.ClearFocus();
         }
 

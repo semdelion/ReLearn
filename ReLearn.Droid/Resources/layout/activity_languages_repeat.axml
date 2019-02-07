@@ -48,8 +48,8 @@
 		<RelativeLayout
 			android:layout_width		="match_parent"
 			android:layout_height		="match_parent"
-			android:layout_marginRight	="20.0dp"
-			android:layout_marginLeft	="20.0dp">
+			android:layout_marginRight	="@dimen/margin_right"
+			android:layout_marginLeft	="@dimen/margin_left">
 			<Button
 				android:onClick					="Button_Languages_1_Click"
 				android:id						="@+id/button_Languages_choice1"
@@ -58,7 +58,7 @@
 				android:textAllCaps				="false"
 				android:textSize				="18dp"
 				android:layout_width			="match_parent"
-				android:layout_height			="50dp"
+				android:layout_height			="@dimen/button_height"
 				android:layout_marginBottom		="250dp"
 				android:layout_alignParentBottom="true"/>
 			<Button
@@ -69,7 +69,7 @@
 				android:textAllCaps				="false"
 				android:textSize				="18dp"
 				android:layout_width			="match_parent"
-				android:layout_height			="50.0dp"
+				android:layout_height			="@dimen/button_height"
 				android:layout_marginBottom		="190dp"
 				android:layout_alignParentBottom="true"/>
 			<Button
@@ -80,7 +80,7 @@
 				android:textAllCaps				="false"
 				android:textSize				="18dp"
 				android:layout_width			="match_parent"
-				android:layout_height			="50.0dp"
+				android:layout_height			="@dimen/button_height"
 				android:layout_marginBottom		="130dp"
 				android:layout_alignParentBottom="true"/>
 			<Button
@@ -91,7 +91,7 @@
 				android:textAllCaps				="false"
 				android:textSize				="18dp"
 				android:layout_width			="match_parent"
-				android:layout_height			="55.0dp"
+				android:layout_height			="@dimen/button_height"
 				android:layout_marginBottom		="70dp"
 				android:layout_alignParentBottom="true"/>
 			<ImageButton
@@ -100,7 +100,7 @@
 				android:background				="@drawable/button_style_standard"
 				android:src						="@mipmap/speak_on"
 				android:layout_width			="55dp"
-				android:layout_height			="50.0dp"
+				android:layout_height			="@dimen/button_height"
 				android:layout_gravity			="left|right|center"
 				android:gravity					="left|right|center"
 				android:scaleType				="fitXY"
@@ -117,7 +117,7 @@
 				android:layout_toRightOf		="@+id/Button_Speak_Languages"
 				android:textSize				="20dp"
 				android:layout_width			="match_parent"
-				android:layout_height			="50.0dp"
+				android:layout_height			="@dimen/button_height"
 				android:gravity					="center"
 				android:enabled					="false"
 				android:layout_marginLeft		="25.0dp"

@@ -62,8 +62,8 @@
 		<TableLayout
 			android:layout_width		="match_parent"
 			android:layout_height		="match_parent"
-			android:layout_marginRight	="20.0dp"
-			android:layout_marginLeft	="20.0dp"
+			android:layout_marginRight	="@dimen/margin_right"
+			android:layout_marginLeft	="@dimen/margin_left"
 			android:layout_marginBottom	="30dp"
 			android:gravity				="bottom">
 			<TableRow>
@@ -77,7 +77,7 @@
 					android:textSize			="20dp"
 					android:layout_width		="0dp"
 					android:layout_weight		="0.5"
-					android:layout_height		="55.0dp"
+					android:layout_height		="@dimen/button_height"
 					android:layout_marginRight	="5dp"
 					android:layout_alignParentBottom="true"
 				/>
@@ -91,7 +91,7 @@
 					android:textSize			="20dp"
 					android:layout_width		="0dp"
 					android:layout_weight		="0.5"
-					android:layout_height		="55.0dp"
+					android:layout_height		="@dimen/button_height"
 					android:layout_marginLeft	="5dp" 
 					android:layout_alignParentBottom="true"
 				/>
