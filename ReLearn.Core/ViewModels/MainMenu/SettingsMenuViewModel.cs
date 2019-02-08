@@ -74,8 +74,8 @@ namespace ReLearn.Core.ViewModels.MainMenu
             set
             {
                 SetProperty(ref _timeToBlitz, value);
-                TimeToBlitzText = $"{15 + _timeToBlitz * 15}";
-                Settings.TimeToBlitz = _timeToBlitz * 15 + 15;
+                TimeToBlitzText = $"{15 + _timeToBlitz * 5}";
+                Settings.TimeToBlitz = _timeToBlitz * 5 + 15;
             }
         }
 
@@ -131,7 +131,7 @@ namespace ReLearn.Core.ViewModels.MainMenu
             NavigationService = navigationService;
             WordsNumber = (Settings.NumberOfRepeatsLanguage - 5) / 5;
             ImagesNumber = (Settings.NumberOfRepeatsImage - 5) / 5;
-            TimeToBlitz = (Settings.TimeToBlitz - 15) / 15;
+            TimeToBlitz = (Settings.TimeToBlitz - 15) / 5;
             IsActiveBlitz = Settings.BlitzEnable;
             IsActiveQuiz = Settings.QuizEnable;
         }

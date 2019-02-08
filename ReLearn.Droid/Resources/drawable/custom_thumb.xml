@@ -5,10 +5,10 @@
   <gradient
       android:angle       ="270"
       android:endColor    ="@color/blue"
-      android:startColor  ="@color/blue"
+      android:startColor  ="@color/dark_blue"
   />
   <size
-      android:height      ="15dp"
-      android:width       ="15dp"
+      android:height      ="@dimen/seekbar_height"
+      android:width       ="@dimen/seekbar_height"
    />
 </shape>

@@ -61,7 +61,7 @@
 			android:max					="5"
 			android:layout_marginTop	="10.0dp"
 			android:layout_width		="match_parent"
-			android:layout_height		="wrap_content"/>
+			android:layout_height		="@dimen/seekbar_height"/>
 		<LinearLayout
 			android:layout_width		="wrap_content"
 			android:layout_height		="wrap_content"
@@ -91,7 +91,7 @@
 			android:max					="5"
 			android:layout_marginTop	="10.0dp"
 			android:layout_width		="match_parent"
-			android:layout_height		="wrap_content"/>
+			android:layout_height		="@dimen/seekbar_height"/>
 		<LinearLayout
 			android:layout_width		="wrap_content"
 			android:layout_height		="wrap_content"
@@ -125,10 +125,10 @@
 			local:MvxBind				="Progress TimeToBlitz"
 			android:thumb				="@drawable/custom_thumb"
 			android:progressDrawable	="@drawable/style_seekbar_progressbar_blitz"
-			android:max					="5"
+			android:max					="15"
 			android:layout_marginTop	="10.0dp"
 			android:layout_width		="match_parent"
-			android:layout_height		="wrap_content"/>
+			android:layout_height		="@dimen/seekbar_height"/>
 		<LinearLayout
 			android:layout_width		="wrap_content"
 			android:layout_height		="wrap_content"
@@ -189,7 +189,7 @@
 					android:layout_height		="30.0dp" />
 				<Switch
 					local:MvxBind				="Checked IsActiveBlitz"
-					android:thumb				="@drawable/custom_thumb"
+					android:thumb				="@drawable/custom_thumb_switch"
 					android:layout_width		="match_parent"
 					android:layout_height		="wrap_content"
 					android:layout_marginRight	="20.0dp"
@@ -214,7 +214,7 @@
 					android:layout_height		="30.0dp" />
 				<Switch
 					local:MvxBind				="Checked IsActiveQuiz"
-					android:thumb				="@drawable/custom_thumb"
+					android:thumb				="@drawable/custom_thumb_switch"
 					android:layout_width		="match_parent"
 					android:layout_height		="wrap_content"
 					android:layout_marginRight	="20.0dp"
