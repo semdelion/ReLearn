@@ -3996,6 +3996,156 @@ namespace ReLearn.Droid
 			global::MvvmCross.Droid.Support.V7.AppCompat.Resource.Styleable.ViewStubCompat_android_id = global::ReLearn.Droid.Resource.Styleable.ViewStubCompat_android_id;
 			global::MvvmCross.Droid.Support.V7.AppCompat.Resource.Styleable.ViewStubCompat_android_inflatedId = global::ReLearn.Droid.Resource.Styleable.ViewStubCompat_android_inflatedId;
 			global::MvvmCross.Droid.Support.V7.AppCompat.Resource.Styleable.ViewStubCompat_android_layout = global::ReLearn.Droid.Resource.Styleable.ViewStubCompat_android_layout;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Attribute.MvxBind = global::ReLearn.Droid.Resource.Attribute.MvxBind;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Attribute.MvxDropDownItemTemplate = global::ReLearn.Droid.Resource.Attribute.MvxDropDownItemTemplate;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Attribute.MvxGroupItemTemplate = global::ReLearn.Droid.Resource.Attribute.MvxGroupItemTemplate;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Attribute.MvxItemTemplate = global::ReLearn.Droid.Resource.Attribute.MvxItemTemplate;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Attribute.MvxLang = global::ReLearn.Droid.Resource.Attribute.MvxLang;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Attribute.MvxTemplate = global::ReLearn.Droid.Resource.Attribute.MvxTemplate;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Attribute.MvxTemplateSelector = global::ReLearn.Droid.Resource.Attribute.MvxTemplateSelector;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Attribute.fastScrollEnabled = global::ReLearn.Droid.Resource.Attribute.fastScrollEnabled;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Attribute.fastScrollHorizontalThumbDrawable = global::ReLearn.Droid.Resource.Attribute.fastScrollHorizontalThumbDrawable;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Attribute.fastScrollHorizontalTrackDrawable = global::ReLearn.Droid.Resource.Attribute.fastScrollHorizontalTrackDrawable;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Attribute.fastScrollVerticalThumbDrawable = global::ReLearn.Droid.Resource.Attribute.fastScrollVerticalThumbDrawable;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Attribute.fastScrollVerticalTrackDrawable = global::ReLearn.Droid.Resource.Attribute.fastScrollVerticalTrackDrawable;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Attribute.font = global::ReLearn.Droid.Resource.Attribute.font;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Attribute.fontProviderAuthority = global::ReLearn.Droid.Resource.Attribute.fontProviderAuthority;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Attribute.fontProviderCerts = global::ReLearn.Droid.Resource.Attribute.fontProviderCerts;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Attribute.fontProviderFetchStrategy = global::ReLearn.Droid.Resource.Attribute.fontProviderFetchStrategy;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Attribute.fontProviderFetchTimeout = global::ReLearn.Droid.Resource.Attribute.fontProviderFetchTimeout;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Attribute.fontProviderPackage = global::ReLearn.Droid.Resource.Attribute.fontProviderPackage;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Attribute.fontProviderQuery = global::ReLearn.Droid.Resource.Attribute.fontProviderQuery;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Attribute.fontStyle = global::ReLearn.Droid.Resource.Attribute.fontStyle;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Attribute.fontWeight = global::ReLearn.Droid.Resource.Attribute.fontWeight;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Attribute.layoutManager = global::ReLearn.Droid.Resource.Attribute.layoutManager;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Attribute.reverseLayout = global::ReLearn.Droid.Resource.Attribute.reverseLayout;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Attribute.spanCount = global::ReLearn.Droid.Resource.Attribute.spanCount;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Attribute.stackFromEnd = global::ReLearn.Droid.Resource.Attribute.stackFromEnd;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Boolean.abc_action_bar_embed_tabs = global::ReLearn.Droid.Resource.Boolean.abc_action_bar_embed_tabs;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Color.notification_action_color_filter = global::ReLearn.Droid.Resource.Color.notification_action_color_filter;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Color.notification_icon_bg_color = global::ReLearn.Droid.Resource.Color.notification_icon_bg_color;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Color.ripple_material_light = global::ReLearn.Droid.Resource.Color.ripple_material_light;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Color.secondary_text_default_material_light = global::ReLearn.Droid.Resource.Color.secondary_text_default_material_light;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Dimension.compat_button_inset_horizontal_material = global::ReLearn.Droid.Resource.Dimension.compat_button_inset_horizontal_material;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Dimension.compat_button_inset_vertical_material = global::ReLearn.Droid.Resource.Dimension.compat_button_inset_vertical_material;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Dimension.compat_button_padding_horizontal_material = global::ReLearn.Droid.Resource.Dimension.compat_button_padding_horizontal_material;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Dimension.compat_button_padding_vertical_material = global::ReLearn.Droid.Resource.Dimension.compat_button_padding_vertical_material;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Dimension.compat_control_corner_material = global::ReLearn.Droid.Resource.Dimension.compat_control_corner_material;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Dimension.fastscroll_default_thickness = global::ReLearn.Droid.Resource.Dimension.fastscroll_default_thickness;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Dimension.fastscroll_margin = global::ReLearn.Droid.Resource.Dimension.fastscroll_margin;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Dimension.fastscroll_minimum_range = global::ReLearn.Droid.Resource.Dimension.fastscroll_minimum_range;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Dimension.item_touch_helper_max_drag_scroll_per_frame = global::ReLearn.Droid.Resource.Dimension.item_touch_helper_max_drag_scroll_per_frame;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Dimension.item_touch_helper_swipe_escape_max_velocity = global::ReLearn.Droid.Resource.Dimension.item_touch_helper_swipe_escape_max_velocity;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Dimension.item_touch_helper_swipe_escape_velocity = global::ReLearn.Droid.Resource.Dimension.item_touch_helper_swipe_escape_velocity;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Dimension.notification_action_icon_size = global::ReLearn.Droid.Resource.Dimension.notification_action_icon_size;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Dimension.notification_action_text_size = global::ReLearn.Droid.Resource.Dimension.notification_action_text_size;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Dimension.notification_big_circle_margin = global::ReLearn.Droid.Resource.Dimension.notification_big_circle_margin;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Dimension.notification_content_margin_start = global::ReLearn.Droid.Resource.Dimension.notification_content_margin_start;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Dimension.notification_large_icon_height = global::ReLearn.Droid.Resource.Dimension.notification_large_icon_height;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Dimension.notification_large_icon_width = global::ReLearn.Droid.Resource.Dimension.notification_large_icon_width;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Dimension.notification_main_column_padding_top = global::ReLearn.Droid.Resource.Dimension.notification_main_column_padding_top;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Dimension.notification_media_narrow_margin = global::ReLearn.Droid.Resource.Dimension.notification_media_narrow_margin;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Dimension.notification_right_icon_size = global::ReLearn.Droid.Resource.Dimension.notification_right_icon_size;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Dimension.notification_right_side_padding_top = global::ReLearn.Droid.Resource.Dimension.notification_right_side_padding_top;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Dimension.notification_small_icon_background_padding = global::ReLearn.Droid.Resource.Dimension.notification_small_icon_background_padding;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Dimension.notification_small_icon_size_as_large = global::ReLearn.Droid.Resource.Dimension.notification_small_icon_size_as_large;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Dimension.notification_subtext_size = global::ReLearn.Droid.Resource.Dimension.notification_subtext_size;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Dimension.notification_top_pad = global::ReLearn.Droid.Resource.Dimension.notification_top_pad;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Dimension.notification_top_pad_large_text = global::ReLearn.Droid.Resource.Dimension.notification_top_pad_large_text;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Drawable.notification_action_background = global::ReLearn.Droid.Resource.Drawable.notification_action_background;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Drawable.notification_bg = global::ReLearn.Droid.Resource.Drawable.notification_bg;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Drawable.notification_bg_low = global::ReLearn.Droid.Resource.Drawable.notification_bg_low;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Drawable.notification_bg_low_normal = global::ReLearn.Droid.Resource.Drawable.notification_bg_low_normal;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Drawable.notification_bg_low_pressed = global::ReLearn.Droid.Resource.Drawable.notification_bg_low_pressed;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Drawable.notification_bg_normal = global::ReLearn.Droid.Resource.Drawable.notification_bg_normal;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Drawable.notification_bg_normal_pressed = global::ReLearn.Droid.Resource.Drawable.notification_bg_normal_pressed;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Drawable.notification_icon_background = global::ReLearn.Droid.Resource.Drawable.notification_icon_background;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Drawable.notification_template_icon_bg = global::ReLearn.Droid.Resource.Drawable.notification_template_icon_bg;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Drawable.notification_template_icon_low_bg = global::ReLearn.Droid.Resource.Drawable.notification_template_icon_low_bg;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Drawable.notification_tile_bg = global::ReLearn.Droid.Resource.Drawable.notification_tile_bg;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Drawable.notify_panel_notification_icon_bg = global::ReLearn.Droid.Resource.Drawable.notify_panel_notification_icon_bg;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Id.MvvmCrossTagId = global::ReLearn.Droid.Resource.Id.MvvmCrossTagId;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Id.MvxBindingTagUnique = global::ReLearn.Droid.Resource.Id.MvxBindingTagUnique;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Id.action_container = global::ReLearn.Droid.Resource.Id.action_container;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Id.action_divider = global::ReLearn.Droid.Resource.Id.action_divider;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Id.action_image = global::ReLearn.Droid.Resource.Id.action_image;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Id.action_text = global::ReLearn.Droid.Resource.Id.action_text;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Id.actions = global::ReLearn.Droid.Resource.Id.actions;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Id.async = global::ReLearn.Droid.Resource.Id.async;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Id.blocking = global::ReLearn.Droid.Resource.Id.blocking;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Id.chronometer = global::ReLearn.Droid.Resource.Id.chronometer;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Id.forever = global::ReLearn.Droid.Resource.Id.forever;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Id.icon = global::ReLearn.Droid.Resource.Id.icon;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Id.icon_group = global::ReLearn.Droid.Resource.Id.icon_group;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Id.info = global::ReLearn.Droid.Resource.Id.info;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Id.italic = global::ReLearn.Droid.Resource.Id.italic;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Id.item_touch_helper_previous_elevation = global::ReLearn.Droid.Resource.Id.item_touch_helper_previous_elevation;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Id.line1 = global::ReLearn.Droid.Resource.Id.line1;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Id.line3 = global::ReLearn.Droid.Resource.Id.line3;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Id.normal = global::ReLearn.Droid.Resource.Id.normal;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Id.notification_background = global::ReLearn.Droid.Resource.Id.notification_background;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Id.notification_main_column = global::ReLearn.Droid.Resource.Id.notification_main_column;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Id.notification_main_column_container = global::ReLearn.Droid.Resource.Id.notification_main_column_container;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Id.right_icon = global::ReLearn.Droid.Resource.Id.right_icon;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Id.right_side = global::ReLearn.Droid.Resource.Id.right_side;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Id.tag_transition_group = global::ReLearn.Droid.Resource.Id.tag_transition_group;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Id.text = global::ReLearn.Droid.Resource.Id.text;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Id.text2 = global::ReLearn.Droid.Resource.Id.text2;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Id.time = global::ReLearn.Droid.Resource.Id.time;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Id.title = global::ReLearn.Droid.Resource.Id.title;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Integer.status_bar_notification_info_maxnum = global::ReLearn.Droid.Resource.Integer.status_bar_notification_info_maxnum;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Layout.notification_action = global::ReLearn.Droid.Resource.Layout.notification_action;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Layout.notification_action_tombstone = global::ReLearn.Droid.Resource.Layout.notification_action_tombstone;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Layout.notification_template_custom_big = global::ReLearn.Droid.Resource.Layout.notification_template_custom_big;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Layout.notification_template_icon_group = global::ReLearn.Droid.Resource.Layout.notification_template_icon_group;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Layout.notification_template_part_chronometer = global::ReLearn.Droid.Resource.Layout.notification_template_part_chronometer;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Layout.notification_template_part_time = global::ReLearn.Droid.Resource.Layout.notification_template_part_time;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.String.status_bar_notification_info_overflow = global::ReLearn.Droid.Resource.String.status_bar_notification_info_overflow;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Style.TextAppearance_Compat_Notification = global::ReLearn.Droid.Resource.Style.TextAppearance_Compat_Notification;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Style.TextAppearance_Compat_Notification_Info = global::ReLearn.Droid.Resource.Style.TextAppearance_Compat_Notification_Info;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Style.TextAppearance_Compat_Notification_Line2 = global::ReLearn.Droid.Resource.Style.TextAppearance_Compat_Notification_Line2;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Style.TextAppearance_Compat_Notification_Time = global::ReLearn.Droid.Resource.Style.TextAppearance_Compat_Notification_Time;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Style.TextAppearance_Compat_Notification_Title = global::ReLearn.Droid.Resource.Style.TextAppearance_Compat_Notification_Title;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Style.Widget_Compat_NotificationActionContainer = global::ReLearn.Droid.Resource.Style.Widget_Compat_NotificationActionContainer;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Style.Widget_Compat_NotificationActionText = global::ReLearn.Droid.Resource.Style.Widget_Compat_NotificationActionText;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Styleable.FontFamily = global::ReLearn.Droid.Resource.Styleable.FontFamily;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Styleable.FontFamily_fontProviderAuthority = global::ReLearn.Droid.Resource.Styleable.FontFamily_fontProviderAuthority;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Styleable.FontFamily_fontProviderCerts = global::ReLearn.Droid.Resource.Styleable.FontFamily_fontProviderCerts;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Styleable.FontFamily_fontProviderFetchStrategy = global::ReLearn.Droid.Resource.Styleable.FontFamily_fontProviderFetchStrategy;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Styleable.FontFamily_fontProviderFetchTimeout = global::ReLearn.Droid.Resource.Styleable.FontFamily_fontProviderFetchTimeout;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Styleable.FontFamily_fontProviderPackage = global::ReLearn.Droid.Resource.Styleable.FontFamily_fontProviderPackage;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Styleable.FontFamily_fontProviderQuery = global::ReLearn.Droid.Resource.Styleable.FontFamily_fontProviderQuery;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Styleable.FontFamilyFont = global::ReLearn.Droid.Resource.Styleable.FontFamilyFont;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Styleable.FontFamilyFont_android_font = global::ReLearn.Droid.Resource.Styleable.FontFamilyFont_android_font;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Styleable.FontFamilyFont_android_fontStyle = global::ReLearn.Droid.Resource.Styleable.FontFamilyFont_android_fontStyle;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Styleable.FontFamilyFont_android_fontWeight = global::ReLearn.Droid.Resource.Styleable.FontFamilyFont_android_fontWeight;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Styleable.FontFamilyFont_font = global::ReLearn.Droid.Resource.Styleable.FontFamilyFont_font;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Styleable.FontFamilyFont_fontStyle = global::ReLearn.Droid.Resource.Styleable.FontFamilyFont_fontStyle;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Styleable.FontFamilyFont_fontWeight = global::ReLearn.Droid.Resource.Styleable.FontFamilyFont_fontWeight;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Styleable.MvxBinding = global::ReLearn.Droid.Resource.Styleable.MvxBinding;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Styleable.MvxBinding_MvxBind = global::ReLearn.Droid.Resource.Styleable.MvxBinding_MvxBind;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Styleable.MvxBinding_MvxLang = global::ReLearn.Droid.Resource.Styleable.MvxBinding_MvxLang;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Styleable.MvxControl = global::ReLearn.Droid.Resource.Styleable.MvxControl;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Styleable.MvxControl_MvxTemplate = global::ReLearn.Droid.Resource.Styleable.MvxControl_MvxTemplate;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Styleable.MvxExpandableListView = global::ReLearn.Droid.Resource.Styleable.MvxExpandableListView;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Styleable.MvxExpandableListView_MvxGroupItemTemplate = global::ReLearn.Droid.Resource.Styleable.MvxExpandableListView_MvxGroupItemTemplate;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Styleable.MvxListView = global::ReLearn.Droid.Resource.Styleable.MvxListView;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Styleable.MvxListView_MvxDropDownItemTemplate = global::ReLearn.Droid.Resource.Styleable.MvxListView_MvxDropDownItemTemplate;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Styleable.MvxListView_MvxItemTemplate = global::ReLearn.Droid.Resource.Styleable.MvxListView_MvxItemTemplate;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Styleable.MvxRecyclerView = global::ReLearn.Droid.Resource.Styleable.MvxRecyclerView;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Styleable.MvxRecyclerView_MvxTemplateSelector = global::ReLearn.Droid.Resource.Styleable.MvxRecyclerView_MvxTemplateSelector;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Styleable.RecyclerView = global::ReLearn.Droid.Resource.Styleable.RecyclerView;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Styleable.RecyclerView_android_descendantFocusability = global::ReLearn.Droid.Resource.Styleable.RecyclerView_android_descendantFocusability;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Styleable.RecyclerView_android_orientation = global::ReLearn.Droid.Resource.Styleable.RecyclerView_android_orientation;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Styleable.RecyclerView_fastScrollEnabled = global::ReLearn.Droid.Resource.Styleable.RecyclerView_fastScrollEnabled;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Styleable.RecyclerView_fastScrollHorizontalThumbDrawable = global::ReLearn.Droid.Resource.Styleable.RecyclerView_fastScrollHorizontalThumbDrawable;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Styleable.RecyclerView_fastScrollHorizontalTrackDrawable = global::ReLearn.Droid.Resource.Styleable.RecyclerView_fastScrollHorizontalTrackDrawable;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Styleable.RecyclerView_fastScrollVerticalThumbDrawable = global::ReLearn.Droid.Resource.Styleable.RecyclerView_fastScrollVerticalThumbDrawable;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Styleable.RecyclerView_fastScrollVerticalTrackDrawable = global::ReLearn.Droid.Resource.Styleable.RecyclerView_fastScrollVerticalTrackDrawable;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Styleable.RecyclerView_layoutManager = global::ReLearn.Droid.Resource.Styleable.RecyclerView_layoutManager;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Styleable.RecyclerView_reverseLayout = global::ReLearn.Droid.Resource.Styleable.RecyclerView_reverseLayout;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Styleable.RecyclerView_spanCount = global::ReLearn.Droid.Resource.Styleable.RecyclerView_spanCount;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Styleable.RecyclerView_stackFromEnd = global::ReLearn.Droid.Resource.Styleable.RecyclerView_stackFromEnd;
 		}
 		
 		public partial class Animation
@@ -4078,23 +4228,26 @@ namespace ReLearn.Droid
 		public partial class Attribute
 		{
 			
-			// aapt resource value: 0x7f01015a
-			public const int MvxBind = 2130772314;
-			
-			// aapt resource value: 0x7f01015e
-			public const int MvxDropDownItemTemplate = 2130772318;
+			// aapt resource value: 0x7f01015b
+			public const int MvxBind = 2130772315;
 			
 			// aapt resource value: 0x7f01015f
-			public const int MvxGroupItemTemplate = 2130772319;
+			public const int MvxDropDownItemTemplate = 2130772319;
 			
-			// aapt resource value: 0x7f01015d
-			public const int MvxItemTemplate = 2130772317;
+			// aapt resource value: 0x7f010160
+			public const int MvxGroupItemTemplate = 2130772320;
 			
-			// aapt resource value: 0x7f01015b
-			public const int MvxLang = 2130772315;
+			// aapt resource value: 0x7f01015e
+			public const int MvxItemTemplate = 2130772318;
 			
 			// aapt resource value: 0x7f01015c
-			public const int MvxTemplate = 2130772316;
+			public const int MvxLang = 2130772316;
+			
+			// aapt resource value: 0x7f01015d
+			public const int MvxTemplate = 2130772317;
+			
+			// aapt resource value: 0x7f01015a
+			public const int MvxTemplateSelector = 2130772314;
 			
 			// aapt resource value: 0x7f010052
 			public const int actionBarDivider = 2130772050;
@@ -4198,41 +4351,41 @@ namespace ReLearn.Droid
 			// aapt resource value: 0x7f010075
 			public const int activityChooserViewStyle = 2130772085;
 			
-			// aapt resource value: 0x7f010164
-			public const int ahBarColor = 2130772324;
+			// aapt resource value: 0x7f010165
+			public const int ahBarColor = 2130772325;
+			
+			// aapt resource value: 0x7f01016d
+			public const int ahBarLength = 2130772333;
 			
 			// aapt resource value: 0x7f01016c
-			public const int ahBarLength = 2130772332;
-			
-			// aapt resource value: 0x7f01016b
-			public const int ahBarWidth = 2130772331;
-			
-			// aapt resource value: 0x7f010169
-			public const int ahCircleColor = 2130772329;
-			
-			// aapt resource value: 0x7f010168
-			public const int ahDelayMillis = 2130772328;
+			public const int ahBarWidth = 2130772332;
 			
 			// aapt resource value: 0x7f01016a
-			public const int ahRadius = 2130772330;
+			public const int ahCircleColor = 2130772330;
 			
-			// aapt resource value: 0x7f010165
-			public const int ahRimColor = 2130772325;
+			// aapt resource value: 0x7f010169
+			public const int ahDelayMillis = 2130772329;
+			
+			// aapt resource value: 0x7f01016b
+			public const int ahRadius = 2130772331;
 			
 			// aapt resource value: 0x7f010166
-			public const int ahRimWidth = 2130772326;
+			public const int ahRimColor = 2130772326;
 			
 			// aapt resource value: 0x7f010167
-			public const int ahSpinSpeed = 2130772327;
+			public const int ahRimWidth = 2130772327;
 			
-			// aapt resource value: 0x7f010161
-			public const int ahText = 2130772321;
+			// aapt resource value: 0x7f010168
+			public const int ahSpinSpeed = 2130772328;
 			
 			// aapt resource value: 0x7f010162
-			public const int ahTextColor = 2130772322;
+			public const int ahText = 2130772322;
 			
 			// aapt resource value: 0x7f010163
-			public const int ahTextSize = 2130772323;
+			public const int ahTextColor = 2130772323;
+			
+			// aapt resource value: 0x7f010164
+			public const int ahTextSize = 2130772324;
 			
 			// aapt resource value: 0x7f01009a
 			public const int alertDialogButtonGroupStyle = 2130772122;
@@ -4564,8 +4717,8 @@ namespace ReLearn.Droid
 			// aapt resource value: 0x7f01003c
 			public const int fontFamily = 2130772028;
 			
-			// aapt resource value: 0x7f010160
-			public const int fontPath = 2130772320;
+			// aapt resource value: 0x7f010161
+			public const int fontPath = 2130772321;
 			
 			// aapt resource value: 0x7f010151
 			public const int fontProviderAuthority = 2130772305;
@@ -5214,27 +5367,6 @@ namespace ReLearn.Droid
 		public partial class Color
 		{
 			
-			// aapt resource value: 0x7f0e0047
-			public const int Blue = 2131624007;
-			
-			// aapt resource value: 0x7f0e0048
-			public const int DarkBlue = 2131624008;
-			
-			// aapt resource value: 0x7f0e004a
-			public const int DarkOrange = 2131624010;
-			
-			// aapt resource value: 0x7f0e004c
-			public const int HintTextWhite = 2131624012;
-			
-			// aapt resource value: 0x7f0e0049
-			public const int Orange = 2131624009;
-			
-			// aapt resource value: 0x7f0e004b
-			public const int TextWhite = 2131624011;
-			
-			// aapt resource value: 0x7f0e004d
-			public const int Transparent = 2131624013;
-			
 			// aapt resource value: 0x7f0e004f
 			public const int abc_background_cache_hint_selector_material_dark = 2131624015;
 			
@@ -5325,6 +5457,9 @@ namespace ReLearn.Droid
 			// aapt resource value: 0x7f0e0009
 			public const int background_material_light = 2131623945;
 			
+			// aapt resource value: 0x7f0e0047
+			public const int blue = 2131624007;
+			
 			// aapt resource value: 0x7f0e000a
 			public const int bright_foreground_disabled_material_dark = 2131623946;
 			
@@ -5348,6 +5483,12 @@ namespace ReLearn.Droid
 			
 			// aapt resource value: 0x7f0e0011
 			public const int button_material_light = 2131623953;
+			
+			// aapt resource value: 0x7f0e0048
+			public const int dark_blue = 2131624008;
+			
+			// aapt resource value: 0x7f0e004a
+			public const int dark_orange = 2131624010;
 			
 			// aapt resource value: 0x7f0e003c
 			public const int design_bottom_navigation_shadow_color = 2131623996;
@@ -5394,6 +5535,9 @@ namespace ReLearn.Droid
 			// aapt resource value: 0x7f0e0015
 			public const int dim_foreground_material_light = 2131623957;
 			
+			// aapt resource value: 0x7f0e0065
+			public const int drawer_item = 2131624037;
+			
 			// aapt resource value: 0x7f0e0016
 			public const int error_color_material = 2131623958;
 			
@@ -5408,6 +5552,9 @@ namespace ReLearn.Droid
 			
 			// aapt resource value: 0x7f0e001a
 			public const int highlighted_text_material_light = 2131623962;
+			
+			// aapt resource value: 0x7f0e004c
+			public const int hint_text_white = 2131624012;
 			
 			// aapt resource value: 0x7f0e004e
 			public const int ic_launcher_background = 2131624014;
@@ -5457,6 +5604,9 @@ namespace ReLearn.Droid
 			// aapt resource value: 0x7f0e003b
 			public const int notification_material_background_media_default_color = 2131623995;
 			
+			// aapt resource value: 0x7f0e0049
+			public const int orange = 2131624009;
+			
 			// aapt resource value: 0x7f0e0027
 			public const int primary_dark_material_dark = 2131623975;
 			
@@ -5505,11 +5655,11 @@ namespace ReLearn.Droid
 			// aapt resource value: 0x7f0e0036
 			public const int switch_thumb_disabled_material_light = 2131623990;
 			
-			// aapt resource value: 0x7f0e0065
-			public const int switch_thumb_material_dark = 2131624037;
-			
 			// aapt resource value: 0x7f0e0066
-			public const int switch_thumb_material_light = 2131624038;
+			public const int switch_thumb_material_dark = 2131624038;
+			
+			// aapt resource value: 0x7f0e0067
+			public const int switch_thumb_material_light = 2131624039;
 			
 			// aapt resource value: 0x7f0e0037
 			public const int switch_thumb_normal_material_dark = 2131623991;
@@ -5517,11 +5667,17 @@ namespace ReLearn.Droid
 			// aapt resource value: 0x7f0e0038
 			public const int switch_thumb_normal_material_light = 2131623992;
 			
+			// aapt resource value: 0x7f0e004b
+			public const int text_white = 2131624011;
+			
 			// aapt resource value: 0x7f0e0039
 			public const int tooltip_background_dark = 2131623993;
 			
 			// aapt resource value: 0x7f0e003a
 			public const int tooltip_background_light = 2131623994;
+			
+			// aapt resource value: 0x7f0e004d
+			public const int transparent = 2131624013;
 			
 			static Color()
 			{
@@ -5764,6 +5920,9 @@ namespace ReLearn.Droid
 			// aapt resource value: 0x7f09009d
 			public const int activity_vertical_margin = 2131296413;
 			
+			// aapt resource value: 0x7f0900a2
+			public const int button_height = 2131296418;
+			
 			// aapt resource value: 0x7f09008b
 			public const int compat_button_inset_horizontal_material = 2131296395;
 			
@@ -5941,11 +6100,17 @@ namespace ReLearn.Droid
 			// aapt resource value: 0x7f090005
 			public const int item_touch_helper_swipe_escape_velocity = 2131296261;
 			
+			// aapt resource value: 0x7f0900a0
+			public const int margin_left = 2131296416;
+			
+			// aapt resource value: 0x7f0900a1
+			public const int margin_right = 2131296417;
+			
 			// aapt resource value: 0x7f09009f
-			public const int nav_header_height = 2131296415;
+			public const int navigation_header_height = 2131296415;
 			
 			// aapt resource value: 0x7f09009e
-			public const int nav_header_vertical_spacing = 2131296414;
+			public const int navigation_header_vertical_spacing = 2131296414;
 			
 			// aapt resource value: 0x7f090090
 			public const int notification_action_icon_size = 2131296400;
@@ -5991,6 +6156,9 @@ namespace ReLearn.Droid
 			
 			// aapt resource value: 0x7f09009a
 			public const int notification_top_pad_large_text = 2131296410;
+			
+			// aapt resource value: 0x7f0900a3
+			public const int seekbar_height = 2131296419;
 			
 			// aapt resource value: 0x7f090059
 			public const int tooltip_corner_radius = 2131296345;
@@ -6281,98 +6449,98 @@ namespace ReLearn.Droid
 			// aapt resource value: 0x7f020053
 			public const int avd_hide_password = 2130837587;
 			
-			// aapt resource value: 0x7f020098
-			public const int avd_hide_password_1 = 2130837656;
+			// aapt resource value: 0x7f020092
+			public const int avd_hide_password_1 = 2130837650;
 			
-			// aapt resource value: 0x7f020099
-			public const int avd_hide_password_2 = 2130837657;
+			// aapt resource value: 0x7f020093
+			public const int avd_hide_password_2 = 2130837651;
 			
-			// aapt resource value: 0x7f02009a
-			public const int avd_hide_password_3 = 2130837658;
+			// aapt resource value: 0x7f020094
+			public const int avd_hide_password_3 = 2130837652;
 			
 			// aapt resource value: 0x7f020054
 			public const int avd_show_password = 2130837588;
 			
-			// aapt resource value: 0x7f02009b
-			public const int avd_show_password_1 = 2130837659;
+			// aapt resource value: 0x7f020095
+			public const int avd_show_password_1 = 2130837653;
 			
-			// aapt resource value: 0x7f02009c
-			public const int avd_show_password_2 = 2130837660;
+			// aapt resource value: 0x7f020096
+			public const int avd_show_password_2 = 2130837654;
 			
-			// aapt resource value: 0x7f02009d
-			public const int avd_show_password_3 = 2130837661;
+			// aapt resource value: 0x7f020097
+			public const int avd_show_password_3 = 2130837655;
 			
 			// aapt resource value: 0x7f020055
-			public const int background_splash = 2130837589;
+			public const int background_main = 2130837589;
 			
 			// aapt resource value: 0x7f020056
-			public const int backgroundEnFl = 2130837590;
+			public const int background_navigation_header = 2130837590;
 			
 			// aapt resource value: 0x7f020057
-			public const int blitzbackground = 2130837591;
+			public const int background_splash = 2130837591;
 			
 			// aapt resource value: 0x7f020058
-			public const int button_enabled = 2130837592;
+			public const int background_toolbar = 2130837592;
 			
 			// aapt resource value: 0x7f020059
-			public const int button_false = 2130837593;
+			public const int background_toolbar_home = 2130837593;
 			
 			// aapt resource value: 0x7f02005a
-			public const int button_style_standard = 2130837594;
+			public const int button_before_clicking = 2130837594;
 			
 			// aapt resource value: 0x7f02005b
-			public const int button_touch = 2130837595;
+			public const int button_enabled = 2130837595;
 			
 			// aapt resource value: 0x7f02005c
-			public const int button_true = 2130837596;
+			public const int button_false = 2130837596;
 			
 			// aapt resource value: 0x7f02005d
-			public const int buttonBeforeClicking = 2130837597;
+			public const int button_style_standard = 2130837597;
 			
 			// aapt resource value: 0x7f02005e
-			public const int ComputerScience = 2130837598;
+			public const int button_touch = 2130837598;
 			
 			// aapt resource value: 0x7f02005f
-			public const int custom_thumb = 2130837599;
+			public const int button_true = 2130837599;
 			
 			// aapt resource value: 0x7f020060
-			public const int design_bottom_navigation_item_background = 2130837600;
+			public const int custom_thumb = 2130837600;
 			
 			// aapt resource value: 0x7f020061
-			public const int design_fab_background = 2130837601;
+			public const int custom_thumb_switch = 2130837601;
 			
 			// aapt resource value: 0x7f020062
-			public const int design_ic_visibility = 2130837602;
+			public const int design_bottom_navigation_item_background = 2130837602;
 			
 			// aapt resource value: 0x7f020063
-			public const int design_ic_visibility_off = 2130837603;
+			public const int design_fab_background = 2130837603;
 			
 			// aapt resource value: 0x7f020064
-			public const int design_password_eye = 2130837604;
+			public const int design_ic_visibility = 2130837604;
 			
 			// aapt resource value: 0x7f020065
-			public const int design_snackbar_background = 2130837605;
+			public const int design_ic_visibility_off = 2130837605;
 			
 			// aapt resource value: 0x7f020066
-			public const int editBorder = 2130837606;
+			public const int design_password_eye = 2130837606;
 			
 			// aapt resource value: 0x7f020067
-			public const int EducationDictionary = 2130837607;
+			public const int design_snackbar_background = 2130837607;
 			
 			// aapt resource value: 0x7f020068
-			public const int FilmDictionary = 2130837608;
+			public const int ic_dictionary_images = 2130837608;
 			
 			// aapt resource value: 0x7f020069
-			public const int FlagDictionary = 2130837609;
+			public const int ic_dictionary_languages = 2130837609;
 			
 			// aapt resource value: 0x7f02006a
-			public const int homeDictionary = 2130837610;
+			public const int ic_errorstatus = 2130837610;
 			
 			// aapt resource value: 0x7f02006b
-			public const int ic_errorstatus = 2130837611;
+			public const int ic_statistics_general = 2130837611;
 			
 			// aapt resource value: 0x7f02006c
-			public const int ic_nav_header = 2130837612;
+			public const int ic_statistics_main = 2130837612;
 			
 			// aapt resource value: 0x7f02006d
 			public const int ic_successstatus = 2130837613;
@@ -6381,73 +6549,73 @@ namespace ReLearn.Droid
 			public const int icon = 2130837614;
 			
 			// aapt resource value: 0x7f02006f
-			public const int icon_general_statistics = 2130837615;
+			public const int image_dictionary_computer_science = 2130837615;
 			
 			// aapt resource value: 0x7f020070
-			public const int icon_image = 2130837616;
+			public const int image_dictionary_education = 2130837616;
 			
 			// aapt resource value: 0x7f020071
-			public const int icon_language = 2130837617;
+			public const int image_dictionary_films = 2130837617;
 			
 			// aapt resource value: 0x7f020072
-			public const int icon_main_statistics = 2130837618;
+			public const int image_dictionary_flags = 2130837618;
 			
 			// aapt resource value: 0x7f020073
-			public const int imageInstruction = 2130837619;
+			public const int image_dictionary_home = 2130837619;
 			
 			// aapt resource value: 0x7f020074
-			public const int ItDictionary = 2130837620;
+			public const int image_dictionary_my = 2130837620;
 			
 			// aapt resource value: 0x7f020075
-			public const int MyDictionary = 2130837621;
+			public const int image_dictionary_nature = 2130837621;
 			
 			// aapt resource value: 0x7f020076
-			public const int Nature = 2130837622;
+			public const int image_dictionary_popular_words = 2130837622;
 			
 			// aapt resource value: 0x7f020077
-			public const int NatureDictionary = 2130837623;
+			public const int image_dictionary_three_forms_of_verb = 2130837623;
 			
 			// aapt resource value: 0x7f020078
-			public const int navigation_empty_icon = 2130837624;
+			public const int image_instruction = 2130837624;
 			
 			// aapt resource value: 0x7f020079
-			public const int notification_action_background = 2130837625;
+			public const int navigation_empty_icon = 2130837625;
 			
 			// aapt resource value: 0x7f02007a
-			public const int notification_bg = 2130837626;
+			public const int notification_action_background = 2130837626;
 			
 			// aapt resource value: 0x7f02007b
-			public const int notification_bg_low = 2130837627;
+			public const int notification_bg = 2130837627;
 			
 			// aapt resource value: 0x7f02007c
-			public const int notification_bg_low_normal = 2130837628;
+			public const int notification_bg_low = 2130837628;
 			
 			// aapt resource value: 0x7f02007d
-			public const int notification_bg_low_pressed = 2130837629;
+			public const int notification_bg_low_normal = 2130837629;
 			
 			// aapt resource value: 0x7f02007e
-			public const int notification_bg_normal = 2130837630;
+			public const int notification_bg_low_pressed = 2130837630;
 			
 			// aapt resource value: 0x7f02007f
-			public const int notification_bg_normal_pressed = 2130837631;
+			public const int notification_bg_normal = 2130837631;
 			
 			// aapt resource value: 0x7f020080
-			public const int notification_icon_background = 2130837632;
-			
-			// aapt resource value: 0x7f020096
-			public const int notification_template_icon_bg = 2130837654;
-			
-			// aapt resource value: 0x7f020097
-			public const int notification_template_icon_low_bg = 2130837655;
+			public const int notification_bg_normal_pressed = 2130837632;
 			
 			// aapt resource value: 0x7f020081
-			public const int notification_tile_bg = 2130837633;
+			public const int notification_icon_background = 2130837633;
+			
+			// aapt resource value: 0x7f020090
+			public const int notification_template_icon_bg = 2130837648;
+			
+			// aapt resource value: 0x7f020091
+			public const int notification_template_icon_low_bg = 2130837649;
 			
 			// aapt resource value: 0x7f020082
-			public const int notify_panel_notification_icon_bg = 2130837634;
+			public const int notification_tile_bg = 2130837634;
 			
 			// aapt resource value: 0x7f020083
-			public const int PopularWordsDictionary = 2130837635;
+			public const int notify_panel_notification_icon_bg = 2130837635;
 			
 			// aapt resource value: 0x7f020084
 			public const int roundedbg = 2130837636;
@@ -6456,52 +6624,34 @@ namespace ReLearn.Droid
 			public const int roundedbgdark = 2130837637;
 			
 			// aapt resource value: 0x7f020086
-			public const int seekbar_progressbar1 = 2130837638;
+			public const int separator = 2130837638;
 			
 			// aapt resource value: 0x7f020087
-			public const int seekbar_progressbar2 = 2130837639;
+			public const int spinner_item = 2130837639;
 			
 			// aapt resource value: 0x7f020088
-			public const int seekbar_progressbar3 = 2130837640;
+			public const int style_background_splash = 2130837640;
 			
 			// aapt resource value: 0x7f020089
-			public const int separator = 2130837641;
+			public const int style_seekbar_progressbar_blitz = 2130837641;
 			
 			// aapt resource value: 0x7f02008a
-			public const int spinner_item = 2130837642;
+			public const int style_seekbar_progressbar_image = 2130837642;
 			
 			// aapt resource value: 0x7f02008b
-			public const int splash = 2130837643;
+			public const int style_seekbar_progressbar_language = 2130837643;
 			
 			// aapt resource value: 0x7f02008c
-			public const int ThreeFormsOfVerbDictionary = 2130837644;
+			public const int tooltip_frame_dark = 2130837644;
 			
 			// aapt resource value: 0x7f02008d
-			public const int toolbar = 2130837645;
+			public const int tooltip_frame_light = 2130837645;
 			
 			// aapt resource value: 0x7f02008e
-			public const int toolbarMain = 2130837646;
+			public const int view_false = 2130837646;
 			
 			// aapt resource value: 0x7f02008f
-			public const int toolbarMain111 = 2130837647;
-			
-			// aapt resource value: 0x7f020090
-			public const int toolbarmainback = 2130837648;
-			
-			// aapt resource value: 0x7f020091
-			public const int tooltip_frame_dark = 2130837649;
-			
-			// aapt resource value: 0x7f020092
-			public const int tooltip_frame_light = 2130837650;
-			
-			// aapt resource value: 0x7f020093
-			public const int viewFalse = 2130837651;
-			
-			// aapt resource value: 0x7f020094
-			public const int viewNeutral = 2130837652;
-			
-			// aapt resource value: 0x7f020095
-			public const int viewTrue = 2130837653;
+			public const int view_true = 2130837647;
 			
 			static Drawable()
 			{
@@ -6538,23 +6688,23 @@ namespace ReLearn.Droid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f0a010a
-			public const int ABC = 2131362058;
+			// aapt resource value: 0x7f0a010f
+			public const int ABC = 2131362063;
 			
 			// aapt resource value: 0x7f0a0035
 			public const int ALT = 2131361845;
 			
+			// aapt resource value: 0x7f0a00a4
+			public const int BlitzPoll_toolbar_textview = 2131361956;
+			
+			// aapt resource value: 0x7f0a008f
+			public const int BlitzPoll_toolbar_textview_images = 2131361935;
+			
 			// aapt resource value: 0x7f0a00b7
-			public const int BlitzPoll_toolbar_textview = 2131361975;
+			public const int Button_Speak_Languages = 2131361975;
 			
-			// aapt resource value: 0x7f0a009d
-			public const int BlitzPoll_toolbar_textview_images = 2131361949;
-			
-			// aapt resource value: 0x7f0a00cd
-			public const int Button_Speak_Languages = 2131361997;
-			
-			// aapt resource value: 0x7f0a00c1
-			public const int Button_Speak_TurnOn_TurnOff = 2131361985;
+			// aapt resource value: 0x7f0a00ab
+			public const int Button_Speak_TurnOn_TurnOff = 2131361963;
 			
 			// aapt resource value: 0x7f0a0036
 			public const int CTRL = 2131361846;
@@ -6562,20 +6712,20 @@ namespace ReLearn.Droid
 			// aapt resource value: 0x7f0a0037
 			public const int FUNCTION = 2131361847;
 			
-			// aapt resource value: 0x7f0a010b
-			public const int HideStudied = 2131362059;
+			// aapt resource value: 0x7f0a0110
+			public const int HideStudied = 2131362064;
 			
-			// aapt resource value: 0x7f0a00f7
-			public const int ImageSelectDictionary = 2131362039;
+			// aapt resource value: 0x7f0a00e0
+			public const int ImageSelectDictionary = 2131362016;
 			
-			// aapt resource value: 0x7f0a00f9
-			public const int LanguageSelectDictionary = 2131362041;
+			// aapt resource value: 0x7f0a00e2
+			public const int LanguageSelectDictionary = 2131362018;
 			
 			// aapt resource value: 0x7f0a0038
 			public const int META = 2131361848;
 			
-			// aapt resource value: 0x7f0a010c
-			public const int MenuSelectDictionary = 2131362060;
+			// aapt resource value: 0x7f0a0111
+			public const int MenuSelectDictionary = 2131362065;
 			
 			// aapt resource value: 0x7f0a001d
 			public const int MvvmCrossTagId = 2131361821;
@@ -6583,17 +6733,17 @@ namespace ReLearn.Droid
 			// aapt resource value: 0x7f0a001e
 			public const int MvxBindingTagUnique = 2131361822;
 			
-			// aapt resource value: 0x7f0a009e
-			public const int RelativeLayoutImagesBlitzPoll = 2131361950;
+			// aapt resource value: 0x7f0a0090
+			public const int RelativeLayoutImagesBlitzPoll = 2131361936;
 			
-			// aapt resource value: 0x7f0a00b8
-			public const int RelativeLayoutLanguagesBlitzPoll = 2131361976;
+			// aapt resource value: 0x7f0a00a5
+			public const int RelativeLayoutLanguagesBlitzPoll = 2131361957;
 			
-			// aapt resource value: 0x7f0a00c7
-			public const int Repeat_toolbar_textview = 2131361991;
+			// aapt resource value: 0x7f0a00b1
+			public const int Repeat_toolbar_textview = 2131361969;
 			
-			// aapt resource value: 0x7f0a00ac
-			public const int Repeat_toolbar_textview_fl = 2131361964;
+			// aapt resource value: 0x7f0a009b
+			public const int Repeat_toolbar_textview_fl = 2131361947;
 			
 			// aapt resource value: 0x7f0a0039
 			public const int SHIFT = 2131361849;
@@ -6601,11 +6751,11 @@ namespace ReLearn.Droid
 			// aapt resource value: 0x7f0a003a
 			public const int SYM = 2131361850;
 			
-			// aapt resource value: 0x7f0a0103
-			public const int about_us = 2131362051;
+			// aapt resource value: 0x7f0a0108
+			public const int about_us = 2131362056;
 			
-			// aapt resource value: 0x7f0a00e3
-			public const int action0 = 2131362019;
+			// aapt resource value: 0x7f0a00ed
+			public const int action0 = 2131362029;
 			
 			// aapt resource value: 0x7f0a007f
 			public const int action_bar = 2131361919;
@@ -6628,17 +6778,17 @@ namespace ReLearn.Droid
 			// aapt resource value: 0x7f0a005d
 			public const int action_bar_title = 2131361885;
 			
-			// aapt resource value: 0x7f0a00e0
-			public const int action_container = 2131362016;
+			// aapt resource value: 0x7f0a00ea
+			public const int action_container = 2131362026;
 			
 			// aapt resource value: 0x7f0a0080
 			public const int action_context_bar = 2131361920;
 			
-			// aapt resource value: 0x7f0a00e7
-			public const int action_divider = 2131362023;
+			// aapt resource value: 0x7f0a00f1
+			public const int action_divider = 2131362033;
 			
-			// aapt resource value: 0x7f0a00e1
-			public const int action_image = 2131362017;
+			// aapt resource value: 0x7f0a00eb
+			public const int action_image = 2131362027;
 			
 			// aapt resource value: 0x7f0a0003
 			public const int action_menu_divider = 2131361795;
@@ -6655,14 +6805,14 @@ namespace ReLearn.Droid
 			// aapt resource value: 0x7f0a005f
 			public const int action_mode_close_button = 2131361887;
 			
-			// aapt resource value: 0x7f0a0106
-			public const int action_search = 2131362054;
+			// aapt resource value: 0x7f0a010b
+			public const int action_search = 2131362059;
 			
-			// aapt resource value: 0x7f0a00e2
-			public const int action_text = 2131362018;
+			// aapt resource value: 0x7f0a00ec
+			public const int action_text = 2131362028;
 			
-			// aapt resource value: 0x7f0a00f0
-			public const int actions = 2131362032;
+			// aapt resource value: 0x7f0a00fa
+			public const int actions = 2131362042;
 			
 			// aapt resource value: 0x7f0a0060
 			public const int activity_chooser_view_content = 2131361888;
@@ -6670,8 +6820,8 @@ namespace ReLearn.Droid
 			// aapt resource value: 0x7f0a002a
 			public const int add = 2131361834;
 			
-			// aapt resource value: 0x7f0a0100
-			public const int add_word = 2131362048;
+			// aapt resource value: 0x7f0a0104
+			public const int add_word = 2131362052;
 			
 			// aapt resource value: 0x7f0a0073
 			public const int alertTitle = 2131361907;
@@ -6697,80 +6847,80 @@ namespace ReLearn.Droid
 			// aapt resource value: 0x7f0a0040
 			public const int bottom = 2131361856;
 			
-			// aapt resource value: 0x7f0a00de
-			public const int button = 2131362014;
+			// aapt resource value: 0x7f0a00d6
+			public const int button = 2131362006;
 			
 			// aapt resource value: 0x7f0a0066
 			public const int buttonPanel = 2131361894;
 			
-			// aapt resource value: 0x7f0a00b3
-			public const int button_I_Next = 2131361971;
+			// aapt resource value: 0x7f0a00a2
+			public const int button_I_Next = 2131361954;
 			
-			// aapt resource value: 0x7f0a00af
-			public const int button_I_choice1 = 2131361967;
+			// aapt resource value: 0x7f0a009e
+			public const int button_I_choice1 = 2131361950;
 			
-			// aapt resource value: 0x7f0a00b0
-			public const int button_I_choice2 = 2131361968;
-			
-			// aapt resource value: 0x7f0a00b1
-			public const int button_I_choice3 = 2131361969;
-			
-			// aapt resource value: 0x7f0a00b2
-			public const int button_I_choice4 = 2131361970;
-			
-			// aapt resource value: 0x7f0a00aa
-			public const int button_I_learn_Next = 2131361962;
+			// aapt resource value: 0x7f0a009f
+			public const int button_I_choice2 = 2131361951;
 			
 			// aapt resource value: 0x7f0a00a0
-			public const int button_Images_No = 2131361952;
+			public const int button_I_choice3 = 2131361952;
 			
 			// aapt resource value: 0x7f0a00a1
-			public const int button_Images_Yes = 2131361953;
+			public const int button_I_choice4 = 2131361953;
 			
-			// aapt resource value: 0x7f0a00d8
-			public const int button_Images_learn = 2131362008;
+			// aapt resource value: 0x7f0a0099
+			public const int button_I_learn_Next = 2131361945;
 			
-			// aapt resource value: 0x7f0a00ce
-			public const int button_Languages_Next = 2131361998;
+			// aapt resource value: 0x7f0a0092
+			public const int button_Images_No = 2131361938;
 			
-			// aapt resource value: 0x7f0a00ba
-			public const int button_Languages_No = 2131361978;
+			// aapt resource value: 0x7f0a0093
+			public const int button_Images_Yes = 2131361939;
 			
-			// aapt resource value: 0x7f0a00bb
-			public const int button_Languages_Yes = 2131361979;
+			// aapt resource value: 0x7f0a00cf
+			public const int button_Images_learn = 2131361999;
 			
-			// aapt resource value: 0x7f0a00c9
-			public const int button_Languages_choice1 = 2131361993;
+			// aapt resource value: 0x7f0a00b8
+			public const int button_Languages_Next = 2131361976;
 			
-			// aapt resource value: 0x7f0a00ca
-			public const int button_Languages_choice2 = 2131361994;
+			// aapt resource value: 0x7f0a00a7
+			public const int button_Languages_No = 2131361959;
 			
-			// aapt resource value: 0x7f0a00cb
-			public const int button_Languages_choice3 = 2131361995;
+			// aapt resource value: 0x7f0a00a8
+			public const int button_Languages_Yes = 2131361960;
 			
-			// aapt resource value: 0x7f0a00cc
-			public const int button_Languages_choice4 = 2131361996;
+			// aapt resource value: 0x7f0a00b3
+			public const int button_Languages_choice1 = 2131361971;
 			
-			// aapt resource value: 0x7f0a00a9
-			public const int button_NotRepeat_Images = 2131361961;
+			// aapt resource value: 0x7f0a00b4
+			public const int button_Languages_choice2 = 2131361972;
 			
-			// aapt resource value: 0x7f0a00c3
-			public const int button_NotRepeat_languages = 2131361987;
+			// aapt resource value: 0x7f0a00b5
+			public const int button_Languages_choice3 = 2131361973;
 			
-			// aapt resource value: 0x7f0a00bd
-			public const int button_add_DictionaryReplenishment = 2131361981;
+			// aapt resource value: 0x7f0a00b6
+			public const int button_Languages_choice4 = 2131361974;
 			
-			// aapt resource value: 0x7f0a00c4
-			public const int button_learn_languages = 2131361988;
+			// aapt resource value: 0x7f0a0098
+			public const int button_NotRepeat_Images = 2131361944;
 			
-			// aapt resource value: 0x7f0a00c2
-			public const int button_voice = 2131361986;
+			// aapt resource value: 0x7f0a00ad
+			public const int button_NotRepeat_languages = 2131361965;
+			
+			// aapt resource value: 0x7f0a00d3
+			public const int button_add_DictionaryReplenishment = 2131362003;
+			
+			// aapt resource value: 0x7f0a00ae
+			public const int button_learn_languages = 2131361966;
+			
+			// aapt resource value: 0x7f0a00ac
+			public const int button_voice = 2131361964;
 			
 			// aapt resource value: 0x7f0a001f
 			public const int calligraphy_tag_id = 2131361823;
 			
-			// aapt resource value: 0x7f0a00e4
-			public const int cancel_action = 2131362020;
+			// aapt resource value: 0x7f0a00ee
+			public const int cancel_action = 2131362030;
 			
 			// aapt resource value: 0x7f0a0048
 			public const int center = 2131361864;
@@ -6784,8 +6934,8 @@ namespace ReLearn.Droid
 			// aapt resource value: 0x7f0a0076
 			public const int checkbox = 2131361910;
 			
-			// aapt resource value: 0x7f0a00ec
-			public const int chronometer = 2131362028;
+			// aapt resource value: 0x7f0a00f6
+			public const int chronometer = 2131362038;
 			
 			// aapt resource value: 0x7f0a0051
 			public const int clip_horizontal = 2131361873;
@@ -6796,14 +6946,17 @@ namespace ReLearn.Droid
 			// aapt resource value: 0x7f0a003c
 			public const int collapseActionView = 2131361852;
 			
-			// aapt resource value: 0x7f0a0090
-			public const int container = 2131361936;
+			// aapt resource value: 0x7f0a00bd
+			public const int container = 2131361981;
 			
 			// aapt resource value: 0x7f0a0069
 			public const int contentPanel = 2131361897;
 			
-			// aapt resource value: 0x7f0a0091
-			public const int coordinator = 2131361937;
+			// aapt resource value: 0x7f0a00bb
+			public const int content_frame = 2131361979;
+			
+			// aapt resource value: 0x7f0a00c3
+			public const int coordinator = 2131361987;
 			
 			// aapt resource value: 0x7f0a0070
 			public const int custom = 2131361904;
@@ -6814,38 +6967,41 @@ namespace ReLearn.Droid
 			// aapt resource value: 0x7f0a007d
 			public const int decor_content_parent = 2131361917;
 			
-			// aapt resource value: 0x7f0a0109
-			public const int decrease = 2131362057;
+			// aapt resource value: 0x7f0a010e
+			public const int decrease = 2131362062;
 			
 			// aapt resource value: 0x7f0a0063
 			public const int default_activity_button = 2131361891;
 			
-			// aapt resource value: 0x7f0a0093
-			public const int design_bottom_sheet = 2131361939;
+			// aapt resource value: 0x7f0a00c5
+			public const int design_bottom_sheet = 2131361989;
 			
-			// aapt resource value: 0x7f0a009a
-			public const int design_menu_item_action_area = 2131361946;
+			// aapt resource value: 0x7f0a00cc
+			public const int design_menu_item_action_area = 2131361996;
 			
-			// aapt resource value: 0x7f0a0099
-			public const int design_menu_item_action_area_stub = 2131361945;
+			// aapt resource value: 0x7f0a00cb
+			public const int design_menu_item_action_area_stub = 2131361995;
 			
-			// aapt resource value: 0x7f0a0098
-			public const int design_menu_item_text = 2131361944;
+			// aapt resource value: 0x7f0a00ca
+			public const int design_menu_item_text = 2131361994;
 			
-			// aapt resource value: 0x7f0a0097
-			public const int design_navigation_view = 2131361943;
+			// aapt resource value: 0x7f0a00c9
+			public const int design_navigation_view = 2131361993;
 			
-			// aapt resource value: 0x7f0a0105
-			public const int dictionary_replenishment = 2131362053;
+			// aapt resource value: 0x7f0a0101
+			public const int dictionaries = 2131362049;
 			
-			// aapt resource value: 0x7f0a0104
-			public const int dictionary_replenishment_instruction = 2131362052;
+			// aapt resource value: 0x7f0a010a
+			public const int dictionary_replenishment = 2131362058;
+			
+			// aapt resource value: 0x7f0a0109
+			public const int dictionary_replenishment_instruction = 2131362057;
 			
 			// aapt resource value: 0x7f0a0023
 			public const int disableHome = 2131361827;
 			
-			// aapt resource value: 0x7f0a00d5
-			public const int drawer_layout = 2131362005;
+			// aapt resource value: 0x7f0a00b9
+			public const int drawer_layout = 2131361977;
 			
 			// aapt resource value: 0x7f0a0081
 			public const int edit_query = 2131361921;
@@ -6853,8 +7009,8 @@ namespace ReLearn.Droid
 			// aapt resource value: 0x7f0a0033
 			public const int end = 2131361843;
 			
-			// aapt resource value: 0x7f0a00f2
-			public const int end_padder = 2131362034;
+			// aapt resource value: 0x7f0a00fc
+			public const int end_padder = 2131362044;
 			
 			// aapt resource value: 0x7f0a0042
 			public const int enterAlways = 2131361858;
@@ -6871,8 +7027,8 @@ namespace ReLearn.Droid
 			// aapt resource value: 0x7f0a0075
 			public const int expanded_menu = 2131361909;
 			
-			// aapt resource value: 0x7f0a0102
-			public const int feedback = 2131362050;
+			// aapt resource value: 0x7f0a0107
+			public const int feedback = 2131362055;
 			
 			// aapt resource value: 0x7f0a0053
 			public const int fill = 2131361875;
@@ -6901,8 +7057,8 @@ namespace ReLearn.Droid
 			// aapt resource value: 0x7f0a0065
 			public const int icon = 2131361893;
 			
-			// aapt resource value: 0x7f0a00f1
-			public const int icon_group = 2131362033;
+			// aapt resource value: 0x7f0a00fb
+			public const int icon_group = 2131362043;
 			
 			// aapt resource value: 0x7f0a003d
 			public const int ifRoom = 2131361853;
@@ -6910,26 +7066,23 @@ namespace ReLearn.Droid
 			// aapt resource value: 0x7f0a0062
 			public const int image = 2131361890;
 			
-			// aapt resource value: 0x7f0a00a2
-			public const int imageView_Alert_BigImage = 2131361954;
+			// aapt resource value: 0x7f0a0096
+			public const int imageView_Images_learn = 2131361942;
 			
-			// aapt resource value: 0x7f0a00a7
-			public const int imageView_Images_learn = 2131361959;
+			// aapt resource value: 0x7f0a009d
+			public const int imageView_Images_repeat = 2131361949;
 			
-			// aapt resource value: 0x7f0a00ae
-			public const int imageView_Images_repeat = 2131361966;
+			// aapt resource value: 0x7f0a00e3
+			public const int imageView_item_view_dictionary = 2131362019;
 			
-			// aapt resource value: 0x7f0a00a3
-			public const int imageView_item_view_dictionary = 2131361955;
+			// aapt resource value: 0x7f0a00c0
+			public const int imgCustomToast = 2131361984;
 			
-			// aapt resource value: 0x7f0a00b5
-			public const int imgCustomToast = 2131361973;
+			// aapt resource value: 0x7f0a010d
+			public const int increase = 2131362061;
 			
-			// aapt resource value: 0x7f0a0108
-			public const int increase = 2131362056;
-			
-			// aapt resource value: 0x7f0a00ed
-			public const int info = 2131362029;
+			// aapt resource value: 0x7f0a00f7
+			public const int info = 2131362039;
 			
 			// aapt resource value: 0x7f0a005c
 			public const int italic = 2131361884;
@@ -6937,14 +7090,14 @@ namespace ReLearn.Droid
 			// aapt resource value: 0x7f0a0000
 			public const int item_touch_helper_previous_elevation = 2131361792;
 			
-			// aapt resource value: 0x7f0a00be
-			public const int item_view_dictionary = 2131361982;
+			// aapt resource value: 0x7f0a00e5
+			public const int item_view_dictionary = 2131362021;
 			
-			// aapt resource value: 0x7f0a008f
-			public const int largeLabel = 2131361935;
+			// aapt resource value: 0x7f0a00c2
+			public const int largeLabel = 2131361986;
 			
-			// aapt resource value: 0x7f0a00a6
-			public const int learn_background = 2131361958;
+			// aapt resource value: 0x7f0a0095
+			public const int learn_background = 2131361941;
 			
 			// aapt resource value: 0x7f0a004c
 			public const int left = 2131361868;
@@ -6955,38 +7108,41 @@ namespace ReLearn.Droid
 			// aapt resource value: 0x7f0a0018
 			public const int line3 = 2131361816;
 			
-			// aapt resource value: 0x7f0a00c5
-			public const int linearLayout1 = 2131361989;
+			// aapt resource value: 0x7f0a00af
+			public const int linearLayout1 = 2131361967;
 			
 			// aapt resource value: 0x7f0a0020
 			public const int listMode = 2131361824;
 			
-			// aapt resource value: 0x7f0a00d0
-			public const int listView_dictionary = 2131362000;
+			// aapt resource value: 0x7f0a00dd
+			public const int listView_dictionary = 2131362013;
 			
 			// aapt resource value: 0x7f0a0064
 			public const int list_item = 2131361892;
 			
-			// aapt resource value: 0x7f0a00d3
-			public const int loadingImage = 2131362003;
-			
-			// aapt resource value: 0x7f0a00d1
-			public const int loadingProgressBar = 2131362001;
-			
-			// aapt resource value: 0x7f0a00d4
-			public const int loadingProgressWheel = 2131362004;
-			
-			// aapt resource value: 0x7f0a00fd
-			public const int masked = 2131362045;
+			// aapt resource value: 0x7f0a00e8
+			public const int loadingImage = 2131362024;
 			
 			// aapt resource value: 0x7f0a00e6
-			public const int media_actions = 2131362022;
+			public const int loadingProgressBar = 2131362022;
 			
-			// aapt resource value: 0x7f0a0107
-			public const int menuDelSort = 2131362055;
+			// aapt resource value: 0x7f0a00e9
+			public const int loadingProgressWheel = 2131362025;
 			
-			// aapt resource value: 0x7f0a00fb
-			public const int message = 2131362043;
+			// aapt resource value: 0x7f0a00ba
+			public const int main_frame = 2131361978;
+			
+			// aapt resource value: 0x7f0a00ff
+			public const int masked = 2131362047;
+			
+			// aapt resource value: 0x7f0a00f0
+			public const int media_actions = 2131362032;
+			
+			// aapt resource value: 0x7f0a010c
+			public const int menuDelSort = 2131362060;
+			
+			// aapt resource value: 0x7f0a00fd
+			public const int message = 2131362045;
 			
 			// aapt resource value: 0x7f0a0034
 			public const int middle = 2131361844;
@@ -6997,11 +7153,17 @@ namespace ReLearn.Droid
 			// aapt resource value: 0x7f0a002b
 			public const int multiply = 2131361835;
 			
-			// aapt resource value: 0x7f0a00d6
-			public const int nav_view = 2131362006;
+			// aapt resource value: 0x7f0a0105
+			public const int nav_footer = 2131362053;
 			
-			// aapt resource value: 0x7f0a0096
-			public const int navigation_header_container = 2131361942;
+			// aapt resource value: 0x7f0a00de
+			public const int nav_view = 2131362014;
+			
+			// aapt resource value: 0x7f0a00bc
+			public const int navigation_frame = 2131361980;
+			
+			// aapt resource value: 0x7f0a00c8
+			public const int navigation_header_container = 2131361992;
 			
 			// aapt resource value: 0x7f0a003e
 			public const int never = 2131361854;
@@ -7012,17 +7174,17 @@ namespace ReLearn.Droid
 			// aapt resource value: 0x7f0a0021
 			public const int normal = 2131361825;
 			
-			// aapt resource value: 0x7f0a00ef
-			public const int notification_background = 2131362031;
+			// aapt resource value: 0x7f0a00f9
+			public const int notification_background = 2131362041;
 			
-			// aapt resource value: 0x7f0a00e9
-			public const int notification_main_column = 2131362025;
+			// aapt resource value: 0x7f0a00f3
+			public const int notification_main_column = 2131362035;
 			
-			// aapt resource value: 0x7f0a00e8
-			public const int notification_main_column_container = 2131362024;
+			// aapt resource value: 0x7f0a00f2
+			public const int notification_main_column_container = 2131362034;
 			
-			// aapt resource value: 0x7f0a00f5
-			public const int pager = 2131362037;
+			// aapt resource value: 0x7f0a00d9
+			public const int pager = 2131362009;
 			
 			// aapt resource value: 0x7f0a004f
 			public const int parallax = 2131361871;
@@ -7045,17 +7207,17 @@ namespace ReLearn.Droid
 			// aapt resource value: 0x7f0a0078
 			public const int radio = 2131361912;
 			
-			// aapt resource value: 0x7f0a00ad
-			public const int repeat_background = 2131361965;
+			// aapt resource value: 0x7f0a009c
+			public const int repeat_background = 2131361948;
 			
 			// aapt resource value: 0x7f0a004d
 			public const int right = 2131361869;
 			
-			// aapt resource value: 0x7f0a00ee
-			public const int right_icon = 2131362030;
+			// aapt resource value: 0x7f0a00f8
+			public const int right_icon = 2131362040;
 			
-			// aapt resource value: 0x7f0a00ea
-			public const int right_side = 2131362026;
+			// aapt resource value: 0x7f0a00f4
+			public const int right_side = 2131362036;
 			
 			// aapt resource value: 0x7f0a000c
 			public const int save_image_matrix = 2131361804;
@@ -7081,11 +7243,11 @@ namespace ReLearn.Droid
 			// aapt resource value: 0x7f0a006b
 			public const int scrollView = 2131361899;
 			
-			// aapt resource value: 0x7f0a00f6
-			public const int scrollViewImage = 2131362038;
+			// aapt resource value: 0x7f0a00df
+			public const int scrollViewImage = 2131362015;
 			
-			// aapt resource value: 0x7f0a00f8
-			public const int scrollViewlanguage = 2131362040;
+			// aapt resource value: 0x7f0a00e1
+			public const int scrollViewlanguage = 2131362017;
 			
 			// aapt resource value: 0x7f0a0058
 			public const int scrollable = 2131361880;
@@ -7123,8 +7285,8 @@ namespace ReLearn.Droid
 			// aapt resource value: 0x7f0a008d
 			public const int select_dialog_listview = 2131361933;
 			
-			// aapt resource value: 0x7f0a0101
-			public const int settings_menu = 2131362049;
+			// aapt resource value: 0x7f0a0106
+			public const int settings_menu = 2131362054;
 			
 			// aapt resource value: 0x7f0a0077
 			public const int shortcut = 2131361911;
@@ -7138,17 +7300,17 @@ namespace ReLearn.Droid
 			// aapt resource value: 0x7f0a0028
 			public const int showTitle = 2131361832;
 			
-			// aapt resource value: 0x7f0a00db
-			public const int signInButton = 2131362011;
+			// aapt resource value: 0x7f0a00bf
+			public const int signInButton = 2131361983;
 			
-			// aapt resource value: 0x7f0a008e
-			public const int smallLabel = 2131361934;
+			// aapt resource value: 0x7f0a00c1
+			public const int smallLabel = 2131361985;
 			
-			// aapt resource value: 0x7f0a0095
-			public const int snackbar_action = 2131361941;
+			// aapt resource value: 0x7f0a00c7
+			public const int snackbar_action = 2131361991;
 			
-			// aapt resource value: 0x7f0a0094
-			public const int snackbar_text = 2131361940;
+			// aapt resource value: 0x7f0a00c6
+			public const int snackbar_text = 2131361990;
 			
 			// aapt resource value: 0x7f0a0046
 			public const int snap = 2131361862;
@@ -7171,11 +7333,14 @@ namespace ReLearn.Droid
 			// aapt resource value: 0x7f0a004e
 			public const int start = 2131361870;
 			
-			// aapt resource value: 0x7f0a00fe
-			public const int statistics = 2131362046;
+			// aapt resource value: 0x7f0a0102
+			public const int statistics = 2131362050;
 			
-			// aapt resource value: 0x7f0a00e5
-			public const int status_bar_latest_event_content = 2131362021;
+			// aapt resource value: 0x7f0a00ef
+			public const int status_bar_latest_event_content = 2131362031;
+			
+			// aapt resource value: 0x7f0a0100
+			public const int study = 2131362048;
 			
 			// aapt resource value: 0x7f0a0079
 			public const int submenuarrow = 2131361913;
@@ -7186,8 +7351,8 @@ namespace ReLearn.Droid
 			// aapt resource value: 0x7f0a0022
 			public const int tabMode = 2131361826;
 			
-			// aapt resource value: 0x7f0a00f4
-			public const int tablayout = 2131362036;
+			// aapt resource value: 0x7f0a00d8
+			public const int tablayout = 2131362008;
 			
 			// aapt resource value: 0x7f0a0019
 			public const int tag_transition_group = 2131361817;
@@ -7204,32 +7369,32 @@ namespace ReLearn.Droid
 			// aapt resource value: 0x7f0a006c
 			public const int textSpacerNoTitle = 2131361900;
 			
-			// aapt resource value: 0x7f0a00dd
-			public const int textView = 2131362013;
+			// aapt resource value: 0x7f0a00d5
+			public const int textView = 2131362005;
 			
-			// aapt resource value: 0x7f0a00d2
-			public const int textViewStatus = 2131362002;
+			// aapt resource value: 0x7f0a00e7
+			public const int textViewStatus = 2131362023;
 			
-			// aapt resource value: 0x7f0a00c8
-			public const int textView_Eng_Word = 2131361992;
+			// aapt resource value: 0x7f0a00b2
+			public const int textView_Eng_Word = 2131361970;
 			
-			// aapt resource value: 0x7f0a00a8
-			public const int textView_Images_learn = 2131361960;
+			// aapt resource value: 0x7f0a0097
+			public const int textView_Images_learn = 2131361943;
 			
-			// aapt resource value: 0x7f0a009f
-			public const int textView_Timer_Images = 2131361951;
+			// aapt resource value: 0x7f0a0091
+			public const int textView_Timer_Images = 2131361937;
 			
-			// aapt resource value: 0x7f0a00b9
-			public const int textView_Timer_language = 2131361977;
+			// aapt resource value: 0x7f0a00a6
+			public const int textView_Timer_language = 2131361958;
 			
-			// aapt resource value: 0x7f0a00a4
-			public const int textView_item_view_dictionary = 2131361956;
+			// aapt resource value: 0x7f0a00e4
+			public const int textView_item_view_dictionary = 2131362020;
 			
-			// aapt resource value: 0x7f0a00c0
-			public const int textView_learn_en = 2131361984;
+			// aapt resource value: 0x7f0a00aa
+			public const int textView_learn_en = 2131361962;
 			
-			// aapt resource value: 0x7f0a009b
-			public const int text_input_password_toggle = 2131361947;
+			// aapt resource value: 0x7f0a00cd
+			public const int text_input_password_toggle = 2131361997;
 			
 			// aapt resource value: 0x7f0a0014
 			public const int textinput_counter = 2131361812;
@@ -7237,8 +7402,8 @@ namespace ReLearn.Droid
 			// aapt resource value: 0x7f0a0015
 			public const int textinput_error = 2131361813;
 			
-			// aapt resource value: 0x7f0a00eb
-			public const int time = 2131362027;
+			// aapt resource value: 0x7f0a00f5
+			public const int time = 2131362037;
 			
 			// aapt resource value: 0x7f0a001c
 			public const int title = 2131361820;
@@ -7249,53 +7414,53 @@ namespace ReLearn.Droid
 			// aapt resource value: 0x7f0a0072
 			public const int title_template = 2131361906;
 			
-			// aapt resource value: 0x7f0a00bc
-			public const int toolbarDictionaryReplenishment = 2131361980;
+			// aapt resource value: 0x7f0a00d0
+			public const int toolbar_about_us = 2131362000;
 			
-			// aapt resource value: 0x7f0a00b4
-			public const int toolbarEnglishAdd = 2131361972;
+			// aapt resource value: 0x7f0a00d1
+			public const int toolbar_add = 2131362001;
 			
-			// aapt resource value: 0x7f0a009c
-			public const int toolbarImagesBlitzPoll = 2131361948;
+			// aapt resource value: 0x7f0a00d2
+			public const int toolbar_add_dictionary = 2131362002;
 			
-			// aapt resource value: 0x7f0a00a5
-			public const int toolbarImagesLearn = 2131361957;
+			// aapt resource value: 0x7f0a00d4
+			public const int toolbar_feedback = 2131362004;
 			
-			// aapt resource value: 0x7f0a00ab
-			public const int toolbarImagesRepeat = 2131361963;
+			// aapt resource value: 0x7f0a00ce
+			public const int toolbar_home = 2131361998;
 			
-			// aapt resource value: 0x7f0a00b6
-			public const int toolbarLanguagesBlitzPoll = 2131361974;
+			// aapt resource value: 0x7f0a008e
+			public const int toolbar_images_blitz_poll = 2131361934;
 			
-			// aapt resource value: 0x7f0a00cf
-			public const int toolbarLanguagesDelete = 2131361999;
+			// aapt resource value: 0x7f0a0094
+			public const int toolbar_images_learn = 2131361940;
 			
-			// aapt resource value: 0x7f0a00bf
-			public const int toolbarLanguagesLearn = 2131361983;
+			// aapt resource value: 0x7f0a009a
+			public const int toolbar_images_repeat = 2131361946;
 			
-			// aapt resource value: 0x7f0a00c6
-			public const int toolbarLanguagesRepeat = 2131361990;
+			// aapt resource value: 0x7f0a00a3
+			public const int toolbar_languages_blitz_poll = 2131361955;
+			
+			// aapt resource value: 0x7f0a00a9
+			public const int toolbar_languages_learn = 2131361961;
+			
+			// aapt resource value: 0x7f0a00b0
+			public const int toolbar_languages_repeat = 2131361968;
+			
+			// aapt resource value: 0x7f0a00be
+			public const int toolbar_menu_achievements = 2131361982;
 			
 			// aapt resource value: 0x7f0a00d7
-			public const int toolbarMain = 2131362007;
-			
-			// aapt resource value: 0x7f0a00f3
-			public const int toolbarSelectDictionary = 2131362035;
-			
-			// aapt resource value: 0x7f0a00df
-			public const int toolbarSetting = 2131362015;
-			
-			// aapt resource value: 0x7f0a00d9
-			public const int toolbar_About_Us = 2131362009;
+			public const int toolbar_select_dictionary = 2131362007;
 			
 			// aapt resource value: 0x7f0a00da
-			public const int toolbar_Achievements = 2131362010;
+			public const int toolbar_setting = 2131362010;
+			
+			// aapt resource value: 0x7f0a00db
+			public const int toolbar_statistics = 2131362011;
 			
 			// aapt resource value: 0x7f0a00dc
-			public const int toolbar_Feedback = 2131362012;
-			
-			// aapt resource value: 0x7f0a00fa
-			public const int toolbar_statistics = 2131362042;
+			public const int toolbar_view_dictionary = 2131362012;
 			
 			// aapt resource value: 0x7f0a0041
 			public const int top = 2131361857;
@@ -7303,8 +7468,8 @@ namespace ReLearn.Droid
 			// aapt resource value: 0x7f0a0071
 			public const int topPanel = 2131361905;
 			
-			// aapt resource value: 0x7f0a0092
-			public const int touch_outside = 2131361938;
+			// aapt resource value: 0x7f0a00c4
+			public const int touch_outside = 2131361988;
 			
 			// aapt resource value: 0x7f0a000f
 			public const int transition_current_scene = 2131361807;
@@ -7330,14 +7495,14 @@ namespace ReLearn.Droid
 			// aapt resource value: 0x7f0a0029
 			public const int useLogo = 2131361833;
 			
-			// aapt resource value: 0x7f0a00ff
-			public const int view_dictionary = 2131362047;
+			// aapt resource value: 0x7f0a0103
+			public const int view_dictionary = 2131362051;
 			
 			// aapt resource value: 0x7f0a0016
 			public const int view_offset_helper = 2131361814;
 			
-			// aapt resource value: 0x7f0a00fc
-			public const int visible = 2131362044;
+			// aapt resource value: 0x7f0a00fe
+			public const int visible = 2131362046;
 			
 			// aapt resource value: 0x7f0a003f
 			public const int withText = 2131361855;
@@ -7480,199 +7645,196 @@ namespace ReLearn.Droid
 			public const int abc_select_dialog_material = 2131034137;
 			
 			// aapt resource value: 0x7f05001a
-			public const int content_main11111 = 2131034138;
+			public const int activity_images_blitz_poll = 2131034138;
 			
 			// aapt resource value: 0x7f05001b
-			public const int design_bottom_navigation_item = 2131034139;
+			public const int activity_images_learn = 2131034139;
 			
 			// aapt resource value: 0x7f05001c
-			public const int design_bottom_sheet_dialog = 2131034140;
+			public const int activity_images_repeat = 2131034140;
 			
 			// aapt resource value: 0x7f05001d
-			public const int design_layout_snackbar = 2131034141;
+			public const int activity_languages_blitz_poll = 2131034141;
 			
 			// aapt resource value: 0x7f05001e
-			public const int design_layout_snackbar_include = 2131034142;
+			public const int activity_languages_learn = 2131034142;
 			
 			// aapt resource value: 0x7f05001f
-			public const int design_layout_tab_icon = 2131034143;
+			public const int activity_languages_repeat = 2131034143;
 			
 			// aapt resource value: 0x7f050020
-			public const int design_layout_tab_text = 2131034144;
+			public const int activity_main = 2131034144;
 			
 			// aapt resource value: 0x7f050021
-			public const int design_menu_item_action_area = 2131034145;
+			public const int activity_menu_achievements = 2131034145;
 			
 			// aapt resource value: 0x7f050022
-			public const int design_navigation_item = 2131034146;
+			public const int alert_dictionary = 2131034146;
 			
 			// aapt resource value: 0x7f050023
-			public const int design_navigation_item_header = 2131034147;
+			public const int design_bottom_navigation_item = 2131034147;
 			
 			// aapt resource value: 0x7f050024
-			public const int design_navigation_item_separator = 2131034148;
+			public const int design_bottom_sheet_dialog = 2131034148;
 			
 			// aapt resource value: 0x7f050025
-			public const int design_navigation_item_subheader = 2131034149;
+			public const int design_layout_snackbar = 2131034149;
 			
 			// aapt resource value: 0x7f050026
-			public const int design_navigation_menu = 2131034150;
+			public const int design_layout_snackbar_include = 2131034150;
 			
 			// aapt resource value: 0x7f050027
-			public const int design_navigation_menu_item = 2131034151;
+			public const int design_layout_tab_icon = 2131034151;
 			
 			// aapt resource value: 0x7f050028
-			public const int design_text_input_password_icon = 2131034152;
+			public const int design_layout_tab_text = 2131034152;
 			
 			// aapt resource value: 0x7f050029
-			public const int images_blitz_poll_activity = 2131034153;
+			public const int design_menu_item_action_area = 2131034153;
 			
 			// aapt resource value: 0x7f05002a
-			public const int images_item_alert_big = 2131034154;
+			public const int design_navigation_item = 2131034154;
 			
 			// aapt resource value: 0x7f05002b
-			public const int images_item_view_dictionary_activity = 2131034155;
+			public const int design_navigation_item_header = 2131034155;
 			
 			// aapt resource value: 0x7f05002c
-			public const int images_learn_activity = 2131034156;
+			public const int design_navigation_item_separator = 2131034156;
 			
 			// aapt resource value: 0x7f05002d
-			public const int images_repeat_activity = 2131034157;
+			public const int design_navigation_item_subheader = 2131034157;
 			
 			// aapt resource value: 0x7f05002e
-			public const int languages_add_activity = 2131034158;
+			public const int design_navigation_menu = 2131034158;
 			
 			// aapt resource value: 0x7f05002f
-			public const int languages_alert_image_activity = 2131034159;
+			public const int design_navigation_menu_item = 2131034159;
 			
 			// aapt resource value: 0x7f050030
-			public const int languages_blitz_poll_activity = 2131034160;
+			public const int design_text_input_password_icon = 2131034160;
 			
 			// aapt resource value: 0x7f050031
-			public const int languages_dictionary_replenishment_activity = 2131034161;
+			public const int fragment_main = 2131034161;
 			
 			// aapt resource value: 0x7f050032
-			public const int languages_item_view_dictionary_activity = 2131034162;
+			public const int fragment_menu_about_us = 2131034162;
 			
 			// aapt resource value: 0x7f050033
-			public const int languages_learn_activity = 2131034163;
+			public const int fragment_menu_add = 2131034163;
 			
 			// aapt resource value: 0x7f050034
-			public const int languages_repeat_activity = 2131034164;
+			public const int fragment_menu_add_dictionary = 2131034164;
 			
 			// aapt resource value: 0x7f050035
-			public const int languages_view_dictionary_activity = 2131034165;
+			public const int fragment_menu_feedback = 2131034165;
 			
 			// aapt resource value: 0x7f050036
-			public const int loading = 2131034166;
+			public const int fragment_menu_select_dictionary = 2131034166;
 			
 			// aapt resource value: 0x7f050037
-			public const int loadingimage = 2131034167;
+			public const int fragment_menu_settings = 2131034167;
 			
 			// aapt resource value: 0x7f050038
-			public const int loadingprogress = 2131034168;
+			public const int fragment_menu_statistics = 2131034168;
 			
 			// aapt resource value: 0x7f050039
-			public const int main_activity = 2131034169;
+			public const int fragment_menu_view_dictionary = 2131034169;
 			
 			// aapt resource value: 0x7f05003a
-			public const int main_content = 2131034170;
+			public const int fragment_navigation = 2131034170;
 			
 			// aapt resource value: 0x7f05003b
-			public const int menu_about_us_activity = 2131034171;
+			public const int fragment_tab_images_dictionary = 2131034171;
 			
 			// aapt resource value: 0x7f05003c
-			public const int menu_achievements_activity = 2131034172;
+			public const int fragment_tab_languages_dictionary = 2131034172;
 			
 			// aapt resource value: 0x7f05003d
-			public const int menu_feedback_activity = 2131034173;
+			public const int fragment_tab_statistics_general = 2131034173;
 			
 			// aapt resource value: 0x7f05003e
-			public const int menu_settings_activity = 2131034174;
+			public const int fragment_tab_statistics_main = 2131034174;
 			
 			// aapt resource value: 0x7f05003f
-			public const int navigation_header_main = 2131034175;
+			public const int item_image_view_dictionary = 2131034175;
 			
 			// aapt resource value: 0x7f050040
-			public const int notification_action = 2131034176;
+			public const int item_languages_view_dictionary = 2131034176;
 			
 			// aapt resource value: 0x7f050041
-			public const int notification_action_tombstone = 2131034177;
+			public const int loading = 2131034177;
 			
 			// aapt resource value: 0x7f050042
-			public const int notification_media_action = 2131034178;
+			public const int loadingimage = 2131034178;
 			
 			// aapt resource value: 0x7f050043
-			public const int notification_media_cancel_action = 2131034179;
+			public const int loadingprogress = 2131034179;
 			
 			// aapt resource value: 0x7f050044
-			public const int notification_template_big_media = 2131034180;
+			public const int navigation_main_header = 2131034180;
 			
 			// aapt resource value: 0x7f050045
-			public const int notification_template_big_media_custom = 2131034181;
+			public const int notification_action = 2131034181;
 			
 			// aapt resource value: 0x7f050046
-			public const int notification_template_big_media_narrow = 2131034182;
+			public const int notification_action_tombstone = 2131034182;
 			
 			// aapt resource value: 0x7f050047
-			public const int notification_template_big_media_narrow_custom = 2131034183;
+			public const int notification_media_action = 2131034183;
 			
 			// aapt resource value: 0x7f050048
-			public const int notification_template_custom_big = 2131034184;
+			public const int notification_media_cancel_action = 2131034184;
 			
 			// aapt resource value: 0x7f050049
-			public const int notification_template_icon_group = 2131034185;
+			public const int notification_template_big_media = 2131034185;
 			
 			// aapt resource value: 0x7f05004a
-			public const int notification_template_lines_media = 2131034186;
+			public const int notification_template_big_media_custom = 2131034186;
 			
 			// aapt resource value: 0x7f05004b
-			public const int notification_template_media = 2131034187;
+			public const int notification_template_big_media_narrow = 2131034187;
 			
 			// aapt resource value: 0x7f05004c
-			public const int notification_template_media_custom = 2131034188;
+			public const int notification_template_big_media_narrow_custom = 2131034188;
 			
 			// aapt resource value: 0x7f05004d
-			public const int notification_template_part_chronometer = 2131034189;
+			public const int notification_template_custom_big = 2131034189;
 			
 			// aapt resource value: 0x7f05004e
-			public const int notification_template_part_time = 2131034190;
+			public const int notification_template_icon_group = 2131034190;
 			
 			// aapt resource value: 0x7f05004f
-			public const int select_dialog_item_material = 2131034191;
+			public const int notification_template_lines_media = 2131034191;
 			
 			// aapt resource value: 0x7f050050
-			public const int select_dialog_multichoice_material = 2131034192;
+			public const int notification_template_media = 2131034192;
 			
 			// aapt resource value: 0x7f050051
-			public const int select_dialog_singlechoice_material = 2131034193;
+			public const int notification_template_media_custom = 2131034193;
 			
 			// aapt resource value: 0x7f050052
-			public const int select_dictionary = 2131034194;
+			public const int notification_template_part_chronometer = 2131034194;
 			
 			// aapt resource value: 0x7f050053
-			public const int select_dictionary_image_fragment = 2131034195;
+			public const int notification_template_part_time = 2131034195;
 			
 			// aapt resource value: 0x7f050054
-			public const int select_dictionary_lanuage_fragment = 2131034196;
+			public const int select_dialog_item_material = 2131034196;
 			
 			// aapt resource value: 0x7f050055
-			public const int splash_screen = 2131034197;
+			public const int select_dialog_multichoice_material = 2131034197;
 			
 			// aapt resource value: 0x7f050056
-			public const int statistics_activity = 2131034198;
+			public const int select_dialog_singlechoice_material = 2131034198;
 			
 			// aapt resource value: 0x7f050057
-			public const int statistics_general_fragment = 2131034199;
+			public const int splash_screen = 2131034199;
 			
 			// aapt resource value: 0x7f050058
-			public const int statistics_main_fragment = 2131034200;
+			public const int support_simple_spinner_dropdown_item = 2131034200;
 			
 			// aapt resource value: 0x7f050059
-			public const int support_simple_spinner_dropdown_item = 2131034201;
-			
-			// aapt resource value: 0x7f05005a
-			public const int tooltip = 2131034202;
+			public const int tooltip = 2131034201;
 			
 			static Layout()
 			{
@@ -7722,16 +7884,16 @@ namespace ReLearn.Droid
 			public const int achiev = 2130903040;
 			
 			// aapt resource value: 0x7f030001
-			public const int arrow = 2130903041;
+			public const int ic_about_us = 2130903041;
 			
 			// aapt resource value: 0x7f030002
-			public const int dictionary = 2130903042;
+			public const int ic_add_words_to_dictionary = 2130903042;
 			
 			// aapt resource value: 0x7f030003
-			public const int ic_about_us = 2130903043;
+			public const int ic_arrow_back = 2130903043;
 			
 			// aapt resource value: 0x7f030004
-			public const int ic_add_words_to_dictionary = 2130903044;
+			public const int ic_dictionary = 2130903044;
 			
 			// aapt resource value: 0x7f030005
 			public const int ic_feedback = 2130903045;
@@ -7752,25 +7914,28 @@ namespace ReLearn.Droid
 			public const int ic_settings = 2130903050;
 			
 			// aapt resource value: 0x7f03000b
-			public const int ic_statistics = 2130903051;
+			public const int ic_sort = 2130903051;
 			
 			// aapt resource value: 0x7f03000c
-			public const int instruction = 2130903052;
+			public const int ic_statistics = 2130903052;
 			
 			// aapt resource value: 0x7f03000d
-			public const int replenishment = 2130903053;
+			public const int ic_study = 2130903053;
 			
 			// aapt resource value: 0x7f03000e
-			public const int search = 2130903054;
+			public const int instruction = 2130903054;
 			
 			// aapt resource value: 0x7f03000f
-			public const int settings = 2130903055;
+			public const int replenishment = 2130903055;
 			
 			// aapt resource value: 0x7f030010
-			public const int speak_off = 2130903056;
+			public const int search = 2130903056;
 			
 			// aapt resource value: 0x7f030011
-			public const int speak_on = 2130903057;
+			public const int speak_off = 2130903057;
+			
+			// aapt resource value: 0x7f030012
+			public const int speak_on = 2130903058;
 			
 			static Mipmap()
 			{
@@ -7785,296 +7950,302 @@ namespace ReLearn.Droid
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f0b0084
-			public const int About_us = 2131427460;
-			
-			// aapt resource value: 0x7f0b008b
-			public const int Achievements = 2131427467;
-			
-			// aapt resource value: 0x7f0b0031
-			public const int Add_word = 2131427377;
-			
-			// aapt resource value: 0x7f0b002d
-			public const int Addition = 2131427373;
-			
-			// aapt resource value: 0x7f0b0074
-			public const int Average = 2131427444;
-			
-			// aapt resource value: 0x7f0b0038
-			public const int Blitz = 2131427384;
-			
-			// aapt resource value: 0x7f0b0047
-			public const int ComputerScience = 2131427399;
-			
-			// aapt resource value: 0x7f0b0048
-			public const int ComputerScienceDescription = 2131427400;
-			
-			// aapt resource value: 0x7f0b007e
-			public const int Correct = 2131427454;
-			
-			// aapt resource value: 0x7f0b0071
-			public const int Correct_answers = 2131427441;
-			
-			// aapt resource value: 0x7f0b006d
-			public const int DataCorrectness = 2131427437;
-			
-			// aapt resource value: 0x7f0b0062
-			public const int DatabaseEmpty = 2131427426;
-			
-			// aapt resource value: 0x7f0b0063
-			public const int DatabaseNotConnect = 2131427427;
-			
-			// aapt resource value: 0x7f0b006f
-			public const int DatatypeImages = 2131427439;
-			
-			// aapt resource value: 0x7f0b006e
-			public const int DatatypeWords = 2131427438;
-			
-			// aapt resource value: 0x7f0b0070
-			public const int Degree_Of_Study = 2131427440;
-			
-			// aapt resource value: 0x7f0b005f
-			public const int Delete = 2131427423;
-			
-			// aapt resource value: 0x7f0b003b
-			public const int Dictionaries = 2131427387;
-			
-			// aapt resource value: 0x7f0b006c
-			public const int DictionaryOver = 2131427436;
-			
-			// aapt resource value: 0x7f0b0041
-			public const int Education = 2131427393;
-			
-			// aapt resource value: 0x7f0b0042
-			public const int EducationDescription = 2131427394;
-			
-			// aapt resource value: 0x7f0b006b
-			public const int Enter_Message = 2131427435;
-			
-			// aapt resource value: 0x7f0b0066
-			public const int Enter_word = 2131427430;
-			
-			// aapt resource value: 0x7f0b0085
-			public const int Feedback = 2131427461;
-			
 			// aapt resource value: 0x7f0b0086
-			public const int Feedback_comments = 2131427462;
+			public const int About_us = 2131427462;
 			
-			// aapt resource value: 0x7f0b004b
-			public const int Films = 2131427403;
-			
-			// aapt resource value: 0x7f0b004c
-			public const int FilmsDescription = 2131427404;
-			
-			// aapt resource value: 0x7f0b004d
-			public const int Flags = 2131427405;
-			
-			// aapt resource value: 0x7f0b004e
-			public const int FlagsDescription = 2131427406;
-			
-			// aapt resource value: 0x7f0b005e
-			public const int HideStudied = 2131427422;
-			
-			// aapt resource value: 0x7f0b0043
-			public const int Home = 2131427395;
-			
-			// aapt resource value: 0x7f0b0044
-			public const int HomeDescription = 2131427396;
-			
-			// aapt resource value: 0x7f0b002c
-			public const int Images = 2131427372;
-			
-			// aapt resource value: 0x7f0b007f
-			public const int Incorrect = 2131427455;
-			
-			// aapt resource value: 0x7f0b0083
-			public const int Incorrect_Up = 2131427459;
-			
-			// aapt resource value: 0x7f0b0051
-			public const int Insert_data = 2131427409;
-			
-			// aapt resource value: 0x7f0b0037
-			public const int Instruction = 2131427383;
-			
-			// aapt resource value: 0x7f0b002b
-			public const int Language = 2131427371;
-			
-			// aapt resource value: 0x7f0b0057
-			public const int Language_eng = 2131427415;
-			
-			// aapt resource value: 0x7f0b0058
-			public const int Language_rus = 2131427416;
-			
-			// aapt resource value: 0x7f0b0082
-			public const int Last_testing = 2131427458;
-			
-			// aapt resource value: 0x7f0b0030
-			public const int Learn = 2131427376;
-			
-			// aapt resource value: 0x7f0b0087
-			public const int Message_Sent = 2131427463;
-			
-			// aapt resource value: 0x7f0b008a
-			public const int Message_about_us = 2131427466;
-			
-			// aapt resource value: 0x7f0b0073
-			public const int Month = 2131427443;
-			
-			// aapt resource value: 0x7f0b003f
-			public const int My_Directly = 2131427391;
-			
-			// aapt resource value: 0x7f0b0040
-			public const int My_DirectlyDescription = 2131427392;
-			
-			// aapt resource value: 0x7f0b0049
-			public const int Nature = 2131427401;
-			
-			// aapt resource value: 0x7f0b004a
-			public const int NatureDescription = 2131427402;
-			
-			// aapt resource value: 0x7f0b0032
-			public const int Next = 2131427378;
-			
-			// aapt resource value: 0x7f0b003a
-			public const int No = 2131427386;
-			
-			// aapt resource value: 0x7f0b0036
-			public const int NotRepeat = 2131427382;
-			
-			// aapt resource value: 0x7f0b007d
-			public const int Number_Correct_Answers = 2131427453;
-			
-			// aapt resource value: 0x7f0b007a
-			public const int Number_Inconvenient_Films = 2131427450;
-			
-			// aapt resource value: 0x7f0b0078
-			public const int Number_Inconvenient_Flags = 2131427448;
-			
-			// aapt resource value: 0x7f0b007c
-			public const int Number_Inconvenient_Images = 2131427452;
-			
-			// aapt resource value: 0x7f0b0076
-			public const int Number_Inconvenient_Words = 2131427446;
-			
-			// aapt resource value: 0x7f0b0079
-			public const int Number_Learned_Films = 2131427449;
-			
-			// aapt resource value: 0x7f0b0077
-			public const int Number_Learned_Flags = 2131427447;
-			
-			// aapt resource value: 0x7f0b007b
-			public const int Number_Learned_Images = 2131427451;
-			
-			// aapt resource value: 0x7f0b0075
-			public const int Number_Learned_Words = 2131427445;
-			
-			// aapt resource value: 0x7f0b0080
-			public const int Number_Of_Tests = 2131427456;
-			
-			// aapt resource value: 0x7f0b0053
-			public const int Number_of_image_repeats = 2131427411;
-			
-			// aapt resource value: 0x7f0b0052
-			public const int Number_of_word_repeats = 2131427410;
-			
-			// aapt resource value: 0x7f0b0081
-			public const int Of = 2131427457;
-			
-			// aapt resource value: 0x7f0b003d
-			public const int Popular_Words = 2131427389;
-			
-			// aapt resource value: 0x7f0b003e
-			public const int Popular_WordsDescription = 2131427390;
-			
-			// aapt resource value: 0x7f0b0059
-			public const int Pronunciation = 2131427417;
-			
-			// aapt resource value: 0x7f0b002e
-			public const int Repeat = 2131427374;
-			
-			// aapt resource value: 0x7f0b002f
-			public const int Repeated = 2131427375;
-			
-			// aapt resource value: 0x7f0b0065
-			public const int RepeatedAllImages = 2131427429;
-			
-			// aapt resource value: 0x7f0b0064
-			public const int RepeatedAllWords = 2131427428;
-			
-			// aapt resource value: 0x7f0b0055
-			public const int Seconds = 2131427413;
-			
-			// aapt resource value: 0x7f0b0034
-			public const int Send = 2131427380;
-			
-			// aapt resource value: 0x7f0b005d
-			public const int SeparatorWords = 2131427421;
-			
-			// aapt resource value: 0x7f0b0056
-			public const int Settings = 2131427414;
-			
-			// aapt resource value: 0x7f0b005b
-			public const int Sort_Ascending = 2131427419;
-			
-			// aapt resource value: 0x7f0b005c
-			public const int Sort_alphabetically = 2131427420;
-			
-			// aapt resource value: 0x7f0b005a
-			public const int Sort_descending = 2131427418;
-			
-			// aapt resource value: 0x7f0b0060
-			public const int Statistics = 2131427424;
-			
-			// aapt resource value: 0x7f0b003c
-			public const int StudiedAt = 2131427388;
-			
-			// aapt resource value: 0x7f0b0088
-			public const int Support_project = 2131427464;
-			
-			// aapt resource value: 0x7f0b0045
-			public const int ThreeFormsOfVerb = 2131427397;
-			
-			// aapt resource value: 0x7f0b0046
-			public const int ThreeFormsOfVerbDescription = 2131427398;
-			
-			// aapt resource value: 0x7f0b0054
-			public const int Time_blitz = 2131427412;
-			
-			// aapt resource value: 0x7f0b0072
-			public const int Today = 2131427442;
-			
-			// aapt resource value: 0x7f0b0035
-			public const int Unknown = 2131427381;
-			
-			// aapt resource value: 0x7f0b0061
-			public const int View_dictionary = 2131427425;
+			// aapt resource value: 0x7f0b008d
+			public const int Achievements = 2131427469;
 			
 			// aapt resource value: 0x7f0b0033
-			public const int Voice = 2131427379;
+			public const int Add_word = 2131427379;
+			
+			// aapt resource value: 0x7f0b002f
+			public const int Addition = 2131427375;
+			
+			// aapt resource value: 0x7f0b0076
+			public const int Average = 2131427446;
+			
+			// aapt resource value: 0x7f0b003a
+			public const int Blitz = 2131427386;
+			
+			// aapt resource value: 0x7f0b0049
+			public const int ComputerScience = 2131427401;
+			
+			// aapt resource value: 0x7f0b004a
+			public const int ComputerScienceDescription = 2131427402;
+			
+			// aapt resource value: 0x7f0b0080
+			public const int Correct = 2131427456;
+			
+			// aapt resource value: 0x7f0b0073
+			public const int Correct_answers = 2131427443;
+			
+			// aapt resource value: 0x7f0b006f
+			public const int DataCorrectness = 2131427439;
+			
+			// aapt resource value: 0x7f0b0064
+			public const int DatabaseEmpty = 2131427428;
+			
+			// aapt resource value: 0x7f0b0065
+			public const int DatabaseNotConnect = 2131427429;
+			
+			// aapt resource value: 0x7f0b0071
+			public const int DatatypeImages = 2131427441;
+			
+			// aapt resource value: 0x7f0b0070
+			public const int DatatypeWords = 2131427440;
+			
+			// aapt resource value: 0x7f0b0072
+			public const int Degree_Of_Study = 2131427442;
+			
+			// aapt resource value: 0x7f0b0061
+			public const int Delete = 2131427425;
+			
+			// aapt resource value: 0x7f0b003d
+			public const int Dictionaries = 2131427389;
+			
+			// aapt resource value: 0x7f0b006e
+			public const int DictionaryOver = 2131427438;
+			
+			// aapt resource value: 0x7f0b0043
+			public const int Education = 2131427395;
+			
+			// aapt resource value: 0x7f0b0044
+			public const int EducationDescription = 2131427396;
+			
+			// aapt resource value: 0x7f0b006d
+			public const int Enter_Message = 2131427437;
 			
 			// aapt resource value: 0x7f0b0068
-			public const int Word_Added = 2131427432;
+			public const int Enter_word = 2131427432;
 			
-			// aapt resource value: 0x7f0b006a
-			public const int Word_Delete = 2131427434;
+			// aapt resource value: 0x7f0b0087
+			public const int Feedback = 2131427463;
+			
+			// aapt resource value: 0x7f0b0088
+			public const int Feedback_comments = 2131427464;
+			
+			// aapt resource value: 0x7f0b004d
+			public const int Films = 2131427405;
+			
+			// aapt resource value: 0x7f0b004e
+			public const int FilmsDescription = 2131427406;
 			
 			// aapt resource value: 0x7f0b004f
-			public const int Word_English = 2131427407;
-			
-			// aapt resource value: 0x7f0b0069
-			public const int Word_Not_Exists = 2131427433;
+			public const int Flags = 2131427407;
 			
 			// aapt resource value: 0x7f0b0050
-			public const int Word_Rus = 2131427408;
+			public const int FlagsDescription = 2131427408;
 			
-			// aapt resource value: 0x7f0b0067
-			public const int Word_exists = 2131427431;
+			// aapt resource value: 0x7f0b0060
+			public const int HideStudied = 2131427424;
 			
-			// aapt resource value: 0x7f0b0089
-			public const int WordsAdded = 2131427465;
+			// aapt resource value: 0x7f0b0045
+			public const int Home = 2131427397;
+			
+			// aapt resource value: 0x7f0b0046
+			public const int HomeDescription = 2131427398;
+			
+			// aapt resource value: 0x7f0b002e
+			public const int Images = 2131427374;
+			
+			// aapt resource value: 0x7f0b0081
+			public const int Incorrect = 2131427457;
+			
+			// aapt resource value: 0x7f0b0085
+			public const int Incorrect_Up = 2131427461;
+			
+			// aapt resource value: 0x7f0b0053
+			public const int Insert_data = 2131427411;
 			
 			// aapt resource value: 0x7f0b0039
-			public const int Yes = 2131427385;
+			public const int Instruction = 2131427385;
+			
+			// aapt resource value: 0x7f0b002d
+			public const int Language = 2131427373;
+			
+			// aapt resource value: 0x7f0b0059
+			public const int Language_eng = 2131427417;
+			
+			// aapt resource value: 0x7f0b005a
+			public const int Language_rus = 2131427418;
+			
+			// aapt resource value: 0x7f0b0084
+			public const int Last_testing = 2131427460;
+			
+			// aapt resource value: 0x7f0b0032
+			public const int Learn = 2131427378;
+			
+			// aapt resource value: 0x7f0b0089
+			public const int Message_Sent = 2131427465;
+			
+			// aapt resource value: 0x7f0b008c
+			public const int Message_about_us = 2131427468;
+			
+			// aapt resource value: 0x7f0b0075
+			public const int Month = 2131427445;
+			
+			// aapt resource value: 0x7f0b0041
+			public const int My_Directly = 2131427393;
+			
+			// aapt resource value: 0x7f0b0042
+			public const int My_DirectlyDescription = 2131427394;
+			
+			// aapt resource value: 0x7f0b004b
+			public const int Nature = 2131427403;
+			
+			// aapt resource value: 0x7f0b004c
+			public const int NatureDescription = 2131427404;
+			
+			// aapt resource value: 0x7f0b0034
+			public const int Next = 2131427380;
+			
+			// aapt resource value: 0x7f0b003c
+			public const int No = 2131427388;
+			
+			// aapt resource value: 0x7f0b0038
+			public const int NotRepeat = 2131427384;
+			
+			// aapt resource value: 0x7f0b007f
+			public const int Number_Correct_Answers = 2131427455;
+			
+			// aapt resource value: 0x7f0b007c
+			public const int Number_Inconvenient_Films = 2131427452;
+			
+			// aapt resource value: 0x7f0b007a
+			public const int Number_Inconvenient_Flags = 2131427450;
+			
+			// aapt resource value: 0x7f0b007e
+			public const int Number_Inconvenient_Images = 2131427454;
+			
+			// aapt resource value: 0x7f0b0078
+			public const int Number_Inconvenient_Words = 2131427448;
+			
+			// aapt resource value: 0x7f0b007b
+			public const int Number_Learned_Films = 2131427451;
+			
+			// aapt resource value: 0x7f0b0079
+			public const int Number_Learned_Flags = 2131427449;
+			
+			// aapt resource value: 0x7f0b007d
+			public const int Number_Learned_Images = 2131427453;
+			
+			// aapt resource value: 0x7f0b0077
+			public const int Number_Learned_Words = 2131427447;
+			
+			// aapt resource value: 0x7f0b0082
+			public const int Number_Of_Tests = 2131427458;
+			
+			// aapt resource value: 0x7f0b0055
+			public const int Number_of_image_repeats = 2131427413;
+			
+			// aapt resource value: 0x7f0b0054
+			public const int Number_of_word_repeats = 2131427412;
+			
+			// aapt resource value: 0x7f0b0083
+			public const int Of = 2131427459;
+			
+			// aapt resource value: 0x7f0b003f
+			public const int Popular_Words = 2131427391;
+			
+			// aapt resource value: 0x7f0b0040
+			public const int Popular_WordsDescription = 2131427392;
+			
+			// aapt resource value: 0x7f0b005b
+			public const int Pronunciation = 2131427419;
+			
+			// aapt resource value: 0x7f0b002b
+			public const int Quiz = 2131427371;
+			
+			// aapt resource value: 0x7f0b0030
+			public const int Repeat = 2131427376;
+			
+			// aapt resource value: 0x7f0b0031
+			public const int Repeated = 2131427377;
+			
+			// aapt resource value: 0x7f0b0067
+			public const int RepeatedAllImages = 2131427431;
+			
+			// aapt resource value: 0x7f0b0066
+			public const int RepeatedAllWords = 2131427430;
+			
+			// aapt resource value: 0x7f0b0057
+			public const int Seconds = 2131427415;
+			
+			// aapt resource value: 0x7f0b0036
+			public const int Send = 2131427382;
+			
+			// aapt resource value: 0x7f0b005f
+			public const int SeparatorWords = 2131427423;
+			
+			// aapt resource value: 0x7f0b0058
+			public const int Settings = 2131427416;
+			
+			// aapt resource value: 0x7f0b005d
+			public const int Sort_Ascending = 2131427421;
+			
+			// aapt resource value: 0x7f0b005e
+			public const int Sort_alphabetically = 2131427422;
+			
+			// aapt resource value: 0x7f0b005c
+			public const int Sort_descending = 2131427420;
+			
+			// aapt resource value: 0x7f0b0062
+			public const int Statistics = 2131427426;
+			
+			// aapt resource value: 0x7f0b003e
+			public const int StudiedAt = 2131427390;
+			
+			// aapt resource value: 0x7f0b002c
+			public const int Study = 2131427372;
+			
+			// aapt resource value: 0x7f0b008a
+			public const int Support_project = 2131427466;
+			
+			// aapt resource value: 0x7f0b0047
+			public const int ThreeFormsOfVerb = 2131427399;
+			
+			// aapt resource value: 0x7f0b0048
+			public const int ThreeFormsOfVerbDescription = 2131427400;
+			
+			// aapt resource value: 0x7f0b0056
+			public const int Time_blitz = 2131427414;
+			
+			// aapt resource value: 0x7f0b0074
+			public const int Today = 2131427444;
+			
+			// aapt resource value: 0x7f0b0037
+			public const int Unknown = 2131427383;
+			
+			// aapt resource value: 0x7f0b0063
+			public const int View_dictionary = 2131427427;
+			
+			// aapt resource value: 0x7f0b0035
+			public const int Voice = 2131427381;
+			
+			// aapt resource value: 0x7f0b006a
+			public const int Word_Added = 2131427434;
+			
+			// aapt resource value: 0x7f0b006c
+			public const int Word_Delete = 2131427436;
+			
+			// aapt resource value: 0x7f0b0051
+			public const int Word_English = 2131427409;
+			
+			// aapt resource value: 0x7f0b006b
+			public const int Word_Not_Exists = 2131427435;
+			
+			// aapt resource value: 0x7f0b0052
+			public const int Word_Rus = 2131427410;
+			
+			// aapt resource value: 0x7f0b0069
+			public const int Word_exists = 2131427433;
+			
+			// aapt resource value: 0x7f0b008b
+			public const int WordsAdded = 2131427467;
+			
+			// aapt resource value: 0x7f0b003b
+			public const int Yes = 2131427387;
 			
 			// aapt resource value: 0x7f0b0000
 			public const int abc_action_bar_home_description = 2131427328;
@@ -8181,11 +8352,11 @@ namespace ReLearn.Droid
 			// aapt resource value: 0x7f0b0029
 			public const int library_name = 2131427369;
 			
-			// aapt resource value: 0x7f0b008e
-			public const int navigation_drawer_close = 2131427470;
+			// aapt resource value: 0x7f0b0090
+			public const int navigation_drawer_close = 2131427472;
 			
-			// aapt resource value: 0x7f0b008d
-			public const int navigation_drawer_open = 2131427469;
+			// aapt resource value: 0x7f0b008f
+			public const int navigation_drawer_open = 2131427471;
 			
 			// aapt resource value: 0x7f0b0021
 			public const int password_toggle_content_description = 2131427361;
@@ -8205,8 +8376,8 @@ namespace ReLearn.Droid
 			// aapt resource value: 0x7f0b0011
 			public const int search_menu_title = 2131427345;
 			
-			// aapt resource value: 0x7f0b008c
-			public const int sign_in = 2131427468;
+			// aapt resource value: 0x7f0b008e
+			public const int sign_in = 2131427470;
 			
 			// aapt resource value: 0x7f0b0026
 			public const int status_bar_notification_info_overflow = 2131427366;
@@ -8742,6 +8913,9 @@ namespace ReLearn.Droid
 			
 			// aapt resource value: 0x7f0c0185
 			public const int MenuStyle = 2131493253;
+			
+			// aapt resource value: 0x7f0c0187
+			public const int NavigationDrawerStyle = 2131493255;
 			
 			// aapt resource value: 0x7f0c001e
 			public const int Platform_AppCompat = 2131492894;
@@ -10812,8 +10986,8 @@ namespace ReLearn.Droid
 			public const int MenuView_subMenuArrow = 8;
 			
 			public static int[] MvxBinding = new int[] {
-					2130772314,
-					2130772315};
+					2130772315,
+					2130772316};
 			
 			// aapt resource value: 0
 			public const int MvxBinding_MvxBind = 0;
@@ -10822,26 +10996,32 @@ namespace ReLearn.Droid
 			public const int MvxBinding_MvxLang = 1;
 			
 			public static int[] MvxControl = new int[] {
-					2130772316};
+					2130772317};
 			
 			// aapt resource value: 0
 			public const int MvxControl_MvxTemplate = 0;
 			
 			public static int[] MvxExpandableListView = new int[] {
-					2130772319};
+					2130772320};
 			
 			// aapt resource value: 0
 			public const int MvxExpandableListView_MvxGroupItemTemplate = 0;
 			
 			public static int[] MvxListView = new int[] {
-					2130772317,
-					2130772318};
+					2130772318,
+					2130772319};
 			
 			// aapt resource value: 1
 			public const int MvxListView_MvxDropDownItemTemplate = 1;
 			
 			// aapt resource value: 0
 			public const int MvxListView_MvxItemTemplate = 0;
+			
+			public static int[] MvxRecyclerView = new int[] {
+					2130772314};
+			
+			// aapt resource value: 0
+			public const int MvxRecyclerView_MvxTemplateSelector = 0;
 			
 			public static int[] NavigationView = new int[] {
 					16842964,
@@ -10906,7 +11086,6 @@ namespace ReLearn.Droid
 			public const int PopupWindowBackgroundState_state_above_anchor = 0;
 			
 			public static int[] ProgressWheel = new int[] {
-					2130772321,
 					2130772322,
 					2130772323,
 					2130772324,
@@ -10917,7 +11096,8 @@ namespace ReLearn.Droid
 					2130772329,
 					2130772330,
 					2130772331,
-					2130772332};
+					2130772332,
+					2130772333};
 			
 			// aapt resource value: 3
 			public const int ProgressWheel_ahBarColor = 3;

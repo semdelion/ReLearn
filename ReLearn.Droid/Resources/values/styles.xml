@@ -1,65 +1,84 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-
 <resources>
-  <style 
-    name   ="AppTheme" 
-    parent ="Theme.AppCompat.Light.DarkActionBar">
-    <item name  ="android:windowBackground">@drawable/toolbarmainback</item>
-    <item name  ="colorPrimary">@android:color/transparent</item>
-    <item name  ="windowActionBar">false</item>
-    <item name  ="windowNoTitle">true</item>
-    <item name  ="android:textSize">25dp</item>
-    <item name  ="android:actionMenuTextColor">#d7f8fe</item>
-    <item name  ="android:statusBarColor">#80000000</item>
-    <item name  ="android:fontFamily">@font/myriadpro</item>
-    <item name  ="android:windowTranslucentStatus">true</item>
-    <item name  ="android:navigationBarColor">#30000000</item>
-  </style>
+    <style 
+        name  ="AppTheme" 
+        parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:windowBackground"       >@drawable/background_main</item>
+        <item name="colorPrimary"                   >@android:color/transparent</item>
+        <item name="windowActionBar"                >false</item>
+        <item name="windowNoTitle"                  >true</item>
+        <item name="android:textSize"               >25dp</item>
+        <item name="android:actionMenuTextColor"    >@color/text_white</item>
+        <item name="android:statusBarColor"         >#80000000</item>
+        <item name="android:fontFamily"             >@font/myriadpro</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:navigationBarColor"     >#30000000</item>
+    </style>
   
-  <style name ="myPopupTheme">
-    <item name  ="android:textColor">#d7f8fe</item>
-    <item name  ="android:background">#283544</item>
-    <item name  ="android:colorPrimary">@android:color/transparent</item>
-  </style>
+    <style 
+        name="myPopupTheme">
+        <item name="android:textColor"              >@color/text_white</item>
+        <item name="android:background"             >#283544</item>
+        <item name="android:colorPrimary"           >@android:color/transparent</item>
+    </style>
   
-  <style  name  ="ToolbarStyle" 
-          parent="Theme.AppCompat.NoActionBar">
-    <item name  ="android:textColor">#d7f8fe</item>
-    <item name  ="android:colorBackground">#283544</item>
-    <item name  ="android:textColorPrimary">@color/TextWhite</item>
-    <item name  ="actionMenuTextColor">@color/TextWhite</item>
-    <item name  ="android:textColorSecondary">@color/TextWhite</item>
-  </style>
+    <style  
+        name  ="ToolbarStyle" 
+        parent="Theme.AppCompat.NoActionBar">
+        <item name="android:textColor"              >@color/text_white</item>
+        <item name="android:colorBackground"        >#283544</item>
+        <item name="android:textColorPrimary"       >@color/text_white</item>
+        <item name="actionMenuTextColor"            >@color/text_white</item>
+        <item name="android:textColorSecondary"     >@color/text_white</item>
+    </style>
 
-  <style name   ="ThemeStat" >
-    <item name  ="android:homeAsUpIndicator">@mipmap/arrow</item>
-    <item name  ="android:itemBackground">#283544</item>
-    <item name  ="android:colorPrimary">@android:color/transparent</item>
-  </style>
-  <style name   ="Button" >
-    <item name  ="android:background">@drawable/button_style_standard</item>
-    <item name  ="android:textColor">@color/TextWhite</item>
-    <item name  ="android:textSize">30dp</item>
-    <item name  ="android:gravity">center</item>
-  </style>
+    <style name="ThemeStat" >
+        <item name="android:homeAsUpIndicator"      >@mipmap/ic_arrow_back</item>
+        <item name="android:itemBackground"         >#283544</item>
+        <item name="android:colorPrimary"           >@android:color/transparent</item>
+    </style>
+  
+    <style name="Button" >
+        <item name="android:background"             >@drawable/button_style_standard</item>
+        <item name="android:textColor"              >@color/text_white</item>
+        <item name="android:textSize"               >30dp</item>
+        <item name="android:gravity"                >center</item>
+    </style>
 
-  <style  name  ="MenuStyle" 
-          parent="Theme.AppCompat.NoActionBar">
-    <item name  ="android:textColor">#d7f8fe</item>
-    <item name  ="android:textSize">25dp</item>
-    <item name  ="android:colorPrimary">#3F51B5</item>
-    <item name  ="android:colorPrimaryDark">#303F9F</item>
-    <item name  ="android:colorAccent">#FF4081</item>
-    <item name  ="android:itemBackground">#283544</item>
-  </style>
+    <style  
+        name  ="MenuStyle" 
+        parent="Theme.AppCompat.NoActionBar">
+        <item name  ="android:textColor"            >@color/text_white</item>
+        <item name  ="android:textSize"             >25dp</item>
+        <item name  ="android:colorPrimary"         >#3F51B5</item>
+        <item name  ="android:colorPrimaryDark"     >#303F9F</item>
+        <item name  ="android:colorAccent"          >#FF4081</item>
+        <item name  ="android:itemBackground"       >#283544</item>
+    </style>
 
-  <style  name  ="SplashTheme"
-          parent="Theme.AppCompat.NoActionBar">
-    <item name  ="android:windowBackground">@drawable/background_splash</item>
-    <item name  ="android:windowNoTitle">true</item>
-    <item name  ="android:windowFullscreen">true</item>
-    <item name  ="android:navigationBarColor">@android:color/transparent</item>
-  </style>
+    <style  
+        name  ="SplashTheme"
+        parent="Theme.AppCompat.NoActionBar">
+        <item name  ="android:windowBackground"     >@drawable/style_background_splash</item>
+        <item name  ="android:windowNoTitle"        >true</item>
+        <item name  ="android:windowFullscreen"     >true</item>
+        <item name  ="android:navigationBarColor"   >@android:color/transparent</item>
+    </style>
+  
+    <style name="NavigationDrawerStyle">
+        <item name  ="android:textSize"                   >22dp</item>
+        <item name  ="android:fontFamily"                 >@font/myriadpro</item>
+        <!-- text size in menu-->
+        <!-- item size in menu-->
+        <item name="android:listPreferredItemHeightSmall" >40dp</item>
+        <item name="listPreferredItemHeightSmall"         >40dp</item>
+        <!-- item padding left in menu-->
+        <item name="android:listPreferredItemPaddingLeft" >8dp</item>
+        <item name="listPreferredItemPaddingLeft"         >8dp</item>
+        <!-- item padding right in menu-->
+        <item name="android:listPreferredItemPaddingRight">8dp</item>
+        <item name="listPreferredItemPaddingRight"        >8dp</item>
+    </style>
 </resources>
 
 <!--<style name="AppTheme" perent ="@Theme.AppCompat"  >

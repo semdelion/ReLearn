@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Android.App;
-using MvvmCross.Droid.Support.V7.AppCompat;
-using ReLearn.Core;
+﻿using Android.App;
 using Android.Content.PM;
+using MvvmCross.Droid.Support.V7.AppCompat;
 using ReLearn.API.Database;
-using System.Globalization;
+using ReLearn.Core;
+using ReLearn.Droid.Helpers;
 
 namespace ReLearn.Droid
 {

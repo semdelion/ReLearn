@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android			= "http://schemas.android.com/apk/res/android"
+	xmlns:local				= "http://schemas.android.com/apk/res-auto"
+	android:orientation	    = "vertical"
+	android:layout_width	= "match_parent"
+	android:layout_height	= "match_parent">
+	<android.support.design.widget.AppBarLayout
+		android:layout_width	="match_parent"
+		android:layout_height	="wrap_content">
+		<android.support.v7.widget.Toolbar
+			android:id				="@+id/toolbar_about_us"
+			android:theme			="@style/ToolbarStyle"
+			android:background		="@drawable/background_toolbar"
+			local:navigationIcon	="@mipmap/ic_arrow_back"
+			android:layout_width	="match_parent"
+			android:layout_height	="80dp"
+			local:buttonGravity		="bottom">
+			<TextView
+				android:text			="@string/About_us"
+				android:gravity			="bottom"
+				android:paddingBottom	="12dp"
+				android:layout_width	="match_parent"
+				android:layout_height	="match_parent"
+			/>
+		</android.support.v7.widget.Toolbar >
+	</android.support.design.widget.AppBarLayout>
+	<RelativeLayout
+		android:layout_marginRight	="@dimen/margin_right"
+		android:layout_marginLeft	="@dimen/margin_left"
+		android:layout_width		="match_parent"
+		android:layout_height		="match_parent">
+		<TextView
+			android:text				="@string/Message_about_us"
+			android:textColor			="@color/text_white"
+			android:layout_width		="match_parent"
+			android:layout_height		="match_parent"
+			android:layout_marginTop	="25.0dp"
+			android:layout_marginBottom	="110dp"
+			android:textSize			="16dp"
+			android:defaultFocusHighlightEnabled="true"/>
+		<Button
+			local:MvxBind					="Click SupportProjectCommand"
+			android:text					="@string/Support_project"
+			android:background				="@drawable/button_style_standard"
+			android:textColor				="@color/text_white"
+			android:fontFamily				="@font/myriadpro_semibold"
+			android:textSize				="20dp"
+			android:layout_width			="match_parent"
+			android:layout_height			="@dimen/button_height"
+			android:gravity					="center"
+			android:layout_alignParentBottom="true"
+            android:layout_alignParentRight	="true"
+			android:layout_marginBottom		="35dp"
+		/>
+	</RelativeLayout>
+</LinearLayout>

@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace ReLearn.API
+﻿namespace ReLearn.API
 {
     public class App
     {

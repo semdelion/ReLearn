@@ -61,47 +61,51 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Adapters\BackgroundConstructor.cs" />
-    <Compile Include="GetString.cs" />
-    <Compile Include="BitmapHandler.cs" />
-    <Compile Include="ButtonNext.cs" />
-    <Compile Include="Colors.cs" />
-    <Compile Include="Database.cs" />
+    <Compile Include="Helpers\RandomNumbers.cs" />
+    <Compile Include="Views\Menu\AddFragment.cs" />
+    <Compile Include="Views\Menu\BaseFragment.cs" />
+    <Compile Include="Views\Menu\FeedbackFragment.cs" />
+    <Compile Include="Views\Menu\SettingsFragment.cs" />
+    <Compile Include="Views\Menu\HomeFragment.cs" />
+    <Compile Include="Views\Menu\MenuFragment.cs" />
+    <Compile Include="Views\Menu\AboutUsFragment.cs" />
+    <Compile Include="Views\Statistics\StatisticsFragment.cs" />
+    <Compile Include="Views\Images\ViewDictionaryFragment.cs" />
+    <Compile Include="Views\Languages\ViewDictionaryFragment.cs" />
+    <Compile Include="Helpers\GetString.cs" />
+    <Compile Include="Helpers\BitmapHandler.cs" />
+    <Compile Include="Helpers\ButtonNext.cs" />
+    <Compile Include="Helpers\Colors.cs" />
+    <Compile Include="Helpers\Database.cs" />
     <Compile Include="LinkerPleaseInclude.cs" />
-    <Compile Include="MessageDroid.cs" />
-    <Compile Include="MyTextToSpeech.cs" />
+    <Compile Include="Helpers\MessageDroid.cs" />
+    <Compile Include="Helpers\MyTextToSpeech.cs" />
     <Compile Include="Adapters\ImagesAdapter.cs" />
     <Compile Include="Adapters\LanguagesAdapter.cs" />
-    <Compile Include="PixelConverter.cs" />
-    <Compile Include="SelectDictionary.cs" />
+    <Compile Include="Helpers\PixelConverter.cs" />
+    <Compile Include="Views\SelectDictionary\SelectDictionary.cs" />
+    <Compile Include="Services\INavigationActivity.cs" />
     <Compile Include="Setup.cs" />
     <Compile Include="SplashScreen.cs" />
     <Compile Include="Views\Background.cs" />
     <Compile Include="Views\Images\BlitzPollActivity.cs" />
     <Compile Include="Views\Images\LearnActivity.cs" />
     <Compile Include="Views\Images\RepeatActivity.cs" />
-    <Compile Include="Views\Images\ViewDictionaryActivity.cs" />
-    <Compile Include="Views\Languages\AddActivity.cs" />
     <Compile Include="Views\Languages\BlitzPollActivity.cs" />
-    <Compile Include="Views\Languages\DictionaryReplenishmentActivity.cs" />
+    <Compile Include="Views\Menu\AddDictionaryFragment.cs" />
     <Compile Include="Views\Languages\LearnActivity.cs" />
     <Compile Include="Views\Languages\RepeatActivity.cs" />
-    <Compile Include="Views\Languages\ViewDictionaryActivity.cs" />
-    <Compile Include="Views\Main menu\AboutUsActivity.cs" />
-    <Compile Include="Views\Main menu\FeedbackActivity.cs" />
-    <Compile Include="Views\Main menu\SettingsMenuActivity.cs" />
     <Compile Include="Views\MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Statistics\Graphics\FrameStatistics.cs" />
     <Compile Include="Statistics\Graphics\GraphGeneralStatistics.cs" />
     <Compile Include="Statistics\Graphics\GraphStatistics.cs" />
-    <Compile Include="Statistics\Statistics.cs" />
     <Compile Include="Views\Achievements\Achievements.cs" />
-    <Compile Include="Views\SelectDictionary\SelectDictionary.cs" />
+    <Compile Include="Views\SelectDictionary\SelectDictionaryFragment.cs" />
     <Compile Include="Views\SelectDictionary\SelectDictionaryPagerAdapter.cs" />
     <Compile Include="Views\SelectDictionary\TabImageFragment.cs" />
     <Compile Include="Views\SelectDictionary\TabLanguageFragment.cs" />
-    <Compile Include="Views\Statistics\Statistics.cs" />
     <Compile Include="Views\Statistics\StatisticsPagerAdapter.cs" />
     <Compile Include="Views\Statistics\TabGeneralFragment.cs" />
     <Compile Include="Views\Statistics\TabMainFragment.cs" />
@@ -154,6 +158,12 @@
     <PackageReference Include="MvvmCross.Droid.Support.V7.AppCompat">
       <Version>6.2.2</Version>
     </PackageReference>
+    <PackageReference Include="MvvmCross.Droid.Support.V7.RecyclerView">
+      <Version>6.2.2</Version>
+    </PackageReference>
+    <PackageReference Include="MvvmCross.Platform">
+      <Version>5.7.0</Version>
+    </PackageReference>
     <PackageReference Include="Newtonsoft.Json">
       <Version>12.0.1</Version>
     </PackageReference>
@@ -187,61 +197,49 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\menu_about_us_activity.axml" />
+    <AndroidResource Include="Resources\layout\activity_menu_achievements.axml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\menu_achievements_activity.axml" />
+    <AndroidResource Include="Resources\layout\fragment_main.axml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\main_content.axml" />
+    <AndroidResource Include="Resources\layout\alert_dictionary.axml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\languages_add_activity.axml" />
+    <AndroidResource Include="Resources\layout\activity_images_blitz_poll.axml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\languages_alert_image_activity.axml" />
+    <AndroidResource Include="Resources\layout\activity_languages_blitz_poll.axml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\images_blitz_poll_activity.axml" />
+    <AndroidResource Include="Resources\layout\fragment_menu_add_dictionary.axml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\languages_blitz_poll_activity.axml" />
+    <AndroidResource Include="Resources\layout\fragment_menu_feedback.axml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\languages_dictionary_replenishment_activity.axml" />
+    <AndroidResource Include="Resources\layout\item_image_view_dictionary.axml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\menu_feedback_activity.axml" />
+    <AndroidResource Include="Resources\layout\item_languages_view_dictionary.axml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\images_item_alert_big.axml" />
+    <AndroidResource Include="Resources\layout\activity_images_learn.axml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\images_item_view_dictionary_activity.axml" />
+    <AndroidResource Include="Resources\layout\activity_languages_learn.axml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\languages_item_view_dictionary_activity.axml" />
+    <AndroidResource Include="Resources\layout\activity_images_repeat.axml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\images_learn_activity.axml" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\layout\languages_learn_activity.axml" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\layout\images_repeat_activity.axml" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\layout\languages_repeat_activity.axml" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\layout\menu_settings_activity.axml" />
+    <AndroidResource Include="Resources\layout\activity_languages_repeat.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\splash_screen.axml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\languages_view_dictionary_activity.axml" />
+    <AndroidResource Include="Resources\layout\fragment_menu_view_dictionary.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\menu\menu_DictionaryReplenishment.xml" />
@@ -262,10 +260,7 @@
     <AndroidResource Include="Resources\mipmap-hdpi\achiev.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-hdpi\arrow.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-hdpi\dictionary.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_dictionary.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\mipmap-hdpi\instruction.png" />
@@ -277,9 +272,6 @@
     <AndroidResource Include="Resources\mipmap-hdpi\search.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-hdpi\settings.png" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\mipmap-hdpi\speak_off.png" />
   </ItemGroup>
   <ItemGroup>
@@ -289,10 +281,7 @@
     <AndroidResource Include="Resources\mipmap-mdpi\achiev.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-mdpi\arrow.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-mdpi\dictionary.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\ic_dictionary.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\mipmap-mdpi\instruction.png" />
@@ -304,9 +293,6 @@
     <AndroidResource Include="Resources\mipmap-mdpi\search.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-mdpi\settings.png" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\mipmap-mdpi\speak_off.png" />
   </ItemGroup>
   <ItemGroup>
@@ -316,10 +302,7 @@
     <AndroidResource Include="Resources\mipmap-xhdpi\achiev.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xhdpi\arrow.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xhdpi\dictionary.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\ic_dictionary.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\mipmap-xhdpi\instruction.png" />
@@ -331,9 +314,6 @@
     <AndroidResource Include="Resources\mipmap-xhdpi\search.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xhdpi\settings.png" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\mipmap-xhdpi\speak_off.png" />
   </ItemGroup>
   <ItemGroup>
@@ -343,10 +323,7 @@
     <AndroidResource Include="Resources\mipmap-xxhdpi\achiev.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xxhdpi\arrow.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xxhdpi\dictionary.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\ic_dictionary.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\mipmap-xxhdpi\instruction.png" />
@@ -358,9 +335,6 @@
     <AndroidResource Include="Resources\mipmap-xxhdpi\search.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xxhdpi\settings.png" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\mipmap-xxhdpi\speak_off.png" />
   </ItemGroup>
   <ItemGroup>
@@ -370,10 +344,7 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\achiev.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xxxhdpi\arrow.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xxxhdpi\dictionary.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_dictionary.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\mipmap-xxxhdpi\instruction.png" />
@@ -383,9 +354,6 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\mipmap-xxxhdpi\search.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xxxhdpi\settings.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\mipmap-xxxhdpi\speak_off.png" />
@@ -2044,7 +2012,7 @@
     <AndroidAsset Include="Assets\ImageFlags\zw.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\background_splash.xml" />
+    <AndroidResource Include="Resources\drawable\style_background_splash.xml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\ImageFlagsMini\ad.jpg" />
@@ -2641,12 +2609,6 @@
     <AndroidAsset Include="Assets\ImageFlagsMini\zw.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\backgroundEnFl.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\blitzbackground.png" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\drawable\button_enabled.png" />
   </ItemGroup>
   <ItemGroup>
@@ -2662,76 +2624,64 @@
     <AndroidResource Include="Resources\drawable\button_true.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\buttonBeforeClicking.png" />
+    <AndroidResource Include="Resources\drawable\button_before_clicking.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\ComputerScience.png" />
+    <AndroidResource Include="Resources\drawable\image_dictionary_computer_science.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\custom_thumb.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\editBorder.xml" />
+    <AndroidResource Include="Resources\drawable\image_dictionary_education.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\EducationDictionary.png" />
+    <AndroidResource Include="Resources\drawable\image_dictionary_films.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\FilmDictionary.png" />
+    <AndroidResource Include="Resources\drawable\image_dictionary_flags.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\FlagDictionary.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\homeDictionary.png" />
+    <AndroidResource Include="Resources\drawable\image_dictionary_home.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\imageInstruction.png" />
+    <AndroidResource Include="Resources\drawable\image_instruction.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\ItDictionary.png" />
+    <AndroidResource Include="Resources\drawable\image_dictionary_my.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\MyDictionary.png" />
+    <AndroidResource Include="Resources\drawable\image_dictionary_nature.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\Nature.png" />
+    <AndroidResource Include="Resources\drawable\image_dictionary_popular_words.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\NatureDictionary.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\PopularWordsDictionary.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\seekbar_progressbar1.xml" />
+    <AndroidResource Include="Resources\drawable\style_seekbar_progressbar_language.xml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\separator.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\splash.png" />
+    <AndroidResource Include="Resources\drawable\background_splash.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\ThreeFormsOfVerbDictionary.png" />
+    <AndroidResource Include="Resources\drawable\image_dictionary_three_forms_of_verb.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\toolbar.png" />
+    <AndroidResource Include="Resources\drawable\background_toolbar.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\toolbarmainback.png" />
+    <AndroidResource Include="Resources\drawable\background_main.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\viewFalse.xml" />
+    <AndroidResource Include="Resources\drawable\view_false.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\viewNeutral.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\viewTrue.xml" />
+    <AndroidResource Include="Resources\drawable\view_true.xml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ReLearn.API\ReLearn.API.csproj">
@@ -2747,46 +2697,46 @@
     <AndroidResource Include="Resources\drawable\spinner_item.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\statistics_activity.axml">
+    <AndroidResource Include="Resources\layout\fragment_menu_statistics.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\statistics_general_fragment.xml" />
+    <AndroidResource Include="Resources\layout\fragment_tab_statistics_general.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\statistics_main_fragment.xml" />
+    <AndroidResource Include="Resources\layout\fragment_tab_statistics_main.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\icon_main_statistics.png" />
+    <AndroidResource Include="Resources\drawable\ic_statistics_main.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\select_dictionary.axml">
+    <AndroidResource Include="Resources\layout\fragment_menu_select_dictionary.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\select_dictionary_lanuage_fragment.xml" />
+    <AndroidResource Include="Resources\layout\fragment_tab_languages_dictionary.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\select_dictionary_image_fragment.xml" />
+    <AndroidResource Include="Resources\layout\fragment_tab_images_dictionary.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\icon_language.png" />
+    <AndroidResource Include="Resources\drawable\ic_dictionary_languages.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\icon_image.png" />
+    <AndroidResource Include="Resources\drawable\ic_dictionary_images.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\icon_general_statistics.png" />
+    <AndroidResource Include="Resources\drawable\ic_statistics_general.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\main_activity.axml">
+    <AndroidResource Include="Resources\layout\activity_main.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\navigation_header_main.axml">
+    <AndroidResource Include="Resources\layout\navigation_main_header.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -2884,25 +2834,93 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_about_us.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\toolbarMain111.png" />
+    <AndroidResource Include="Resources\drawable\background_navigation_header.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\ic_nav_header.png" />
+    <AndroidResource Include="Resources\drawable\background_toolbar_home.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\toolbarMain.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\seekbar_progressbar2.xml">
+    <AndroidResource Include="Resources\drawable\style_seekbar_progressbar_image.xml">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\seekbar_progressbar3.xml">
+    <AndroidResource Include="Resources\drawable\style_seekbar_progressbar_blitz.xml">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
       <SubType>Designer</SubType>
     </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\fragment_navigation.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\fragment_menu_about_us.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_study.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-mdpi\ic_study.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-xhdpi\ic_study.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-xxhdpi\ic_study.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_study.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\fragment_menu_add.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\fragment_menu_settings.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_sort.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-mdpi\ic_sort.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-xhdpi\ic_sort.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-xxhdpi\ic_sort.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_sort.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\color\drawer_item.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_arrow_back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-mdpi\ic_arrow_back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-xhdpi\ic_arrow_back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-xxhdpi\ic_arrow_back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_arrow_back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\custom_thumb_switch.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

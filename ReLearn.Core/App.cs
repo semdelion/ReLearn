@@ -1,11 +1,8 @@
-﻿using System;
-using System.Globalization;
-using Acr.UserDialogs;
+﻿using Acr.UserDialogs;
 using MvvmCross;
 using MvvmCross.Localization;
 using MvvmCross.Plugin.ResxLocalization;
 using MvvmCross.ViewModels;
-using ReLearn.API;
 using ReLearn.API.Database;
 using ReLearn.Core.Localization;
 using ReLearn.Core.ViewModels;
@@ -23,13 +20,6 @@ namespace ReLearn.Core
             DataBase.SetupConnection();
             DBImages.UpdateData();
             DBWords.UpdateData();
-
-            //AppResources.Culture = new System.Globalization.CultureInfo("en");
-
-            //CultureInfo.CurrentUICulture = new System.Globalization.CultureInfo("en");
-            //CultureInfo.CurrentCulture = new System.Globalization.CultureInfo("en");
-            //CultureInfo.DefaultThreadCurrentCulture = new System.Globalization.CultureInfo("en");
-            //CultureInfo.DefaultThreadCurrentUICulture = new System.Globalization.CultureInfo("en");
         }
     }
 }

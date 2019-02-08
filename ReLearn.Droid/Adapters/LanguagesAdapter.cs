@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
-using Android.App;
+﻿using Android.App;
 using Android.Views;
 using Android.Widget;
 using ReLearn.API.Database;
 using ReLearn.Droid.Adapters;
+using System.Collections.Generic;
 
 namespace ReLearn.Droid.Resources
 {
@@ -26,7 +26,7 @@ namespace ReLearn.Droid.Resources
 
         public override View GetView(int position, View convertView, ViewGroup parent)
         {
-            var view = convertView ?? activity.LayoutInflater.Inflate(Resource.Layout.languages_item_view_dictionary_activity, parent, false);
+            var view = convertView ?? activity.LayoutInflater.Inflate(Resource.Layout.item_languages_view_dictionary, parent, false);
             var TView = view.FindViewById<TextView>(Resource.Id.item_view_dictionary);
 
             BackgroundConstructor.SetColorForItems(list[position].NumberLearn, TView);

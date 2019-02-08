@@ -3,6 +3,8 @@
  
   <string name="app_name">ReLearn</string>
   <!--buttons-->
+  <string name="Quiz"           >Викторина</string>
+  <string name="Study"          >Изучение</string>
   <string name="Language"       >Язык</string>
   <string name="Images"         >Изображения</string>
   <string name="Addition"       >Добавить</string>

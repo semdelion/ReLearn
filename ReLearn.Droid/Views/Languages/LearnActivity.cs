@@ -1,16 +1,14 @@
 ﻿using Android.App;
+using Android.Graphics.Drawables;
 using Android.OS;
+using Android.Util;
 using Android.Views;
 using Android.Widget;
-using Android.Content;
-using Calligraphy;
-using Android.Support.V7.App;
-using System.Collections.Generic;
 using MvvmCross.Droid.Support.V7.AppCompat;
-using ReLearn.Core.ViewModels.Languages;
-using Android.Util;
-using Android.Graphics.Drawables;
 using ReLearn.API.Database;
+using ReLearn.Core.ViewModels.Languages;
+using ReLearn.Droid.Helpers;
+using System.Collections.Generic;
 
 namespace ReLearn.Droid.Languages
 {
@@ -68,8 +66,8 @@ namespace ReLearn.Droid.Languages
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.languages_learn_activity);
-            var toolbarMain = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbarLanguagesLearn);
+            SetContentView(Resource.Layout.activity_languages_learn);
+            var toolbarMain = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar_languages_learn);
             SetSupportActionBar(toolbarMain);
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
             DisplayMetrics displayMetrics = new DisplayMetrics();

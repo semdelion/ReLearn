@@ -1,7 +1,6 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
-using System.IO;
-using SQLite;
 
 namespace ReLearn.API.Database
 {
@@ -55,28 +54,6 @@ namespace ReLearn.API.Database
             }
         }
 
-        //public static void СreateTable()
-        //{
-        //    foreach (string tableName in Enum.GetNames(typeof(TableNamesImage)))
-        //    {
-        //        if (DataBase.Images.GetTableInfo(tableName).Count == 0)
-        //        {
-        //            DataBase.Images.Execute($"CREATE TABLE {tableName} (_id int PRIMARY KEY, Image_name string, Name_image_en string, Name_image_ru string, NumberLearn int, DateRecurrence DateTime)");
-        //            using (StreamReader reader = new StreamReader(Application.Context.Assets.Open($"Database/{tableName}.txt")))
-        //            {
-        //                string str_line;
-        //                while ((str_line = reader.ReadLine()) != null)
-        //                {
-        //                    var image = str_line.Split('|');
-        //                    var query = $"INSERT INTO {tableName} (Image_name, Name_image_en, Name_image_ru, NumberLearn, DateRecurrence) VALUES (?, ?, ?, ?, ?)";
-        //                    DataBase.Images.Execute(query, image[0], image[1], image[2], Settings.StandardNumberOfRepeats, DateTime.Now);
-        //                }
-        //            }
-        //            DataBase.Statistics.Execute($"CREATE TABLE {tableName}_Statistics (_id int PRIMARY KEY, True int, False int, DateOfTesting DateTime)");
-        //        }
-        //    }
-        //}
-
         public static void UpdateLearningNotRepeat(string ImageName)
         {
             var query = $"UPDATE {DataBase.TableName} SET DateRecurrence = ?, NumberLearn = ? WHERE ";
@@ -91,8 +68,8 @@ namespace ReLearn.API.Database
             $"UPDATE {DataBase.TableName} SET DateRecurrence = ? WHERE Image_name = ?", 
             DateTime.Now, ImageName);
 
-        public static List<DBImages> GetData => DataBase.Images.Query<DBImages>($"SELECT * FROM {DataBase.TableName.ToString()}");
+        public static List<DBImages> GetData => DataBase.Images.Query<DBImages>($"SELECT * FROM {DataBase.TableName}");
 
-        public string ImageName { get => Settings.Currentlanguage == Language.en.ToString() ? Name_image_en : Name_image_ru; }
+        public string ImageName { get => Settings.Currentlanguage == $"{Language.en}" ? Name_image_en : Name_image_ru; }
     }
 }

@@ -6,12 +6,13 @@ using Android.Util;
 using Android.Views;
 using Android.Widget;
 using MvvmCross.Droid.Support.V7.AppCompat;
+using ReLearn.API;
 using ReLearn.API.Database;
 using ReLearn.Core.ViewModels.Languages;
+using ReLearn.Droid.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Timers;
-using ReLearn.API;
 
 namespace ReLearn.Droid.Languages
 {
@@ -72,7 +73,7 @@ namespace ReLearn.Droid.Languages
                 False++;
             if (ViewPrev != null)
                 FindViewById<RelativeLayout>(Resource.Id.RelativeLayoutLanguagesBlitzPoll).RemoveView(ViewPrev);
-            ViewCurrent.Background = GetDrawable(!(answer ^ UserAnswer) ? Resource.Drawable.viewTrue : Resource.Drawable.viewFalse);
+            ViewCurrent.Background = GetDrawable(!(answer ^ UserAnswer) ? Resource.Drawable.view_true : Resource.Drawable.view_false);
             RunAnimation((UserAnswer ? 1 : -1) * PixelConverter.DpToPX(5000));
             ViewPrev = ViewCurrent;
             ViewCurrent = GetTextView();
@@ -90,8 +91,8 @@ namespace ReLearn.Droid.Languages
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.languages_blitz_poll_activity);
-            var toolbarMain = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbarLanguagesBlitzPoll);
+            SetContentView(Resource.Layout.activity_languages_blitz_poll);
+            var toolbarMain = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar_languages_blitz_poll);
             SetSupportActionBar(toolbarMain);
             SupportActionBar.SetDisplayHomeAsUpEnabled(true); // отображаем кнопку домой
 

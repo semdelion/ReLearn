@@ -2,6 +2,7 @@
 using Android.Graphics;
 using Android.Views;
 using ReLearn.API.Database;
+using ReLearn.Droid.Helpers;
 using System.Collections.Generic;
 using static Android.Graphics.Shader;
 

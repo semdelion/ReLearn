@@ -1,11 +1,11 @@
-﻿using System.Collections.Generic;
-using Android.App;
+﻿using Android.App;
 using Android.Graphics;
 using Android.Views;
 using Android.Widget;
 using ReLearn.API;
 using ReLearn.API.Database;
 using ReLearn.Droid.Adapters;
+using System.Collections.Generic;
 
 namespace ReLearn.Droid
 {
@@ -34,7 +34,7 @@ namespace ReLearn.Droid
 
         public override View GetView(int position, View convertView, ViewGroup parent)
         {
-            var view = convertView ?? activity.LayoutInflater.Inflate(Resource.Layout.images_item_view_dictionary_activity, parent, false);
+            var view = convertView ?? activity.LayoutInflater.Inflate(Resource.Layout.item_image_view_dictionary, parent, false);
             var TextView = view.FindViewById<TextView>(Resource.Id.textView_item_view_dictionary);
             var ImageView = view.FindViewById<ImageView>(Resource.Id.imageView_item_view_dictionary);
             using (var his = Application.Context.Assets.Open($"Image{DataBase.TableName}Mini/{list[position].Image_name}.jpg"))
@@ -44,7 +44,7 @@ namespace ReLearn.Droid
             }
             BackgroundConstructor.SetColorForItems(list[position].NumberLearn, TextView);
 
-            if (Settings.Currentlanguage == Language.en.ToString())
+            if (Settings.Currentlanguage == $"{ Language.en}")
                 TextView.Text = list[position].Name_image_en;
             else
                 TextView.Text = list[position].Name_image_ru;            

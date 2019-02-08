@@ -1,18 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
-using Android.Content;
-using Android.Graphics;
-using Android.Graphics.Drawables;
-using Android.Graphics.Drawables.Shapes;
-using Android.OS;
-using Android.Runtime;
-using Android.Util;
-using Android.Views;
-using Android.Widget;
+﻿using Android.Graphics;
+using ReLearn.Droid.Helpers;
 using static Android.Graphics.Shader;
 
 namespace ReLearn.Droid
@@ -26,7 +13,7 @@ namespace ReLearn.Droid
             float strokeWidth = PixelConverter.DpToPX(2);
 
             var backgroundPaint = new Paint { Color = new Color(Color.Argb(100, 16, 19, 38)), AntiAlias = true };
-            Paint borderPaint = new Paint { StrokeWidth = strokeWidth, Color = Colors.White, AntiAlias = true };
+            var borderPaint = new Paint { StrokeWidth = strokeWidth, Color = Colors.White, AntiAlias = true };
             borderPaint.SetStyle(Paint.Style.Stroke);
             var bitmap = Bitmap.CreateBitmap((int)width, (int)height, Bitmap.Config.Argb4444);
             var canvas = new Canvas(bitmap);

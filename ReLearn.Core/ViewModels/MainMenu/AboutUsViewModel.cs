@@ -1,8 +1,8 @@
-﻿using MvvmCross.Navigation;
+﻿using MvvmCross;
+using MvvmCross.Commands;
+using MvvmCross.Navigation;
+using MvvmCross.Plugin.WebBrowser;
 using MvvmCross.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace ReLearn.Core.ViewModels.MainMenu
 {
@@ -12,6 +12,7 @@ namespace ReLearn.Core.ViewModels.MainMenu
         #endregion
 
         #region Commands
+        public IMvxCommand SupportProjectCommand => new MvxCommand(SupportProject);
         #endregion
 
         #region Properties
@@ -29,6 +30,7 @@ namespace ReLearn.Core.ViewModels.MainMenu
         #endregion
 
         #region Private
+        private void SupportProject() => Mvx.IoCProvider.Resolve<IMvxWebBrowserTask>().ShowWebPage("http://www.donationalerts.ru/r/semdelionteam");
         #endregion
 
         #region Protected

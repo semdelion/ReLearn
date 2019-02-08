@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+	xmlns:android			="http://schemas.android.com/apk/res/android"
+	xmlns:local				="http://schemas.android.com/apk/res-auto"
+    xmlns:tools				="http://schemas.android.com/tools"
+    android:layout_width	="match_parent"
+    android:layout_height	="match_parent"
+	android:orientation		="vertical">
+	<android.support.design.widget.AppBarLayout
+		android:layout_width	="match_parent"
+		android:layout_height	="wrap_content">
+		<android.support.v7.widget.Toolbar
+			xmlns:local				="http://schemas.android.com/apk/res-auto"
+			android:id				="@+id/toolbar_images_learn"
+			android:theme			="@style/ToolbarStyle"	
+			android:background		="@drawable/background_toolbar"
+			local:navigationIcon	="@mipmap/ic_arrow_back"
+			android:layout_width	="match_parent"
+			android:layout_height	="80dp"	
+			local:buttonGravity		="bottom">
+			<TextView		
+				android:text			="@string/Learn" 
+				android:gravity			="bottom"
+				android:paddingBottom	="12dp"
+				android:layout_width	="match_parent"
+				android:layout_height	="match_parent"
+			/>
+		</android.support.v7.widget.Toolbar>
+	</android.support.design.widget.AppBarLayout>
+	<RelativeLayout
+		android:layout_width		="match_parent"
+		android:layout_height		="match_parent">
+		<LinearLayout
+			android:id					="@+id/learn_background"
+			android:layout_marginTop	="25.0dp"
+			android:layout_width		="match_parent"
+			android:layout_height		="360dp"
+			android:orientation			="vertical"
+			android:layout_marginRight	="10.0dp"
+            android:layout_marginLeft	="10.0dp">
+			<ImageView
+				android:id					="@+id/imageView_Images_learn"
+				android:src					="@drawable/icon"
+				android:layout_width		="match_parent"
+				android:layout_height		="220.0dp"
+				android:layout_marginTop	="25.0dp"
+				android:layout_marginRight	="5.0dp"
+				android:layout_marginLeft	="5.0dp"/>
+			<TextView
+				android:id					="@+id/textView_Images_learn"
+				android:textColor			="@color/text_white"
+				android:text				="Text"
+				android:textSize			="25dp"
+				android:layout_width		="match_parent"
+				android:layout_height		="80.0dp"
+				android:layout_marginRight	="3.0dp"
+				android:layout_marginLeft	="3.0dp"
+				android:layout_marginTop	="20.0dp"
+				android:layout_marginBottom	="5.0dp"
+				android:gravity				="center_horizontal"/>
+		</LinearLayout>
+		<TableLayout
+			android:layout_width		="match_parent"
+			android:layout_height		="match_parent"
+			android:layout_marginRight	="@dimen/margin_right"
+			android:layout_marginLeft	="@dimen/margin_left"
+			android:layout_marginBottom	="30dp"
+			android:gravity				="bottom">
+			<TableRow>
+				<Button
+					android:onClick				="Button_Images_Learn_NotRepeat_Click"
+					android:id					="@+id/button_NotRepeat_Images"
+					android:background			="@drawable/button_style_standard"
+					android:textColor			="@color/text_white"
+					android:text				="@string/NotRepeat"
+					android:textStyle			="bold"
+					android:textSize			="20dp"
+					android:layout_width		="0dp"
+					android:layout_weight		="0.5"
+					android:layout_height		="@dimen/button_height"
+					android:layout_marginRight	="5dp"
+					android:layout_alignParentBottom="true"
+				/>
+				<Button
+					android:onClick				="Button_Images_Learn_Next_Click"
+					android:id					="@+id/button_I_learn_Next"
+					android:background			="@drawable/button_style_standard"
+					android:textColor			="@color/text_white"
+					android:text				="@string/Next"
+					android:textStyle			="bold"
+					android:textSize			="20dp"
+					android:layout_width		="0dp"
+					android:layout_weight		="0.5"
+					android:layout_height		="@dimen/button_height"
+					android:layout_marginLeft	="5dp" 
+					android:layout_alignParentBottom="true"
+				/>
+			</TableRow>
+		</TableLayout>
+    </RelativeLayout>
+</LinearLayout>

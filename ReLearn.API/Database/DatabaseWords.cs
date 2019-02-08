@@ -1,7 +1,6 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
-using System.IO;
-using SQLite;
 
 namespace ReLearn.API.Database
 {
@@ -20,19 +19,13 @@ namespace ReLearn.API.Database
     {
         [PrimaryKey, AutoIncrement, Column("_id")]
         public int Id { get; set; }
-        public string Word { get; set; }
-        public string TranslationWord { get; set; }
+        public string Word { get; set; } = "";
+        public string TranslationWord { get; set; } = "";
         public string Transcription { get; set; }
-        public int NumberLearn { get; set; }
-        public DateTime DateRecurrence { get; set; }
+        public int NumberLearn { get; set; } = Settings.StandardNumberOfRepeats;
+        public DateTime DateRecurrence { get; set; } = DateTime.Today;
 
-        public DBWords()
-        {
-            DateRecurrence = DateTime.Today;
-            Word = "";
-            NumberLearn = Settings.StandardNumberOfRepeats;
-            TranslationWord = "";
-        }
+        public DBWords(){}
 
         public DBWords(DBWords x)
         {
@@ -56,28 +49,6 @@ namespace ReLearn.API.Database
             }
         }
 
-        //public static void СreateTable()
-        //{
-        //    foreach (string tableName in Enum.GetNames(typeof(TableNamesLanguage)))
-        //    {
-        //        if (DataBase.Languages.GetTableInfo(tableName).Count == 0)
-        //        {
-        //            DataBase.Languages.Execute($"CREATE TABLE {tableName} (_id int PRIMARY KEY, Word string, TranslationWord string, Transcription string, NumberLearn int, DateRecurrence DateTime, Context string, Image string)");
-        //            using (StreamReader reader = new StreamReader(Application.Context.Assets.Open($"Database/{tableName}.txt")))
-        //            {
-        //                string str_line;
-        //                while ((str_line = reader.ReadLine()) != null)
-        //                {
-        //                    var list = str_line.Split('|');
-        //                    var query = $"INSERT INTO {tableName} (Word, TranslationWord, Transcription, NumberLearn, DateRecurrence) VALUES (?, ?, ?, ?, ?)";
-        //                    DataBase.Languages.Execute(query, list[0].ToLower().Trim(), list[1].ToLower().Trim(), list[2].Trim(), Settings.StandardNumberOfRepeats, DateTime.Now);
-        //                }
-        //            }
-        //            DataBase.Statistics.Execute($"CREATE TABLE {tableName}_Statistics (_id int PRIMARY KEY, True int, False int, DateOfTesting DateTime)");
-        //        }
-        //    }
-        //}
-
         public static bool ContainColumn(string columnName, List <SQLiteConnection.ColumnInfo> columns)
         {
             foreach (var column in columns)
@@ -89,12 +60,12 @@ namespace ReLearn.API.Database
        
 
         public static bool WordIsContained(string Word) =>
-            DataBase.Languages.Query<DBWords>($"SELECT * FROM {TableNamesLanguage.My_Directly.ToString()} WHERE Word = ? LIMIT 1", Word).Count != 0 
+            DataBase.Languages.Query<DBWords>($"SELECT * FROM {TableNamesLanguage.My_Directly} WHERE Word = ? LIMIT 1", Word).Count != 0 
             ? true : false;
 
         public static void Insert(string Word, string TranslationWord) =>
             DataBase.Languages.Execute(
-                $"INSERT INTO {TableNamesLanguage.My_Directly.ToString()} (Word, TranslationWord, NumberLearn, DateRecurrence) VALUES (?, ?, ?, ?)",
+                $"INSERT INTO {TableNamesLanguage.My_Directly} (Word, TranslationWord, NumberLearn, DateRecurrence) VALUES (?, ?, ?, ?)",
                 Word, TranslationWord, Settings.StandardNumberOfRepeats, DateTime.Now);
 
         public static List<DBWords> GetDataNotLearned => DataBase.Languages.Query<DBWords>(
@@ -114,7 +85,7 @@ namespace ReLearn.API.Database
                     DateTime.Now, learn, word);       
         }
 
-        public static List<DBWords> GetData => DataBase.Languages.Query<DBWords>($"SELECT * FROM {DataBase.TableName.ToString()}");
+        public static List<DBWords> GetData => DataBase.Languages.Query<DBWords>($"SELECT * FROM {DataBase.TableName}");
 
         public static void Delete(string Word) => DataBase.Languages.Execute($"DELETE FROM {DataBase.TableName} WHERE Word = ?", Word);
     }

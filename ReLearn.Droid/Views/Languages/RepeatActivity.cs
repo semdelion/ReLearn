@@ -1,20 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-
-using Calligraphy;
-using SQLite;
-using ReLearn.API;
+﻿using Android.App;
+using Android.Graphics.Drawables;
+using Android.OS;
+using Android.Util;
 using Android.Views;
 using Android.Widget;
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Support.V7.App;
 using MvvmCross.Droid.Support.V7.AppCompat;
-using ReLearn.Core.ViewModels.Languages;
-using Android.Util;
-using Android.Graphics.Drawables;
+using ReLearn.API;
 using ReLearn.API.Database;
+using ReLearn.Core.ViewModels.Languages;
+using ReLearn.Droid.Helpers;
+using System;
+using System.Collections.Generic;
 
 namespace ReLearn.Droid.Languages
 {
@@ -131,8 +127,8 @@ namespace ReLearn.Droid.Languages
                 }
                 else
                 {
-                    DBStatistics.Insert(Statistics.True, Statistics.False, DataBase.TableName.ToString());
-                    Statistics.Count = Statistics.True = Statistics.False = 0;
+                    DBStatistics.Insert(Statistics.True, Statistics.False, $"{DataBase.TableName}");
+                    Statistics.Delete();
                     ViewModel.ToStatistic.Execute();
                     Finish();
                 }
@@ -143,8 +139,8 @@ namespace ReLearn.Droid.Languages
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.languages_repeat_activity);
-            var toolbarMain = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbarLanguagesRepeat);
+            SetContentView(Resource.Layout.activity_languages_repeat);
+            var toolbarMain = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar_languages_repeat);
            
             SetSupportActionBar(toolbarMain);
             SupportActionBar.SetDisplayHomeAsUpEnabled(true); // отображаем кнопку домой
@@ -158,7 +154,6 @@ namespace ReLearn.Droid.Languages
 
             MySpeech = new MyTextToSpeech();
             WordDatabase = DBWords.GetDataNotLearned;
-            Statistics.Table = DataBase.TableName.ToString();
             Buttons = new List<Button>{
                 FindViewById<Button>(Resource.Id.button_Languages_choice1),
                 FindViewById<Button>(Resource.Id.button_Languages_choice2),

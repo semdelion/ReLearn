@@ -1,54 +1,84 @@
-﻿using Android.App;
-using Android.Graphics;
-using Android.OS;
-using Android.Support.Animation;
-using Android.Support.Design.Widget;
-using Android.Support.V4.View;
+﻿using Android.Graphics;
 using Android.Views;
 using Android.Widget;
-using MvvmCross.Droid.Support.V7.AppCompat;
+using ReLearn.API;
 using ReLearn.API.Database;
-using ReLearn.Core.ViewModels;
+using ReLearn.Droid.Helpers;
 using System;
+using System.Collections.Generic;
 
 namespace ReLearn.Droid.Views.SelectDictionary
 {
-    [Activity(Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
-    public class SelectDictionary : MvxAppCompatActivity<SelectDictionaryViewModel>
+    public class Dictionaries
     {
-        public static Dictionaries Dictionaries;
-        public static void SelectDictionaryClick(object sender, EventArgs e)
+        public int Width { get; set; }
+        public List<Bitmap> DictionariesBitmap { get; set; }
+        public List<ImageView> DictionariesView { get; set; }
+        
+        public LinearLayout.LayoutParams ParmsImage { get; set; } 
+
+        public Dictionaries(int width)
         {
-            ImageView ImgV = sender as ImageView;
-            SelectDictionary.Dictionaries.Selected(ImgV.Tag.ToString(), DataBase.TableName.ToString());
-            Enum.TryParse(ImgV.Tag.ToString(), out TableNames name);
-            DataBase.TableName = name;
-            var Animation = new SpringAnimation(ImgV, DynamicAnimation.Rotation, 0);
-            Animation.Spring.SetStiffness(SpringForce.StiffnessMedium);
-            Animation.SetStartVelocity(500);
-            Animation.Start();
+            DictionariesBitmap = new List<Bitmap>();
+            DictionariesView = new List<ImageView>();
+            Width = width;
+            ParmsImage  = new LinearLayout.LayoutParams(width, width) {
+                Gravity = GravityFlags.Center, TopMargin = 10
+            };
         }
 
-        protected override void OnCreate(Bundle savedInstanceState)
+        public static Bitmap CreateSingleImageFromMultipleImages(Bitmap firstImage, Bitmap secondImage, PointF C)
         {
-            base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.select_dictionary);
-            SetSupportActionBar(FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbarSelectDictionary));
-            SupportActionBar.SetDisplayHomeAsUpEnabled(true);
-            Dictionaries = new Dictionaries((int)(Resources.DisplayMetrics.WidthPixels / 3f));
-            ViewPager viewPager = FindViewById<ViewPager>(Resource.Id.pager);
-            SelectDictionaryPagerAdapter myPagerAdapter = new SelectDictionaryPagerAdapter(SupportFragmentManager);
-            viewPager.Adapter = myPagerAdapter;
-            TabLayout tabLayout = FindViewById<TabLayout>(Resource.Id.tablayout);
-            tabLayout.SetupWithViewPager(viewPager);
-            tabLayout.GetTabAt(tabLayout.TabCount - 2).SetIcon(Resource.Drawable.icon_language);
-            tabLayout.GetTabAt(tabLayout.TabCount - 1).SetIcon(Resource.Drawable.icon_image);
+            Bitmap result = Bitmap.CreateBitmap(firstImage.Width, firstImage.Height, firstImage.GetConfig());
+            Canvas canvas = new Canvas(result);
+            canvas.DrawBitmap(firstImage, 0f, 0f, null);
+            canvas.DrawBitmap(secondImage, C.X, C.Y, null);
+            return result;
         }
 
-        public override bool OnOptionsItemSelected(IMenuItem item)
+        public void Selected(string NewTableName, string СurrentTableName)
         {
-            Finish();
-            return base.OnOptionsItemSelected(item);
+            int indexCurrent = DictionariesView.FindIndex(s => s.Tag.ToString() == СurrentTableName);
+            DictionariesView[indexCurrent].SetImageBitmap(DictionariesBitmap[indexCurrent]);
+
+            using (Bitmap image1 = Bitmap.CreateBitmap(Width, Width, Bitmap.Config.Argb4444))
+            {
+                Canvas baseCan = new Canvas(image1);
+                Paint paint2 = new Paint { Color = Colors.FrameBorder, AntiAlias = true };
+                baseCan.DrawCircle(Width / 2, Width / 2, Width / 2.5f, paint2);
+                int indexNew = DictionariesView.FindIndex(s => s.Tag.ToString() == NewTableName);
+                DictionariesView[indexNew].SetImageBitmap(CreateSingleImageFromMultipleImages(image1, DictionariesBitmap[indexNew], new PointF(0, 0)));
+            }
+        }
+
+        public Bitmap CreateBitmapWithStats(Bitmap image, List<DBStatistics> Database_NL_and_D, Color Start, Color End)
+        {
+            try
+            {
+                using (Bitmap Image1 = Bitmap.CreateBitmap(Width, Width, Bitmap.Config.Argb4444))
+                {
+                    FrameStatistics FRAME = new FrameStatistics(0, 0, Image1.Width, Image1.Width, Colors.FrameBackground);
+                    float WidthLine = FRAME.Width / 10;
+                    using (Bitmap Image2 = Bitmap.CreateScaledBitmap(image, (int)((Width / 2.5) * 2 - WidthLine), (int)((Width / 2.5) * 2 - WidthLine), false))
+                    {
+                        Canvas baseCan = new Canvas(Image1);
+                        FRAME.DrawPieChart(baseCan, API.Statistics.GetAverageNumberLearn(Database_NL_and_D), Settings.StandardNumberOfRepeats,
+                                           Start, End, (float)(baseCan.Height / 2.5), WidthLine);
+                        Bitmap finalImage = CreateSingleImageFromMultipleImages(Image1, Image2,
+                            new PointF(((FRAME.Left + FRAME.Width) / 2) - (float)(baseCan.Height / 2.5) + WidthLine / 2,
+                                       ((FRAME.Top + FRAME.Height) / 2) - (float)(baseCan.Height / 2.5) + WidthLine / 2));
+                        return finalImage;
+                    }
+                }
+            }
+            catch (OutOfMemoryException)
+            {
+                return null;
+            }
+            catch
+            {
+                return null;
+            }
         }
     }
 }

@@ -1,18 +1,16 @@
-﻿using System;
-using Android.App;
-using Android.Content;
+﻿using Android.App;
+using Android.Graphics;
+using Android.Graphics.Drawables;
 using Android.OS;
+using Android.Util;
 using Android.Views;
 using Android.Widget;
-using Android.Graphics;
-using Android.Support.V7.App;
-using System.Collections.Generic;
 using MvvmCross.Droid.Support.V7.AppCompat;
-using ReLearn.Core.ViewModels.Images;
-using Android.Util;
-using Android.Graphics.Drawables;
-using static Android.Graphics.PorterDuff;
 using ReLearn.API.Database;
+using ReLearn.Core.ViewModels.Images;
+using ReLearn.Droid.Helpers;
+using System;
+using System.Collections.Generic;
 
 namespace ReLearn.Droid.Images
 {
@@ -21,8 +19,6 @@ namespace ReLearn.Droid.Images
     {
         int Count { get; set; }
         List<DBImages> ImagesDatabase { get; set; }
-
-        
 
         string ImageName
         {
@@ -61,8 +57,8 @@ namespace ReLearn.Droid.Images
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.images_learn_activity);
-            SetSupportActionBar(FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbarImagesLearn));
+            SetContentView(Resource.Layout.activity_images_learn);
+            SetSupportActionBar(FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar_images_learn));
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
             ImagesDatabase = DBImages.GetDataNotLearned;
             DisplayMetrics displayMetrics = new DisplayMetrics();

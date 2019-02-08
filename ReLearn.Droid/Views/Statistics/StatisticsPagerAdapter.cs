@@ -1,23 +1,17 @@
-﻿using System;
-using Android.Views;
-using Android.Widget;
-using Android.Support.V4.App;
-using Android.Runtime;
-using MvvmCross.Droid.Support.V7.AppCompat;
-using Java.Lang;
+﻿using Android.Support.V4.App;
 
 
 namespace ReLearn.Droid.Views.Statistics
 {
-    class StatisticsPagerAdapter : FragmentPagerAdapter
+    class StatisticsPagerAdapter : FragmentStatePagerAdapter
     {
-        public StatisticsPagerAdapter(Android.Support.V4.App.FragmentManager fm) : base(fm) { }
+        public StatisticsPagerAdapter(FragmentManager fm) : base(fm) { }
 
         public override int Count
         {
             get => 2;
         }
-        public override Android.Support.V4.App.Fragment GetItem(int position)
+        public override Fragment GetItem(int position)
         {
             switch (position)
             {

@@ -1,5 +1,4 @@
 ﻿using Android.App;
-using Android.Content;
 using Android.Graphics;
 using Android.Graphics.Drawables;
 using Android.OS;
@@ -7,14 +6,14 @@ using Android.Support.Animation;
 using Android.Util;
 using Android.Views;
 using Android.Widget;
-using Calligraphy;
 using MvvmCross.Droid.Support.V7.AppCompat;
+using ReLearn.API;
 using ReLearn.API.Database;
 using ReLearn.Core.ViewModels.Images;
+using ReLearn.Droid.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Timers;
-using ReLearn.API;
 
 namespace ReLearn.Droid.Images
 {
@@ -106,7 +105,7 @@ namespace ReLearn.Droid.Images
                 False++;
             if (ViewPrev!=null)
                 FindViewById<RelativeLayout>(Resource.Id.RelativeLayoutImagesBlitzPoll).RemoveView(ViewPrev);
-            ViewCurrent.Background = GetDrawable(!(answer ^ UserAnswer) ? Resource.Drawable.viewTrue : Resource.Drawable.viewFalse);
+            ViewCurrent.Background = GetDrawable(!(answer ^ UserAnswer) ? Resource.Drawable.view_true : Resource.Drawable.view_false);
             RunAnimation((UserAnswer ? 1 : -1) * PixelConverter.DpToPX(5000));
             ViewPrev = ViewCurrent;
             ViewCurrent = GetLayout();
@@ -124,8 +123,8 @@ namespace ReLearn.Droid.Images
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.images_blitz_poll_activity);
-            var toolbarMain = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbarImagesBlitzPoll);
+            SetContentView(Resource.Layout.activity_images_blitz_poll);
+            var toolbarMain = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar_images_blitz_poll);
             SetSupportActionBar(toolbarMain);
             SupportActionBar.SetDisplayHomeAsUpEnabled(true); // отображаем кнопку домой
 

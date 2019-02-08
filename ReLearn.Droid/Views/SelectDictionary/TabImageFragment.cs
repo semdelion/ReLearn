@@ -1,18 +1,17 @@
 ﻿using Android.Graphics;
 using Android.OS;
-using Android.Support.Animation;
 using Android.Views;
+using ReLearn.Droid.Helpers;
 using Android.Widget;
-using ReLearn.API.Database;
-using System;
-using System.Collections.Generic;
 using ReLearn.API;
+using ReLearn.API.Database;
+using System.Collections.Generic;
 
 namespace ReLearn.Droid.Views.SelectDictionary
 {
     class TabImageFragment : Android.Support.V4.App.Fragment
     {
-        public View CreateViewForDictionary(View view, List<DBStatistics> DB, string NameDictionary, int ImageId, bool flag, bool separate, Color lightColor, Color darkColor)
+        public View CreateViewForDictionary(View view, List<DBStatistics> DB, string NameDictionary, int ImageId, GravityFlags flag, bool separate, Color lightColor, Color darkColor)
         {
             var width = Resources.DisplayMetrics.WidthPixels / 100f;
             int count = DB.Count;
@@ -20,30 +19,30 @@ namespace ReLearn.Droid.Views.SelectDictionary
             {
                 LayoutParameters = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, LinearLayout.LayoutParams.WrapContent)
             };
-            SelectDictionary.Dictionaries.DictionariesBitmap.Add(SelectDictionary.Dictionaries.CreateBitmapWithStats(BitmapFactory.DecodeResource(Resources, ImageId), DB, lightColor, darkColor));//////fail color
+            SelectDictionaryFragment.Dictionaries.DictionariesBitmap.Add(SelectDictionaryFragment.Dictionaries.CreateBitmapWithStats(BitmapFactory.DecodeResource(Resources, ImageId), DB, lightColor, darkColor));//////fail color
             ImageView ImageDictionary = new ImageView(view.Context) { Tag = NameDictionary.ToString() };
             ImageDictionary.LayoutParameters = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WrapContent, LinearLayout.LayoutParams.WrapContent)
             {
-                Gravity = flag ? GravityFlags.Left : GravityFlags.Right
+                Gravity = flag
             };
             ImageDictionary.SetPadding((int)(5 * width), 0, (int)(5 * width), 0);
-            ImageDictionary.SetImageBitmap(SelectDictionary.Dictionaries.DictionariesBitmap[SelectDictionary.Dictionaries.DictionariesBitmap.Count - 1]);
-            ImageDictionary.Click += SelectDictionary.SelectDictionaryClick;
+            ImageDictionary.SetImageBitmap(SelectDictionaryFragment.Dictionaries.DictionariesBitmap[SelectDictionaryFragment.Dictionaries.DictionariesBitmap.Count - 1]);
+            ImageDictionary.Click += SelectDictionaryFragment.SelectDictionaryClick;
 
             TextView Name = new TextView(view.Context)
             {
-                Text = Droid.GetString.GetResourceString(NameDictionary, this.Resources),
+                Text = Helpers.GetString.GetResourceString(NameDictionary, this.Resources),
                 TextSize = 20//(int)(3 * width)
             };
             TextView CountWords = new TextView(view.Context)
             {
                 Text = $"{GetString(Resource.String.DatatypeImages)} {count}, {GetString(Resource.String.StudiedAt)} " +
-                $"{(int)(100 - ReLearn.Droid.Statistics.GetAverageNumberLearn(DB) * 100f / Settings.StandardNumberOfRepeats)}%",
+                $"{(int)(100 - ReLearn.API.Statistics.GetAverageNumberLearn(DB) * 100f / Settings.StandardNumberOfRepeats)}%",
                 TextSize = 14//(int)(2.1f * width)
             };
             TextView Description = new TextView(view.Context)
             {
-                Text = Droid.GetString.GetResourceString($"{NameDictionary}Description", this.Resources),
+                Text = Helpers.GetString.GetResourceString($"{NameDictionary}Description", this.Resources),
                 TextSize = 11//(int)(1.7f * width)
             };
             LinearLayout TextlinearLayout = new LinearLayout(view.Context)
@@ -60,10 +59,10 @@ namespace ReLearn.Droid.Views.SelectDictionary
             TextlinearLayout.AddView(Name);
             TextlinearLayout.AddView(CountWords);
             TextlinearLayout.AddView(Description);
-            TextlinearLayout.SetPadding(flag ? 0 : (int)(5 * width), 0, !flag ? 0 : (int)(5 * width), 0);
+            TextlinearLayout.SetPadding(flag == GravityFlags.Left ? 0 : (int)(5 * width), 0, flag == GravityFlags.Right ? 0 : (int)(5 * width), 0);
 
-            DictionarylinearLayout.AddView(flag == true ? (View)ImageDictionary : TextlinearLayout);
-            DictionarylinearLayout.AddView(flag == false ? (View)ImageDictionary : TextlinearLayout);
+            DictionarylinearLayout.AddView(flag == GravityFlags.Left ? (View)ImageDictionary : TextlinearLayout);
+            DictionarylinearLayout.AddView(flag == GravityFlags.Right ? (View)ImageDictionary : TextlinearLayout);
 
             view.FindViewById<LinearLayout>(Resource.Id.ImageSelectDictionary).AddView(DictionarylinearLayout);
             if (separate)
@@ -76,23 +75,25 @@ namespace ReLearn.Droid.Views.SelectDictionary
                 };
                 view.FindViewById<LinearLayout>(Resource.Id.ImageSelectDictionary).AddView(SeparateView);
             }
-            SelectDictionary.Dictionaries.DictionariesView.Add(ImageDictionary);
+            SelectDictionaryFragment.Dictionaries.DictionariesView.Add(ImageDictionary);
 
             return view;
         }
 
-        public override void OnCreate(Bundle savedInstanceState)
-        {
-            base.OnCreate(savedInstanceState);
-        }
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            var DBStatFlag = DBStatistics.GetImages(TableNamesImage.Flags.ToString());
-            var DBStatFilms = DBStatistics.GetImages(TableNamesImage.Films.ToString());
-            var view = inflater.Inflate(Resource.Layout.select_dictionary_image_fragment, container, false);
-            CreateViewForDictionary(view, DBStatFlag, TableNamesImage.Flags.ToString(), Resource.Drawable.FlagDictionary, true, true, Colors.Orange, Colors.DarkOrange);
-            CreateViewForDictionary(view, DBStatFilms, TableNamesImage.Films.ToString(), Resource.Drawable.FilmDictionary, false, false, Colors.Orange, Colors.DarkOrange);
-            SelectDictionary.Dictionaries.Selected(DataBase.TableName.ToString(), DataBase.TableName.ToString());
+            var view = inflater.Inflate(Resource.Layout.fragment_tab_images_dictionary, container, false);
+            var DBStatFlag  = DBStatistics.GetImages($"{TableNamesImage.Flags}");
+            var DBStatFilms = DBStatistics.GetImages($"{TableNamesImage.Films}");
+            CreateViewForDictionary(view, DBStatFlag,   
+                $"{TableNamesImage.Flags}", 
+                Resource.Drawable.image_dictionary_flags,
+                GravityFlags.Left,  true, Colors.Orange, Colors.DarkOrange);
+            CreateViewForDictionary(view, DBStatFilms,  
+                $"{TableNamesImage.Films}", 
+                Resource.Drawable.image_dictionary_films,
+                GravityFlags.Right, false, Colors.Orange, Colors.DarkOrange);
+            SelectDictionaryFragment.Dictionaries.Selected($"{DataBase.TableName}",$"{DataBase.TableName}");
             return view; 
         }
     }
