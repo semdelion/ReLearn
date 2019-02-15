@@ -36,7 +36,7 @@ namespace ReLearn.Droid
         void DegreeOfStudy_FRAME(FrameStatistics Degree)
         {
             Degree.DrawBorder(TheCanvas, paint_border);
-            float avg_numberLearn_stat = Statistics.GetAverageNumberLearn(Stats_database);
+            float avg_numberLearn_stat = API.Statistics.GetAverageNumberLearn(Stats_database);
             Degree.DrawPieChartWithText(TheCanvas, avg_numberLearn_stat, Settings.StandardNumberOfRepeats, Start, End,
             new PointF(Degree.Left + Degree.Width / 2f, Degree.Bottom - 27.5f * TheCanvas.Width / 100f), Degree.Width / 2.5f);
             Degree.DrawText(TheCanvas, font_up, Context.GetString(Resource.String.Degree_Of_Study), 

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android         ="http://schemas.android.com/apk/res/android"
+    xmlns:tools           ="http://schemas.android.com/tools"
+    android:layout_width  ="match_parent"
+    android:layout_height ="match_parent">
+
+	<LinearLayout 
+		tools:background				="@android:color/holo_purple"
+		android:id						="@+id/view_degree_of_study"
+		android:orientation				="horizontal"
+		android:layout_width			="220dp"
+		android:layout_height			="match_parent"
+		android:layout_marginTop		="@dimen/view_margin_statistics"
+		android:layout_marginLeft		="@dimen/view_margin_statistics"
+		android:padding					="5dip"
+		android:layout_marginBottom		="@dimen/view_margin_statistics"
+		android:layout_above			="@+id/view_learned_words">
+		<TextView
+			android:textColor			="@color/text_white"
+			tools:text					="Последнее тестирование"
+			android:fontFamily			="@font/myriadpro_semibold"
+			android:textSize			="16dp"
+			android:layout_width		="match_parent"
+			android:layout_height		="wrap_content"
+			android:layout_marginTop	="5dp"
+			android:layout_marginLeft	="@dimen/view_margin_statistics"
+		/>
+	</LinearLayout >
+
+
+	<LinearLayout 
+		tools:background				="@android:color/holo_blue_dark"
+		android:id						="@+id/view_learned_words"
+		android:orientation				="vertical"
+		android:layout_width			="match_parent"
+		android:layout_height			="match_parent"
+		android:layout_marginTop		="@dimen/view_margin_statistics"
+		android:layout_marginLeft		="@dimen/view_margin_statistics"
+		android:layout_marginRight		="@dimen/view_margin_statistics"
+		android:layout_marginBottom		="@dimen/view_margin_statistics"
+		android:layout_above			="@+id/view_learned_words"
+		android:layout_toRightOf        ="@+id/view_degree_of_study"
+		>
+		<TextView
+			android:textColor			="@color/text_white"
+			tools:text					="Последнее тестирование"
+			android:fontFamily			="@font/myriadpro_semibold"
+			android:textSize			="16dp"
+			android:layout_width		="match_parent"
+			android:layout_height		="wrap_content"
+			android:layout_marginTop	="5dp"
+			android:layout_marginLeft	="@dimen/view_margin_statistics"
+		/>
+	</LinearLayout >
+
+	<LinearLayout 
+		tools:background				="@android:color/holo_purple"
+		android:id						="@+id/view_learned_words"
+		android:orientation				="vertical"
+		android:layout_width			="match_parent"
+		android:layout_height			="65dp"
+		android:layout_marginLeft		="@dimen/view_margin_statistics"
+		android:layout_marginRight		="@dimen/view_margin_statistics"
+		android:layout_marginBottom		="@dimen/view_margin_statistics"
+		android:layout_above			="@+id/view_akward_word">
+		<TextView
+			android:textColor			="@color/text_white"
+			tools:text					="Последнее тестирование"
+			android:fontFamily			="@font/myriadpro_semibold"
+			android:textSize			="16dp"
+			android:layout_width		="match_parent"
+			android:layout_height		="wrap_content"
+			android:layout_marginTop	="5dp"
+			android:layout_marginLeft	="@dimen/view_margin_statistics"
+		/>
+	</LinearLayout >
+	<LinearLayout 
+		tools:background				="@android:color/holo_purple"
+		android:id						="@+id/view_akward_word"
+		android:orientation				="vertical"
+		android:layout_width			="match_parent"
+		android:layout_height			="65dp"
+		android:layout_marginLeft		="@dimen/view_margin_statistics"
+		android:layout_marginRight		="@dimen/view_margin_statistics"
+		android:layout_marginBottom		="@dimen/view_margin_statistics"
+		android:layout_above			="@+id/view_true_answer">
+		<TextView
+			android:textColor			="@color/text_white"
+			tools:text					="Последнее тестирование"
+			android:fontFamily			="@font/myriadpro_semibold"
+			android:textSize			="16dp"
+			android:layout_width		="match_parent"
+			android:layout_height		="wrap_content"
+			android:layout_marginTop	="5dp"
+			android:layout_marginLeft	="@dimen/view_margin_statistics"
+		/>
+	</LinearLayout >
+	<LinearLayout 
+		tools:background				="@android:color/holo_purple"
+		android:id						="@+id/view_true_answer"
+		android:orientation				="vertical"
+		android:layout_width			="match_parent"
+		android:layout_height			="65dp"
+		android:layout_marginLeft		="@dimen/view_margin_statistics"
+		android:layout_marginRight		="@dimen/view_margin_statistics"
+		android:layout_marginBottom		="@dimen/view_margin_statistics"
+		android:layout_alignParentBottom="true">
+		<TextView
+			android:textColor			="@color/text_white"
+			tools:text					="Последнее тестирование"
+			android:fontFamily			="@font/myriadpro_semibold"
+			android:textSize			="16dp"
+			android:layout_width		="match_parent"
+			android:layout_height		="wrap_content"
+			android:layout_marginTop	="5dp"
+			android:layout_marginLeft	="@dimen/view_margin_statistics"
+		/>
+	</LinearLayout >
+</RelativeLayout>

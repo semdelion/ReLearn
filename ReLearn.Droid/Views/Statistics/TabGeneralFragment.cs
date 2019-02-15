@@ -1,11 +1,13 @@
 ﻿using Android.OS;
 using Android.Views;
+using MvvmCross.Droid.Support.V4;
 using ReLearn.API.Database;
+using ReLearn.Core.ViewModels.Statistics;
 using ReLearn.Droid.Views.Fragments;
 
 namespace ReLearn.Droid.Views.Statistics
 {
-    public class TabGeneralFragment : Android.Support.V4.App.Fragment
+    public class TabGeneralFragment : MvxFragment<GeneralStatisticsViewModel>
     {
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {

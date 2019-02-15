@@ -64,18 +64,18 @@ namespace ReLearn.Droid.Languages
 
         void Answer(params Button[] buttons) // подсвечиваем правильный ответ, если мы ошиблись подсвечиваем неправвильный и паравильный 
         {
-            Statistics.Count++;
+            API.Statistics.Count++;
             Button_enable(false);
             if (buttons[0].Text == WordDatabase[CurrentWordNumber].TranslationWord)
             {
-                Statistics.Add(WordDatabase, CurrentWordNumber, -Settings.TrueAnswer);
-                Statistics.True++;
+                API.Statistics.Add(WordDatabase, CurrentWordNumber, -Settings.TrueAnswer);
+                API.Statistics.True++;
                 buttons[0].Background = GetDrawable(Resource.Drawable.button_true);
             }
             else
             {
-                Statistics.Add(WordDatabase, CurrentWordNumber, Settings.FalseAnswer);
-                Statistics.False++;
+                API.Statistics.Add(WordDatabase, CurrentWordNumber, Settings.FalseAnswer);
+                API.Statistics.False++;
                 buttons[0].Background = GetDrawable(Resource.Drawable.button_false);
                 int index = Buttons.FindIndex(s => s.Text == WordDatabase[CurrentWordNumber].TranslationWord);
                 Buttons[index].Background = GetDrawable(Resource.Drawable.button_true);
@@ -84,9 +84,9 @@ namespace ReLearn.Droid.Languages
 
         void Unknown()
         {
-            Statistics.Count++;
-            Statistics.False++;
-            Statistics.Add(WordDatabase, CurrentWordNumber, Settings.NeutralAnswer);
+            API.Statistics.Count++;
+            API.Statistics.False++;
+            API.Statistics.Add(WordDatabase, CurrentWordNumber, Settings.NeutralAnswer);
             int index =  Buttons.FindIndex(s => s.Text == WordDatabase[CurrentWordNumber].TranslationWord);
             Buttons[index].Background = GetDrawable(Resource.Drawable.button_true);
         }
@@ -118,17 +118,17 @@ namespace ReLearn.Droid.Languages
             }
             else
             {
-                if (Statistics.Count < Settings.NumberOfRepeatsLanguage)
+                if (API.Statistics.Count < Settings.NumberOfRepeatsLanguage)
                 {
                     CurrentWordNumber = new Random(unchecked((int)(DateTime.Now.Ticks))).Next(WordDatabase.Count);
                     NextWord();
                     Button_enable(true);
-                    TitleCount = $"{GetString(Resource.String.Repeated)} {Statistics.Count + 1}/{Settings.NumberOfRepeatsLanguage}";
+                    TitleCount = $"{GetString(Resource.String.Repeated)} {API.Statistics.Count + 1}/{Settings.NumberOfRepeatsLanguage}";
                 }
                 else
                 {
-                    DBStatistics.Insert(Statistics.True, Statistics.False, $"{DataBase.TableName}");
-                    Statistics.Delete();
+                    DBStatistics.Insert(API.Statistics.True, API.Statistics.False, $"{DataBase.TableName}");
+                    API.Statistics.Delete();
                     ViewModel.ToStatistic.Execute();
                     Finish();
                 }

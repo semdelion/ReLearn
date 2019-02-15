@@ -41,7 +41,7 @@ namespace ReLearn.Core.ViewModels.MainMenu
         {
             bool isImage = DBImages.DatabaseIsContain(DataBase.TableName.ToString());
             if (Settings.QuizEnable && Settings.BlitzEnable)
-                if (Statistics.Count != 0)
+                if (API.Statistics.Count != 0)
                     return Quiz(isImage);
                 else
                     return Settings.TypeOfRepetition == TypeOfRepetitions.Blitz ? Blitz(isImage) : Quiz(isImage);
@@ -49,8 +49,8 @@ namespace ReLearn.Core.ViewModels.MainMenu
                 return Quiz(isImage);
             else
             {
-                if (Statistics.Count != 0)
-                    Statistics.Delete();
+                if (API.Statistics.Count != 0)
+                    API.Statistics.Delete();
                 return Blitz(isImage);
             }
         }

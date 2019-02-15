@@ -61,7 +61,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Adapters\BackgroundConstructor.cs" />
+    <Compile Include="Helpers\Paints.cs" />
     <Compile Include="Helpers\RandomNumbers.cs" />
+    <Compile Include="Statistics\DrawStatistics.cs" />
     <Compile Include="Views\Menu\AddFragment.cs" />
     <Compile Include="Views\Menu\BaseFragment.cs" />
     <Compile Include="Views\Menu\FeedbackFragment.cs" />
@@ -87,7 +89,7 @@
     <Compile Include="Services\INavigationActivity.cs" />
     <Compile Include="Setup.cs" />
     <Compile Include="SplashScreen.cs" />
-    <Compile Include="Views\Background.cs" />
+    <Compile Include="Helpers\Background.cs" />
     <Compile Include="Views\Images\BlitzPollActivity.cs" />
     <Compile Include="Views\Images\LearnActivity.cs" />
     <Compile Include="Views\Images\RepeatActivity.cs" />
@@ -2921,6 +2923,16 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\custom_thumb_switch.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\TESTmainSTATISTICS.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\TESTGeneralSTATISTICS.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
