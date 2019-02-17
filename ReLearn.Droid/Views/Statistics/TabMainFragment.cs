@@ -40,26 +40,20 @@ namespace ReLearn.Droid.Views.Statistics
         private void CreateMainChart(LinearLayout viewLastStat)
         {
             using (Bitmap bitmapLastStat = Bitmap.CreateBitmap(
-                Resources.DisplayMetrics.WidthPixels - PixelConverter.DpToPX(20), 
-                Resources.DisplayMetrics.HeightPixels - PixelConverter.DpToPX(150), 
+                Resources.DisplayMetrics.WidthPixels - PixelConverter.DpToPX(20),
+                Resources.DisplayMetrics.HeightPixels - PixelConverter.DpToPX(150),
                 Bitmap.Config.Argb8888))
             {
                 Canvas canvasLastStat = new Canvas(bitmapLastStat);
-                var mainChart = new DrawStatistics(canvasLastStat);
-                mainChart.DrawChart(Database, StatisticsFragment.LightColor, StatisticsFragment.DarkColor, 15,15);
+                var mainChart = new DrawChart(canvasLastStat);
+                mainChart.DoDrawChart(Database, StatisticsFragment.LightColor, StatisticsFragment.DarkColor, Paints.Text);
                 viewLastStat.Background = new BitmapDrawable(Resources, bitmapLastStat);
             }
         }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            //return new GraphStatistics(inflater.Inflate(
-            //    Resource.Layout.TESTmainSTATISTICS, container, false).Context,
-            //    StatisticsFragment.LightColor, 
-            //    StatisticsFragment.DarkColor, 
-            //    DataBase.TableName.ToString()
-            //    );
-            Database = DBStatistics.GetData(DataBase.TableName.ToString());
+            Database = DBStatistics.GetData($"{DataBase.TableName}");
             if (Database.Count != 0)
             {
                 True = Database[Database.Count - 1].True;

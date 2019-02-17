@@ -63,6 +63,8 @@
     <Compile Include="Adapters\BackgroundConstructor.cs" />
     <Compile Include="Helpers\Paints.cs" />
     <Compile Include="Helpers\RandomNumbers.cs" />
+    <Compile Include="Statistics\BaseStatistics.cs" />
+    <Compile Include="Statistics\DrawChart.cs" />
     <Compile Include="Statistics\DrawStatistics.cs" />
     <Compile Include="Views\Menu\AddFragment.cs" />
     <Compile Include="Views\Menu\BaseFragment.cs" />
