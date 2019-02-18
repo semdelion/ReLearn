@@ -38,7 +38,7 @@
 		/>
 		<TextView
 			android:textColor			="@color/text_white"
-			tools:text					="Верные: 10, не верные: 13"
+			tools:text					="Верные: 10, неверные: 13"
 			android:fontFamily			="@font/myriadpro_semibold"
 			android:textSize			="12dp"
 			android:layout_width		="match_parent"

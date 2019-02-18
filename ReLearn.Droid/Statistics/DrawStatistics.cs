@@ -85,5 +85,57 @@ namespace ReLearn.Droid.Statistics
             Canvas.DrawRect(new RectF(paddingLeftRight, y0, paddingLeftRight + step * True, y1), TrueLine);
             Canvas.DrawRect(new RectF(paddingLeftRight + step * True, y0, _width - paddingLeftRight, y1), FalseLine);
         }
+
+        public void DrawPieChartWithText(float average, float sum, Color start, Color end, float width = 0.13f)
+        {
+            float Cx = _width / 2f,
+                  Cy = _height / 2f,
+                  strokeWidth = width * (_width <= _height ? _width : _height),
+                  Radius = (_width <= _height ? _width / 2f : _height / 2f) - strokeWidth;
+
+            Shader shader = new SweepGradient(Cx, Cy, end, start);
+            Paint paintMain = new Paint { Color = start, StrokeWidth = strokeWidth, AntiAlias = true };
+            Paint paintBack = new Paint { Color = Color.Rgb(29, 43, 59), StrokeWidth = strokeWidth, AntiAlias = true };
+            paintMain.SetStyle(Paint.Style.Stroke);
+            paintMain.SetShader(shader);
+            paintBack.SetStyle(Paint.Style.Stroke);
+
+            Canvas.DrawArc(new RectF(Cx - Radius, Cy - Radius, Cx + Radius, Cy + Radius), 0f, 360f, false, paintBack);
+            Canvas.Rotate(-90f, Cx, Cy);
+            Canvas.DrawArc(new RectF(Cx - Radius, Cy - Radius, Cx + Radius, Cy + Radius), 0.5f, 360f - average * (360f / sum), false, paintMain);
+            Canvas.Rotate(90f, Cx, Cy);
+            DrawText(_width * 20f / 100f, $"{RoundOfNumber(100 - average * 100f / sum)}%",  2.4f * _width / 10f, Cy - 33f * Radius / 100);
+        }
+
+        public void DrawText(float fontSize, string text, float left, float top, Color? c = null)
+        {
+            Typeface Plain = null;
+            Typeface bold = Typeface.Create(Plain, TypefaceStyle.Normal);
+            Paint paint = new Paint
+            {
+                AntiAlias = true,
+                TextSize = fontSize,
+                Color = c ?? Colors.White
+            };
+            paint.SetTypeface(bold);
+            Canvas.DrawText(Convert.ToString(text), left, top + fontSize, paint);
+        }
+
+        private static string RoundOfNumber(float number)
+        {
+            var numberChar = Convert.ToString(number);
+            if (numberChar.Length > 4)
+                numberChar = numberChar.Remove(4);
+            else if (numberChar.Contains(","))
+                numberChar += "0";
+            else
+            {
+                if (numberChar.Length == 2)
+                    numberChar += ".0";
+                else if (numberChar.Length == 1)
+                    numberChar += ".00";
+            }
+            return numberChar;
+        }
     }
 }
