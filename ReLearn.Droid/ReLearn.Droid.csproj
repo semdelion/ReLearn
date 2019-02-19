@@ -110,7 +110,6 @@
     <Compile Include="Views\SelectDictionary\SelectDictionaryPagerAdapter.cs" />
     <Compile Include="Views\SelectDictionary\TabImageFragment.cs" />
     <Compile Include="Views\SelectDictionary\TabLanguageFragment.cs" />
-    <Compile Include="Views\Statistics\StatisticsPagerAdapter.cs" />
     <Compile Include="Views\Statistics\TabGeneralFragment.cs" />
     <Compile Include="Views\Statistics\TabMainFragment.cs" />
   </ItemGroup>

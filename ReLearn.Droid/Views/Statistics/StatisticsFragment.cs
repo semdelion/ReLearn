@@ -4,9 +4,11 @@ using Android.Runtime;
 using Android.Support.Design.Widget;
 using Android.Support.V4.View;
 using Android.Views;
+using MvvmCross.Droid.Support.V4;
 using MvvmCross.Platforms.Android.Presenters.Attributes;
 using ReLearn.API.Database;
 using ReLearn.Core.ViewModels;
+using ReLearn.Core.ViewModels.Statistics;
 using ReLearn.Droid.Helpers;
 using ReLearn.Droid.Views.Menu;
 using ReLearn.Droid.Views.Statistics;
@@ -42,14 +44,23 @@ namespace ReLearn.Droid.Views.Fragments
             var view = base.OnCreateView(inflater, container, savedInstanceState);
             GetDate();
             ViewPager viewPager = view.FindViewById<ViewPager>(Resource.Id.pager);
-            StatisticsPagerAdapter myPagerAdapter = new StatisticsPagerAdapter(ChildFragmentManager);
-            viewPager.Adapter = myPagerAdapter;
+            if (viewPager != null)
+            {
+                var fragments = new List<MvxViewPagerFragmentInfo>
+                {
+                    new MvxViewPagerFragmentInfo("", "", typeof(TabMainFragment), typeof(MainStatisticsViewModel)),
+                    new MvxViewPagerFragmentInfo("", "", typeof(TabGeneralFragment), typeof(GeneralStatisticsViewModel))
+                };
+                viewPager.Adapter = new MvxFragmentStatePagerAdapter(Activity, ChildFragmentManager, fragments); 
+            }
+
             TabLayout tabLayout = view.FindViewById<TabLayout>(Resource.Id.tablayout);
 
             tabLayout.SetupWithViewPager(viewPager);
             tabLayout.GetTabAt(tabLayout.TabCount - 2).SetIcon(Resource.Drawable.ic_statistics_main);
             tabLayout.GetTabAt(tabLayout.TabCount - 1).SetIcon(Resource.Drawable.ic_statistics_general);
 
+          
             return view;
         }
     }
