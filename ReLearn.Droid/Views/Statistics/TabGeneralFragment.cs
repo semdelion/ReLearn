@@ -9,15 +9,19 @@ using ReLearn.Core.ViewModels.Statistics;
 using ReLearn.Droid.Helpers;
 using ReLearn.Droid.Statistics;
 using ReLearn.Droid.Views.Fragments;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace ReLearn.Droid.Views.Statistics
 {
-    public class TabGeneralFragment : MvxFragment<GeneralStatisticsViewModel>
+    public class TabGeneralFragment : MvxFragment<GeneralStatisticsViewModel>, ViewTreeObserver.IOnPreDrawListener
     {
         private List<DatabaseStatistics> Database { get; set; } = null;
         private List<DBStatistics> DatabaseStats { get; set; } = null;
+
+        public LinearLayout viewPieChart;
+        public LinearLayout viewDegreeOfStudy;
 
         private void CreateViewAnswersRatio(LinearLayout viewLastStat)
         {
@@ -70,18 +74,14 @@ namespace ReLearn.Droid.Views.Statistics
 
         private void CreateViewDegreeOfStudy(LinearLayout viewLastStat, LinearLayout viewPieChart)
         {
-            using (Bitmap bitmapLastStat = Bitmap.CreateBitmap(
-                Resources.DisplayMetrics.WidthPixels - PixelConverter.DpToPX(20) - (int)(0.39f * Resources.DisplayMetrics.WidthPixels),
-                PixelConverter.DpToPX(265), Bitmap.Config.Argb8888))
+            using (Bitmap bitmapLastStat = Bitmap.CreateBitmap(viewLastStat.Width, viewLastStat.Height, Bitmap.Config.Argb8888))
             {
                 Canvas canvas = new Canvas(bitmapLastStat);
                 var Stat = new DrawStatistics(canvas);
                 Stat.DrawBackground(6, 6, Paints.Background, Paints.Border, Paints.Gradient);
                 viewLastStat.Background = new BitmapDrawable(Resources, bitmapLastStat);
 
-                using (Bitmap bitmapPieChart = Bitmap.CreateBitmap(
-                    Resources.DisplayMetrics.WidthPixels - PixelConverter.DpToPX(20) - (int)(0.39f * Resources.DisplayMetrics.WidthPixels),
-                    PixelConverter.DpToPX(240), Bitmap.Config.Argb8888))
+                using (Bitmap bitmapPieChart = Bitmap.CreateBitmap(viewPieChart.Width, viewPieChart.Height, Bitmap.Config.Argb8888))
                 {
                     Canvas canvasChart = new Canvas(bitmapPieChart);
                     var StatChart = new DrawStatistics(canvasChart);
@@ -90,6 +90,7 @@ namespace ReLearn.Droid.Views.Statistics
                     viewPieChart.Background = new BitmapDrawable(Resources, bitmapPieChart);
                 }
             }
+            viewPieChart.ViewTreeObserver.RemoveOnPreDrawListener(this);
         }
 
         private void CreateViewPercentage(LinearLayout viewLastStat)
@@ -104,7 +105,6 @@ namespace ReLearn.Droid.Views.Statistics
                 viewLastStat.Background = new BitmapDrawable(Resources, bitmapLastStat);
             }
         }
-
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
@@ -121,18 +121,19 @@ namespace ReLearn.Droid.Views.Statistics
             var viewLearnedWords = view.FindViewById<LinearLayout>(Resource.Id.view_learned_words);
             CreateViewLearnedWords(viewLearnedWords);
 
-            var viewDegreeOfStudy = view.FindViewById<LinearLayout>(Resource.Id.view_degree_of_study);
-            var viewPieChart = view.FindViewById<LinearLayout>(Resource.Id.view_degree_of_study_pie_chart);
-            CreateViewDegreeOfStudy(viewDegreeOfStudy, viewPieChart);
-
+            viewDegreeOfStudy = view.FindViewById<LinearLayout>(Resource.Id.view_degree_of_study);
+            viewPieChart = view.FindViewById<LinearLayout>(Resource.Id.view_degree_of_study_pie_chart);
+            viewPieChart.ViewTreeObserver.AddOnPreDrawListener(this);
             var viewPercentage = view.FindViewById<LinearLayout>(Resource.Id.view_percentage_of_correct_answers);
             CreateViewPercentage(viewPercentage);
-
-
             return view;
         }
 
-
+        public bool OnPreDraw()
+        {
+            CreateViewDegreeOfStudy(viewDegreeOfStudy, viewPieChart);
+            return true;
+        }
     }
 }
 
