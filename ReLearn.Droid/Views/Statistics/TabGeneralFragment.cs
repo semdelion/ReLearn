@@ -17,9 +17,6 @@ namespace ReLearn.Droid.Views.Statistics
 {
     public class TabGeneralFragment : MvxFragment<GeneralStatisticsViewModel>, ViewTreeObserver.IOnPreDrawListener
     {
-        private List<DatabaseStatistics> Database { get; set; } = null;
-        private List<DBStatistics> DatabaseStats { get; set; } = null;
-
         public LinearLayout viewPieChart;
         public LinearLayout viewDegreeOfStudy;
 
@@ -32,8 +29,8 @@ namespace ReLearn.Droid.Views.Statistics
                 Canvas canvas = new Canvas(bitmapLastStat);
                 var Stat = new DrawStatistics(canvas);
                 Stat.DrawBackground(6, 6, Paints.Background, Paints.Border, Paints.Gradient);
-                int numberTrue = Database.Sum(r => r.True),
-                numberFalse = Database.Sum(r => r.False);
+                int numberTrue = ViewModel.Database.Sum(r => r.True),
+                numberFalse = ViewModel.Database.Sum(r => r.False);
                 Stat.ProgressLine(numberTrue, (numberFalse + numberTrue) == 0 ? 1 : numberFalse, 
                     StatisticsFragment.LightColor, StatisticsFragment.DarkColor, Paints.BackgroundLine);
                 viewLastStat.Background = new BitmapDrawable(Resources, bitmapLastStat);
@@ -49,8 +46,8 @@ namespace ReLearn.Droid.Views.Statistics
                 Canvas canvas= new Canvas(bitmapLastStat);
                 var Stat = new DrawStatistics(canvas);
                 Stat.DrawBackground(6, 6, Paints.Background, Paints.Border, Paints.Gradient);
-                int numberInconvenient = DatabaseStats.Count(r => r.NumberLearn == API.Settings.MaxNumberOfRepeats);
-                Stat.ProgressLine(numberInconvenient, DatabaseStats.Count - numberInconvenient,
+                int numberInconvenient = ViewModel.DatabaseStats.Count(r => r.NumberLearn == API.Settings.MaxNumberOfRepeats);
+                Stat.ProgressLine(numberInconvenient, ViewModel.DatabaseStats.Count - numberInconvenient,
                     StatisticsFragment.LightColor, StatisticsFragment.DarkColor, Paints.BackgroundLine);
                 viewLastStat.Background = new BitmapDrawable(Resources, bitmapLastStat);
             }
@@ -65,8 +62,8 @@ namespace ReLearn.Droid.Views.Statistics
                 Canvas canvas = new Canvas(bitmapLastStat);
                 var Stat = new DrawStatistics(canvas);
                 Stat.DrawBackground(6, 6, Paints.Background, Paints.Border, Paints.Gradient);
-                int numberLearned = DatabaseStats.Count(r => r.NumberLearn == 0);
-                Stat.ProgressLine(numberLearned, DatabaseStats.Count - numberLearned,
+                int numberLearned = ViewModel.DatabaseStats.Count(r => r.NumberLearn == 0);
+                Stat.ProgressLine(numberLearned, ViewModel.DatabaseStats.Count - numberLearned,
                    StatisticsFragment.LightColor, StatisticsFragment.DarkColor, Paints.BackgroundLine);
                 viewLastStat.Background = new BitmapDrawable(Resources, bitmapLastStat);
             }
@@ -85,7 +82,7 @@ namespace ReLearn.Droid.Views.Statistics
                 {
                     Canvas canvasChart = new Canvas(bitmapPieChart);
                     var StatChart = new DrawStatistics(canvasChart);
-                    float avgNumberLearnStat = API.Statistics.GetAverageNumberLearn(DatabaseStats);
+                    float avgNumberLearnStat = API.Statistics.GetAverageNumberLearn(ViewModel.DatabaseStats);
                     StatChart.DrawPieChartWithText(avgNumberLearnStat, API.Settings.StandardNumberOfRepeats, StatisticsFragment.LightColor, StatisticsFragment.DarkColor);
                     viewPieChart.Background = new BitmapDrawable(Resources, bitmapPieChart);
                 }
@@ -108,12 +105,7 @@ namespace ReLearn.Droid.Views.Statistics
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            Database = DBStatistics.GetData($"{DataBase.TableName}");
-            bool isContain = DBImages.DatabaseIsContain(DataBase.TableName.ToString());
-            DatabaseStats = isContain ? DBStatistics.GetImages(DataBase.TableName.ToString()) :
-                                      DBStatistics.GetWords(DataBase.TableName.ToString());
-
-            var view = inflater.Inflate(Resource.Layout.TESTGeneralSTATISTICS, container, false);
+            var view = inflater.Inflate(Resource.Layout.fragment_tab_statistics_general, container, false);
             var viewAnswersRatio = view.FindViewById<LinearLayout>(Resource.Id.answers_ratio);
             CreateViewAnswersRatio(viewAnswersRatio);
             var viewAkwardWord = view.FindViewById<LinearLayout>(Resource.Id.view_akward_word);

@@ -19,10 +19,6 @@ namespace ReLearn.Droid.Views.Statistics
 {
     public class TabMainFragment : MvxFragment<MainStatisticsViewModel>
     {
-        private List<DatabaseStatistics> Database { get;  set; } = null;
-        private int? True { get; set; } = null;
-        private int? False { get; set; } = null;
-
         private void CreateLastStat(LinearLayout viewLastStat)
         {
             using (Bitmap bitmapLastStat = Bitmap.CreateBitmap(
@@ -32,7 +28,7 @@ namespace ReLearn.Droid.Views.Statistics
                 Canvas canvasLastStat = new Canvas(bitmapLastStat);
                 var lastStat = new DrawStatistics(canvasLastStat);
                 lastStat.DrawBackground(6, 6, Paints.Background, Paints.Border, Paints.Gradient);
-                lastStat.ProgressLine(True ?? 0, False ?? 1, StatisticsFragment.LightColor, StatisticsFragment.DarkColor, Paints.BackgroundLine);
+                lastStat.ProgressLine(ViewModel.True ?? 0, ViewModel.False ?? 1, StatisticsFragment.LightColor, StatisticsFragment.DarkColor, Paints.BackgroundLine);
                 viewLastStat.Background = new BitmapDrawable(Resources, bitmapLastStat);
             }
         }
@@ -46,20 +42,15 @@ namespace ReLearn.Droid.Views.Statistics
             {
                 Canvas canvasLastStat = new Canvas(bitmapLastStat);
                 var mainChart = new DrawChart(canvasLastStat);
-                mainChart.DoDrawChart(Database, StatisticsFragment.LightColor, StatisticsFragment.DarkColor, Paints.Text);
+                mainChart.DoDrawChart(ViewModel.Database, StatisticsFragment.LightColor, StatisticsFragment.DarkColor, Paints.Text);
                 viewLastStat.Background = new BitmapDrawable(Resources, bitmapLastStat);
             }
         }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            Database = DBStatistics.GetData($"{DataBase.TableName}");
-            if (Database.Count != 0)
-            {
-                True = Database[Database.Count - 1].True;
-                False = Database[Database.Count - 1].False;
-            }
-            var view = inflater.Inflate(Resource.Layout.TESTmainSTATISTICS, container, false);
+
+            var view = inflater.Inflate(Resource.Layout.fragment_tab_statistics_main, container, false);
             var viewLastStat = view.FindViewById<LinearLayout>(Resource.Id.view_statistics_last_test);
             CreateLastStat(viewLastStat);
             var viewMainChart = view.FindViewById<LinearLayout>(Resource.Id.view_statistics_diagram);

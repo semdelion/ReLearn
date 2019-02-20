@@ -2705,12 +2705,6 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\fragment_tab_statistics_general.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\layout\fragment_tab_statistics_main.xml" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\drawable\ic_statistics_main.png" />
   </ItemGroup>
   <ItemGroup>
@@ -2926,12 +2920,12 @@
     <AndroidResource Include="Resources\drawable\custom_thumb_switch.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\TESTmainSTATISTICS.axml">
+    <AndroidResource Include="Resources\layout\fragment_tab_statistics_main.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\TESTGeneralSTATISTICS.axml">
+    <AndroidResource Include="Resources\layout\fragment_tab_statistics_general.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

@@ -11,17 +11,17 @@ namespace ReLearn.Droid
     class GraphStatistics : View
     {
         Canvas TheCanvas;
-        readonly Color Color_Diagram_1;
-        readonly Color Color_Diagram_2;
+        readonly Color ColorDiagram1;
+        readonly Color ColorDiagram2;
         readonly string TabelName;
-        readonly Color background_color = new Color(Color.Argb(150, 16, 19, 38));
-        readonly Paint paint_border = new Paint { StrokeWidth = 4, Color = Colors.White, AntiAlias = true };
-        readonly Paint paint_text = new Paint { TextSize = 25, StrokeWidth = 4, Color = Colors.White, AntiAlias = true };
+        readonly Color backgroundColor = new Color(Color.Argb(150, 16, 19, 38));
+        readonly Paint paintBorder = new Paint { StrokeWidth = 4, Color = Colors.White, AntiAlias = true };
+        readonly Paint paintText = new Paint { TextSize = 25, StrokeWidth = 4, Color = Colors.White, AntiAlias = true };
 
         public GraphStatistics(Context context, Color color_diagram_1, Color color_diagram_2, string Table_Name) : base(context)
         {
-            Color_Diagram_1 = color_diagram_1;
-            Color_Diagram_2 = color_diagram_2;
+            ColorDiagram1 = color_diagram_1;
+            ColorDiagram2 = color_diagram_2;
             TabelName = Table_Name;
         }
 
@@ -70,7 +70,7 @@ namespace ReLearn.Droid
             {
                 if (i >= n_count)
                 {
-                    Shader shader = new LinearGradient(left + 2f, bottom - step_height, left + step_width - 2f, bottom, Color_Diagram_1, Color_Diagram_2, TileMode.Clamp);
+                    Shader shader = new LinearGradient(left + 2f, bottom - step_height, left + step_width - 2f, bottom, ColorDiagram1, ColorDiagram2, TileMode.Clamp);
                     Paint paint = new Paint { AntiAlias = true };
                     paint.SetShader(shader);
                     TheCanvas.DrawRoundRect(new RectF(left + padding, bottom - ((step_height/(s.True+s.False)) * s.True), left + step_width - padding, bottom), 0, 0, paint);
@@ -86,28 +86,28 @@ namespace ReLearn.Droid
             var Database_Stat = DBStatistics.GetData(TabelName);
             base.OnDraw(TheCanvas);
 
-            paint_text.TextSize = 2.5f * (TheCanvas.Height + TheCanvas.Width) / 200;
-            paint_border.SetStyle(Paint.Style.Stroke);
+            paintText.TextSize = 2.5f * (TheCanvas.Height + TheCanvas.Width) / 200;
+            paintBorder.SetStyle(Paint.Style.Stroke);
 
             float h_rate = TheCanvas.Height / 100f,
                   w_rate = TheCanvas.Width / 100f,
                   left = 14f * w_rate, right = 93f * w_rate,
                   top = 7f * h_rate, bottom = 70f * h_rate;
 
-            Ordinate(left - 10f, bottom, bottom - top, paint_text);
-            Abscissa(left, bottom + 10f, right - left, paint_text, Database_Stat.Count);
+            Ordinate(left - 10f, bottom, bottom - top, paintText);
+            Abscissa(left, bottom + 10f, right - left, paintText, Database_Stat.Count);
             Graph_layout(left, bottom, top, right);
             Diagram(Database_Stat, left, right, bottom, top);
 
-            FrameStatistics LastStat = new FrameStatistics(7f * w_rate, bottom + 10f * h_rate, right, 96f * h_rate, background_color);
-            LastStat.DrawBorder(TheCanvas, paint_border);
+            FrameStatistics LastStat = new FrameStatistics(7f * w_rate, bottom + 10f * h_rate, right, 96f * h_rate, backgroundColor);
+            LastStat.DrawBorder(TheCanvas, paintBorder);
             int? True = null, False = null;
             if (Database_Stat.Count != 0)
             {
                 True = Database_Stat[Database_Stat.Count - 1].True;
                 False = Database_Stat[Database_Stat.Count - 1].False;
             }
-            LastStat.ProgressLine(TheCanvas, True??0, False??1, Color_Diagram_1, Color_Diagram_2);
+            LastStat.ProgressLine(TheCanvas, True??0, False??1, ColorDiagram1, ColorDiagram2);
             string TextLastStat = $"{Context.GetString(Resource.String.Correct)}: {True??0}, {Context.GetString(Resource.String.Incorrect_Up)}: {False??0}";
             if (TheCanvas.Height > TheCanvas.Width)
             {

@@ -2,6 +2,7 @@
 <RelativeLayout
     xmlns:android         ="http://schemas.android.com/apk/res/android"
     xmlns:tools           ="http://schemas.android.com/tools"
+	xmlns:local			  ="http://schemas.android.com/apk/res-auto"
     android:layout_width  ="match_parent"
     android:layout_height ="match_parent">
 	<LinearLayout
@@ -27,6 +28,7 @@
 		android:layout_marginBottom		="@dimen/view_margin_statistics"
 		android:layout_alignParentBottom="true">
 		<TextView
+			local:MvxBind				="Text LastTest"
 			android:textColor			="@color/text_white"
 			tools:text					="Последнее тестирование"
 			android:fontFamily			="@font/myriadpro_semibold"
@@ -37,6 +39,7 @@
 			android:layout_marginLeft	="@dimen/view_margin_statistics"
 		/>
 		<TextView
+			local:MvxBind				="Text Answers"
 			android:textColor			="@color/text_white"
 			tools:text					="Верные: 10, неверные: 13"
 			android:fontFamily			="@font/myriadpro_semibold"
