@@ -4,6 +4,7 @@ using Android.OS;
 using Android.Views;
 using Android.Widget;
 using MvvmCross.Droid.Support.V4;
+using MvvmCross.Platforms.Android.Binding.BindingContext;
 using ReLearn.API.Database;
 using ReLearn.Core.ViewModels.Statistics;
 using ReLearn.Droid.Helpers;
@@ -105,7 +106,8 @@ namespace ReLearn.Droid.Views.Statistics
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            var view = inflater.Inflate(Resource.Layout.fragment_tab_statistics_general, container, false);
+            base.OnCreateView(inflater, container, savedInstanceState);
+            var view = this.BindingInflate(Resource.Layout.fragment_tab_statistics_general, container, false);
             var viewAnswersRatio = view.FindViewById<LinearLayout>(Resource.Id.answers_ratio);
             CreateViewAnswersRatio(viewAnswersRatio);
             var viewAkwardWord = view.FindViewById<LinearLayout>(Resource.Id.view_akward_word);

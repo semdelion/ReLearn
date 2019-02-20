@@ -36,17 +36,17 @@
 			android:layout_width		="match_parent"
 			android:layout_height		="wrap_content"
 			android:layout_marginTop	="5dp"
-			android:layout_marginLeft	="@dimen/view_margin_statistics"
+			android:layout_marginLeft	="@dimen/margin_left"
 		/>
 		<TextView
 			local:MvxBind				="Text Answers"
-			android:textColor			="@color/text_white"
+			android:textColor			="@color/hint_text_white"
 			tools:text					="Верные: 10, неверные: 13"
 			android:fontFamily			="@font/myriadpro_semibold"
 			android:textSize			="12dp"
 			android:layout_width		="match_parent"
 			android:layout_height		="wrap_content"
-			android:layout_marginLeft	="@dimen/view_margin_statistics"
+			android:layout_marginLeft	="@dimen/margin_left"
 		/>
 	</LinearLayout >
 </RelativeLayout>

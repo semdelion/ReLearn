@@ -1,6 +1,7 @@
 ﻿using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 using ReLearn.API.Database;
+using ReLearn.Core.Localization;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,8 +14,9 @@ namespace ReLearn.Core.ViewModels.Statistics
         public int? True { get; private set; }
         public int? False { get; private set; }
 
-        public string Answers { get; set; }
-        public string LastTest = "Lasttest";
+        public string Answers => $"{AppResources.MainStatisticsViewModel_Correct}:" +
+            $" {(True??0)}, {AppResources.MainStatisticsViewModel_Incorrect}: {False??0}";
+        public string LastTest => AppResources.MainStatisticsViewModel_LastTest;
 
 
         public MainStatisticsViewModel()

@@ -22,7 +22,7 @@ namespace ReLearn.Core.Localization {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class AppResources {
+    public class AppResources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace ReLearn.Core.Localization {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ReLearn.Core.Localization.AppResources", typeof(AppResources).Assembly);
@@ -51,7 +51,7 @@ namespace ReLearn.Core.Localization {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace ReLearn.Core.Localization {
         /// <summary>
         ///   Looks up a localized string similar to Enter word!.
         /// </summary>
-        internal static string AddViewModel_EnterWord {
+        public static string AddViewModel_EnterWord {
             get {
                 return ResourceManager.GetString("AddViewModel.EnterWord", resourceCulture);
             }
@@ -72,7 +72,7 @@ namespace ReLearn.Core.Localization {
         /// <summary>
         ///   Looks up a localized string similar to Word added!.
         /// </summary>
-        internal static string AddViewModel_WordAdded {
+        public static string AddViewModel_WordAdded {
             get {
                 return ResourceManager.GetString("AddViewModel.WordAdded", resourceCulture);
             }
@@ -81,7 +81,7 @@ namespace ReLearn.Core.Localization {
         /// <summary>
         ///   Looks up a localized string similar to The word exists!.
         /// </summary>
-        internal static string AddViewModel_WordExists {
+        public static string AddViewModel_WordExists {
             get {
                 return ResourceManager.GetString("AddViewModel.WordExists", resourceCulture);
             }
@@ -90,7 +90,7 @@ namespace ReLearn.Core.Localization {
         /// <summary>
         ///   Looks up a localized string similar to Data entered incorrectly.
         /// </summary>
-        internal static string DictionaryReplenishmentViewModel_DataCorrectness {
+        public static string DictionaryReplenishmentViewModel_DataCorrectness {
             get {
                 return ResourceManager.GetString("DictionaryReplenishmentViewModel.DataCorrectness", resourceCulture);
             }
@@ -99,7 +99,7 @@ namespace ReLearn.Core.Localization {
         /// <summary>
         ///   Looks up a localized string similar to Words have been added to your dictionary.
         /// </summary>
-        internal static string DictionaryReplenishmentViewModel_WordsAdded {
+        public static string DictionaryReplenishmentViewModel_WordsAdded {
             get {
                 return ResourceManager.GetString("DictionaryReplenishmentViewModel.WordsAdded", resourceCulture);
             }
@@ -108,16 +108,43 @@ namespace ReLearn.Core.Localization {
         /// <summary>
         ///   Looks up a localized string similar to Next.
         /// </summary>
-        internal static string LearnViewModel_Next {
+        public static string LearnViewModel_Next {
             get {
                 return ResourceManager.GetString("LearnViewModel.Next", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Correct.
+        /// </summary>
+        public static string MainStatisticsViewModel_Correct {
+            get {
+                return ResourceManager.GetString("MainStatisticsViewModel.Correct", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Incorrect.
+        /// </summary>
+        public static string MainStatisticsViewModel_Incorrect {
+            get {
+                return ResourceManager.GetString("MainStatisticsViewModel.Incorrect", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Last testing.
+        /// </summary>
+        public static string MainStatisticsViewModel_LastTest {
+            get {
+                return ResourceManager.GetString("MainStatisticsViewModel.LastTest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Learn.
         /// </summary>
-        internal static string MainViewModel_Learn {
+        public static string MainViewModel_Learn {
             get {
                 return ResourceManager.GetString("MainViewModel.Learn", resourceCulture);
             }
@@ -126,7 +153,7 @@ namespace ReLearn.Core.Localization {
         /// <summary>
         ///   Looks up a localized string similar to Repeat.
         /// </summary>
-        internal static string MainViewModel_Repeat {
+        public static string MainViewModel_Repeat {
             get {
                 return ResourceManager.GetString("MainViewModel.Repeat", resourceCulture);
             }
@@ -135,7 +162,7 @@ namespace ReLearn.Core.Localization {
         /// <summary>
         ///   Looks up a localized string similar to Cancel.
         /// </summary>
-        internal static string SettingsMenuViewModel_Cancel {
+        public static string SettingsMenuViewModel_Cancel {
             get {
                 return ResourceManager.GetString("SettingsMenuViewModel.Cancel", resourceCulture);
             }
@@ -144,7 +171,7 @@ namespace ReLearn.Core.Localization {
         /// <summary>
         ///   Looks up a localized string similar to Choose language.
         /// </summary>
-        internal static string SettingsMenuViewModel_ChooseLanguage {
+        public static string SettingsMenuViewModel_ChooseLanguage {
             get {
                 return ResourceManager.GetString("SettingsMenuViewModel.ChooseLanguage", resourceCulture);
             }
@@ -153,7 +180,7 @@ namespace ReLearn.Core.Localization {
         /// <summary>
         ///   Looks up a localized string similar to Choose pronunciation.
         /// </summary>
-        internal static string SettingsMenuViewModel_ChoosePronunciation {
+        public static string SettingsMenuViewModel_ChoosePronunciation {
             get {
                 return ResourceManager.GetString("SettingsMenuViewModel.ChoosePronunciation", resourceCulture);
             }

@@ -135,6 +135,15 @@
   <data name="LearnViewModel.Next" xml:space="preserve">
     <value>Дальше</value>
   </data>
+  <data name="MainStatisticsViewModel.Correct" xml:space="preserve">
+    <value>Верные</value>
+  </data>
+  <data name="MainStatisticsViewModel.Incorrect" xml:space="preserve">
+    <value>неверные</value>
+  </data>
+  <data name="MainStatisticsViewModel.LastTest" xml:space="preserve">
+    <value>Последнее тестирование</value>
+  </data>
   <data name="MainViewModel.Learn" xml:space="preserve">
     <value>Учить</value>
   </data>
