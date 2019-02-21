@@ -132,6 +132,48 @@
   <data name="DictionaryReplenishmentViewModel.WordsAdded" xml:space="preserve">
     <value>Слова были добавлены в ваш словарь</value>
   </data>
+  <data name="GeneralStatisticsViewModel.Correct" xml:space="preserve">
+    <value>Верные</value>
+  </data>
+  <data name="GeneralStatisticsViewModel.DegreeOfStudy" xml:space="preserve">
+    <value>Степень изученности</value>
+  </data>
+  <data name="GeneralStatisticsViewModel.Incorrect" xml:space="preserve">
+    <value>неверные</value>
+  </data>
+  <data name="GeneralStatisticsViewModel.NumberCorrectAnswers" xml:space="preserve">
+    <value>Соотношение ответов</value>
+  </data>
+  <data name="GeneralStatisticsViewModel.NumberInconvenientFilms" xml:space="preserve">
+    <value>Количество затруднительных фильмов</value>
+  </data>
+  <data name="GeneralStatisticsViewModel.NumberInconvenientFlags" xml:space="preserve">
+    <value>Количество затруднительных флагов</value>
+  </data>
+  <data name="GeneralStatisticsViewModel.NumberInconvenientImages" xml:space="preserve">
+    <value>Количество затруднительных изображений</value>
+  </data>
+  <data name="GeneralStatisticsViewModel.NumberInconvenientWords" xml:space="preserve">
+    <value>Количество затруднительных слов</value>
+  </data>
+  <data name="GeneralStatisticsViewModel.NumberLearnedFilms" xml:space="preserve">
+    <value>Количество изученных фильмов</value>
+  </data>
+  <data name="GeneralStatisticsViewModel.NumberLearnedFlags" xml:space="preserve">
+    <value>Количество изученных флагов</value>
+  </data>
+  <data name="GeneralStatisticsViewModel.NumberLearnedImages" xml:space="preserve">
+    <value>Количество изученных изображений</value>
+  </data>
+  <data name="GeneralStatisticsViewModel.NumberLearnedWords" xml:space="preserve">
+    <value>Количество изученных слов</value>
+  </data>
+  <data name="GeneralStatisticsViewModel.NumberOfTests" xml:space="preserve">
+    <value>количество тестов</value>
+  </data>
+  <data name="GeneralStatisticsViewModel.Of" xml:space="preserve">
+    <value>из</value>
+  </data>
   <data name="LearnViewModel.Next" xml:space="preserve">
     <value>Дальше</value>
   </data>

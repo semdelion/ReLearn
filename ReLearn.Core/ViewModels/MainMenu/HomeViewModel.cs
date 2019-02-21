@@ -3,6 +3,7 @@ using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 using ReLearn.API;
 using ReLearn.API.Database;
+using ReLearn.Core.ViewModels.MainMenu.SelectDictionary;
 using System.Threading.Tasks;
 
 namespace ReLearn.Core.ViewModels.MainMenu
@@ -63,6 +64,5 @@ namespace ReLearn.Core.ViewModels.MainMenu
         }
 
         private Task<bool> NavigateToSelectDictionary() => NavigationService.Navigate<SelectDictionaryViewModel>();
-
     }
 }

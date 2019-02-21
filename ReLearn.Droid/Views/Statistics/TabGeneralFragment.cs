@@ -5,13 +5,10 @@ using Android.Views;
 using Android.Widget;
 using MvvmCross.Droid.Support.V4;
 using MvvmCross.Platforms.Android.Binding.BindingContext;
-using ReLearn.API.Database;
-using ReLearn.Core.ViewModels.Statistics;
+using ReLearn.Core.ViewModels.MainMenu.Statistics;
 using ReLearn.Droid.Helpers;
 using ReLearn.Droid.Statistics;
 using ReLearn.Droid.Views.Fragments;
-using System;
-using System.Collections.Generic;
 using System.Linq;
 
 namespace ReLearn.Droid.Views.Statistics

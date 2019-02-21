@@ -8,7 +8,7 @@ using MvvmCross.Droid.Support.V4;
 using MvvmCross.Platforms.Android.Presenters.Attributes;
 using ReLearn.API.Database;
 using ReLearn.Core.ViewModels;
-using ReLearn.Core.ViewModels.Statistics;
+using ReLearn.Core.ViewModels.MainMenu.Statistics;
 using ReLearn.Droid.Helpers;
 using ReLearn.Droid.Views.Menu;
 using ReLearn.Droid.Views.Statistics;

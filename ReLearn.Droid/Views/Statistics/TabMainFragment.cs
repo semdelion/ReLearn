@@ -1,20 +1,14 @@
 ﻿using Android.Graphics;
 using Android.Graphics.Drawables;
 using Android.OS;
-using Android.Util;
 using Android.Views;
 using Android.Widget;
-using MvvmCross;
 using MvvmCross.Droid.Support.V4;
-using MvvmCross.Platform.Droid.Platform;
 using MvvmCross.Platforms.Android.Binding.BindingContext;
-using ReLearn.API.Database;
-using ReLearn.Core.ViewModels.Statistics;
+using ReLearn.Core.ViewModels.MainMenu.Statistics;
 using ReLearn.Droid.Helpers;
 using ReLearn.Droid.Statistics;
 using ReLearn.Droid.Views.Fragments;
-using System;
-using System.Collections.Generic;
 
 namespace ReLearn.Droid.Views.Statistics
 {

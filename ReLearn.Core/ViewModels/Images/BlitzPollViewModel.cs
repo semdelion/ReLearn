@@ -1,6 +1,7 @@
 ﻿using MvvmCross.Commands;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
+using ReLearn.Core.ViewModels.MainMenu.Statistics;
 using System.Threading.Tasks;
 
 namespace ReLearn.Core.ViewModels.Images

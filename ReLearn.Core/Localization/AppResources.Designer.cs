@@ -106,6 +106,132 @@ namespace ReLearn.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Correct.
+        /// </summary>
+        public static string GeneralStatisticsViewModel_Correct {
+            get {
+                return ResourceManager.GetString("GeneralStatisticsViewModel.Correct", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Degree of study.
+        /// </summary>
+        public static string GeneralStatisticsViewModel_DegreeOfStudy {
+            get {
+                return ResourceManager.GetString("GeneralStatisticsViewModel.DegreeOfStudy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to incorrect.
+        /// </summary>
+        public static string GeneralStatisticsViewModel_Incorrect {
+            get {
+                return ResourceManager.GetString("GeneralStatisticsViewModel.Incorrect", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Answer Ratio.
+        /// </summary>
+        public static string GeneralStatisticsViewModel_NumberCorrectAnswers {
+            get {
+                return ResourceManager.GetString("GeneralStatisticsViewModel.NumberCorrectAnswers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Number of inconvenient films.
+        /// </summary>
+        public static string GeneralStatisticsViewModel_NumberInconvenientFilms {
+            get {
+                return ResourceManager.GetString("GeneralStatisticsViewModel.NumberInconvenientFilms", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Number of inconvenient flags.
+        /// </summary>
+        public static string GeneralStatisticsViewModel_NumberInconvenientFlags {
+            get {
+                return ResourceManager.GetString("GeneralStatisticsViewModel.NumberInconvenientFlags", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Number of inconvenient images.
+        /// </summary>
+        public static string GeneralStatisticsViewModel_NumberInconvenientImages {
+            get {
+                return ResourceManager.GetString("GeneralStatisticsViewModel.NumberInconvenientImages", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Number of inconvenient words.
+        /// </summary>
+        public static string GeneralStatisticsViewModel_NumberInconvenientWords {
+            get {
+                return ResourceManager.GetString("GeneralStatisticsViewModel.NumberInconvenientWords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Number of films learned.
+        /// </summary>
+        public static string GeneralStatisticsViewModel_NumberLearnedFilms {
+            get {
+                return ResourceManager.GetString("GeneralStatisticsViewModel.NumberLearnedFilms", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Number of flags learned.
+        /// </summary>
+        public static string GeneralStatisticsViewModel_NumberLearnedFlags {
+            get {
+                return ResourceManager.GetString("GeneralStatisticsViewModel.NumberLearnedFlags", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Number of images learned.
+        /// </summary>
+        public static string GeneralStatisticsViewModel_NumberLearnedImages {
+            get {
+                return ResourceManager.GetString("GeneralStatisticsViewModel.NumberLearnedImages", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Number of words learned.
+        /// </summary>
+        public static string GeneralStatisticsViewModel_NumberLearnedWords {
+            get {
+                return ResourceManager.GetString("GeneralStatisticsViewModel.NumberLearnedWords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to number of tests.
+        /// </summary>
+        public static string GeneralStatisticsViewModel_NumberOfTests {
+            get {
+                return ResourceManager.GetString("GeneralStatisticsViewModel.NumberOfTests", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to of.
+        /// </summary>
+        public static string GeneralStatisticsViewModel_Of {
+            get {
+                return ResourceManager.GetString("GeneralStatisticsViewModel.Of", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Next.
         /// </summary>
         public static string LearnViewModel_Next {

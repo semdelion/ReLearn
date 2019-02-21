@@ -1,7 +1,7 @@
 ﻿using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 
-namespace ReLearn.Core.ViewModels
+namespace ReLearn.Core.ViewModels.MainMenu.Statistics
 {
     public class StatisticViewModel : MvxViewModel
     {

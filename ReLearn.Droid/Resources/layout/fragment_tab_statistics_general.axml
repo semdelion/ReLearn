@@ -26,8 +26,9 @@
 				android:layout_weight			="0.61"
 				android:layout_height			="match_parent">
 				<TextView
+					local:MvxBind				="Text DegreeOfStudy"
 					android:textColor			="@color/text_white"
-					tools:text					="Последнее тестирование1"
+					tools:text					="Степерь Изученности"
 					android:fontFamily			="@font/myriadpro_semibold"
 					android:textSize			="16dp"
 					android:layout_width		="match_parent"
@@ -76,6 +77,7 @@
 		android:layout_marginBottom		="@dimen/view_margin_statistics"
 		android:layout_above			="@+id/view_akward_word">
 		<TextView
+			local:MvxBind				="Text NumberLearned"
 			android:textColor			="@color/text_white"
 			tools:text					="Количество изученных слов"
 			android:fontFamily			="@font/myriadpro_semibold"
@@ -83,16 +85,17 @@
 			android:layout_width		="match_parent"
 			android:layout_height		="wrap_content"
 			android:layout_marginTop	="5dp"
-			android:layout_marginLeft	="@dimen/view_margin_statistics"
+			android:layout_marginLeft	="@dimen/margin_left"
 		/>
 		<TextView
-			android:textColor			="@color/text_white"
+			local:MvxBind				="Text NumberLearnedCount"
+			android:textColor			="@color/hint_text_white"
 			tools:text					="0 из 10"
 			android:fontFamily			="@font/myriadpro_semibold"
 			android:textSize			="12dp"
 			android:layout_width		="match_parent"
 			android:layout_height		="wrap_content"
-			android:layout_marginLeft	="@dimen/view_margin_statistics"
+			android:layout_marginLeft	="@dimen/margin_left"
 		/>
 	</LinearLayout >
 	<LinearLayout 
@@ -106,6 +109,7 @@
 		android:layout_marginBottom		="@dimen/view_margin_statistics"
 		android:layout_above			="@+id/answers_ratio">
 		<TextView
+			local:MvxBind				="Text NumberInconvenient"
 			android:textColor			="@color/text_white"
 			tools:text					="Количество затруднительных слов"
 			android:fontFamily			="@font/myriadpro_semibold"
@@ -113,16 +117,17 @@
 			android:layout_width		="match_parent"
 			android:layout_height		="wrap_content"
 			android:layout_marginTop	="5dp"
-			android:layout_marginLeft	="@dimen/view_margin_statistics"
+			android:layout_marginLeft	="@dimen/margin_left"
 		/>
 		<TextView
-			android:textColor			="@color/text_white"
+			local:MvxBind				="Text NumberInconvenientCount"
+			android:textColor			="@color/hint_text_white"
 			tools:text					="0 из 10"
 			android:fontFamily			="@font/myriadpro_semibold"
 			android:textSize			="12dp"
 			android:layout_width		="match_parent"
 			android:layout_height		="wrap_content"
-			android:layout_marginLeft	="@dimen/view_margin_statistics"
+			android:layout_marginLeft	="@dimen/margin_left"
 		/>
 	</LinearLayout >
 	<LinearLayout 
@@ -136,6 +141,7 @@
 		android:layout_marginBottom		="@dimen/view_margin_statistics"
 		android:layout_alignParentBottom="true">
 		<TextView
+			local:MvxBind				="Text NumberCorrectAnswers"
 			android:textColor			="@color/text_white"
 			tools:text					="Соотношение ответов:"
 			android:fontFamily			="@font/myriadpro_semibold"
@@ -143,16 +149,17 @@
 			android:layout_width		="match_parent"
 			android:layout_height		="wrap_content"
 			android:layout_marginTop	="5dp"
-			android:layout_marginLeft	="@dimen/view_margin_statistics"
+			android:layout_marginLeft	="@dimen/margin_left"
 		/>
 		<TextView
-			android:textColor			="@color/text_white"
+			local:MvxBind				="Text NumberCorrectAndIncorrect"
+			android:textColor			="@color/hint_text_white"
 			tools:text					="Верные 10, неверные 13, количество тестов 23"
 			android:fontFamily			="@font/myriadpro_semibold"
 			android:textSize			="12dp"
 			android:layout_width		="match_parent"
 			android:layout_height		="wrap_content"
-			android:layout_marginLeft	="@dimen/view_margin_statistics"
+			android:layout_marginLeft	="@dimen/margin_left"
 		/>
 	</LinearLayout >
 </RelativeLayout>

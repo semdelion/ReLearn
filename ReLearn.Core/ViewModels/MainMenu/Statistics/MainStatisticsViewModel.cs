@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace ReLearn.Core.ViewModels.Statistics
+namespace ReLearn.Core.ViewModels.MainMenu.Statistics
 {
     public class MainStatisticsViewModel : MvxViewModel
     {

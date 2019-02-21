@@ -10,6 +10,7 @@ using MvvmCross.Droid.Support.V7.AppCompat;
 using MvvmCross.Platforms.Android.Presenters.Attributes;
 using ReLearn.API.Database;
 using ReLearn.Core.ViewModels;
+using ReLearn.Core.ViewModels.MainMenu.SelectDictionary;
 using ReLearn.Droid.Views.Menu;
 using System;
 
