@@ -11,41 +11,49 @@ using ReLearn.Droid.Helpers;
 using ReLearn.Droid.Statistics;
 using ReLearn.Droid.Views.Fragments;
 using System;
+using static Android.Views.View;
 
 namespace ReLearn.Droid.Views.Statistics
 {
     public class TabMainFragment : MvxFragment<MainStatisticsViewModel>
     {
+        static int n =10;
         private static LinearLayout ViewMainChart;
-
         private void CreateLastStat(LinearLayout viewLastStat)
         {
             using (Bitmap bitmapLastStat = Bitmap.CreateBitmap(
                 Resources.DisplayMetrics.WidthPixels - PixelConverter.DpToPX(20), 
                 PixelConverter.DpToPX(70), Bitmap.Config.Argb4444))
             {
-                Canvas canvasLastStat = new Canvas(bitmapLastStat);
-                var lastStat = new DrawStatistics(canvasLastStat);
-                lastStat.DrawBackground(6, 6, Paints.Background, Paints.Border, Paints.Gradient);
-                lastStat.ProgressLine(ViewModel.True ?? 0, ViewModel.False ?? 1, StatisticsFragment.LightColor, StatisticsFragment.DarkColor, Paints.BackgroundLine);
-                viewLastStat.Background = new BitmapDrawable(Resources, bitmapLastStat);
+                using (Canvas canvasLastStat = new Canvas(bitmapLastStat))
+                {
+                    var lastStat = new DrawStatistics(canvasLastStat);
+                    lastStat.DrawBackground(6, 6, Paints.Background, Paints.Border, Paints.Gradient);
+                    lastStat.ProgressLine(ViewModel.True ?? 0, ViewModel.False ?? 1, StatisticsFragment.LightColor, StatisticsFragment.DarkColor, Paints.BackgroundLine);
+                    viewLastStat.Background = new BitmapDrawable(Resources, bitmapLastStat);
+                }
             }
         }
 
         private void CreateMainChart(int abscissa = 10, int count = 10)
         {
+
             using (Bitmap bitmapLastStat = Bitmap.CreateBitmap(
                 Resources.DisplayMetrics.WidthPixels - PixelConverter.DpToPX(20),
                 Resources.DisplayMetrics.HeightPixels - PixelConverter.DpToPX(150),
                 Bitmap.Config.Argb4444))
             {
-                Canvas canvasLastStat = new Canvas(bitmapLastStat);
-                var mainChart = new DrawChart(canvasLastStat);
-                mainChart.StepAbscissa = count;
-                mainChart.CountAbscissa = abscissa;
-                mainChart.DoDrawChart(ViewModel.Database, StatisticsFragment.LightColor, StatisticsFragment.DarkColor, Paints.Text);
-                ViewMainChart.Background = new BitmapDrawable(Resources, bitmapLastStat);
+                using (Canvas canvasLastStat = new Canvas(bitmapLastStat))
+                {
+                    var mainChart = new DrawChart(canvasLastStat);
+                    mainChart.StepAbscissa = count;
+                    mainChart.CountAbscissa = abscissa;
+                    mainChart.DoDrawChart(ViewModel.Database, StatisticsFragment.LightColor, StatisticsFragment.DarkColor, Paints.Text);
+                    using (BitmapDrawable back = new BitmapDrawable(Resources, bitmapLastStat))
+                        ViewMainChart.Background = back;
+                }
             }
+            
         }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -57,20 +65,32 @@ namespace ReLearn.Droid.Views.Statistics
             ViewMainChart = view.FindViewById<LinearLayout>(Resource.Id.view_statistics_diagram);
             CreateMainChart();
             ViewMainChart.Touch += ChartClick;
-
+            n = 10;
 
             return view;
         }
 
-        public void ChartClick(object sender, EventArgs e)
+        public void ChartClick(object sender, TouchEventArgs e)
         {
             var flingAnimationX = new SpringAnimation(ViewMainChart, DynamicAnimation.ScaleX, 0);
             var flingAnimationY = new SpringAnimation(ViewMainChart, DynamicAnimation.ScaleY, 0);
-            flingAnimationX.AnimateToFinalPosition(0.9f);
+            if (e.Event.Action == MotionEventActions.Down)
+            {
+
+                flingAnimationX.AnimateToFinalPosition(0.98f);
+                flingAnimationY.AnimateToFinalPosition(0.98f);
+                flingAnimationX.Start();
+                flingAnimationY.Start();
+                return;
+            }
+
+            flingAnimationX.AnimateToFinalPosition(1f);
+            flingAnimationY.AnimateToFinalPosition(1f);
             flingAnimationX.Start();
-            flingAnimationY.AnimateToFinalPosition(0.9f);
             flingAnimationY.Start();
-            CreateMainChart(20,10);
+            if (n < 50)
+                CreateMainChart(n += 1, 10 + (n % 10));
+            
         }
     }
 }

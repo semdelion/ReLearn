@@ -76,7 +76,7 @@ namespace ReLearn.Droid.Statistics
         protected virtual void Abscissa(float left, float bottom, float width, Paint paint, int amount)
         {
             Canvas.DrawLine(left, bottom, left + width, bottom, paint);
-
+            
             float step = width / (StepAbscissa ?? CountAbscissa);
             for (int i = 0; i <= (StepAbscissa ?? CountAbscissa); i++)
                 Canvas.DrawLine(left + step * i, bottom, left + step * i, bottom + 1.5f * (_width + _height) / 200, paint);
@@ -86,7 +86,8 @@ namespace ReLearn.Droid.Statistics
 
             int countDate = amount / stepNumber >= (StepAbscissa ?? CountAbscissa) ? (StepAbscissa ?? CountAbscissa) : amount / stepNumber,
                 stat = amount >= CountAbscissa ? amount - CountAbscissa : 0;
-            for (int i = 1; i <= countDate; i++)
+            
+            for (int i = 1; i <= (countDate + ((amount % stepNumber > 0)? 1 : 0)); i++)
                 Canvas.DrawText($"{stat + i * stepNumber}",
                     left - $"{stat + i}".Length * 0.7f * (_width + _height) / 200 + step * i,
                     bottom + 4 * (_width + _height) / 200, paint);
@@ -127,7 +128,7 @@ namespace ReLearn.Droid.Statistics
         {
             float step_width = (right - left) / CountAbscissa,
                   step_height = (bottom - top),
-                  padding = 2f; // between columns
+                  padding = 1f; // between columns
             int i = 0, n_count = Database_Stat.Count - CountAbscissa;
             foreach (var s in Database_Stat)
             {
