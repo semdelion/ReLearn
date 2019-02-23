@@ -17,7 +17,11 @@ namespace ReLearn.Droid.Views.Statistics
 {
     public class TabMainFragment : MvxFragment<MainStatisticsViewModel>
     {
-        static int n =10;
+        static int n = 10;
+
+        float HistoricalX = 0;
+        float HistoricalY = 0;
+
         private static LinearLayout ViewMainChart;
         private void CreateLastStat(LinearLayout viewLastStat)
         {
@@ -37,7 +41,6 @@ namespace ReLearn.Droid.Views.Statistics
 
         private void CreateMainChart(int abscissa = 10, int count = 10)
         {
-
             using (Bitmap bitmapLastStat = Bitmap.CreateBitmap(
                 Resources.DisplayMetrics.WidthPixels - PixelConverter.DpToPX(20),
                 Resources.DisplayMetrics.HeightPixels - PixelConverter.DpToPX(150),
@@ -45,15 +48,16 @@ namespace ReLearn.Droid.Views.Statistics
             {
                 using (Canvas canvasLastStat = new Canvas(bitmapLastStat))
                 {
-                    var mainChart = new DrawChart(canvasLastStat);
-                    mainChart.StepAbscissa = count;
-                    mainChart.CountAbscissa = abscissa;
+                    var mainChart = new DrawChart(canvasLastStat)
+                    {
+                        StepAbscissa = count,
+                        CountAbscissa = abscissa
+                    };
                     mainChart.DoDrawChart(ViewModel.Database, StatisticsFragment.LightColor, StatisticsFragment.DarkColor, Paints.Text);
                     using (BitmapDrawable back = new BitmapDrawable(Resources, bitmapLastStat))
                         ViewMainChart.Background = back;
                 }
             }
-            
         }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -65,6 +69,7 @@ namespace ReLearn.Droid.Views.Statistics
             ViewMainChart = view.FindViewById<LinearLayout>(Resource.Id.view_statistics_diagram);
             CreateMainChart();
             ViewMainChart.Touch += ChartClick;
+
             n = 10;
 
             return view;
@@ -74,9 +79,9 @@ namespace ReLearn.Droid.Views.Statistics
         {
             var flingAnimationX = new SpringAnimation(ViewMainChart, DynamicAnimation.ScaleX, 0);
             var flingAnimationY = new SpringAnimation(ViewMainChart, DynamicAnimation.ScaleY, 0);
+
             if (e.Event.Action == MotionEventActions.Down)
             {
-
                 flingAnimationX.AnimateToFinalPosition(0.98f);
                 flingAnimationY.AnimateToFinalPosition(0.98f);
                 flingAnimationX.Start();
@@ -88,9 +93,26 @@ namespace ReLearn.Droid.Views.Statistics
             flingAnimationY.AnimateToFinalPosition(1f);
             flingAnimationX.Start();
             flingAnimationY.Start();
-            if (n < 50)
-                CreateMainChart(n += 1, 10 + (n % 10));
-            
+
+            if (e.Event.Action == MotionEventActions.Move)
+            {
+                if (e.Event.PointerCount == 2)
+                {
+                    float x = e.Event.GetX(0) - e.Event.GetX(1);
+                    float y = e.Event.GetY(0) - e.Event.GetY(1);
+
+                    var distanceOld = Math.Sqrt(Math.Pow(HistoricalX, 2) + Math.Pow(HistoricalY, 2));
+                    var distanceNew = Math.Sqrt(Math.Pow(x, 2) + Math.Pow(y, 2));
+
+                    if (distanceOld > distanceNew && n < 50)
+                        CreateMainChart(n += 1, 10 + (n % 10));
+                    if (distanceOld < distanceNew && n > 10)
+                        CreateMainChart(n -= 1, 10 + (n % 10));
+
+                    HistoricalX = x;
+                    HistoricalY = y;
+                }
+            } 
         }
     }
 }
