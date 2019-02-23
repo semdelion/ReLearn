@@ -22,7 +22,7 @@ namespace ReLearn.Droid.Views.Statistics
         {
             using (Bitmap bitmapLastStat = Bitmap.CreateBitmap(
                 Resources.DisplayMetrics.WidthPixels - PixelConverter.DpToPX(20),
-                PixelConverter.DpToPX(65), Bitmap.Config.Argb8888))
+                PixelConverter.DpToPX(65), Bitmap.Config.Argb4444))
             {
                 Canvas canvas = new Canvas(bitmapLastStat);
                 var Stat = new DrawStatistics(canvas);
@@ -39,7 +39,7 @@ namespace ReLearn.Droid.Views.Statistics
         {
             using (Bitmap bitmapLastStat = Bitmap.CreateBitmap(
                 Resources.DisplayMetrics.WidthPixels - PixelConverter.DpToPX(20),
-                PixelConverter.DpToPX(65), Bitmap.Config.Argb8888))
+                PixelConverter.DpToPX(65), Bitmap.Config.Argb4444))
             {
                 Canvas canvas= new Canvas(bitmapLastStat);
                 var Stat = new DrawStatistics(canvas);
@@ -55,7 +55,7 @@ namespace ReLearn.Droid.Views.Statistics
         {
             using (Bitmap bitmapLastStat = Bitmap.CreateBitmap(
                 Resources.DisplayMetrics.WidthPixels - PixelConverter.DpToPX(20),
-                PixelConverter.DpToPX(65), Bitmap.Config.Argb8888))
+                PixelConverter.DpToPX(65), Bitmap.Config.Argb4444))
             {
                 Canvas canvas = new Canvas(bitmapLastStat);
                 var Stat = new DrawStatistics(canvas);
@@ -69,14 +69,14 @@ namespace ReLearn.Droid.Views.Statistics
 
         private void CreateViewDegreeOfStudy(LinearLayout viewLastStat, LinearLayout viewPieChart)
         {
-            using (Bitmap bitmapLastStat = Bitmap.CreateBitmap(viewLastStat.Width, viewLastStat.Height, Bitmap.Config.Argb8888))
+            using (Bitmap bitmapLastStat = Bitmap.CreateBitmap(viewLastStat.Width, viewLastStat.Height, Bitmap.Config.Argb4444))
             {
                 Canvas canvas = new Canvas(bitmapLastStat);
                 var Stat = new DrawStatistics(canvas);
                 Stat.DrawBackground(6, 6, Paints.Background, Paints.Border, Paints.Gradient);
                 viewLastStat.Background = new BitmapDrawable(Resources, bitmapLastStat);
 
-                using (Bitmap bitmapPieChart = Bitmap.CreateBitmap(viewPieChart.Width, viewPieChart.Height, Bitmap.Config.Argb8888))
+                using (Bitmap bitmapPieChart = Bitmap.CreateBitmap(viewPieChart.Width, viewPieChart.Height, Bitmap.Config.Argb4444))
                 {
                     Canvas canvasChart = new Canvas(bitmapPieChart);
                     var StatChart = new DrawStatistics(canvasChart);
@@ -92,7 +92,7 @@ namespace ReLearn.Droid.Views.Statistics
         {
             using (Bitmap bitmapLastStat = Bitmap.CreateBitmap(
                 Resources.DisplayMetrics.WidthPixels - PixelConverter.DpToPX(20) - (int)(0.61f * Resources.DisplayMetrics.WidthPixels),
-                PixelConverter.DpToPX(265), Bitmap.Config.Argb8888))
+                PixelConverter.DpToPX(265), Bitmap.Config.Argb4444))
             {
                 Canvas canvas = new Canvas(bitmapLastStat);
                 var Stat = new DrawStatistics(canvas);

@@ -106,11 +106,29 @@ namespace ReLearn.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Average.
+        /// </summary>
+        public static string GeneralStatisticsViewModel_Average {
+            get {
+                return ResourceManager.GetString("GeneralStatisticsViewModel.Average", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Correct.
         /// </summary>
         public static string GeneralStatisticsViewModel_Correct {
             get {
                 return ResourceManager.GetString("GeneralStatisticsViewModel.Correct", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Correct answers.
+        /// </summary>
+        public static string GeneralStatisticsViewModel_CorrectAnswers {
+            get {
+                return ResourceManager.GetString("GeneralStatisticsViewModel.CorrectAnswers", resourceCulture);
             }
         }
         
@@ -129,6 +147,15 @@ namespace ReLearn.Core.Localization {
         public static string GeneralStatisticsViewModel_Incorrect {
             get {
                 return ResourceManager.GetString("GeneralStatisticsViewModel.Incorrect", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Month.
+        /// </summary>
+        public static string GeneralStatisticsViewModel_Month {
+            get {
+                return ResourceManager.GetString("GeneralStatisticsViewModel.Month", resourceCulture);
             }
         }
         
@@ -228,6 +255,15 @@ namespace ReLearn.Core.Localization {
         public static string GeneralStatisticsViewModel_Of {
             get {
                 return ResourceManager.GetString("GeneralStatisticsViewModel.Of", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Today.
+        /// </summary>
+        public static string GeneralStatisticsViewModel_Today {
+            get {
+                return ResourceManager.GetString("GeneralStatisticsViewModel.Today", resourceCulture);
             }
         }
         

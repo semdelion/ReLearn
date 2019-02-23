@@ -49,6 +49,19 @@ namespace ReLearn.Droid.Statistics
             }
         }
 
+        private int? _stepAbscissa;
+        public int? StepAbscissa
+        {
+            get => _stepAbscissa;
+            set
+            {
+                if (value > 0)
+                    _stepAbscissa = value;
+                else
+                    throw new IndexOutOfRangeException("value must be greater than 0");
+            }
+        }
+
         public TypeDate OrdinateType { get; set; } = TypeDate.Percent;
         public float MaxNumber { get; set; } = 1;
         public int RoundMaxNumber { get; set; } = 0;
@@ -64,15 +77,18 @@ namespace ReLearn.Droid.Statistics
         {
             Canvas.DrawLine(left, bottom, left + width, bottom, paint);
 
-            float step = width / CountAbscissa;
-            for (int i = 0; i <= CountAbscissa; i++)
+            float step = width / (StepAbscissa ?? CountAbscissa);
+            for (int i = 0; i <= (StepAbscissa ?? CountAbscissa); i++)
                 Canvas.DrawLine(left + step * i, bottom, left + step * i, bottom + 1.5f * (_width + _height) / 200, paint);
 
-            int countDate = amount >= CountAbscissa ? CountAbscissa : amount,
+            int stepNumber = (CountAbscissa / (StepAbscissa ?? CountAbscissa));
+            if (stepNumber < 1) stepNumber = 1;
+
+            int countDate = amount / stepNumber >= (StepAbscissa ?? CountAbscissa) ? (StepAbscissa ?? CountAbscissa) : amount / stepNumber,
                 stat = amount >= CountAbscissa ? amount - CountAbscissa : 0;
             for (int i = 1; i <= countDate; i++)
-                Canvas.DrawText((stat + i).ToString(),
-                    left - (stat + i).ToString().Length * 0.7f * (_width + _height) / 200 + step * i,
+                Canvas.DrawText($"{stat + i * stepNumber}",
+                    left - $"{stat + i}".Length * 0.7f * (_width + _height) / 200 + step * i,
                     bottom + 4 * (_width + _height) / 200, paint);
         }
 
@@ -139,7 +155,7 @@ namespace ReLearn.Droid.Statistics
         public virtual void DoDrawChart(List<DatabaseStatistics> Database, Color start, Color end, Paint color)
         {
             float
-                left = 0.1f * _width,               // pading 10%
+                left = 0.12f * _width,              // pading 12%
                 right = _width - 0.05f * _width,    // pading 5%
                 bottom = _height - 0.12f * _height, // pading 12%
                 top = 0.03f * _height;              // pading 3%

@@ -42,7 +42,7 @@ namespace ReLearn.Droid
 
         public void DrawBorder(Canvas canvas, Paint paint)
         {
-            LinearGradient backlg = new LinearGradient((canvas.Width + canvas.Height) / 200, 0, 0, (canvas.Width + canvas.Height) / 200, 
+            LinearGradient backlg = new LinearGradient((canvas.Width + canvas.Height) / 200, 0, 0, (canvas.Width + canvas.Height) / 200,
                 Color.Argb(40, 60, 90, 125), Color.Transparent, TileMode.Repeat);
             Paint paint1 = new Paint { AntiAlias = true };
             paint1.SetShader(backlg);
@@ -58,8 +58,8 @@ namespace ReLearn.Droid
             float height = 15f * ((Bottom - Top) / 100f);
             float step_width = (Width - padding_left_right * 2) / (True + False);
 
-            Shader shader = new LinearGradient(0, Left + padding_left_right , Right - padding_left_right, 0, Color_Diagram_2, Color_Diagram_1, TileMode.Clamp);
-            Paint Pen_F = new Paint { Color = Color.Rgb(29, 43, 59) , AntiAlias = true};
+            Shader shader = new LinearGradient(0, Left + padding_left_right, Right - padding_left_right, 0, Color_Diagram_2, Color_Diagram_1, TileMode.Clamp);
+            Paint Pen_F = new Paint { Color = Color.Rgb(29, 43, 59), AntiAlias = true };
             Paint Pen_T = new Paint { AntiAlias = true };
             Pen_T.SetShader(shader);
 
@@ -85,8 +85,8 @@ namespace ReLearn.Droid
 
         public void DrawPieChart(Canvas canvas, float average, float sum, Color Color_Diagram_1, Color Color_Diagram_2, float Radius, float width)
         {
-            float X = Left + Width  / 2,
-                  Y = Top  + Height / 2;
+            float X = Left + Width / 2,
+                  Y = Top + Height / 2;
             Shader shader1 = new SweepGradient(X, Y, Color_Diagram_2, Color_Diagram_1);
             Paint paint1 = new Paint { Color = Color_Diagram_1, StrokeWidth = width, AntiAlias = true };
             Paint paint2 = new Paint { Color = Color.Rgb(29, 43, 59), StrokeWidth = width, AntiAlias = true };

@@ -132,14 +132,23 @@
   <data name="DictionaryReplenishmentViewModel.WordsAdded" xml:space="preserve">
     <value>Words have been added to your dictionary</value>
   </data>
+  <data name="GeneralStatisticsViewModel.Average" xml:space="preserve">
+    <value>Average</value>
+  </data>
   <data name="GeneralStatisticsViewModel.Correct" xml:space="preserve">
     <value>Correct</value>
+  </data>
+  <data name="GeneralStatisticsViewModel.CorrectAnswers" xml:space="preserve">
+    <value>Correct answers</value>
   </data>
   <data name="GeneralStatisticsViewModel.DegreeOfStudy" xml:space="preserve">
     <value>Degree of study</value>
   </data>
   <data name="GeneralStatisticsViewModel.Incorrect" xml:space="preserve">
     <value>incorrect</value>
+  </data>
+  <data name="GeneralStatisticsViewModel.Month" xml:space="preserve">
+    <value>Month</value>
   </data>
   <data name="GeneralStatisticsViewModel.NumberCorrectAnswers" xml:space="preserve">
     <value>Answer Ratio</value>
@@ -173,6 +182,9 @@
   </data>
   <data name="GeneralStatisticsViewModel.Of" xml:space="preserve">
     <value>of</value>
+  </data>
+  <data name="GeneralStatisticsViewModel.Today" xml:space="preserve">
+    <value>Today</value>
   </data>
   <data name="LearnViewModel.Next" xml:space="preserve">
     <value>Next</value>

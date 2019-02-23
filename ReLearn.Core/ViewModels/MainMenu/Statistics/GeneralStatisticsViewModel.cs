@@ -1,6 +1,7 @@
 ﻿using MvvmCross.ViewModels;
 using ReLearn.API.Database;
 using ReLearn.Core.Localization;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -8,6 +9,10 @@ namespace ReLearn.Core.ViewModels.MainMenu.Statistics
 {
     public class GeneralStatisticsViewModel : MvxViewModel
     {
+        private readonly float _avgTrueToday;
+        private readonly float _avgTrueMonth;
+        private readonly float _avgTrue;
+
         public List<DatabaseStatistics> Database { get; private set; }
         public List<DBStatistics> DatabaseStats { get; private set; }
 
@@ -27,7 +32,7 @@ namespace ReLearn.Core.ViewModels.MainMenu.Statistics
                     return AppResources.GeneralStatisticsViewModel_NumberLearnedWords;
             }
         }
-        public string NumberInconvenientCount => 
+        public string NumberInconvenientCount =>
             $"{DatabaseStats.Count(r => r.NumberLearn == API.Settings.MaxNumberOfRepeats)} " +
             $"{AppResources.GeneralStatisticsViewModel_Of} {DatabaseStats.Count}";
 
@@ -44,13 +49,29 @@ namespace ReLearn.Core.ViewModels.MainMenu.Statistics
             }
         }
 
-        public string NumberCorrectAnswers => 
+        public string NumberCorrectAnswers =>
             AppResources.GeneralStatisticsViewModel_NumberCorrectAnswers;
 
-        public string NumberCorrectAndIncorrect => 
+        public string NumberCorrectAndIncorrect =>
             $"{AppResources.GeneralStatisticsViewModel_Correct} {Database.Sum(r => r.True)}, " +
             $"{AppResources.GeneralStatisticsViewModel_Incorrect} {Database.Sum(r => r.False)}, " +
             $"{AppResources.GeneralStatisticsViewModel_NumberOfTests} {Database.Count}";
+
+        public string CorrectAnswers => $"{AppResources.GeneralStatisticsViewModel_CorrectAnswers}";
+
+        public string Today => $"{AppResources.GeneralStatisticsViewModel_Today}";
+        public string TodayPercent => $"{Math.Round(_avgTrueToday, 1)}%";
+        public string TodayPercentAbove => _avgTrueToday - _avgTrue > 0 ? $"+{Math.Round(_avgTrueToday - _avgTrue, 1)}%" : "";
+        public string TodayPercentBelow => _avgTrueToday - _avgTrue < 0 ? $"{Math.Round(_avgTrueToday - _avgTrue, 1)}%" : "";
+
+        public string Month => $"{AppResources.GeneralStatisticsViewModel_Month}";
+        public string MonthPercent => $"{Math.Round(_avgTrueMonth, 1)}%";
+        public string MonthPercentAbove => _avgTrueMonth - _avgTrue > 0 ? $"+{Math.Round(_avgTrueMonth - _avgTrue, 1)}%" : "";
+        public string MonthPercentBelow => _avgTrueMonth - _avgTrue < 0 ? $"{Math.Round(_avgTrueMonth - _avgTrue, 1)}%" : "";
+
+        public string Average => $"{AppResources.GeneralStatisticsViewModel_Average}";
+        public string AveragePercent => $"{Math.Round(_avgTrue, 1)}%";
+
 
         public GeneralStatisticsViewModel()
         {
@@ -58,6 +79,9 @@ namespace ReLearn.Core.ViewModels.MainMenu.Statistics
             bool isContain = DBImages.DatabaseIsContain($"{DataBase.TableName}");
             DatabaseStats = isContain ? DBStatistics.GetImages($"{DataBase.TableName}") :
                                       DBStatistics.GetWords($"{DataBase.TableName}");
+            _avgTrueToday = DBStatistics.AverageTrueToday($"{DataBase.TableName}");
+            _avgTrueMonth = DBStatistics.AverageTrueMonth($"{DataBase.TableName}");
+            _avgTrue = DBStatistics.AveragePercentTrue(Database);
         }
     }
 }

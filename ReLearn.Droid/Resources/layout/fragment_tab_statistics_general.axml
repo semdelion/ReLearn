@@ -52,8 +52,9 @@
 				android:layout_height			="match_parent"
 				android:layout_marginLeft		="@dimen/view_margin_statistics">
 				<TextView
+					local:MvxBind				="Text CorrectAnswers"
 					android:textColor			="@color/text_white"
-					tools:text					="Последнее тестирование2"
+					tools:text					="Верные ответы"
 					android:fontFamily			="@font/myriadpro_semibold"
 					android:textSize			="16dp"
 					android:layout_width		="match_parent"
@@ -61,8 +62,133 @@
 					android:layout_marginTop	="5dp"
 					android:layout_marginLeft	="@dimen/view_margin_statistics"
 				/>
+				<RelativeLayout
+					android:layout_width		="match_parent"
+					android:layout_height		="match_parent">
+					<TextView
+						local:MvxBind				="Text Today"
+						android:id					="@+id/general_statistics_today"
+						android:textColor			="@color/text_white"
+						android:fontFamily			="@font/myriadpro_semibold"
+						tools:text					="Сегодня"
+						android:textSize			="12dp"
+						android:layout_width		="wrap_content"
+						android:layout_height		="wrap_content"
+						android:layout_marginLeft	="@dimen/view_margin_statistics"
+						android:layout_marginTop	="20dp"
+					/>
+					<TextView
+						local:MvxBind				="Text TodayPercent"
+						android:id					="@+id/today_percent"
+						android:textColor			="@color/text_white"
+						android:fontFamily			="@font/myriadpro_semibold"
+						tools:text					="30.0%"
+						android:textSize			="30dp"
+						android:layout_width		="wrap_content"
+						android:layout_height		="wrap_content"
+						android:layout_marginBottom ="10dp"
+						android:layout_marginLeft	="@dimen/view_margin_statistics"
+						android:layout_below		="@+id/general_statistics_today"
+					/>
+					<TextView
+						local:MvxBind				="Text TodayPercentAbove"
+						android:fontFamily			="@font/myriadpro_semibold"
+						android:textColor			="@color/green"
+						tools:text					="+30.0%"
+						android:textSize			="14dp"
+						android:layout_width		="wrap_content"
+						android:layout_height		="wrap_content"
+						android:layout_toRightOf    ="@+id/today_percent"
+						android:layout_below		="@+id/general_statistics_today"
+						android:layout_marginTop	="5dp"
+					/>
+					<TextView
+						local:MvxBind				="Text TodayPercentBelow"
+						android:fontFamily			="@font/myriadpro_semibold"
+						android:textColor			="@color/red"
+						tools:text					="-30.0%"
+						android:textSize			="14dp"
+						android:layout_width		="wrap_content"
+						android:layout_height		="wrap_content"
+						android:layout_toRightOf    ="@+id/today_percent"
+						android:layout_below		="@+id/general_statistics_today"
+						android:layout_marginTop	="5dp"
+					/>
+					<TextView
+						local:MvxBind				="Text Month"
+						android:textColor			="@color/text_white"
+						android:fontFamily			="@font/myriadpro_semibold"
+						android:id					="@+id/general_statistics_month"
+						tools:text					="Месяц"
+						android:textSize			="12dp"
+						android:layout_width		="match_parent"
+						android:layout_height		="wrap_content"
+						android:layout_marginLeft	="@dimen/view_margin_statistics"
+						android:layout_centerVertical ="true"
+					/>
+					<TextView
+						local:MvxBind				="Text MonthPercent"
+						android:id					="@+id/month_percent"
+						android:textColor			="@color/text_white"
+						android:fontFamily			="@font/myriadpro_semibold"
+						tools:text					="20.0%"
+						android:textSize			="30dp"
+						android:layout_width		="wrap_content"
+						android:layout_height		="wrap_content"
+						android:layout_marginBottom ="10dp"
+						android:layout_marginLeft	="@dimen/view_margin_statistics"
+						android:layout_below		="@+id/general_statistics_month"
+					/>
+					<TextView
+						local:MvxBind				="Text MonthPercentAbove"
+						android:fontFamily			="@font/myriadpro_semibold"
+						android:textColor			="@color/green"
+						tools:text					="+20.0%"
+						android:textSize			="14dp"
+						android:layout_width		="wrap_content"
+						android:layout_height		="wrap_content"
+						android:layout_toRightOf    ="@+id/month_percent"
+						android:layout_below		="@+id/general_statistics_month"
+						android:layout_marginTop	="5dp"
+					/>
+					<TextView
+						local:MvxBind				="Text MonthPercentBelow"
+						android:fontFamily			="@font/myriadpro_semibold"
+						android:textColor			="@color/red"
+						tools:text					="-20.0%"
+						android:textSize			="14dp"
+						android:layout_width		="wrap_content"
+						android:layout_height		="wrap_content"
+						android:layout_toRightOf    ="@+id/month_percent"
+						android:layout_below		="@+id/general_statistics_month"
+						android:layout_marginTop	="5dp"
+					/>
+					<TextView
+						local:MvxBind				="Text Average"
+						android:textColor			="@color/text_white"
+						android:fontFamily			="@font/myriadpro_semibold"
+						tools:text					="Среднее значение"
+						android:textSize			="12dp"
+						android:layout_width		="match_parent"
+						android:layout_height		="wrap_content"
+						android:layout_marginLeft	="@dimen/view_margin_statistics"
+						android:layout_above		="@+id/average_percent"
+					/>
+					<TextView
+						local:MvxBind				="Text AveragePercent"
+						android:id					="@+id/average_percent"
+						android:textColor			="@color/text_white"
+						android:fontFamily			="@font/myriadpro_semibold"
+						tools:text					="10.0%"
+						android:textSize			="30dp"
+						android:layout_width		="match_parent"
+						android:layout_height		="wrap_content"
+						android:layout_marginBottom ="10dp"
+						android:layout_marginLeft	="@dimen/view_margin_statistics"
+						android:layout_alignParentBottom="true"
+					/>
+				</RelativeLayout>
 			</LinearLayout>
-
 		</TableRow>
 	</TableLayout>
 

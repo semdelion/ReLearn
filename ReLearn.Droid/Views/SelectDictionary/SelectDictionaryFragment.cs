@@ -37,6 +37,7 @@ namespace ReLearn.Droid.Views.SelectDictionary
             Animation.SetStartVelocity(500);
             Animation.Start();
         }
+
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             var view = base.OnCreateView(inflater, container, savedInstanceState);

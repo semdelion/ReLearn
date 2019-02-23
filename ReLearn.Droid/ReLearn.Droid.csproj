@@ -66,6 +66,7 @@
     <Compile Include="Statistics\BaseStatistics.cs" />
     <Compile Include="Statistics\DrawChart.cs" />
     <Compile Include="Statistics\DrawStatistics.cs" />
+    <Compile Include="Statistics\FrameStatistics.cs" />
     <Compile Include="Views\Menu\AddFragment.cs" />
     <Compile Include="Views\Menu\BaseFragment.cs" />
     <Compile Include="Views\Menu\FeedbackFragment.cs" />
@@ -102,9 +103,6 @@
     <Compile Include="Views\MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Statistics\Graphics\FrameStatistics.cs" />
-    <Compile Include="Statistics\Graphics\GraphGeneralStatistics.cs" />
-    <Compile Include="Statistics\Graphics\GraphStatistics.cs" />
     <Compile Include="Views\Achievements\Achievements.cs" />
     <Compile Include="Views\SelectDictionary\SelectDictionaryFragment.cs" />
     <Compile Include="Views\SelectDictionary\SelectDictionaryPagerAdapter.cs" />
