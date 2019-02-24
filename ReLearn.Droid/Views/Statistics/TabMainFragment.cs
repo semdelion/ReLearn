@@ -17,8 +17,6 @@ namespace ReLearn.Droid.Views.Statistics
 {
     public class TabMainFragment : MvxFragment<MainStatisticsViewModel>
     {
-        static int n = 10;
-
         float HistoricalX = 0;
         float HistoricalY = 0;
 
@@ -67,11 +65,8 @@ namespace ReLearn.Droid.Views.Statistics
             var viewLastStat = view.FindViewById<LinearLayout>(Resource.Id.view_statistics_last_test);
             CreateLastStat(viewLastStat);
             ViewMainChart = view.FindViewById<LinearLayout>(Resource.Id.view_statistics_diagram);
-            CreateMainChart();
+            CreateMainChart(ViewModel.AmountOfStatistics, 10 + (ViewModel.AmountOfStatistics % ((ViewModel.AmountOfStatistics / 10) * 10))/(ViewModel.AmountOfStatistics / 10));
             ViewMainChart.Touch += ChartClick;
-
-            n = 10;
-
             return view;
         }
 
@@ -104,11 +99,16 @@ namespace ReLearn.Droid.Views.Statistics
                     var distanceOld = Math.Sqrt(Math.Pow(HistoricalX, 2) + Math.Pow(HistoricalY, 2));
                     var distanceNew = Math.Sqrt(Math.Pow(x, 2) + Math.Pow(y, 2));
 
-                    if (distanceOld > distanceNew && n < 50)
-                        CreateMainChart(n += 1, 10 + (n % 10));
-                    if (distanceOld < distanceNew && n > 10)
-                        CreateMainChart(n -= 1, 10 + (n % 10));
+                    var min = API.Settings.MinNumberOfStatistics;
+                    var max = API.Settings.MaxNumberOfStatistics;
+                    var count = ViewModel.AmountOfStatistics;
 
+                    if (distanceOld > distanceNew && count < max && count < ViewModel.Database.Count)
+                        CreateMainChart(ViewModel.AmountOfStatistics += 1,
+                            min + ViewModel.AmountOfStatistics % (ViewModel.AmountOfStatistics / min * min) / (ViewModel.AmountOfStatistics / min));
+                    if (distanceOld < distanceNew && count > min)
+                        CreateMainChart(ViewModel.AmountOfStatistics -= 1,
+                            min + ViewModel.AmountOfStatistics % (ViewModel.AmountOfStatistics / min * min) / (ViewModel.AmountOfStatistics / min));
                     HistoricalX = x;
                     HistoricalY = y;
                 }
@@ -117,3 +117,14 @@ namespace ReLearn.Droid.Views.Statistics
     }
 }
 
+//var min = API.Settings.MinNumberOfStatistics;
+//var max = API.Settings.MaxNumberOfStatistics;
+//var count = ViewModel.AmountOfStatistics;
+//var abscissaDivision = min + (count % ((count / min) * min)) / (count / min);
+
+//                    if (distanceOld > distanceNew && count<max && count<ViewModel.Database.Count)
+//                        CreateMainChart(ViewModel.AmountOfStatistics += 1, abscissaDivision);
+//                    if (distanceOld<distanceNew && count> min)
+//                        CreateMainChart(ViewModel.AmountOfStatistics -= 1, abscissaDivision);
+//HistoricalX = x;
+//                    HistoricalY = y;

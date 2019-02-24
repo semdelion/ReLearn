@@ -10,12 +10,20 @@ namespace ReLearn.Core.ViewModels.MainMenu.Statistics
 {
     public class MainStatisticsViewModel : MvxViewModel
     {
+        private int _amountOfStatistics = API.Settings.AmountOfStatistics;
+        public int AmountOfStatistics
+        {
+            get => _amountOfStatistics;
+            set => _amountOfStatistics = API.Settings.AmountOfStatistics = value;
+            
+        }
+
         public List<DatabaseStatistics> Database { get; private set; }
         public int? True { get; private set; }
         public int? False { get; private set; }
 
         public string Answers => $"{AppResources.MainStatisticsViewModel_Correct}:" +
-            $" {(True??0)}, {AppResources.MainStatisticsViewModel_Incorrect}: {False??0}";
+            $" { True ?? 0 }, {AppResources.MainStatisticsViewModel_Incorrect}: { False ?? 0}";
         public string LastTest => AppResources.MainStatisticsViewModel_LastTest;
 
 

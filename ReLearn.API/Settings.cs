@@ -20,7 +20,8 @@ namespace ReLearn.API
         TypeOfRepetition,
         BlitzEnable,
         QuizEnable,
-        DictionaryName
+        DictionaryName,
+        AmountOfStatistics
     }
 
     public enum Language
@@ -43,12 +44,20 @@ namespace ReLearn.API
 
     public static class Settings // Маааагия!
     {
+        public const int MaxNumberOfStatistics = 50;
+        public const int MinNumberOfStatistics = 10;
         public const int MaxNumberOfRepeats = 12;
         public const int StandardNumberOfRepeats = 6;
         public const int FalseAnswer = 3;
         public const int NeutralAnswer = 1;
         public const int TrueAnswer = 1;
         public const string font = "fonts/MyriadProSemibold.ttf";
+
+        public static int AmountOfStatistics
+        {
+            get => Convert.ToInt32(CrossSettings.Current.GetValueOrDefault($"{DBSettings.AmountOfStatistics}", 10));
+            set => CrossSettings.Current.AddOrUpdateValue($"{DBSettings.AmountOfStatistics}", value);
+        }
 
         public static int NumberOfRepeatsImage
         {
