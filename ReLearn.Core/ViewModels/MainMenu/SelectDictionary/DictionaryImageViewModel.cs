@@ -7,5 +7,7 @@ namespace ReLearn.Core.ViewModels.MainMenu.SelectDictionary
 {
     public class DictionaryImageViewModel : MvxViewModel
     {
+        public DictionaryImageViewModel()
+        { }
     }
 }

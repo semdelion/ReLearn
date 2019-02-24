@@ -105,7 +105,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\Achievements\Achievements.cs" />
     <Compile Include="Views\SelectDictionary\SelectDictionaryFragment.cs" />
-    <Compile Include="Views\SelectDictionary\SelectDictionaryPagerAdapter.cs" />
     <Compile Include="Views\SelectDictionary\TabImageFragment.cs" />
     <Compile Include="Views\SelectDictionary\TabLanguageFragment.cs" />
     <Compile Include="Views\Statistics\TabGeneralFragment.cs" />

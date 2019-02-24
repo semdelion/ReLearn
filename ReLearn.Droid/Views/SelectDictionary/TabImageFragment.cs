@@ -6,10 +6,12 @@ using Android.Widget;
 using ReLearn.API;
 using ReLearn.API.Database;
 using System.Collections.Generic;
+using MvvmCross.Droid.Support.V4;
+using ReLearn.Core.ViewModels.MainMenu.SelectDictionary;
 
 namespace ReLearn.Droid.Views.SelectDictionary
 {
-    class TabImageFragment : Android.Support.V4.App.Fragment
+    class TabImageFragment : MvxFragment<DictionaryImageViewModel>
     {
         public View CreateViewForDictionary(View view, List<DBStatistics> DB, string NameDictionary, int ImageId, GravityFlags flag, bool separate, Color lightColor, Color darkColor)
         {
@@ -17,11 +19,11 @@ namespace ReLearn.Droid.Views.SelectDictionary
             int count = DB.Count;
             LinearLayout DictionarylinearLayout = new LinearLayout(view.Context)
             {
-                LayoutParameters = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, LinearLayout.LayoutParams.WrapContent)
+                LayoutParameters = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MatchParent, ViewGroup.LayoutParams.WrapContent)
             };
             SelectDictionaryFragment.Dictionaries.DictionariesBitmap.Add(SelectDictionaryFragment.Dictionaries.CreateBitmapWithStats(BitmapFactory.DecodeResource(Resources, ImageId), DB, lightColor, darkColor));//////fail color
             ImageView ImageDictionary = new ImageView(view.Context) { Tag = NameDictionary.ToString() };
-            ImageDictionary.LayoutParameters = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WrapContent, LinearLayout.LayoutParams.WrapContent)
+            ImageDictionary.LayoutParameters = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WrapContent, ViewGroup.LayoutParams.WrapContent)
             {
                 Gravity = flag
             };
@@ -37,7 +39,7 @@ namespace ReLearn.Droid.Views.SelectDictionary
             TextView CountWords = new TextView(view.Context)
             {
                 Text = $"{GetString(Resource.String.DatatypeImages)} {count}, {GetString(Resource.String.StudiedAt)} " +
-                $"{(int)(100 - ReLearn.API.Statistics.GetAverageNumberLearn(DB) * 100f / Settings.StandardNumberOfRepeats)}%",
+                $"{(int)(100 - API.Statistics.GetAverageNumberLearn(DB) * 100f / Settings.StandardNumberOfRepeats)}%",
                 TextSize = 14//(int)(2.1f * width)
             };
             TextView Description = new TextView(view.Context)
@@ -47,12 +49,12 @@ namespace ReLearn.Droid.Views.SelectDictionary
             };
             LinearLayout TextlinearLayout = new LinearLayout(view.Context)
             {
-                LayoutParameters = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WrapContent, LinearLayout.LayoutParams.WrapContent),
-                Orientation = Android.Widget.Orientation.Vertical
+                LayoutParameters = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WrapContent, ViewGroup.LayoutParams.WrapContent),
+                Orientation = Orientation.Vertical
             };
 
             Name.LayoutParameters = CountWords.LayoutParameters = Description.LayoutParameters =
-                new LinearLayout.LayoutParams(52 * Resources.DisplayMetrics.WidthPixels / 100, LinearLayout.LayoutParams.WrapContent);
+                new LinearLayout.LayoutParams(52 * Resources.DisplayMetrics.WidthPixels / 100, ViewGroup.LayoutParams.WrapContent);
             Name.SetTextColor(Colors.White);
             CountWords.SetTextColor(Colors.HintWhite);
             Description.SetTextColor(Colors.HintWhite);
@@ -69,7 +71,7 @@ namespace ReLearn.Droid.Views.SelectDictionary
             {
                 View SeparateView = new View(view.Context)
                 {
-                    LayoutParameters = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WrapContent, (int)(width / 2f))
+                    LayoutParameters = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WrapContent, (int)(width / 2f))
                     { TopMargin = (int)(2 * width), BottomMargin = (int)(2 * width) },
                     Background = view.Context.GetDrawable(Resource.Drawable.separator)
                 };

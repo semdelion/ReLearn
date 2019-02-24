@@ -57,20 +57,20 @@ namespace ReLearn.Core.ViewModels.MainMenu.Statistics
             $"{AppResources.GeneralStatisticsViewModel_Incorrect} {Database.Sum(r => r.False)}, " +
             $"{AppResources.GeneralStatisticsViewModel_NumberOfTests} {Database.Count}";
 
-        public string CorrectAnswers => $"{AppResources.GeneralStatisticsViewModel_CorrectAnswers}";
+        public string CorrectAnswers    => $"{AppResources.GeneralStatisticsViewModel_CorrectAnswers}";
 
-        public string Today => $"{AppResources.GeneralStatisticsViewModel_Today}";
-        public string TodayPercent => $"{Math.Round(_avgTrueToday, 1)}%";
+        public string Today             => $"{AppResources.GeneralStatisticsViewModel_Today}";
+        public string TodayPercent      => $"{Math.Round(_avgTrueToday, 1)}%";
         public string TodayPercentAbove => _avgTrueToday - _avgTrue > 0 ? $"+{Math.Round(_avgTrueToday - _avgTrue, 1)}%" : "";
         public string TodayPercentBelow => _avgTrueToday - _avgTrue < 0 ? $"{Math.Round(_avgTrueToday - _avgTrue, 1)}%" : "";
 
-        public string Month => $"{AppResources.GeneralStatisticsViewModel_Month}";
-        public string MonthPercent => $"{Math.Round(_avgTrueMonth, 1)}%";
+        public string Month             => $"{AppResources.GeneralStatisticsViewModel_Month}";
+        public string MonthPercent      => $"{Math.Round(_avgTrueMonth, 1)}%";
         public string MonthPercentAbove => _avgTrueMonth - _avgTrue > 0 ? $"+{Math.Round(_avgTrueMonth - _avgTrue, 1)}%" : "";
         public string MonthPercentBelow => _avgTrueMonth - _avgTrue < 0 ? $"{Math.Round(_avgTrueMonth - _avgTrue, 1)}%" : "";
 
-        public string Average => $"{AppResources.GeneralStatisticsViewModel_Average}";
-        public string AveragePercent => $"{Math.Round(_avgTrue, 1)}%";
+        public string Average           => $"{AppResources.GeneralStatisticsViewModel_Average}";
+        public string AveragePercent    => $"{Math.Round(_avgTrue, 1)}%";
 
 
         public GeneralStatisticsViewModel()
