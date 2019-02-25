@@ -116,15 +116,3 @@ namespace ReLearn.Droid.Views.Statistics
         }
     }
 }
-
-//var min = API.Settings.MinNumberOfStatistics;
-//var max = API.Settings.MaxNumberOfStatistics;
-//var count = ViewModel.AmountOfStatistics;
-//var abscissaDivision = min + (count % ((count / min) * min)) / (count / min);
-
-//                    if (distanceOld > distanceNew && count<max && count<ViewModel.Database.Count)
-//                        CreateMainChart(ViewModel.AmountOfStatistics += 1, abscissaDivision);
-//                    if (distanceOld<distanceNew && count> min)
-//                        CreateMainChart(ViewModel.AmountOfStatistics -= 1, abscissaDivision);
-//HistoricalX = x;
-//                    HistoricalY = y;

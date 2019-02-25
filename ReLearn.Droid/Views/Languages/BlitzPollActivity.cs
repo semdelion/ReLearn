@@ -99,12 +99,12 @@ namespace ReLearn.Droid.Languages
             DisplayMetrics displayMetrics = new DisplayMetrics();
             WindowManager.DefaultDisplay.GetRealMetrics(displayMetrics);
 
-            _backgroundWord = new BitmapDrawable(Resources, Background.GetBackgroung(
+            _backgroundWord = Background.GetBackgroung(Resources,
                 displayMetrics.WidthPixels - PixelConverter.DpToPX(50),
-                PixelConverter.DpToPX(300)));
-            var _backgroundTimer = new BitmapDrawable(Resources, Background.GetBackgroung(
+                PixelConverter.DpToPX(300));
+            var _backgroundTimer = Background.GetBackgroung(Resources,
                 displayMetrics.WidthPixels - PixelConverter.DpToPX(200),
-                PixelConverter.DpToPX(50)));
+                PixelConverter.DpToPX(50));
 
 
             float webViewWidth = Android.App.Application.Context.Resources.DisplayMetrics.WidthPixels;

@@ -147,9 +147,9 @@ namespace ReLearn.Droid.Languages
 
             DisplayMetrics displayMetrics = new DisplayMetrics();
             WindowManager.DefaultDisplay.GetRealMetrics(displayMetrics);
-            var _background = new BitmapDrawable(Resources, Background.GetBackgroung(
+            var _background = Background.GetBackgroung(Resources,
             displayMetrics.WidthPixels - PixelConverter.DpToPX(70),
-            PixelConverter.DpToPX(190)));
+            PixelConverter.DpToPX(190));
             FindViewById<TextView>(Resource.Id.textView_Eng_Word).Background = _background;
 
             MySpeech = new MyTextToSpeech();

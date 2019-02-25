@@ -151,9 +151,9 @@ namespace ReLearn.Droid.Images
 
             DisplayMetrics displayMetrics = new DisplayMetrics();
             WindowManager.DefaultDisplay.GetRealMetrics(displayMetrics);
-            var _background = new BitmapDrawable(Resources, Background.GetBackgroung(
+            var _background = Background.GetBackgroung(Resources,
             displayMetrics.WidthPixels - PixelConverter.DpToPX(20),
-            PixelConverter.DpToPX(190)));
+            PixelConverter.DpToPX(190));
             FindViewById<LinearLayout>(Resource.Id.repeat_background).Background = _background;
 
             Buttons = new List<Button>{
