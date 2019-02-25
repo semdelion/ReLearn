@@ -86,12 +86,12 @@ namespace ReLearn.Droid.Statistics
             Canvas.DrawRect(new RectF(paddingLeftRight + step * True, y0, _width - paddingLeftRight, y1), FalseLine);
         }
 
-        public void DrawPieChartWithText(float average, float sum, Color start, Color end, float width = 0.13f)
+        public void DrawPieChart(float average, float sum, Color start, Color end, float width = 0.13f, float Radius = -1, bool text = true)
         {
             float Cx = _width / 2f,
                   Cy = _height / 2f,
-                  strokeWidth = width * (_width <= _height ? _width : _height),
-                  Radius = (_width <= _height ? _width / 2f : _height / 2f) - strokeWidth;
+                  strokeWidth = width * (_width <= _height ? _width : _height);
+                  Radius = Radius <= 0 ? (_width <= _height ? _width / 2f : _height / 2f) - strokeWidth : Radius;
 
             Shader shader = new SweepGradient(Cx, Cy, end, start);
             Paint paintMain = new Paint { Color = start, StrokeWidth = strokeWidth, AntiAlias = true };
@@ -104,7 +104,8 @@ namespace ReLearn.Droid.Statistics
             Canvas.Rotate(-90f, Cx, Cy);
             Canvas.DrawArc(new RectF(Cx - Radius, Cy - Radius, Cx + Radius, Cy + Radius), 0.5f, 360f - average * (360f / sum), false, paintMain);
             Canvas.Rotate(90f, Cx, Cy);
-            DrawText(_width * 20f / 100f, $"{RoundOfNumber(100 - average * 100f / sum)}%",  2.4f * _width / 10f, Cy - 33f * Radius / 100);
+            if(text)
+                DrawText(_width * 20f / 100f, $"{RoundOfNumber(100 - average * 100f / sum)}%",  2.4f * _width / 10f, Cy - 33f * Radius / 100);
         }
 
         public void DrawText(float fontSize, string text, float left, float top, Color? c = null)

@@ -81,7 +81,7 @@ namespace ReLearn.Droid.Views.Statistics
                     Canvas canvasChart = new Canvas(bitmapPieChart);
                     var StatChart = new DrawStatistics(canvasChart);
                     float avgNumberLearnStat = API.Statistics.GetAverageNumberLearn(ViewModel.DatabaseStats);
-                    StatChart.DrawPieChartWithText(avgNumberLearnStat, API.Settings.StandardNumberOfRepeats, StatisticsFragment.LightColor, StatisticsFragment.DarkColor);
+                    StatChart.DrawPieChart(avgNumberLearnStat, API.Settings.StandardNumberOfRepeats, StatisticsFragment.LightColor, StatisticsFragment.DarkColor);
                     viewPieChart.Background = new BitmapDrawable(Resources, bitmapPieChart);
                 }
             }
