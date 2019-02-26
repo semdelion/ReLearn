@@ -19,7 +19,7 @@ namespace ReLearn.Droid.Languages
     [Activity(Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class BlitzPollActivity : MvxAppCompatActivity<BlitzPollViewModel>
     {
-        System.Timers.Timer timer;
+        Timer timer;
         BitmapDrawable _backgroundWord;
         TextView ViewPrev;
         TextView ViewCurrent;
@@ -151,7 +151,7 @@ namespace ReLearn.Droid.Languages
 
         void TimerStart()
         {
-            timer = new System.Timers.Timer{ Interval = 100, Enabled = true };
+            timer = new Timer{ Interval = 100, Enabled = true };
             timer.Elapsed += Timer_Elapsed;
             timer.Start();
         }

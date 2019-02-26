@@ -46,7 +46,7 @@ namespace ReLearn.Droid.Images
             }
         }
 
-        void Random_Button(params Button[] buttons)   //загружаем варианты ответа в текст кнопок
+        void RandomButton(params Button[] buttons)   //загружаем варианты ответа в текст кнопок
         {
             RandomNumbers.RandomFourNumbers(CurrentWordNumber, ImagesDatabase.Count, out List<int> random_numbers);
             for (int i = 0; i < buttons.Length; i++)
@@ -65,7 +65,7 @@ namespace ReLearn.Droid.Images
             List<int> random_numbers = new List<int> { first, 0, 0, 0 };
             for (int i = 1; i < four; i++)
                 random_numbers[i] = (first + i) % four;
-            Random_Button(Buttons[random_numbers[0]], Buttons[random_numbers[1]], Buttons[random_numbers[2]], Buttons[random_numbers[3]]);
+            RandomButton(Buttons[random_numbers[0]], Buttons[random_numbers[1]], Buttons[random_numbers[2]], Buttons[random_numbers[3]]);
         }
 
         void Answer(params Button[] buttons) // подсвечиваем правильный ответ, если мы ошиблись подсвечиваем неправвильный и паравильный 

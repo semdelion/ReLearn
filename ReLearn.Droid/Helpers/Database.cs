@@ -83,7 +83,7 @@ namespace ReLearn.Droid.Helpers
                 }
             }
         }
-        public static void ADDCOLUMN()
+        public static void AddColumn()
         {
             foreach (string tableName in Enum.GetNames(typeof(TableNamesLanguage)))
             {
@@ -91,7 +91,7 @@ namespace ReLearn.Droid.Helpers
                 {
 
                     DataBase.Languages.Execute($"ALTER TABLE {tableName} ADD COLUMN Transcription string");
-                    if (tableName != TableNamesLanguage.My_Directly.ToString())
+                    if (tableName != $"{TableNamesLanguage.My_Directly}")
                         using (StreamReader reader = new StreamReader(Application.Context.Assets.Open($"Database/{tableName}.txt")))
                         {
                             string str_line;

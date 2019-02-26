@@ -27,39 +27,21 @@ namespace ReLearn.Droid.Statistics
         private int _countOrdinate = 10;
         public int CountOrdinate
         {   get => _countOrdinate;
-            set
-            {
-                if (value > 0)
-                    _countOrdinate = value;
-                else
-                    throw new IndexOutOfRangeException("value must be greater than 0");
-            }
+            set => _countOrdinate = value > 0 ? value : throw new IndexOutOfRangeException("value must be greater than 0");
         }
 
         private int _countAbscissa = 10;
         public int CountAbscissa
         { 
             get => _countAbscissa;
-            set
-            {
-                if (value > 0)
-                    _countAbscissa = value;
-                else
-                    throw new IndexOutOfRangeException("value must be greater than 0");
-            }
+            set => _countAbscissa = value > 0 ? value : throw new IndexOutOfRangeException("value must be greater than 0");
         }
 
         private int? _stepAbscissa;
         public int? StepAbscissa
         {
             get => _stepAbscissa;
-            set
-            {
-                if (value > 0)
-                    _stepAbscissa = value;
-                else
-                    throw new IndexOutOfRangeException("value must be greater than 0");
-            }
+            set => _stepAbscissa = value > 0 ? value : throw new IndexOutOfRangeException("value must be greater than 0");
         }
 
         public TypeDate OrdinateType { get; set; } = TypeDate.Percent;
@@ -122,15 +104,15 @@ namespace ReLearn.Droid.Statistics
                 Canvas.DrawLine(left, bottom - height * j, right, bottom - height * j, GraphLayoutPaint);
         }
 
-        protected virtual void Diagram(List<DatabaseStatistics> Database_Stat, 
+        protected virtual void Diagram(List<DatabaseStatistics> DatabaseStat, 
             float left, float right, float bottom, float top, 
             Color start, Color end)
         {
             float step_width = (right - left) / CountAbscissa,
                   step_height = (bottom - top),
                   padding = 1f; // between columns
-            int i = 0, n_count = Database_Stat.Count - CountAbscissa;
-            foreach (var s in Database_Stat)
+            int i = 0, n_count = DatabaseStat.Count - CountAbscissa;
+            foreach (var s in DatabaseStat)
             {
                 if (i >= n_count)
                 {

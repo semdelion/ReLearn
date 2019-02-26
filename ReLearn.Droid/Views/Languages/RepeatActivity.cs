@@ -19,7 +19,7 @@ namespace ReLearn.Droid.Languages
     {
         int CurrentWordNumber { get; set; }
         List<Button> Buttons { get; set; }
-        ButtonNext Button_next { get; set; }
+        ButtonNext ButtonNext { get; set; }
         List<DBWords> WordDatabase { get; set; }
         MyTextToSpeech MySpeech { get; set; }
         string Word { get; set; }
@@ -32,18 +32,18 @@ namespace ReLearn.Droid.Languages
             foreach (var button in Buttons) button.Enabled = state;
             if (state)
             {
-                Button_next.State = StateButton.Unknown;
-                Button_next.button.Text = GetString(Resource.String.Unknown);
+                ButtonNext.State = StateButton.Unknown;
+                ButtonNext.button.Text = GetString(Resource.String.Unknown);
                 foreach (var button in Buttons) button.Background = GetDrawable(Resource.Drawable.button_style_standard);
             }
             else
             {
-                Button_next.State = StateButton.Next;
-                Button_next.button.Text = GetString(Resource.String.Next);
+                ButtonNext.State = StateButton.Next;
+                ButtonNext.button.Text = GetString(Resource.String.Next);
             }
         }
 
-        void Random_Button(params Button[] buttons)   //загружаем варианты ответа в текст кнопок
+        void RandomButton(params Button[] buttons)   //загружаем варианты ответа в текст кнопок
         {
             RandomNumbers.RandomFourNumbers(CurrentWordNumber, WordDatabase.Count, out List<int> random_numbers);
             for (int i = 0; i < buttons.Length; i++)
@@ -59,7 +59,7 @@ namespace ReLearn.Droid.Languages
             List<int> random_numbers = new List<int> { first, 0, 0, 0 };
             for (int i = 1; i < four; i++)
                 random_numbers[i] = (first + i) % four; 
-           Random_Button(Buttons[random_numbers[0]], Buttons[random_numbers[1]], Buttons[random_numbers[2]], Buttons[random_numbers[3]]);        
+           RandomButton(Buttons[random_numbers[0]], Buttons[random_numbers[1]], Buttons[random_numbers[2]], Buttons[random_numbers[3]]);        
         }
 
         void Answer(params Button[] buttons) // подсвечиваем правильный ответ, если мы ошиблись подсвечиваем неправвильный и паравильный 
@@ -109,10 +109,10 @@ namespace ReLearn.Droid.Languages
         [Java.Interop.Export("Button_Languages_Next_Click")]
         public void Button_Languages_Next_Click(View v)
         {
-            Button_next.button.Enabled = false;
-            if (Button_next.State == StateButton.Unknown)
+            ButtonNext.button.Enabled = false;
+            if (ButtonNext.State == StateButton.Unknown)
             {
-                Button_next.State = StateButton.Next;
+                ButtonNext.State = StateButton.Next;
                 Button_enable(false);
                 Unknown();
             }
@@ -133,7 +133,7 @@ namespace ReLearn.Droid.Languages
                     Finish();
                 }
             }
-            Button_next.button.Enabled = true;
+            ButtonNext.button.Enabled = true;
         }
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -161,7 +161,7 @@ namespace ReLearn.Droid.Languages
                 FindViewById<Button>(Resource.Id.button_Languages_choice4),
             };
 
-            Button_next = new ButtonNext
+            ButtonNext = new ButtonNext
             {
                 button = FindViewById<Button>(Resource.Id.button_Languages_Next),
                 State = StateButton.Next

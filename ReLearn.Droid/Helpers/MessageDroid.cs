@@ -9,7 +9,7 @@ namespace ReLearn.Droid.Helpers
 {
     class MessageDroid : IMessageCore
     {
-        public Android.App.Activity CurrentActivity => Mvx.IoCProvider.Resolve<IMvxAndroidCurrentTopActivity>().Activity;
+        public Activity CurrentActivity => Mvx.IoCProvider.Resolve<IMvxAndroidCurrentTopActivity>().Activity;
         public void Dialog(string message, Action buttonAction)
         {
             CurrentActivity.RunOnUiThread(() => new AlertDialog.Builder(CurrentActivity).SetTitle("Error").SetMessage(message)

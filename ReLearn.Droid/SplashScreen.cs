@@ -21,7 +21,7 @@ namespace ReLearn.Droid
             DataBase.SetupConnection();
             Database.СreateTableImage();
             Database.СreateTableLanguage();
-            Database.ADDCOLUMN();
+            Database.AddColumn();
         }
     }
 }

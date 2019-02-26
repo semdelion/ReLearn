@@ -20,7 +20,7 @@ namespace ReLearn.Droid.Images
     [Activity(Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class BlitzPollActivity : MvxAppCompatActivity<BlitzPollViewModel>
     {
-        System.Timers.Timer timer;
+        Timer timer;
         BitmapDrawable _backgroundWord;
         LinearLayout ViewPrev;
         LinearLayout ViewCurrent;
@@ -54,14 +54,14 @@ namespace ReLearn.Droid.Images
 
         ImageView GetImage()
         {
-            LinearLayout.LayoutParams param1 = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, PixelConverter.DpToPX(200))
+            LinearLayout.LayoutParams param = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, PixelConverter.DpToPX(200))
             {
                 TopMargin    = PixelConverter.DpToPX(15),
                 BottomMargin = PixelConverter.DpToPX(20),
                 RightMargin  = PixelConverter.DpToPX(10),
                 LeftMargin   = PixelConverter.DpToPX(10)
             };
-            var ImageView = new ImageView(this) {LayoutParameters = param1};
+            var ImageView = new ImageView(this) {LayoutParameters = param};
             using (Bitmap bitmap = BitmapFactory.DecodeStream(Application.Context.Assets.Open($"Image{DataBase.TableName}/{ImageDatabase[CurrentWordNumber].Image_name}.png")))
             using (var bitmapRounded = BitmapHandler.GetRoundedCornerBitmap(bitmap, PixelConverter.DpToPX(5)))
                 ImageView.SetImageBitmap(bitmapRounded);
