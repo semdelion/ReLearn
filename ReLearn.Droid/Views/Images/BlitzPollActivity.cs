@@ -63,7 +63,7 @@ namespace ReLearn.Droid.Images
             };
             var ImageView = new ImageView(this) {LayoutParameters = param};
             using (Bitmap bitmap = BitmapFactory.DecodeStream(Application.Context.Assets.Open($"Image{DataBase.TableName}/{ImageDatabase[CurrentWordNumber].Image_name}.png")))
-            using (var bitmapRounded = BitmapHandler.GetRoundedCornerBitmap(bitmap, PixelConverter.DpToPX(5)))
+            using (var bitmapRounded = BitmapHelper.GetRoundedCornerBitmap(bitmap, PixelConverter.DpToPX(5)))
                 ImageView.SetImageBitmap(bitmapRounded);
             return ImageView;
         }
@@ -131,10 +131,10 @@ namespace ReLearn.Droid.Images
             DisplayMetrics displayMetrics = new DisplayMetrics();
             WindowManager.DefaultDisplay.GetRealMetrics(displayMetrics);
 
-            _backgroundWord = Background.GetBackgroung(Resources,
+            _backgroundWord = BitmapHelper.GetBackgroung(Resources,
                 displayMetrics.WidthPixels - PixelConverter.DpToPX(20),
                 PixelConverter.DpToPX(300));
-            var _backgroundTimer = Background.GetBackgroung(Resources,
+            var _backgroundTimer = BitmapHelper.GetBackgroung(Resources,
                 displayMetrics.WidthPixels - PixelConverter.DpToPX(200),
                 PixelConverter.DpToPX(50));
 

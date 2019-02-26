@@ -21,7 +21,7 @@ namespace ReLearn.Droid.Languages
         List<Button> Buttons { get; set; }
         ButtonNext ButtonNext { get; set; }
         List<DBWords> WordDatabase { get; set; }
-        MyTextToSpeech MySpeech { get; set; }
+        TextToSpeech MySpeech { get; set; }
         string Word { get; set; }
 
         string TitleCount { set => FindViewById<TextView>(Resource.Id.Repeat_toolbar_textview).Text = value;}
@@ -147,12 +147,12 @@ namespace ReLearn.Droid.Languages
 
             DisplayMetrics displayMetrics = new DisplayMetrics();
             WindowManager.DefaultDisplay.GetRealMetrics(displayMetrics);
-            var _background = Background.GetBackgroung(Resources,
+            var _background = BitmapHelper.GetBackgroung(Resources,
             displayMetrics.WidthPixels - PixelConverter.DpToPX(70),
             PixelConverter.DpToPX(190));
             FindViewById<TextView>(Resource.Id.textView_Eng_Word).Background = _background;
 
-            MySpeech = new MyTextToSpeech();
+            MySpeech = new TextToSpeech();
             WordDatabase = DBWords.GetDataNotLearned;
             Buttons = new List<Button>{
                 FindViewById<Button>(Resource.Id.button_Languages_choice1),

@@ -1,6 +1,5 @@
 ﻿namespace ReLearn.Droid.Helpers
 {
-
     static class GetString
     {
         public static string GetResourceString(string str, Android.Content.Res.Resources resource)

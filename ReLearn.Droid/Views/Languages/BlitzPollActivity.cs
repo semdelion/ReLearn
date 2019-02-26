@@ -99,10 +99,10 @@ namespace ReLearn.Droid.Languages
             DisplayMetrics displayMetrics = new DisplayMetrics();
             WindowManager.DefaultDisplay.GetRealMetrics(displayMetrics);
 
-            _backgroundWord = Background.GetBackgroung(Resources,
+            _backgroundWord = BitmapHelper.GetBackgroung(Resources,
                 displayMetrics.WidthPixels - PixelConverter.DpToPX(50),
                 PixelConverter.DpToPX(300));
-            var _backgroundTimer = Background.GetBackgroung(Resources,
+            var _backgroundTimer = BitmapHelper.GetBackgroung(Resources,
                 displayMetrics.WidthPixels - PixelConverter.DpToPX(200),
                 PixelConverter.DpToPX(50));
 

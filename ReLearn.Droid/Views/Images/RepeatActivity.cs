@@ -57,7 +57,7 @@ namespace ReLearn.Droid.Images
         {
             using (Bitmap bitmap = BitmapFactory.DecodeStream(Application.Context.Assets.Open(
                 $"Image{DataBase.TableName}/{ImagesDatabase[CurrentWordNumber].Image_name}.png")))
-            using (var bitmapRounded = BitmapHandler.GetRoundedCornerBitmap(bitmap, PixelConverter.DpToPX(5)))
+            using (var bitmapRounded = BitmapHelper.GetRoundedCornerBitmap(bitmap, PixelConverter.DpToPX(5)))
                 FindViewById<ImageView>(Resource.Id.imageView_Images_repeat).SetImageBitmap(bitmapRounded);
 
             const int four = 4;
@@ -151,7 +151,7 @@ namespace ReLearn.Droid.Images
 
             DisplayMetrics displayMetrics = new DisplayMetrics();
             WindowManager.DefaultDisplay.GetRealMetrics(displayMetrics);
-            var _background = Background.GetBackgroung(Resources,
+            var _background = BitmapHelper.GetBackgroung(Resources,
             displayMetrics.WidthPixels - PixelConverter.DpToPX(20),
             PixelConverter.DpToPX(190));
             FindViewById<LinearLayout>(Resource.Id.repeat_background).Background = _background;

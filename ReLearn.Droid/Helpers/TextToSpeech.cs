@@ -4,15 +4,15 @@ using ReLearn.API;
 
 namespace ReLearn.Droid.Helpers
 {
-    class MyTextToSpeech : Java.Lang.Object, TextToSpeech.IOnInitListener
+    class TextToSpeech : Java.Lang.Object, Android.Speech.Tts.TextToSpeech.IOnInitListener
     {
-        TextToSpeech speaker;
+        Android.Speech.Tts.TextToSpeech speaker;
         string toSpeak;
         public void Speak(string text, Context context)
         {
             toSpeak = text;
             if (speaker == null)
-                speaker = new TextToSpeech(context, this);
+                speaker = new Android.Speech.Tts.TextToSpeech(context, this);
             else
                 speaker.Speak(toSpeak, QueueMode.Flush, null, null);
         }

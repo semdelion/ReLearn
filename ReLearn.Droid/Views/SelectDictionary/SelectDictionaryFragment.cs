@@ -44,11 +44,10 @@ namespace ReLearn.Droid.Views.SelectDictionary
             Dictionaries = new Dictionaries((int)(Resources.DisplayMetrics.WidthPixels / 3f));
             ViewPager viewPager = view.FindViewById<ViewPager>(Resource.Id.pager);
 
-            var fragments = new List<MvxViewPagerFragmentInfo>
-                    {
-                        new MvxViewPagerFragmentInfo("", "", typeof(TabLanguageFragment), typeof(DictionaryLanguageViewModel)),
-                        new MvxViewPagerFragmentInfo("", "", typeof(TabImageFragment), typeof(DictionaryImageViewModel))
-                    };
+            var fragments = new List<MvxViewPagerFragmentInfo> {
+                    new MvxViewPagerFragmentInfo("", "", typeof(TabLanguageFragment), typeof(DictionaryLanguageViewModel)),
+                    new MvxViewPagerFragmentInfo("", "", typeof(TabImageFragment), typeof(DictionaryImageViewModel))
+                };
             viewPager.Adapter = new MvxFragmentStatePagerAdapter(Activity, ChildFragmentManager, fragments);
             TabLayout tabLayout = view.FindViewById<TabLayout>(Resource.Id.tablayout);
             tabLayout.SetupWithViewPager(viewPager);

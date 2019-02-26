@@ -15,7 +15,7 @@ namespace ReLearn.Droid.Languages
     [Activity(Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class LearnActivity : MvxAppCompatActivity<LearnViewModel>
     {
-        MyTextToSpeech MySpeech { get; set; }
+        TextToSpeech MySpeech { get; set; }
         List<DBWords> WordDatabase { get; set; }
         int Count { get; set; }
         bool Voice_Enable = true;
@@ -72,14 +72,14 @@ namespace ReLearn.Droid.Languages
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
             DisplayMetrics displayMetrics = new DisplayMetrics();
             WindowManager.DefaultDisplay.GetRealMetrics(displayMetrics);
-            var _background = Background.GetBackgroung(Resources,
+            var _background = BitmapHelper.GetBackgroung(Resources,
             displayMetrics.WidthPixels - PixelConverter.DpToPX(70),
             PixelConverter.DpToPX(300));
 
             FindViewById<TextView>(Resource.Id.textView_learn_en).Background = _background;
 
 
-            MySpeech = new MyTextToSpeech();
+            MySpeech = new TextToSpeech();
             WordDatabase = DBWords.GetDataNotLearned;
 
             if (WordDatabase.Count == 0)
