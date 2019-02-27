@@ -18,15 +18,10 @@ namespace ReLearn.Droid.Images
     [Activity(Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class RepeatActivity : MvxAppCompatActivity<RepeatViewModel>
     {
-        int CurrentWordNumber { get; set; }
+        
         List<Button> Buttons { get; set; }
         ButtonNext Button_next;
         
-        string TitleCount
-        {
-            set => FindViewById<TextView>(Resource.Id.Repeat_toolbar_textview_fl).Text = value; 
-        }
-
         void Button_enable(bool state)
         {
             foreach (var button in Buttons)
@@ -47,7 +42,7 @@ namespace ReLearn.Droid.Images
 
         void RandomButton(params Button[] buttons)   //загружаем варианты ответа в текст кнопок
         {
-            RandomNumbers.RandomFourNumbers(CurrentWordNumber, ViewModel.Database.Count, out List<int> random_numbers);
+            RandomNumbers.RandomFourNumbers(ViewModel.CurrentNumber, ViewModel.Database.Count, out List<int> random_numbers);
             for (int i = 0; i < buttons.Length; i++)
                 buttons[i].Text = ViewModel.Database[random_numbers[i]].ImageName;
         }
@@ -55,7 +50,7 @@ namespace ReLearn.Droid.Images
         void NextTest() //new test
         {
             using (Bitmap bitmap = BitmapFactory.DecodeStream(Application.Context.Assets.Open(
-                $"Image{DataBase.TableName}/{ViewModel.Database[CurrentWordNumber].Image_name}.png")))
+                $"Image{DataBase.TableName}/{ViewModel.Database[ViewModel.CurrentNumber].Image_name}.png")))
             using (var bitmapRounded = BitmapHelper.GetRoundedCornerBitmap(bitmap, PixelConverter.DpToPX(5)))
                 FindViewById<ImageView>(Resource.Id.imageView_Images_repeat).SetImageBitmap(bitmapRounded);
 
@@ -71,18 +66,18 @@ namespace ReLearn.Droid.Images
         {
             API.Statistics.Count++;
             Button_enable(false);
-            if (buttons[0].Text == ViewModel.Database[CurrentWordNumber].ImageName)
+            if (buttons[0].Text == ViewModel.Database[ViewModel.CurrentNumber].ImageName)
             {
-                API.Statistics.Add(ViewModel.Database, CurrentWordNumber, - Settings.TrueAnswer);
+                API.Statistics.Add(ViewModel.Database, ViewModel.CurrentNumber, - Settings.TrueAnswer);
                 API.Statistics.True++;
                 buttons[0].Background = GetDrawable(Resource.Drawable.button_true);
             }
             else
             {
-                API.Statistics.Add(ViewModel.Database,CurrentWordNumber, Settings.FalseAnswer);
+                API.Statistics.Add(ViewModel.Database, ViewModel.CurrentNumber, Settings.FalseAnswer);
                 API.Statistics.False++;
                 buttons[0].Background = GetDrawable(Resource.Drawable.button_false);
-                int index = Buttons.FindIndex(s => s.Text == ViewModel.Database[CurrentWordNumber].ImageName);
+                int index = Buttons.FindIndex(s => s.Text == ViewModel.Database[ViewModel.CurrentNumber].ImageName);
                 Buttons[index].Background = GetDrawable(Resource.Drawable.button_true);
             }
         }
@@ -91,8 +86,8 @@ namespace ReLearn.Droid.Images
         {
             API.Statistics.Count++;
             API.Statistics.False++;
-            API.Statistics.Add(ViewModel.Database, CurrentWordNumber, Settings.NeutralAnswer);
-            int index = Buttons.FindIndex(s => s.Text == ViewModel.Database[CurrentWordNumber].ImageName);
+            API.Statistics.Add(ViewModel.Database, ViewModel.CurrentNumber, Settings.NeutralAnswer);
+            int index = Buttons.FindIndex(s => s.Text == ViewModel.Database[ViewModel.CurrentNumber].ImageName);
             Buttons[index].Background = GetDrawable(Resource.Drawable.button_true);
         }
 
@@ -122,10 +117,10 @@ namespace ReLearn.Droid.Images
             {
                 if (API.Statistics.Count < Settings.NumberOfRepeatsImage)
                 {
-                    CurrentWordNumber = new Random(unchecked((int)(DateTime.Now.Ticks))).Next(ViewModel.Database.Count);
+                    ViewModel.CurrentNumber = new Random(unchecked((int)(DateTime.Now.Ticks))).Next(ViewModel.Database.Count);
                     NextTest();
                     Button_enable(true);
-                    TitleCount = $"{GetString(Resource.String.Repeated)} {API.Statistics.Count + 1}/{Settings.NumberOfRepeatsImage}";
+                    ViewModel.TitleCount = $"{GetString(Resource.String.Repeated)} {API.Statistics.Count + 1}/{Settings.NumberOfRepeatsImage}";
                 }
                 else
                 {

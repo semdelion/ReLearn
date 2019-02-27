@@ -21,6 +21,21 @@ namespace ReLearn.Core.ViewModels.Languages
 
         #region Properties
         public List<DBWords> Database { get; set; }
+        private string _text;
+        public string Text
+        {
+            get => _text; 
+            set => SetProperty(ref _text, value); 
+        }
+        private string _titleCount;
+        public string TitleCount
+        {
+            get => _titleCount;
+            set => SetProperty(ref _titleCount, value);
+        }
+
+        public int CurrentNumber { get; set; }
+        public string Word { get; set; }
         #endregion
 
         #region Services

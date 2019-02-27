@@ -17,13 +17,8 @@ namespace ReLearn.Droid.Languages
     [Activity(Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class RepeatActivity : MvxAppCompatActivity<RepeatViewModel>
     {
-        int CurrentWordNumber { get; set; }
         List<Button> Buttons { get; set; }
         ButtonNext ButtonNext { get; set; }
-        string Word { get; set; }
-
-        string TitleCount { set => FindViewById<TextView>(Resource.Id.Repeat_toolbar_textview).Text = value;}
-        string Text { set => FindViewById<TextView>(Resource.Id.textView_Eng_Word).Text = value;}
 
         void Button_enable(bool state)
         {
@@ -43,15 +38,15 @@ namespace ReLearn.Droid.Languages
 
         void RandomButton(params Button[] buttons)   //загружаем варианты ответа в текст кнопок
         {
-            RandomNumbers.RandomFourNumbers(CurrentWordNumber, ViewModel.Database.Count, out List<int> random_numbers);
+            RandomNumbers.RandomFourNumbers(ViewModel.CurrentNumber, ViewModel.Database.Count, out List<int> random_numbers);
             for (int i = 0; i < buttons.Length; i++)
                 buttons[i].Text = ViewModel.Database[random_numbers[i]].TranslationWord;
         }
 
         void NextWord()
         {
-            Word = ViewModel.Database[CurrentWordNumber].Word;
-            Text = $"{ ViewModel.Database[CurrentWordNumber].Word}{(ViewModel.Database[CurrentWordNumber].Transcription==null ? "" :$"\n{ ViewModel.Database[CurrentWordNumber].Transcription}")}";
+            ViewModel.Word = ViewModel.Database[ViewModel.CurrentNumber].Word;
+            ViewModel.Text = $"{ ViewModel.Database[ViewModel.CurrentNumber].Word}{(ViewModel.Database[ViewModel.CurrentNumber].Transcription==null ? "" :$"\n{ ViewModel.Database[ViewModel.CurrentNumber].Transcription}")}";
             const int four = 4;
             int first = new Random(unchecked((int)(DateTime.Now.Ticks))).Next(four);
             List<int> random_numbers = new List<int> { first, 0, 0, 0 };
@@ -64,18 +59,18 @@ namespace ReLearn.Droid.Languages
         {
             API.Statistics.Count++;
             Button_enable(false);
-            if (buttons[0].Text == ViewModel.Database[CurrentWordNumber].TranslationWord)
+            if (buttons[0].Text == ViewModel.Database[ViewModel.CurrentNumber].TranslationWord)
             {
-                API.Statistics.Add(ViewModel.Database, CurrentWordNumber, -Settings.TrueAnswer);
+                API.Statistics.Add(ViewModel.Database, ViewModel.CurrentNumber, -Settings.TrueAnswer);
                 API.Statistics.True++;
                 buttons[0].Background = GetDrawable(Resource.Drawable.button_true);
             }
             else
             {
-                API.Statistics.Add(ViewModel.Database, CurrentWordNumber, Settings.FalseAnswer);
+                API.Statistics.Add(ViewModel.Database, ViewModel.CurrentNumber, Settings.FalseAnswer);
                 API.Statistics.False++;
                 buttons[0].Background = GetDrawable(Resource.Drawable.button_false);
-                int index = Buttons.FindIndex(s => s.Text == ViewModel.Database[CurrentWordNumber].TranslationWord);
+                int index = Buttons.FindIndex(s => s.Text == ViewModel.Database[ViewModel.CurrentNumber].TranslationWord);
                 Buttons[index].Background = GetDrawable(Resource.Drawable.button_true);
             }
         }
@@ -84,13 +79,13 @@ namespace ReLearn.Droid.Languages
         {
             API.Statistics.Count++;
             API.Statistics.False++;
-            API.Statistics.Add(ViewModel.Database, CurrentWordNumber, Settings.NeutralAnswer);
-            int index =  Buttons.FindIndex(s => s.Text == ViewModel.Database[CurrentWordNumber].TranslationWord);
+            API.Statistics.Add(ViewModel.Database, ViewModel.CurrentNumber, Settings.NeutralAnswer);
+            int index =  Buttons.FindIndex(s => s.Text == ViewModel.Database[ViewModel.CurrentNumber].TranslationWord);
             Buttons[index].Background = GetDrawable(Resource.Drawable.button_true);
         }
 
         [Java.Interop.Export("Button_Speak_Languages_Click")]
-        public void Button_Speak_Languages_Click(View v) => ViewModel.TextToSpeech.Speak(Word);
+        public void Button_Speak_Languages_Click(View v) => ViewModel.TextToSpeech.Speak(ViewModel.Word);
 
         [Java.Interop.Export("Button_Languages_1_Click")]
         public void Button_Languages_1_Click(View v) => Answer(Buttons[0], Buttons[1], Buttons[2], Buttons[3]);
@@ -118,10 +113,10 @@ namespace ReLearn.Droid.Languages
             {
                 if (API.Statistics.Count < Settings.NumberOfRepeatsLanguage)
                 {
-                    CurrentWordNumber = new Random(unchecked((int)(DateTime.Now.Ticks))).Next(ViewModel.Database.Count);
+                    ViewModel.CurrentNumber = new Random(unchecked((int)(DateTime.Now.Ticks))).Next(ViewModel.Database.Count);
                     NextWord();
                     Button_enable(true);
-                    TitleCount = $"{GetString(Resource.String.Repeated)} {API.Statistics.Count + 1}/{Settings.NumberOfRepeatsLanguage}";
+                    ViewModel.TitleCount = $"{GetString(Resource.String.Repeated)} {API.Statistics.Count + 1}/{Settings.NumberOfRepeatsLanguage}";
                 }
                 else
                 {

@@ -20,6 +20,13 @@ namespace ReLearn.Core.ViewModels.Images
 
         #region Properties
         public List<DBImages> Database { get; set; }
+        private string _titleCount;
+        public string TitleCount
+        {
+            get => _titleCount;
+            set => SetProperty(ref _titleCount, value);
+        }
+        public int CurrentNumber { get; set; }
         #endregion
 
         #region Services
