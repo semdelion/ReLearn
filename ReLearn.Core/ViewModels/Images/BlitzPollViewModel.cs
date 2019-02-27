@@ -1,10 +1,12 @@
 ﻿using MvvmCross.Commands;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
+using ReLearn.API;
 using ReLearn.API.Database;
 using ReLearn.Core.ViewModels.MainMenu.Statistics;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Timers;
 
 namespace ReLearn.Core.ViewModels.Images
 {
@@ -20,6 +22,18 @@ namespace ReLearn.Core.ViewModels.Images
 
         #region Properties
         public List<DBImages> Database { get; set; }
+        private string _titleCount;
+        public string TitleCount
+        {
+            get => _titleCount;
+            set => SetProperty(ref _titleCount, value);
+        }
+        public bool Answer { get; set; }
+        public int CurrentNumber { get; set; }
+        public int Time { get; set; }
+        public int True { get; set; } = 0;
+        public int False { get; set; } = 0;
+        public Timer Timer { get; set; }
         #endregion
 
         #region Services
@@ -31,6 +45,7 @@ namespace ReLearn.Core.ViewModels.Images
         {
             NavigationService = navigationService;
             Database = DBImages.GetDataNotLearned;
+            Time = Settings.TimeToBlitz * 10;
         }
         #endregion
 

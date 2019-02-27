@@ -19,16 +19,10 @@ namespace ReLearn.Droid.Languages
     [Activity(Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class BlitzPollActivity : MvxAppCompatActivity<BlitzPollViewModel>
     {
-        Timer timer;
         BitmapDrawable _backgroundWord;
         TextView ViewPrev;
         TextView ViewCurrent;
-        
-        bool answer;
-        int CurrentWordNumber;
-        string TitleCount { set => FindViewById<TextView>(Resource.Id.BlitzPoll_toolbar_textview).Text = value; }
-        int Time = Settings.TimeToBlitz * 10;
-        int True = 0, False = 0;
+       
         TextView GetTextView()
         {
             RelativeLayout.LayoutParams param = new RelativeLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, PixelConverter.DpToPX(320))
@@ -38,17 +32,17 @@ namespace ReLearn.Droid.Languages
                 RightMargin = PixelConverter.DpToPX(10),
                 LeftMargin = PixelConverter.DpToPX(10)
             };
-           
-            CurrentWordNumber = new Random(unchecked((int)(DateTime.Now.Ticks))).Next(ViewModel.Database.Count);
-            int randIndex = (CurrentWordNumber + new Random(unchecked((int)(DateTime.Now.Ticks))).Next(1, ViewModel.Database.Count))% ViewModel.Database.Count;
-            answer = new Random(unchecked((int)(DateTime.Now.Ticks))).Next(2) == 1 ? true : false;
-            string TranslationWord = ViewModel.Database[answer ? CurrentWordNumber : randIndex].TranslationWord;
+
+            ViewModel.CurrentNumber = new Random(unchecked((int)(DateTime.Now.Ticks))).Next(ViewModel.Database.Count);
+            int randIndex = (ViewModel.CurrentNumber + new Random(unchecked((int)(DateTime.Now.Ticks))).Next(1, ViewModel.Database.Count))% ViewModel.Database.Count;
+            ViewModel.Answer = new Random(unchecked((int)(DateTime.Now.Ticks))).Next(2) == 1 ? true : false;
+            string TranslationWord = ViewModel.Database[ViewModel.Answer ? ViewModel.CurrentNumber : randIndex].TranslationWord;
             var textView = new TextView(this)
             {
                 TextSize        = 30,
                 Elevation       = PixelConverter.DpToPX(10),
                 LayoutParameters= param,
-                Text            = $"{ViewModel.Database[CurrentWordNumber].Word}\n\n{TranslationWord}",
+                Text            = $"{ViewModel.Database[ViewModel.CurrentNumber].Word}\n\n{TranslationWord}",
                 Gravity         = GravityFlags.CenterHorizontal | GravityFlags.Center
             };
 
@@ -67,19 +61,19 @@ namespace ReLearn.Droid.Languages
 
         void Answer(bool UserAnswer)
         {
-            if (!(answer ^ UserAnswer))
-                True++;
+            if (!(ViewModel.Answer ^ UserAnswer))
+                ViewModel.True++;
             else
-                False++;
+                ViewModel.False++;
             if (ViewPrev != null)
                 FindViewById<RelativeLayout>(Resource.Id.RelativeLayoutLanguagesBlitzPoll).RemoveView(ViewPrev);
-            ViewCurrent.Background = GetDrawable(!(answer ^ UserAnswer) ? Resource.Drawable.view_true : Resource.Drawable.view_false);
+            ViewCurrent.Background = GetDrawable(!(ViewModel.Answer ^ UserAnswer) ? Resource.Drawable.view_true : Resource.Drawable.view_false);
             RunAnimation((UserAnswer ? 1 : -1) * PixelConverter.DpToPX(5000));
             ViewPrev = ViewCurrent;
             ViewCurrent = GetTextView();
             FindViewById<RelativeLayout>(Resource.Id.RelativeLayoutLanguagesBlitzPoll).AddView(ViewCurrent, 0);
-            API.Statistics.Add(ViewModel.Database, CurrentWordNumber, !(answer ^ UserAnswer) ? -1 : 1);
-            TitleCount = $"{GetString(Resource.String.Repeated)} {True + False + 1 }";
+            API.Statistics.Add(ViewModel.Database, ViewModel.CurrentNumber, !(ViewModel.Answer ^ UserAnswer) ? -1 : 1);
+            ViewModel.TitleCount = $"{GetString(Resource.String.Repeated)} { ViewModel.True + ViewModel.False + 1 }";
         }
 
         [Java.Interop.Export("Button_Languages_No_Click")]
@@ -142,7 +136,7 @@ namespace ReLearn.Droid.Languages
             }
             ViewCurrent = GetTextView();
             FindViewById<RelativeLayout>(Resource.Id.RelativeLayoutLanguagesBlitzPoll).AddView(ViewCurrent, 1);
-            TitleCount = $"{GetString(Resource.String.Repeated)} {1}";
+            ViewModel.TitleCount = $"{GetString(Resource.String.Repeated)} {1}";
             TimerStart();
             
 
@@ -150,28 +144,28 @@ namespace ReLearn.Droid.Languages
 
         void TimerStart()
         {
-            timer = new Timer{ Interval = 100, Enabled = true };
-            timer.Elapsed += Timer_Elapsed;
-            timer.Start();
+            ViewModel.Timer = new Timer{ Interval = 100, Enabled = true };
+            ViewModel.Timer.Elapsed += Timer_Elapsed;
+            ViewModel.Timer.Start();
         }
 
         private void Timer_Elapsed(object sender, ElapsedEventArgs e)
         {
             RunOnUiThread(() =>
             {
-                if (Time > 0)
+                if (ViewModel.Time > 0)
                 {
-                    Time--;
-                    string sec = $"{Time % 10}0";
-                    FindViewById<TextView>(Resource.Id.textView_Timer_language).Text = $"{Time / 10}:{sec}";
-                    if (Time == 50)
+                    ViewModel.Time--;
+                    string sec = $"{ ViewModel.Time % 10}0";
+                    FindViewById<TextView>(Resource.Id.textView_Timer_language).Text = $"{ ViewModel.Time / 10}:{sec}";
+                    if (ViewModel.Time == 50)
                         FindViewById<TextView>(Resource.Id.textView_Timer_language).SetTextColor(Colors.Red);
                 }
                 else
                 {
-                    DBStatistics.Insert(True, False, DataBase.TableName.ToString());
+                    DBStatistics.Insert(ViewModel.True, ViewModel.False, DataBase.TableName.ToString());
                     ViewModel.ToStatistic.Execute();
-                    timer.Dispose();
+                    ViewModel.Timer.Dispose();
                     Finish();
                 }
             });
@@ -179,14 +173,14 @@ namespace ReLearn.Droid.Languages
 
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
-            timer.Dispose();
+            ViewModel.Timer.Dispose();
             Finish();
             return base.OnOptionsItemSelected(item);
         }
         public override void OnBackPressed()
         {
             base.OnBackPressed();
-            timer.Dispose();
+            ViewModel.Timer.Dispose();
             Finish();
         }
     }

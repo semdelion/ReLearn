@@ -17,6 +17,18 @@ namespace ReLearn.Core.ViewModels.Languages
 
         #region Properties
         public List<DBWords> Database { get; set; }
+        public int Count { get; set; }
+        public bool VoiceEnable { get; set; } = true;
+
+        public string Word { get; set; }
+        private string _text;
+        public string Text
+        {
+            get => _text;
+            set => SetProperty(ref _text, value);
+        }
+
+
         #endregion
 
         #region Services

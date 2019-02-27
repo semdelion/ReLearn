@@ -20,18 +20,10 @@ namespace ReLearn.Droid.Images
     [Activity(Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class BlitzPollActivity : MvxAppCompatActivity<BlitzPollViewModel>
     {
-        Timer timer;
         BitmapDrawable _backgroundWord;
         LinearLayout ViewPrev;
         LinearLayout ViewCurrent;
         
-        bool answer;
-        int CurrentWordNumber;
-        string TitleCount { set => FindViewById<TextView>(Resource.Id.BlitzPoll_toolbar_textview_images).Text = value; }
-        int Time = Settings.TimeToBlitz * 10;
-        int True = 0, 
-            False = 0;
-
         TextView GetTextView()
         {
             LinearLayout.LayoutParams param1 = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, LinearLayout.LayoutParams.MatchParent)
@@ -40,12 +32,12 @@ namespace ReLearn.Droid.Images
                 RightMargin     = PixelConverter.DpToPX(10),
                 LeftMargin      = PixelConverter.DpToPX(10)
             };
-            int randIndex = (CurrentWordNumber + new Random(unchecked((int)(DateTime.Now.Ticks))).Next(1, ViewModel.Database.Count)) % ViewModel.Database.Count;
+            int randIndex = (ViewModel.CurrentNumber + new Random(unchecked((int)(DateTime.Now.Ticks))).Next(1, ViewModel.Database.Count)) % ViewModel.Database.Count;
             var textView = new TextView(this)
             {
                 TextSize = 20,
                 LayoutParameters = param1,
-                Text = $"{(ViewModel.Database[answer ? CurrentWordNumber : randIndex]).ImageName}",
+                Text = $"{(ViewModel.Database[ViewModel.Answer ? ViewModel.CurrentNumber : randIndex]).ImageName}",
                 Gravity = GravityFlags.CenterHorizontal
             };
             textView.SetTextColor(Colors.White);
@@ -62,7 +54,7 @@ namespace ReLearn.Droid.Images
                 LeftMargin   = PixelConverter.DpToPX(10)
             };
             var ImageView = new ImageView(this) {LayoutParameters = param};
-            using (Bitmap bitmap = BitmapFactory.DecodeStream(Application.Context.Assets.Open($"Image{DataBase.TableName}/{ViewModel.Database[CurrentWordNumber].Image_name}.png")))
+            using (Bitmap bitmap = BitmapFactory.DecodeStream(Application.Context.Assets.Open($"Image{DataBase.TableName}/{ViewModel.Database[ViewModel.CurrentNumber].Image_name}.png")))
             using (var bitmapRounded = BitmapHelper.GetRoundedCornerBitmap(bitmap, PixelConverter.DpToPX(5)))
                 ImageView.SetImageBitmap(bitmapRounded);
             return ImageView;
@@ -70,8 +62,8 @@ namespace ReLearn.Droid.Images
 
         LinearLayout GetLayout()
         {
-            CurrentWordNumber = new Random(unchecked((int)(DateTime.Now.Ticks))).Next(ViewModel.Database.Count);
-            answer = new Random(unchecked((int)(DateTime.Now.Ticks))).Next(2) == 1 ? true : false;
+            ViewModel.CurrentNumber = new Random(unchecked((int)(DateTime.Now.Ticks))).Next(ViewModel.Database.Count);
+            ViewModel.Answer = new Random(unchecked((int)(DateTime.Now.Ticks))).Next(2) == 1 ? true : false;
             RelativeLayout.LayoutParams param = new RelativeLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, PixelConverter.DpToPX(320))
             {
                 TopMargin       = PixelConverter.DpToPX(160),
@@ -99,19 +91,19 @@ namespace ReLearn.Droid.Images
 
         public void Answer(bool UserAnswer)
         {
-            if (!(answer ^ UserAnswer))
-                True++;
+            if (!(ViewModel.Answer ^ UserAnswer))
+                ViewModel.True++;
             else
-                False++;
+                ViewModel.False++;
             if (ViewPrev!=null)
                 FindViewById<RelativeLayout>(Resource.Id.RelativeLayoutImagesBlitzPoll).RemoveView(ViewPrev);
-            ViewCurrent.Background = GetDrawable(!(answer ^ UserAnswer) ? Resource.Drawable.view_true : Resource.Drawable.view_false);
+            ViewCurrent.Background = GetDrawable(!(ViewModel.Answer ^ UserAnswer) ? Resource.Drawable.view_true : Resource.Drawable.view_false);
             RunAnimation((UserAnswer ? 1 : -1) * PixelConverter.DpToPX(5000));
             ViewPrev = ViewCurrent;
             ViewCurrent = GetLayout();
             FindViewById<RelativeLayout>(Resource.Id.RelativeLayoutImagesBlitzPoll).AddView(ViewCurrent, 0);
-            API.Statistics.Add(ViewModel.Database, CurrentWordNumber, !(answer ^ UserAnswer) ? -1 : 1);
-            TitleCount = $"{GetString(Resource.String.Repeated)} {True + False + 1 }";
+            API.Statistics.Add(ViewModel.Database, ViewModel.CurrentNumber, !(ViewModel.Answer ^ UserAnswer) ? -1 : 1);
+            ViewModel.TitleCount = $"{GetString(Resource.String.Repeated)} {ViewModel.True + ViewModel.False + 1 }";
         }
 
         [Java.Interop.Export("Button_Images_No_Click")]
@@ -171,39 +163,39 @@ namespace ReLearn.Droid.Images
             }
             ViewCurrent = GetLayout();
             FindViewById<RelativeLayout>(Resource.Id.RelativeLayoutImagesBlitzPoll).AddView(ViewCurrent, 1);
-            TitleCount = $"{GetString(Resource.String.Repeated)} {1}";
+            ViewModel.TitleCount = $"{GetString(Resource.String.Repeated)} {1}";
             TimerStart();
         }
 
         void TimerStart()
         {
-            timer = new System.Timers.Timer{ Interval = 100, Enabled = true };
-            timer.Elapsed += Timer_Elapsed;
-            timer.Start();
+            ViewModel.Timer = new System.Timers.Timer{ Interval = 100, Enabled = true };
+            ViewModel.Timer.Elapsed += Timer_Elapsed;
+            ViewModel.Timer.Start();
         }
 
         private void Cancel()
         {
-            timer.Dispose();
-            timer = null;
+            ViewModel.Timer.Dispose();
+            ViewModel.Timer = null;
         }
 
         private void Timer_Elapsed(object sender, ElapsedEventArgs e)
         {
             RunOnUiThread(() =>
             {
-                if (Time > 0)
+                if (ViewModel.Time > 0)
                 {
-                    Time--;
-                    string sec = $"{Time % 10}0";
-                    FindViewById<TextView>(Resource.Id.textView_Timer_Images).Text = $"{Time / 10}:{sec}";
+                    ViewModel.Time--;
+                    string sec = $"{ViewModel.Time % 10}0";
+                    FindViewById<TextView>(Resource.Id.textView_Timer_Images).Text = $"{ViewModel.Time / 10}:{sec}";
 
-                    if (Time == 50)
+                    if (ViewModel.Time == 50)
                         FindViewById<TextView>(Resource.Id.textView_Timer_Images).SetTextColor(Colors.Red);
                 }
                 else
                 {
-                    DBStatistics.Insert(True, False, DataBase.TableName.ToString());
+                    DBStatistics.Insert(ViewModel.True, ViewModel.False, DataBase.TableName.ToString());
                     ViewModel.ToStatistic.Execute();
                     Cancel();
                     Finish();

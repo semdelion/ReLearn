@@ -30,6 +30,7 @@
 		android:layout_width  ="match_parent"
 		android:layout_height ="match_parent">
 		<TextView
+			local:MvxBind			   ="Text Text"
 			android:id				   ="@+id/textView_learn_en"
 			android:textColor		   ="@color/text_white"
 			tools:text			       ="Text"

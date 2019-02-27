@@ -1,5 +1,7 @@
 ﻿using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
+using Plugin.Settings;
+using ReLearn.API;
 using ReLearn.API.Database;
 using System.Collections.Generic;
 

@@ -17,32 +17,24 @@ namespace ReLearn.Droid.Images
     [Activity(Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class LearnActivity : MvxAppCompatActivity<LearnViewModel>
     {
-        int Count { get; set; }
-
-        string ImageName
-        {
-            get => FindViewById<TextView>(Resource.Id.textView_Images_learn).Text; 
-            set => FindViewById<TextView>(Resource.Id.textView_Images_learn).Text = value; 
-        }
-        
         [Java.Interop.Export("Button_Images_Learn_NotRepeat_Click")]
         public void Button_Images_Learn_NotRepeat_Click(View v)
         {
-            DBImages.UpdateLearningNotRepeat(ImageName);
+            DBImages.UpdateLearningNotRepeat(ViewModel.ImageName);
             Button_Images_Learn_Next_Click(null);
         }
 
         [Java.Interop.Export("Button_Images_Learn_Next_Click")]
         public void Button_Images_Learn_Next_Click(View v)
         {
-            if (Count < ViewModel.Database.Count)
+            if (ViewModel.Count < ViewModel.Database.Count)
             {
-                DBImages.UpdateLearningNext(ViewModel.Database[Count].Image_name);
+                DBImages.UpdateLearningNext(ViewModel.Database[ViewModel.Count].Image_name);
                 try
-                {   using (var image = BitmapFactory.DecodeStream(Application.Context.Assets.Open( $"Image{DataBase.TableName}/{ViewModel.Database[Count].Image_name}.png")))
+                {   using (var image = BitmapFactory.DecodeStream(Application.Context.Assets.Open( $"Image{DataBase.TableName}/{ViewModel.Database[ViewModel.Count].Image_name}.png")))
                     using (var ImageViewBox = BitmapHelper.GetRoundedCornerBitmap(image, PixelConverter.DpToPX(5)))
                         FindViewById<ImageView>(Resource.Id.imageView_Images_learn).SetImageBitmap(ImageViewBox);
-                        ImageName = ViewModel.Database[Count++].ImageName;
+                        ViewModel.ImageName = ViewModel.Database[ViewModel.Count++].ImageName;
                 }
                 catch(Exception ex)
                 {

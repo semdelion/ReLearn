@@ -15,49 +15,39 @@ namespace ReLearn.Droid.Languages
     [Activity(Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class LearnActivity : MvxAppCompatActivity<LearnViewModel>
     {
-        int Count { get; set; }
-        bool Voice_Enable = true;
-
-        string Word {get;set;}
-        string Text
-        {
-            get => FindViewById<TextView>(Resource.Id.textView_learn_en).Text;
-            set => FindViewById<TextView>(Resource.Id.textView_learn_en).Text = value;
-        }
-
         [Java.Interop.Export("Button_Languages_Learn_Next_Click")]
         public void Button_Languages_Learn_Next_Click(View v)
         {
-            if (Count < ViewModel.Database.Count)
+            if (ViewModel.Count < ViewModel.Database.Count)
             {
-                Word = ViewModel.Database[Count].Word;
-                Text = $"{Word}{(ViewModel.Database[Count].Transcription == null ? "" : $"\n\n{ViewModel.Database[Count].Transcription}")}" +
-                       $"\n\n{ViewModel.Database[Count++].TranslationWord}";
-                DBWords.UpdateLearningNext(Word);
-                if (Voice_Enable)
-                    ViewModel.TextToSpeech.Speak(Word);
+                ViewModel.Word = ViewModel.Database[ViewModel.Count].Word;
+                ViewModel.Text = $"{ViewModel.Word}{(ViewModel.Database[ViewModel.Count].Transcription == null ? "" : $"\n\n{ViewModel.Database[ViewModel.Count].Transcription}")}" +
+                       $"\n\n{ViewModel.Database[ViewModel.Count++].TranslationWord}";
+                DBWords.UpdateLearningNext(ViewModel.Word);
+                if (ViewModel.VoiceEnable)
+                    ViewModel.TextToSpeech.Speak(ViewModel.Word);
             }
             else
                 Toast.MakeText(this, GetString(Resource.String.DictionaryOver), ToastLength.Short).Show();
         }
 
         [Java.Interop.Export("Button_Languages_Learn_Voice_Click")]
-        public void Button_Languages_Learn_Voice_Click(View v) => ViewModel.TextToSpeech.Speak(Word);
+        public void Button_Languages_Learn_Voice_Click(View v) => ViewModel.TextToSpeech.Speak(ViewModel.Word);
 
 
         [Java.Interop.Export("Button_Languages_Learn_Voice_Enable")]
         public void Button_Languages_Learn_Voice_Enable(View v)
         {
-            Voice_Enable = !Voice_Enable;
+            ViewModel.VoiceEnable = !ViewModel.VoiceEnable;
             FindViewById<ImageButton>(Resource.Id.Button_Speak_TurnOn_TurnOff).SetImageDrawable(
-                GetDrawable(Voice_Enable ? Resource.Mipmap.speak_on :
+                GetDrawable(ViewModel.VoiceEnable ? Resource.Mipmap.speak_on :
                                            Resource.Mipmap.speak_off));
         }
 
         [Java.Interop.Export(" Button_Languages_Learn_NotRepeat_Click")]
         public void Button_Languages_Learn_NotRepeat_Click(View v)
         {
-            DBWords.UpdateLearningNotRepeat(Word);
+            DBWords.UpdateLearningNotRepeat(ViewModel.Word);
             Button_Languages_Learn_Next_Click(null);
         }
 

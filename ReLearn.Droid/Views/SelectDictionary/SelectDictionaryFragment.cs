@@ -22,8 +22,6 @@ namespace ReLearn.Droid.Views.SelectDictionary
     [Register("relearn.droid.views.selectdictionary.SelectDictionaryFragment")]
     public class SelectDictionaryFragment : BaseFragment<SelectDictionaryViewModel>
     {
-        IProgressDialog Loading;
-
         public static Dictionaries Dictionaries;
 
         protected override int FragmentId => Resource.Layout.fragment_menu_select_dictionary;
@@ -42,12 +40,6 @@ namespace ReLearn.Droid.Views.SelectDictionary
             Animation.Start();
         }
 
-        public override void OnCreate(Bundle savedInstanceState)
-        {
-            Loading = Mvx.IoCProvider.Resolve<IUserDialogs>().Loading();
-            base.OnCreate(savedInstanceState);
-        }
-
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             var view = base.OnCreateView(inflater, container, savedInstanceState);
@@ -63,7 +55,6 @@ namespace ReLearn.Droid.Views.SelectDictionary
             tabLayout.SetupWithViewPager(viewPager);
             tabLayout.GetTabAt(tabLayout.TabCount - 2).SetIcon(Resource.Drawable.ic_dictionary_languages);
             tabLayout.GetTabAt(tabLayout.TabCount - 1).SetIcon(Resource.Drawable.ic_dictionary_images);
-            Loading.Hide();
             return view;
         }
     }

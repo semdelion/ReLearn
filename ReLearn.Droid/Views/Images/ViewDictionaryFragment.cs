@@ -25,10 +25,9 @@ namespace ReLearn.Droid.Views.Images
         
         public static bool HideStudied
         {
-            get => CrossSettings.Current.GetValueOrDefault(DBSettings.HideStudied.ToString(), true);
-            set => CrossSettings.Current.AddOrUpdateValue(DBSettings.HideStudied.ToString(), value);
+            get => CrossSettings.Current.GetValueOrDefault($"{DBSettings.HideStudied}", true);
+            set => CrossSettings.Current.AddOrUpdateValue($"{DBSettings.HideStudied}", value);
         }
-
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {

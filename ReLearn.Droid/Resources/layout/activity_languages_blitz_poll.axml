@@ -2,6 +2,7 @@
 <RelativeLayout
     xmlns:android			="http://schemas.android.com/apk/res/android"
     xmlns:local				="http://schemas.android.com/apk/res-auto"
+	xmlns:tools				="http://schemas.android.com/tools"
     android:orientation		="vertical"
     android:layout_width	="match_parent"
     android:layout_height	="match_parent">
@@ -18,7 +19,8 @@
 			android:layout_height	="80dp"
 			local:buttonGravity		="bottom">
 			<TextView
-				android:id				="@+id/BlitzPoll_toolbar_textview"
+				local:MvxBind			="Text TitleCount"
+				tools:text				="Count 1/20"
 				android:gravity			="bottom"
 				android:paddingBottom	="12dp"
 				android:layout_width	="match_parent"

@@ -15,6 +15,13 @@ namespace ReLearn.Core.ViewModels.Images
 
         #region Properties
         public List<DBImages> Database { get; set; }
+        public int Count { get; set; }
+        private string _imageName;
+        public string ImageName
+        {
+            get => _imageName;
+            set => SetProperty(ref _imageName, value);
+        }
         #endregion
 
         #region Services
