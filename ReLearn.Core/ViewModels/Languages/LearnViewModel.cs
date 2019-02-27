@@ -1,12 +1,14 @@
 ﻿using MvvmCross.Localization;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
+using ReLearn.API.Database;
+using ReLearn.Core.Services;
+using System.Collections.Generic;
 
 namespace ReLearn.Core.ViewModels.Languages
 {
     public  class LearnViewModel : MvxViewModel
     {
-        public IMvxLanguageBinder TextSource => new MvxLanguageBinder("", GetType().Name);
         #region Fields
         #endregion
 
@@ -14,16 +16,20 @@ namespace ReLearn.Core.ViewModels.Languages
         #endregion
 
         #region Properties
+        public List<DBWords> Database { get; set; }
         #endregion
 
         #region Services
         protected IMvxNavigationService NavigationService { get; }
+        public ITextToSpeech TextToSpeech { get; }
         #endregion
 
         #region Constructors
-        public LearnViewModel(IMvxNavigationService navigationService)
+        public LearnViewModel(IMvxNavigationService navigationService, ITextToSpeech textToSpeech)
         {
             NavigationService = navigationService;
+            TextToSpeech = textToSpeech;
+            Database = DBWords.GetDataNotLearned;
         }
         #endregion
 

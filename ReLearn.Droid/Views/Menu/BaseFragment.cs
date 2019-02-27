@@ -49,7 +49,6 @@ namespace ReLearn.Droid.Views.Menu
                 Resource.String.navigation_drawer_close);
 				_drawerToggle.DrawerOpened += (object sender, ActionBarDrawerEventArgs e) => (Activity as MainActivity)?.HideSoftKeyboard();
 				(ParentActivity as INavigationActivity).DrawerLayout.AddDrawerListener(_drawerToggle);
-               
             }
             SetHomeAsUp(ParentActivity.SupportFragmentManager.BackStackEntryCount == 0 ? false : true);
             return view;

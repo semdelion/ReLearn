@@ -1,5 +1,4 @@
 ﻿using Android.App;
-using Android.Graphics.Drawables;
 using Android.OS;
 using Android.Util;
 using Android.Views;
@@ -9,6 +8,7 @@ using ReLearn.API;
 using ReLearn.API.Database;
 using ReLearn.Core.ViewModels.Languages;
 using ReLearn.Droid.Helpers;
+using ReLearn.Droid.Services;
 using System;
 using System.Collections.Generic;
 
@@ -20,8 +20,6 @@ namespace ReLearn.Droid.Languages
         int CurrentWordNumber { get; set; }
         List<Button> Buttons { get; set; }
         ButtonNext ButtonNext { get; set; }
-        List<DBWords> WordDatabase { get; set; }
-        TextToSpeech MySpeech { get; set; }
         string Word { get; set; }
 
         string TitleCount { set => FindViewById<TextView>(Resource.Id.Repeat_toolbar_textview).Text = value;}
@@ -45,15 +43,15 @@ namespace ReLearn.Droid.Languages
 
         void RandomButton(params Button[] buttons)   //загружаем варианты ответа в текст кнопок
         {
-            RandomNumbers.RandomFourNumbers(CurrentWordNumber, WordDatabase.Count, out List<int> random_numbers);
+            RandomNumbers.RandomFourNumbers(CurrentWordNumber, ViewModel.Database.Count, out List<int> random_numbers);
             for (int i = 0; i < buttons.Length; i++)
-                buttons[i].Text = WordDatabase[random_numbers[i]].TranslationWord;
+                buttons[i].Text = ViewModel.Database[random_numbers[i]].TranslationWord;
         }
 
         void NextWord()
         {
-            Word = WordDatabase[CurrentWordNumber].Word;
-            Text = $"{WordDatabase[CurrentWordNumber].Word}{(WordDatabase[CurrentWordNumber].Transcription==null ? "" :$"\n{WordDatabase[CurrentWordNumber].Transcription}")}";
+            Word = ViewModel.Database[CurrentWordNumber].Word;
+            Text = $"{ ViewModel.Database[CurrentWordNumber].Word}{(ViewModel.Database[CurrentWordNumber].Transcription==null ? "" :$"\n{ ViewModel.Database[CurrentWordNumber].Transcription}")}";
             const int four = 4;
             int first = new Random(unchecked((int)(DateTime.Now.Ticks))).Next(four);
             List<int> random_numbers = new List<int> { first, 0, 0, 0 };
@@ -66,18 +64,18 @@ namespace ReLearn.Droid.Languages
         {
             API.Statistics.Count++;
             Button_enable(false);
-            if (buttons[0].Text == WordDatabase[CurrentWordNumber].TranslationWord)
+            if (buttons[0].Text == ViewModel.Database[CurrentWordNumber].TranslationWord)
             {
-                API.Statistics.Add(WordDatabase, CurrentWordNumber, -Settings.TrueAnswer);
+                API.Statistics.Add(ViewModel.Database, CurrentWordNumber, -Settings.TrueAnswer);
                 API.Statistics.True++;
                 buttons[0].Background = GetDrawable(Resource.Drawable.button_true);
             }
             else
             {
-                API.Statistics.Add(WordDatabase, CurrentWordNumber, Settings.FalseAnswer);
+                API.Statistics.Add(ViewModel.Database, CurrentWordNumber, Settings.FalseAnswer);
                 API.Statistics.False++;
                 buttons[0].Background = GetDrawable(Resource.Drawable.button_false);
-                int index = Buttons.FindIndex(s => s.Text == WordDatabase[CurrentWordNumber].TranslationWord);
+                int index = Buttons.FindIndex(s => s.Text == ViewModel.Database[CurrentWordNumber].TranslationWord);
                 Buttons[index].Background = GetDrawable(Resource.Drawable.button_true);
             }
         }
@@ -86,13 +84,13 @@ namespace ReLearn.Droid.Languages
         {
             API.Statistics.Count++;
             API.Statistics.False++;
-            API.Statistics.Add(WordDatabase, CurrentWordNumber, Settings.NeutralAnswer);
-            int index =  Buttons.FindIndex(s => s.Text == WordDatabase[CurrentWordNumber].TranslationWord);
+            API.Statistics.Add(ViewModel.Database, CurrentWordNumber, Settings.NeutralAnswer);
+            int index =  Buttons.FindIndex(s => s.Text == ViewModel.Database[CurrentWordNumber].TranslationWord);
             Buttons[index].Background = GetDrawable(Resource.Drawable.button_true);
         }
 
         [Java.Interop.Export("Button_Speak_Languages_Click")]
-        public void Button_Speak_Languages_Click(View v) => MySpeech.Speak(Word, this);
+        public void Button_Speak_Languages_Click(View v) => ViewModel.TextToSpeech.Speak(Word);
 
         [Java.Interop.Export("Button_Languages_1_Click")]
         public void Button_Languages_1_Click(View v) => Answer(Buttons[0], Buttons[1], Buttons[2], Buttons[3]);
@@ -120,7 +118,7 @@ namespace ReLearn.Droid.Languages
             {
                 if (API.Statistics.Count < Settings.NumberOfRepeatsLanguage)
                 {
-                    CurrentWordNumber = new Random(unchecked((int)(DateTime.Now.Ticks))).Next(WordDatabase.Count);
+                    CurrentWordNumber = new Random(unchecked((int)(DateTime.Now.Ticks))).Next(ViewModel.Database.Count);
                     NextWord();
                     Button_enable(true);
                     TitleCount = $"{GetString(Resource.String.Repeated)} {API.Statistics.Count + 1}/{Settings.NumberOfRepeatsLanguage}";
@@ -152,8 +150,7 @@ namespace ReLearn.Droid.Languages
             PixelConverter.DpToPX(190));
             FindViewById<TextView>(Resource.Id.textView_Eng_Word).Background = _background;
 
-            MySpeech = new TextToSpeech();
-            WordDatabase = DBWords.GetDataNotLearned;
+            ViewModel.Database = DBWords.GetDataNotLearned;
             Buttons = new List<Button>{
                 FindViewById<Button>(Resource.Id.button_Languages_choice1),
                 FindViewById<Button>(Resource.Id.button_Languages_choice2),
@@ -166,7 +163,7 @@ namespace ReLearn.Droid.Languages
                 button = FindViewById<Button>(Resource.Id.button_Languages_Next),
                 State = StateButton.Next
             };
-            if (WordDatabase.Count == 0)
+            if (ViewModel.Database.Count == 0)
             {
                 Toast.MakeText(this, GetString(Resource.String.RepeatedAllWords), ToastLength.Short).Show();
                 Finish();

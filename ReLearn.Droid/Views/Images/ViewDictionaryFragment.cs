@@ -22,7 +22,7 @@ namespace ReLearn.Droid.Views.Images
 
         protected override int Toolbar => Resource.Id.toolbar_view_dictionary;
         ListView DictionaryImages { get; set; }
-        List<DBImages> dataBase = DBImages.GetData;
+        
         public static bool HideStudied
         {
             get => CrossSettings.Current.GetValueOrDefault(DBSettings.HideStudied.ToString(), true);
@@ -35,7 +35,7 @@ namespace ReLearn.Droid.Views.Images
             var view = base.OnCreateView(inflater, container, savedInstanceState);
             DictionaryImages = view.FindViewById<ListView>(Resource.Id.listView_dictionary);
             SortNamesImages();
-            DictionaryImages.Adapter = new CustomAdapterImage(ParentActivity, HideStudied ? dataBase.FindAll(obj => obj.NumberLearn != 0) : dataBase);
+            DictionaryImages.Adapter = new CustomAdapterImage(ParentActivity, HideStudied ? ViewModel.DataBase.FindAll(obj => obj.NumberLearn != 0) : ViewModel.DataBase);
             return view;
         }
 
@@ -44,21 +44,21 @@ namespace ReLearn.Droid.Views.Images
             switch (item.ItemId)
             {
                 case Resource.Id.increase:
-                    dataBase.Sort((x, y) => x.NumberLearn.CompareTo(y.NumberLearn));
-                    DictionaryImages.Adapter = new CustomAdapterImage(ParentActivity, HideStudied ? dataBase.FindAll(obj => obj.NumberLearn != 0) : dataBase);
+                    ViewModel.DataBase.Sort((x, y) => x.NumberLearn.CompareTo(y.NumberLearn));
+                    DictionaryImages.Adapter = new CustomAdapterImage(ParentActivity, HideStudied ? ViewModel.DataBase.FindAll(obj => obj.NumberLearn != 0) : ViewModel.DataBase);
                     return true;
                 case Resource.Id.decrease:
-                    dataBase.Sort((x, y) => y.NumberLearn.CompareTo(x.NumberLearn));
-                    DictionaryImages.Adapter = new CustomAdapterImage(ParentActivity, HideStudied ? dataBase.FindAll(obj => obj.NumberLearn != 0) : dataBase);
+                    ViewModel.DataBase.Sort((x, y) => y.NumberLearn.CompareTo(x.NumberLearn));
+                    DictionaryImages.Adapter = new CustomAdapterImage(ParentActivity, HideStudied ? ViewModel.DataBase.FindAll(obj => obj.NumberLearn != 0) : ViewModel.DataBase);
                     return true;
                 case Resource.Id.ABC:
                     SortNamesImages();
-                    DictionaryImages.Adapter = new CustomAdapterImage(ParentActivity, HideStudied ? dataBase.FindAll(obj => obj.NumberLearn != 0) : dataBase);
+                    DictionaryImages.Adapter = new CustomAdapterImage(ParentActivity, HideStudied ? ViewModel.DataBase.FindAll(obj => obj.NumberLearn != 0) : ViewModel.DataBase);
                     return true;
                 case Resource.Id.HideStudied:
                     HideStudied = !HideStudied;
                     item.SetChecked(HideStudied);
-                    DictionaryImages.Adapter = new CustomAdapterImage(ParentActivity, HideStudied ? dataBase.FindAll(obj => obj.NumberLearn != 0) : dataBase);
+                    DictionaryImages.Adapter = new CustomAdapterImage(ParentActivity, HideStudied ? ViewModel.DataBase.FindAll(obj => obj.NumberLearn != 0) : ViewModel.DataBase);
                     return true;
                 default:
                     return base.OnOptionsItemSelected(item);
@@ -75,7 +75,7 @@ namespace ReLearn.Droid.Views.Images
             _searchView.QueryTextChange += (sender, e) =>
             {
                 if (e.NewText == "")
-                    DictionaryImages.Adapter = new CustomAdapterImage(ParentActivity, HideStudied ? dataBase.FindAll(obj => obj.NumberLearn != 0) : dataBase);
+                    DictionaryImages.Adapter = new CustomAdapterImage(ParentActivity, HideStudied ? ViewModel.DataBase.FindAll(obj => obj.NumberLearn != 0) : ViewModel.DataBase);
                 else
                     DictionaryImages.Adapter = new CustomAdapterImage(ParentActivity, Settings.Currentlanguage == Language.en.ToString() ?
                          SearchWithGetTypeField("Name_image_en", e) :
@@ -87,7 +87,7 @@ namespace ReLearn.Droid.Views.Images
         public List<DBImages> SearchWithGetTypeField(string nameField, Android.Support.V7.Widget.SearchView.QueryTextChangeEventArgs e)
         {
             List<DBImages> FD = new List<DBImages>();
-            foreach (var image in dataBase)
+            foreach (var image in ViewModel.DataBase)
                 if (image.GetType().GetProperty(nameField).GetValue(image, null).ToString().Substring(0, ((e.NewText.Length > image.GetType().GetProperty(nameField).GetValue(image, null).ToString().Length) ? 0 : e.NewText.Length)) == e.NewText)
                     FD.Add(image);
             return FD;
@@ -96,9 +96,9 @@ namespace ReLearn.Droid.Views.Images
         public void SortNamesImages()
         {
             if (Settings.Currentlanguage == Language.en.ToString())
-                dataBase.Sort((x, y) => x.Name_image_en.CompareTo(y.Name_image_en));
+                ViewModel.DataBase.Sort((x, y) => x.Name_image_en.CompareTo(y.Name_image_en));
             else
-                dataBase.Sort((x, y) => x.Name_image_ru.CompareTo(y.Name_image_ru));
+                ViewModel.DataBase.Sort((x, y) => x.Name_image_ru.CompareTo(y.Name_image_ru));
         }
     }
 }

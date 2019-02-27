@@ -1,7 +1,9 @@
 ﻿using MvvmCross.Commands;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
+using ReLearn.API.Database;
 using ReLearn.Core.ViewModels.MainMenu.Statistics;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace ReLearn.Core.ViewModels.Languages
@@ -17,6 +19,7 @@ namespace ReLearn.Core.ViewModels.Languages
         #endregion
 
         #region Properties
+        public List<DBWords> Database { get; set; }
         #endregion
 
         #region Services
@@ -27,6 +30,7 @@ namespace ReLearn.Core.ViewModels.Languages
         public BlitzPollViewModel(IMvxNavigationService navigationService)
         {
             NavigationService = navigationService;
+            Database = DBWords.GetDataNotLearned;
         }
         #endregion
 

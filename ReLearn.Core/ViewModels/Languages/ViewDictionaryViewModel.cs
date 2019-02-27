@@ -1,5 +1,7 @@
 ﻿using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
+using ReLearn.API.Database;
+using System.Collections.Generic;
 
 namespace ReLearn.Core.ViewModels.Languages
 {
@@ -12,6 +14,7 @@ namespace ReLearn.Core.ViewModels.Languages
         #endregion
 
         #region Properties
+        public List<DBWords> Database { get; }
         #endregion
 
         #region Services
@@ -22,6 +25,7 @@ namespace ReLearn.Core.ViewModels.Languages
         public ViewDictionaryViewModel(IMvxNavigationService navigationService)
         {
             NavigationService = navigationService;
+            Database = DBWords.GetData;
         }
         #endregion
 

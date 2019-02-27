@@ -23,7 +23,7 @@ namespace ReLearn.Droid.Languages
         BitmapDrawable _backgroundWord;
         TextView ViewPrev;
         TextView ViewCurrent;
-        List<DBWords> WordDatabase { get; set; }
+        
         bool answer;
         int CurrentWordNumber;
         string TitleCount { set => FindViewById<TextView>(Resource.Id.BlitzPoll_toolbar_textview).Text = value; }
@@ -39,16 +39,16 @@ namespace ReLearn.Droid.Languages
                 LeftMargin = PixelConverter.DpToPX(10)
             };
            
-            CurrentWordNumber = new Random(unchecked((int)(DateTime.Now.Ticks))).Next(WordDatabase.Count);
-            int randIndex = (CurrentWordNumber + new Random(unchecked((int)(DateTime.Now.Ticks))).Next(1, WordDatabase.Count))% WordDatabase.Count;
+            CurrentWordNumber = new Random(unchecked((int)(DateTime.Now.Ticks))).Next(ViewModel.Database.Count);
+            int randIndex = (CurrentWordNumber + new Random(unchecked((int)(DateTime.Now.Ticks))).Next(1, ViewModel.Database.Count))% ViewModel.Database.Count;
             answer = new Random(unchecked((int)(DateTime.Now.Ticks))).Next(2) == 1 ? true : false;
-            string TranslationWord = WordDatabase[answer ? CurrentWordNumber : randIndex].TranslationWord;
+            string TranslationWord = ViewModel.Database[answer ? CurrentWordNumber : randIndex].TranslationWord;
             var textView = new TextView(this)
             {
                 TextSize        = 30,
                 Elevation       = PixelConverter.DpToPX(10),
                 LayoutParameters= param,
-                Text            = $"{WordDatabase[CurrentWordNumber].Word}\n\n{TranslationWord}",
+                Text            = $"{ViewModel.Database[CurrentWordNumber].Word}\n\n{TranslationWord}",
                 Gravity         = GravityFlags.CenterHorizontal | GravityFlags.Center
             };
 
@@ -78,7 +78,7 @@ namespace ReLearn.Droid.Languages
             ViewPrev = ViewCurrent;
             ViewCurrent = GetTextView();
             FindViewById<RelativeLayout>(Resource.Id.RelativeLayoutLanguagesBlitzPoll).AddView(ViewCurrent, 0);
-            API.Statistics.Add(WordDatabase, CurrentWordNumber, !(answer ^ UserAnswer) ? -1 : 1);
+            API.Statistics.Add(ViewModel.Database, CurrentWordNumber, !(answer ^ UserAnswer) ? -1 : 1);
             TitleCount = $"{GetString(Resource.String.Repeated)} {True + False + 1 }";
         }
 
@@ -134,8 +134,7 @@ namespace ReLearn.Droid.Languages
                 e.Handled = handled;
             };
             FindViewById<TextView>(Resource.Id.textView_Timer_language).Background = _backgroundTimer;
-            WordDatabase = DBWords.GetDataNotLearned;
-            if (WordDatabase.Count == 0)
+            if (ViewModel.Database.Count == 0)
             {
                 Toast.MakeText(this, GetString(Resource.String.RepeatedAllWords), ToastLength.Short).Show();
                 Finish();

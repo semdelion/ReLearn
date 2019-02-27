@@ -1,7 +1,9 @@
 ﻿using MvvmCross.Commands;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
+using ReLearn.API.Database;
 using ReLearn.Core.ViewModels.MainMenu.Statistics;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace ReLearn.Core.ViewModels.Images
@@ -17,6 +19,7 @@ namespace ReLearn.Core.ViewModels.Images
         #endregion
 
         #region Properties
+        public List<DBImages> Database { get; set; }
         #endregion
 
         #region Services
@@ -27,6 +30,7 @@ namespace ReLearn.Core.ViewModels.Images
         public RepeatViewModel(IMvxNavigationService navigationService)
         {
             NavigationService = navigationService;
+            Database = DBImages.GetDataNotLearned;
         }
         #endregion
 

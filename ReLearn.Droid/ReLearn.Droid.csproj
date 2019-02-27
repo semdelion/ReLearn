@@ -81,8 +81,8 @@
     <Compile Include="Helpers\Colors.cs" />
     <Compile Include="Helpers\Database.cs" />
     <Compile Include="LinkerPleaseInclude.cs" />
-    <Compile Include="Helpers\MessageDroid.cs" />
-    <Compile Include="Helpers\TextToSpeech.cs" />
+    <Compile Include="Services\MessageDroid.cs" />
+    <Compile Include="Services\TextToSpeech.cs" />
     <Compile Include="Adapters\ImagesAdapter.cs" />
     <Compile Include="Adapters\LanguagesAdapter.cs" />
     <Compile Include="Helpers\PixelConverter.cs" />

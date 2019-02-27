@@ -21,7 +21,6 @@ namespace ReLearn.Droid.Images
         int CurrentWordNumber { get; set; }
         List<Button> Buttons { get; set; }
         ButtonNext Button_next;
-        List<DBImages> ImagesDatabase;
         
         string TitleCount
         {
@@ -48,15 +47,15 @@ namespace ReLearn.Droid.Images
 
         void RandomButton(params Button[] buttons)   //загружаем варианты ответа в текст кнопок
         {
-            RandomNumbers.RandomFourNumbers(CurrentWordNumber, ImagesDatabase.Count, out List<int> random_numbers);
+            RandomNumbers.RandomFourNumbers(CurrentWordNumber, ViewModel.Database.Count, out List<int> random_numbers);
             for (int i = 0; i < buttons.Length; i++)
-                buttons[i].Text = ImagesDatabase[random_numbers[i]].ImageName;
+                buttons[i].Text = ViewModel.Database[random_numbers[i]].ImageName;
         }
 
         void NextTest() //new test
         {
             using (Bitmap bitmap = BitmapFactory.DecodeStream(Application.Context.Assets.Open(
-                $"Image{DataBase.TableName}/{ImagesDatabase[CurrentWordNumber].Image_name}.png")))
+                $"Image{DataBase.TableName}/{ViewModel.Database[CurrentWordNumber].Image_name}.png")))
             using (var bitmapRounded = BitmapHelper.GetRoundedCornerBitmap(bitmap, PixelConverter.DpToPX(5)))
                 FindViewById<ImageView>(Resource.Id.imageView_Images_repeat).SetImageBitmap(bitmapRounded);
 
@@ -72,18 +71,18 @@ namespace ReLearn.Droid.Images
         {
             API.Statistics.Count++;
             Button_enable(false);
-            if (buttons[0].Text == ImagesDatabase[CurrentWordNumber].ImageName)
+            if (buttons[0].Text == ViewModel.Database[CurrentWordNumber].ImageName)
             {
-                API.Statistics.Add(ImagesDatabase, CurrentWordNumber, - Settings.TrueAnswer);
+                API.Statistics.Add(ViewModel.Database, CurrentWordNumber, - Settings.TrueAnswer);
                 API.Statistics.True++;
                 buttons[0].Background = GetDrawable(Resource.Drawable.button_true);
             }
             else
             {
-                API.Statistics.Add(ImagesDatabase,CurrentWordNumber, Settings.FalseAnswer);
+                API.Statistics.Add(ViewModel.Database,CurrentWordNumber, Settings.FalseAnswer);
                 API.Statistics.False++;
                 buttons[0].Background = GetDrawable(Resource.Drawable.button_false);
-                int index = Buttons.FindIndex(s => s.Text == ImagesDatabase[CurrentWordNumber].ImageName);
+                int index = Buttons.FindIndex(s => s.Text == ViewModel.Database[CurrentWordNumber].ImageName);
                 Buttons[index].Background = GetDrawable(Resource.Drawable.button_true);
             }
         }
@@ -92,8 +91,8 @@ namespace ReLearn.Droid.Images
         {
             API.Statistics.Count++;
             API.Statistics.False++;
-            API.Statistics.Add(ImagesDatabase, CurrentWordNumber, Settings.NeutralAnswer);
-            int index = Buttons.FindIndex(s => s.Text == ImagesDatabase[CurrentWordNumber].ImageName);
+            API.Statistics.Add(ViewModel.Database, CurrentWordNumber, Settings.NeutralAnswer);
+            int index = Buttons.FindIndex(s => s.Text == ViewModel.Database[CurrentWordNumber].ImageName);
             Buttons[index].Background = GetDrawable(Resource.Drawable.button_true);
         }
 
@@ -123,7 +122,7 @@ namespace ReLearn.Droid.Images
             {
                 if (API.Statistics.Count < Settings.NumberOfRepeatsImage)
                 {
-                    CurrentWordNumber = new Random(unchecked((int)(DateTime.Now.Ticks))).Next(ImagesDatabase.Count);
+                    CurrentWordNumber = new Random(unchecked((int)(DateTime.Now.Ticks))).Next(ViewModel.Database.Count);
                     NextTest();
                     Button_enable(true);
                     TitleCount = $"{GetString(Resource.String.Repeated)} {API.Statistics.Count + 1}/{Settings.NumberOfRepeatsImage}";
@@ -147,7 +146,6 @@ namespace ReLearn.Droid.Images
             var toolbarMain = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar_images_repeat);
             SetSupportActionBar(toolbarMain);
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
-            ImagesDatabase = DBImages.GetDataNotLearned;
 
             DisplayMetrics displayMetrics = new DisplayMetrics();
             WindowManager.DefaultDisplay.GetRealMetrics(displayMetrics);
@@ -167,7 +165,7 @@ namespace ReLearn.Droid.Images
                 button = FindViewById<Button>(Resource.Id.button_I_Next),
                 State = StateButton.Next
             };
-            if (ImagesDatabase.Count == 0)
+            if (ViewModel.Database.Count == 0)
             {
                 Toast.MakeText(this, GetString(Resource.String.RepeatedAllImages), ToastLength.Short).Show();
                 Finish();

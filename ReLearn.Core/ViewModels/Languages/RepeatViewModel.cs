@@ -1,7 +1,10 @@
 ﻿using MvvmCross.Commands;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
+using ReLearn.API.Database;
+using ReLearn.Core.Services;
 using ReLearn.Core.ViewModels.MainMenu.Statistics;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace ReLearn.Core.ViewModels.Languages
@@ -17,16 +20,20 @@ namespace ReLearn.Core.ViewModels.Languages
         #endregion
 
         #region Properties
+        public List<DBWords> Database { get; set; }
         #endregion
 
         #region Services
         protected IMvxNavigationService NavigationService { get; }
+        public ITextToSpeech TextToSpeech { get; }
         #endregion
 
         #region Constructors
-        public RepeatViewModel(IMvxNavigationService navigationService)
+        public RepeatViewModel(IMvxNavigationService navigationService, ITextToSpeech textToSpeech)
         {
             NavigationService = navigationService;
+            TextToSpeech = textToSpeech;
+            Database = DBWords.GetDataNotLearned;
         }
         #endregion
 

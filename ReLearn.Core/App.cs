@@ -11,7 +11,6 @@ namespace ReLearn.Core
 {
     public class App : MvxApplication
     {
-
         public override void Initialize()
         {
             Mvx.IoCProvider.RegisterSingleton<IMvxTextProvider>(new MvxResxTextProvider(AppResources.ResourceManager));

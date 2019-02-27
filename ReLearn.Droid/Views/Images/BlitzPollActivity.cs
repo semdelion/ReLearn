@@ -24,7 +24,7 @@ namespace ReLearn.Droid.Images
         BitmapDrawable _backgroundWord;
         LinearLayout ViewPrev;
         LinearLayout ViewCurrent;
-        List<DBImages> ImageDatabase { get; set; }
+        
         bool answer;
         int CurrentWordNumber;
         string TitleCount { set => FindViewById<TextView>(Resource.Id.BlitzPoll_toolbar_textview_images).Text = value; }
@@ -40,12 +40,12 @@ namespace ReLearn.Droid.Images
                 RightMargin     = PixelConverter.DpToPX(10),
                 LeftMargin      = PixelConverter.DpToPX(10)
             };
-            int randIndex = (CurrentWordNumber + new Random(unchecked((int)(DateTime.Now.Ticks))).Next(1, ImageDatabase.Count)) % ImageDatabase.Count;
+            int randIndex = (CurrentWordNumber + new Random(unchecked((int)(DateTime.Now.Ticks))).Next(1, ViewModel.Database.Count)) % ViewModel.Database.Count;
             var textView = new TextView(this)
             {
                 TextSize = 20,
                 LayoutParameters = param1,
-                Text = $"{(ImageDatabase[answer ? CurrentWordNumber : randIndex]).ImageName}",
+                Text = $"{(ViewModel.Database[answer ? CurrentWordNumber : randIndex]).ImageName}",
                 Gravity = GravityFlags.CenterHorizontal
             };
             textView.SetTextColor(Colors.White);
@@ -62,7 +62,7 @@ namespace ReLearn.Droid.Images
                 LeftMargin   = PixelConverter.DpToPX(10)
             };
             var ImageView = new ImageView(this) {LayoutParameters = param};
-            using (Bitmap bitmap = BitmapFactory.DecodeStream(Application.Context.Assets.Open($"Image{DataBase.TableName}/{ImageDatabase[CurrentWordNumber].Image_name}.png")))
+            using (Bitmap bitmap = BitmapFactory.DecodeStream(Application.Context.Assets.Open($"Image{DataBase.TableName}/{ViewModel.Database[CurrentWordNumber].Image_name}.png")))
             using (var bitmapRounded = BitmapHelper.GetRoundedCornerBitmap(bitmap, PixelConverter.DpToPX(5)))
                 ImageView.SetImageBitmap(bitmapRounded);
             return ImageView;
@@ -70,7 +70,7 @@ namespace ReLearn.Droid.Images
 
         LinearLayout GetLayout()
         {
-            CurrentWordNumber = new Random(unchecked((int)(DateTime.Now.Ticks))).Next(ImageDatabase.Count);
+            CurrentWordNumber = new Random(unchecked((int)(DateTime.Now.Ticks))).Next(ViewModel.Database.Count);
             answer = new Random(unchecked((int)(DateTime.Now.Ticks))).Next(2) == 1 ? true : false;
             RelativeLayout.LayoutParams param = new RelativeLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, PixelConverter.DpToPX(320))
             {
@@ -110,7 +110,7 @@ namespace ReLearn.Droid.Images
             ViewPrev = ViewCurrent;
             ViewCurrent = GetLayout();
             FindViewById<RelativeLayout>(Resource.Id.RelativeLayoutImagesBlitzPoll).AddView(ViewCurrent, 0);
-            API.Statistics.Add(ImageDatabase, CurrentWordNumber, !(answer ^ UserAnswer) ? -1 : 1);
+            API.Statistics.Add(ViewModel.Database, CurrentWordNumber, !(answer ^ UserAnswer) ? -1 : 1);
             TitleCount = $"{GetString(Resource.String.Repeated)} {True + False + 1 }";
         }
 
@@ -163,8 +163,7 @@ namespace ReLearn.Droid.Images
             };
             FindViewById<TextView>(Resource.Id.textView_Timer_Images).Background = _backgroundTimer;
 
-            ImageDatabase = DBImages.GetDataNotLearned;
-            if (ImageDatabase.Count == 0)
+            if (ViewModel.Database.Count == 0)
             {
                 Toast.MakeText(this, GetString(Resource.String.RepeatedAllImages), ToastLength.Short).Show();
                 Finish();

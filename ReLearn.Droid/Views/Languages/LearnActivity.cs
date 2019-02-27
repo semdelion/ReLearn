@@ -1,5 +1,4 @@
 ﻿using Android.App;
-using Android.Graphics.Drawables;
 using Android.OS;
 using Android.Util;
 using Android.Views;
@@ -8,6 +7,7 @@ using MvvmCross.Droid.Support.V7.AppCompat;
 using ReLearn.API.Database;
 using ReLearn.Core.ViewModels.Languages;
 using ReLearn.Droid.Helpers;
+using ReLearn.Droid.Services;
 using System.Collections.Generic;
 
 namespace ReLearn.Droid.Languages
@@ -15,8 +15,6 @@ namespace ReLearn.Droid.Languages
     [Activity(Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class LearnActivity : MvxAppCompatActivity<LearnViewModel>
     {
-        TextToSpeech MySpeech { get; set; }
-        List<DBWords> WordDatabase { get; set; }
         int Count { get; set; }
         bool Voice_Enable = true;
 
@@ -30,21 +28,21 @@ namespace ReLearn.Droid.Languages
         [Java.Interop.Export("Button_Languages_Learn_Next_Click")]
         public void Button_Languages_Learn_Next_Click(View v)
         {
-            if (Count < WordDatabase.Count)
+            if (Count < ViewModel.Database.Count)
             {
-                Word = WordDatabase[Count].Word;
-                Text = $"{Word}{(WordDatabase[Count].Transcription == null ? "" : $"\n\n{WordDatabase[Count].Transcription}")}" +
-                       $"\n\n{WordDatabase[Count++].TranslationWord}";
+                Word = ViewModel.Database[Count].Word;
+                Text = $"{Word}{(ViewModel.Database[Count].Transcription == null ? "" : $"\n\n{ViewModel.Database[Count].Transcription}")}" +
+                       $"\n\n{ViewModel.Database[Count++].TranslationWord}";
                 DBWords.UpdateLearningNext(Word);
                 if (Voice_Enable)
-                    MySpeech.Speak(Word, this);
+                    ViewModel.TextToSpeech.Speak(Word);
             }
             else
                 Toast.MakeText(this, GetString(Resource.String.DictionaryOver), ToastLength.Short).Show();
         }
 
         [Java.Interop.Export("Button_Languages_Learn_Voice_Click")]
-        public void Button_Languages_Learn_Voice_Click(View v) => MySpeech.Speak(Word, this);
+        public void Button_Languages_Learn_Voice_Click(View v) => ViewModel.TextToSpeech.Speak(Word);
 
 
         [Java.Interop.Export("Button_Languages_Learn_Voice_Enable")]
@@ -78,11 +76,7 @@ namespace ReLearn.Droid.Languages
 
             FindViewById<TextView>(Resource.Id.textView_learn_en).Background = _background;
 
-
-            MySpeech = new TextToSpeech();
-            WordDatabase = DBWords.GetDataNotLearned;
-
-            if (WordDatabase.Count == 0)
+            if (ViewModel.Database.Count == 0)
             {
                 Toast.MakeText(this, GetString(Resource.String.RepeatedAllWords), ToastLength.Short).Show();
                 Finish();

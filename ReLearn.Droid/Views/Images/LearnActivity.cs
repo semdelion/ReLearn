@@ -18,7 +18,6 @@ namespace ReLearn.Droid.Images
     public class LearnActivity : MvxAppCompatActivity<LearnViewModel>
     {
         int Count { get; set; }
-        List<DBImages> ImagesDatabase { get; set; }
 
         string ImageName
         {
@@ -36,14 +35,14 @@ namespace ReLearn.Droid.Images
         [Java.Interop.Export("Button_Images_Learn_Next_Click")]
         public void Button_Images_Learn_Next_Click(View v)
         {
-            if (Count < ImagesDatabase.Count)
+            if (Count < ViewModel.Database.Count)
             {
-                DBImages.UpdateLearningNext(ImagesDatabase[Count].Image_name);
+                DBImages.UpdateLearningNext(ViewModel.Database[Count].Image_name);
                 try
-                {   using (var image = BitmapFactory.DecodeStream(Application.Context.Assets.Open( $"Image{DataBase.TableName}/{ImagesDatabase[Count].Image_name}.png")))
+                {   using (var image = BitmapFactory.DecodeStream(Application.Context.Assets.Open( $"Image{DataBase.TableName}/{ViewModel.Database[Count].Image_name}.png")))
                     using (var ImageViewBox = BitmapHelper.GetRoundedCornerBitmap(image, PixelConverter.DpToPX(5)))
                         FindViewById<ImageView>(Resource.Id.imageView_Images_learn).SetImageBitmap(ImageViewBox);
-                        ImageName = ImagesDatabase[Count++].ImageName;
+                        ImageName = ViewModel.Database[Count++].ImageName;
                 }
                 catch(Exception ex)
                 {
@@ -60,7 +59,6 @@ namespace ReLearn.Droid.Images
             SetContentView(Resource.Layout.activity_images_learn);
             SetSupportActionBar(FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar_images_learn));
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
-            ImagesDatabase = DBImages.GetDataNotLearned;
             DisplayMetrics displayMetrics = new DisplayMetrics();
             WindowManager.DefaultDisplay.GetRealMetrics(displayMetrics);
             var _background = BitmapHelper.GetBackgroung(Resources,
@@ -68,7 +66,7 @@ namespace ReLearn.Droid.Images
                                 PixelConverter.DpToPX(300));
             FindViewById<LinearLayout>(Resource.Id.learn_background).Background = _background;
 
-            if (ImagesDatabase.Count == 0)
+            if (ViewModel.Database.Count == 0)
             {
                 Toast.MakeText(this, GetString(Resource.String.RepeatedAllImages), ToastLength.Short).Show();
                 Finish();
