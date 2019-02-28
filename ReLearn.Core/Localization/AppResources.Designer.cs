@@ -268,6 +268,33 @@ namespace ReLearn.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You repeated all the images.
+        /// </summary>
+        public static string HomeViewModel_RepeatedAllImages {
+            get {
+                return ResourceManager.GetString("HomeViewModel.RepeatedAllImages", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You repeated all the words.
+        /// </summary>
+        public static string HomeViewModel_RepeatedAllWords {
+            get {
+                return ResourceManager.GetString("HomeViewModel.RepeatedAllWords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dictionary over.
+        /// </summary>
+        public static string LearnViewModel_DictionaryOver {
+            get {
+                return ResourceManager.GetString("LearnViewModel.DictionaryOver", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Next.
         /// </summary>
         public static string LearnViewModel_Next {

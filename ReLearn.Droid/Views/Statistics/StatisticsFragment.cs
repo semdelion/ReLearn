@@ -26,17 +26,17 @@ namespace ReLearn.Droid.Views.Fragments
 
         public static Color LightColor { get; private set; }
         public static Color DarkColor { get; private set; }
-        public static List<DBStatistics> StatisticsDB { get; private set; }
+        public static List<DBStatistics> StatisticsDatabase { get; private set; }
         public static string DataTupe { get; private set; }
 
         private void GetDate()
         {
-            bool isContain = DBImages.DatabaseIsContain(DataBase.TableName.ToString());
+            bool isContain = DBImages.DatabaseIsContain($"{DataBase.TableName}");
             LightColor = isContain ? Colors.Orange : Colors.Blue;
             DarkColor = isContain ? Colors.DarkOrange : Colors.DarkBlue;
-            DataTupe = isContain ? DataBase.TableName.ToString() : "Words";
-            StatisticsDB = isContain ? DBStatistics.GetImages(DataBase.TableName.ToString()) :
-                                       DBStatistics.GetWords(DataBase.TableName.ToString());
+            DataTupe = isContain ? $"{DataBase.TableName}" : "Words";
+            StatisticsDatabase = isContain ? DBStatistics.GetImages($"{DataBase.TableName}") :
+                                       DBStatistics.GetWords($"{DataBase.TableName}");
         }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -59,7 +59,6 @@ namespace ReLearn.Droid.Views.Fragments
             tabLayout.SetupWithViewPager(viewPager);
             tabLayout.GetTabAt(tabLayout.TabCount - 2).SetIcon(Resource.Drawable.ic_statistics_main);
             tabLayout.GetTabAt(tabLayout.TabCount - 1).SetIcon(Resource.Drawable.ic_statistics_general);
-
           
             return view;
         }

@@ -30,16 +30,10 @@ namespace ReLearn.Droid.Images
             if (ViewModel.Count < ViewModel.Database.Count)
             {
                 DBImages.UpdateLearningNext(ViewModel.Database[ViewModel.Count].Image_name);
-                try
-                {   using (var image = BitmapFactory.DecodeStream(Application.Context.Assets.Open( $"Image{DataBase.TableName}/{ViewModel.Database[ViewModel.Count].Image_name}.png")))
-                    using (var ImageViewBox = BitmapHelper.GetRoundedCornerBitmap(image, PixelConverter.DpToPX(5)))
-                        FindViewById<ImageView>(Resource.Id.imageView_Images_learn).SetImageBitmap(ImageViewBox);
-                        ViewModel.ImageName = ViewModel.Database[ViewModel.Count++].ImageName;
-                }
-                catch(Exception ex)
-                {
-                    Toast.MakeText(this, ex.Message , ToastLength.Short).Show();
-                }
+                using (var image = BitmapFactory.DecodeStream(Application.Context.Assets.Open( $"Image{DataBase.TableName}/{ViewModel.Database[ViewModel.Count].Image_name}.png")))
+                using (var ImageViewBox = BitmapHelper.GetRoundedCornerBitmap(image, PixelConverter.DpToPX(5)))
+                    FindViewById<ImageView>(Resource.Id.imageView_Images_learn).SetImageBitmap(ImageViewBox);
+                    ViewModel.ImageName = ViewModel.Database[ViewModel.Count++].ImageName;
             }
             else
                 Toast.MakeText(this, GetString(Resource.String.DictionaryOver), ToastLength.Short).Show();
@@ -53,17 +47,8 @@ namespace ReLearn.Droid.Images
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
             DisplayMetrics displayMetrics = new DisplayMetrics();
             WindowManager.DefaultDisplay.GetRealMetrics(displayMetrics);
-            var _background = BitmapHelper.GetBackgroung(Resources,
-                                displayMetrics.WidthPixels - PixelConverter.DpToPX(20),
-                                PixelConverter.DpToPX(300));
-            FindViewById<LinearLayout>(Resource.Id.learn_background).Background = _background;
-
-            if (ViewModel.Database.Count == 0)
-            {
-                Toast.MakeText(this, GetString(Resource.String.RepeatedAllImages), ToastLength.Short).Show();
-                Finish();
-                return;
-            }
+            using(var background = BitmapHelper.GetBackgroung(Resources, displayMetrics.WidthPixels - PixelConverter.DpToPX(20), PixelConverter.DpToPX(300)))
+                FindViewById<LinearLayout>(Resource.Id.learn_background).Background = background;
             Button_Images_Learn_Next_Click(null);
         }
 

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ReLearn.Droid.Helpers
+namespace ReLearn.Core.Helpers
 {
     public static class RandomNumbers
     {

@@ -6,6 +6,7 @@ using Android.Widget;
 using MvvmCross.Droid.Support.V7.AppCompat;
 using ReLearn.API;
 using ReLearn.API.Database;
+using ReLearn.Core.Helpers;
 using ReLearn.Core.ViewModels.Languages;
 using ReLearn.Droid.Helpers;
 using ReLearn.Droid.Services;
@@ -20,7 +21,7 @@ namespace ReLearn.Droid.Languages
         List<Button> Buttons { get; set; }
         ButtonNext ButtonNext { get; set; }
 
-        void Button_enable(bool state)
+        void ButtonEnable(bool state)
         {
             foreach (var button in Buttons) button.Enabled = state;
             if (state)
@@ -49,16 +50,16 @@ namespace ReLearn.Droid.Languages
             ViewModel.Text = $"{ ViewModel.Database[ViewModel.CurrentNumber].Word}{(ViewModel.Database[ViewModel.CurrentNumber].Transcription==null ? "" :$"\n{ ViewModel.Database[ViewModel.CurrentNumber].Transcription}")}";
             const int four = 4;
             int first = new Random(unchecked((int)(DateTime.Now.Ticks))).Next(four);
-            List<int> random_numbers = new List<int> { first, 0, 0, 0 };
+            List<int> randomNumbers = new List<int> { first, 0, 0, 0 };
             for (int i = 1; i < four; i++)
-                random_numbers[i] = (first + i) % four; 
-           RandomButton(Buttons[random_numbers[0]], Buttons[random_numbers[1]], Buttons[random_numbers[2]], Buttons[random_numbers[3]]);        
+                randomNumbers[i] = (first + i) % four; 
+           RandomButton(Buttons[randomNumbers[0]], Buttons[randomNumbers[1]], Buttons[randomNumbers[2]], Buttons[randomNumbers[3]]);        
         }
 
         void Answer(params Button[] buttons) // подсвечиваем правильный ответ, если мы ошиблись подсвечиваем неправвильный и паравильный 
         {
             API.Statistics.Count++;
-            Button_enable(false);
+            ButtonEnable(false);
             if (buttons[0].Text == ViewModel.Database[ViewModel.CurrentNumber].TranslationWord)
             {
                 API.Statistics.Add(ViewModel.Database, ViewModel.CurrentNumber, -Settings.TrueAnswer);
@@ -106,7 +107,7 @@ namespace ReLearn.Droid.Languages
             if (ButtonNext.State == StateButton.Unknown)
             {
                 ButtonNext.State = StateButton.Next;
-                Button_enable(false);
+                ButtonEnable(false);
                 Unknown();
             }
             else
@@ -115,7 +116,7 @@ namespace ReLearn.Droid.Languages
                 {
                     ViewModel.CurrentNumber = new Random(unchecked((int)(DateTime.Now.Ticks))).Next(ViewModel.Database.Count);
                     NextWord();
-                    Button_enable(true);
+                    ButtonEnable(true);
                     ViewModel.TitleCount = $"{GetString(Resource.String.Repeated)} {API.Statistics.Count + 1}/{Settings.NumberOfRepeatsLanguage}";
                 }
                 else
@@ -140,12 +141,9 @@ namespace ReLearn.Droid.Languages
 
             DisplayMetrics displayMetrics = new DisplayMetrics();
             WindowManager.DefaultDisplay.GetRealMetrics(displayMetrics);
-            var _background = BitmapHelper.GetBackgroung(Resources,
-            displayMetrics.WidthPixels - PixelConverter.DpToPX(70),
-            PixelConverter.DpToPX(190));
-            FindViewById<TextView>(Resource.Id.textView_Eng_Word).Background = _background;
+            using (var background = BitmapHelper.GetBackgroung(Resources, displayMetrics.WidthPixels - PixelConverter.DpToPX(70), PixelConverter.DpToPX(190)))
+                FindViewById<TextView>(Resource.Id.textView_Eng_Word).Background = background;
 
-            ViewModel.Database = DBWords.GetDataNotLearned;
             Buttons = new List<Button>{
                 FindViewById<Button>(Resource.Id.button_Languages_choice1),
                 FindViewById<Button>(Resource.Id.button_Languages_choice2),
@@ -158,12 +156,6 @@ namespace ReLearn.Droid.Languages
                 button = FindViewById<Button>(Resource.Id.button_Languages_Next),
                 State = StateButton.Next
             };
-            if (ViewModel.Database.Count == 0)
-            {
-                Toast.MakeText(this, GetString(Resource.String.RepeatedAllWords), ToastLength.Short).Show();
-                Finish();
-                return;
-            }
             Button_Languages_Next_Click(null);
         }
 

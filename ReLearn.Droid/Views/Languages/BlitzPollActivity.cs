@@ -19,10 +19,10 @@ namespace ReLearn.Droid.Languages
     [Activity(Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class BlitzPollActivity : MvxAppCompatActivity<BlitzPollViewModel>
     {
-        BitmapDrawable _backgroundWord;
-        TextView ViewPrev;
-        TextView ViewCurrent;
-       
+        private BitmapDrawable BackgroundWord { get; set; }
+        private TextView ViewPrev { get; set; }
+        private TextView ViewCurrent { get; set; }
+
         TextView GetTextView()
         {
             RelativeLayout.LayoutParams param = new RelativeLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, PixelConverter.DpToPX(320))
@@ -46,7 +46,7 @@ namespace ReLearn.Droid.Languages
                 Gravity         = GravityFlags.CenterHorizontal | GravityFlags.Center
             };
 
-            textView.Background = _backgroundWord;
+            textView.Background = BackgroundWord;
             textView.SetTextColor(Colors.White);
             return textView;
         }
@@ -93,15 +93,11 @@ namespace ReLearn.Droid.Languages
             DisplayMetrics displayMetrics = new DisplayMetrics();
             WindowManager.DefaultDisplay.GetRealMetrics(displayMetrics);
 
-            _backgroundWord = BitmapHelper.GetBackgroung(Resources,
-                displayMetrics.WidthPixels - PixelConverter.DpToPX(50),
-                PixelConverter.DpToPX(300));
-            var _backgroundTimer = BitmapHelper.GetBackgroung(Resources,
-                displayMetrics.WidthPixels - PixelConverter.DpToPX(200),
-                PixelConverter.DpToPX(50));
-
-
-            float webViewWidth = Android.App.Application.Context.Resources.DisplayMetrics.WidthPixels;
+            BackgroundWord = BitmapHelper.GetBackgroung(Resources, displayMetrics.WidthPixels - PixelConverter.DpToPX(50), PixelConverter.DpToPX(300));
+            using (var background = BitmapHelper.GetBackgroung(Resources, displayMetrics.WidthPixels - PixelConverter.DpToPX(200), PixelConverter.DpToPX(50)))
+                FindViewById<TextView>(Resource.Id.textView_Timer_language).Background = background;
+     
+            float webViewWidth = Application.Context.Resources.DisplayMetrics.WidthPixels;
             float startX = 0;
             FindViewById<RelativeLayout>(Resource.Id.RelativeLayoutLanguagesBlitzPoll).Touch += (s, e) =>
             {
@@ -117,39 +113,29 @@ namespace ReLearn.Droid.Languages
                     float offset = webViewWidth / 10;
 
                     if (Math.Abs(movement) > offset)
-                    {
                         if (movement < 0)
                             Answer(false);
                         else
                             Answer(true);
-                    }
                     handled = true;
                 }
                 e.Handled = handled;
             };
-            FindViewById<TextView>(Resource.Id.textView_Timer_language).Background = _backgroundTimer;
-            if (ViewModel.Database.Count == 0)
-            {
-                Toast.MakeText(this, GetString(Resource.String.RepeatedAllWords), ToastLength.Short).Show();
-                Finish();
-                return;
-            }
+            
             ViewCurrent = GetTextView();
             FindViewById<RelativeLayout>(Resource.Id.RelativeLayoutLanguagesBlitzPoll).AddView(ViewCurrent, 1);
             ViewModel.TitleCount = $"{GetString(Resource.String.Repeated)} {1}";
             TimerStart();
-            
-
         }
 
         void TimerStart()
         {
             ViewModel.Timer = new Timer{ Interval = 100, Enabled = true };
-            ViewModel.Timer.Elapsed += Timer_Elapsed;
+            ViewModel.Timer.Elapsed += TimerElapsed;
             ViewModel.Timer.Start();
         }
 
-        private void Timer_Elapsed(object sender, ElapsedEventArgs e)
+        private void TimerElapsed(object sender, ElapsedEventArgs e)
         {
             RunOnUiThread(() =>
             {

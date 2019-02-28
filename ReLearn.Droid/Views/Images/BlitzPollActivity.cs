@@ -20,13 +20,13 @@ namespace ReLearn.Droid.Images
     [Activity(Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class BlitzPollActivity : MvxAppCompatActivity<BlitzPollViewModel>
     {
-        BitmapDrawable _backgroundWord;
-        LinearLayout ViewPrev;
-        LinearLayout ViewCurrent;
-        
+        private BitmapDrawable BackgroundWord { get; set; }
+        private LinearLayout ViewPrev { get; set; }
+        private LinearLayout ViewCurrent { get; set; }
+
         TextView GetTextView()
         {
-            LinearLayout.LayoutParams param1 = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, LinearLayout.LayoutParams.MatchParent)
+            LinearLayout.LayoutParams param1 = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MatchParent, ViewGroup.LayoutParams.MatchParent)
             {
                 BottomMargin    = PixelConverter.DpToPX(20),
                 RightMargin     = PixelConverter.DpToPX(10),
@@ -76,7 +76,7 @@ namespace ReLearn.Droid.Images
                 Orientation     = Orientation.Vertical,
                 LayoutParameters= param,
             };
-            linearLayout.Background = _backgroundWord;
+            linearLayout.Background = BackgroundWord;
             linearLayout.AddView(GetImage());
             linearLayout.AddView(GetTextView());
             return linearLayout;
@@ -123,14 +123,11 @@ namespace ReLearn.Droid.Images
             DisplayMetrics displayMetrics = new DisplayMetrics();
             WindowManager.DefaultDisplay.GetRealMetrics(displayMetrics);
 
-            _backgroundWord = BitmapHelper.GetBackgroung(Resources,
-                displayMetrics.WidthPixels - PixelConverter.DpToPX(20),
-                PixelConverter.DpToPX(300));
-            var _backgroundTimer = BitmapHelper.GetBackgroung(Resources,
-                displayMetrics.WidthPixels - PixelConverter.DpToPX(200),
-                PixelConverter.DpToPX(50));
+            BackgroundWord = BitmapHelper.GetBackgroung(Resources, displayMetrics.WidthPixels - PixelConverter.DpToPX(20), PixelConverter.DpToPX(300));
+            using (var background = BitmapHelper.GetBackgroung(Resources, displayMetrics.WidthPixels - PixelConverter.DpToPX(200),PixelConverter.DpToPX(50)))
+                FindViewById<TextView>(Resource.Id.textView_Timer_Images).Background = background;
 
-            float webViewWidth = Android.App.Application.Context.Resources.DisplayMetrics.WidthPixels;
+            float webViewWidth = Application.Context.Resources.DisplayMetrics.WidthPixels;
             float startX = 0;
             FindViewById<RelativeLayout>(Resource.Id.RelativeLayoutImagesBlitzPoll).Touch += (s, e) =>
             {
@@ -153,14 +150,7 @@ namespace ReLearn.Droid.Images
                 }
                 e.Handled = handled;
             };
-            FindViewById<TextView>(Resource.Id.textView_Timer_Images).Background = _backgroundTimer;
-
-            if (ViewModel.Database.Count == 0)
-            {
-                Toast.MakeText(this, GetString(Resource.String.RepeatedAllImages), ToastLength.Short).Show();
-                Finish();
-                return;
-            }
+            
             ViewCurrent = GetLayout();
             FindViewById<RelativeLayout>(Resource.Id.RelativeLayoutImagesBlitzPoll).AddView(ViewCurrent, 1);
             ViewModel.TitleCount = $"{GetString(Resource.String.Repeated)} {1}";
@@ -169,7 +159,7 @@ namespace ReLearn.Droid.Images
 
         void TimerStart()
         {
-            ViewModel.Timer = new System.Timers.Timer{ Interval = 100, Enabled = true };
+            ViewModel.Timer = new Timer{ Interval = 100, Enabled = true };
             ViewModel.Timer.Elapsed += Timer_Elapsed;
             ViewModel.Timer.Start();
         }

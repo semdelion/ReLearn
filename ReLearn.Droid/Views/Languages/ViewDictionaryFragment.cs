@@ -21,7 +21,8 @@ namespace ReLearn.Droid.Views.Languages
         protected override int FragmentId => Resource.Layout.fragment_menu_view_dictionary;
 
         protected override int Toolbar => Resource.Id.toolbar_view_dictionary;
-        ListView DictionaryWords { get; set; }
+
+        private ListView DictionaryWords { get; set; }
         
         public static bool HideStudied
         {

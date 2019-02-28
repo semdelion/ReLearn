@@ -10,7 +10,7 @@ using System.Timers;
 
 namespace ReLearn.Core.ViewModels.Images
 {
-    public class BlitzPollViewModel : MvxViewModel
+    public class BlitzPollViewModel : MvxViewModel<List<DBImages>>
     {
         #region Fields
         #endregion
@@ -44,7 +44,6 @@ namespace ReLearn.Core.ViewModels.Images
         public BlitzPollViewModel(IMvxNavigationService navigationService)
         {
             NavigationService = navigationService;
-            Database = DBImages.GetDataNotLearned;
             Time = Settings.TimeToBlitz * 10;
         }
         #endregion
@@ -60,6 +59,11 @@ namespace ReLearn.Core.ViewModels.Images
         public override void ViewCreated()
         {
             base.ViewCreated();
+        }
+
+        public override void Prepare(List<DBImages> parameter)
+        {
+            Database = parameter;
         }
         #endregion
     }

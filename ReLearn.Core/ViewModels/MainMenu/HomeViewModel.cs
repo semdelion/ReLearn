@@ -1,19 +1,23 @@
-﻿using MvvmCross.Commands;
+﻿using MvvmCross;
+using MvvmCross.Commands;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 using ReLearn.API;
 using ReLearn.API.Database;
+using ReLearn.Core.Localization;
+using ReLearn.Core.Services;
 using ReLearn.Core.ViewModels.MainMenu.SelectDictionary;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace ReLearn.Core.ViewModels.MainMenu
 {
     public class HomeViewModel : MvxViewModel
     {
-        private IMvxAsyncCommand _toRepeat;
-        public IMvxAsyncCommand ToRepeat => _toRepeat ?? (_toRepeat = new MvxAsyncCommand(NavigateToRepeat));
-        private IMvxAsyncCommand _toLearn;
-        public IMvxAsyncCommand ToLearn => _toLearn ?? (_toLearn = new MvxAsyncCommand(NavigateToLearn));
+        private IMvxCommand _toRepeat;
+        public IMvxCommand ToRepeat => _toRepeat ?? (_toRepeat = new MvxCommand(NavigateToRepeat));
+        private IMvxCommand _toLearn;
+        public IMvxCommand ToLearn => _toLearn ?? (_toLearn = new MvxCommand(NavigateToLearn));
         private IMvxAsyncCommand _toSelectDictionary;
         public IMvxAsyncCommand ToSelectDictionary => _toSelectDictionary ?? (_toSelectDictionary = new MvxAsyncCommand(NavigateToSelectDictionary));
 
@@ -23,44 +27,90 @@ namespace ReLearn.Core.ViewModels.MainMenu
         {
             NavigationService = navigationService;
         }
-        private Task<bool> Quiz(bool isImage)
+        private void Quiz(bool isImage)
         {
             Settings.TypeOfRepetition = TypeOfRepetitions.Blitz;
-            return isImage ?
-                NavigationService.Navigate<Images.RepeatViewModel>() :
-                NavigationService.Navigate<Languages.RepeatViewModel>();
+            if (isImage)
+            {
+                var database = DBImages.GetDataNotLearned;
+                if (database.Count == 0)
+                    Mvx.IoCProvider.Resolve<IMessageCore>().Toast(AppResources.HomeViewModel_RepeatedAllImages);
+                else
+                  NavigationService.Navigate<Images.RepeatViewModel, List<DBImages>>(database);
+            }
+            else
+            {
+                var database = DBWords.GetDataNotLearned;
+                if (database.Count == 0)
+                    Mvx.IoCProvider.Resolve<IMessageCore>().Toast(AppResources.HomeViewModel_RepeatedAllWords);
+                else
+                    NavigationService.Navigate<Languages.RepeatViewModel, List<DBWords>>(DBWords.GetDataNotLearned);
+            }
+            
         }
-        private Task<bool> Blitz(bool isImage)
+        private void Blitz(bool isImage)
         {
             Settings.TypeOfRepetition = TypeOfRepetitions.FourOptions;
-            return isImage ?
-                NavigationService.Navigate<Images.BlitzPollViewModel>() :
-                NavigationService.Navigate<Languages.BlitzPollViewModel>();
+            if (isImage)
+            {
+                var database = DBImages.GetDataNotLearned;
+                if (database.Count == 0)
+                    Mvx.IoCProvider.Resolve<IMessageCore>().Toast(AppResources.HomeViewModel_RepeatedAllImages);
+                else
+                    NavigationService.Navigate<Images.BlitzPollViewModel, List<DBImages>>(database);
+            }
+            else
+            {
+                var database = DBWords.GetDataNotLearned;
+                if (database.Count == 0)
+                    Mvx.IoCProvider.Resolve<IMessageCore>().Toast(AppResources.HomeViewModel_RepeatedAllWords);
+                else
+                    NavigationService.Navigate<Languages.BlitzPollViewModel, List<DBWords>>(DBWords.GetDataNotLearned);
+            }
+            
         }
 
-        private Task<bool> NavigateToRepeat()
+        private void NavigateToRepeat()
         {
-            bool isImage = DBImages.DatabaseIsContain(DataBase.TableName.ToString());
+            bool isImage = DBImages.DatabaseIsContain($"{DataBase.TableName}");
+
             if (Settings.QuizEnable && Settings.BlitzEnable)
                 if (API.Statistics.Count != 0)
-                    return Quiz(isImage);
+                    Quiz(isImage);
                 else
-                    return Settings.TypeOfRepetition == TypeOfRepetitions.Blitz ? Blitz(isImage) : Quiz(isImage);
+                {
+                    if (Settings.TypeOfRepetition == TypeOfRepetitions.Blitz)
+                        Blitz(isImage);
+                    else
+                        Quiz(isImage);
+                }
             else if (Settings.QuizEnable)
-                return Quiz(isImage);
+                Quiz(isImage);
             else
             {
                 if (API.Statistics.Count != 0)
                     API.Statistics.Delete();
-                return Blitz(isImage);
+                Blitz(isImage);
             }
         }
-        private Task<bool> NavigateToLearn()
+        private void NavigateToLearn()
         {
-            if (DBImages.DatabaseIsContain(DataBase.TableName.ToString()))
-                return NavigationService.Navigate<Images.LearnViewModel>();
+            if (DBImages.DatabaseIsContain($"{DataBase.TableName}"))
+            {
+                var Database = DBImages.GetDataNotLearned;
+                if (Database.Count == 0)
+                    Mvx.IoCProvider.Resolve<IMessageCore>().Toast(AppResources.HomeViewModel_RepeatedAllImages);
+                else
+                    NavigationService.Navigate<Images.LearnViewModel, List<DBImages>>(Database);
+            }
             else
-                return NavigationService.Navigate<Languages.LearnViewModel>();
+            {
+                var Database = DBWords.GetDataNotLearned;
+                if(Database.Count == 0)
+                    Mvx.IoCProvider.Resolve<IMessageCore>().Toast(AppResources.HomeViewModel_RepeatedAllWords);
+                else    
+                    NavigationService.Navigate<Languages.LearnViewModel,List<DBWords>>(Database);
+            }
         }
 
         private Task<bool> NavigateToSelectDictionary() => NavigationService.Navigate<SelectDictionaryViewModel>();

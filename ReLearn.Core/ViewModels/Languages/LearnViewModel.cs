@@ -1,18 +1,28 @@
-﻿using MvvmCross.Localization;
+﻿using MvvmCross;
+using MvvmCross.Commands;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 using ReLearn.API.Database;
+using ReLearn.Core.Localization;
 using ReLearn.Core.Services;
 using System.Collections.Generic;
 
 namespace ReLearn.Core.ViewModels.Languages
 {
-    public  class LearnViewModel : MvxViewModel
+    public class LearnViewModel : MvxViewModel<List<DBWords>>
     {
         #region Fields
         #endregion
 
         #region Commands
+        private IMvxCommand _nextCommand;
+        public IMvxCommand NextCommand => _nextCommand ?? (_nextCommand = new MvxCommand(Next));
+
+        private IMvxCommand _notRepeatCommand;
+        public IMvxCommand NotRepeatCommand => _notRepeatCommand ?? (_notRepeatCommand = new MvxCommand(NotRepeat));
+
+        private IMvxCommand _voiceCommand;
+        public IMvxCommand VoiceCommand => _voiceCommand ?? (_voiceCommand = new MvxCommand(() => TextToSpeech.Speak(Word)));
         #endregion
 
         #region Properties
@@ -27,8 +37,6 @@ namespace ReLearn.Core.ViewModels.Languages
             get => _text;
             set => SetProperty(ref _text, value);
         }
-
-
         #endregion
 
         #region Services
@@ -41,20 +49,40 @@ namespace ReLearn.Core.ViewModels.Languages
         {
             NavigationService = navigationService;
             TextToSpeech = textToSpeech;
-            Database = DBWords.GetDataNotLearned;
         }
         #endregion
 
         #region Private
+        private void Next()
+        {
+            if (Count < Database.Count)
+            {
+                Word = Database[Count].Word;
+                Text = $"{Word}{(Database[Count].Transcription == null ? "" : $"\n\n{Database[Count].Transcription}")}" +
+                       $"\n\n{Database[Count++].TranslationWord}";
+                DBWords.UpdateLearningNext(Word);
+                if (VoiceEnable)
+                    TextToSpeech.Speak(Word);
+            }
+            else
+                Mvx.IoCProvider.Resolve<IMessageCore>().Toast(AppResources.LearnViewModel_DictionaryOver);
+        }
+
+        private void NotRepeat()
+        {
+            DBWords.UpdateLearningNotRepeat(Word);
+            Next();
+        }
         #endregion
 
         #region Protected
         #endregion
 
         #region Public
-        public override void ViewCreated()
+        public override void Prepare(List<DBWords> parameter)
         {
-            base.ViewCreated();
+            Database = parameter;
+            Next();
         }
         #endregion
     }

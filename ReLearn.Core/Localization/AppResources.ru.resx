@@ -186,6 +186,15 @@
   <data name="GeneralStatisticsViewModel.Today" xml:space="preserve">
     <value>Сегодня</value>
   </data>
+  <data name="HomeViewModel.RepeatedAllImages" xml:space="preserve">
+    <value>Вы повторили все изображения</value>
+  </data>
+  <data name="HomeViewModel.RepeatedAllWords" xml:space="preserve">
+    <value>Вы повторили все слова</value>
+  </data>
+  <data name="LearnViewModel.DictionaryOver" xml:space="preserve">
+    <value>Словарь закончился</value>
+  </data>
   <data name="LearnViewModel.Next" xml:space="preserve">
     <value>Дальше</value>
   </data>

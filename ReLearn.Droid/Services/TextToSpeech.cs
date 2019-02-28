@@ -12,14 +12,14 @@ namespace ReLearn.Droid.Services
     {
         public Activity CurrentActivity => Mvx.IoCProvider.Resolve<IMvxAndroidCurrentTopActivity>().Activity;
         Android.Speech.Tts.TextToSpeech speaker;
-        string toSpeak;
+        private string ToSpeak { get; set; }
         public void Speak(string text)
         {
-            toSpeak = text;
+            ToSpeak = text;
             if (speaker == null)
                 speaker = new Android.Speech.Tts.TextToSpeech(CurrentActivity.BaseContext, this);
             else
-                speaker.Speak(toSpeak, QueueMode.Flush, null, null);
+                speaker.Speak(ToSpeak, QueueMode.Flush, null, null);
         }
 
         public void OnInit(OperationResult status)
@@ -27,7 +27,7 @@ namespace ReLearn.Droid.Services
             if (status.Equals(OperationResult.Success))
             {
                 speaker.SetLanguage(Settings.CurrentPronunciation == $"{Pronunciation.en}" ? Java.Util.Locale.Us : Java.Util.Locale.Uk);
-                speaker.Speak(toSpeak, QueueMode.Flush, null, null);
+                speaker.Speak(ToSpeak, QueueMode.Flush, null, null);
             }
         }
     }

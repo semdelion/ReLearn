@@ -62,8 +62,7 @@
 					android:gravity			   ="left|right|center"
 					android:scaleType		   ="fitXY"/>
 				<Button
-					android:onClick			   ="Button_Languages_Learn_Voice_Click"
-					android:id				   ="@+id/button_voice"
+					local:MvxBind			   ="Click VoiceCommand"
 					android:text			   ="@string/Voice"
 					android:background		   ="@drawable/button_style_standard"
 					android:textColor		   ="@color/text_white"
@@ -79,8 +78,7 @@
 			</TableRow>
 			<TableRow android:layout_marginTop ="10.0dp">
 				<Button
-					android:onClick			   ="Button_Languages_Learn_NotRepeat_Click"
-					android:id				   ="@+id/button_NotRepeat_languages"
+					local:MvxBind			   ="Click NotRepeatCommand"
 					android:background		   ="@drawable/button_style_standard"
 					android:textColor		   ="@color/text_white"
 					android:text			   ="@string/NotRepeat"
@@ -92,8 +90,7 @@
 					android:layout_marginRight ="5dp" 
 				/>
 				<Button
-					android:onClick			   ="Button_Languages_Learn_Next_Click"
-					android:id				   ="@+id/button_learn_languages"
+					local:MvxBind			   ="Click NextCommand"
 					android:background		   ="@drawable/button_style_standard"
 					android:textColor		   ="@color/text_white"
 					android:text			   ="@string/Next"

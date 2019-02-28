@@ -10,7 +10,7 @@ using System.Timers;
 
 namespace ReLearn.Core.ViewModels.Languages
 {
-    public class BlitzPollViewModel : MvxViewModel
+    public class BlitzPollViewModel : MvxViewModel<List<DBWords>>
     {
         #region Fields
         #endregion
@@ -44,7 +44,6 @@ namespace ReLearn.Core.ViewModels.Languages
         public BlitzPollViewModel(IMvxNavigationService navigationService)
         {
             NavigationService = navigationService;
-            Database = DBWords.GetDataNotLearned;
             Time = Settings.TimeToBlitz * 10;
         }
         #endregion
@@ -60,6 +59,11 @@ namespace ReLearn.Core.ViewModels.Languages
         public override void ViewCreated()
         {
             base.ViewCreated();
+        }
+
+        public override void Prepare(List<DBWords> parameter)
+        {
+            Database = parameter;
         }
         #endregion
     }

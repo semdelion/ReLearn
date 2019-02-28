@@ -21,7 +21,7 @@ namespace ReLearn.Droid.Views.Images
         protected override int FragmentId => Resource.Layout.fragment_menu_view_dictionary;
 
         protected override int Toolbar => Resource.Id.toolbar_view_dictionary;
-        ListView DictionaryImages { get; set; }
+        private ListView DictionaryImages { get; set; }
         
         public static bool HideStudied
         {
@@ -68,15 +68,15 @@ namespace ReLearn.Droid.Views.Images
         {
             inflater.Inflate(Resource.Menu.search, menu);
             var searchItem = menu.FindItem(Resource.Id.action_search);
-            var _searchView = searchItem.ActionView.JavaCast<Android.Support.V7.Widget.SearchView>();
-            _searchView.InputType = Convert.ToInt32(Android.Text.InputTypes.TextFlagCapWords);
+            var searchView = searchItem.ActionView.JavaCast<Android.Support.V7.Widget.SearchView>();
+            searchView.InputType = Convert.ToInt32(Android.Text.InputTypes.TextFlagCapWords);
             menu.FindItem(Resource.Id.HideStudied).SetChecked(HideStudied);
-            _searchView.QueryTextChange += (sender, e) =>
+            searchView.QueryTextChange += (sender, e) =>
             {
                 if (e.NewText == "")
                     DictionaryImages.Adapter = new CustomAdapterImage(ParentActivity, HideStudied ? ViewModel.DataBase.FindAll(obj => obj.NumberLearn != 0) : ViewModel.DataBase);
                 else
-                    DictionaryImages.Adapter = new CustomAdapterImage(ParentActivity, Settings.Currentlanguage == Language.en.ToString() ?
+                    DictionaryImages.Adapter = new CustomAdapterImage(ParentActivity, Settings.Currentlanguage == $"{Language.en}" ?
                          SearchWithGetTypeField("Name_image_en", e) :
                          SearchWithGetTypeField("Name_image_ru", e));
             };
@@ -94,7 +94,7 @@ namespace ReLearn.Droid.Views.Images
 
         public void SortNamesImages()
         {
-            if (Settings.Currentlanguage == Language.en.ToString())
+            if (Settings.Currentlanguage == $"{Language.en}")
                 ViewModel.DataBase.Sort((x, y) => x.Name_image_en.CompareTo(y.Name_image_en));
             else
                 ViewModel.DataBase.Sort((x, y) => x.Name_image_ru.CompareTo(y.Name_image_ru));

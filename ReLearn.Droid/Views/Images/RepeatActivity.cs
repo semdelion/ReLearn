@@ -8,6 +8,7 @@ using Android.Widget;
 using MvvmCross.Droid.Support.V7.AppCompat;
 using ReLearn.API;
 using ReLearn.API.Database;
+using ReLearn.Core.Helpers;
 using ReLearn.Core.ViewModels.Images;
 using ReLearn.Droid.Helpers;
 using System;
@@ -18,25 +19,24 @@ namespace ReLearn.Droid.Images
     [Activity(Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class RepeatActivity : MvxAppCompatActivity<RepeatViewModel>
     {
+        private List<Button> Buttons { get; set; }
+        private ButtonNext ButtonNext { get; set; }
         
-        List<Button> Buttons { get; set; }
-        ButtonNext Button_next;
-        
-        void Button_enable(bool state)
+        void ButtonEnable(bool state)
         {
             foreach (var button in Buttons)
                 button.Enabled = state;
             if (state)
             {
-                Button_next.State = StateButton.Unknown;
-                Button_next.button.Text = GetString(Resource.String.Unknown);
+                ButtonNext.State = StateButton.Unknown;
+                ButtonNext.button.Text = GetString(Resource.String.Unknown);
                 foreach (var button in Buttons)
                     button.Background = GetDrawable(Resource.Drawable.button_style_standard);
             }
             else
             {
-                Button_next.State = StateButton.Next;
-                Button_next.button.Text = GetString(Resource.String.Next);
+                ButtonNext.State = StateButton.Next;
+                ButtonNext.button.Text = GetString(Resource.String.Next);
             }
         }
 
@@ -65,7 +65,7 @@ namespace ReLearn.Droid.Images
         void Answer(params Button[] buttons) // подсвечиваем правильный ответ, если мы ошиблись подсвечиваем неправвильный и паравильный 
         {
             API.Statistics.Count++;
-            Button_enable(false);
+            ButtonEnable(false);
             if (buttons[0].Text == ViewModel.Database[ViewModel.CurrentNumber].ImageName)
             {
                 API.Statistics.Add(ViewModel.Database, ViewModel.CurrentNumber, - Settings.TrueAnswer);
@@ -106,11 +106,11 @@ namespace ReLearn.Droid.Images
         [Java.Interop.Export("Button_Images_Next_Click")]
         public void Button_Images_Next_Click(View v)
         {
-            Button_next.button.Enabled = false;
-            if (Button_next.State == StateButton.Unknown)
+            ButtonNext.button.Enabled = false;
+            if (ButtonNext.State == StateButton.Unknown)
             {
-                Button_next.State = StateButton.Next;
-                Button_enable(false);
+                ButtonNext.State = StateButton.Next;
+                ButtonEnable(false);
                 Unknown();
             }
             else
@@ -119,7 +119,7 @@ namespace ReLearn.Droid.Images
                 {
                     ViewModel.CurrentNumber = new Random(unchecked((int)(DateTime.Now.Ticks))).Next(ViewModel.Database.Count);
                     NextTest();
-                    Button_enable(true);
+                    ButtonEnable(true);
                     ViewModel.TitleCount = $"{GetString(Resource.String.Repeated)} {API.Statistics.Count + 1}/{Settings.NumberOfRepeatsImage}";
                 }
                 else
@@ -130,7 +130,7 @@ namespace ReLearn.Droid.Images
                     this.Finish();
                 }
             }
-            Button_next.button.Enabled = true;
+            ButtonNext.button.Enabled = true;
         }
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -144,10 +144,8 @@ namespace ReLearn.Droid.Images
 
             DisplayMetrics displayMetrics = new DisplayMetrics();
             WindowManager.DefaultDisplay.GetRealMetrics(displayMetrics);
-            var _background = BitmapHelper.GetBackgroung(Resources,
-            displayMetrics.WidthPixels - PixelConverter.DpToPX(20),
-            PixelConverter.DpToPX(190));
-            FindViewById<LinearLayout>(Resource.Id.repeat_background).Background = _background;
+            using (var background = BitmapHelper.GetBackgroung(Resources, displayMetrics.WidthPixels - PixelConverter.DpToPX(20), PixelConverter.DpToPX(190)))
+                FindViewById<LinearLayout>(Resource.Id.repeat_background).Background = background;
 
             Buttons = new List<Button>{
                 FindViewById<Button>(Resource.Id.button_I_choice1),
@@ -155,18 +153,11 @@ namespace ReLearn.Droid.Images
                 FindViewById<Button>(Resource.Id.button_I_choice3),
                 FindViewById<Button>(Resource.Id.button_I_choice4)
             };
-            Button_next = new ButtonNext
+            ButtonNext = new ButtonNext
             {
                 button = FindViewById<Button>(Resource.Id.button_I_Next),
                 State = StateButton.Next
             };
-            if (ViewModel.Database.Count == 0)
-            {
-                Toast.MakeText(this, GetString(Resource.String.RepeatedAllImages), ToastLength.Short).Show();
-                Finish();
-                return;
-            }
-           
             Button_Images_Next_Click(null);
         }
 

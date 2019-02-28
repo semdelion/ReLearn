@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ReLearn.Core.ViewModels.Languages
 {
-    public class RepeatViewModel : MvxViewModel
+    public class RepeatViewModel : MvxViewModel<List<DBWords>>
     {
         #region Fields
         #endregion
@@ -48,7 +48,6 @@ namespace ReLearn.Core.ViewModels.Languages
         {
             NavigationService = navigationService;
             TextToSpeech = textToSpeech;
-            Database = DBWords.GetDataNotLearned;
         }
         #endregion
 
@@ -63,6 +62,11 @@ namespace ReLearn.Core.ViewModels.Languages
         public override void ViewCreated()
         {
             base.ViewCreated();
+        }
+
+        public override void Prepare(List<DBWords> parameter)
+        {
+            Database = parameter;
         }
         #endregion
     }
