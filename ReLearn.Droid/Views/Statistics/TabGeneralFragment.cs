@@ -24,14 +24,17 @@ namespace ReLearn.Droid.Views.Statistics
                 Resources.DisplayMetrics.WidthPixels - PixelConverter.DpToPX(20),
                 PixelConverter.DpToPX(65), Bitmap.Config.Argb4444))
             {
-                Canvas canvas = new Canvas(bitmapLastStat);
-                var Stat = new DrawStatistics(canvas);
-                Stat.DrawBackground(6, 6, Paints.Background, Paints.Border, Paints.Gradient);
-                int numberTrue = ViewModel.Database.Sum(r => r.True),
-                numberFalse = ViewModel.Database.Sum(r => r.False);
-                Stat.ProgressLine(numberTrue, (numberFalse + numberTrue) == 0 ? 1 : numberFalse, 
-                    StatisticsFragment.LightColor, StatisticsFragment.DarkColor, Paints.BackgroundLine);
-                viewLastStat.Background = new BitmapDrawable(Resources, bitmapLastStat);
+                using (Canvas canvas = new Canvas(bitmapLastStat))
+                {
+                    var Stat = new DrawStatistics(canvas);
+                    Stat.DrawBackground(6, 6, Paints.Background, Paints.Border, Paints.Gradient);
+                    int numberTrue = ViewModel.Database.Sum(r => r.True),
+                    numberFalse = ViewModel.Database.Sum(r => r.False);
+                    Stat.ProgressLine(numberTrue, (numberFalse + numberTrue) == 0 ? 1 : numberFalse,
+                        StatisticsFragment.LightColor, StatisticsFragment.DarkColor, Paints.BackgroundLine);
+                    using (var background = new BitmapDrawable(Resources, bitmapLastStat))
+                        viewLastStat.Background = background;
+                }
             }
         }
 
@@ -41,13 +44,16 @@ namespace ReLearn.Droid.Views.Statistics
                 Resources.DisplayMetrics.WidthPixels - PixelConverter.DpToPX(20),
                 PixelConverter.DpToPX(65), Bitmap.Config.Argb4444))
             {
-                Canvas canvas= new Canvas(bitmapLastStat);
-                var Stat = new DrawStatistics(canvas);
-                Stat.DrawBackground(6, 6, Paints.Background, Paints.Border, Paints.Gradient);
-                int numberInconvenient = ViewModel.DatabaseStats.Count(r => r.NumberLearn == API.Settings.MaxNumberOfRepeats);
-                Stat.ProgressLine(numberInconvenient, ViewModel.DatabaseStats.Count - numberInconvenient,
-                    StatisticsFragment.LightColor, StatisticsFragment.DarkColor, Paints.BackgroundLine);
-                viewLastStat.Background = new BitmapDrawable(Resources, bitmapLastStat);
+                using (Canvas canvas = new Canvas(bitmapLastStat))
+                {
+                    var Stat = new DrawStatistics(canvas);
+                    Stat.DrawBackground(6, 6, Paints.Background, Paints.Border, Paints.Gradient);
+                    int numberInconvenient = ViewModel.DatabaseStats.Count(r => r.NumberLearn == API.Settings.MaxNumberOfRepeats);
+                    Stat.ProgressLine(numberInconvenient, ViewModel.DatabaseStats.Count - numberInconvenient,
+                        StatisticsFragment.LightColor, StatisticsFragment.DarkColor, Paints.BackgroundLine);
+                    using (var background = new BitmapDrawable(Resources, bitmapLastStat))
+                        viewLastStat.Background = background;
+                }
             }
         }
 
@@ -57,13 +63,16 @@ namespace ReLearn.Droid.Views.Statistics
                 Resources.DisplayMetrics.WidthPixels - PixelConverter.DpToPX(20),
                 PixelConverter.DpToPX(65), Bitmap.Config.Argb4444))
             {
-                Canvas canvas = new Canvas(bitmapLastStat);
-                var Stat = new DrawStatistics(canvas);
-                Stat.DrawBackground(6, 6, Paints.Background, Paints.Border, Paints.Gradient);
-                int numberLearned = ViewModel.DatabaseStats.Count(r => r.NumberLearn == 0);
-                Stat.ProgressLine(numberLearned, ViewModel.DatabaseStats.Count - numberLearned,
-                   StatisticsFragment.LightColor, StatisticsFragment.DarkColor, Paints.BackgroundLine);
-                viewLastStat.Background = new BitmapDrawable(Resources, bitmapLastStat);
+                using (Canvas canvas = new Canvas(bitmapLastStat))
+                {
+                    var Stat = new DrawStatistics(canvas);
+                    Stat.DrawBackground(6, 6, Paints.Background, Paints.Border, Paints.Gradient);
+                    int numberLearned = ViewModel.DatabaseStats.Count(r => r.NumberLearn == 0);
+                    Stat.ProgressLine(numberLearned, ViewModel.DatabaseStats.Count - numberLearned,
+                       StatisticsFragment.LightColor, StatisticsFragment.DarkColor, Paints.BackgroundLine);
+                    using (var background = new BitmapDrawable(Resources, bitmapLastStat))
+                        viewLastStat.Background = background;
+                }
             }
         }
 
@@ -71,18 +80,23 @@ namespace ReLearn.Droid.Views.Statistics
         {
             using (Bitmap bitmapLastStat = Bitmap.CreateBitmap(viewLastStat.Width, viewLastStat.Height, Bitmap.Config.Argb4444))
             {
-                Canvas canvas = new Canvas(bitmapLastStat);
-                var Stat = new DrawStatistics(canvas);
-                Stat.DrawBackground(6, 6, Paints.Background, Paints.Border, Paints.Gradient);
-                viewLastStat.Background = new BitmapDrawable(Resources, bitmapLastStat);
-
-                using (Bitmap bitmapPieChart = Bitmap.CreateBitmap(viewPieChart.Width, viewPieChart.Height, Bitmap.Config.Argb4444))
+                using (Canvas canvas = new Canvas(bitmapLastStat))
                 {
-                    Canvas canvasChart = new Canvas(bitmapPieChart);
-                    var StatChart = new DrawStatistics(canvasChart);
-                    float avgNumberLearnStat = API.Statistics.GetAverageNumberLearn(ViewModel.DatabaseStats);
-                    StatChart.DrawPieChart(avgNumberLearnStat, API.Settings.StandardNumberOfRepeats, StatisticsFragment.LightColor, StatisticsFragment.DarkColor);
-                    viewPieChart.Background = new BitmapDrawable(Resources, bitmapPieChart);
+                    var Stat = new DrawStatistics(canvas);
+                    Stat.DrawBackground(6, 6, Paints.Background, Paints.Border, Paints.Gradient);
+                    using (var background = new BitmapDrawable(Resources, bitmapLastStat))
+                        viewLastStat.Background = background;
+                    using (Bitmap bitmapPieChart = Bitmap.CreateBitmap(viewPieChart.Width, viewPieChart.Height, Bitmap.Config.Argb4444))
+                    {
+                        using (Canvas canvasChart = new Canvas(bitmapPieChart))
+                        {
+                            var StatChart = new DrawStatistics(canvasChart);
+                            float avgNumberLearnStat = API.Statistics.GetAverageNumberLearn(ViewModel.DatabaseStats);
+                            StatChart.DrawPieChart(avgNumberLearnStat, API.Settings.StandardNumberOfRepeats, StatisticsFragment.LightColor, StatisticsFragment.DarkColor);
+                            using (var background = new BitmapDrawable(Resources, bitmapPieChart))
+                                viewPieChart.Background = background;
+                        }
+                    }
                 }
             }
             viewPieChart.ViewTreeObserver.RemoveOnPreDrawListener(this);
@@ -94,10 +108,13 @@ namespace ReLearn.Droid.Views.Statistics
                 Resources.DisplayMetrics.WidthPixels - PixelConverter.DpToPX(20) - (int)(0.61f * Resources.DisplayMetrics.WidthPixels),
                 PixelConverter.DpToPX(265), Bitmap.Config.Argb4444))
             {
-                Canvas canvas = new Canvas(bitmapLastStat);
-                var Stat = new DrawStatistics(canvas);
-                Stat.DrawBackground(6, 6, Paints.Background, Paints.Border, Paints.Gradient);
-                viewLastStat.Background = new BitmapDrawable(Resources, bitmapLastStat);
+                using (Canvas canvas = new Canvas(bitmapLastStat))
+                {
+                    var Stat = new DrawStatistics(canvas);
+                    Stat.DrawBackground(6, 6, Paints.Background, Paints.Border, Paints.Gradient);
+                    using (var background = new BitmapDrawable(Resources, bitmapLastStat))
+                        viewLastStat.Background = background;
+                }
             }
         }
 
