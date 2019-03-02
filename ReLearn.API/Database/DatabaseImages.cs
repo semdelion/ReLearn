@@ -34,7 +34,7 @@ namespace ReLearn.API.Database
         public static bool DatabaseIsContain(string nameDB)
         {
             Enum.TryParse(nameDB, out TableNamesImage name);
-            if (nameDB != name.ToString())
+            if (nameDB != $"{name}")
                 return false;
             return true;
         }
@@ -57,7 +57,7 @@ namespace ReLearn.API.Database
         public static void UpdateLearningNotRepeat(string ImageName)
         {
             var query = $"UPDATE {DataBase.TableName} SET DateRecurrence = ?, NumberLearn = ? WHERE ";
-            var tmp = Settings.Currentlanguage == Language.en.ToString() ? "Name_image_en = ?" : "Name_image_ru = ?";
+            var tmp = Settings.Currentlanguage == $"{Language.en}" ? "Name_image_en = ?" : "Name_image_ru = ?";
             DataBase.Images.Execute(query + tmp, DateTime.Now, 0, ImageName);
         }
 

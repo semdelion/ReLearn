@@ -40,7 +40,7 @@ namespace ReLearn.Droid.Views.SelectDictionary
 
         public void Selected(string NewTableName, string СurrentTableName)
         {
-            int indexCurrent = DictionariesView.FindIndex(s => s.Tag.ToString() == СurrentTableName);
+            int indexCurrent = DictionariesView.FindIndex(s => $"{s.Tag}" == СurrentTableName);
             DictionariesView[indexCurrent].SetImageBitmap(DictionariesBitmap[indexCurrent]);
 
             using (Bitmap image1 = Bitmap.CreateBitmap(Width, Width, Bitmap.Config.Argb4444))
@@ -48,7 +48,7 @@ namespace ReLearn.Droid.Views.SelectDictionary
                 {
                     Paint paint2 = new Paint { Color = Colors.FrameBorder, AntiAlias = true };
                     baseCan.DrawCircle(Width / 2, Width / 2, Width / 2.5f, paint2);
-                    int indexNew = DictionariesView.FindIndex(s => s.Tag.ToString() == NewTableName);
+                    int indexNew = DictionariesView.FindIndex(s => $"{s.Tag}" == NewTableName);
                     DictionariesView[indexNew].SetImageBitmap(CreateSingleImageFromMultipleImages(image1, DictionariesBitmap[indexNew], new PointF(0, 0)));
                 }
         }

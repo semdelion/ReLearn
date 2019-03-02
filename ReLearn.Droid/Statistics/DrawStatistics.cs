@@ -119,7 +119,7 @@ namespace ReLearn.Droid.Statistics
                 Color = c ?? Colors.White
             };
             paint.SetTypeface(bold);
-            Canvas.DrawText(Convert.ToString(text), left, top + fontSize, paint);
+            Canvas.DrawText(text, left, top + fontSize, paint);
         }
 
         private static string RoundOfNumber(float number)

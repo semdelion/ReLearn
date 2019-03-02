@@ -67,13 +67,13 @@ namespace ReLearn.Droid.Views.Languages
                 Android.App.AlertDialog.Builder alert = new Android.App.AlertDialog.Builder(ParentActivity);
 
                 alert.SetTitle("");
-                alert.SetMessage($"To delete : {word.ToString()}? ");
+                alert.SetMessage($"To delete : {$"{word}"}? ");
                 alert.SetPositiveButton("Cancel", delegate { alert.Dispose(); });
                 alert.SetNeutralButton("ок", delegate
                 {
                     ViewModel.Database.Remove(words);
                     DictionaryWords.Adapter = new CustomAdapterWord(ParentActivity, HideStudied ? ViewModel.Database.FindAll(obj => obj.NumberLearn != 0) : ViewModel.Database);
-                    DBWords.Delete(word.ToString());
+                    DBWords.Delete($"{word}");
                     Toast.MakeText(ParentActivity, GetString(Resource.String.Word_Delete), ToastLength.Short).Show();
 
                 });

@@ -185,7 +185,7 @@ namespace ReLearn.Droid.Images
                 }
                 else
                 {
-                    DBStatistics.Insert(ViewModel.True, ViewModel.False, DataBase.TableName.ToString());
+                    DBStatistics.Insert(ViewModel.True, ViewModel.False, $"{DataBase.TableName}");
                     ViewModel.ToStatistic.Execute();
                     Cancel();
                     Finish();

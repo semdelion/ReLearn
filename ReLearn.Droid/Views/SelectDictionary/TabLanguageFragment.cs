@@ -22,7 +22,7 @@ namespace ReLearn.Droid.Views.SelectDictionary
                 LayoutParameters = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MatchParent, ViewGroup.LayoutParams.WrapContent)
             };
             SelectDictionaryFragment.Dictionaries.DictionariesBitmap.Add(SelectDictionaryFragment.Dictionaries.CreateBitmapWithStats(BitmapFactory.DecodeResource(Resources, ImageId), DB, lightColor, darkColor));//////fail color
-            ImageView ImageDictionary = new ImageView(view.Context) { Tag = NameDictionary.ToString() };
+            ImageView ImageDictionary = new ImageView(view.Context) { Tag = $"{NameDictionary}" };
             ImageDictionary.LayoutParameters = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WrapContent, ViewGroup.LayoutParams.WrapContent)
             {
                 Gravity = flag
