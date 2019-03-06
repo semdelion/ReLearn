@@ -47,13 +47,13 @@ namespace ReLearn.Core.ViewModels.MainMenu
             var text = Words.ToLower().Trim('\n').Split('\n');
             if (await Task.Run(() => ValidationOfEnteredData(text)))
             {
-                await Task.Run(() =>
+                await Task.Run(async () =>
                 {
                     for (int i = 0; i < text.Length; i++)
                     {
                         var str = text[i].Split('|');
-                        if (!DBWords.WordIsContained(str[0].Trim()))
-                            DBWords.Insert(str[0].Trim(), str[1].Trim());
+                        if (!await DBWords.WordIsContained(str[0].Trim()))
+                            await DBWords.Insert(str[0].Trim(), str[1].Trim());
                     }
                 });
                 Message.Toast(AppResources.DictionaryReplenishmentViewModel_WordsAdded);

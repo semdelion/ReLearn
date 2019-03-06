@@ -4,14 +4,15 @@ using ReLearn.Core.Localization;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace ReLearn.Core.ViewModels.MainMenu.Statistics
 {
     public class GeneralStatisticsViewModel : MvxViewModel
     {
-        private readonly float _avgTrueToday;
-        private readonly float _avgTrueMonth;
-        private readonly float _avgTrue;
+        private float _avgTrueToday { get; set; }
+        private float _avgTrueMonth { get; set; }
+        private float _avgTrue { get; set; }
 
         public List<DatabaseStatistics> Database { get; private set; }
         public List<DBStatistics> DatabaseStats { get; private set; }
@@ -72,16 +73,15 @@ namespace ReLearn.Core.ViewModels.MainMenu.Statistics
         public string Average           => $"{AppResources.GeneralStatisticsViewModel_Average}";
         public string AveragePercent    => $"{Math.Round(_avgTrue, 1)}%";
 
-
-        public GeneralStatisticsViewModel()
+        public override async Task Initialize()
         {
-            Database = DBStatistics.GetData($"{DataBase.TableName}");
+            Database = await DBStatistics.GetData($"{DataBase.TableName}");
             bool isContain = DBImages.DatabaseIsContain($"{DataBase.TableName}");
-            DatabaseStats = isContain ? DBStatistics.GetImages($"{DataBase.TableName}") :
-                                      DBStatistics.GetWords($"{DataBase.TableName}");
-            _avgTrueToday = DBStatistics.AverageTrueToday($"{DataBase.TableName}");
-            _avgTrueMonth = DBStatistics.AverageTrueMonth($"{DataBase.TableName}");
-            _avgTrue = DBStatistics.AveragePercentTrue(Database);
+            DatabaseStats = isContain ? await DBStatistics.GetImages($"{DataBase.TableName}") :
+                                     await DBStatistics.GetWords($"{DataBase.TableName}");
+            _avgTrueToday = await DBStatistics.AverageTrueToday($"{DataBase.TableName}");
+            _avgTrueMonth = await DBStatistics.AverageTrueMonth($"{DataBase.TableName}");
+            _avgTrue = await DBStatistics.AveragePercentTrue(Database);
         }
     }
 }

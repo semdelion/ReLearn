@@ -4,6 +4,7 @@ using Plugin.Settings;
 using ReLearn.API;
 using ReLearn.API.Database;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace ReLearn.Core.ViewModels.Images
 {
@@ -16,7 +17,7 @@ namespace ReLearn.Core.ViewModels.Images
         #endregion
 
         #region Properties
-        public List<DBImages> DataBase { get; }
+        public List<DBImages> DataBase { get; private set; }
         #endregion
 
         #region Services
@@ -27,7 +28,7 @@ namespace ReLearn.Core.ViewModels.Images
         public ViewDictionaryViewModel(IMvxNavigationService navigationService)
         {
             NavigationService = navigationService;
-            DataBase = DBImages.GetData;
+            
         }
         #endregion
 
@@ -38,10 +39,7 @@ namespace ReLearn.Core.ViewModels.Images
         #endregion
 
         #region Public
-        public override void ViewCreated()
-        {
-            base.ViewCreated();
-        }
+        public override async Task Initialize() => DataBase = await DBImages.GetData();
         #endregion
     }
 }

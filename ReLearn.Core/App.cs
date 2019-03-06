@@ -7,6 +7,7 @@ using MvvmCross.ViewModels;
 using ReLearn.API.Database;
 using ReLearn.Core.Localization;
 using ReLearn.Core.ViewModels;
+using System.Threading.Tasks;
 
 namespace ReLearn.Core
 {
@@ -25,11 +26,6 @@ namespace ReLearn.Core
             DataBase.SetupConnection();
             DBImages.UpdateData();
             DBWords.UpdateData();
-        }
-        private void InitializeText()
-        {
-            //var bilder = new TextProviderBuilder();
-            //Mvx.RegisterSingleton<IMvxTextProvider>
         }
     }
 }

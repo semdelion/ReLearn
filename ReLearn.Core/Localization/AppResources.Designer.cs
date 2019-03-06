@@ -65,7 +65,7 @@ namespace ReLearn.Core.Localization {
         /// </summary>
         public static string AddViewModel_EnterWord {
             get {
-                return ResourceManager.GetString("AddViewModel.EnterWord", resourceCulture);
+                return ResourceManager.GetString("AddViewModel_EnterWord", resourceCulture);
             }
         }
         
@@ -74,7 +74,7 @@ namespace ReLearn.Core.Localization {
         /// </summary>
         public static string AddViewModel_WordAdded {
             get {
-                return ResourceManager.GetString("AddViewModel.WordAdded", resourceCulture);
+                return ResourceManager.GetString("AddViewModel_WordAdded", resourceCulture);
             }
         }
         
@@ -83,7 +83,7 @@ namespace ReLearn.Core.Localization {
         /// </summary>
         public static string AddViewModel_WordExists {
             get {
-                return ResourceManager.GetString("AddViewModel.WordExists", resourceCulture);
+                return ResourceManager.GetString("AddViewModel_WordExists", resourceCulture);
             }
         }
         
@@ -92,7 +92,7 @@ namespace ReLearn.Core.Localization {
         /// </summary>
         public static string DictionaryReplenishmentViewModel_DataCorrectness {
             get {
-                return ResourceManager.GetString("DictionaryReplenishmentViewModel.DataCorrectness", resourceCulture);
+                return ResourceManager.GetString("DictionaryReplenishmentViewModel_DataCorrectness", resourceCulture);
             }
         }
         
@@ -101,7 +101,7 @@ namespace ReLearn.Core.Localization {
         /// </summary>
         public static string DictionaryReplenishmentViewModel_WordsAdded {
             get {
-                return ResourceManager.GetString("DictionaryReplenishmentViewModel.WordsAdded", resourceCulture);
+                return ResourceManager.GetString("DictionaryReplenishmentViewModel_WordsAdded", resourceCulture);
             }
         }
         
@@ -110,7 +110,7 @@ namespace ReLearn.Core.Localization {
         /// </summary>
         public static string GeneralStatisticsViewModel_Average {
             get {
-                return ResourceManager.GetString("GeneralStatisticsViewModel.Average", resourceCulture);
+                return ResourceManager.GetString("GeneralStatisticsViewModel_Average", resourceCulture);
             }
         }
         
@@ -119,7 +119,7 @@ namespace ReLearn.Core.Localization {
         /// </summary>
         public static string GeneralStatisticsViewModel_Correct {
             get {
-                return ResourceManager.GetString("GeneralStatisticsViewModel.Correct", resourceCulture);
+                return ResourceManager.GetString("GeneralStatisticsViewModel_Correct", resourceCulture);
             }
         }
         
@@ -128,7 +128,7 @@ namespace ReLearn.Core.Localization {
         /// </summary>
         public static string GeneralStatisticsViewModel_CorrectAnswers {
             get {
-                return ResourceManager.GetString("GeneralStatisticsViewModel.CorrectAnswers", resourceCulture);
+                return ResourceManager.GetString("GeneralStatisticsViewModel_CorrectAnswers", resourceCulture);
             }
         }
         
@@ -137,7 +137,7 @@ namespace ReLearn.Core.Localization {
         /// </summary>
         public static string GeneralStatisticsViewModel_DegreeOfStudy {
             get {
-                return ResourceManager.GetString("GeneralStatisticsViewModel.DegreeOfStudy", resourceCulture);
+                return ResourceManager.GetString("GeneralStatisticsViewModel_DegreeOfStudy", resourceCulture);
             }
         }
         
@@ -146,7 +146,7 @@ namespace ReLearn.Core.Localization {
         /// </summary>
         public static string GeneralStatisticsViewModel_Incorrect {
             get {
-                return ResourceManager.GetString("GeneralStatisticsViewModel.Incorrect", resourceCulture);
+                return ResourceManager.GetString("GeneralStatisticsViewModel_Incorrect", resourceCulture);
             }
         }
         
@@ -155,7 +155,7 @@ namespace ReLearn.Core.Localization {
         /// </summary>
         public static string GeneralStatisticsViewModel_Month {
             get {
-                return ResourceManager.GetString("GeneralStatisticsViewModel.Month", resourceCulture);
+                return ResourceManager.GetString("GeneralStatisticsViewModel_Month", resourceCulture);
             }
         }
         
@@ -164,7 +164,7 @@ namespace ReLearn.Core.Localization {
         /// </summary>
         public static string GeneralStatisticsViewModel_NumberCorrectAnswers {
             get {
-                return ResourceManager.GetString("GeneralStatisticsViewModel.NumberCorrectAnswers", resourceCulture);
+                return ResourceManager.GetString("GeneralStatisticsViewModel_NumberCorrectAnswers", resourceCulture);
             }
         }
         
@@ -173,7 +173,7 @@ namespace ReLearn.Core.Localization {
         /// </summary>
         public static string GeneralStatisticsViewModel_NumberInconvenientFilms {
             get {
-                return ResourceManager.GetString("GeneralStatisticsViewModel.NumberInconvenientFilms", resourceCulture);
+                return ResourceManager.GetString("GeneralStatisticsViewModel_NumberInconvenientFilms", resourceCulture);
             }
         }
         
@@ -182,7 +182,7 @@ namespace ReLearn.Core.Localization {
         /// </summary>
         public static string GeneralStatisticsViewModel_NumberInconvenientFlags {
             get {
-                return ResourceManager.GetString("GeneralStatisticsViewModel.NumberInconvenientFlags", resourceCulture);
+                return ResourceManager.GetString("GeneralStatisticsViewModel_NumberInconvenientFlags", resourceCulture);
             }
         }
         
@@ -191,7 +191,7 @@ namespace ReLearn.Core.Localization {
         /// </summary>
         public static string GeneralStatisticsViewModel_NumberInconvenientImages {
             get {
-                return ResourceManager.GetString("GeneralStatisticsViewModel.NumberInconvenientImages", resourceCulture);
+                return ResourceManager.GetString("GeneralStatisticsViewModel_NumberInconvenientImages", resourceCulture);
             }
         }
         
@@ -200,7 +200,7 @@ namespace ReLearn.Core.Localization {
         /// </summary>
         public static string GeneralStatisticsViewModel_NumberInconvenientWords {
             get {
-                return ResourceManager.GetString("GeneralStatisticsViewModel.NumberInconvenientWords", resourceCulture);
+                return ResourceManager.GetString("GeneralStatisticsViewModel_NumberInconvenientWords", resourceCulture);
             }
         }
         
@@ -209,7 +209,7 @@ namespace ReLearn.Core.Localization {
         /// </summary>
         public static string GeneralStatisticsViewModel_NumberLearnedFilms {
             get {
-                return ResourceManager.GetString("GeneralStatisticsViewModel.NumberLearnedFilms", resourceCulture);
+                return ResourceManager.GetString("GeneralStatisticsViewModel_NumberLearnedFilms", resourceCulture);
             }
         }
         
@@ -218,7 +218,7 @@ namespace ReLearn.Core.Localization {
         /// </summary>
         public static string GeneralStatisticsViewModel_NumberLearnedFlags {
             get {
-                return ResourceManager.GetString("GeneralStatisticsViewModel.NumberLearnedFlags", resourceCulture);
+                return ResourceManager.GetString("GeneralStatisticsViewModel_NumberLearnedFlags", resourceCulture);
             }
         }
         
@@ -227,7 +227,7 @@ namespace ReLearn.Core.Localization {
         /// </summary>
         public static string GeneralStatisticsViewModel_NumberLearnedImages {
             get {
-                return ResourceManager.GetString("GeneralStatisticsViewModel.NumberLearnedImages", resourceCulture);
+                return ResourceManager.GetString("GeneralStatisticsViewModel_NumberLearnedImages", resourceCulture);
             }
         }
         
@@ -236,7 +236,7 @@ namespace ReLearn.Core.Localization {
         /// </summary>
         public static string GeneralStatisticsViewModel_NumberLearnedWords {
             get {
-                return ResourceManager.GetString("GeneralStatisticsViewModel.NumberLearnedWords", resourceCulture);
+                return ResourceManager.GetString("GeneralStatisticsViewModel_NumberLearnedWords", resourceCulture);
             }
         }
         
@@ -245,7 +245,7 @@ namespace ReLearn.Core.Localization {
         /// </summary>
         public static string GeneralStatisticsViewModel_NumberOfTests {
             get {
-                return ResourceManager.GetString("GeneralStatisticsViewModel.NumberOfTests", resourceCulture);
+                return ResourceManager.GetString("GeneralStatisticsViewModel_NumberOfTests", resourceCulture);
             }
         }
         
@@ -254,7 +254,7 @@ namespace ReLearn.Core.Localization {
         /// </summary>
         public static string GeneralStatisticsViewModel_Of {
             get {
-                return ResourceManager.GetString("GeneralStatisticsViewModel.Of", resourceCulture);
+                return ResourceManager.GetString("GeneralStatisticsViewModel_Of", resourceCulture);
             }
         }
         
@@ -263,7 +263,7 @@ namespace ReLearn.Core.Localization {
         /// </summary>
         public static string GeneralStatisticsViewModel_Today {
             get {
-                return ResourceManager.GetString("GeneralStatisticsViewModel.Today", resourceCulture);
+                return ResourceManager.GetString("GeneralStatisticsViewModel_Today", resourceCulture);
             }
         }
         
@@ -272,7 +272,7 @@ namespace ReLearn.Core.Localization {
         /// </summary>
         public static string HomeViewModel_RepeatedAllImages {
             get {
-                return ResourceManager.GetString("HomeViewModel.RepeatedAllImages", resourceCulture);
+                return ResourceManager.GetString("HomeViewModel_RepeatedAllImages", resourceCulture);
             }
         }
         
@@ -281,7 +281,7 @@ namespace ReLearn.Core.Localization {
         /// </summary>
         public static string HomeViewModel_RepeatedAllWords {
             get {
-                return ResourceManager.GetString("HomeViewModel.RepeatedAllWords", resourceCulture);
+                return ResourceManager.GetString("HomeViewModel_RepeatedAllWords", resourceCulture);
             }
         }
         
@@ -290,7 +290,7 @@ namespace ReLearn.Core.Localization {
         /// </summary>
         public static string LearnViewModel_DictionaryOver {
             get {
-                return ResourceManager.GetString("LearnViewModel.DictionaryOver", resourceCulture);
+                return ResourceManager.GetString("LearnViewModel_DictionaryOver", resourceCulture);
             }
         }
         
@@ -299,7 +299,7 @@ namespace ReLearn.Core.Localization {
         /// </summary>
         public static string LearnViewModel_Next {
             get {
-                return ResourceManager.GetString("LearnViewModel.Next", resourceCulture);
+                return ResourceManager.GetString("LearnViewModel_Next", resourceCulture);
             }
         }
         
@@ -308,7 +308,7 @@ namespace ReLearn.Core.Localization {
         /// </summary>
         public static string MainStatisticsViewModel_Correct {
             get {
-                return ResourceManager.GetString("MainStatisticsViewModel.Correct", resourceCulture);
+                return ResourceManager.GetString("MainStatisticsViewModel_Correct", resourceCulture);
             }
         }
         
@@ -317,7 +317,7 @@ namespace ReLearn.Core.Localization {
         /// </summary>
         public static string MainStatisticsViewModel_Incorrect {
             get {
-                return ResourceManager.GetString("MainStatisticsViewModel.Incorrect", resourceCulture);
+                return ResourceManager.GetString("MainStatisticsViewModel_Incorrect", resourceCulture);
             }
         }
         
@@ -326,7 +326,7 @@ namespace ReLearn.Core.Localization {
         /// </summary>
         public static string MainStatisticsViewModel_LastTest {
             get {
-                return ResourceManager.GetString("MainStatisticsViewModel.LastTest", resourceCulture);
+                return ResourceManager.GetString("MainStatisticsViewModel_LastTest", resourceCulture);
             }
         }
         
@@ -335,7 +335,7 @@ namespace ReLearn.Core.Localization {
         /// </summary>
         public static string MainViewModel_Learn {
             get {
-                return ResourceManager.GetString("MainViewModel.Learn", resourceCulture);
+                return ResourceManager.GetString("MainViewModel_Learn", resourceCulture);
             }
         }
         
@@ -344,7 +344,7 @@ namespace ReLearn.Core.Localization {
         /// </summary>
         public static string MainViewModel_Repeat {
             get {
-                return ResourceManager.GetString("MainViewModel.Repeat", resourceCulture);
+                return ResourceManager.GetString("MainViewModel_Repeat", resourceCulture);
             }
         }
         
@@ -353,7 +353,7 @@ namespace ReLearn.Core.Localization {
         /// </summary>
         public static string SettingsMenuViewModel_Cancel {
             get {
-                return ResourceManager.GetString("SettingsMenuViewModel.Cancel", resourceCulture);
+                return ResourceManager.GetString("SettingsMenuViewModel_Cancel", resourceCulture);
             }
         }
         
@@ -362,7 +362,7 @@ namespace ReLearn.Core.Localization {
         /// </summary>
         public static string SettingsMenuViewModel_ChooseLanguage {
             get {
-                return ResourceManager.GetString("SettingsMenuViewModel.ChooseLanguage", resourceCulture);
+                return ResourceManager.GetString("SettingsMenuViewModel_ChooseLanguage", resourceCulture);
             }
         }
         
@@ -371,7 +371,7 @@ namespace ReLearn.Core.Localization {
         /// </summary>
         public static string SettingsMenuViewModel_ChoosePronunciation {
             get {
-                return ResourceManager.GetString("SettingsMenuViewModel.ChoosePronunciation", resourceCulture);
+                return ResourceManager.GetString("SettingsMenuViewModel_ChoosePronunciation", resourceCulture);
             }
         }
     }

@@ -13,6 +13,7 @@ using ReLearn.Droid.Helpers;
 using ReLearn.Droid.Views.Menu;
 using ReLearn.Droid.Views.Statistics;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace ReLearn.Droid.Views.Fragments
 {
@@ -29,14 +30,14 @@ namespace ReLearn.Droid.Views.Fragments
         public static List<DBStatistics> StatisticsDatabase { get; private set; }
         public static string DataTupe { get; private set; }
 
-        private void GetDate()
+        private async Task GetDate()
         {
             bool isContain = DBImages.DatabaseIsContain($"{DataBase.TableName}");
             LightColor = isContain ? Colors.Orange : Colors.Blue;
             DarkColor = isContain ? Colors.DarkOrange : Colors.DarkBlue;
             DataTupe = isContain ? $"{DataBase.TableName}" : "Words";
-            StatisticsDatabase = isContain ? DBStatistics.GetImages($"{DataBase.TableName}") :
-                                       DBStatistics.GetWords($"{DataBase.TableName}");
+            StatisticsDatabase = isContain ? await DBStatistics.GetImages($"{DataBase.TableName}") :
+                                       await DBStatistics.GetWords($"{DataBase.TableName}");
         }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
