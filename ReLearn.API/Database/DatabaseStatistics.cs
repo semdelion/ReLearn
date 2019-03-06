@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ReLearn.API.Database
 {
-    public class DatabaseStatistics    // class for reading databse
+    public class DatabaseStatistics
     {
         [PrimaryKey, AutoIncrement, Column("_id")]
         public int Id { get; set; }
@@ -15,7 +15,7 @@ namespace ReLearn.API.Database
         public DateTime DateOfTesting { get; set; }
     }
 
-    public class DBStatistics          // Класс для считывания базы данных Stats
+    public class DBStatistics
     {
         public int NumberLearn { get; set; }
         public DateTime DateRecurrence { get; set; }
@@ -45,6 +45,5 @@ namespace ReLearn.API.Database
 
         public static async Task<float> AveragePercentTrue(List<DatabaseStatistics> database) => 
             await Task.Run(() => database.Count == 0 ? 0 : (database.Sum(r => r.True) * (100f / (database.Sum(r => r.True) + database.Sum(r => r.False)))));
-        
     }
 }

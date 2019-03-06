@@ -78,7 +78,7 @@ namespace ReLearn.Core.ViewModels.MainMenu.Statistics
             Task.Run(async () =>
             {
                 Database = await DBStatistics.GetData($"{DataBase.TableName}");
-                bool isContain = DBImages.DatabaseIsContain($"{DataBase.TableName}");
+                bool isContain = DatabaseImages.DatabaseIsContain($"{DataBase.TableName}");
                 DatabaseStats = isContain ? await DBStatistics.GetImages($"{DataBase.TableName}") :
                                          await DBStatistics.GetWords($"{DataBase.TableName}");
                 _avgTrueToday = await DBStatistics.AverageTrueToday($"{DataBase.TableName}");

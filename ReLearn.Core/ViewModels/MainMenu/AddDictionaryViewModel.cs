@@ -52,8 +52,8 @@ namespace ReLearn.Core.ViewModels.MainMenu
                     for (int i = 0; i < text.Length; i++)
                     {
                         var str = text[i].Split('|');
-                        if (!await DBWords.WordIsContained(str[0].Trim()))
-                            await DBWords.Insert(str[0].Trim(), str[1].Trim());
+                        if (!await DatabaseWords.WordIsContained(str[0].Trim()))
+                            await DatabaseWords.Insert(str[0].Trim(), str[1].Trim());
                     }
                 });
                 Message.Toast(AppResources.DictionaryReplenishmentViewModel_WordsAdded);

@@ -17,7 +17,7 @@ namespace ReLearn.Core.ViewModels.Images
         #endregion
 
         #region Properties
-        public List<DBImages> DataBase { get; private set; }
+        public List<DatabaseImages> DataBase { get; private set; }
         #endregion
 
         #region Services
@@ -28,7 +28,7 @@ namespace ReLearn.Core.ViewModels.Images
         public ViewDictionaryViewModel(IMvxNavigationService navigationService)
         {
             NavigationService = navigationService;
-            Task.Run(async () => DataBase = await DBImages.GetData()).Wait();
+            Task.Run(async () => DataBase = await DatabaseImages.GetData()).Wait();
         }
         #endregion
 

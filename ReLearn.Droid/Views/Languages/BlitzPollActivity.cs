@@ -142,8 +142,7 @@ namespace ReLearn.Droid.Languages
                 if (ViewModel.Time > 0)
                 {
                     ViewModel.Time--;
-                    string sec = $"{ ViewModel.Time % 10}0";
-                    FindViewById<TextView>(Resource.Id.textView_Timer_language).Text = $"{ ViewModel.Time / 10}:{sec}";
+                    ViewModel.TimerText = $"{ ViewModel.Time / 10}:{ ViewModel.Time % 10}0";
                     if (ViewModel.Time == 50)
                         FindViewById<TextView>(Resource.Id.textView_Timer_language).SetTextColor(Colors.Red);
                 }

@@ -16,7 +16,7 @@ namespace ReLearn.API.Database
         Nature
     }
 
-    public class DBWords //Класс для считывания базы данных English
+    public class DatabaseWords //Класс для считывания базы данных English
     {
         [PrimaryKey, AutoIncrement, Column("_id")]
         public int Id { get; set; }
@@ -26,9 +26,9 @@ namespace ReLearn.API.Database
         public int NumberLearn { get; set; } = Settings.StandardNumberOfRepeats;
         public DateTime DateRecurrence { get; set; } = DateTime.Today;
 
-        public DBWords(){}
+        public DatabaseWords(){}
 
-        public DBWords(DBWords x)
+        public DatabaseWords(DatabaseWords x)
         {
             DateRecurrence = x.DateRecurrence;
             Word = x.Word;
@@ -36,14 +36,14 @@ namespace ReLearn.API.Database
             TranslationWord = x.TranslationWord;
         }
 
-        public DBWords Find() => this;    
+        public DatabaseWords Find() => this;    
 
         public static async Task UpdateData()
         {
             var toDay = DateTime.Today.AddMonths(-1);
             foreach (string tableName in Enum.GetNames(typeof(TableNamesLanguage)))
             {
-                var dataBase = await DataBase.Languages.QueryAsync<DBWords>($"SELECT * FROM {tableName} WHERE NumberLearn = 0 ");
+                var dataBase = await DataBase.Languages.QueryAsync<DatabaseWords>($"SELECT * FROM {tableName} WHERE NumberLearn = 0 ");
                 foreach (var s in dataBase)
                     if (s.DateRecurrence < toDay)
                         await DataBase.Languages.ExecuteAsync($"UPDATE {tableName} SET DateRecurrence = ?, NumberLearn = ? WHERE Word = ?", DateTime.Now, s.NumberLearn + 1, s.Word);
@@ -60,7 +60,7 @@ namespace ReLearn.API.Database
 
         public static async Task<bool> WordIsContained(string Word)
         {
-            var database = await DataBase.Languages.QueryAsync<DBWords>($"SELECT * FROM {TableNamesLanguage.My_Directly} WHERE Word = ? LIMIT 1", Word);
+            var database = await DataBase.Languages.QueryAsync<DatabaseWords>($"SELECT * FROM {TableNamesLanguage.My_Directly} WHERE Word = ? LIMIT 1", Word);
             return database.Count != 0 ? true : false;
         }
 
@@ -69,8 +69,8 @@ namespace ReLearn.API.Database
                 $"INSERT INTO {TableNamesLanguage.My_Directly} (Word, TranslationWord, NumberLearn, DateRecurrence) VALUES (?, ?, ?, ?)",
                 Word, TranslationWord, Settings.StandardNumberOfRepeats, DateTime.Now);
 
-        public static async Task<List<DBWords>> GetDataNotLearned() => 
-            await DataBase.Languages.QueryAsync<DBWords>(
+        public static async Task<List<DatabaseWords>> GetDataNotLearned() => 
+            await DataBase.Languages.QueryAsync<DatabaseWords>(
                 $"SELECT * FROM {DataBase.TableName} WHERE NumberLearn != 0 ORDER BY DateRecurrence ASC");
 
         public static async Task UpdateLearningNext(string Word) => 
@@ -87,8 +87,8 @@ namespace ReLearn.API.Database
                 $"UPDATE {DataBase.TableName} SET DateRecurrence = ?, NumberLearn = ? WHERE Word = ?",
                 DateTime.Now, learn, word);       
         
-        public static async Task<List<DBWords>> GetData() => 
-            await DataBase.Languages.QueryAsync<DBWords>(
+        public static async Task<List<DatabaseWords>> GetData() => 
+            await DataBase.Languages.QueryAsync<DatabaseWords>(
                 $"SELECT * FROM {DataBase.TableName}");
 
         public static async Task Delete(string Word) => 

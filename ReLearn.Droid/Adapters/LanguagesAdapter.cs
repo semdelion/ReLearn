@@ -10,9 +10,9 @@ namespace ReLearn.Droid.Resources
     public class CustomAdapterWord : BaseAdapter
     {
         private Activity activity;
-        private List<DBWords> list;
+        private List<DatabaseWords> list;
 
-        public CustomAdapterWord(Activity activity, List<DBWords> list)
+        public CustomAdapterWord(Activity activity, List<DatabaseWords> list)
         {
             this.activity = activity;
             this.list = list;

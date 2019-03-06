@@ -9,7 +9,7 @@ using System.Collections.Generic;
 
 namespace ReLearn.Core.ViewModels.Languages
 {
-    public class LearnViewModel : MvxViewModel<List<DBWords>>
+    public class LearnViewModel : MvxViewModel<List<DatabaseWords>>
     {
         #region Fields
         #endregion
@@ -26,7 +26,7 @@ namespace ReLearn.Core.ViewModels.Languages
         #endregion
 
         #region Properties
-        public List<DBWords> Database { get; set; }
+        public List<DatabaseWords> Database { get; set; }
         public int Count { get; set; }
         public bool VoiceEnable { get; set; } = true;
 
@@ -60,7 +60,7 @@ namespace ReLearn.Core.ViewModels.Languages
                 Word = Database[Count].Word;
                 Text = $"{Word}{(Database[Count].Transcription == null ? "" : $"\n\n{Database[Count].Transcription}")}" +
                        $"\n\n{Database[Count++].TranslationWord}";
-                await DBWords.UpdateLearningNext(Word);
+                await DatabaseWords.UpdateLearningNext(Word);
                 if (VoiceEnable)
                     TextToSpeech.Speak(Word);
             }
@@ -70,7 +70,7 @@ namespace ReLearn.Core.ViewModels.Languages
 
         private async void NotRepeat()
         {
-            await DBWords.UpdateLearningNotRepeat(Word);
+            await DatabaseWords.UpdateLearningNotRepeat(Word);
             Next();
         }
         #endregion
@@ -79,7 +79,7 @@ namespace ReLearn.Core.ViewModels.Languages
         #endregion
 
         #region Public
-        public override void Prepare(List<DBWords> parameter)
+        public override void Prepare(List<DatabaseWords> parameter)
         {
             Database = parameter;
             Next();

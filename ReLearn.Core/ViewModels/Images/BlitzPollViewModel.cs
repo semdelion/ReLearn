@@ -10,7 +10,7 @@ using System.Timers;
 
 namespace ReLearn.Core.ViewModels.Images
 {
-    public class BlitzPollViewModel : MvxViewModel<List<DBImages>>
+    public class BlitzPollViewModel : MvxViewModel<List<DatabaseImages>>
     {
         #region Fields
         #endregion
@@ -21,7 +21,7 @@ namespace ReLearn.Core.ViewModels.Images
         #endregion
 
         #region Properties
-        public List<DBImages> Database { get; set; }
+        public List<DatabaseImages> Database { get; set; }
         private string _titleCount;
         public string TitleCount
         {
@@ -34,6 +34,12 @@ namespace ReLearn.Core.ViewModels.Images
         public int True { get; set; } = 0;
         public int False { get; set; } = 0;
         public Timer Timer { get; set; }
+        private string _timerText;
+        public string TimerText
+        {
+            get => _timerText;
+            set => SetProperty(ref _timerText, value);
+        }
         #endregion
 
         #region Services
@@ -56,7 +62,9 @@ namespace ReLearn.Core.ViewModels.Images
         #endregion
 
         #region Public
-        public override void Prepare(List<DBImages> parameter) => Database = parameter;
+        public void Cancel() => Timer.Dispose();
+        
+        public override void Prepare(List<DatabaseImages> parameter) => Database = parameter;
         #endregion
     }
 }

@@ -26,8 +26,8 @@ namespace ReLearn.Core
             DataBase.SetupConnection();
             Task.Run(async () =>
             {
-                await DBImages.UpdateData();
-                await DBWords.UpdateData();
+                await DatabaseImages.UpdateData();
+                await DatabaseWords.UpdateData();
             }).Wait();
 
         }

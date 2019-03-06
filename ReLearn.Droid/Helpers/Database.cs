@@ -90,7 +90,7 @@ namespace ReLearn.Droid.Helpers
         {
             foreach (string tableName in Enum.GetNames(typeof(TableNamesLanguage)))
             {
-                if (!DBWords.ContainColumn("Transcription",await DataBase.Languages.GetTableInfoAsync(tableName)))
+                if (!DatabaseWords.ContainColumn("Transcription",await DataBase.Languages.GetTableInfoAsync(tableName)))
                 {
 
                     await DataBase.Languages.ExecuteAsync($"ALTER TABLE {tableName} ADD COLUMN Transcription string");

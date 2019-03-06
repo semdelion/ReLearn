@@ -11,7 +11,7 @@ namespace ReLearn.API.Database
         Films
     }
 
-    public class DBImages// Класс для считывания базы данных flags
+    public class DatabaseImages
     {
         [PrimaryKey, AutoIncrement, Column("_id")]
         public int Id { get; set; }
@@ -21,9 +21,9 @@ namespace ReLearn.API.Database
         public int NumberLearn { get; set; }
         public DateTime DateRecurrence { get; set; }
 
-        public DBImages() => DateRecurrence = DateTime.Today;
+        public DatabaseImages() => DateRecurrence = DateTime.Today;
 
-        public DBImages Find() => this;
+        public DatabaseImages Find() => this;
 
         public static async Task Update(string Image, int learn) =>
             await DataBase.Images.ExecuteAsync(
@@ -43,7 +43,7 @@ namespace ReLearn.API.Database
             var toDay = DateTime.Today.AddMonths(-1);
             foreach (string tableName in Enum.GetNames(typeof(TableNamesImage)))
             {
-                var dataBase = await DataBase.Images.QueryAsync<DBImages>($"SELECT * FROM {tableName} WHERE NumberLearn = 0");
+                var dataBase = await DataBase.Images.QueryAsync<DatabaseImages>($"SELECT * FROM {tableName} WHERE NumberLearn = 0");
                 foreach (var s in dataBase)
                     if (s.DateRecurrence < toDay)
                     {
@@ -60,16 +60,15 @@ namespace ReLearn.API.Database
             await DataBase.Images.ExecuteAsync(query + tmp, DateTime.Now, 0, imageName);
         }
 
-        public static async Task<List<DBImages>> GetDataNotLearned() => await DataBase.Images.QueryAsync<DBImages>(
+        public static async Task<List<DatabaseImages>> GetDataNotLearned() => await DataBase.Images.QueryAsync<DatabaseImages>(
             $"SELECT * FROM {DataBase.TableName} WHERE NumberLearn != 0 ORDER BY DateRecurrence ASC");
 
         public static async Task UpdateLearningNext(string imageName) => await DataBase.Images.ExecuteAsync(
             $"UPDATE {DataBase.TableName} SET DateRecurrence = ? WHERE Image_name = ?", 
             DateTime.Now, imageName);
 
-        public static async Task<List<DBImages>> GetData() => await DataBase.Images.QueryAsync<DBImages>($"SELECT * FROM {DataBase.TableName}");
+        public static async Task<List<DatabaseImages>> GetData() => await DataBase.Images.QueryAsync<DatabaseImages>($"SELECT * FROM {DataBase.TableName}");
         
-
         public string ImageName { get => Settings.Currentlanguage == $"{Language.en}" ? Name_image_en : Name_image_ru; }
     }
 }

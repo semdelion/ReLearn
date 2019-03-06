@@ -32,19 +32,19 @@ namespace ReLearn.Core.ViewModels.MainMenu
             Settings.TypeOfRepetition = TypeOfRepetitions.Blitz;
             if (isImage)
             {
-                var database = await DBImages.GetDataNotLearned();
+                var database = await DatabaseImages.GetDataNotLearned();
                 if (database.Count == 0)
                     Mvx.IoCProvider.Resolve<IMessageCore>().Toast(AppResources.HomeViewModel_RepeatedAllImages);
                 else
-                  await NavigationService.Navigate<Images.RepeatViewModel, List<DBImages>>(database);
+                  await NavigationService.Navigate<Images.RepeatViewModel, List<DatabaseImages>>(database);
             }
             else
             {
-                var database = await DBWords.GetDataNotLearned();
+                var database = await DatabaseWords.GetDataNotLearned();
                 if (database.Count == 0)
                     Mvx.IoCProvider.Resolve<IMessageCore>().Toast(AppResources.HomeViewModel_RepeatedAllWords);
                 else
-                   await NavigationService.Navigate<Languages.RepeatViewModel, List<DBWords>>(database);
+                   await NavigationService.Navigate<Languages.RepeatViewModel, List<DatabaseWords>>(database);
             }
             
         }
@@ -53,26 +53,26 @@ namespace ReLearn.Core.ViewModels.MainMenu
             Settings.TypeOfRepetition = TypeOfRepetitions.FourOptions;
             if (isImage)
             {
-                var database = await DBImages.GetDataNotLearned();
+                var database = await DatabaseImages.GetDataNotLearned();
                 if (database.Count == 0)
                     Mvx.IoCProvider.Resolve<IMessageCore>().Toast(AppResources.HomeViewModel_RepeatedAllImages);
                 else
-                    await NavigationService.Navigate<Images.BlitzPollViewModel, List<DBImages>>(database);
+                    await NavigationService.Navigate<Images.BlitzPollViewModel, List<DatabaseImages>>(database);
             }
             else
             {
-                var database = await DBWords.GetDataNotLearned();
+                var database = await DatabaseWords.GetDataNotLearned();
                 if (database.Count == 0)
                     Mvx.IoCProvider.Resolve<IMessageCore>().Toast(AppResources.HomeViewModel_RepeatedAllWords);
                 else
-                    await NavigationService.Navigate<Languages.BlitzPollViewModel, List<DBWords>>(database);
+                    await NavigationService.Navigate<Languages.BlitzPollViewModel, List<DatabaseWords>>(database);
             }
             
         }
 
         private async Task NavigateToRepeat()
         {
-            bool isImage = DBImages.DatabaseIsContain($"{DataBase.TableName}");
+            bool isImage = DatabaseImages.DatabaseIsContain($"{DataBase.TableName}");
 
             if (Settings.QuizEnable && Settings.BlitzEnable)
                 if (API.Statistics.Count != 0)
@@ -95,21 +95,21 @@ namespace ReLearn.Core.ViewModels.MainMenu
         }
         private async Task NavigateToLearn()
         {
-            if (DBImages.DatabaseIsContain($"{DataBase.TableName}"))
+            if (DatabaseImages.DatabaseIsContain($"{DataBase.TableName}"))
             {
-                var database = await DBImages.GetDataNotLearned();
+                var database = await DatabaseImages.GetDataNotLearned();
                 if (database.Count == 0)
                     Mvx.IoCProvider.Resolve<IMessageCore>().Toast(AppResources.HomeViewModel_RepeatedAllImages);
                 else
-                    await NavigationService.Navigate<Images.LearnViewModel, List<DBImages>>(database);
+                    await NavigationService.Navigate<Images.LearnViewModel, List<DatabaseImages>>(database);
             }
             else
             {
-                var database = await DBWords.GetDataNotLearned();
+                var database = await DatabaseWords.GetDataNotLearned();
                 if(database.Count == 0)
                     Mvx.IoCProvider.Resolve<IMessageCore>().Toast(AppResources.HomeViewModel_RepeatedAllWords);
                 else
-                    await NavigationService.Navigate<Languages.LearnViewModel,List<DBWords>>(database);
+                    await NavigationService.Navigate<Languages.LearnViewModel,List<DatabaseWords>>(database);
             }
         }
 

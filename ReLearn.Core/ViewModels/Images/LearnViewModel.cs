@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace ReLearn.Core.ViewModels.Images
 {
-    public class LearnViewModel : MvxViewModel<List<DBImages>>
+    public class LearnViewModel : MvxViewModel<List<DatabaseImages>>
     {
         #region Fields
         #endregion
@@ -14,7 +14,7 @@ namespace ReLearn.Core.ViewModels.Images
         #endregion
 
         #region Properties
-        public List<DBImages> Database { get; set; }
+        public List<DatabaseImages> Database { get; set; }
         public int Count { get; set; }
         private string _imageName;
         public string ImageName
@@ -39,7 +39,7 @@ namespace ReLearn.Core.ViewModels.Images
         #endregion
 
         #region Public
-        public override void Prepare(List<DBImages> parameter) => Database = parameter;
+        public override void Prepare(List<DatabaseImages> parameter) => Database = parameter;
         #endregion
     }
 }

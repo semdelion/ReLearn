@@ -164,12 +164,6 @@ namespace ReLearn.Droid.Images
             ViewModel.Timer.Start();
         }
 
-        private void Cancel()
-        {
-            ViewModel.Timer.Dispose();
-            ViewModel.Timer = null;
-        }
-
         private void TimerElapsed(object sender, ElapsedEventArgs e)
         {
             RunOnUiThread(() =>
@@ -177,9 +171,7 @@ namespace ReLearn.Droid.Images
                 if (ViewModel.Time > 0)
                 {
                     ViewModel.Time--;
-                    string sec = $"{ViewModel.Time % 10}0";
-                    FindViewById<TextView>(Resource.Id.textView_Timer_Images).Text = $"{ViewModel.Time / 10}:{sec}";
-
+                    ViewModel.TimerText = $"{ViewModel.Time / 10}:{ViewModel.Time % 10}0";
                     if (ViewModel.Time == 50)
                         FindViewById<TextView>(Resource.Id.textView_Timer_Images).SetTextColor(Colors.Red);
                 }
@@ -187,7 +179,7 @@ namespace ReLearn.Droid.Images
                 {
                     DBStatistics.Insert(ViewModel.True, ViewModel.False, $"{DataBase.TableName}");
                     ViewModel.ToStatistic.Execute();
-                    Cancel();
+                    ViewModel.Cancel();
                     Finish();
                 }
             });
@@ -195,14 +187,14 @@ namespace ReLearn.Droid.Images
 
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
-            Cancel();
+            ViewModel.Cancel();
             Finish();
             return base.OnOptionsItemSelected(item);
         }
         public override void OnBackPressed()
         {
             base.OnBackPressed();
-            Cancel();
+            ViewModel.Cancel();
             Finish();
         }
     }

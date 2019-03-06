@@ -47,7 +47,7 @@ namespace ReLearn.Core.ViewModels.MainMenu
         private Task<bool> NavigateToStatisticViewModel()   => NavigationService.Navigate<StatisticViewModel>();
         private Task<bool> NavigateToViewDictionaryViewModel()
         {
-            if (DBImages.DatabaseIsContain($"{DataBase.TableName}"))
+            if (DatabaseImages.DatabaseIsContain($"{DataBase.TableName}"))
                 return NavigationService.Navigate<Images.ViewDictionaryViewModel>();
             else
                 return NavigationService.Navigate<Languages.ViewDictionaryViewModel>();
@@ -56,6 +56,5 @@ namespace ReLearn.Core.ViewModels.MainMenu
         private Task<bool> NavigateToAdditionViewModel()    => NavigationService.Navigate<AddViewModel>();
         private Task<bool> NavigateToFeedbackViewModel()    => NavigationService.Navigate<FeedbackViewModel>();
         private Task<bool> NavigateToSettingsViewModel()    => NavigationService.Navigate<SettingsViewModel>();
-
     }
 }

@@ -15,7 +15,7 @@ namespace ReLearn.Core.ViewModels.Languages
         #endregion
 
         #region Properties
-        public List<DBWords> Database { get; private set; }
+        public List<DatabaseWords> Database { get; private set; }
         #endregion
 
         #region Services
@@ -26,7 +26,7 @@ namespace ReLearn.Core.ViewModels.Languages
         public ViewDictionaryViewModel(IMvxNavigationService navigationService)
         {
             NavigationService = navigationService;
-            Task.Run(async () => Database = await DBWords.GetData()).Wait();
+            Task.Run(async () => Database = await DatabaseWords.GetData()).Wait();
         }
         #endregion
 

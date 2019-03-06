@@ -51,7 +51,7 @@ namespace ReLearn.Droid.Views.Languages
                     DictionaryWords.Adapter = new CustomAdapterWord(ParentActivity, HideStudied ? ViewModel.Database.FindAll(obj => obj.NumberLearn != 0) : ViewModel.Database);
                 else
                 {
-                    List<DBWords> FD = new List<DBWords>();
+                    List<DatabaseWords> FD = new List<DatabaseWords>();
                     foreach (var word in ViewModel.Database)
                         if (word.Word.Substring(0, ((e.NewText.Length > word.Word.Length) ? 0 : e.NewText.Length)) == e.NewText)
                             FD.Add(word);
@@ -62,7 +62,7 @@ namespace ReLearn.Droid.Views.Languages
             DictionaryWords.ItemClick += (s, args) =>
             {
                 var word = DictionaryWords.Adapter.GetItem(args.Position);
-                DBWords words = new DBWords();
+                DatabaseWords words = new DatabaseWords();
                 words = ViewModel.Database[ViewModel.Database.FindIndex(obj => obj.Word == $"{word}")];
                 Android.App.AlertDialog.Builder alert = new Android.App.AlertDialog.Builder(ParentActivity);
 
@@ -73,7 +73,7 @@ namespace ReLearn.Droid.Views.Languages
                 {
                     ViewModel.Database.Remove(words);
                     DictionaryWords.Adapter = new CustomAdapterWord(ParentActivity, HideStudied ? ViewModel.Database.FindAll(obj => obj.NumberLearn != 0) : ViewModel.Database);
-                    DBWords.Delete($"{word}");
+                    DatabaseWords.Delete($"{word}");
                     Toast.MakeText(ParentActivity, GetString(Resource.String.Word_Delete), ToastLength.Short).Show();
 
                 });

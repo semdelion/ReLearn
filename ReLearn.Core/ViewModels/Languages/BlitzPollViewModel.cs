@@ -10,7 +10,7 @@ using System.Timers;
 
 namespace ReLearn.Core.ViewModels.Languages
 {
-    public class BlitzPollViewModel : MvxViewModel<List<DBWords>>
+    public class BlitzPollViewModel : MvxViewModel<List<DatabaseWords>>
     {
         #region Fields
         #endregion
@@ -27,13 +27,19 @@ namespace ReLearn.Core.ViewModels.Languages
             get => _titleCount;
             set => SetProperty(ref _titleCount, value);
         }
-        public List<DBWords> Database { get; set; }
+        public List<DatabaseWords> Database { get; set; }
         public Timer Timer { get; set; }
         public bool Answer { get; set; }
         public int CurrentNumber { get; set; }
         public int Time { get; set; } 
         public int True { get; set; } = 0;
         public int False { get; set; }= 0;
+        private string _timerText;
+        public string TimerText
+        {
+            get => _timerText;
+            set => SetProperty(ref _timerText, value);
+        }
         #endregion
 
         #region Services
@@ -56,7 +62,7 @@ namespace ReLearn.Core.ViewModels.Languages
         #endregion
 
         #region Public
-        public override void Prepare(List<DBWords> parameter) => Database = parameter;
+        public override void Prepare(List<DatabaseWords> parameter) => Database = parameter;
         #endregion
     }
 }

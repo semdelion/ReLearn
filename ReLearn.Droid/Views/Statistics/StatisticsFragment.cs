@@ -32,7 +32,7 @@ namespace ReLearn.Droid.Views.Fragments
 
         private async Task GetDate()
         {
-            bool isContain = DBImages.DatabaseIsContain($"{DataBase.TableName}");
+            bool isContain = DatabaseImages.DatabaseIsContain($"{DataBase.TableName}");
             LightColor = isContain ? Colors.Orange : Colors.Blue;
             DarkColor = isContain ? Colors.DarkOrange : Colors.DarkBlue;
             DataTupe = isContain ? $"{DataBase.TableName}" : "Words";
