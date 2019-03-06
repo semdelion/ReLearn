@@ -55,6 +55,5 @@ namespace ReLearn.API
         }
 
         public static void Delete() => Count = True = False = 0;
-        
     }
 }

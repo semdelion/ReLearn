@@ -86,15 +86,14 @@ namespace ReLearn.Droid.Views.SelectDictionary
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             var view = inflater.Inflate(Resource.Layout.fragment_tab_images_dictionary, container, false);
-
-            Task.Run(async () => CreateViewForDictionary(view, await ViewModel.DatabaseFlag,
-                    $"{TableNamesImage.Flags}",
-                    Resource.Drawable.image_dictionary_flags,
-                    GravityFlags.Left, true, Colors.Orange, Colors.DarkOrange)).Wait();
-            Task.Run(async () => CreateViewForDictionary(view, await ViewModel.DatabaseFilms,
-                    $"{TableNamesImage.Films}",
-                    Resource.Drawable.image_dictionary_films,
-                    GravityFlags.Right, false, Colors.Orange, Colors.DarkOrange)).Wait();
+            CreateViewForDictionary(view, ViewModel.DatabaseFlag,
+                $"{TableNamesImage.Flags}",
+                Resource.Drawable.image_dictionary_flags,
+                GravityFlags.Left, true, Colors.Orange, Colors.DarkOrange);
+            CreateViewForDictionary(view, ViewModel.DatabaseFilms,
+                $"{TableNamesImage.Films}",
+                Resource.Drawable.image_dictionary_films,
+                GravityFlags.Right, false, Colors.Orange, Colors.DarkOrange);
             SelectDictionaryFragment.Dictionaries.Selected($"{DataBase.TableName}", $"{DataBase.TableName}");
             return view; 
         }

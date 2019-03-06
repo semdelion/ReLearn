@@ -9,14 +9,16 @@ namespace ReLearn.Core.ViewModels.MainMenu.SelectDictionary
 {
     public class DictionaryImageViewModel : MvxViewModel
     {
-        public Task<List<DBStatistics>> DatabaseFlag { get; private set; }
-        public Task<List<DBStatistics>> DatabaseFilms { get; private set; }
+        public List<DBStatistics> DatabaseFlag { get; private set; }
+        public List<DBStatistics> DatabaseFilms { get; private set; }
 
-        public override Task Initialize()
+        public DictionaryImageViewModel()
         {
-            DatabaseFlag = DBStatistics.GetImages($"{TableNamesImage.Flags}");
-            DatabaseFilms = DBStatistics.GetImages($"{TableNamesImage.Films}");
-            return Task.FromResult(true);
+            Task.Run(async () => 
+            {
+                DatabaseFlag = await DBStatistics.GetImages($"{TableNamesImage.Flags}");
+                DatabaseFilms = await DBStatistics.GetImages($"{TableNamesImage.Films}");
+            }).Wait();
         }
     }
 }

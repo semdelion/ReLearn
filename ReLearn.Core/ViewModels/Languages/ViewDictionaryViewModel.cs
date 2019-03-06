@@ -26,7 +26,7 @@ namespace ReLearn.Core.ViewModels.Languages
         public ViewDictionaryViewModel(IMvxNavigationService navigationService)
         {
             NavigationService = navigationService;
-          
+            Task.Run(async () => Database = await DBWords.GetData()).Wait();
         }
         #endregion
 
@@ -37,7 +37,6 @@ namespace ReLearn.Core.ViewModels.Languages
         #endregion
 
         #region Public
-        public override async Task Initialize() => Database = await DBWords.GetData();
         #endregion
     }
 }

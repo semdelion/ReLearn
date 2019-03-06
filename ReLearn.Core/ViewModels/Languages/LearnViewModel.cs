@@ -53,14 +53,14 @@ namespace ReLearn.Core.ViewModels.Languages
         #endregion
 
         #region Private
-        private void Next()
+        private async void Next()
         {
             if (Count < Database.Count)
             {
                 Word = Database[Count].Word;
                 Text = $"{Word}{(Database[Count].Transcription == null ? "" : $"\n\n{Database[Count].Transcription}")}" +
                        $"\n\n{Database[Count++].TranslationWord}";
-                DBWords.UpdateLearningNext(Word);
+                await DBWords.UpdateLearningNext(Word);
                 if (VoiceEnable)
                     TextToSpeech.Speak(Word);
             }
@@ -68,9 +68,9 @@ namespace ReLearn.Core.ViewModels.Languages
                 Mvx.IoCProvider.Resolve<IMessageCore>().Toast(AppResources.LearnViewModel_DictionaryOver);
         }
 
-        private void NotRepeat()
+        private async void NotRepeat()
         {
-            DBWords.UpdateLearningNotRepeat(Word);
+            await DBWords.UpdateLearningNotRepeat(Word);
             Next();
         }
         #endregion

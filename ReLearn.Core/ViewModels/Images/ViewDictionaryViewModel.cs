@@ -28,7 +28,7 @@ namespace ReLearn.Core.ViewModels.Images
         public ViewDictionaryViewModel(IMvxNavigationService navigationService)
         {
             NavigationService = navigationService;
-            
+            Task.Run(async () => DataBase = await DBImages.GetData()).Wait();
         }
         #endregion
 
@@ -39,7 +39,6 @@ namespace ReLearn.Core.ViewModels.Images
         #endregion
 
         #region Public
-        public override async Task Initialize() => DataBase = await DBImages.GetData();
         #endregion
     }
 }

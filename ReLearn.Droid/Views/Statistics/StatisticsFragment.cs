@@ -43,7 +43,7 @@ namespace ReLearn.Droid.Views.Fragments
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             var view = base.OnCreateView(inflater, container, savedInstanceState);
-            GetDate();
+            Task.Run(async () => await GetDate()).Wait();
             ViewPager viewPager = view.FindViewById<ViewPager>(Resource.Id.pager);
             if (viewPager != null)
             {

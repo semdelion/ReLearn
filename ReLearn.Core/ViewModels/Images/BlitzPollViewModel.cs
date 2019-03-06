@@ -56,15 +56,7 @@ namespace ReLearn.Core.ViewModels.Images
         #endregion
 
         #region Public
-        public override void ViewCreated()
-        {
-            base.ViewCreated();
-        }
-
-        public override void Prepare(List<DBImages> parameter)
-        {
-            Database = parameter;
-        }
+        public override void Prepare(List<DBImages> parameter) => Database = parameter;
         #endregion
     }
 }

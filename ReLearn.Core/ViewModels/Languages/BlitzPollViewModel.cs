@@ -56,15 +56,7 @@ namespace ReLearn.Core.ViewModels.Languages
         #endregion
 
         #region Public
-        public override void ViewCreated()
-        {
-            base.ViewCreated();
-        }
-
-        public override void Prepare(List<DBWords> parameter)
-        {
-            Database = parameter;
-        }
+        public override void Prepare(List<DBWords> parameter) => Database = parameter;
         #endregion
     }
 }

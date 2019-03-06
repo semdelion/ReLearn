@@ -86,37 +86,35 @@ namespace ReLearn.Droid.Views.SelectDictionary
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             var view = inflater.Inflate(Resource.Layout.fragment_tab_languages_dictionary, container, false);
-            //AsyncTask.ThreadPoolExecutor(async () =>
-            //{ 
-            //    await CreateViewForDictionary(view, ViewModel.Home,
-            //        $"{TableNamesLanguage.Home}",
-            //        Resource.Drawable.image_dictionary_home,
-            //        GravityFlags.Left, true, Colors.Blue, Colors.DarkBlue);
-            //    await CreateViewForDictionary(view, ViewModel.Education,
-            //        $"{TableNamesLanguage.Education}",
-            //        Resource.Drawable.image_dictionary_education,
-            //        GravityFlags.Right, true, Colors.Blue, Colors.DarkBlue);
-            //    await CreateViewForDictionary(view, ViewModel.PopularWords,
-            //        $"{TableNamesLanguage.Popular_Words}",
-            //        Resource.Drawable.image_dictionary_popular_words,
-            //        GravityFlags.Left, true, Colors.Blue, Colors.DarkBlue);
-            //    await CreateViewForDictionary(view, ViewModel.ThreeFormsOfVerb,
-            //        $"{TableNamesLanguage.ThreeFormsOfVerb}",
-            //        Resource.Drawable.image_dictionary_three_forms_of_verb,
-            //        GravityFlags.Right, true, Colors.Blue, Colors.DarkBlue);
-            //    await CreateViewForDictionary(view, ViewModel.ComputerScience,
-            //        $"{TableNamesLanguage.ComputerScience}",
-            //        Resource.Drawable.image_dictionary_computer_science,
-            //        GravityFlags.Left, true, Colors.Blue, Colors.DarkBlue);
-            //    await CreateViewForDictionary(view, ViewModel.Nature,
-            //        $"{TableNamesLanguage.Nature}",
-            //        Resource.Drawable.image_dictionary_nature,
-            //        GravityFlags.Right, true, Colors.Blue, Colors.DarkBlue);
-            //    await CreateViewForDictionary(view, ViewModel.MyDirectly,
-            //        $"{TableNamesLanguage.My_Directly}",
-            //        Resource.Drawable.image_dictionary_my,
-            //        GravityFlags.Left, false, Colors.Blue, Colors.DarkBlue);
-            //});
+
+            CreateViewForDictionary(view, ViewModel.Home,
+                $"{TableNamesLanguage.Home}",
+                Resource.Drawable.image_dictionary_home,
+                GravityFlags.Left, true, Colors.Blue, Colors.DarkBlue);
+            CreateViewForDictionary(view, ViewModel.Education,
+                $"{TableNamesLanguage.Education}",
+                Resource.Drawable.image_dictionary_education,
+                GravityFlags.Right, true, Colors.Blue, Colors.DarkBlue);
+            CreateViewForDictionary(view, ViewModel.PopularWords,
+                $"{TableNamesLanguage.Popular_Words}",
+                Resource.Drawable.image_dictionary_popular_words,
+                GravityFlags.Left, true, Colors.Blue, Colors.DarkBlue);
+            CreateViewForDictionary(view, ViewModel.ThreeFormsOfVerb,
+                $"{TableNamesLanguage.ThreeFormsOfVerb}",
+                Resource.Drawable.image_dictionary_three_forms_of_verb,
+                GravityFlags.Right, true, Colors.Blue, Colors.DarkBlue);
+            CreateViewForDictionary(view, ViewModel.ComputerScience,
+                $"{TableNamesLanguage.ComputerScience}",
+                Resource.Drawable.image_dictionary_computer_science,
+                GravityFlags.Left, true, Colors.Blue, Colors.DarkBlue);
+            CreateViewForDictionary(view, ViewModel.Nature,
+                $"{TableNamesLanguage.Nature}",
+                Resource.Drawable.image_dictionary_nature,
+                GravityFlags.Right, true, Colors.Blue, Colors.DarkBlue);
+            CreateViewForDictionary(view, ViewModel.MyDirectly,
+                $"{TableNamesLanguage.My_Directly}",
+                Resource.Drawable.image_dictionary_my,
+                GravityFlags.Left, false, Colors.Blue, Colors.DarkBlue);
             return view;
         }
     }

@@ -73,15 +73,18 @@ namespace ReLearn.Core.ViewModels.MainMenu.Statistics
         public string Average           => $"{AppResources.GeneralStatisticsViewModel_Average}";
         public string AveragePercent    => $"{Math.Round(_avgTrue, 1)}%";
 
-        public override async Task Initialize()
+        public GeneralStatisticsViewModel()
         {
-            Database = await DBStatistics.GetData($"{DataBase.TableName}");
-            bool isContain = DBImages.DatabaseIsContain($"{DataBase.TableName}");
-            DatabaseStats = isContain ? await DBStatistics.GetImages($"{DataBase.TableName}") :
-                                     await DBStatistics.GetWords($"{DataBase.TableName}");
-            _avgTrueToday = await DBStatistics.AverageTrueToday($"{DataBase.TableName}");
-            _avgTrueMonth = await DBStatistics.AverageTrueMonth($"{DataBase.TableName}");
-            _avgTrue = await DBStatistics.AveragePercentTrue(Database);
+            Task.Run(async () =>
+            {
+                Database = await DBStatistics.GetData($"{DataBase.TableName}");
+                bool isContain = DBImages.DatabaseIsContain($"{DataBase.TableName}");
+                DatabaseStats = isContain ? await DBStatistics.GetImages($"{DataBase.TableName}") :
+                                         await DBStatistics.GetWords($"{DataBase.TableName}");
+                _avgTrueToday = await DBStatistics.AverageTrueToday($"{DataBase.TableName}");
+                _avgTrueMonth = await DBStatistics.AverageTrueMonth($"{DataBase.TableName}");
+                _avgTrue = await DBStatistics.AveragePercentTrue(Database);
+            }).Wait();
         }
     }
 }

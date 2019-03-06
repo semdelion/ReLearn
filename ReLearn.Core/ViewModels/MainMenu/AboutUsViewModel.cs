@@ -23,10 +23,7 @@ namespace ReLearn.Core.ViewModels.MainMenu
         #endregion
 
         #region Constructors
-        public AboutUsViewModel(IMvxNavigationService navigationService)
-        {
-            NavigationService = navigationService;
-        }
+        public AboutUsViewModel(IMvxNavigationService navigationService) => NavigationService = navigationService;
         #endregion
 
         #region Private
@@ -37,10 +34,6 @@ namespace ReLearn.Core.ViewModels.MainMenu
         #endregion
 
         #region Public
-        public override void ViewCreated()
-        {
-            base.ViewCreated();
-        }
         #endregion
     }
 }

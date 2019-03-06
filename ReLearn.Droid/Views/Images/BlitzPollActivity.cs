@@ -160,7 +160,7 @@ namespace ReLearn.Droid.Images
         void TimerStart()
         {
             ViewModel.Timer = new Timer{ Interval = 100, Enabled = true };
-            ViewModel.Timer.Elapsed += Timer_Elapsed;
+            ViewModel.Timer.Elapsed += TimerElapsed;
             ViewModel.Timer.Start();
         }
 
@@ -170,7 +170,7 @@ namespace ReLearn.Droid.Images
             ViewModel.Timer = null;
         }
 
-        private void Timer_Elapsed(object sender, ElapsedEventArgs e)
+        private void TimerElapsed(object sender, ElapsedEventArgs e)
         {
             RunOnUiThread(() =>
             {

@@ -24,8 +24,12 @@ namespace ReLearn.Core
             Mvx.IoCProvider.RegisterSingleton(() => UserDialogs.Instance);
             RegisterAppStart<MainViewModel>();
             DataBase.SetupConnection();
-            DBImages.UpdateData();
-            DBWords.UpdateData();
+            Task.Run(async () =>
+            {
+                await DBImages.UpdateData();
+                await DBWords.UpdateData();
+            }).Wait();
+
         }
     }
 }

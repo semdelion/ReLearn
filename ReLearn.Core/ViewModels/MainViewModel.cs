@@ -11,7 +11,6 @@ namespace ReLearn.Core.ViewModels
         #endregion
 
         #region Commands
-        public IMvxLanguageBinder TextSource => new MvxLanguageBinder("", GetType().Name);
         #endregion
 
         #region Properties
@@ -24,10 +23,7 @@ namespace ReLearn.Core.ViewModels
         #endregion
 
         #region Constructors
-        public MainViewModel(IMvxNavigationService navigationService)
-        {
-            NavigationService = navigationService;
-        }
+        public MainViewModel(IMvxNavigationService navigationService) => NavigationService = navigationService;
         #endregion
 
         #region Private
@@ -38,7 +34,6 @@ namespace ReLearn.Core.ViewModels
         #endregion
 
         #region Public
-
         public void ShowMenu() => NavigationService.Navigate<MenuViewModel>();
         #endregion
     }

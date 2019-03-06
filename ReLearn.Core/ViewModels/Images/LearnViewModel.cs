@@ -29,10 +29,7 @@ namespace ReLearn.Core.ViewModels.Images
         #endregion
 
         #region Constructors
-        public LearnViewModel(IMvxNavigationService navigationService)
-        {
-            NavigationService = navigationService;
-        }
+        public LearnViewModel(IMvxNavigationService navigationService) => NavigationService = navigationService;
         #endregion
 
         #region Private
@@ -42,15 +39,7 @@ namespace ReLearn.Core.ViewModels.Images
         #endregion
 
         #region Public
-        public override void ViewCreated()
-        {
-            base.ViewCreated();
-        }
-
-        public override void Prepare(List<DBImages> parameter)
-        {
-            Database = parameter;
-        }
+        public override void Prepare(List<DBImages> parameter) => Database = parameter;
         #endregion
     }
 }
