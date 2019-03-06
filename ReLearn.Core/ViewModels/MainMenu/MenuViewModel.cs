@@ -42,19 +42,19 @@ namespace ReLearn.Core.ViewModels.MainMenu
             NavigateToHomeViewModel();
         }
 
-        private Task<bool> NavigateToHomeViewModel()        => NavigationService.Navigate<HomeViewModel>();
-        private Task<bool> NavigateToSelectDictionary()     => NavigationService.Navigate<SelectDictionaryViewModel>();
-        private Task<bool> NavigateToStatisticViewModel()   => NavigationService.Navigate<StatisticViewModel>();
-        private Task<bool> NavigateToViewDictionaryViewModel()
+        private async Task NavigateToHomeViewModel()        => await NavigationService.Navigate<HomeViewModel>();
+        private async Task NavigateToSelectDictionary()     => await NavigationService.Navigate<SelectDictionaryViewModel>();
+        private async Task NavigateToStatisticViewModel()   => await NavigationService.Navigate<StatisticViewModel>();
+        private async Task NavigateToViewDictionaryViewModel()
         {
             if (DatabaseImages.DatabaseIsContain($"{DataBase.TableName}"))
-                return NavigationService.Navigate<Images.ViewDictionaryViewModel>();
+                await NavigationService.Navigate<Images.ViewDictionaryViewModel>();
             else
-                return NavigationService.Navigate<Languages.ViewDictionaryViewModel>();
+                await NavigationService.Navigate<Languages.ViewDictionaryViewModel>();
         }
-        private Task<bool> NavigateToAboutUsViewModel()     => NavigationService.Navigate<AboutUsViewModel>();
-        private Task<bool> NavigateToAdditionViewModel()    => NavigationService.Navigate<AddViewModel>();
-        private Task<bool> NavigateToFeedbackViewModel()    => NavigationService.Navigate<FeedbackViewModel>();
-        private Task<bool> NavigateToSettingsViewModel()    => NavigationService.Navigate<SettingsViewModel>();
+        private async Task NavigateToAboutUsViewModel()     => await NavigationService.Navigate<AboutUsViewModel>();
+        private async Task NavigateToAdditionViewModel()    => await NavigationService.Navigate<AddViewModel>();
+        private async Task NavigateToFeedbackViewModel()    => await NavigationService.Navigate<FeedbackViewModel>();
+        private async Task NavigateToSettingsViewModel()    => await NavigationService.Navigate<SettingsViewModel>();
     }
 }
