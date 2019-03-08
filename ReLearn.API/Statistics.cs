@@ -2,6 +2,7 @@
 using ReLearn.API.Database;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace ReLearn.API
 {
@@ -33,7 +34,7 @@ namespace ReLearn.API
             return avg_numberLearn_stat;
         }
 
-        public static void Add(List<DBWords> WordDatabase, int CurrentWordNumber, int answer)
+        public static async Task Add(List<DatabaseWords> WordDatabase, int CurrentWordNumber, int answer)
         {
             WordDatabase[CurrentWordNumber].NumberLearn += answer;
 
@@ -41,19 +42,18 @@ namespace ReLearn.API
                         Settings.MaxNumberOfRepeats : WordDatabase[CurrentWordNumber].NumberLearn < 0 ? 
                         0 : WordDatabase[CurrentWordNumber].NumberLearn;
 
-            DBWords.Update(WordDatabase[CurrentWordNumber].Word, value);
+            await DatabaseWords.Update(WordDatabase[CurrentWordNumber].Word, value);
         }
-        public static void Add(List<DBImages> ImagesDatabase, int CurrentWordNumber, int answer)
+        public static async Task Add(List<DatabaseImages> ImagesDatabase, int CurrentWordNumber, int answer)
         {
             ImagesDatabase[CurrentWordNumber].NumberLearn += answer;
 
             int value = ImagesDatabase[CurrentWordNumber].NumberLearn > Settings.MaxNumberOfRepeats ?
                         Settings.MaxNumberOfRepeats : ImagesDatabase[CurrentWordNumber].NumberLearn < 0 ?
                         0 : ImagesDatabase[CurrentWordNumber].NumberLearn;
-            DBImages.Update(ImagesDatabase[CurrentWordNumber].Image_name , value);
+            await DatabaseImages.Update(ImagesDatabase[CurrentWordNumber].Image_name , value);
         }
 
         public static void Delete() => Count = True = False = 0;
-        
     }
 }

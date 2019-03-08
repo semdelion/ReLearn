@@ -34,6 +34,7 @@
 		android:layout_width	="match_parent"
 		android:layout_height	="match_parent">
 		<TextView
+			local:MvxBind			    ="Text TimerText"
 			android:id					="@+id/textView_Timer_Images"
 			android:textColor			="@color/text_white"
 			android:textSize			="30dp"
@@ -43,6 +44,7 @@
 			android:layout_marginRight	="100.0dp"
 			android:layout_marginLeft	="100.0dp"
 			android:layout_marginTop	="95.0dp"
+			tools:text					="15:00"
 			android:gravity				= "center_horizontal|center"
 		/>
 		<TableLayout

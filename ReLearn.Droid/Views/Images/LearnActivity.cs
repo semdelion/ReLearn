@@ -20,7 +20,7 @@ namespace ReLearn.Droid.Images
         [Java.Interop.Export("Button_Images_Learn_NotRepeat_Click")]
         public void Button_Images_Learn_NotRepeat_Click(View v)
         {
-            DBImages.UpdateLearningNotRepeat(ViewModel.ImageName);
+            DatabaseImages.UpdateLearningNotRepeat(ViewModel.ImageName);
             Button_Images_Learn_Next_Click(null);
         }
 
@@ -29,7 +29,7 @@ namespace ReLearn.Droid.Images
         {
             if (ViewModel.Count < ViewModel.Database.Count)
             {
-                DBImages.UpdateLearningNext(ViewModel.Database[ViewModel.Count].Image_name);
+                DatabaseImages.UpdateLearningNext(ViewModel.Database[ViewModel.Count].Image_name);
                 using (var image = BitmapFactory.DecodeStream(Application.Context.Assets.Open( $"Image{DataBase.TableName}/{ViewModel.Database[ViewModel.Count].Image_name}.png")))
                 using (var ImageViewBox = BitmapHelper.GetRoundedCornerBitmap(image, PixelConverter.DpToPX(5)))
                     FindViewById<ImageView>(Resource.Id.imageView_Images_learn).SetImageBitmap(ImageViewBox);

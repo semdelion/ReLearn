@@ -8,6 +8,8 @@ using MvvmCross.Platforms.Android.Binding.BindingContext;
 using MvvmCross.Platforms.Android.Presenters.Attributes;
 using ReLearn.Core.ViewModels;
 using ReLearn.Core.ViewModels.MainMenu;
+using System;
+using System.Threading.Tasks;
 
 namespace ReLearn.Droid.Views.Menu
 {
@@ -33,12 +35,22 @@ namespace ReLearn.Droid.Views.Menu
 
         public bool OnNavigationItemSelected(IMenuItem item)
         {
+            if (item != _previousMenuItem)
+                _previousMenuItem?.SetChecked(false);
             item.SetCheckable(true);
             item.SetChecked(true);
-            _previousMenuItem?.SetChecked(false);
             _previousMenuItem = item;
+            Navigate(item.ItemId);
+            return true;
+        }
+
+        private async Task Navigate(int itemId)
+        {
             ((MainActivity)Activity).DrawerLayout.CloseDrawers();
-            switch (item.ItemId)
+
+            await Task.Delay(TimeSpan.FromMilliseconds(250));
+
+            switch (itemId)
             {
                 case Resource.Id.study:
                     ViewModel.ToHomeViewModel.Execute();
@@ -65,7 +77,6 @@ namespace ReLearn.Droid.Views.Menu
                     ViewModel.ToAboutUsViewModel.Execute();
                     break;
             }
-            return true;
         }
     }
 }

@@ -5,6 +5,7 @@ using ReLearn.Core.Localization;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace ReLearn.Core.ViewModels.MainMenu.Statistics
 {
@@ -15,7 +16,6 @@ namespace ReLearn.Core.ViewModels.MainMenu.Statistics
         {
             get => _amountOfStatistics;
             set => _amountOfStatistics = API.Settings.AmountOfStatistics = value;
-            
         }
 
         public List<DatabaseStatistics> Database { get; private set; }
@@ -26,15 +26,17 @@ namespace ReLearn.Core.ViewModels.MainMenu.Statistics
             $" { True ?? 0 }, {AppResources.MainStatisticsViewModel_Incorrect}: { False ?? 0}";
         public string LastTest => AppResources.MainStatisticsViewModel_LastTest;
 
-
         public MainStatisticsViewModel()
         {
-            Database = DBStatistics.GetData($"{DataBase.TableName}");
-            if (Database.Count != 0)
+            Task.Run(async () =>
             {
-                True = Database[Database.Count - 1].True;
-                False = Database[Database.Count - 1].False;
-            }
+                Database = await DBStatistics.GetData($"{DataBase.TableName}");
+                if (Database.Count != 0)
+                {
+                    True = Database[Database.Count - 1].True;
+                    False = Database[Database.Count - 1].False;
+                }
+            }).Wait();
         }
     }
 }

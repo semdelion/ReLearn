@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ReLearn.Core.ViewModels.Languages
 {
-    public class RepeatViewModel : MvxViewModel<List<DBWords>>
+    public class RepeatViewModel : MvxViewModel<List<DatabaseWords>>
     {
         #region Fields
         #endregion
@@ -20,7 +20,7 @@ namespace ReLearn.Core.ViewModels.Languages
         #endregion
 
         #region Properties
-        public List<DBWords> Database { get; set; }
+        public List<DatabaseWords> Database { get; set; }
         private string _text;
         public string Text
         {
@@ -59,15 +59,7 @@ namespace ReLearn.Core.ViewModels.Languages
         #endregion
 
         #region Public
-        public override void ViewCreated()
-        {
-            base.ViewCreated();
-        }
-
-        public override void Prepare(List<DBWords> parameter)
-        {
-            Database = parameter;
-        }
+        public override void Prepare(List<DatabaseWords> parameter) => Database = parameter;
         #endregion
     }
 }

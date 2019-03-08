@@ -8,6 +8,7 @@ using MvvmCross.Droid.Support.V7.AppCompat;
 using MvvmCross.Platforms.Android.Binding.BindingContext;
 using MvvmCross.ViewModels;
 using ReLearn.Droid.Services;
+using System.Threading.Tasks;
 
 namespace ReLearn.Droid.Views.Menu
 {
@@ -50,7 +51,7 @@ namespace ReLearn.Droid.Views.Menu
 				_drawerToggle.DrawerOpened += (object sender, ActionBarDrawerEventArgs e) => (Activity as MainActivity)?.HideSoftKeyboard();
 				(ParentActivity as INavigationActivity).DrawerLayout.AddDrawerListener(_drawerToggle);
             }
-            SetHomeAsUp(ParentActivity.SupportFragmentManager.BackStackEntryCount == 0 ? false : true);
+            Task.Run(() => SetHomeAsUp(ParentActivity.SupportFragmentManager.BackStackEntryCount == 0 ? false : true));
             return view;
 		}
 
@@ -64,7 +65,7 @@ namespace ReLearn.Droid.Views.Menu
         public override void OnPause()
         {
             base.OnPause();
-            SetHomeAsUp(ParentActivity.SupportFragmentManager.BackStackEntryCount == 0 ? false : true);
+            Task.Run(()=> SetHomeAsUp(ParentActivity.SupportFragmentManager.BackStackEntryCount == 0 ? false : true));
         }
 
         public override void OnActivityCreated(Bundle savedInstanceState)

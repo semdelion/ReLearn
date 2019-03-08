@@ -4,6 +4,7 @@ using ReLearn.API;
 using ReLearn.API.Database;
 using System;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace ReLearn.Droid.Helpers
 {
@@ -40,13 +41,14 @@ namespace ReLearn.Droid.Helpers
                 }
             }
         }
-        public static void СreateTableLanguage()
+        public static async Task СreateTableLanguage()
         {
             foreach (string tableName in Enum.GetNames(typeof(TableNamesLanguage)))
             {
-                if (DataBase.Languages.GetTableInfo(tableName).Count == 0)
+               var database = await DataBase.Languages.GetTableInfoAsync(tableName);
+                if (database.Count == 0)
                 {
-                    DataBase.Languages.Execute($"CREATE TABLE {tableName} (_id int PRIMARY KEY, Word string, TranslationWord string, Transcription string, NumberLearn int, DateRecurrence DateTime, Context string, Image string)");
+                    await DataBase.Languages.ExecuteAsync($"CREATE TABLE {tableName} (_id int PRIMARY KEY, Word string, TranslationWord string, Transcription string, NumberLearn int, DateRecurrence DateTime, Context string, Image string)");
                     using (StreamReader reader = new StreamReader(Application.Context.Assets.Open($"Database/{tableName}.txt")))
                     {
                         string str_line;
@@ -54,21 +56,22 @@ namespace ReLearn.Droid.Helpers
                         {
                             var list = str_line.Split('|');
                             var query = $"INSERT INTO {tableName} (Word, TranslationWord, Transcription, NumberLearn, DateRecurrence) VALUES (?, ?, ?, ?, ?)";
-                            DataBase.Languages.Execute(query, list[0].ToLower().Trim(), list[1].ToLower().Trim(), list[2].Trim(), Settings.StandardNumberOfRepeats, DateTime.Now);
+                            await DataBase.Languages.ExecuteAsync(query, list[0].ToLower().Trim(), list[1].ToLower().Trim(), list[2].Trim(), Settings.StandardNumberOfRepeats, DateTime.Now);
                         }
                     }
-                    DataBase.Statistics.Execute($"CREATE TABLE {tableName}_Statistics (_id int PRIMARY KEY, True int, False int, DateOfTesting DateTime)");
+                    await DataBase.Statistics.ExecuteAsync ($"CREATE TABLE {tableName}_Statistics (_id int PRIMARY KEY, True int, False int, DateOfTesting DateTime)");
                 }
             }
         }
 
-        public static void СreateTableImage()
+        public static async Task СreateTableImage()
         {
             foreach (string tableName in Enum.GetNames(typeof(TableNamesImage)))
             {
-                if (DataBase.Images.GetTableInfo(tableName).Count == 0)
+                var database = await DataBase.Images.GetTableInfoAsync(tableName);
+                if (database.Count == 0)
                 {
-                    DataBase.Images.Execute($"CREATE TABLE {tableName} (_id int PRIMARY KEY, Image_name string, Name_image_en string, Name_image_ru string, NumberLearn int, DateRecurrence DateTime)");
+                    await DataBase.Images.ExecuteAsync($"CREATE TABLE {tableName} (_id int PRIMARY KEY, Image_name string, Name_image_en string, Name_image_ru string, NumberLearn int, DateRecurrence DateTime)");
                     using (StreamReader reader = new StreamReader(Application.Context.Assets.Open($"Database/{tableName}.txt")))
                     {
                         string str_line;
@@ -76,21 +79,21 @@ namespace ReLearn.Droid.Helpers
                         {
                             var image = str_line.Split('|');
                             var query = $"INSERT INTO {tableName} (Image_name, Name_image_en, Name_image_ru, NumberLearn, DateRecurrence) VALUES (?, ?, ?, ?, ?)";
-                            DataBase.Images.Execute(query, image[0], image[1], image[2], Settings.StandardNumberOfRepeats, DateTime.Now);
+                            await DataBase.Images.ExecuteAsync(query, image[0], image[1], image[2], Settings.StandardNumberOfRepeats, DateTime.Now);
                         }
                     }
-                    DataBase.Statistics.Execute($"CREATE TABLE {tableName}_Statistics (_id int PRIMARY KEY, True int, False int, DateOfTesting DateTime)");
+                    await DataBase.Statistics.ExecuteAsync($"CREATE TABLE {tableName}_Statistics (_id int PRIMARY KEY, True int, False int, DateOfTesting DateTime)");
                 }
             }
         }
-        public static void AddColumn()
+        public static async Task AddColumn()
         {
             foreach (string tableName in Enum.GetNames(typeof(TableNamesLanguage)))
             {
-                if (!DBWords.ContainColumn("Transcription", DataBase.Languages.GetTableInfo(tableName)))
+                if (!DatabaseWords.ContainColumn("Transcription",await DataBase.Languages.GetTableInfoAsync(tableName)))
                 {
 
-                    DataBase.Languages.Execute($"ALTER TABLE {tableName} ADD COLUMN Transcription string");
+                    await DataBase.Languages.ExecuteAsync($"ALTER TABLE {tableName} ADD COLUMN Transcription string");
                     if (tableName != $"{TableNamesLanguage.My_Directly}")
                         using (StreamReader reader = new StreamReader(Application.Context.Assets.Open($"Database/{tableName}.txt")))
                         {
@@ -98,22 +101,22 @@ namespace ReLearn.Droid.Helpers
                             while ((str_line = reader.ReadLine()) != null)
                             {
                                 var list = str_line.Split('|');
-                                int changes = DataBase.Languages.Execute($"UPDATE {tableName} SET Word = ?, Transcription = ? WHERE Word = ?", list[0].ToLower().Trim(), list[2].Trim(), list[0].ToLower().Trim())
-                                            + DataBase.Languages.Execute($"UPDATE {tableName} SET Word = ?, Transcription = ? WHERE Word = ?", list[0].ToLower().Trim(), list[2].Trim(), list[0].ToLower().Trim() + " ")
-                                            + DataBase.Languages.Execute($"UPDATE {tableName} SET Word = ?, Transcription = ? WHERE Word = ?", list[0].ToLower().Trim(), list[2].Trim(), list[0].ToLower().Trim() + "  ");
+                                int changes = await DataBase.Languages.ExecuteAsync($"UPDATE {tableName} SET Word = ?, Transcription = ? WHERE Word = ?", list[0].ToLower().Trim(), list[2].Trim(), list[0].ToLower().Trim())
+                                            + await DataBase.Languages.ExecuteAsync($"UPDATE {tableName} SET Word = ?, Transcription = ? WHERE Word = ?", list[0].ToLower().Trim(), list[2].Trim(), list[0].ToLower().Trim() + " ")
+                                            + await DataBase.Languages.ExecuteAsync($"UPDATE {tableName} SET Word = ?, Transcription = ? WHERE Word = ?", list[0].ToLower().Trim(), list[2].Trim(), list[0].ToLower().Trim() + "  ");
                                 if (changes == 0)
                                 {
-                                    DataBase.Languages.Execute($"INSERT INTO {tableName} (Word, TranslationWord, Transcription, NumberLearn, DateRecurrence) VALUES (?, ?, ?, ?, ?)",
+                                    await DataBase.Languages.ExecuteAsync($"INSERT INTO {tableName} (Word, TranslationWord, Transcription, NumberLearn, DateRecurrence) VALUES (?, ?, ?, ?, ?)",
                                         list[0].ToLower().Trim(), list[1].ToLower().Trim(), list[2].Trim(), Settings.StandardNumberOfRepeats, DateTime.Now);
                                 }
                                 if (changes > 1) // из-за старых таблиц 
                                 {
-                                    DataBase.Languages.Execute($"DELETE FROM {tableName} WHERE Word = ?", list[0].ToLower().Trim());
-                                    DataBase.Languages.Execute($"INSERT INTO {tableName} (Word, TranslationWord, Transcription, NumberLearn, DateRecurrence) VALUES (?, ?, ?, ?, ?)",
+                                    await DataBase.Languages.ExecuteAsync($"DELETE FROM {tableName} WHERE Word = ?", list[0].ToLower().Trim());
+                                    await DataBase.Languages.ExecuteAsync($"INSERT INTO {tableName} (Word, TranslationWord, Transcription, NumberLearn, DateRecurrence) VALUES (?, ?, ?, ?, ?)",
                                         list[0].ToLower().Trim(), list[1].ToLower().Trim(), list[2].Trim(), Settings.StandardNumberOfRepeats, DateTime.Now);
                                 }
                             }
-                            DataBase.Languages.Execute($"DELETE FROM {tableName} WHERE Transcription IS NULL OR trim(Transcription) = ''");
+                            await DataBase.Languages.ExecuteAsync($"DELETE FROM {tableName} WHERE Transcription IS NULL OR trim(Transcription) = ''");
                         }
                 }
             }

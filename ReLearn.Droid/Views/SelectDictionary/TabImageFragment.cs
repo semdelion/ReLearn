@@ -8,20 +8,21 @@ using ReLearn.API.Database;
 using System.Collections.Generic;
 using MvvmCross.Droid.Support.V4;
 using ReLearn.Core.ViewModels.MainMenu.SelectDictionary;
+using System.Threading.Tasks;
 
 namespace ReLearn.Droid.Views.SelectDictionary
 {
     class TabImageFragment : MvxFragment<DictionaryImageViewModel>
     {
-        public View CreateViewForDictionary(View view, List<DBStatistics> DB, string NameDictionary, int ImageId, GravityFlags flag, bool separate, Color lightColor, Color darkColor)
+        public View CreateViewForDictionary(View view, List<DBStatistics> database, string NameDictionary, int ImageId, GravityFlags flag, bool separate, Color lightColor, Color darkColor)
         {
             var width = Resources.DisplayMetrics.WidthPixels / 100f;
-            int count = DB.Count;
+            int count = database.Count;
             LinearLayout DictionarylinearLayout = new LinearLayout(view.Context)
             {
                 LayoutParameters = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MatchParent, ViewGroup.LayoutParams.WrapContent)
             };
-            SelectDictionaryFragment.Dictionaries.DictionariesBitmap.Add(SelectDictionaryFragment.Dictionaries.CreateBitmapWithStats(BitmapFactory.DecodeResource(Resources, ImageId), DB, lightColor, darkColor));//////fail color
+            SelectDictionaryFragment.Dictionaries.DictionariesBitmap.Add(SelectDictionaryFragment.Dictionaries.CreateBitmapWithStats(BitmapFactory.DecodeResource(Resources, ImageId), database, lightColor, darkColor));//////fail color
             ImageView ImageDictionary = new ImageView(view.Context) { Tag = $"{NameDictionary}" };
             ImageDictionary.LayoutParameters = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WrapContent, ViewGroup.LayoutParams.WrapContent)
             {
@@ -39,7 +40,7 @@ namespace ReLearn.Droid.Views.SelectDictionary
             TextView CountWords = new TextView(view.Context)
             {
                 Text = $"{GetString(Resource.String.DatatypeImages)} {count}, {GetString(Resource.String.StudiedAt)} " +
-                $"{(int)(100 - API.Statistics.GetAverageNumberLearn(DB) * 100f / Settings.StandardNumberOfRepeats)}%",
+                $"{(int)(100 - API.Statistics.GetAverageNumberLearn(database) * 100f / Settings.StandardNumberOfRepeats)}%",
                 TextSize = 14//(int)(2.1f * width)
             };
             TextView Description = new TextView(view.Context)
@@ -85,17 +86,15 @@ namespace ReLearn.Droid.Views.SelectDictionary
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             var view = inflater.Inflate(Resource.Layout.fragment_tab_images_dictionary, container, false);
-            var DBStatFlag  = DBStatistics.GetImages($"{TableNamesImage.Flags}");
-            var DBStatFilms = DBStatistics.GetImages($"{TableNamesImage.Films}");
-            CreateViewForDictionary(view, DBStatFlag,   
-                $"{TableNamesImage.Flags}", 
+            CreateViewForDictionary(view, ViewModel.DatabaseFlag,
+                $"{TableNamesImage.Flags}",
                 Resource.Drawable.image_dictionary_flags,
-                GravityFlags.Left,  true, Colors.Orange, Colors.DarkOrange);
-            CreateViewForDictionary(view, DBStatFilms,  
-                $"{TableNamesImage.Films}", 
+                GravityFlags.Left, true, Colors.Orange, Colors.DarkOrange);
+            CreateViewForDictionary(view, ViewModel.DatabaseFilms,
+                $"{TableNamesImage.Films}",
                 Resource.Drawable.image_dictionary_films,
                 GravityFlags.Right, false, Colors.Orange, Colors.DarkOrange);
-            SelectDictionaryFragment.Dictionaries.Selected($"{DataBase.TableName}",$"{DataBase.TableName}");
+            SelectDictionaryFragment.Dictionaries.Selected($"{DataBase.TableName}", $"{DataBase.TableName}");
             return view; 
         }
     }

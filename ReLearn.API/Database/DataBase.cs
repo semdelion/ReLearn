@@ -5,7 +5,6 @@ using System.IO;
 
 namespace ReLearn.API.Database
 {
-
     public enum TableNames
     {
         Flags,
@@ -26,9 +25,9 @@ namespace ReLearn.API.Database
         const string _english     = "database_words.db3"; 
         const string _flags       = "database_image.db3";
 
-        public static SQLiteConnection Languages;
-        public static SQLiteConnection Images;
-        public static SQLiteConnection Statistics;
+        public static SQLiteAsyncConnection Languages;
+        public static SQLiteAsyncConnection Images;
+        public static SQLiteAsyncConnection Statistics;
 
         public static TableNames TableName
         {
@@ -47,6 +46,6 @@ namespace ReLearn.API.Database
             Statistics = Connect(_statistics);
         }
 
-        static SQLiteConnection Connect(string nameDB) => new SQLiteConnection(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), nameDB));
+        static SQLiteAsyncConnection Connect(string nameDB) => new SQLiteAsyncConnection(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), nameDB));
     }
 }

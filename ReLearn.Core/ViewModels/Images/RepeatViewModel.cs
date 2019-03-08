@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ReLearn.Core.ViewModels.Images
 {
-    public class RepeatViewModel : MvxViewModel<List<DBImages>>
+    public class RepeatViewModel : MvxViewModel<List<DatabaseImages>>
     {
         #region Fields
         #endregion
@@ -19,7 +19,7 @@ namespace ReLearn.Core.ViewModels.Images
         #endregion
 
         #region Properties
-        public List<DBImages> Database { get; set; }
+        public List<DatabaseImages> Database { get; set; }
         private string _titleCount;
         public string TitleCount
         {
@@ -34,29 +34,18 @@ namespace ReLearn.Core.ViewModels.Images
         #endregion
 
         #region Constructors
-        public RepeatViewModel(IMvxNavigationService navigationService)
-        {
-            NavigationService = navigationService;
-        }
+        public RepeatViewModel(IMvxNavigationService navigationService) => NavigationService = navigationService;
         #endregion
 
         #region Private
-        private Task<bool> NavigateToStatistic() => NavigationService.Navigate<StatisticViewModel>();
+        private async Task<bool> NavigateToStatistic() => await NavigationService.Navigate<StatisticViewModel>();
         #endregion
 
         #region Protected
         #endregion
 
         #region Public
-        public override void ViewCreated()
-        {
-            base.ViewCreated();
-        }
-
-        public override void Prepare(List<DBImages> parameter)
-        {
-            Database = parameter;
-        }
+        public override void Prepare(List<DatabaseImages> parameter) => Database = parameter;
         #endregion
     }
 }

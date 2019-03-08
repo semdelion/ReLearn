@@ -117,109 +117,109 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AddViewModel.EnterWord" xml:space="preserve">
+  <data name="AddViewModel_EnterWord" xml:space="preserve">
     <value>Enter word!</value>
   </data>
-  <data name="AddViewModel.WordAdded" xml:space="preserve">
+  <data name="AddViewModel_WordAdded" xml:space="preserve">
     <value>Word added!</value>
   </data>
-  <data name="AddViewModel.WordExists" xml:space="preserve">
+  <data name="AddViewModel_WordExists" xml:space="preserve">
     <value>The word exists!</value>
   </data>
-  <data name="DictionaryReplenishmentViewModel.DataCorrectness" xml:space="preserve">
+  <data name="DictionaryReplenishmentViewModel_DataCorrectness" xml:space="preserve">
     <value>Data entered incorrectly</value>
   </data>
-  <data name="DictionaryReplenishmentViewModel.WordsAdded" xml:space="preserve">
+  <data name="DictionaryReplenishmentViewModel_WordsAdded" xml:space="preserve">
     <value>Words have been added to your dictionary</value>
   </data>
-  <data name="GeneralStatisticsViewModel.Average" xml:space="preserve">
+  <data name="GeneralStatisticsViewModel_Average" xml:space="preserve">
     <value>Average</value>
   </data>
-  <data name="GeneralStatisticsViewModel.Correct" xml:space="preserve">
+  <data name="GeneralStatisticsViewModel_Correct" xml:space="preserve">
     <value>Correct</value>
   </data>
-  <data name="GeneralStatisticsViewModel.CorrectAnswers" xml:space="preserve">
+  <data name="GeneralStatisticsViewModel_CorrectAnswers" xml:space="preserve">
     <value>Correct answers</value>
   </data>
-  <data name="GeneralStatisticsViewModel.DegreeOfStudy" xml:space="preserve">
+  <data name="GeneralStatisticsViewModel_DegreeOfStudy" xml:space="preserve">
     <value>Degree of study</value>
   </data>
-  <data name="GeneralStatisticsViewModel.Incorrect" xml:space="preserve">
+  <data name="GeneralStatisticsViewModel_Incorrect" xml:space="preserve">
     <value>incorrect</value>
   </data>
-  <data name="GeneralStatisticsViewModel.Month" xml:space="preserve">
+  <data name="GeneralStatisticsViewModel_Month" xml:space="preserve">
     <value>Month</value>
   </data>
-  <data name="GeneralStatisticsViewModel.NumberCorrectAnswers" xml:space="preserve">
+  <data name="GeneralStatisticsViewModel_NumberCorrectAnswers" xml:space="preserve">
     <value>Answer Ratio</value>
   </data>
-  <data name="GeneralStatisticsViewModel.NumberInconvenientFilms" xml:space="preserve">
+  <data name="GeneralStatisticsViewModel_NumberInconvenientFilms" xml:space="preserve">
     <value>Number of inconvenient films</value>
   </data>
-  <data name="GeneralStatisticsViewModel.NumberInconvenientFlags" xml:space="preserve">
+  <data name="GeneralStatisticsViewModel_NumberInconvenientFlags" xml:space="preserve">
     <value>Number of inconvenient flags</value>
   </data>
-  <data name="GeneralStatisticsViewModel.NumberInconvenientImages" xml:space="preserve">
+  <data name="GeneralStatisticsViewModel_NumberInconvenientImages" xml:space="preserve">
     <value>Number of inconvenient images</value>
   </data>
-  <data name="GeneralStatisticsViewModel.NumberInconvenientWords" xml:space="preserve">
+  <data name="GeneralStatisticsViewModel_NumberInconvenientWords" xml:space="preserve">
     <value>Number of inconvenient words</value>
   </data>
-  <data name="GeneralStatisticsViewModel.NumberLearnedFilms" xml:space="preserve">
+  <data name="GeneralStatisticsViewModel_NumberLearnedFilms" xml:space="preserve">
     <value>Number of films learned</value>
   </data>
-  <data name="GeneralStatisticsViewModel.NumberLearnedFlags" xml:space="preserve">
+  <data name="GeneralStatisticsViewModel_NumberLearnedFlags" xml:space="preserve">
     <value>Number of flags learned</value>
   </data>
-  <data name="GeneralStatisticsViewModel.NumberLearnedImages" xml:space="preserve">
+  <data name="GeneralStatisticsViewModel_NumberLearnedImages" xml:space="preserve">
     <value>Number of images learned</value>
   </data>
-  <data name="GeneralStatisticsViewModel.NumberLearnedWords" xml:space="preserve">
+  <data name="GeneralStatisticsViewModel_NumberLearnedWords" xml:space="preserve">
     <value>Number of words learned</value>
   </data>
-  <data name="GeneralStatisticsViewModel.NumberOfTests" xml:space="preserve">
+  <data name="GeneralStatisticsViewModel_NumberOfTests" xml:space="preserve">
     <value>number of tests</value>
   </data>
-  <data name="GeneralStatisticsViewModel.Of" xml:space="preserve">
+  <data name="GeneralStatisticsViewModel_Of" xml:space="preserve">
     <value>of</value>
   </data>
-  <data name="GeneralStatisticsViewModel.Today" xml:space="preserve">
+  <data name="GeneralStatisticsViewModel_Today" xml:space="preserve">
     <value>Today</value>
   </data>
-  <data name="HomeViewModel.RepeatedAllImages" xml:space="preserve">
+  <data name="HomeViewModel_RepeatedAllImages" xml:space="preserve">
     <value>You repeated all the images</value>
   </data>
-  <data name="HomeViewModel.RepeatedAllWords" xml:space="preserve">
+  <data name="HomeViewModel_RepeatedAllWords" xml:space="preserve">
     <value>You repeated all the words</value>
   </data>
-  <data name="LearnViewModel.DictionaryOver" xml:space="preserve">
+  <data name="LearnViewModel_DictionaryOver" xml:space="preserve">
     <value>Dictionary over</value>
   </data>
-  <data name="LearnViewModel.Next" xml:space="preserve">
+  <data name="LearnViewModel_Next" xml:space="preserve">
     <value>Next</value>
   </data>
-  <data name="MainStatisticsViewModel.Correct" xml:space="preserve">
+  <data name="MainStatisticsViewModel_Correct" xml:space="preserve">
     <value>Correct</value>
   </data>
-  <data name="MainStatisticsViewModel.Incorrect" xml:space="preserve">
+  <data name="MainStatisticsViewModel_Incorrect" xml:space="preserve">
     <value>Incorrect</value>
   </data>
-  <data name="MainStatisticsViewModel.LastTest" xml:space="preserve">
+  <data name="MainStatisticsViewModel_LastTest" xml:space="preserve">
     <value>Last testing</value>
   </data>
-  <data name="MainViewModel.Learn" xml:space="preserve">
+  <data name="MainViewModel_Learn" xml:space="preserve">
     <value>Learn</value>
   </data>
-  <data name="MainViewModel.Repeat" xml:space="preserve">
+  <data name="MainViewModel_Repeat" xml:space="preserve">
     <value>Repeat</value>
   </data>
-  <data name="SettingsMenuViewModel.Cancel" xml:space="preserve">
+  <data name="SettingsMenuViewModel_Cancel" xml:space="preserve">
     <value>Cancel</value>
   </data>
-  <data name="SettingsMenuViewModel.ChooseLanguage" xml:space="preserve">
+  <data name="SettingsMenuViewModel_ChooseLanguage" xml:space="preserve">
     <value>Choose language</value>
   </data>
-  <data name="SettingsMenuViewModel.ChoosePronunciation" xml:space="preserve">
+  <data name="SettingsMenuViewModel_ChoosePronunciation" xml:space="preserve">
     <value>Choose pronunciation</value>
   </data>
 </root>

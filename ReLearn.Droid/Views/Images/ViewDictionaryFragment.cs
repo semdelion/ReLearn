@@ -83,9 +83,9 @@ namespace ReLearn.Droid.Views.Images
             base.OnCreateOptionsMenu(menu, inflater);
         }
 
-        public List<DBImages> SearchWithGetTypeField(string nameField, Android.Support.V7.Widget.SearchView.QueryTextChangeEventArgs e)
+        public List<DatabaseImages> SearchWithGetTypeField(string nameField, Android.Support.V7.Widget.SearchView.QueryTextChangeEventArgs e)
         {
-            List<DBImages> FD = new List<DBImages>();
+            List<DatabaseImages> FD = new List<DatabaseImages>();
             foreach (var image in ViewModel.DataBase)
                 if (image.GetType().GetProperty(nameField).GetValue(image, null).ToString().Substring(0, ((e.NewText.Length > image.GetType().GetProperty(nameField).GetValue(image, null).ToString().Length) ? 0 : e.NewText.Length)) == e.NewText)
                     FD.Add(image);

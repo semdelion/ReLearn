@@ -19,10 +19,7 @@ namespace ReLearn.Core.ViewModels.MainMenu.SelectDictionary
         #endregion
 
         #region Constructors
-        public SelectDictionaryViewModel(IMvxNavigationService navigationService)
-        {
-            NavigationService = navigationService;
-        }
+        public SelectDictionaryViewModel(IMvxNavigationService navigationService) => NavigationService = navigationService;
         #endregion
 
         #region Private
@@ -32,10 +29,6 @@ namespace ReLearn.Core.ViewModels.MainMenu.SelectDictionary
         #endregion
 
         #region Public
-        public override void ViewCreated()
-        {
-            base.ViewCreated();
-        }
         #endregion
     }
 }

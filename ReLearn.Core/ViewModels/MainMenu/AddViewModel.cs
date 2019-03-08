@@ -55,11 +55,11 @@ namespace ReLearn.Core.ViewModels.MainMenu
         {
             if (Word == "" || Word == null || TranslationWord == null || TranslationWord == "")
                 Message.Toast(AppResources.AddViewModel_EnterWord);
-            else if (await Task.Run(() => DBWords.WordIsContained(Word.ToLower())))
+            else if (await Task.Run(() => DatabaseWords.WordIsContained(Word.ToLower())))
                 Message.Toast(AppResources.AddViewModel_WordExists);
             else
             {
-                await Task.Run(() => DBWords.Insert(Word.ToLower(), TranslationWord.ToLower()));
+                await Task.Run(() => DatabaseWords.Insert(Word.ToLower(), TranslationWord.ToLower()));
                 Word = TranslationWord = "";
                 Message.Toast(AppResources.AddViewModel_WordAdded);
             }
@@ -70,10 +70,6 @@ namespace ReLearn.Core.ViewModels.MainMenu
         #endregion
 
         #region Public
-        public override void ViewCreated()
-        {
-            base.ViewCreated();
-        }
         #endregion
     }
 }
