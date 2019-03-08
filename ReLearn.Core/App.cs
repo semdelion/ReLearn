@@ -28,8 +28,7 @@ namespace ReLearn.Core
             {
                 await DatabaseImages.UpdateData();
                 await DatabaseWords.UpdateData();
-            }).Wait();
-
+            });
         }
     }
 }

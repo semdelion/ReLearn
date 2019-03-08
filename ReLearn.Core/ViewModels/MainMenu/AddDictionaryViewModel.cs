@@ -42,7 +42,7 @@ namespace ReLearn.Core.ViewModels.MainMenu
         #endregion
 
         #region Private
-        private async Task AddWords() //TODO - перевод, async db
+        private async Task AddWords()
         {
             var text = Words.ToLower().Trim('\n').Split('\n');
             if (await Task.Run(() => ValidationOfEnteredData(text)))

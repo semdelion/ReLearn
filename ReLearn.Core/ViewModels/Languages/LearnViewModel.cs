@@ -6,6 +6,7 @@ using ReLearn.API.Database;
 using ReLearn.Core.Localization;
 using ReLearn.Core.Services;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace ReLearn.Core.ViewModels.Languages
 {
@@ -15,11 +16,11 @@ namespace ReLearn.Core.ViewModels.Languages
         #endregion
 
         #region Commands
-        private IMvxCommand _nextCommand;
-        public IMvxCommand NextCommand => _nextCommand ?? (_nextCommand = new MvxCommand(Next));
+        private IMvxAsyncCommand _nextCommand;
+        public IMvxAsyncCommand NextCommand => _nextCommand ?? (_nextCommand = new MvxAsyncCommand(Next));
 
-        private IMvxCommand _notRepeatCommand;
-        public IMvxCommand NotRepeatCommand => _notRepeatCommand ?? (_notRepeatCommand = new MvxCommand(NotRepeat));
+        private IMvxAsyncCommand _notRepeatCommand;
+        public IMvxAsyncCommand NotRepeatCommand => _notRepeatCommand ?? (_notRepeatCommand = new MvxAsyncCommand(NotRepeat));
 
         private IMvxCommand _voiceCommand;
         public IMvxCommand VoiceCommand => _voiceCommand ?? (_voiceCommand = new MvxCommand(() => TextToSpeech.Speak(Word)));
@@ -53,7 +54,7 @@ namespace ReLearn.Core.ViewModels.Languages
         #endregion
 
         #region Private
-        private async void Next()
+        private async Task Next()
         {
             if (Count < Database.Count)
             {
@@ -68,10 +69,10 @@ namespace ReLearn.Core.ViewModels.Languages
                 Mvx.IoCProvider.Resolve<IMessageCore>().Toast(AppResources.LearnViewModel_DictionaryOver);
         }
 
-        private async void NotRepeat()
+        private async Task NotRepeat()
         {
             await DatabaseWords.UpdateLearningNotRepeat(Word);
-            Next();
+            await Next();
         }
         #endregion
 
@@ -79,10 +80,12 @@ namespace ReLearn.Core.ViewModels.Languages
         #endregion
 
         #region Public
-        public override void Prepare(List<DatabaseWords> parameter)
+        public override void Prepare(List<DatabaseWords> parameter) => Database = parameter;
+        
+        public override async Task Initialize()
         {
-            Database = parameter;
-            Next();
+            await base.Initialize();
+            await Next();
         }
         #endregion
     }

@@ -55,7 +55,7 @@ namespace ReLearn.Core.ViewModels.Images
         #endregion
 
         #region Private
-        private Task<bool> NavigateToStatistic() => NavigationService.Navigate<StatisticViewModel>();
+        private async Task<bool> NavigateToStatistic() => await NavigationService.Navigate<StatisticViewModel>();
         #endregion
 
         #region Protected
