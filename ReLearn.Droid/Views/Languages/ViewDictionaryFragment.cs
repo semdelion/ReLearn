@@ -21,20 +21,21 @@ namespace ReLearn.Droid.Views.Languages
         protected override int FragmentId => Resource.Layout.fragment_menu_view_dictionary;
 
         protected override int Toolbar => Resource.Id.toolbar_view_dictionary;
-        ListView DictionaryWords { get; set; }
-        List<DBWords> WordDatabase = DBWords.GetData;
+
+        private ListView DictionaryWords { get; set; }
+        
         public static bool HideStudied
         {
-            get => CrossSettings.Current.GetValueOrDefault(DBSettings.HideStudied.ToString(), true);
-            set => CrossSettings.Current.AddOrUpdateValue(DBSettings.HideStudied.ToString(), value);
+            get => CrossSettings.Current.GetValueOrDefault($"{DBSettings.HideStudied}", true);
+            set => CrossSettings.Current.AddOrUpdateValue($"{DBSettings.HideStudied}", value);
         }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             var view = base.OnCreateView(inflater, container, savedInstanceState);
             DictionaryWords = view.FindViewById<ListView>(Resource.Id.listView_dictionary);
-            WordDatabase.Sort((x, y) => x.Word.CompareTo(y.Word));
-            DictionaryWords.Adapter = new CustomAdapterWord(ParentActivity, HideStudied ? WordDatabase.FindAll(obj => obj.NumberLearn != 0) : WordDatabase);
+            ViewModel.Database.Sort((x, y) => x.Word.CompareTo(y.Word));
+            DictionaryWords.Adapter = new CustomAdapterWord(ParentActivity, HideStudied ? ViewModel.Database.FindAll(obj => obj.NumberLearn != 0) : ViewModel.Database);
             return view;
         }
 
@@ -47,11 +48,11 @@ namespace ReLearn.Droid.Views.Languages
             _searchView.QueryTextChange += (sender, e) =>
             {
                 if (e.NewText == "")
-                    DictionaryWords.Adapter = new CustomAdapterWord(ParentActivity, HideStudied ? WordDatabase.FindAll(obj => obj.NumberLearn != 0) : WordDatabase);
+                    DictionaryWords.Adapter = new CustomAdapterWord(ParentActivity, HideStudied ? ViewModel.Database.FindAll(obj => obj.NumberLearn != 0) : ViewModel.Database);
                 else
                 {
-                    List<DBWords> FD = new List<DBWords>();
-                    foreach (var word in WordDatabase)
+                    List<DatabaseWords> FD = new List<DatabaseWords>();
+                    foreach (var word in ViewModel.Database)
                         if (word.Word.Substring(0, ((e.NewText.Length > word.Word.Length) ? 0 : e.NewText.Length)) == e.NewText)
                             FD.Add(word);
                     DictionaryWords.Adapter = new CustomAdapterWord(ParentActivity, FD);
@@ -61,18 +62,18 @@ namespace ReLearn.Droid.Views.Languages
             DictionaryWords.ItemClick += (s, args) =>
             {
                 var word = DictionaryWords.Adapter.GetItem(args.Position);
-                DBWords words = new DBWords();
-                words = WordDatabase[WordDatabase.FindIndex(obj => obj.Word == word.ToString())];
+                DatabaseWords words = new DatabaseWords();
+                words = ViewModel.Database[ViewModel.Database.FindIndex(obj => obj.Word == $"{word}")];
                 Android.App.AlertDialog.Builder alert = new Android.App.AlertDialog.Builder(ParentActivity);
 
                 alert.SetTitle("");
-                alert.SetMessage($"To delete : {word.ToString()}? ");
+                alert.SetMessage($"To delete : {$"{word}"}? ");
                 alert.SetPositiveButton("Cancel", delegate { alert.Dispose(); });
                 alert.SetNeutralButton("ок", delegate
                 {
-                    WordDatabase.Remove(words);
-                    DictionaryWords.Adapter = new CustomAdapterWord(ParentActivity, HideStudied ? WordDatabase.FindAll(obj => obj.NumberLearn != 0) : WordDatabase);
-                    DBWords.Delete(word.ToString());
+                    ViewModel.Database.Remove(words);
+                    DictionaryWords.Adapter = new CustomAdapterWord(ParentActivity, HideStudied ? ViewModel.Database.FindAll(obj => obj.NumberLearn != 0) : ViewModel.Database);
+                    DatabaseWords.Delete($"{word}");
                     Toast.MakeText(ParentActivity, GetString(Resource.String.Word_Delete), ToastLength.Short).Show();
 
                 });
@@ -85,21 +86,21 @@ namespace ReLearn.Droid.Views.Languages
             switch (item.ItemId)
             {
                 case Resource.Id.increase:
-                    WordDatabase.Sort((x, y) => x.NumberLearn.CompareTo(y.NumberLearn));
-                    DictionaryWords.Adapter = new CustomAdapterWord(ParentActivity, HideStudied ? WordDatabase.FindAll(obj => obj.NumberLearn != 0) : WordDatabase);
+                    ViewModel.Database.Sort((x, y) => x.NumberLearn.CompareTo(y.NumberLearn));
+                    DictionaryWords.Adapter = new CustomAdapterWord(ParentActivity, HideStudied ? ViewModel.Database.FindAll(obj => obj.NumberLearn != 0) : ViewModel.Database);
                     return true;
                 case Resource.Id.decrease:
-                    WordDatabase.Sort((x, y) => y.NumberLearn.CompareTo(x.NumberLearn));
-                    DictionaryWords.Adapter = new CustomAdapterWord(ParentActivity, HideStudied ? WordDatabase.FindAll(obj => obj.NumberLearn != 0) : WordDatabase);
+                    ViewModel.Database.Sort((x, y) => y.NumberLearn.CompareTo(x.NumberLearn));
+                    DictionaryWords.Adapter = new CustomAdapterWord(ParentActivity, HideStudied ? ViewModel.Database.FindAll(obj => obj.NumberLearn != 0) : ViewModel.Database);
                     return true;
                 case Resource.Id.ABC:
-                    WordDatabase.Sort((x, y) => x.Word.CompareTo(y.Word));
-                    DictionaryWords.Adapter = new CustomAdapterWord(ParentActivity, HideStudied ? WordDatabase.FindAll(obj => obj.NumberLearn != 0) : WordDatabase);
+                    ViewModel.Database.Sort((x, y) => x.Word.CompareTo(y.Word));
+                    DictionaryWords.Adapter = new CustomAdapterWord(ParentActivity, HideStudied ? ViewModel.Database.FindAll(obj => obj.NumberLearn != 0) : ViewModel.Database);
                     return true;
                 case Resource.Id.HideStudied:
                     HideStudied = !HideStudied;
                     item.SetChecked(HideStudied);
-                    DictionaryWords.Adapter = new CustomAdapterWord(ParentActivity, HideStudied ? WordDatabase.FindAll(obj => obj.NumberLearn != 0) : WordDatabase);
+                    DictionaryWords.Adapter = new CustomAdapterWord(ParentActivity, HideStudied ? ViewModel.Database.FindAll(obj => obj.NumberLearn != 0) : ViewModel.Database);
                     return true;
                 default:
                     return base.OnOptionsItemSelected(item);

@@ -22,7 +22,7 @@ namespace ReLearn.Core.Localization {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class AppResources {
+    public class AppResources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace ReLearn.Core.Localization {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ReLearn.Core.Localization.AppResources", typeof(AppResources).Assembly);
@@ -51,7 +51,7 @@ namespace ReLearn.Core.Localization {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,99 +63,315 @@ namespace ReLearn.Core.Localization {
         /// <summary>
         ///   Looks up a localized string similar to Enter word!.
         /// </summary>
-        internal static string AddViewModel_EnterWord {
+        public static string AddViewModel_EnterWord {
             get {
-                return ResourceManager.GetString("AddViewModel.EnterWord", resourceCulture);
+                return ResourceManager.GetString("AddViewModel_EnterWord", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Word added!.
         /// </summary>
-        internal static string AddViewModel_WordAdded {
+        public static string AddViewModel_WordAdded {
             get {
-                return ResourceManager.GetString("AddViewModel.WordAdded", resourceCulture);
+                return ResourceManager.GetString("AddViewModel_WordAdded", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to The word exists!.
         /// </summary>
-        internal static string AddViewModel_WordExists {
+        public static string AddViewModel_WordExists {
             get {
-                return ResourceManager.GetString("AddViewModel.WordExists", resourceCulture);
+                return ResourceManager.GetString("AddViewModel_WordExists", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Data entered incorrectly.
         /// </summary>
-        internal static string DictionaryReplenishmentViewModel_DataCorrectness {
+        public static string DictionaryReplenishmentViewModel_DataCorrectness {
             get {
-                return ResourceManager.GetString("DictionaryReplenishmentViewModel.DataCorrectness", resourceCulture);
+                return ResourceManager.GetString("DictionaryReplenishmentViewModel_DataCorrectness", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Words have been added to your dictionary.
         /// </summary>
-        internal static string DictionaryReplenishmentViewModel_WordsAdded {
+        public static string DictionaryReplenishmentViewModel_WordsAdded {
             get {
-                return ResourceManager.GetString("DictionaryReplenishmentViewModel.WordsAdded", resourceCulture);
+                return ResourceManager.GetString("DictionaryReplenishmentViewModel_WordsAdded", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Average.
+        /// </summary>
+        public static string GeneralStatisticsViewModel_Average {
+            get {
+                return ResourceManager.GetString("GeneralStatisticsViewModel_Average", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Correct.
+        /// </summary>
+        public static string GeneralStatisticsViewModel_Correct {
+            get {
+                return ResourceManager.GetString("GeneralStatisticsViewModel_Correct", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Correct answers.
+        /// </summary>
+        public static string GeneralStatisticsViewModel_CorrectAnswers {
+            get {
+                return ResourceManager.GetString("GeneralStatisticsViewModel_CorrectAnswers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Degree of study.
+        /// </summary>
+        public static string GeneralStatisticsViewModel_DegreeOfStudy {
+            get {
+                return ResourceManager.GetString("GeneralStatisticsViewModel_DegreeOfStudy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to incorrect.
+        /// </summary>
+        public static string GeneralStatisticsViewModel_Incorrect {
+            get {
+                return ResourceManager.GetString("GeneralStatisticsViewModel_Incorrect", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Month.
+        /// </summary>
+        public static string GeneralStatisticsViewModel_Month {
+            get {
+                return ResourceManager.GetString("GeneralStatisticsViewModel_Month", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Answer Ratio.
+        /// </summary>
+        public static string GeneralStatisticsViewModel_NumberCorrectAnswers {
+            get {
+                return ResourceManager.GetString("GeneralStatisticsViewModel_NumberCorrectAnswers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Number of inconvenient films.
+        /// </summary>
+        public static string GeneralStatisticsViewModel_NumberInconvenientFilms {
+            get {
+                return ResourceManager.GetString("GeneralStatisticsViewModel_NumberInconvenientFilms", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Number of inconvenient flags.
+        /// </summary>
+        public static string GeneralStatisticsViewModel_NumberInconvenientFlags {
+            get {
+                return ResourceManager.GetString("GeneralStatisticsViewModel_NumberInconvenientFlags", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Number of inconvenient images.
+        /// </summary>
+        public static string GeneralStatisticsViewModel_NumberInconvenientImages {
+            get {
+                return ResourceManager.GetString("GeneralStatisticsViewModel_NumberInconvenientImages", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Number of inconvenient words.
+        /// </summary>
+        public static string GeneralStatisticsViewModel_NumberInconvenientWords {
+            get {
+                return ResourceManager.GetString("GeneralStatisticsViewModel_NumberInconvenientWords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Number of films learned.
+        /// </summary>
+        public static string GeneralStatisticsViewModel_NumberLearnedFilms {
+            get {
+                return ResourceManager.GetString("GeneralStatisticsViewModel_NumberLearnedFilms", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Number of flags learned.
+        /// </summary>
+        public static string GeneralStatisticsViewModel_NumberLearnedFlags {
+            get {
+                return ResourceManager.GetString("GeneralStatisticsViewModel_NumberLearnedFlags", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Number of images learned.
+        /// </summary>
+        public static string GeneralStatisticsViewModel_NumberLearnedImages {
+            get {
+                return ResourceManager.GetString("GeneralStatisticsViewModel_NumberLearnedImages", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Number of words learned.
+        /// </summary>
+        public static string GeneralStatisticsViewModel_NumberLearnedWords {
+            get {
+                return ResourceManager.GetString("GeneralStatisticsViewModel_NumberLearnedWords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to number of tests.
+        /// </summary>
+        public static string GeneralStatisticsViewModel_NumberOfTests {
+            get {
+                return ResourceManager.GetString("GeneralStatisticsViewModel_NumberOfTests", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to of.
+        /// </summary>
+        public static string GeneralStatisticsViewModel_Of {
+            get {
+                return ResourceManager.GetString("GeneralStatisticsViewModel_Of", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Today.
+        /// </summary>
+        public static string GeneralStatisticsViewModel_Today {
+            get {
+                return ResourceManager.GetString("GeneralStatisticsViewModel_Today", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You repeated all the images.
+        /// </summary>
+        public static string HomeViewModel_RepeatedAllImages {
+            get {
+                return ResourceManager.GetString("HomeViewModel_RepeatedAllImages", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You repeated all the words.
+        /// </summary>
+        public static string HomeViewModel_RepeatedAllWords {
+            get {
+                return ResourceManager.GetString("HomeViewModel_RepeatedAllWords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dictionary over.
+        /// </summary>
+        public static string LearnViewModel_DictionaryOver {
+            get {
+                return ResourceManager.GetString("LearnViewModel_DictionaryOver", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Next.
         /// </summary>
-        internal static string LearnViewModel_Next {
+        public static string LearnViewModel_Next {
             get {
-                return ResourceManager.GetString("LearnViewModel.Next", resourceCulture);
+                return ResourceManager.GetString("LearnViewModel_Next", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Correct.
+        /// </summary>
+        public static string MainStatisticsViewModel_Correct {
+            get {
+                return ResourceManager.GetString("MainStatisticsViewModel_Correct", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Incorrect.
+        /// </summary>
+        public static string MainStatisticsViewModel_Incorrect {
+            get {
+                return ResourceManager.GetString("MainStatisticsViewModel_Incorrect", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Last testing.
+        /// </summary>
+        public static string MainStatisticsViewModel_LastTest {
+            get {
+                return ResourceManager.GetString("MainStatisticsViewModel_LastTest", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Learn.
         /// </summary>
-        internal static string MainViewModel_Learn {
+        public static string MainViewModel_Learn {
             get {
-                return ResourceManager.GetString("MainViewModel.Learn", resourceCulture);
+                return ResourceManager.GetString("MainViewModel_Learn", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Repeat.
         /// </summary>
-        internal static string MainViewModel_Repeat {
+        public static string MainViewModel_Repeat {
             get {
-                return ResourceManager.GetString("MainViewModel.Repeat", resourceCulture);
+                return ResourceManager.GetString("MainViewModel_Repeat", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Cancel.
         /// </summary>
-        internal static string SettingsMenuViewModel_Cancel {
+        public static string SettingsMenuViewModel_Cancel {
             get {
-                return ResourceManager.GetString("SettingsMenuViewModel.Cancel", resourceCulture);
+                return ResourceManager.GetString("SettingsMenuViewModel_Cancel", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Choose language.
         /// </summary>
-        internal static string SettingsMenuViewModel_ChooseLanguage {
+        public static string SettingsMenuViewModel_ChooseLanguage {
             get {
-                return ResourceManager.GetString("SettingsMenuViewModel.ChooseLanguage", resourceCulture);
+                return ResourceManager.GetString("SettingsMenuViewModel_ChooseLanguage", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Choose pronunciation.
         /// </summary>
-        internal static string SettingsMenuViewModel_ChoosePronunciation {
+        public static string SettingsMenuViewModel_ChoosePronunciation {
             get {
-                return ResourceManager.GetString("SettingsMenuViewModel.ChoosePronunciation", resourceCulture);
+                return ResourceManager.GetString("SettingsMenuViewModel_ChoosePronunciation", resourceCulture);
             }
         }
     }

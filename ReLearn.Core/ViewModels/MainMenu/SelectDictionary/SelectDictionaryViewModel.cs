@@ -1,9 +1,9 @@
 ﻿using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 
-namespace ReLearn.Core.ViewModels
+namespace ReLearn.Core.ViewModels.MainMenu.SelectDictionary
 {
-    public class StatisticViewModel : MvxViewModel
+    public class SelectDictionaryViewModel : MvxViewModel
     {
         #region Fields
         #endregion
@@ -19,10 +19,7 @@ namespace ReLearn.Core.ViewModels
         #endregion
 
         #region Constructors
-        public StatisticViewModel(IMvxNavigationService navigationService)
-        {
-            NavigationService = navigationService;
-        }
+        public SelectDictionaryViewModel(IMvxNavigationService navigationService) => NavigationService = navigationService;
         #endregion
 
         #region Private
@@ -32,10 +29,6 @@ namespace ReLearn.Core.ViewModels
         #endregion
 
         #region Public
-        public override void ViewCreated()
-        {
-            base.ViewCreated();
-        }
         #endregion
     }
 }

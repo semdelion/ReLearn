@@ -2,26 +2,29 @@
 using Android.OS;
 using Android.Views;
 using Android.Widget;
+using MvvmCross.Droid.Support.V4;
 using ReLearn.API;
 using ReLearn.API.Database;
+using ReLearn.Core.ViewModels.MainMenu.SelectDictionary;
 using ReLearn.Droid.Helpers;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace ReLearn.Droid.Views.SelectDictionary
 {
-    class TabLanguageFragment : Android.Support.V4.App.Fragment
+    class TabLanguageFragment : MvxFragment<DictionaryLanguageViewModel>
     {
-        public View CreateViewForDictionary(View view, List<DBStatistics> DB, string NameDictionary, int ImageId, GravityFlags flag, bool separate, Color lightColor, Color darkColor)
+        public View CreateViewForDictionary(View view, List<DBStatistics> database, string nameDictionary, int imageId, GravityFlags flag, bool separate, Color lightColor, Color darkColor)
         {
             var width = Resources.DisplayMetrics.WidthPixels / 100f;
-            int count = DB.Count;
+            int count = database.Count;
             LinearLayout DictionarylinearLayout = new LinearLayout(view.Context)
             {
-                LayoutParameters = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, LinearLayout.LayoutParams.WrapContent)
+                LayoutParameters = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MatchParent, ViewGroup.LayoutParams.WrapContent)
             };
-            SelectDictionaryFragment.Dictionaries.DictionariesBitmap.Add(SelectDictionaryFragment.Dictionaries.CreateBitmapWithStats(BitmapFactory.DecodeResource(Resources, ImageId), DB, lightColor, darkColor));//////fail color
-            ImageView ImageDictionary = new ImageView(view.Context) { Tag = NameDictionary.ToString() };
-            ImageDictionary.LayoutParameters = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WrapContent, LinearLayout.LayoutParams.WrapContent)
+            SelectDictionaryFragment.Dictionaries.DictionariesBitmap.Add(SelectDictionaryFragment.Dictionaries.CreateBitmapWithStats(BitmapFactory.DecodeResource(Resources, imageId), database, lightColor, darkColor));//////fail color
+            ImageView ImageDictionary = new ImageView(view.Context) { Tag = $"{nameDictionary}" };
+            ImageDictionary.LayoutParameters = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WrapContent, ViewGroup.LayoutParams.WrapContent)
             {
                 Gravity = flag
             };
@@ -31,28 +34,28 @@ namespace ReLearn.Droid.Views.SelectDictionary
 
             TextView Name = new TextView(view.Context)
             {
-                Text = Helpers.GetString.GetResourceString(NameDictionary, this.Resources),
+                Text = Helpers.GetString.GetResourceString(nameDictionary, this.Resources),
                 TextSize = 20//(int)(3 * width)
             };
             TextView CountWords = new TextView(view.Context)
             {
                 Text = $"{GetString(Resource.String.DatatypeWords)} {count}, {GetString(Resource.String.StudiedAt)} " +
-                $"{(int)(100 - API.Statistics.GetAverageNumberLearn(DB) * 100f / Settings.StandardNumberOfRepeats)}%",
+                $"{(int)(100 - API.Statistics.GetAverageNumberLearn(database) * 100f / Settings.StandardNumberOfRepeats)}%",
                 TextSize = 14//(int)(2.1f * width)
             };
             TextView Description = new TextView(view.Context)
             {
-                Text = Helpers.GetString.GetResourceString($"{NameDictionary}Description", this.Resources),
+                Text = Helpers.GetString.GetResourceString($"{nameDictionary}Description", this.Resources),
                 TextSize = 11//(int)(1.7f * width)
             };
             LinearLayout TextlinearLayout = new LinearLayout(view.Context)
             {
-                LayoutParameters = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WrapContent, LinearLayout.LayoutParams.WrapContent),
-                Orientation = Android.Widget.Orientation.Vertical
+                LayoutParameters = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WrapContent, ViewGroup.LayoutParams.WrapContent),
+                Orientation = Orientation.Vertical
             };
 
             Name.LayoutParameters = CountWords.LayoutParameters = Description.LayoutParameters =
-                new LinearLayout.LayoutParams(52 * Resources.DisplayMetrics.WidthPixels / 100, LinearLayout.LayoutParams.WrapContent);
+                new LinearLayout.LayoutParams(52 * Resources.DisplayMetrics.WidthPixels / 100, ViewGroup.LayoutParams.WrapContent);
             Name.SetTextColor(Colors.White);
             CountWords.SetTextColor(Colors.HintWhite);
             Description.SetTextColor(Colors.HintWhite);
@@ -69,7 +72,7 @@ namespace ReLearn.Droid.Views.SelectDictionary
             {
                 View SeparateView = new View(view.Context)
                 {
-                    LayoutParameters = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WrapContent, (int)(width / 2f))
+                    LayoutParameters = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WrapContent, (int)(width / 2f))
                     { TopMargin = (int)(2 * width), BottomMargin = (int)(2 * width) },
                     Background = view.Context.GetDrawable(Resource.Drawable.separator)
                 };
@@ -83,39 +86,33 @@ namespace ReLearn.Droid.Views.SelectDictionary
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             var view = inflater.Inflate(Resource.Layout.fragment_tab_languages_dictionary, container, false);
-            var Home             = DBStatistics.GetWords($"{TableNamesLanguage.Home}");
-            var Education        = DBStatistics.GetWords($"{TableNamesLanguage.Education}");
-            var Popular_Words    = DBStatistics.GetWords($"{TableNamesLanguage.Popular_Words}");
-            var ThreeFormsOfVerb = DBStatistics.GetWords($"{TableNamesLanguage.ThreeFormsOfVerb}");
-            var ComputerScience  = DBStatistics.GetWords($"{TableNamesLanguage.ComputerScience}");
-            var Nature           = DBStatistics.GetWords($"{TableNamesLanguage.Nature}");
-            var My_Directly      = DBStatistics.GetWords($"{TableNamesLanguage.My_Directly}");
-            CreateViewForDictionary(view, Home,
+
+            CreateViewForDictionary(view, ViewModel.Home,
                 $"{TableNamesLanguage.Home}",
                 Resource.Drawable.image_dictionary_home,
-                GravityFlags.Left,  true, Colors.Blue, Colors.DarkBlue);
-            CreateViewForDictionary(view, Education,        
+                GravityFlags.Left, true, Colors.Blue, Colors.DarkBlue);
+            CreateViewForDictionary(view, ViewModel.Education,
                 $"{TableNamesLanguage.Education}",
                 Resource.Drawable.image_dictionary_education,
                 GravityFlags.Right, true, Colors.Blue, Colors.DarkBlue);
-            CreateViewForDictionary(view, Popular_Words,    
-                $"{TableNamesLanguage.Popular_Words}",   
+            CreateViewForDictionary(view, ViewModel.PopularWords,
+                $"{TableNamesLanguage.Popular_Words}",
                 Resource.Drawable.image_dictionary_popular_words,
-                GravityFlags.Left,  true, Colors.Blue, Colors.DarkBlue);
-            CreateViewForDictionary(view, ThreeFormsOfVerb, 
-                $"{TableNamesLanguage.ThreeFormsOfVerb}", 
+                GravityFlags.Left, true, Colors.Blue, Colors.DarkBlue);
+            CreateViewForDictionary(view, ViewModel.ThreeFormsOfVerb,
+                $"{TableNamesLanguage.ThreeFormsOfVerb}",
                 Resource.Drawable.image_dictionary_three_forms_of_verb,
                 GravityFlags.Right, true, Colors.Blue, Colors.DarkBlue);
-            CreateViewForDictionary(view, ComputerScience,  
-                $"{TableNamesLanguage.ComputerScience}", 
+            CreateViewForDictionary(view, ViewModel.ComputerScience,
+                $"{TableNamesLanguage.ComputerScience}",
                 Resource.Drawable.image_dictionary_computer_science,
-                GravityFlags.Left,  true, Colors.Blue, Colors.DarkBlue);
-            CreateViewForDictionary(view, Nature,           
-                $"{TableNamesLanguage.Nature}",           
+                GravityFlags.Left, true, Colors.Blue, Colors.DarkBlue);
+            CreateViewForDictionary(view, ViewModel.Nature,
+                $"{TableNamesLanguage.Nature}",
                 Resource.Drawable.image_dictionary_nature,
                 GravityFlags.Right, true, Colors.Blue, Colors.DarkBlue);
-            CreateViewForDictionary(view, My_Directly,     
-                $"{TableNamesLanguage.My_Directly}",      
+            CreateViewForDictionary(view, ViewModel.MyDirectly,
+                $"{TableNamesLanguage.My_Directly}",
                 Resource.Drawable.image_dictionary_my,
                 GravityFlags.Left, false, Colors.Blue, Colors.DarkBlue);
             return view;

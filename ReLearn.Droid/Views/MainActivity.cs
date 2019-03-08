@@ -14,7 +14,6 @@ using ReLearn.Droid.Services;
 
 namespace ReLearn.Droid.Views
 {
-
     [MvxActivityPresentation]
     [Activity(Label = "", ScreenOrientation = ScreenOrientation.Portrait, ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.Locale)]
     public class MainActivity : MvxAppCompatActivity<MainViewModel>, INavigationActivity, Android.Support.V4.App.FragmentManager.IOnBackStackChangedListener

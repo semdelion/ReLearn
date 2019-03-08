@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android         ="http://schemas.android.com/apk/res/android"
+    xmlns:tools           ="http://schemas.android.com/tools"
+	xmlns:local			  ="http://schemas.android.com/apk/res-auto"
+    android:layout_width  ="match_parent"
+    android:layout_height ="match_parent">
+	<LinearLayout
+		tools:background="@android:color/holo_blue_dark"
+		android:layout_width			="match_parent"
+		android:layout_height			="match_parent"
+		android:orientation				="vertical"
+		android:id						="@+id/view_statistics_diagram"
+		android:layout_marginTop		="@dimen/view_margin_statistics"
+		android:layout_marginLeft		="5dp"
+		android:layout_marginRight		="5dp"
+		android:layout_marginBottom		="@dimen/view_margin_statistics"
+		android:layout_above			="@+id/view_statistics_last_test">
+	</LinearLayout>
+	<LinearLayout 
+		tools:background				="@android:color/holo_purple"
+		android:id						="@+id/view_statistics_last_test"
+		android:orientation				="vertical"
+		android:layout_width			="match_parent"
+		android:layout_height			="65dp"
+		android:layout_marginLeft		="@dimen/view_margin_statistics"
+		android:layout_marginRight		="@dimen/view_margin_statistics"
+		android:layout_marginBottom		="@dimen/view_margin_statistics"
+		android:layout_alignParentBottom="true">
+		<TextView
+			local:MvxBind				="Text LastTest"
+			android:textColor			="@color/text_white"
+			tools:text					="Последнее тестирование"
+			android:fontFamily			="@font/myriadpro_semibold"
+			android:textSize			="18dp"
+			android:layout_width		="match_parent"
+			android:layout_height		="wrap_content"
+			android:layout_marginTop	="5dp"
+			android:layout_marginLeft	="@dimen/margin_left"
+		/>
+		<TextView
+			local:MvxBind				="Text Answers"
+			android:textColor			="@color/hint_text_white"
+			tools:text					="Верные: 10, неверные: 13"
+			android:fontFamily			="@font/myriadpro_semibold"
+			android:textSize			="12dp"
+			android:layout_width		="match_parent"
+			android:layout_height		="wrap_content"
+			android:layout_marginLeft	="@dimen/margin_left"
+		/>
+	</LinearLayout >
+</RelativeLayout>

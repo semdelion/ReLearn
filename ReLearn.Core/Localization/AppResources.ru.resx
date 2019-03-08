@@ -117,37 +117,109 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AddViewModel.EnterWord" xml:space="preserve">
+  <data name="AddViewModel_EnterWord" xml:space="preserve">
     <value>Введите слово!</value>
   </data>
-  <data name="AddViewModel.WordAdded" xml:space="preserve">
+  <data name="AddViewModel_WordAdded" xml:space="preserve">
     <value>Слово добавлено!</value>
   </data>
-  <data name="AddViewModel.WordExists" xml:space="preserve">
+  <data name="AddViewModel_WordExists" xml:space="preserve">
     <value>Слово уже существует!</value>
   </data>
-  <data name="DictionaryReplenishmentViewModel.DataCorrectness" xml:space="preserve">
+  <data name="DictionaryReplenishmentViewModel_DataCorrectness" xml:space="preserve">
     <value>Данные введены некорректно</value>
   </data>
-  <data name="DictionaryReplenishmentViewModel.WordsAdded" xml:space="preserve">
+  <data name="DictionaryReplenishmentViewModel_WordsAdded" xml:space="preserve">
     <value>Слова были добавлены в ваш словарь</value>
   </data>
-  <data name="LearnViewModel.Next" xml:space="preserve">
+  <data name="GeneralStatisticsViewModel_Average" xml:space="preserve">
+    <value>Среднее значение</value>
+  </data>
+  <data name="GeneralStatisticsViewModel_Correct" xml:space="preserve">
+    <value>Верные</value>
+  </data>
+  <data name="GeneralStatisticsViewModel_CorrectAnswers" xml:space="preserve">
+    <value>Верные ответы</value>
+  </data>
+  <data name="GeneralStatisticsViewModel_DegreeOfStudy" xml:space="preserve">
+    <value>Степень изученности</value>
+  </data>
+  <data name="GeneralStatisticsViewModel_Incorrect" xml:space="preserve">
+    <value>неверные</value>
+  </data>
+  <data name="GeneralStatisticsViewModel_Month" xml:space="preserve">
+    <value>Месяц</value>
+  </data>
+  <data name="GeneralStatisticsViewModel_NumberCorrectAnswers" xml:space="preserve">
+    <value>Соотношение ответов</value>
+  </data>
+  <data name="GeneralStatisticsViewModel_NumberInconvenientFilms" xml:space="preserve">
+    <value>Количество затруднительных фильмов</value>
+  </data>
+  <data name="GeneralStatisticsViewModel_NumberInconvenientFlags" xml:space="preserve">
+    <value>Количество затруднительных флагов</value>
+  </data>
+  <data name="GeneralStatisticsViewModel_NumberInconvenientImages" xml:space="preserve">
+    <value>Количество затруднительных изображений</value>
+  </data>
+  <data name="GeneralStatisticsViewModel_NumberInconvenientWords" xml:space="preserve">
+    <value>Количество затруднительных слов</value>
+  </data>
+  <data name="GeneralStatisticsViewModel_NumberLearnedFilms" xml:space="preserve">
+    <value>Количество изученных фильмов</value>
+  </data>
+  <data name="GeneralStatisticsViewModel_NumberLearnedFlags" xml:space="preserve">
+    <value>Количество изученных флагов</value>
+  </data>
+  <data name="GeneralStatisticsViewModel_NumberLearnedImages" xml:space="preserve">
+    <value>Количество изученных изображений</value>
+  </data>
+  <data name="GeneralStatisticsViewModel_NumberLearnedWords" xml:space="preserve">
+    <value>Количество изученных слов</value>
+  </data>
+  <data name="GeneralStatisticsViewModel_NumberOfTests" xml:space="preserve">
+    <value>количество тестов</value>
+  </data>
+  <data name="GeneralStatisticsViewModel_Of" xml:space="preserve">
+    <value>из</value>
+  </data>
+  <data name="GeneralStatisticsViewModel_Today" xml:space="preserve">
+    <value>Сегодня</value>
+  </data>
+  <data name="HomeViewModel_RepeatedAllImages" xml:space="preserve">
+    <value>Вы повторили все изображения</value>
+  </data>
+  <data name="HomeViewModel_RepeatedAllWords" xml:space="preserve">
+    <value>Вы повторили все слова</value>
+  </data>
+  <data name="LearnViewModel_DictionaryOver" xml:space="preserve">
+    <value>Словарь закончился</value>
+  </data>
+  <data name="LearnViewModel_Next" xml:space="preserve">
     <value>Дальше</value>
   </data>
-  <data name="MainViewModel.Learn" xml:space="preserve">
+  <data name="MainStatisticsViewModel_Correct" xml:space="preserve">
+    <value>Верные</value>
+  </data>
+  <data name="MainStatisticsViewModel_Incorrect" xml:space="preserve">
+    <value>неверные</value>
+  </data>
+  <data name="MainStatisticsViewModel_LastTest" xml:space="preserve">
+    <value>Последнее тестирование</value>
+  </data>
+  <data name="MainViewModel_Learn" xml:space="preserve">
     <value>Учить</value>
   </data>
-  <data name="MainViewModel.Repeat" xml:space="preserve">
+  <data name="MainViewModel_Repeat" xml:space="preserve">
     <value>Повторить</value>
   </data>
-  <data name="SettingsMenuViewModel.Cancel" xml:space="preserve">
+  <data name="SettingsMenuViewModel_Cancel" xml:space="preserve">
     <value>Отменить</value>
   </data>
-  <data name="SettingsMenuViewModel.ChooseLanguage" xml:space="preserve">
+  <data name="SettingsMenuViewModel_ChooseLanguage" xml:space="preserve">
     <value>Выберете язык</value>
   </data>
-  <data name="SettingsMenuViewModel.ChoosePronunciation" xml:space="preserve">
+  <data name="SettingsMenuViewModel_ChoosePronunciation" xml:space="preserve">
     <value>Выберете произношение</value>
   </data>
 </root>

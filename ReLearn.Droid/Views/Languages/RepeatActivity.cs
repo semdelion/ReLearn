@@ -1,5 +1,4 @@
 ﻿using Android.App;
-using Android.Graphics.Drawables;
 using Android.OS;
 using Android.Util;
 using Android.Views;
@@ -7,8 +6,10 @@ using Android.Widget;
 using MvvmCross.Droid.Support.V7.AppCompat;
 using ReLearn.API;
 using ReLearn.API.Database;
+using ReLearn.Core.Helpers;
 using ReLearn.Core.ViewModels.Languages;
 using ReLearn.Droid.Helpers;
+using ReLearn.Droid.Services;
 using System;
 using System.Collections.Generic;
 
@@ -17,82 +18,75 @@ namespace ReLearn.Droid.Languages
     [Activity(Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class RepeatActivity : MvxAppCompatActivity<RepeatViewModel>
     {
-        int CurrentWordNumber { get; set; }
         List<Button> Buttons { get; set; }
-        ButtonNext Button_next { get; set; }
-        List<DBWords> WordDatabase { get; set; }
-        MyTextToSpeech MySpeech { get; set; }
-        string Word { get; set; }
+        ButtonNext ButtonNext { get; set; }
 
-        string TitleCount { set => FindViewById<TextView>(Resource.Id.Repeat_toolbar_textview).Text = value;}
-        string Text { set => FindViewById<TextView>(Resource.Id.textView_Eng_Word).Text = value;}
-
-        void Button_enable(bool state)
+        void ButtonEnable(bool state)
         {
             foreach (var button in Buttons) button.Enabled = state;
             if (state)
             {
-                Button_next.State = StateButton.Unknown;
-                Button_next.button.Text = GetString(Resource.String.Unknown);
+                ButtonNext.State = StateButton.Unknown;
+                ButtonNext.button.Text = GetString(Resource.String.Unknown);
                 foreach (var button in Buttons) button.Background = GetDrawable(Resource.Drawable.button_style_standard);
             }
             else
             {
-                Button_next.State = StateButton.Next;
-                Button_next.button.Text = GetString(Resource.String.Next);
+                ButtonNext.State = StateButton.Next;
+                ButtonNext.button.Text = GetString(Resource.String.Next);
             }
         }
 
-        void Random_Button(params Button[] buttons)   //загружаем варианты ответа в текст кнопок
+        void RandomButton(params Button[] buttons)   //загружаем варианты ответа в текст кнопок
         {
-            RandomNumbers.RandomFourNumbers(CurrentWordNumber, WordDatabase.Count, out List<int> random_numbers);
+            RandomNumbers.RandomFourNumbers(ViewModel.CurrentNumber, ViewModel.Database.Count, out List<int> random_numbers);
             for (int i = 0; i < buttons.Length; i++)
-                buttons[i].Text = WordDatabase[random_numbers[i]].TranslationWord;
+                buttons[i].Text = ViewModel.Database[random_numbers[i]].TranslationWord;
         }
 
         void NextWord()
         {
-            Word = WordDatabase[CurrentWordNumber].Word;
-            Text = $"{WordDatabase[CurrentWordNumber].Word}{(WordDatabase[CurrentWordNumber].Transcription==null ? "" :$"\n{WordDatabase[CurrentWordNumber].Transcription}")}";
+            ViewModel.Word = ViewModel.Database[ViewModel.CurrentNumber].Word;
+            ViewModel.Text = $"{ ViewModel.Database[ViewModel.CurrentNumber].Word}{(ViewModel.Database[ViewModel.CurrentNumber].Transcription==null ? "" :$"\n{ ViewModel.Database[ViewModel.CurrentNumber].Transcription}")}";
             const int four = 4;
             int first = new Random(unchecked((int)(DateTime.Now.Ticks))).Next(four);
-            List<int> random_numbers = new List<int> { first, 0, 0, 0 };
+            List<int> randomNumbers = new List<int> { first, 0, 0, 0 };
             for (int i = 1; i < four; i++)
-                random_numbers[i] = (first + i) % four; 
-           Random_Button(Buttons[random_numbers[0]], Buttons[random_numbers[1]], Buttons[random_numbers[2]], Buttons[random_numbers[3]]);        
+                randomNumbers[i] = (first + i) % four; 
+           RandomButton(Buttons[randomNumbers[0]], Buttons[randomNumbers[1]], Buttons[randomNumbers[2]], Buttons[randomNumbers[3]]);        
         }
 
         void Answer(params Button[] buttons) // подсвечиваем правильный ответ, если мы ошиблись подсвечиваем неправвильный и паравильный 
         {
-            Statistics.Count++;
-            Button_enable(false);
-            if (buttons[0].Text == WordDatabase[CurrentWordNumber].TranslationWord)
+            API.Statistics.Count++;
+            ButtonEnable(false);
+            if (buttons[0].Text == ViewModel.Database[ViewModel.CurrentNumber].TranslationWord)
             {
-                Statistics.Add(WordDatabase, CurrentWordNumber, -Settings.TrueAnswer);
-                Statistics.True++;
+                API.Statistics.Add(ViewModel.Database, ViewModel.CurrentNumber, -Settings.TrueAnswer);
+                API.Statistics.True++;
                 buttons[0].Background = GetDrawable(Resource.Drawable.button_true);
             }
             else
             {
-                Statistics.Add(WordDatabase, CurrentWordNumber, Settings.FalseAnswer);
-                Statistics.False++;
+                API.Statistics.Add(ViewModel.Database, ViewModel.CurrentNumber, Settings.FalseAnswer);
+                API.Statistics.False++;
                 buttons[0].Background = GetDrawable(Resource.Drawable.button_false);
-                int index = Buttons.FindIndex(s => s.Text == WordDatabase[CurrentWordNumber].TranslationWord);
+                int index = Buttons.FindIndex(s => s.Text == ViewModel.Database[ViewModel.CurrentNumber].TranslationWord);
                 Buttons[index].Background = GetDrawable(Resource.Drawable.button_true);
             }
         }
 
         void Unknown()
         {
-            Statistics.Count++;
-            Statistics.False++;
-            Statistics.Add(WordDatabase, CurrentWordNumber, Settings.NeutralAnswer);
-            int index =  Buttons.FindIndex(s => s.Text == WordDatabase[CurrentWordNumber].TranslationWord);
+            API.Statistics.Count++;
+            API.Statistics.False++;
+            API.Statistics.Add(ViewModel.Database, ViewModel.CurrentNumber, Settings.NeutralAnswer);
+            int index =  Buttons.FindIndex(s => s.Text == ViewModel.Database[ViewModel.CurrentNumber].TranslationWord);
             Buttons[index].Background = GetDrawable(Resource.Drawable.button_true);
         }
 
         [Java.Interop.Export("Button_Speak_Languages_Click")]
-        public void Button_Speak_Languages_Click(View v) => MySpeech.Speak(Word, this);
+        public void Button_Speak_Languages_Click(View v) => ViewModel.TextToSpeech.Speak(ViewModel.Word);
 
         [Java.Interop.Export("Button_Languages_1_Click")]
         public void Button_Languages_1_Click(View v) => Answer(Buttons[0], Buttons[1], Buttons[2], Buttons[3]);
@@ -109,31 +103,31 @@ namespace ReLearn.Droid.Languages
         [Java.Interop.Export("Button_Languages_Next_Click")]
         public void Button_Languages_Next_Click(View v)
         {
-            Button_next.button.Enabled = false;
-            if (Button_next.State == StateButton.Unknown)
+            ButtonNext.button.Enabled = false;
+            if (ButtonNext.State == StateButton.Unknown)
             {
-                Button_next.State = StateButton.Next;
-                Button_enable(false);
+                ButtonNext.State = StateButton.Next;
+                ButtonEnable(false);
                 Unknown();
             }
             else
             {
-                if (Statistics.Count < Settings.NumberOfRepeatsLanguage)
+                if (API.Statistics.Count < Settings.NumberOfRepeatsLanguage)
                 {
-                    CurrentWordNumber = new Random(unchecked((int)(DateTime.Now.Ticks))).Next(WordDatabase.Count);
+                    ViewModel.CurrentNumber = new Random(unchecked((int)(DateTime.Now.Ticks))).Next(ViewModel.Database.Count);
                     NextWord();
-                    Button_enable(true);
-                    TitleCount = $"{GetString(Resource.String.Repeated)} {Statistics.Count + 1}/{Settings.NumberOfRepeatsLanguage}";
+                    ButtonEnable(true);
+                    ViewModel.TitleCount = $"{GetString(Resource.String.Repeated)} {API.Statistics.Count + 1}/{Settings.NumberOfRepeatsLanguage}";
                 }
                 else
                 {
-                    DBStatistics.Insert(Statistics.True, Statistics.False, $"{DataBase.TableName}");
-                    Statistics.Delete();
+                    DBStatistics.Insert(API.Statistics.True, API.Statistics.False, $"{DataBase.TableName}");
+                    API.Statistics.Delete();
                     ViewModel.ToStatistic.Execute();
                     Finish();
                 }
             }
-            Button_next.button.Enabled = true;
+            ButtonNext.button.Enabled = true;
         }
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -147,13 +141,9 @@ namespace ReLearn.Droid.Languages
 
             DisplayMetrics displayMetrics = new DisplayMetrics();
             WindowManager.DefaultDisplay.GetRealMetrics(displayMetrics);
-            var _background = new BitmapDrawable(Resources, Background.GetBackgroung(
-            displayMetrics.WidthPixels - PixelConverter.DpToPX(70),
-            PixelConverter.DpToPX(190)));
-            FindViewById<TextView>(Resource.Id.textView_Eng_Word).Background = _background;
+            using (var background = BitmapHelper.GetBackgroung(Resources, displayMetrics.WidthPixels - PixelConverter.DpToPX(70), PixelConverter.DpToPX(190)))
+                FindViewById<TextView>(Resource.Id.textView_Eng_Word).Background = background;
 
-            MySpeech = new MyTextToSpeech();
-            WordDatabase = DBWords.GetDataNotLearned;
             Buttons = new List<Button>{
                 FindViewById<Button>(Resource.Id.button_Languages_choice1),
                 FindViewById<Button>(Resource.Id.button_Languages_choice2),
@@ -161,17 +151,11 @@ namespace ReLearn.Droid.Languages
                 FindViewById<Button>(Resource.Id.button_Languages_choice4),
             };
 
-            Button_next = new ButtonNext
+            ButtonNext = new ButtonNext
             {
                 button = FindViewById<Button>(Resource.Id.button_Languages_Next),
                 State = StateButton.Next
             };
-            if (WordDatabase.Count == 0)
-            {
-                Toast.MakeText(this, GetString(Resource.String.RepeatedAllWords), ToastLength.Short).Show();
-                Finish();
-                return;
-            }
             Button_Languages_Next_Click(null);
         }
 

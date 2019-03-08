@@ -12,9 +12,9 @@ namespace ReLearn.Droid
     class CustomAdapterImage : BaseAdapter
     {
         private Activity activity;
-        private List<DBImages> list;
+        private List<DatabaseImages> list;
 
-        public CustomAdapterImage(Activity activity, List<DBImages> list)
+        public CustomAdapterImage(Activity activity, List<DatabaseImages> list)
         {
             this.activity = activity;
             this.list = list;

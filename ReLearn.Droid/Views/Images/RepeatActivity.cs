@@ -8,6 +8,7 @@ using Android.Widget;
 using MvvmCross.Droid.Support.V7.AppCompat;
 using ReLearn.API;
 using ReLearn.API.Database;
+using ReLearn.Core.Helpers;
 using ReLearn.Core.ViewModels.Images;
 using ReLearn.Droid.Helpers;
 using System;
@@ -18,46 +19,39 @@ namespace ReLearn.Droid.Images
     [Activity(Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class RepeatActivity : MvxAppCompatActivity<RepeatViewModel>
     {
-        int CurrentWordNumber { get; set; }
-        List<Button> Buttons { get; set; }
-        ButtonNext Button_next;
-        List<DBImages> ImagesDatabase;
+        private List<Button> Buttons { get; set; }
+        private ButtonNext ButtonNext { get; set; }
         
-        string TitleCount
-        {
-            set => FindViewById<TextView>(Resource.Id.Repeat_toolbar_textview_fl).Text = value; 
-        }
-
-        void Button_enable(bool state)
+        void ButtonEnable(bool state)
         {
             foreach (var button in Buttons)
                 button.Enabled = state;
             if (state)
             {
-                Button_next.State = StateButton.Unknown;
-                Button_next.button.Text = GetString(Resource.String.Unknown);
+                ButtonNext.State = StateButton.Unknown;
+                ButtonNext.button.Text = GetString(Resource.String.Unknown);
                 foreach (var button in Buttons)
                     button.Background = GetDrawable(Resource.Drawable.button_style_standard);
             }
             else
             {
-                Button_next.State = StateButton.Next;
-                Button_next.button.Text = GetString(Resource.String.Next);
+                ButtonNext.State = StateButton.Next;
+                ButtonNext.button.Text = GetString(Resource.String.Next);
             }
         }
 
-        void Random_Button(params Button[] buttons)   //загружаем варианты ответа в текст кнопок
+        void RandomButton(params Button[] buttons)   //загружаем варианты ответа в текст кнопок
         {
-            RandomNumbers.RandomFourNumbers(CurrentWordNumber, ImagesDatabase.Count, out List<int> random_numbers);
+            RandomNumbers.RandomFourNumbers(ViewModel.CurrentNumber, ViewModel.Database.Count, out List<int> random_numbers);
             for (int i = 0; i < buttons.Length; i++)
-                buttons[i].Text = ImagesDatabase[random_numbers[i]].ImageName;
+                buttons[i].Text = ViewModel.Database[random_numbers[i]].ImageName;
         }
 
         void NextTest() //new test
         {
             using (Bitmap bitmap = BitmapFactory.DecodeStream(Application.Context.Assets.Open(
-                $"Image{DataBase.TableName}/{ImagesDatabase[CurrentWordNumber].Image_name}.png")))
-            using (var bitmapRounded = BitmapHandler.GetRoundedCornerBitmap(bitmap, PixelConverter.DpToPX(5)))
+                $"Image{DataBase.TableName}/{ViewModel.Database[ViewModel.CurrentNumber].Image_name}.png")))
+            using (var bitmapRounded = BitmapHelper.GetRoundedCornerBitmap(bitmap, PixelConverter.DpToPX(5)))
                 FindViewById<ImageView>(Resource.Id.imageView_Images_repeat).SetImageBitmap(bitmapRounded);
 
             const int four = 4;
@@ -65,35 +59,35 @@ namespace ReLearn.Droid.Images
             List<int> random_numbers = new List<int> { first, 0, 0, 0 };
             for (int i = 1; i < four; i++)
                 random_numbers[i] = (first + i) % four;
-            Random_Button(Buttons[random_numbers[0]], Buttons[random_numbers[1]], Buttons[random_numbers[2]], Buttons[random_numbers[3]]);
+            RandomButton(Buttons[random_numbers[0]], Buttons[random_numbers[1]], Buttons[random_numbers[2]], Buttons[random_numbers[3]]);
         }
 
         void Answer(params Button[] buttons) // подсвечиваем правильный ответ, если мы ошиблись подсвечиваем неправвильный и паравильный 
         {
-            Statistics.Count++;
-            Button_enable(false);
-            if (buttons[0].Text == ImagesDatabase[CurrentWordNumber].ImageName)
+            API.Statistics.Count++;
+            ButtonEnable(false);
+            if (buttons[0].Text == ViewModel.Database[ViewModel.CurrentNumber].ImageName)
             {
-                Statistics.Add(ImagesDatabase, CurrentWordNumber, - Settings.TrueAnswer);
-                Statistics.True++;
+                API.Statistics.Add(ViewModel.Database, ViewModel.CurrentNumber, - Settings.TrueAnswer);
+                API.Statistics.True++;
                 buttons[0].Background = GetDrawable(Resource.Drawable.button_true);
             }
             else
             {
-                Statistics.Add(ImagesDatabase,CurrentWordNumber, Settings.FalseAnswer);
-                Statistics.False++;
+                API.Statistics.Add(ViewModel.Database, ViewModel.CurrentNumber, Settings.FalseAnswer);
+                API.Statistics.False++;
                 buttons[0].Background = GetDrawable(Resource.Drawable.button_false);
-                int index = Buttons.FindIndex(s => s.Text == ImagesDatabase[CurrentWordNumber].ImageName);
+                int index = Buttons.FindIndex(s => s.Text == ViewModel.Database[ViewModel.CurrentNumber].ImageName);
                 Buttons[index].Background = GetDrawable(Resource.Drawable.button_true);
             }
         }
 
         void Unknown()
         {
-            Statistics.Count++;
-            Statistics.False++;
-            Statistics.Add(ImagesDatabase, CurrentWordNumber, Settings.NeutralAnswer);
-            int index = Buttons.FindIndex(s => s.Text == ImagesDatabase[CurrentWordNumber].ImageName);
+            API.Statistics.Count++;
+            API.Statistics.False++;
+            API.Statistics.Add(ViewModel.Database, ViewModel.CurrentNumber, Settings.NeutralAnswer);
+            int index = Buttons.FindIndex(s => s.Text == ViewModel.Database[ViewModel.CurrentNumber].ImageName);
             Buttons[index].Background = GetDrawable(Resource.Drawable.button_true);
         }
 
@@ -112,31 +106,31 @@ namespace ReLearn.Droid.Images
         [Java.Interop.Export("Button_Images_Next_Click")]
         public void Button_Images_Next_Click(View v)
         {
-            Button_next.button.Enabled = false;
-            if (Button_next.State == StateButton.Unknown)
+            ButtonNext.button.Enabled = false;
+            if (ButtonNext.State == StateButton.Unknown)
             {
-                Button_next.State = StateButton.Next;
-                Button_enable(false);
+                ButtonNext.State = StateButton.Next;
+                ButtonEnable(false);
                 Unknown();
             }
             else
             {
-                if (Statistics.Count < Settings.NumberOfRepeatsImage)
+                if (API.Statistics.Count < Settings.NumberOfRepeatsImage)
                 {
-                    CurrentWordNumber = new Random(unchecked((int)(DateTime.Now.Ticks))).Next(ImagesDatabase.Count);
+                    ViewModel.CurrentNumber = new Random(unchecked((int)(DateTime.Now.Ticks))).Next(ViewModel.Database.Count);
                     NextTest();
-                    Button_enable(true);
-                    TitleCount = $"{GetString(Resource.String.Repeated)} {Statistics.Count + 1}/{Settings.NumberOfRepeatsImage}";
+                    ButtonEnable(true);
+                    ViewModel.TitleCount = $"{GetString(Resource.String.Repeated)} {API.Statistics.Count + 1}/{Settings.NumberOfRepeatsImage}";
                 }
                 else
                 {
-                    DBStatistics.Insert(Statistics.True, Statistics.False, $"{DataBase.TableName}");
-                    Statistics.Delete();
+                    DBStatistics.Insert(API.Statistics.True, API.Statistics.False, $"{DataBase.TableName}");
+                    API.Statistics.Delete();
                     ViewModel.ToStatistic.Execute();
                     this.Finish();
                 }
             }
-            Button_next.button.Enabled = true;
+            ButtonNext.button.Enabled = true;
         }
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -147,14 +141,11 @@ namespace ReLearn.Droid.Images
             var toolbarMain = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar_images_repeat);
             SetSupportActionBar(toolbarMain);
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
-            ImagesDatabase = DBImages.GetDataNotLearned;
 
             DisplayMetrics displayMetrics = new DisplayMetrics();
             WindowManager.DefaultDisplay.GetRealMetrics(displayMetrics);
-            var _background = new BitmapDrawable(Resources, Background.GetBackgroung(
-            displayMetrics.WidthPixels - PixelConverter.DpToPX(20),
-            PixelConverter.DpToPX(190)));
-            FindViewById<LinearLayout>(Resource.Id.repeat_background).Background = _background;
+            using (var background = BitmapHelper.GetBackgroung(Resources, displayMetrics.WidthPixels - PixelConverter.DpToPX(20), PixelConverter.DpToPX(190)))
+                FindViewById<LinearLayout>(Resource.Id.repeat_background).Background = background;
 
             Buttons = new List<Button>{
                 FindViewById<Button>(Resource.Id.button_I_choice1),
@@ -162,18 +153,11 @@ namespace ReLearn.Droid.Images
                 FindViewById<Button>(Resource.Id.button_I_choice3),
                 FindViewById<Button>(Resource.Id.button_I_choice4)
             };
-            Button_next = new ButtonNext
+            ButtonNext = new ButtonNext
             {
                 button = FindViewById<Button>(Resource.Id.button_I_Next),
                 State = StateButton.Next
             };
-            if (ImagesDatabase.Count == 0)
-            {
-                Toast.MakeText(this, GetString(Resource.String.RepeatedAllImages), ToastLength.Short).Show();
-                Finish();
-                return;
-            }
-           
             Button_Images_Next_Click(null);
         }
 

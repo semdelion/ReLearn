@@ -2,14 +2,14 @@
 <LinearLayout 
 	xmlns:android		  ="http://schemas.android.com/apk/res/android"
 	xmlns:local			  ="http://schemas.android.com/apk/res-auto"
+	xmlns:tools				="http://schemas.android.com/tools"
     android:orientation	  ="vertical"
     android:layout_width  ="match_parent"
     android:layout_height ="fill_parent">
 	<android.support.design.widget.AppBarLayout
 		android:layout_width  ="match_parent"
 		android:layout_height ="wrap_content">
-		<android.support.v7.widget.Toolbar
-			xmlns:local			  ="http://schemas.android.com/apk/res-auto"		
+		<android.support.v7.widget.Toolbar	
 			android:id			  ="@+id/toolbar_languages_learn"
 			android:theme		  ="@style/ToolbarStyle"	
 			android:background	  ="@drawable/background_toolbar"  
@@ -30,9 +30,10 @@
 		android:layout_width  ="match_parent"
 		android:layout_height ="match_parent">
 		<TextView
+			local:MvxBind			   ="Text Text"
 			android:id				   ="@+id/textView_learn_en"
 			android:textColor		   ="@color/text_white"
-			android:text			   ="Text"
+			tools:text			       ="Text"
 			android:textSize		   ="30dp"
 			android:minLines		   ="2"
 			android:layout_width	   ="match_parent"
@@ -61,8 +62,7 @@
 					android:gravity			   ="left|right|center"
 					android:scaleType		   ="fitXY"/>
 				<Button
-					android:onClick			   ="Button_Languages_Learn_Voice_Click"
-					android:id				   ="@+id/button_voice"
+					local:MvxBind			   ="Click VoiceCommand"
 					android:text			   ="@string/Voice"
 					android:background		   ="@drawable/button_style_standard"
 					android:textColor		   ="@color/text_white"
@@ -78,8 +78,7 @@
 			</TableRow>
 			<TableRow android:layout_marginTop ="10.0dp">
 				<Button
-					android:onClick			   ="Button_Languages_Learn_NotRepeat_Click"
-					android:id				   ="@+id/button_NotRepeat_languages"
+					local:MvxBind			   ="Click NotRepeatCommand"
 					android:background		   ="@drawable/button_style_standard"
 					android:textColor		   ="@color/text_white"
 					android:text			   ="@string/NotRepeat"
@@ -91,8 +90,7 @@
 					android:layout_marginRight ="5dp" 
 				/>
 				<Button
-					android:onClick			   ="Button_Languages_Learn_Next_Click"
-					android:id				   ="@+id/button_learn_languages"
+					local:MvxBind			   ="Click NextCommand"
 					android:background		   ="@drawable/button_style_standard"
 					android:textColor		   ="@color/text_white"
 					android:text			   ="@string/Next"

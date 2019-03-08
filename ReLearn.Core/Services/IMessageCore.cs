@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ReLearn.Core
+namespace ReLearn.Core.Services
 {
     public interface IMessageCore
     {

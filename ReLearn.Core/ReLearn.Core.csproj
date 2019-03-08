@@ -5,11 +5,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Acr.UserDialogs" Version="7.0.1" />
-    <PackageReference Include="MvvmCross" Version="6.2.2" />
-    <PackageReference Include="MvvmCross.Plugin.Email" Version="6.2.2" />
-    <PackageReference Include="MvvmCross.Plugin.ResxLocalization" Version="6.2.2" />
-    <PackageReference Include="MvvmCross.Plugin.WebBrowser" Version="6.2.2" />
+    <PackageReference Include="Acr.UserDialogs" Version="7.0.3" />
+    <PackageReference Include="MvvmCross" Version="6.2.3" />
+    <PackageReference Include="MvvmCross.Plugin.Email" Version="6.2.3" />
+    <PackageReference Include="MvvmCross.Plugin.Json" Version="6.2.3" />
+    <PackageReference Include="MvvmCross.Plugin.JsonLocalization" Version="6.2.3" />
+    <PackageReference Include="MvvmCross.Plugin.ResourceLoader" Version="6.2.3" />
+    <PackageReference Include="MvvmCross.Plugin.ResxLocalization" Version="6.2.3" />
+    <PackageReference Include="MvvmCross.Plugin.WebBrowser" Version="6.2.3" />
   </ItemGroup>
 
   <ItemGroup>
@@ -26,11 +29,11 @@
 
   <ItemGroup>
     <EmbeddedResource Update="Localization\AppResources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Update="Localization\AppResources.ru.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>AppResources.ru.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>

@@ -7,4 +7,6 @@
   <color name ="text_white">      #d7f8fe </color>
   <color name ="hint_text_white"> #79969b </color>
   <color name ="transparent">     #00000000 </color>
+  <color name ="red">             #ef4049 </color>
+  <color name ="green">           #40ef68 </color>
 </resources>

@@ -1,9 +1,11 @@
 ﻿using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
+using ReLearn.API.Database;
+using System.Collections.Generic;
 
 namespace ReLearn.Core.ViewModels.Images
 {
-    public class LearnViewModel : MvxViewModel
+    public class LearnViewModel : MvxViewModel<List<DatabaseImages>>
     {
         #region Fields
         #endregion
@@ -12,6 +14,14 @@ namespace ReLearn.Core.ViewModels.Images
         #endregion
 
         #region Properties
+        public List<DatabaseImages> Database { get; set; }
+        public int Count { get; set; }
+        private string _imageName;
+        public string ImageName
+        {
+            get => _imageName;
+            set => SetProperty(ref _imageName, value);
+        }
         #endregion
 
         #region Services
@@ -19,10 +29,7 @@ namespace ReLearn.Core.ViewModels.Images
         #endregion
 
         #region Constructors
-        public LearnViewModel(IMvxNavigationService navigationService)
-        {
-            NavigationService = navigationService;
-        }
+        public LearnViewModel(IMvxNavigationService navigationService) => NavigationService = navigationService;
         #endregion
 
         #region Private
@@ -32,10 +39,7 @@ namespace ReLearn.Core.ViewModels.Images
         #endregion
 
         #region Public
-        public override void ViewCreated()
-        {
-            base.ViewCreated();
-        }
+        public override void Prepare(List<DatabaseImages> parameter) => Database = parameter;
         #endregion
     }
 }

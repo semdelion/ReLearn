@@ -2,6 +2,7 @@
 <RelativeLayout
     xmlns:android			="http://schemas.android.com/apk/res/android"
     xmlns:local				="http://schemas.android.com/apk/res-auto"
+	xmlns:tools				="http://schemas.android.com/tools"
     android:orientation		="vertical"
     android:layout_width	="match_parent"
     android:layout_height	="match_parent">
@@ -18,7 +19,8 @@
 			android:layout_height	="80dp"
 			local:buttonGravity		="bottom">
 			<TextView
-				android:id				="@+id/BlitzPoll_toolbar_textview_images"
+				local:MvxBind			="Text TitleCount"
+				tools:text				="Count 1/20"
 				android:gravity			="bottom"
 				android:paddingBottom	="12dp"
 				android:layout_width	="match_parent"
@@ -32,6 +34,7 @@
 		android:layout_width	="match_parent"
 		android:layout_height	="match_parent">
 		<TextView
+			local:MvxBind			    ="Text TimerText"
 			android:id					="@+id/textView_Timer_Images"
 			android:textColor			="@color/text_white"
 			android:textSize			="30dp"
@@ -41,6 +44,7 @@
 			android:layout_marginRight	="100.0dp"
 			android:layout_marginLeft	="100.0dp"
 			android:layout_marginTop	="95.0dp"
+			tools:text					="15:00"
 			android:gravity				= "center_horizontal|center"
 		/>
 		<TableLayout

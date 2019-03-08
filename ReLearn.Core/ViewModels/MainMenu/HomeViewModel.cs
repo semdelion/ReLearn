@@ -1,8 +1,13 @@
-﻿using MvvmCross.Commands;
+﻿using MvvmCross;
+using MvvmCross.Commands;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 using ReLearn.API;
 using ReLearn.API.Database;
+using ReLearn.Core.Localization;
+using ReLearn.Core.Services;
+using ReLearn.Core.ViewModels.MainMenu.SelectDictionary;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace ReLearn.Core.ViewModels.MainMenu
@@ -22,47 +27,92 @@ namespace ReLearn.Core.ViewModels.MainMenu
         {
             NavigationService = navigationService;
         }
-        private Task<bool> Quiz(bool isImage)
+        private async Task Quiz(bool isImage)
         {
             Settings.TypeOfRepetition = TypeOfRepetitions.Blitz;
-            return isImage ?
-                NavigationService.Navigate<Images.RepeatViewModel>() :
-                NavigationService.Navigate<Languages.RepeatViewModel>();
-        }
-        private Task<bool> Blitz(bool isImage)
-        {
-            Settings.TypeOfRepetition = TypeOfRepetitions.FourOptions;
-            return isImage ?
-                NavigationService.Navigate<Images.BlitzPollViewModel>() :
-                NavigationService.Navigate<Languages.BlitzPollViewModel>();
-        }
-
-        private Task<bool> NavigateToRepeat()
-        {
-            bool isImage = DBImages.DatabaseIsContain(DataBase.TableName.ToString());
-            if (Settings.QuizEnable && Settings.BlitzEnable)
-                if (Statistics.Count != 0)
-                    return Quiz(isImage);
+            if (isImage)
+            {
+                var database = await DatabaseImages.GetDataNotLearned();
+                if (database.Count == 0)
+                    Mvx.IoCProvider.Resolve<IMessageCore>().Toast(AppResources.HomeViewModel_RepeatedAllImages);
                 else
-                    return Settings.TypeOfRepetition == TypeOfRepetitions.Blitz ? Blitz(isImage) : Quiz(isImage);
-            else if (Settings.QuizEnable)
-                return Quiz(isImage);
+                  await NavigationService.Navigate<Images.RepeatViewModel, List<DatabaseImages>>(database);
+            }
             else
             {
-                if (Statistics.Count != 0)
-                    Statistics.Delete();
-                return Blitz(isImage);
+                var database = await DatabaseWords.GetDataNotLearned();
+                if (database.Count == 0)
+                    Mvx.IoCProvider.Resolve<IMessageCore>().Toast(AppResources.HomeViewModel_RepeatedAllWords);
+                else
+                   await NavigationService.Navigate<Languages.RepeatViewModel, List<DatabaseWords>>(database);
+            }
+            
+        }
+        private async Task Blitz(bool isImage)
+        {
+            Settings.TypeOfRepetition = TypeOfRepetitions.FourOptions;
+            if (isImage)
+            {
+                var database = await DatabaseImages.GetDataNotLearned();
+                if (database.Count == 0)
+                    Mvx.IoCProvider.Resolve<IMessageCore>().Toast(AppResources.HomeViewModel_RepeatedAllImages);
+                else
+                    await NavigationService.Navigate<Images.BlitzPollViewModel, List<DatabaseImages>>(database);
+            }
+            else
+            {
+                var database = await DatabaseWords.GetDataNotLearned();
+                if (database.Count == 0)
+                    Mvx.IoCProvider.Resolve<IMessageCore>().Toast(AppResources.HomeViewModel_RepeatedAllWords);
+                else
+                    await NavigationService.Navigate<Languages.BlitzPollViewModel, List<DatabaseWords>>(database);
+            }
+            
+        }
+
+        private async Task NavigateToRepeat()
+        {
+            bool isImage = DatabaseImages.DatabaseIsContain($"{DataBase.TableName}");
+
+            if (Settings.QuizEnable && Settings.BlitzEnable)
+                if (API.Statistics.Count != 0)
+                    await Quiz(isImage);
+                else
+                {
+                    if (Settings.TypeOfRepetition == TypeOfRepetitions.Blitz)
+                        await Blitz(isImage);
+                    else
+                        await Quiz(isImage);
+                }
+            else if (Settings.QuizEnable)
+                await Quiz(isImage);
+            else
+            {
+                if (API.Statistics.Count != 0)
+                    API.Statistics.Delete();
+                await Blitz(isImage);
             }
         }
-        private Task<bool> NavigateToLearn()
+        private async Task NavigateToLearn()
         {
-            if (DBImages.DatabaseIsContain(DataBase.TableName.ToString()))
-                return NavigationService.Navigate<Images.LearnViewModel>();
+            if (DatabaseImages.DatabaseIsContain($"{DataBase.TableName}"))
+            {
+                var database = await DatabaseImages.GetDataNotLearned();
+                if (database.Count == 0)
+                    Mvx.IoCProvider.Resolve<IMessageCore>().Toast(AppResources.HomeViewModel_RepeatedAllImages);
+                else
+                    await NavigationService.Navigate<Images.LearnViewModel, List<DatabaseImages>>(database);
+            }
             else
-                return NavigationService.Navigate<Languages.LearnViewModel>();
+            {
+                var database = await DatabaseWords.GetDataNotLearned();
+                if(database.Count == 0)
+                    Mvx.IoCProvider.Resolve<IMessageCore>().Toast(AppResources.HomeViewModel_RepeatedAllWords);
+                else
+                    await NavigationService.Navigate<Languages.LearnViewModel,List<DatabaseWords>>(database);
+            }
         }
 
         private Task<bool> NavigateToSelectDictionary() => NavigationService.Navigate<SelectDictionaryViewModel>();
-
     }
 }

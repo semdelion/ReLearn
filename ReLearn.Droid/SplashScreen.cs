@@ -4,6 +4,7 @@ using MvvmCross.Droid.Support.V7.AppCompat;
 using ReLearn.API.Database;
 using ReLearn.Core;
 using ReLearn.Droid.Helpers;
+using System.Threading.Tasks;
 
 namespace ReLearn.Droid
 {
@@ -19,9 +20,12 @@ namespace ReLearn.Droid
         {
             Database.InstallDatabaseFromAssets();
             DataBase.SetupConnection();
-            Database.СreateTableImage();
-            Database.СreateTableLanguage();
-            Database.ADDCOLUMN();
+            Task.Run(async() =>
+            {
+                await Database.СreateTableImage();
+                await Database.СreateTableLanguage();
+                await Database.AddColumn();
+            });
         }
     }
 }

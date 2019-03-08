@@ -1,5 +1,10 @@
 ﻿using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
+using Plugin.Settings;
+using ReLearn.API;
+using ReLearn.API.Database;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace ReLearn.Core.ViewModels.Images
 {
@@ -12,6 +17,7 @@ namespace ReLearn.Core.ViewModels.Images
         #endregion
 
         #region Properties
+        public List<DatabaseImages> DataBase { get; private set; }
         #endregion
 
         #region Services
@@ -22,6 +28,7 @@ namespace ReLearn.Core.ViewModels.Images
         public ViewDictionaryViewModel(IMvxNavigationService navigationService)
         {
             NavigationService = navigationService;
+            Task.Run(async () => DataBase = await DatabaseImages.GetData()).Wait();
         }
         #endregion
 
@@ -32,10 +39,6 @@ namespace ReLearn.Core.ViewModels.Images
         #endregion
 
         #region Public
-        public override void ViewCreated()
-        {
-            base.ViewCreated();
-        }
         #endregion
     }
 }

@@ -1,5 +1,8 @@
 ﻿using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
+using ReLearn.API.Database;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace ReLearn.Core.ViewModels.Languages
 {
@@ -12,6 +15,7 @@ namespace ReLearn.Core.ViewModels.Languages
         #endregion
 
         #region Properties
+        public List<DatabaseWords> Database { get; private set; }
         #endregion
 
         #region Services
@@ -22,6 +26,7 @@ namespace ReLearn.Core.ViewModels.Languages
         public ViewDictionaryViewModel(IMvxNavigationService navigationService)
         {
             NavigationService = navigationService;
+            Task.Run(async () => Database = await DatabaseWords.GetData()).Wait();
         }
         #endregion
 
@@ -32,10 +37,6 @@ namespace ReLearn.Core.ViewModels.Languages
         #endregion
 
         #region Public
-        public override void ViewCreated()
-        {
-            base.ViewCreated();
-        }
         #endregion
     }
 }

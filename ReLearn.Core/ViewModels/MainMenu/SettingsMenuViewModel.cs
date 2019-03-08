@@ -176,10 +176,6 @@ namespace ReLearn.Core.ViewModels.MainMenu
         #endregion
 
         #region Public
-        public override void ViewCreated()
-        {
-            base.ViewCreated();
-        }
         #endregion
     }
 }

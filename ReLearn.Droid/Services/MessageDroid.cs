@@ -2,14 +2,14 @@
 using Android.Widget;
 using MvvmCross;
 using MvvmCross.Platforms.Android;
-using ReLearn.Core;
+using ReLearn.Core.Services;
 using System;
 
-namespace ReLearn.Droid.Helpers
+namespace ReLearn.Droid.Services
 {
     class MessageDroid : IMessageCore
     {
-        public Android.App.Activity CurrentActivity => Mvx.IoCProvider.Resolve<IMvxAndroidCurrentTopActivity>().Activity;
+        public Activity CurrentActivity => Mvx.IoCProvider.Resolve<IMvxAndroidCurrentTopActivity>().Activity;
         public void Dialog(string message, Action buttonAction)
         {
             CurrentActivity.RunOnUiThread(() => new AlertDialog.Builder(CurrentActivity).SetTitle("Error").SetMessage(message)

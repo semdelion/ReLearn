@@ -4,6 +4,7 @@ using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 using ReLearn.API.Database;
 using ReLearn.Core.Localization;
+using ReLearn.Core.Services;
 using System.Threading.Tasks;
 
 namespace ReLearn.Core.ViewModels.MainMenu
@@ -41,18 +42,18 @@ namespace ReLearn.Core.ViewModels.MainMenu
         #endregion
 
         #region Private
-        private async Task AddWords() //TODO - перевод, async db
+        private async Task AddWords()
         {
             var text = Words.ToLower().Trim('\n').Split('\n');
             if (await Task.Run(() => ValidationOfEnteredData(text)))
             {
-                await Task.Run(() =>
+                await Task.Run(async () =>
                 {
                     for (int i = 0; i < text.Length; i++)
                     {
                         var str = text[i].Split('|');
-                        if (!DBWords.WordIsContained(str[0].Trim()))
-                            DBWords.Insert(str[0].Trim(), str[1].Trim());
+                        if (!await DatabaseWords.WordIsContained(str[0].Trim()))
+                            await DatabaseWords.Insert(str[0].Trim(), str[1].Trim());
                     }
                 });
                 Message.Toast(AppResources.DictionaryReplenishmentViewModel_WordsAdded);
@@ -80,10 +81,6 @@ namespace ReLearn.Core.ViewModels.MainMenu
         #endregion
 
         #region Public
-        public override void ViewCreated()
-        {
-            base.ViewCreated();
-        }
         #endregion
 
     }

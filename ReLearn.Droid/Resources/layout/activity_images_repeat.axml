@@ -19,7 +19,8 @@
 			android:layout_height	="80dp"	
 			local:buttonGravity		="bottom">
 			<TextView
-				android:id				="@+id/Repeat_toolbar_textview_fl"
+				local:MvxBind			="Text TitleCount"
+				tools:text				="Count 1/10"
 				android:gravity			="bottom"
 				android:paddingBottom	="12dp"
 				android:layout_width	="match_parent"

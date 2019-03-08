@@ -17,38 +17,23 @@ namespace ReLearn.Droid.Images
     [Activity(Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class LearnActivity : MvxAppCompatActivity<LearnViewModel>
     {
-        int Count { get; set; }
-        List<DBImages> ImagesDatabase { get; set; }
-
-        string ImageName
-        {
-            get => FindViewById<TextView>(Resource.Id.textView_Images_learn).Text; 
-            set => FindViewById<TextView>(Resource.Id.textView_Images_learn).Text = value; 
-        }
-        
         [Java.Interop.Export("Button_Images_Learn_NotRepeat_Click")]
         public void Button_Images_Learn_NotRepeat_Click(View v)
         {
-            DBImages.UpdateLearningNotRepeat(ImageName);
+            DatabaseImages.UpdateLearningNotRepeat(ViewModel.ImageName);
             Button_Images_Learn_Next_Click(null);
         }
 
         [Java.Interop.Export("Button_Images_Learn_Next_Click")]
         public void Button_Images_Learn_Next_Click(View v)
         {
-            if (Count < ImagesDatabase.Count)
+            if (ViewModel.Count < ViewModel.Database.Count)
             {
-                DBImages.UpdateLearningNext(ImagesDatabase[Count].Image_name);
-                try
-                {   using (var image = BitmapFactory.DecodeStream(Application.Context.Assets.Open( $"Image{DataBase.TableName}/{ImagesDatabase[Count].Image_name}.png")))
-                    using (var ImageViewBox = BitmapHandler.GetRoundedCornerBitmap(image, PixelConverter.DpToPX(5)))
-                        FindViewById<ImageView>(Resource.Id.imageView_Images_learn).SetImageBitmap(ImageViewBox);
-                        ImageName = ImagesDatabase[Count++].ImageName;
-                }
-                catch(Exception ex)
-                {
-                    Toast.MakeText(this, ex.Message , ToastLength.Short).Show();
-                }
+                DatabaseImages.UpdateLearningNext(ViewModel.Database[ViewModel.Count].Image_name);
+                using (var image = BitmapFactory.DecodeStream(Application.Context.Assets.Open( $"Image{DataBase.TableName}/{ViewModel.Database[ViewModel.Count].Image_name}.png")))
+                using (var ImageViewBox = BitmapHelper.GetRoundedCornerBitmap(image, PixelConverter.DpToPX(5)))
+                    FindViewById<ImageView>(Resource.Id.imageView_Images_learn).SetImageBitmap(ImageViewBox);
+                    ViewModel.ImageName = ViewModel.Database[ViewModel.Count++].ImageName;
             }
             else
                 Toast.MakeText(this, GetString(Resource.String.DictionaryOver), ToastLength.Short).Show();
@@ -60,20 +45,10 @@ namespace ReLearn.Droid.Images
             SetContentView(Resource.Layout.activity_images_learn);
             SetSupportActionBar(FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar_images_learn));
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
-            ImagesDatabase = DBImages.GetDataNotLearned;
             DisplayMetrics displayMetrics = new DisplayMetrics();
             WindowManager.DefaultDisplay.GetRealMetrics(displayMetrics);
-            var _background = new BitmapDrawable(Resources, Background.GetBackgroung(
-                                displayMetrics.WidthPixels - PixelConverter.DpToPX(20),
-                                PixelConverter.DpToPX(300)));
-            FindViewById<LinearLayout>(Resource.Id.learn_background).Background = _background;
-
-            if (ImagesDatabase.Count == 0)
-            {
-                Toast.MakeText(this, GetString(Resource.String.RepeatedAllImages), ToastLength.Short).Show();
-                Finish();
-                return;
-            }
+            using(var background = BitmapHelper.GetBackgroung(Resources, displayMetrics.WidthPixels - PixelConverter.DpToPX(20), PixelConverter.DpToPX(300)))
+                FindViewById<LinearLayout>(Resource.Id.learn_background).Background = background;
             Button_Images_Learn_Next_Click(null);
         }
 
