@@ -12,6 +12,7 @@ using ReLearn.Droid.Helpers;
 using ReLearn.Droid.Services;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace ReLearn.Droid.Languages
 {
@@ -47,7 +48,8 @@ namespace ReLearn.Droid.Languages
         void NextWord()
         {
             ViewModel.Word = ViewModel.Database[ViewModel.CurrentNumber].Word;
-            ViewModel.Text = $"{ ViewModel.Database[ViewModel.CurrentNumber].Word}{(ViewModel.Database[ViewModel.CurrentNumber].Transcription==null ? "" :$"\n{ ViewModel.Database[ViewModel.CurrentNumber].Transcription}")}";
+            ViewModel.Text = $"{ ViewModel.Database[ViewModel.CurrentNumber].Word}" +
+                $"{(ViewModel.Database[ViewModel.CurrentNumber].Transcription==null ? "" : $"\n{ ViewModel.Database[ViewModel.CurrentNumber].Transcription}")}";
             const int four = 4;
             int first = new Random(unchecked((int)(DateTime.Now.Ticks))).Next(four);
             List<int> randomNumbers = new List<int> { first, 0, 0, 0 };
@@ -56,19 +58,19 @@ namespace ReLearn.Droid.Languages
            RandomButton(Buttons[randomNumbers[0]], Buttons[randomNumbers[1]], Buttons[randomNumbers[2]], Buttons[randomNumbers[3]]);        
         }
 
-        void Answer(params Button[] buttons) // подсвечиваем правильный ответ, если мы ошиблись подсвечиваем неправвильный и паравильный 
+        private async Task Answer(params Button[] buttons) // подсвечиваем правильный ответ, если мы ошиблись подсвечиваем неправвильный и паравильный 
         {
             API.Statistics.Count++;
             ButtonEnable(false);
             if (buttons[0].Text == ViewModel.Database[ViewModel.CurrentNumber].TranslationWord)
             {
-                API.Statistics.Add(ViewModel.Database, ViewModel.CurrentNumber, -Settings.TrueAnswer);
+                await API.Statistics.Add(ViewModel.Database, ViewModel.CurrentNumber, -Settings.TrueAnswer);
                 API.Statistics.True++;
                 buttons[0].Background = GetDrawable(Resource.Drawable.button_true);
             }
             else
             {
-                API.Statistics.Add(ViewModel.Database, ViewModel.CurrentNumber, Settings.FalseAnswer);
+                await API.Statistics.Add(ViewModel.Database, ViewModel.CurrentNumber, Settings.FalseAnswer);
                 API.Statistics.False++;
                 buttons[0].Background = GetDrawable(Resource.Drawable.button_false);
                 int index = Buttons.FindIndex(s => s.Text == ViewModel.Database[ViewModel.CurrentNumber].TranslationWord);
@@ -76,11 +78,11 @@ namespace ReLearn.Droid.Languages
             }
         }
 
-        void Unknown()
+        private async void Unknown()
         {
             API.Statistics.Count++;
             API.Statistics.False++;
-            API.Statistics.Add(ViewModel.Database, ViewModel.CurrentNumber, Settings.NeutralAnswer);
+            await API.Statistics.Add(ViewModel.Database, ViewModel.CurrentNumber, Settings.NeutralAnswer);
             int index =  Buttons.FindIndex(s => s.Text == ViewModel.Database[ViewModel.CurrentNumber].TranslationWord);
             Buttons[index].Background = GetDrawable(Resource.Drawable.button_true);
         }
@@ -89,19 +91,19 @@ namespace ReLearn.Droid.Languages
         public void Button_Speak_Languages_Click(View v) => ViewModel.TextToSpeech.Speak(ViewModel.Word);
 
         [Java.Interop.Export("Button_Languages_1_Click")]
-        public void Button_Languages_1_Click(View v) => Answer(Buttons[0], Buttons[1], Buttons[2], Buttons[3]);
+        public async void Button_Languages_1_Click(View v) => await Answer(Buttons[0], Buttons[1], Buttons[2], Buttons[3]);
 
         [Java.Interop.Export("Button_Languages_2_Click")] 
-        public void Button_Languages_2_Click(View v) => Answer(Buttons[1], Buttons[0], Buttons[2], Buttons[3]);
+        public async void Button_Languages_2_Click(View v) => await Answer(Buttons[1], Buttons[0], Buttons[2], Buttons[3]);
 
         [Java.Interop.Export("Button_Languages_3_Click")] 
-        public void Button_Languages_3_Click(View v) => Answer(Buttons[2], Buttons[0], Buttons[1], Buttons[3]);
+        public async void Button_Languages_3_Click(View v) => await Answer(Buttons[2], Buttons[0], Buttons[1], Buttons[3]);
 
         [Java.Interop.Export("Button_Languages_4_Click")] 
-        public void Button_Languages_4_Click(View v) => Answer(Buttons[3], Buttons[0], Buttons[1], Buttons[2]);
+        public async void Button_Languages_4_Click(View v) => await Answer(Buttons[3], Buttons[0], Buttons[1], Buttons[2]);
 
         [Java.Interop.Export("Button_Languages_Next_Click")]
-        public void Button_Languages_Next_Click(View v)
+        public async void Button_Languages_Next_Click(View v)
         {
             ButtonNext.button.Enabled = false;
             if (ButtonNext.State == StateButton.Unknown)
@@ -121,7 +123,7 @@ namespace ReLearn.Droid.Languages
                 }
                 else
                 {
-                    DBStatistics.Insert(API.Statistics.True, API.Statistics.False, $"{DataBase.TableName}");
+                    await DBStatistics.Insert(API.Statistics.True, API.Statistics.False, $"{DataBase.TableName}");
                     API.Statistics.Delete();
                     ViewModel.ToStatistic.Execute();
                     Finish();

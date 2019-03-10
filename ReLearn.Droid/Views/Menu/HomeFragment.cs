@@ -21,6 +21,7 @@ namespace ReLearn.Droid.Views.Menu
             inflater.Inflate(Resource.Menu.settings, menu);
             base.OnCreateOptionsMenu(menu, inflater);
         }
+
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
             MenuFragment.NavigationView.Menu.FindItem(Resource.Id.study).SetChecked(false);

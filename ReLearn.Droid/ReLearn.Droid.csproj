@@ -65,6 +65,7 @@
     <Compile Include="Statistics\BaseStatistics.cs" />
     <Compile Include="Statistics\DrawChart.cs" />
     <Compile Include="Statistics\DrawStatistics.cs" />
+    <Compile Include="Views\Facade\MvxAppCompatActivityBlitzPoll.cs" />
     <Compile Include="Views\Menu\AddFragment.cs" />
     <Compile Include="Views\Menu\BaseFragment.cs" />
     <Compile Include="Views\Menu\FeedbackFragment.cs" />
@@ -2926,6 +2927,7 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\background_navigation.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
     Other similar extension points exist, see Microsoft.Common.targets.

@@ -82,7 +82,7 @@ namespace ReLearn.Droid.Views.Menu
                 this.isHomeAsUp = isHomeAsUp;
                 ValueAnimator anim = isHomeAsUp ? ValueAnimator.OfFloat(0, 1) : ValueAnimator.OfFloat(1, 0);
                 anim.SetDuration(300);
-                anim.Update += (object sender, ValueAnimator.AnimatorUpdateEventArgs e) =>
+                anim.Update += async(object sender, ValueAnimator.AnimatorUpdateEventArgs e) =>
                 {
                     var value = (float)anim.AnimatedValue;
                     _drawerToggle.DrawerArrowDrawable.Progress = value;
