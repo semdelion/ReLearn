@@ -66,6 +66,7 @@
     <Compile Include="Statistics\DrawChart.cs" />
     <Compile Include="Statistics\DrawStatistics.cs" />
     <Compile Include="Views\Facade\MvxAppCompatActivityBlitzPoll.cs" />
+    <Compile Include="Views\Facade\MvxAppCompatActivityRepeat.cs" />
     <Compile Include="Views\Menu\AddFragment.cs" />
     <Compile Include="Views\Menu\BaseFragment.cs" />
     <Compile Include="Views\Menu\FeedbackFragment.cs" />
@@ -77,7 +78,6 @@
     <Compile Include="Views\Images\ViewDictionaryFragment.cs" />
     <Compile Include="Views\Languages\ViewDictionaryFragment.cs" />
     <Compile Include="Helpers\GetString.cs" />
-    <Compile Include="Helpers\ButtonNext.cs" />
     <Compile Include="Helpers\Colors.cs" />
     <Compile Include="Helpers\Database.cs" />
     <Compile Include="LinkerPleaseInclude.cs" />

@@ -53,6 +53,7 @@ namespace ReLearn.Droid.Views.Facade
             }
             e.Handled = handled;
         }
+
         public abstract Task Answer(bool UserAnswer);
     }
 }

@@ -85,11 +85,11 @@ namespace ReLearn.Droid.Views.Images
 
         public List<DatabaseImages> SearchWithGetTypeField(string nameField, Android.Support.V7.Widget.SearchView.QueryTextChangeEventArgs e)
         {
-            List<DatabaseImages> FD = new List<DatabaseImages>();
+            List<DatabaseImages> database = new List<DatabaseImages>();
             foreach (var image in ViewModel.DataBase)
                 if (image.GetType().GetProperty(nameField).GetValue(image, null).ToString().Substring(0, ((e.NewText.Length > image.GetType().GetProperty(nameField).GetValue(image, null).ToString().Length) ? 0 : e.NewText.Length)) == e.NewText)
-                    FD.Add(image);
-            return FD;
+                    database.Add(image);
+            return database;
         }
 
         public void SortNamesImages()

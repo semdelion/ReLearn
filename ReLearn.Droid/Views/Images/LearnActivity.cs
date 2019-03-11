@@ -18,18 +18,18 @@ namespace ReLearn.Droid.Images
     public class LearnActivity : MvxAppCompatActivity<LearnViewModel>
     {
         [Java.Interop.Export("Button_Images_Learn_NotRepeat_Click")]
-        public void Button_Images_Learn_NotRepeat_Click(View v)
+        public async void Button_Images_Learn_NotRepeat_Click(View v)
         {
-            DatabaseImages.UpdateLearningNotRepeat(ViewModel.ImageName);
+            await DatabaseImages.UpdateLearningNotRepeat(ViewModel.ImageName);
             Button_Images_Learn_Next_Click(null);
         }
 
         [Java.Interop.Export("Button_Images_Learn_Next_Click")]
-        public void Button_Images_Learn_Next_Click(View v)
+        public async void Button_Images_Learn_Next_Click(View v)
         {
             if (ViewModel.Count < ViewModel.Database.Count)
             {
-                DatabaseImages.UpdateLearningNext(ViewModel.Database[ViewModel.Count].Image_name);
+                await DatabaseImages.UpdateLearningNext(ViewModel.Database[ViewModel.Count].Image_name);
                 using (var image = BitmapFactory.DecodeStream(Application.Context.Assets.Open( $"Image{DataBase.TableName}/{ViewModel.Database[ViewModel.Count].Image_name}.png")))
                 using (var ImageViewBox = BitmapHelper.GetRoundedCornerBitmap(image, PixelConverter.DpToPX(5)))
                     FindViewById<ImageView>(Resource.Id.imageView_Images_learn).SetImageBitmap(ImageViewBox);

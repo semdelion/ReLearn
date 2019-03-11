@@ -11,6 +11,7 @@ using ReLearn.API.Database;
 using ReLearn.Core.Helpers;
 using ReLearn.Core.ViewModels.Images;
 using ReLearn.Droid.Helpers;
+using ReLearn.Droid.Views.Facade;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -18,37 +19,16 @@ using System.Threading.Tasks;
 namespace ReLearn.Droid.Images
 {
     [Activity(Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
-    public class RepeatActivity : MvxAppCompatActivity<RepeatViewModel>
+    public class RepeatActivity : MvxAppCompatActivityRepeat<RepeatViewModel>
     {
-        private List<Button> Buttons { get; set; }
-        private ButtonNext ButtonNext { get; set; }
-        
-        void ButtonEnable(bool state)
-        {
-            foreach (var button in Buttons)
-                button.Enabled = state;
-            if (state)
-            {
-                ButtonNext.State = StateButton.Unknown;
-                ButtonNext.button.Text = GetString(Resource.String.Unknown);
-                foreach (var button in Buttons)
-                    button.Background = GetDrawable(Resource.Drawable.button_style_standard);
-            }
-            else
-            {
-                ButtonNext.State = StateButton.Next;
-                ButtonNext.button.Text = GetString(Resource.String.Next);
-            }
-        }
-
-        void RandomButton(params Button[] buttons)   //загружаем варианты ответа в текст кнопок
+        protected override void RandomButton(params Button[] buttons)   //загружаем варианты ответа в текст кнопок
         {
             RandomNumbers.RandomFourNumbers(ViewModel.CurrentNumber, ViewModel.Database.Count, out List<int> random_numbers);
             for (int i = 0; i < buttons.Length; i++)
                 buttons[i].Text = ViewModel.Database[random_numbers[i]].ImageName;
         }
 
-        void NextTest() //new test
+        protected override void NextTest() //new test
         {
             using (Bitmap bitmap = BitmapFactory.DecodeStream(Application.Context.Assets.Open(
                 $"Image{DataBase.TableName}/{ViewModel.Database[ViewModel.CurrentNumber].Image_name}.png")))
@@ -63,7 +43,7 @@ namespace ReLearn.Droid.Images
             RandomButton(Buttons[random_numbers[0]], Buttons[random_numbers[1]], Buttons[random_numbers[2]], Buttons[random_numbers[3]]);
         }
 
-        private async Task Answer(params Button[] buttons) // подсвечиваем правильный ответ, если мы ошиблись подсвечиваем неправвильный и паравильный 
+        protected override async Task Answer(params Button[] buttons) // подсвечиваем правильный ответ, если мы ошиблись подсвечиваем неправвильный и паравильный 
         {
             API.Statistics.Count++;
             ButtonEnable(false);
@@ -83,7 +63,7 @@ namespace ReLearn.Droid.Images
             }
         }
 
-        private async void Unknown()
+        protected override async Task Unknown()
         {
             API.Statistics.Count++;
             API.Statistics.False++;
@@ -112,7 +92,7 @@ namespace ReLearn.Droid.Images
             {
                 ButtonNext.State = StateButton.Next;
                 ButtonEnable(false);
-                Unknown();
+                await Unknown();
             }
             else
             {
@@ -143,9 +123,7 @@ namespace ReLearn.Droid.Images
             SetSupportActionBar(toolbarMain);
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
 
-            DisplayMetrics displayMetrics = new DisplayMetrics();
-            WindowManager.DefaultDisplay.GetRealMetrics(displayMetrics);
-            using (var background = BitmapHelper.GetBackgroung(Resources, displayMetrics.WidthPixels - PixelConverter.DpToPX(20), PixelConverter.DpToPX(190)))
+            using (var background = BitmapHelper.GetBackgroung(Resources, _displayWidth - PixelConverter.DpToPX(20), PixelConverter.DpToPX(190)))
                 FindViewById<LinearLayout>(Resource.Id.repeat_background).Background = background;
 
             Buttons = new List<Button>{

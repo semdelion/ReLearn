@@ -10,6 +10,7 @@ using ReLearn.Core.Helpers;
 using ReLearn.Core.ViewModels.Languages;
 using ReLearn.Droid.Helpers;
 using ReLearn.Droid.Services;
+using ReLearn.Droid.Views.Facade;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -17,39 +18,20 @@ using System.Threading.Tasks;
 namespace ReLearn.Droid.Languages
 {
     [Activity(Label = "", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
-    public class RepeatActivity : MvxAppCompatActivity<RepeatViewModel>
+    public class RepeatActivity : MvxAppCompatActivityRepeat<RepeatViewModel>
     {
-        List<Button> Buttons { get; set; }
-        ButtonNext ButtonNext { get; set; }
-
-        void ButtonEnable(bool state)
-        {
-            foreach (var button in Buttons) button.Enabled = state;
-            if (state)
-            {
-                ButtonNext.State = StateButton.Unknown;
-                ButtonNext.button.Text = GetString(Resource.String.Unknown);
-                foreach (var button in Buttons) button.Background = GetDrawable(Resource.Drawable.button_style_standard);
-            }
-            else
-            {
-                ButtonNext.State = StateButton.Next;
-                ButtonNext.button.Text = GetString(Resource.String.Next);
-            }
-        }
-
-        void RandomButton(params Button[] buttons)   //загружаем варианты ответа в текст кнопок
+        protected override void RandomButton(params Button[] buttons)   //загружаем варианты ответа в текст кнопок
         {
             RandomNumbers.RandomFourNumbers(ViewModel.CurrentNumber, ViewModel.Database.Count, out List<int> random_numbers);
             for (int i = 0; i < buttons.Length; i++)
                 buttons[i].Text = ViewModel.Database[random_numbers[i]].TranslationWord;
         }
 
-        void NextWord()
+        protected override void NextTest()
         {
             ViewModel.Word = ViewModel.Database[ViewModel.CurrentNumber].Word;
             ViewModel.Text = $"{ ViewModel.Database[ViewModel.CurrentNumber].Word}" +
-                $"{(ViewModel.Database[ViewModel.CurrentNumber].Transcription==null ? "" : $"\n{ ViewModel.Database[ViewModel.CurrentNumber].Transcription}")}";
+                $"{(ViewModel.Database[ViewModel.CurrentNumber].Transcription == null ? "" : $"\n{ ViewModel.Database[ViewModel.CurrentNumber].Transcription}")}";
             const int four = 4;
             int first = new Random(unchecked((int)(DateTime.Now.Ticks))).Next(four);
             List<int> randomNumbers = new List<int> { first, 0, 0, 0 };
@@ -58,7 +40,7 @@ namespace ReLearn.Droid.Languages
            RandomButton(Buttons[randomNumbers[0]], Buttons[randomNumbers[1]], Buttons[randomNumbers[2]], Buttons[randomNumbers[3]]);        
         }
 
-        private async Task Answer(params Button[] buttons) // подсвечиваем правильный ответ, если мы ошиблись подсвечиваем неправвильный и паравильный 
+        protected override async Task Answer(params Button[] buttons) // подсвечиваем правильный ответ, если мы ошиблись подсвечиваем неправвильный и паравильный 
         {
             API.Statistics.Count++;
             ButtonEnable(false);
@@ -78,7 +60,7 @@ namespace ReLearn.Droid.Languages
             }
         }
 
-        private async void Unknown()
+        protected override async Task Unknown()
         {
             API.Statistics.Count++;
             API.Statistics.False++;
@@ -117,7 +99,7 @@ namespace ReLearn.Droid.Languages
                 if (API.Statistics.Count < Settings.NumberOfRepeatsLanguage)
                 {
                     ViewModel.CurrentNumber = new Random(unchecked((int)(DateTime.Now.Ticks))).Next(ViewModel.Database.Count);
-                    NextWord();
+                    NextTest();
                     ButtonEnable(true);
                     ViewModel.TitleCount = $"{GetString(Resource.String.Repeated)} {API.Statistics.Count + 1}/{Settings.NumberOfRepeatsLanguage}";
                 }
@@ -139,11 +121,9 @@ namespace ReLearn.Droid.Languages
             var toolbarMain = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar_languages_repeat);
            
             SetSupportActionBar(toolbarMain);
-            SupportActionBar.SetDisplayHomeAsUpEnabled(true); // отображаем кнопку домой
+            SupportActionBar.SetDisplayHomeAsUpEnabled(true);
 
-            DisplayMetrics displayMetrics = new DisplayMetrics();
-            WindowManager.DefaultDisplay.GetRealMetrics(displayMetrics);
-            using (var background = BitmapHelper.GetBackgroung(Resources, displayMetrics.WidthPixels - PixelConverter.DpToPX(70), PixelConverter.DpToPX(190)))
+            using (var background = BitmapHelper.GetBackgroung(Resources, _displayWidth - PixelConverter.DpToPX(70), PixelConverter.DpToPX(190)))
                 FindViewById<TextView>(Resource.Id.textView_Eng_Word).Background = background;
 
             Buttons = new List<Button>{
