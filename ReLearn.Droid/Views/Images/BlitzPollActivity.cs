@@ -83,35 +83,6 @@ namespace ReLearn.Droid.Images
             ViewModel.TitleCount = $"{GetString(Resource.String.Repeated)} {ViewModel.True + ViewModel.False + 1 }";
         }
 
-        void TimerStart()
-        {
-            ViewModel.Timer = new Timer { Interval = 100, Enabled = true };
-            ViewModel.Timer.Elapsed += TimerElapsed;
-            ViewModel.Timer.Start();
-        }
-
-        private void TimerElapsed(object sender, ElapsedEventArgs e)
-        {
-            RunOnUiThread(async () =>
-            {
-                if (ViewModel.Time > 0)
-                {
-                    ViewModel.Time--;
-                    ViewModel.TimerText = $"{ViewModel.Time / 10}:{ViewModel.Time % 10}0";
-                    if (ViewModel.Time == 50)
-                        FindViewById<TextView>(Resource.Id.textView_Timer_Images).SetTextColor(Colors.Red);
-                }
-                else
-                {
-                    await DBStatistics.Insert(ViewModel.True, ViewModel.False, $"{DataBase.TableName}");
-                    ViewModel.ToStatistic.Execute();
-                    ViewModel.Cancel();
-                    Finish();
-                }
-            });
-        }
-
-
         [Java.Interop.Export("Button_Images_No_Click")]
         public async void Button_Images_No_Click(View v) => await Answer(false);
         
@@ -138,12 +109,12 @@ namespace ReLearn.Droid.Images
             ViewCurrent = GetLayout();
             FindViewById<RelativeLayout>(Resource.Id.RelativeLayoutImagesBlitzPoll).AddView(ViewCurrent, 1);
             ViewModel.TitleCount = $"{GetString(Resource.String.Repeated)} {1}";
-            TimerStart();
+            ViewModel.TimerStart();
         }
 
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
-            ViewModel.Cancel();
+            ViewModel.Timer.Dispose();
             Finish();
             return base.OnOptionsItemSelected(item);
         }
@@ -151,7 +122,7 @@ namespace ReLearn.Droid.Images
         public override void OnBackPressed()
         {
             base.OnBackPressed();
-            ViewModel.Cancel();
+            ViewModel.Timer.Dispose();
             Finish();
         }
     }

@@ -1,7 +1,9 @@
 ﻿using MvvmCross.Commands;
 using MvvmCross.Navigation;
+using MvvmCross.UI;
 using MvvmCross.ViewModels;
 using ReLearn.API;
+using ReLearn.API.Database;
 using ReLearn.API.Database.Interface;
 using ReLearn.Core.ViewModels.MainMenu.Statistics;
 using System;
@@ -42,6 +44,12 @@ namespace ReLearn.Core.ViewModels.Facade
             get => _timerText;
             set => SetProperty(ref _timerText, value);
         }
+        protected MvxColor _currentColor = MvxColor.ParseHexString("#d7f8fe");
+        public MvxColor CurrentColor
+        {
+            get => _currentColor;
+            set => SetProperty(ref _currentColor, value);
+        } 
         #endregion
 
         #region Services
@@ -64,22 +72,31 @@ namespace ReLearn.Core.ViewModels.Facade
         #endregion
 
         #region Public
-        public void Cancel() => Timer.Dispose();
         #endregion
 
+        public void TimerStart()
+        {
+            Timer = new Timer { Interval = 100, Enabled = true };
+            Timer.Elapsed += TimerElapsed;
+            Timer.Start();
+        }
 
-
-
-
-
-
-
-
-
-
-
-
-
-       
+        private async void TimerElapsed(object sender, ElapsedEventArgs e) 
+        {
+            if (Time > 0)
+            {
+                Time--;
+                TimerText = $"{Time / 10}:{Time % 10}0";
+                if (Time == 50)
+                    CurrentColor= MvxColor.ParseHexString("#ef4049");
+            }
+            else
+            {
+                await DBStatistics.Insert(True, False, $"{DataBase.TableName}");
+                await NavigateToStatistic();
+                Timer.Dispose();
+                await NavigationService.Close(this);
+            }
+        }
     }
 }

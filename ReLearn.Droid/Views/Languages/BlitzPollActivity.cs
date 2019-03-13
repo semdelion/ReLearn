@@ -63,34 +63,6 @@ namespace ReLearn.Droid.Languages
             ViewModel.TitleCount = $"{GetString(Resource.String.Repeated)} { ViewModel.True + ViewModel.False + 1 }";
         }
 
-        void TimerStart()
-        {
-            ViewModel.Timer = new Timer { Interval = 100, Enabled = true };
-            ViewModel.Timer.Elapsed += TimerElapsed;
-            ViewModel.Timer.Start();
-        }
-
-        private void TimerElapsed(object sender, ElapsedEventArgs e)
-        {
-            RunOnUiThread(async () =>
-            {
-                if (ViewModel.Time > 0)
-                {
-                    ViewModel.Time--;
-                    ViewModel.TimerText = $"{ ViewModel.Time / 10}:{ ViewModel.Time % 10}0";
-                    if (ViewModel.Time == 50)
-                        FindViewById<TextView>(Resource.Id.textView_Timer_language).SetTextColor(Colors.Red);
-                }
-                else
-                {
-                    await DBStatistics.Insert(ViewModel.True, ViewModel.False, $"{DataBase.TableName}");
-                    ViewModel.ToStatistic.Execute();
-                    ViewModel.Timer.Dispose();
-                    Finish();
-                }
-            });
-        }
-
         [Java.Interop.Export("Button_Languages_No_Click")]
         public async void Button_Languages_No_Click(View v) => await Answer(false);
         
@@ -117,7 +89,7 @@ namespace ReLearn.Droid.Languages
             ViewCurrent = GetTextView();
             FindViewById<RelativeLayout>(Resource.Id.RelativeLayoutLanguagesBlitzPoll).AddView(ViewCurrent, 1);
             ViewModel.TitleCount = $"{GetString(Resource.String.Repeated)} {1}";
-            TimerStart();
+            ViewModel.TimerStart();
         }
 
         public override bool OnOptionsItemSelected(IMenuItem item)
