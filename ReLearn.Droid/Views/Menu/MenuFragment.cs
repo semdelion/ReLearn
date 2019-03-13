@@ -48,7 +48,7 @@ namespace ReLearn.Droid.Views.Menu
         {
             ((MainActivity)Activity).DrawerLayout.CloseDrawers();
 
-            Task.Delay(TimeSpan.FromMilliseconds(250));
+            await Task.Delay(TimeSpan.FromMilliseconds(250));
 
             switch (itemId)
             {

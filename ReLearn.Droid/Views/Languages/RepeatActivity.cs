@@ -92,7 +92,7 @@ namespace ReLearn.Droid.Languages
             {
                 ButtonNext.State = StateButton.Next;
                 ButtonEnable(false);
-                Unknown();
+                await Unknown();
             }
             else
             {

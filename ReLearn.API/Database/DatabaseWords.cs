@@ -1,4 +1,5 @@
-﻿using SQLite;
+﻿using ReLearn.API.Database.Interface;
+using SQLite;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace ReLearn.API.Database
         Nature
     }
 
-    public class DatabaseWords //Класс для считывания базы данных English
+    public class DatabaseWords : IDatabase
     {
         [PrimaryKey, AutoIncrement, Column("_id")]
         public int Id { get; set; }

@@ -47,7 +47,7 @@
 				android:layout_marginRight	="5.0dp"
 				android:layout_marginLeft	="5.0dp"/>
 			<TextView
-				local:MvxBind			    ="Text ImageName"
+				local:MvxBind			    ="Text Text"
 				android:textColor			="@color/text_white"
 				android:text				="Text"
 				android:textSize			="25dp"
