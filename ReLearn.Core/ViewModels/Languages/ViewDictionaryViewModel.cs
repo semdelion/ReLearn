@@ -1,5 +1,7 @@
 ﻿using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
+using Plugin.Settings;
+using ReLearn.API;
 using ReLearn.API.Database;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -16,6 +18,12 @@ namespace ReLearn.Core.ViewModels.Languages
 
         #region Properties
         public List<DatabaseWords> Database { get; private set; }
+
+        public bool HideStudied
+        {
+            get => CrossSettings.Current.GetValueOrDefault($"{DBSettings.HideStudied}", true);
+            set => CrossSettings.Current.AddOrUpdateValue($"{DBSettings.HideStudied}", value);
+        }
         #endregion
 
         #region Services

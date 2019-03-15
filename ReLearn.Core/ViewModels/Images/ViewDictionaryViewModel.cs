@@ -18,6 +18,12 @@ namespace ReLearn.Core.ViewModels.Images
 
         #region Properties
         public List<DatabaseImages> DataBase { get; private set; }
+
+        public bool HideStudied
+        {
+            get => CrossSettings.Current.GetValueOrDefault($"{DBSettings.HideStudied}", true);
+            set => CrossSettings.Current.AddOrUpdateValue($"{DBSettings.HideStudied}", value);
+        }
         #endregion
 
         #region Services
