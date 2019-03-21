@@ -5,12 +5,13 @@ using MvvmCross.ViewModels;
 using ReLearn.API.Database;
 using ReLearn.Core.Localization;
 using ReLearn.Core.Services;
+using ReLearn.Core.ViewModels.Facade;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace ReLearn.Core.ViewModels.Languages
 {
-    public class LearnViewModel : MvxViewModel<List<DatabaseWords>>
+    public class LearnViewModel : MvxLearnViewModel<List<DatabaseWords>>
     {
         #region Fields
         #endregion
@@ -28,29 +29,17 @@ namespace ReLearn.Core.ViewModels.Languages
 
         #region Properties
         public List<DatabaseWords> Database { get; set; }
-        public int Count { get; set; }
         public bool VoiceEnable { get; set; } = true;
 
         public string Word { get; set; }
-        private string _text;
-        public string Text
-        {
-            get => _text;
-            set => SetProperty(ref _text, value);
-        }
         #endregion
 
         #region Services
-        protected IMvxNavigationService NavigationService { get; }
         public ITextToSpeech TextToSpeech { get; }
         #endregion
 
         #region Constructors
-        public LearnViewModel(IMvxNavigationService navigationService, ITextToSpeech textToSpeech)
-        {
-            NavigationService = navigationService;
-            TextToSpeech = textToSpeech;
-        }
+        public LearnViewModel(ITextToSpeech textToSpeech) => TextToSpeech = textToSpeech;
         #endregion
 
         #region Private

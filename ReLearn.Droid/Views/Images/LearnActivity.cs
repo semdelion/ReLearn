@@ -20,7 +20,7 @@ namespace ReLearn.Droid.Images
         [Java.Interop.Export("Button_Images_Learn_NotRepeat_Click")]
         public async void Button_Images_Learn_NotRepeat_Click(View v)
         {
-            await DatabaseImages.UpdateLearningNotRepeat(ViewModel.ImageName);
+            await DatabaseImages.UpdateLearningNotRepeat(ViewModel.Text);
             Button_Images_Learn_Next_Click(null);
         }
 
@@ -33,7 +33,7 @@ namespace ReLearn.Droid.Images
                 using (var image = BitmapFactory.DecodeStream(Application.Context.Assets.Open( $"Image{DataBase.TableName}/{ViewModel.Database[ViewModel.Count].Image_name}.png")))
                 using (var ImageViewBox = BitmapHelper.GetRoundedCornerBitmap(image, PixelConverter.DpToPX(5)))
                     FindViewById<ImageView>(Resource.Id.imageView_Images_learn).SetImageBitmap(ImageViewBox);
-                    ViewModel.ImageName = ViewModel.Database[ViewModel.Count++].ImageName;
+                    ViewModel.Text = ViewModel.Database[ViewModel.Count++].ImageName;
             }
             else
                 Toast.MakeText(this, GetString(Resource.String.DictionaryOver), ToastLength.Short).Show();

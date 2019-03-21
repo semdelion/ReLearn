@@ -1,4 +1,5 @@
-﻿using SQLite;
+﻿using ReLearn.API.Database.Interface;
+using SQLite;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -11,7 +12,7 @@ namespace ReLearn.API.Database
         Films
     }
 
-    public class DatabaseImages
+    public class DatabaseImages : IDatabase
     {
         [PrimaryKey, AutoIncrement, Column("_id")]
         public int Id { get; set; }
