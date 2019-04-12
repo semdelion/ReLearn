@@ -6,23 +6,23 @@ namespace ReLearn.Core.Helpers
 {
     public static class RandomNumbers
     {
-        public static void RandomFourNumbers(int NotI, int count, out List<int> random_numbers)
+        public static void RandomFourNumbers(int notI, int count, out List<int> randomNumbers)
         {
             const int four = 4;
             Random rand = new Random(unchecked((int)(DateTime.Now.Ticks)));
-            random_numbers = new List<int> { NotI, 0, 0, 0 };
+            randomNumbers = new List<int> { notI, 0, 0, 0 };
             if (count > four)
             {
                 var array = Enumerable.Range(0, count).ToList();
                 for (int i = 1; i < four; i++)
                 {
-                    array.Remove(random_numbers[i - 1]);
-                    random_numbers[i] = array[rand.Next(array.Count)];
+                    array.Remove(randomNumbers[i - 1]);
+                    randomNumbers[i] = array[rand.Next(array.Count)];
                 }
             }
             else
                 for (int i = 1; i < four; i++)
-                    random_numbers[i] = (NotI + i) % count;
+                    randomNumbers[i] = (notI + i) % count;
         }
     }
 }

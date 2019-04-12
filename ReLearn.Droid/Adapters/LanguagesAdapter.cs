@@ -9,29 +9,29 @@ namespace ReLearn.Droid.Resources
 {
     public class CustomAdapterWord : BaseAdapter
     {
-        private Activity activity;
-        private List<DatabaseWords> list;
+        private Activity CurrentActivity { get; set; }
+        private List<DatabaseWords> List { get; set; }
 
         public CustomAdapterWord(Activity activity, List<DatabaseWords> list)
         {
-            this.activity = activity;
-            this.list = list;
+            this.CurrentActivity = activity;
+            this.List = list;
         }
 
-        public override int Count => list.Count;
+        public override int Count => List.Count;
         
-        public override Java.Lang.Object GetItem(int position) => list[position].Word;
+        public override Java.Lang.Object GetItem(int position) => List[position].Word;
         
-        public override long GetItemId(int position) => list[position].NumberLearn;
+        public override long GetItemId(int position) => List[position].NumberLearn;
 
         public override View GetView(int position, View convertView, ViewGroup parent)
         {
-            var view = convertView ?? activity.LayoutInflater.Inflate(Resource.Layout.item_languages_view_dictionary, parent, false);
-            var TView = view.FindViewById<TextView>(Resource.Id.item_view_dictionary);
+            var view = convertView ?? CurrentActivity.LayoutInflater.Inflate(Resource.Layout.item_languages_view_dictionary, parent, false);
+            var textView = view.FindViewById<TextView>(Resource.Id.item_view_dictionary);
 
-            BackgroundConstructor.SetColorForItems(list[position].NumberLearn, TView);
+            BackgroundConstructor.SetColorForItems(List[position].NumberLearn, textView);
          
-            TView.Text = $"{list[position].Word}  -  {list[position].TranslationWord}";
+            textView.Text = $"{List[position].Word}  -  {List[position].TranslationWord}";
             return view;
         }
     }

@@ -22,18 +22,18 @@ namespace ReLearn.API.Database
 
         public DBStatistics() => DateRecurrence = DateTime.Today;
 
-        public static async Task Insert(int True, int False, string TableName) =>
+        public static async Task Insert(int @true, int @false, string tableName) =>
             await DataBase.Statistics.ExecuteAsync(
-                $"INSERT INTO {TableName}_Statistics (True, False, DateOfTesting) VALUES (?, ?, ?)", True, False, DateTime.Now);
+                $"INSERT INTO {tableName}_Statistics (True, False, DateOfTesting) VALUES (?, ?, ?)", @true, @false, DateTime.Now);
 
-        public static async Task<List<DBStatistics>> GetImages(string TableName) => 
-            await DataBase.Images.QueryAsync<DBStatistics>($"SELECT NumberLearn, DateRecurrence FROM {TableName}");
+        public static async Task<List<DBStatistics>> GetImages(string tableName) => 
+            await DataBase.Images.QueryAsync<DBStatistics>($"SELECT NumberLearn, DateRecurrence FROM {tableName}");
 
-        public static async Task<List<DBStatistics>> GetWords(string TableName) => 
-            await DataBase.Languages.QueryAsync<DBStatistics>($"SELECT NumberLearn, DateRecurrence FROM {TableName}");
+        public static async Task<List<DBStatistics>> GetWords(string tableName) => 
+            await DataBase.Languages.QueryAsync<DBStatistics>($"SELECT NumberLearn, DateRecurrence FROM {tableName}");
 
-        public static async Task<List<DatabaseStatistics>> GetData(string TableName) => 
-            await DataBase.Statistics.QueryAsync<DatabaseStatistics>($"SELECT * FROM {TableName}_Statistics");
+        public static async Task<List<DatabaseStatistics>> GetData(string tableName) => 
+            await DataBase.Statistics.QueryAsync<DatabaseStatistics>($"SELECT * FROM {tableName}_Statistics");
 
         public static async Task<float> AverageTrueToday(string tableName) =>
              await AveragePercentTrue(await DataBase.Statistics.QueryAsync<DatabaseStatistics>(

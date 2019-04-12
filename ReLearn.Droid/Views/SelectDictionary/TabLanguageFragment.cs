@@ -18,7 +18,7 @@ namespace ReLearn.Droid.Views.SelectDictionary
         {
             var width = Resources.DisplayMetrics.WidthPixels / 100f;
             int count = database.Count;
-            LinearLayout DictionarylinearLayout = new LinearLayout(view.Context)
+            LinearLayout dictionarylinearLayout = new LinearLayout(view.Context)
             {
                 LayoutParameters = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MatchParent, ViewGroup.LayoutParams.WrapContent)
             };
@@ -32,51 +32,51 @@ namespace ReLearn.Droid.Views.SelectDictionary
             ImageDictionary.SetImageBitmap(SelectDictionaryFragment.Dictionaries.DictionariesBitmap[SelectDictionaryFragment.Dictionaries.DictionariesBitmap.Count - 1]);
             ImageDictionary.Click += SelectDictionaryFragment.SelectDictionaryClick;
 
-            TextView Name = new TextView(view.Context)
+            TextView name = new TextView(view.Context)
             {
                 Text = Helpers.GetString.GetResourceString(nameDictionary, this.Resources),
                 TextSize = 20//(int)(3 * width)
             };
-            TextView CountWords = new TextView(view.Context)
+            TextView countWords = new TextView(view.Context)
             {
                 Text = $"{GetString(Resource.String.DatatypeWords)} {count}, {GetString(Resource.String.StudiedAt)} " +
                 $"{(int)(100 - API.Statistics.GetAverageNumberLearn(database) * 100f / Settings.StandardNumberOfRepeats)}%",
                 TextSize = 14//(int)(2.1f * width)
             };
-            TextView Description = new TextView(view.Context)
+            TextView description = new TextView(view.Context)
             {
                 Text = Helpers.GetString.GetResourceString($"{nameDictionary}Description", this.Resources),
                 TextSize = 11//(int)(1.7f * width)
             };
-            LinearLayout TextlinearLayout = new LinearLayout(view.Context)
+            LinearLayout rextlinearLayout = new LinearLayout(view.Context)
             {
                 LayoutParameters = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WrapContent, ViewGroup.LayoutParams.WrapContent),
                 Orientation = Orientation.Vertical
             };
 
-            Name.LayoutParameters = CountWords.LayoutParameters = Description.LayoutParameters =
+            name.LayoutParameters = countWords.LayoutParameters = description.LayoutParameters =
                 new LinearLayout.LayoutParams(52 * Resources.DisplayMetrics.WidthPixels / 100, ViewGroup.LayoutParams.WrapContent);
-            Name.SetTextColor(Colors.White);
-            CountWords.SetTextColor(Colors.HintWhite);
-            Description.SetTextColor(Colors.HintWhite);
-            TextlinearLayout.AddView(Name);
-            TextlinearLayout.AddView(CountWords);
-            TextlinearLayout.AddView(Description);
-            TextlinearLayout.SetPadding(flag == GravityFlags.Left ? 0 : (int)(5 * width), 0, flag == GravityFlags.Right ? 0 : (int)(5 * width), 0);
+            name.SetTextColor(Colors.White);
+            countWords.SetTextColor(Colors.HintWhite);
+            description.SetTextColor(Colors.HintWhite);
+            rextlinearLayout.AddView(name);
+            rextlinearLayout.AddView(countWords);
+            rextlinearLayout.AddView(description);
+            rextlinearLayout.SetPadding(flag == GravityFlags.Left ? 0 : (int)(5 * width), 0, flag == GravityFlags.Right ? 0 : (int)(5 * width), 0);
 
-            DictionarylinearLayout.AddView(flag == GravityFlags.Left ? (View)ImageDictionary : TextlinearLayout);
-            DictionarylinearLayout.AddView(flag == GravityFlags.Right ? (View)ImageDictionary : TextlinearLayout);
+            dictionarylinearLayout.AddView(flag == GravityFlags.Left ? (View)ImageDictionary : rextlinearLayout);
+            dictionarylinearLayout.AddView(flag == GravityFlags.Right ? (View)ImageDictionary : rextlinearLayout);
 
-            view.FindViewById<LinearLayout>(Resource.Id.LanguageSelectDictionary).AddView(DictionarylinearLayout);
+            view.FindViewById<LinearLayout>(Resource.Id.LanguageSelectDictionary).AddView(dictionarylinearLayout);
             if (separate)
             {
-                View SeparateView = new View(view.Context)
+                View separateView = new View(view.Context)
                 {
                     LayoutParameters = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WrapContent, (int)(width / 2f))
                     { TopMargin = (int)(2 * width), BottomMargin = (int)(2 * width) },
                     Background = view.Context.GetDrawable(Resource.Drawable.separator)
                 };
-                view.FindViewById<LinearLayout>(Resource.Id.LanguageSelectDictionary).AddView(SeparateView);
+                view.FindViewById<LinearLayout>(Resource.Id.LanguageSelectDictionary).AddView(separateView);
             }
             SelectDictionaryFragment.Dictionaries.DictionariesView.Add(ImageDictionary);
 

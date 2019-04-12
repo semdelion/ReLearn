@@ -15,8 +15,8 @@ namespace ReLearn.Droid.Views.Statistics
 {
     public class TabGeneralFragment : MvxFragment<GeneralStatisticsViewModel>, ViewTreeObserver.IOnPreDrawListener
     {
-        public LinearLayout viewPieChart;
-        public LinearLayout viewDegreeOfStudy;
+        public LinearLayout ViewPieChart;
+        public LinearLayout ViewDegreeOfStudy;
 
         private void CreateViewAnswersRatio(LinearLayout viewLastStat)
         {
@@ -28,8 +28,7 @@ namespace ReLearn.Droid.Views.Statistics
                 {
                     var Stat = new DrawStatistics(canvas);
                     Stat.DrawBackground(6, 6, Paints.Background, Paints.Border, Paints.Gradient);
-                    int numberTrue = ViewModel.Database.Sum(r => r.True),
-                    numberFalse = ViewModel.Database.Sum(r => r.False);
+                    int numberTrue = ViewModel.Database.Sum(r => r.True), numberFalse = ViewModel.Database.Sum(r => r.False);
                     Stat.ProgressLine(numberTrue, (numberFalse + numberTrue) == 0 ? 1 : numberFalse,
                         StatisticsFragment.LightColor, StatisticsFragment.DarkColor, Paints.BackgroundLine);
                     using (var background = new BitmapDrawable(Resources, bitmapLastStat))
@@ -46,10 +45,10 @@ namespace ReLearn.Droid.Views.Statistics
             {
                 using (Canvas canvas = new Canvas(bitmapLastStat))
                 {
-                    var Stat = new DrawStatistics(canvas);
-                    Stat.DrawBackground(6, 6, Paints.Background, Paints.Border, Paints.Gradient);
+                    var stat = new DrawStatistics(canvas);
+                    stat.DrawBackground(6, 6, Paints.Background, Paints.Border, Paints.Gradient);
                     int numberInconvenient = ViewModel.DatabaseStats.Count(r => r.NumberLearn == API.Settings.MaxNumberOfRepeats);
-                    Stat.ProgressLine(numberInconvenient, ViewModel.DatabaseStats.Count - numberInconvenient,
+                    stat.ProgressLine(numberInconvenient, ViewModel.DatabaseStats.Count - numberInconvenient,
                         StatisticsFragment.LightColor, StatisticsFragment.DarkColor, Paints.BackgroundLine);
                     using (var background = new BitmapDrawable(Resources, bitmapLastStat))
                         viewLastStat.Background = background;
@@ -65,10 +64,10 @@ namespace ReLearn.Droid.Views.Statistics
             {
                 using (Canvas canvas = new Canvas(bitmapLastStat))
                 {
-                    var Stat = new DrawStatistics(canvas);
-                    Stat.DrawBackground(6, 6, Paints.Background, Paints.Border, Paints.Gradient);
+                    var stat = new DrawStatistics(canvas);
+                    stat.DrawBackground(6, 6, Paints.Background, Paints.Border, Paints.Gradient);
                     int numberLearned = ViewModel.DatabaseStats.Count(r => r.NumberLearn == 0);
-                    Stat.ProgressLine(numberLearned, ViewModel.DatabaseStats.Count - numberLearned,
+                    stat.ProgressLine(numberLearned, ViewModel.DatabaseStats.Count - numberLearned,
                        StatisticsFragment.LightColor, StatisticsFragment.DarkColor, Paints.BackgroundLine);
                     using (var background = new BitmapDrawable(Resources, bitmapLastStat))
                         viewLastStat.Background = background;
@@ -82,17 +81,17 @@ namespace ReLearn.Droid.Views.Statistics
             {
                 using (Canvas canvas = new Canvas(bitmapLastStat))
                 {
-                    var Stat = new DrawStatistics(canvas);
-                    Stat.DrawBackground(6, 6, Paints.Background, Paints.Border, Paints.Gradient);
+                    var stat = new DrawStatistics(canvas);
+                    stat.DrawBackground(6, 6, Paints.Background, Paints.Border, Paints.Gradient);
                     using (var background = new BitmapDrawable(Resources, bitmapLastStat))
                         viewLastStat.Background = background;
                     using (Bitmap bitmapPieChart = Bitmap.CreateBitmap(viewPieChart.Width, viewPieChart.Height, Bitmap.Config.Argb4444))
                     {
                         using (Canvas canvasChart = new Canvas(bitmapPieChart))
                         {
-                            var StatChart = new DrawStatistics(canvasChart);
+                            var statChart = new DrawStatistics(canvasChart);
                             float avgNumberLearnStat = API.Statistics.GetAverageNumberLearn(ViewModel.DatabaseStats);
-                            StatChart.DrawPieChart(avgNumberLearnStat, API.Settings.StandardNumberOfRepeats, StatisticsFragment.LightColor, StatisticsFragment.DarkColor);
+                            statChart.DrawPieChart(avgNumberLearnStat, API.Settings.StandardNumberOfRepeats, StatisticsFragment.LightColor, StatisticsFragment.DarkColor);
                             using (var background = new BitmapDrawable(Resources, bitmapPieChart))
                                 viewPieChart.Background = background;
                         }
@@ -110,8 +109,8 @@ namespace ReLearn.Droid.Views.Statistics
             {
                 using (Canvas canvas = new Canvas(bitmapLastStat))
                 {
-                    var Stat = new DrawStatistics(canvas);
-                    Stat.DrawBackground(6, 6, Paints.Background, Paints.Border, Paints.Gradient);
+                    var stat = new DrawStatistics(canvas);
+                    stat.DrawBackground(6, 6, Paints.Background, Paints.Border, Paints.Gradient);
                     using (var background = new BitmapDrawable(Resources, bitmapLastStat))
                         viewLastStat.Background = background;
                 }
@@ -129,9 +128,9 @@ namespace ReLearn.Droid.Views.Statistics
             var viewLearnedWords = view.FindViewById<LinearLayout>(Resource.Id.view_learned_words);
             CreateViewLearnedWords(viewLearnedWords);
 
-            viewDegreeOfStudy = view.FindViewById<LinearLayout>(Resource.Id.view_degree_of_study);
-            viewPieChart = view.FindViewById<LinearLayout>(Resource.Id.view_degree_of_study_pie_chart);
-            viewPieChart.ViewTreeObserver.AddOnPreDrawListener(this);
+            ViewDegreeOfStudy = view.FindViewById<LinearLayout>(Resource.Id.view_degree_of_study);
+            ViewPieChart = view.FindViewById<LinearLayout>(Resource.Id.view_degree_of_study_pie_chart);
+            ViewPieChart.ViewTreeObserver.AddOnPreDrawListener(this);
             var viewPercentage = view.FindViewById<LinearLayout>(Resource.Id.view_percentage_of_correct_answers);
             CreateViewPercentage(viewPercentage);
             return view;
@@ -139,7 +138,7 @@ namespace ReLearn.Droid.Views.Statistics
 
         public bool OnPreDraw()
         {
-            CreateViewDegreeOfStudy(viewDegreeOfStudy, viewPieChart);
+            CreateViewDegreeOfStudy(ViewDegreeOfStudy, ViewPieChart);
             return true;
         }
     }

@@ -108,28 +108,28 @@ namespace ReLearn.Droid.Statistics
             float left, float right, float bottom, float top, 
             Color start, Color end)
         {
-            float step_width = (right - left) / CountAbscissa,
-                  step_height = (bottom - top),
+            float stepWidth = (right - left) / CountAbscissa,
+                  stepHeight = (bottom - top),
                   padding = 1f; // between columns
-            int i = 0, n_count = DatabaseStat.Count - CountAbscissa;
+            int i = 0, count = DatabaseStat.Count - CountAbscissa;
             foreach (var s in DatabaseStat)
             {
-                if (i >= n_count)
+                if (i >= count)
                 {
                     Shader shader = new LinearGradient(
-                        left + 2f, bottom - step_height, 
-                        left + step_width - 2f, bottom, 
+                        left + 2f, bottom - stepHeight, 
+                        left + stepWidth - 2f, bottom, 
                         start, end, TileMode.Clamp);
                     Paint paint = new Paint { AntiAlias = true };
                     paint.SetShader(shader);
                     Canvas.DrawRoundRect(
                         new RectF(
                             left + padding, 
-                            bottom - ((step_height / (s.True + s.False)) * s.True), 
-                            left + step_width - padding, 
+                            bottom - ((stepHeight / (s.True + s.False)) * s.True), 
+                            left + stepWidth - padding, 
                             bottom), 
                         0, 0, paint);
-                    left = left + step_width;
+                    left += stepWidth;
                 }
                 ++i;
             }

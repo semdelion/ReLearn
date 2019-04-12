@@ -14,7 +14,6 @@ using System.Timers;
 
 namespace ReLearn.Core.ViewModels.Facade
 {
-
     public abstract class MvxBlitzPollViewModel<ListDatabase> : MvxViewModel<ListDatabase>
     {
         #region Fields

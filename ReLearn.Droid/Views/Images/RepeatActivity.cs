@@ -37,10 +37,10 @@ namespace ReLearn.Droid.Images
 
             const int four = 4;
             int first = new Random(unchecked((int)(DateTime.Now.Ticks))).Next(four);
-            List<int> random_numbers = new List<int> { first, 0, 0, 0 };
+            List<int> randomNumbers = new List<int> { first, 0, 0, 0 };
             for (int i = 1; i < four; i++)
-                random_numbers[i] = (first + i) % four;
-            RandomButton(Buttons[random_numbers[0]], Buttons[random_numbers[1]], Buttons[random_numbers[2]], Buttons[random_numbers[3]]);
+                randomNumbers[i] = (first + i) % four;
+            RandomButton(Buttons[randomNumbers[0]], Buttons[randomNumbers[1]], Buttons[randomNumbers[2]], Buttons[randomNumbers[3]]);
         }
 
         protected override async Task Answer(params Button[] buttons) // подсвечиваем правильный ответ, если мы ошиблись подсвечиваем неправвильный и паравильный 

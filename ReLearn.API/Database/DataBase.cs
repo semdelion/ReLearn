@@ -25,9 +25,9 @@ namespace ReLearn.API.Database
         const string _english     = "database_words.db3"; 
         const string _flags       = "database_image.db3";
 
-        public static SQLiteAsyncConnection Languages;
-        public static SQLiteAsyncConnection Images;
-        public static SQLiteAsyncConnection Statistics;
+        public static SQLiteAsyncConnection Languages { get; private set; }
+        public static SQLiteAsyncConnection Images { get; private set; }
+        public static SQLiteAsyncConnection Statistics { get; private set; }
 
         public static TableNames TableName
         {

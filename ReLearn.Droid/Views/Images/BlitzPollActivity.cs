@@ -43,11 +43,11 @@ namespace ReLearn.Droid.Images
         ImageView GetImage()
         {
             var param = PixelConverter.GetParams(ViewGroup.LayoutParams.MatchParent, PixelConverter.DpToPX(200), 10, 15, 10, 20);
-            var ImageView = new ImageView(this) {LayoutParameters = param};
+            var imageView = new ImageView(this) {LayoutParameters = param};
             using (Bitmap bitmap = BitmapFactory.DecodeStream(Application.Context.Assets.Open($"Image{DataBase.TableName}/{ViewModel.Database[ViewModel.CurrentNumber].Image_name}.png")))
             using (var bitmapRounded = BitmapHelper.GetRoundedCornerBitmap(bitmap, PixelConverter.DpToPX(5)))
-                ImageView.SetImageBitmap(bitmapRounded);
-            return ImageView;
+                imageView.SetImageBitmap(bitmapRounded);
+            return imageView;
         }
 
         LinearLayout GetLayout()
@@ -66,20 +66,20 @@ namespace ReLearn.Droid.Images
             return linearLayout;
         }
         
-        public override async Task Answer(bool UserAnswer)
+        public override async Task Answer(bool userAnswer)
         {
-            if (!(ViewModel.Answer ^ UserAnswer))
+            if (!(ViewModel.Answer ^ userAnswer))
                 ViewModel.True++;
             else
                 ViewModel.False++;
             if (ViewPrev!=null)
                 FindViewById<RelativeLayout>(Resource.Id.RelativeLayoutImagesBlitzPoll).RemoveView(ViewPrev);
-            ViewCurrent.Background = GetDrawable(!(ViewModel.Answer ^ UserAnswer) ? Resource.Drawable.view_true : Resource.Drawable.view_false);
-            RunAnimation(ViewCurrent,(UserAnswer ? 1 : -1) * PixelConverter.DpToPX(5000));
+            ViewCurrent.Background = GetDrawable(!(ViewModel.Answer ^ userAnswer) ? Resource.Drawable.view_true : Resource.Drawable.view_false);
+            RunAnimation(ViewCurrent,(userAnswer ? 1 : -1) * PixelConverter.DpToPX(5000));
             ViewPrev = ViewCurrent;
             ViewCurrent = GetLayout();
             FindViewById<RelativeLayout>(Resource.Id.RelativeLayoutImagesBlitzPoll).AddView(ViewCurrent, 0);
-            await API.Statistics.Add(ViewModel.Database, ViewModel.CurrentNumber, !(ViewModel.Answer ^ UserAnswer) ? -1 : 1);
+            await API.Statistics.Add(ViewModel.Database, ViewModel.CurrentNumber, !(ViewModel.Answer ^ userAnswer) ? -1 : 1);
             ViewModel.TitleCount = $"{GetString(Resource.String.Repeated)} {ViewModel.True + ViewModel.False + 1 }";
         }
 

@@ -16,17 +16,17 @@ namespace ReLearn.Core.ViewModels.MainMenu
     {
         private IMvxAsyncCommand _toRepeat;
         public IMvxAsyncCommand ToRepeat => _toRepeat ?? (_toRepeat = new MvxAsyncCommand(NavigateToRepeat));
+
         private IMvxAsyncCommand _toLearn;
         public IMvxAsyncCommand ToLearn => _toLearn ?? (_toLearn = new MvxAsyncCommand(NavigateToLearn));
+
         private IMvxAsyncCommand _toSelectDictionary;
         public IMvxAsyncCommand ToSelectDictionary => _toSelectDictionary ?? (_toSelectDictionary = new MvxAsyncCommand(NavigateToSelectDictionary));
 
         protected IMvxNavigationService NavigationService { get; set; }
 
-        public HomeViewModel(IMvxNavigationService navigationService)
-        {
-            NavigationService = navigationService;
-        }
+        public HomeViewModel(IMvxNavigationService navigationService) => NavigationService = navigationService;
+        
         private async Task Quiz(bool isImage)
         {
             Settings.TypeOfRepetition = TypeOfRepetitions.Blitz;

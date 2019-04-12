@@ -26,10 +26,10 @@ namespace ReLearn.API.Database
 
         public DatabaseImages Find() => this;
 
-        public static async Task Update(string Image, int learn) =>
+        public static async Task Update(string image, int learn) =>
             await DataBase.Images.ExecuteAsync(
                 $"UPDATE {DataBase.TableName} SET DateRecurrence = ?, NumberLearn = ? WHERE Image_name = ?", 
-                DateTime.Now, learn, Image);
+                DateTime.Now, learn, image);
 
         public static bool DatabaseIsContain(string nameDB)
         {

@@ -10,9 +10,9 @@ namespace ReLearn.Core.ViewModels.MainMenu.Statistics
 {
     public class GeneralStatisticsViewModel : MvxViewModel
     {
-        private float _avgTrueToday { get; set; }
-        private float _avgTrueMonth { get; set; }
-        private float _avgTrue { get; set; }
+        private float _avgTrueToday;
+        private float _avgTrueMonth;
+        private float _avgTrue;
 
         public List<DatabaseStatistics> Database { get; private set; }
         public List<DBStatistics> DatabaseStats { get; private set; }

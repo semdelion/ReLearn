@@ -51,9 +51,9 @@ namespace ReLearn.Droid.Statistics
         }
 
         public void ProgressLine(
-            float True, float False, 
-            Color StartGradient, Color EndGradient, 
-            Paint FalseLine, 
+            float @true, float @false, 
+            Color startGradient, Color endGradient, 
+            Paint falseLine, 
             float paddingLeftRight = 5f, 
             float heightLine = 18f, 
             float paddingBottom = 15f)
@@ -61,15 +61,15 @@ namespace ReLearn.Droid.Statistics
             Shader shader = new LinearGradient(
                 paddingLeftRight * _width / 100f, 0, 
                 _width - 2f * paddingLeftRight * _width / 100f, 0,
-                EndGradient, StartGradient, TileMode.Clamp);
-            Paint TrueLine = new Paint { AntiAlias = true };
-            TrueLine.SetShader(shader);
-            ProgressLine(True, False, TrueLine, FalseLine, paddingLeftRight, heightLine, paddingBottom);
+                endGradient, startGradient, TileMode.Clamp);
+            Paint trueLine = new Paint { AntiAlias = true };
+            trueLine.SetShader(shader);
+            ProgressLine(@true, @false, trueLine, falseLine, paddingLeftRight, heightLine, paddingBottom);
         }
 
         public void ProgressLine(
-            float True, float False, 
-            Paint TrueLine, Paint FalseLine,
+            float @true, float @false, 
+            Paint trueLine, Paint falseLine,
             float paddingLeftRight = 5f, 
             float heightLine = 18f, 
             float paddingBottom = 15f)
@@ -77,21 +77,21 @@ namespace ReLearn.Droid.Statistics
             paddingLeftRight *= _width / 100f;
             paddingBottom *= _height / 100f;
             heightLine *= _height / 100f;
-            float step = (_width - paddingLeftRight * 2) / (True + False);
+            float step = (_width - paddingLeftRight * 2) / (@true + @false);
 
             float y0 = _height - paddingBottom - heightLine;
             float y1 = _height - paddingBottom;
 
-            Canvas.DrawRect(new RectF(paddingLeftRight, y0, paddingLeftRight + step * True, y1), TrueLine);
-            Canvas.DrawRect(new RectF(paddingLeftRight + step * True, y0, _width - paddingLeftRight, y1), FalseLine);
+            Canvas.DrawRect(new RectF(paddingLeftRight, y0, paddingLeftRight + step * @true, y1), trueLine);
+            Canvas.DrawRect(new RectF(paddingLeftRight + step * @true, y0, _width - paddingLeftRight, y1), falseLine);
         }
 
-        public void DrawPieChart(float average, float sum, Color start, Color end, float width = 0.13f, float Radius = -1, bool text = true)
+        public void DrawPieChart(float average, float sum, Color start, Color end, float width = 0.13f, float radius = -1, bool text = true)
         {
             float Cx = _width / 2f,
                   Cy = _height / 2f,
                   strokeWidth = width * (_width <= _height ? _width : _height);
-                  Radius = Radius <= 0 ? (_width <= _height ? _width / 2f : _height / 2f) - strokeWidth : Radius;
+                  radius = radius <= 0 ? (_width <= _height ? _width / 2f : _height / 2f) - strokeWidth : radius;
 
             Shader shader = new SweepGradient(Cx, Cy, end, start);
             Paint paintMain = new Paint { Color = start, StrokeWidth = strokeWidth, AntiAlias = true };
@@ -100,12 +100,12 @@ namespace ReLearn.Droid.Statistics
             paintMain.SetShader(shader);
             paintBack.SetStyle(Paint.Style.Stroke);
 
-            Canvas.DrawArc(new RectF(Cx - Radius, Cy - Radius, Cx + Radius, Cy + Radius), 0f, 360f, false, paintBack);
+            Canvas.DrawArc(new RectF(Cx - radius, Cy - radius, Cx + radius, Cy + radius), 0f, 360f, false, paintBack);
             Canvas.Rotate(-90f, Cx, Cy);
-            Canvas.DrawArc(new RectF(Cx - Radius, Cy - Radius, Cx + Radius, Cy + Radius), 0.5f, 360f - average * (360f / sum), false, paintMain);
+            Canvas.DrawArc(new RectF(Cx - radius, Cy - radius, Cx + radius, Cy + radius), 0.5f, 360f - average * (360f / sum), false, paintMain);
             Canvas.Rotate(90f, Cx, Cy);
             if(text)
-                DrawText(_width * 20f / 100f, $"{RoundOfNumber(100 - average * 100f / sum)}%",  2.4f * _width / 10f, Cy - 33f * Radius / 100);
+                DrawText(_width * 20f / 100f, $"{RoundOfNumber(100 - average * 100f / sum)}%",  2.4f * _width / 10f, Cy - 33f * radius / 100);
         }
 
         public void DrawText(float fontSize, string text, float left, float top, Color? c = null)

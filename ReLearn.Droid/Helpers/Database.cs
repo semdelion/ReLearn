@@ -51,10 +51,10 @@ namespace ReLearn.Droid.Helpers
                     await DataBase.Languages.ExecuteAsync($"CREATE TABLE {tableName} (_id int PRIMARY KEY, Word string, TranslationWord string, Transcription string, NumberLearn int, DateRecurrence DateTime, Context string, Image string)");
                     using (StreamReader reader = new StreamReader(Application.Context.Assets.Open($"Database/{tableName}.txt")))
                     {
-                        string str_line;
-                        while ((str_line = reader.ReadLine()) != null)
+                        string strLine;
+                        while ((strLine = reader.ReadLine()) != null)
                         {
-                            var list = str_line.Split('|');
+                            var list = strLine.Split('|');
                             var query = $"INSERT INTO {tableName} (Word, TranslationWord, Transcription, NumberLearn, DateRecurrence) VALUES (?, ?, ?, ?, ?)";
                             await DataBase.Languages.ExecuteAsync(query, list[0].ToLower().Trim(), list[1].ToLower().Trim(), list[2].Trim(), Settings.StandardNumberOfRepeats, DateTime.Now);
                         }
@@ -74,10 +74,10 @@ namespace ReLearn.Droid.Helpers
                     await DataBase.Images.ExecuteAsync($"CREATE TABLE {tableName} (_id int PRIMARY KEY, Image_name string, Name_image_en string, Name_image_ru string, NumberLearn int, DateRecurrence DateTime)");
                     using (StreamReader reader = new StreamReader(Application.Context.Assets.Open($"Database/{tableName}.txt")))
                     {
-                        string str_line;
-                        while ((str_line = reader.ReadLine()) != null)
+                        string strLine;
+                        while ((strLine = reader.ReadLine()) != null)
                         {
-                            var image = str_line.Split('|');
+                            var image = strLine.Split('|');
                             var query = $"INSERT INTO {tableName} (Image_name, Name_image_en, Name_image_ru, NumberLearn, DateRecurrence) VALUES (?, ?, ?, ?, ?)";
                             await DataBase.Images.ExecuteAsync(query, image[0], image[1], image[2], Settings.StandardNumberOfRepeats, DateTime.Now);
                         }
@@ -97,10 +97,10 @@ namespace ReLearn.Droid.Helpers
                     if (tableName != $"{TableNamesLanguage.My_Directly}")
                         using (StreamReader reader = new StreamReader(Application.Context.Assets.Open($"Database/{tableName}.txt")))
                         {
-                            string str_line;
-                            while ((str_line = reader.ReadLine()) != null)
+                            string strLine;
+                            while ((strLine = reader.ReadLine()) != null)
                             {
-                                var list = str_line.Split('|');
+                                var list = strLine.Split('|');
                                 int changes = await DataBase.Languages.ExecuteAsync($"UPDATE {tableName} SET Word = ?, Transcription = ? WHERE Word = ?", list[0].ToLower().Trim(), list[2].Trim(), list[0].ToLower().Trim())
                                             + await DataBase.Languages.ExecuteAsync($"UPDATE {tableName} SET Word = ?, Transcription = ? WHERE Word = ?", list[0].ToLower().Trim(), list[2].Trim(), list[0].ToLower().Trim() + " ")
                                             + await DataBase.Languages.ExecuteAsync($"UPDATE {tableName} SET Word = ?, Transcription = ? WHERE Word = ?", list[0].ToLower().Trim(), list[2].Trim(), list[0].ToLower().Trim() + "  ");

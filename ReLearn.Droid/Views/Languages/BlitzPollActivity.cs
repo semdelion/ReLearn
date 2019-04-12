@@ -31,13 +31,13 @@ namespace ReLearn.Droid.Languages
             ViewModel.CurrentNumber = new Random(unchecked((int)(DateTime.Now.Ticks))).Next(ViewModel.Database.Count);
             int randIndex = (ViewModel.CurrentNumber + new Random(unchecked((int)(DateTime.Now.Ticks))).Next(1, ViewModel.Database.Count))% ViewModel.Database.Count;
             ViewModel.Answer = new Random(unchecked((int)(DateTime.Now.Ticks))).Next(2) == 1 ? true : false;
-            string TranslationWord = ViewModel.Database[ViewModel.Answer ? ViewModel.CurrentNumber : randIndex].TranslationWord;
+            string translationWord = ViewModel.Database[ViewModel.Answer ? ViewModel.CurrentNumber : randIndex].TranslationWord;
             var textView = new TextView(this)
             {
                 TextSize        = 30,
                 Elevation       = PixelConverter.DpToPX(10),
                 LayoutParameters= param,
-                Text            = $"{ViewModel.Database[ViewModel.CurrentNumber].Word}\n\n{TranslationWord}",
+                Text            = $"{ViewModel.Database[ViewModel.CurrentNumber].Word}\n\n{translationWord}",
                 Gravity         = GravityFlags.CenterHorizontal | GravityFlags.Center
             };
 
@@ -46,28 +46,28 @@ namespace ReLearn.Droid.Languages
             return textView;
         }
 
-        public override async Task Answer(bool UserAnswer)
+        public override async Task Answer(bool userAnswer)
         {
-            if (!(ViewModel.Answer ^ UserAnswer))
+            if (!(ViewModel.Answer ^ userAnswer))
                 ViewModel.True++;
             else
                 ViewModel.False++;
             if (ViewPrev != null)
                 FindViewById<RelativeLayout>(Resource.Id.RelativeLayoutLanguagesBlitzPoll).RemoveView(ViewPrev);
-            ViewCurrent.Background = GetDrawable(!(ViewModel.Answer ^ UserAnswer) ? Resource.Drawable.view_true : Resource.Drawable.view_false);
-            RunAnimation(ViewCurrent, (UserAnswer ? 1 : -1) * PixelConverter.DpToPX(5000));
+            ViewCurrent.Background = GetDrawable(!(ViewModel.Answer ^ userAnswer) ? Resource.Drawable.view_true : Resource.Drawable.view_false);
+            RunAnimation(ViewCurrent, (userAnswer ? 1 : -1) * PixelConverter.DpToPX(5000));
             ViewPrev = ViewCurrent;
             ViewCurrent = GetTextView();
             FindViewById<RelativeLayout>(Resource.Id.RelativeLayoutLanguagesBlitzPoll).AddView(ViewCurrent, 0);
-            await API.Statistics.Add(ViewModel.Database, ViewModel.CurrentNumber, !(ViewModel.Answer ^ UserAnswer) ? -1 : 1);
+            await API.Statistics.Add(ViewModel.Database, ViewModel.CurrentNumber, !(ViewModel.Answer ^ userAnswer) ? -1 : 1);
             ViewModel.TitleCount = $"{GetString(Resource.String.Repeated)} { ViewModel.True + ViewModel.False + 1 }";
         }
 
         [Java.Interop.Export("Button_Languages_No_Click")]
-        public async void Button_Languages_No_Click(View v) => await Answer(false);
+        public async void Button_Languages_No_Click(View view) => await Answer(false);
         
         [Java.Interop.Export("Button_Languages_Yes_Click")]
-        public async void Button_Languages_Yes_Click(View v) => await Answer(true);
+        public async void Button_Languages_Yes_Click(View view) => await Answer(true);
 
         protected override void OnCreate(Bundle savedInstanceState)
         {

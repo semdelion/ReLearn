@@ -38,9 +38,9 @@ namespace ReLearn.Droid.Views.SelectDictionary
             }
         }
 
-        public void Selected(string NewTableName, string СurrentTableName)
+        public void Selected(string newTableName, string currentTableName)
         {
-            int indexCurrent = DictionariesView.FindIndex(s => $"{s.Tag}" == СurrentTableName);
+            int indexCurrent = DictionariesView.FindIndex(s => $"{s.Tag}" == currentTableName);
             DictionariesView[indexCurrent].SetImageBitmap(DictionariesBitmap[indexCurrent]);
 
             using (Bitmap image1 = Bitmap.CreateBitmap(Width, Width, Bitmap.Config.Argb4444))
@@ -48,22 +48,22 @@ namespace ReLearn.Droid.Views.SelectDictionary
                 {
                     Paint paint2 = new Paint { Color = Colors.FrameBorder, AntiAlias = true };
                     baseCan.DrawCircle(Width / 2, Width / 2, Width / 2.5f, paint2);
-                    int indexNew = DictionariesView.FindIndex(s => $"{s.Tag}" == NewTableName);
+                    int indexNew = DictionariesView.FindIndex(s => $"{s.Tag}" == newTableName);
                     DictionariesView[indexNew].SetImageBitmap(CreateSingleImageFromMultipleImages(image1, DictionariesBitmap[indexNew], new PointF(0, 0)));
                 }
         }
 
-        public Bitmap CreateBitmapWithStats(Bitmap image, List<DBStatistics> Database_NL_and_D, Color Start, Color End)
+        public Bitmap CreateBitmapWithStats(Bitmap image, List<DBStatistics> database, Color start, Color end)
         {
-            using (Bitmap Image1 = Bitmap.CreateBitmap(Width, Width, Bitmap.Config.Argb4444))
+            using (Bitmap image1 = Bitmap.CreateBitmap(Width, Width, Bitmap.Config.Argb4444))
             {
-                float WidthLine = Image1.Width / 10;
-                using (Bitmap Image2 = Bitmap.CreateScaledBitmap(image, (int)(Width / 2.5 * 2 - WidthLine), (int)(Width / 2.5 * 2 - WidthLine), false))
-                    using (Canvas baseCan = new Canvas(Image1))
+                float WidthLine = image1.Width / 10;
+                using (Bitmap image2 = Bitmap.CreateScaledBitmap(image, (int)(Width / 2.5 * 2 - WidthLine), (int)(Width / 2.5 * 2 - WidthLine), false))
+                    using (Canvas baseCan = new Canvas(image1))
                     {
                         var pieChart = new DrawStatistics(baseCan);
-                        pieChart.DrawPieChart(API.Statistics.GetAverageNumberLearn(Database_NL_and_D), Settings.StandardNumberOfRepeats, Start, End, 0.13f, (float)(baseCan.Height / 2.5), false);
-                        return CreateSingleImageFromMultipleImages(Image1, Image2, new PointF(((Image1.Width) / 2) - (float)(baseCan.Height / 2.5) + WidthLine / 2, ((Image1.Width) / 2) - (float)(baseCan.Height / 2.5) + WidthLine / 2));
+                        pieChart.DrawPieChart(API.Statistics.GetAverageNumberLearn(database), Settings.StandardNumberOfRepeats, start, end, 0.13f, (float)(baseCan.Height / 2.5), false);
+                        return CreateSingleImageFromMultipleImages(image1, image2, new PointF(((image1.Width) / 2) - (float)(baseCan.Height / 2.5) + WidthLine / 2, ((image1.Width) / 2) - (float)(baseCan.Height / 2.5) + WidthLine / 2));
                     }
             }
         }
