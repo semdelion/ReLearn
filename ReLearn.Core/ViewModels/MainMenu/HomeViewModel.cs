@@ -1,4 +1,6 @@
-﻿using MvvmCross;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using MvvmCross;
 using MvvmCross.Commands;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
@@ -6,27 +8,31 @@ using ReLearn.API;
 using ReLearn.API.Database;
 using ReLearn.Core.Localization;
 using ReLearn.Core.Services;
+using ReLearn.Core.ViewModels.Images;
 using ReLearn.Core.ViewModels.MainMenu.SelectDictionary;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace ReLearn.Core.ViewModels.MainMenu
 {
     public class HomeViewModel : MvxViewModel
     {
-        private IMvxAsyncCommand _toRepeat;
-        public IMvxAsyncCommand ToRepeat => _toRepeat ?? (_toRepeat = new MvxAsyncCommand(NavigateToRepeat));
-
         private IMvxAsyncCommand _toLearn;
-        public IMvxAsyncCommand ToLearn => _toLearn ?? (_toLearn = new MvxAsyncCommand(NavigateToLearn));
+        private IMvxAsyncCommand _toRepeat;
 
         private IMvxAsyncCommand _toSelectDictionary;
-        public IMvxAsyncCommand ToSelectDictionary => _toSelectDictionary ?? (_toSelectDictionary = new MvxAsyncCommand(NavigateToSelectDictionary));
+
+        public HomeViewModel(IMvxNavigationService navigationService)
+        {
+            NavigationService = navigationService;
+        }
+
+        public IMvxAsyncCommand ToRepeat => _toRepeat ?? (_toRepeat = new MvxAsyncCommand(NavigateToRepeat));
+        public IMvxAsyncCommand ToLearn => _toLearn ?? (_toLearn = new MvxAsyncCommand(NavigateToLearn));
+
+        public IMvxAsyncCommand ToSelectDictionary =>
+            _toSelectDictionary ?? (_toSelectDictionary = new MvxAsyncCommand(NavigateToSelectDictionary));
 
         protected IMvxNavigationService NavigationService { get; set; }
 
-        public HomeViewModel(IMvxNavigationService navigationService) => NavigationService = navigationService;
-        
         private async Task Quiz(bool isImage)
         {
             Settings.TypeOfRepetition = TypeOfRepetitions.Blitz;
@@ -36,7 +42,7 @@ namespace ReLearn.Core.ViewModels.MainMenu
                 if (database.Count == 0)
                     Mvx.IoCProvider.Resolve<IMessageCore>().Toast(AppResources.HomeViewModel_RepeatedAllImages);
                 else
-                  await NavigationService.Navigate<Images.RepeatViewModel, List<DatabaseImages>>(database);
+                    await NavigationService.Navigate<RepeatViewModel, List<DatabaseImages>>(database);
             }
             else
             {
@@ -44,10 +50,10 @@ namespace ReLearn.Core.ViewModels.MainMenu
                 if (database.Count == 0)
                     Mvx.IoCProvider.Resolve<IMessageCore>().Toast(AppResources.HomeViewModel_RepeatedAllWords);
                 else
-                   await NavigationService.Navigate<Languages.RepeatViewModel, List<DatabaseWords>>(database);
+                    await NavigationService.Navigate<Languages.RepeatViewModel, List<DatabaseWords>>(database);
             }
-            
         }
+
         private async Task Blitz(bool isImage)
         {
             Settings.TypeOfRepetition = TypeOfRepetitions.FourOptions;
@@ -57,7 +63,7 @@ namespace ReLearn.Core.ViewModels.MainMenu
                 if (database.Count == 0)
                     Mvx.IoCProvider.Resolve<IMessageCore>().Toast(AppResources.HomeViewModel_RepeatedAllImages);
                 else
-                    await NavigationService.Navigate<Images.BlitzPollViewModel, List<DatabaseImages>>(database);
+                    await NavigationService.Navigate<BlitzPollViewModel, List<DatabaseImages>>(database);
             }
             else
             {
@@ -67,16 +73,18 @@ namespace ReLearn.Core.ViewModels.MainMenu
                 else
                     await NavigationService.Navigate<Languages.BlitzPollViewModel, List<DatabaseWords>>(database);
             }
-            
         }
 
         private async Task NavigateToRepeat()
         {
-            bool isImage = DatabaseImages.DatabaseIsContain($"{DataBase.TableName}");
+            var isImage = DatabaseImages.DatabaseIsContain($"{DataBase.TableName}");
 
             if (Settings.QuizEnable && Settings.BlitzEnable)
+            {
                 if (API.Statistics.Count != 0)
+                {
                     await Quiz(isImage);
+                }
                 else
                 {
                     if (Settings.TypeOfRepetition == TypeOfRepetitions.Blitz)
@@ -84,8 +92,11 @@ namespace ReLearn.Core.ViewModels.MainMenu
                     else
                         await Quiz(isImage);
                 }
+            }
             else if (Settings.QuizEnable)
+            {
                 await Quiz(isImage);
+            }
             else
             {
                 if (API.Statistics.Count != 0)
@@ -93,6 +104,7 @@ namespace ReLearn.Core.ViewModels.MainMenu
                 await Blitz(isImage);
             }
         }
+
         private async Task NavigateToLearn()
         {
             if (DatabaseImages.DatabaseIsContain($"{DataBase.TableName}"))
@@ -101,18 +113,21 @@ namespace ReLearn.Core.ViewModels.MainMenu
                 if (database.Count == 0)
                     Mvx.IoCProvider.Resolve<IMessageCore>().Toast(AppResources.HomeViewModel_RepeatedAllImages);
                 else
-                    await NavigationService.Navigate<Images.LearnViewModel, List<DatabaseImages>>(database);
+                    await NavigationService.Navigate<LearnViewModel, List<DatabaseImages>>(database);
             }
             else
             {
                 var database = await DatabaseWords.GetDataNotLearned();
-                if(database.Count == 0)
+                if (database.Count == 0)
                     Mvx.IoCProvider.Resolve<IMessageCore>().Toast(AppResources.HomeViewModel_RepeatedAllWords);
                 else
-                    await NavigationService.Navigate<Languages.LearnViewModel,List<DatabaseWords>>(database);
+                    await NavigationService.Navigate<Languages.LearnViewModel, List<DatabaseWords>>(database);
             }
         }
 
-        private Task<bool> NavigateToSelectDictionary() => NavigationService.Navigate<SelectDictionaryViewModel>();
+        private Task<bool> NavigateToSelectDictionary()
+        {
+            return NavigationService.Navigate<SelectDictionaryViewModel>();
+        }
     }
 }

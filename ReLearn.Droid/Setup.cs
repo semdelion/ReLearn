@@ -2,12 +2,13 @@
 using MvvmCross.Converters;
 using MvvmCross.Droid.Support.V7.AppCompat;
 using MvvmCross.Localization;
+using ReLearn.Core;
 using ReLearn.Core.Services;
 using ReLearn.Droid.Services;
 
 namespace ReLearn.Droid
 {
-    public class Setup : MvxAppCompatSetup<Core.App>
+    public class Setup : MvxAppCompatSetup<App>
     {
         protected override void InitializeFirstChance()
         {

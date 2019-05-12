@@ -1,23 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
-using Android.Content;
-using Android.Graphics;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
+﻿using Android.Graphics;
 
 namespace ReLearn.Droid.Statistics
 {
     public class BaseStatistics
     {
-        protected readonly float _width;
         protected readonly float _height;
-        protected Canvas Canvas { get; set; }
+        protected readonly float _width;
 
         public BaseStatistics(Canvas canvas)
         {
@@ -25,5 +13,7 @@ namespace ReLearn.Droid.Statistics
             _height = canvas.Height;
             Canvas = canvas;
         }
+
+        protected Canvas Canvas { get; set; }
     }
 }

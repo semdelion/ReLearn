@@ -14,17 +14,20 @@ namespace ReLearn.Droid.Views.Menu
 {
     public abstract class BaseFragment : MvxFragment
     {
-        protected bool isHomeAsUp = false;
+        protected MvxActionBarDrawerToggle _drawerToggle;
         protected Toolbar _toolbar;
+        protected bool isHomeAsUp;
+
+        protected BaseFragment()
+        {
+            RetainInstance = true;
+        }
+
         protected abstract int FragmentId { get; }
         protected abstract int Toolbar { get; }
 
-        protected MvxActionBarDrawerToggle _drawerToggle;
+        public MvxAppCompatActivity ParentActivity => (MvxAppCompatActivity) Activity;
 
-		public MvxAppCompatActivity ParentActivity { get => (MvxAppCompatActivity)Activity; }
-
-        protected BaseFragment() => RetainInstance = true;
-        
         public override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -33,27 +36,28 @@ namespace ReLearn.Droid.Views.Menu
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-			base.OnCreateView(inflater, container, savedInstanceState);
-			var view = this.BindingInflate(FragmentId, null);
-			_toolbar = view.FindViewById<Toolbar>(Toolbar);
-            
+            base.OnCreateView(inflater, container, savedInstanceState);
+            var view = this.BindingInflate(FragmentId, null);
+            _toolbar = view.FindViewById<Toolbar>(Toolbar);
+
             if (_toolbar != null)
             {
                 ParentActivity.SetSupportActionBar(_toolbar);
                 ParentActivity.SupportActionBar.SetHomeButtonEnabled(true);
                 ParentActivity.SupportActionBar.SetDisplayHomeAsUpEnabled(true);
                 _drawerToggle = new MvxActionBarDrawerToggle(
-				Activity,                               // host Activity
-				(ParentActivity as INavigationActivity).DrawerLayout,  // DrawerLayout object
-				_toolbar,                               // nav drawer icon to replace 'Up' caret
-                Resource.String.navigation_drawer_open, 
-                Resource.String.navigation_drawer_close);
-				_drawerToggle.DrawerOpened += (object sender, ActionBarDrawerEventArgs e) => (Activity as MainActivity)?.HideSoftKeyboard();
-				(ParentActivity as INavigationActivity).DrawerLayout.AddDrawerListener(_drawerToggle);
+                    Activity, // host Activity
+                    (ParentActivity as INavigationActivity).DrawerLayout, // DrawerLayout object
+                    _toolbar, // nav drawer icon to replace 'Up' caret
+                    Resource.String.navigation_drawer_open,
+                    Resource.String.navigation_drawer_close);
+                _drawerToggle.DrawerOpened += (sender, e) => (Activity as MainActivity)?.HideSoftKeyboard();
+                (ParentActivity as INavigationActivity).DrawerLayout.AddDrawerListener(_drawerToggle);
             }
+
             Task.Run(() => SetHomeAsUp(ParentActivity.SupportFragmentManager.BackStackEntryCount == 0 ? false : true));
             return view;
-		}
+        }
 
         public override void OnConfigurationChanged(Configuration newConfig)
         {
@@ -65,7 +69,7 @@ namespace ReLearn.Droid.Views.Menu
         public override void OnPause()
         {
             base.OnPause();
-            Task.Run(()=> SetHomeAsUp(ParentActivity.SupportFragmentManager.BackStackEntryCount == 0 ? false : true));
+            Task.Run(() => SetHomeAsUp(ParentActivity.SupportFragmentManager.BackStackEntryCount == 0 ? false : true));
         }
 
         public override void OnActivityCreated(Bundle savedInstanceState)
@@ -80,11 +84,11 @@ namespace ReLearn.Droid.Views.Menu
             if (this.isHomeAsUp != isHomeAsUp)
             {
                 this.isHomeAsUp = isHomeAsUp;
-                ValueAnimator anim = isHomeAsUp ? ValueAnimator.OfFloat(0, 1) : ValueAnimator.OfFloat(1, 0);
+                var anim = isHomeAsUp ? ValueAnimator.OfFloat(0, 1) : ValueAnimator.OfFloat(1, 0);
                 anim.SetDuration(300);
-                anim.Update += async(object sender, ValueAnimator.AnimatorUpdateEventArgs e) =>
+                anim.Update += async (sender, e) =>
                 {
-                    var value = (float)anim.AnimatedValue;
+                    var value = (float) anim.AnimatedValue;
                     _drawerToggle.DrawerArrowDrawable.Progress = value;
                 };
                 anim.Start();
@@ -96,8 +100,8 @@ namespace ReLearn.Droid.Views.Menu
     {
         public new TViewModel ViewModel
         {
-            get { return (TViewModel)base.ViewModel; }
-            set { base.ViewModel = value; }
+            get => (TViewModel) base.ViewModel;
+            set => base.ViewModel = value;
         }
     }
 }

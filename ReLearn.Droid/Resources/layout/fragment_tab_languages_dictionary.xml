@@ -1,12 +1,11 @@
 ﻿<ScrollView
-    xmlns:android			    ="http://schemas.android.com/apk/res/android"
-    android:id				    ="@+id/scrollViewlanguage"
-    android:layout_width	="match_parent"
-    android:layout_height	="wrap_content">
-    <LinearLayout
-        android:id				    ="@+id/LanguageSelectDictionary"
-        android:orientation		="vertical"
-        android:layout_width	="match_parent"
-        android:layout_height	="match_parent"
-    />
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:id="@+id/scrollViewlanguage"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content">
+  <LinearLayout
+    android:id="@+id/LanguageSelectDictionary"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" />
 </ScrollView>

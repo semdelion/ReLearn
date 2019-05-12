@@ -5,30 +5,43 @@ namespace ReLearn.Core.ViewModels.MainMenu.Statistics
 {
     public class StatisticViewModel : MvxViewModel
     {
-        #region Fields
-        #endregion
+        #region Constructors
 
-        #region Commands
-        #endregion
+        public StatisticViewModel(IMvxNavigationService navigationService)
+        {
+            NavigationService = navigationService;
+        }
 
-        #region Properties
         #endregion
 
         #region Services
+
         protected IMvxNavigationService NavigationService { get; }
+
         #endregion
 
-        #region Constructors
-        public StatisticViewModel(IMvxNavigationService navigationService) => NavigationService = navigationService;
+        #region Fields
+
+        #endregion
+
+        #region Commands
+
+        #endregion
+
+        #region Properties
+
         #endregion
 
         #region Private
+
         #endregion
 
         #region Protected
+
         #endregion
 
         #region Public
+
         #endregion
     }
 }

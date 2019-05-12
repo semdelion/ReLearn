@@ -1,15 +1,18 @@
-﻿using Android.App;
+﻿using System;
+using System.Collections.Specialized;
+using System.ComponentModel;
+using System.Windows.Input;
+using Android.App;
+using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using MvvmCross.IoC;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
-using System;
-using System.Collections.Specialized;
-using System.Windows.Input;
 
 namespace ReLearn.Droid
 {
-    [Android.Runtime.Preserve(AllMembers = true)]
+    [Preserve(AllMembers = true)]
     public class LinkerPleaseInclude
     {
         public void Include(Button button)
@@ -76,20 +79,26 @@ namespace ReLearn.Droid
 
         public void Include(INotifyCollectionChanged changed)
         {
-            changed.CollectionChanged += (s, e) => { var test = $"{e.Action}{e.NewItems}{e.NewStartingIndex}{e.OldItems}{e.OldStartingIndex}"; };
+            changed.CollectionChanged += (s, e) =>
+            {
+                var test = $"{e.Action}{e.NewItems}{e.NewStartingIndex}{e.OldItems}{e.OldStartingIndex}";
+            };
         }
 
         public void Include(ICommand command)
         {
-            command.CanExecuteChanged += (s, e) => { if (command.CanExecute(null)) command.Execute(null); };
+            command.CanExecuteChanged += (s, e) =>
+            {
+                if (command.CanExecute(null)) command.Execute(null);
+            };
         }
 
-        public void Include(MvvmCross.IoC.MvxPropertyInjector injector)
+        public void Include(MvxPropertyInjector injector)
         {
-            injector = new MvvmCross.IoC.MvxPropertyInjector();
+            injector = new MvxPropertyInjector();
         }
 
-        public void Include(System.ComponentModel.INotifyPropertyChanged changed)
+        public void Include(INotifyPropertyChanged changed)
         {
             changed.PropertyChanged += (sender, e) =>
             {

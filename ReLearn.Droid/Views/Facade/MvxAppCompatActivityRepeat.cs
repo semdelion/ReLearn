@@ -1,17 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
+﻿using Android.App;
 using Android.Widget;
 using MvvmCross.Droid.Support.V7.AppCompat;
 using MvvmCross.ViewModels;
-using ReLearn.Droid.Helpers;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace ReLearn.Droid.Views.Facade
 {
@@ -23,11 +15,12 @@ namespace ReLearn.Droid.Views.Facade
 
     public class ButtonNext
     {
-        public StateButton State { get; set; }
         public Button button = null;
+        public StateButton State { get; set; }
     }
 
-    public abstract class MvxAppCompatActivityRepeat<ViewModel> : MvxAppCompatActivity<ViewModel> where ViewModel : class, IMvxViewModel
+    public abstract class MvxAppCompatActivityRepeat<ViewModel> : MvxAppCompatActivity<ViewModel>
+        where ViewModel : class, IMvxViewModel
     {
         protected readonly float _displayWidth = Application.Context.Resources.DisplayMetrics.WidthPixels;
 
@@ -41,7 +34,8 @@ namespace ReLearn.Droid.Views.Facade
             {
                 ButtonNext.State = StateButton.Unknown;
                 ButtonNext.button.Text = GetString(Resource.String.Unknown);
-                foreach (var button in Buttons) button.Background = GetDrawable(Resource.Drawable.button_style_standard);
+                foreach (var button in Buttons)
+                    button.Background = GetDrawable(Resource.Drawable.button_style_standard);
             }
             else
             {

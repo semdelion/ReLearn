@@ -2,27 +2,27 @@
 using Android.Graphics;
 using Android.Views;
 using Android.Widget;
+using Java.Lang;
 using ReLearn.API;
 using ReLearn.API.Database;
-using ReLearn.Droid.Adapters;
 using System.Collections.Generic;
 
-namespace ReLearn.Droid
+namespace ReLearn.Droid.Adapters
 {
-    class CustomAdapterImage : BaseAdapter
+    internal class CustomAdapterImage : BaseAdapter
     {
-        private Activity CurrentActivity { get; set; }
-        private List<DatabaseImages> List { get; set; }
-
         public CustomAdapterImage(Activity activity, List<DatabaseImages> list)
         {
-            this.CurrentActivity = activity;
-            this.List = list;
+            CurrentActivity = activity;
+            List = list;
         }
+
+        private Activity CurrentActivity { get; }
+        private List<DatabaseImages> List { get; }
 
         public override int Count => List.Count;
 
-        public override Java.Lang.Object GetItem(int position)
+        public override Object GetItem(int position)
         {
             return List[position].Image_name;
         }
@@ -34,20 +34,24 @@ namespace ReLearn.Droid
 
         public override View GetView(int position, View convertView, ViewGroup parent)
         {
-            var view = convertView ?? CurrentActivity.LayoutInflater.Inflate(Resource.Layout.item_image_view_dictionary, parent, false);
+            var view = convertView ??
+                       CurrentActivity.LayoutInflater.Inflate(Resource.Layout.item_image_view_dictionary, parent,
+                           false);
             var TextView = view.FindViewById<TextView>(Resource.Id.textView_item_view_dictionary);
             var ImageView = view.FindViewById<ImageView>(Resource.Id.imageView_item_view_dictionary);
-            using (var his = Application.Context.Assets.Open($"Image{DataBase.TableName}Mini/{List[position].Image_name}.jpg"))
+            using (var his =
+                Application.Context.Assets.Open($"Image{DataBase.TableName}Mini/{List[position].Image_name}.jpg"))
             {
-                Bitmap bitmap = BitmapFactory.DecodeStream(his);
+                var bitmap = BitmapFactory.DecodeStream(his);
                 ImageView.SetImageBitmap(bitmap);
             }
+
             BackgroundConstructor.SetColorForItems(List[position].NumberLearn, TextView);
 
-            if (Settings.Currentlanguage == $"{ Language.en}")
+            if (Settings.Currentlanguage == $"{Language.en}")
                 TextView.Text = List[position].Name_image_en;
             else
-                TextView.Text = List[position].Name_image_ru;            
+                TextView.Text = List[position].Name_image_ru;
             return view;
         }
     }

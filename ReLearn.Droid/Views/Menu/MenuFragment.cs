@@ -1,5 +1,4 @@
-﻿using Android.App;
-using Android.OS;
+﻿using Android.OS;
 using Android.Runtime;
 using Android.Support.Design.Widget;
 using Android.Views;
@@ -17,21 +16,8 @@ namespace ReLearn.Droid.Views.Menu
     [Register("relearn.droid.views.menu.MenuFragment")]
     public class MenuFragment : MvxFragment<MenuViewModel>, NavigationView.IOnNavigationItemSelectedListener
     {
-        public static NavigationView NavigationView { get; private set; }
         private IMenuItem _previousMenuItem;
-
-        public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
-        {
-            base.OnCreateView(inflater, container, savedInstanceState);
-
-            var view = this.BindingInflate(Resource.Layout.fragment_navigation, null);
-
-            NavigationView = view.FindViewById<NavigationView>(Resource.Id.nav_view);
-            NavigationView.SetNavigationItemSelectedListener(this);
-            NavigationView.Menu.FindItem(Resource.Id.study).SetChecked(true);
-            
-            return view;
-        }
+        public static NavigationView NavigationView { get; private set; }
 
         public bool OnNavigationItemSelected(IMenuItem item)
         {
@@ -44,9 +30,22 @@ namespace ReLearn.Droid.Views.Menu
             return true;
         }
 
+        public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+        {
+            base.OnCreateView(inflater, container, savedInstanceState);
+
+            var view = this.BindingInflate(Resource.Layout.fragment_navigation, null);
+
+            NavigationView = view.FindViewById<NavigationView>(Resource.Id.nav_view);
+            NavigationView.SetNavigationItemSelectedListener(this);
+            NavigationView.Menu.FindItem(Resource.Id.study).SetChecked(true);
+
+            return view;
+        }
+
         private async Task Navigate(int itemId)
         {
-            ((MainActivity)Activity).DrawerLayout.CloseDrawers();
+            ((MainActivity) Activity).DrawerLayout.CloseDrawers();
 
             await Task.Delay(TimeSpan.FromMilliseconds(250));
 

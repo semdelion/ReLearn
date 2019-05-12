@@ -1,4 +1,5 @@
-﻿using Acr.UserDialogs;
+﻿using System.Threading.Tasks;
+using Acr.UserDialogs;
 using MvvmCross;
 using MvvmCross.IoC;
 using MvvmCross.Localization;
@@ -7,7 +8,6 @@ using MvvmCross.ViewModels;
 using ReLearn.API.Database;
 using ReLearn.Core.Localization;
 using ReLearn.Core.ViewModels;
-using System.Threading.Tasks;
 
 namespace ReLearn.Core
 {

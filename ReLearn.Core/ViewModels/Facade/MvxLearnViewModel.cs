@@ -1,15 +1,12 @@
 ﻿using MvvmCross.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace ReLearn.Core.ViewModels.Facade
 {
     public abstract class MvxLearnViewModel<ListDatabase> : MvxViewModel<ListDatabase>
     {
+        private string _text;
         public int Count { get; set; }
 
-        private string _text;
         public string Text
         {
             get => _text;

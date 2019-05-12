@@ -1,8 +1,8 @@
-﻿using Plugin.Settings;
-using ReLearn.API.Database;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Plugin.Settings;
+using ReLearn.API.Database;
 
 namespace ReLearn.API
 {
@@ -13,11 +13,13 @@ namespace ReLearn.API
             get => CrossSettings.Current.GetValueOrDefault($"{DBSettings.Count}{DataBase.TableName}", 0);
             set => CrossSettings.Current.AddOrUpdateValue($"{DBSettings.Count}{DataBase.TableName}", value);
         }
+
         public static int True
         {
             get => CrossSettings.Current.GetValueOrDefault($"{DBSettings.True}{DataBase.TableName}", 0);
             set => CrossSettings.Current.AddOrUpdateValue($"{DBSettings.True}{DataBase.TableName}", value);
         }
+
         public static int False
         {
             get => CrossSettings.Current.GetValueOrDefault($"{DBSettings.False}{DataBase.TableName}", 0);
@@ -28,9 +30,10 @@ namespace ReLearn.API
         {
             if (database.Count == 0)
                 return Settings.StandardNumberOfRepeats;
-            float avg_numberLearn_stat = (float)database.Sum(
-                r => r.NumberLearn > Settings.StandardNumberOfRepeats ?
-                Settings.StandardNumberOfRepeats : r.NumberLearn) / (float)database.Count;
+            var avg_numberLearn_stat = database.Sum(
+                                           r => r.NumberLearn > Settings.StandardNumberOfRepeats
+                                               ? Settings.StandardNumberOfRepeats
+                                               : r.NumberLearn) / (float) database.Count;
             return avg_numberLearn_stat;
         }
 
@@ -38,22 +41,32 @@ namespace ReLearn.API
         {
             wordDatabase[currentWordNumber].NumberLearn += answer;
 
-            int value = wordDatabase[currentWordNumber].NumberLearn > Settings.MaxNumberOfRepeats ?
-                        Settings.MaxNumberOfRepeats : wordDatabase[currentWordNumber].NumberLearn < 0 ? 
-                        0 : wordDatabase[currentWordNumber].NumberLearn;
+            var value = wordDatabase[currentWordNumber].NumberLearn > Settings.MaxNumberOfRepeats
+                ?
+                Settings.MaxNumberOfRepeats
+                : wordDatabase[currentWordNumber].NumberLearn < 0
+                    ? 0
+                    : wordDatabase[currentWordNumber].NumberLearn;
 
             await DatabaseWords.Update(wordDatabase[currentWordNumber].Word, value);
         }
+
         public static async Task Add(List<DatabaseImages> imagesDatabase, int currentWordNumber, int answer)
         {
             imagesDatabase[currentWordNumber].NumberLearn += answer;
 
-            int value = imagesDatabase[currentWordNumber].NumberLearn > Settings.MaxNumberOfRepeats ?
-                        Settings.MaxNumberOfRepeats : imagesDatabase[currentWordNumber].NumberLearn < 0 ?
-                        0 : imagesDatabase[currentWordNumber].NumberLearn;
-            await DatabaseImages.Update(imagesDatabase[currentWordNumber].Image_name , value);
+            var value = imagesDatabase[currentWordNumber].NumberLearn > Settings.MaxNumberOfRepeats
+                ?
+                Settings.MaxNumberOfRepeats
+                : imagesDatabase[currentWordNumber].NumberLearn < 0
+                    ? 0
+                    : imagesDatabase[currentWordNumber].NumberLearn;
+            await DatabaseImages.Update(imagesDatabase[currentWordNumber].Image_name, value);
         }
 
-        public static void Delete() => Count = True = False = 0;
+        public static void Delete()
+        {
+            Count = True = False = 0;
+        }
     }
 }
