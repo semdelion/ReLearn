@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
 <shape
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  android:shape="oval">
-  <gradient
-    android:angle="270"
-    android:endColor="@color/blue"
-    android:startColor="@color/dark_blue" />
-  <size
-    android:height="@dimen/seekbar_height"
-    android:width="@dimen/seekbar_height" />
+    xmlns:android ="http://schemas.android.com/apk/res/android"
+    android:shape ="oval">
+    <gradient
+        android:angle     ="270"
+        android:endColor  ="@color/blue"
+        android:startColor="@color/dark_blue" />
+    <size
+        android:height    ="@dimen/seekbar_height"
+        android:width     ="@dimen/seekbar_height" />
 </shape>

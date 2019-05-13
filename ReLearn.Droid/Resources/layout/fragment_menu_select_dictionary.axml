@@ -27,17 +27,16 @@
 				android:paddingBottom	="12dp"
 			/>
 		</android.support.v7.widget.Toolbar>
-		</android.support.design.widget.AppBarLayout>
+	</android.support.design.widget.AppBarLayout>
     <android.support.design.widget.TabLayout
 		android:id			 ="@+id/tablayout"
         android:minHeight	 ="?attr/actionBarSize"
         android:theme		 ="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         android:layout_width ="match_parent"
-        android:layout_height="wrap_content"
-	/>
+        android:layout_height="wrap_content"/>
     <android.support.v4.view.ViewPager
 		android:id				="@+id/pager"
         android:layout_width	="match_parent"
         android:layout_height	="wrap_content"
-	/>
+    />
 </LinearLayout>
