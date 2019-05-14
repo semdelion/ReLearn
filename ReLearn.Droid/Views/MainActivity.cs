@@ -5,6 +5,12 @@ using Android.OS;
 using Android.Support.V4.View;
 using Android.Support.V4.Widget;
 using Android.Views.InputMethods;
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
 using MvvmCross.Droid.Support.V7.AppCompat;
 using MvvmCross.Platforms.Android.Presenters.Attributes;
 using ReLearn.Core.ViewModels;
@@ -33,6 +39,7 @@ namespace ReLearn.Droid.Views
             DrawerLayout = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
             SupportFragmentManager.AddOnBackStackChangedListener(this);
             ViewModel.ShowMenu();
+            AppCenter.Start("48121c30-efdd-4468-b386-68ba1a6c7080", typeof(Analytics), typeof(Crashes));
         }
 
         public override void OnBackPressed()
