@@ -49,6 +49,8 @@ namespace ReLearn.Droid.Views.Languages
 
         public override async Task Answer(bool userAnswer)
         {
+            await API.Statistics.Add(ViewModel.Database, ViewModel.CurrentNumber,
+              !(ViewModel.Answer ^ userAnswer) ? -1 : 1);
             if (!(ViewModel.Answer ^ userAnswer))
                 ViewModel.True++;
             else
@@ -62,8 +64,6 @@ namespace ReLearn.Droid.Views.Languages
             ViewPrev = ViewCurrent;
             ViewCurrent = GetTextView();
             FindViewById<RelativeLayout>(Resource.Id.RelativeLayoutLanguagesBlitzPoll).AddView(ViewCurrent, 0);
-            await API.Statistics.Add(ViewModel.Database, ViewModel.CurrentNumber,
-                !(ViewModel.Answer ^ userAnswer) ? 1 : -1);
             ViewModel.TitleCount = $"{GetString(Resource.String.Repeated)} {ViewModel.True + ViewModel.False + 1}";
         }
 

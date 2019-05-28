@@ -8,12 +8,10 @@ namespace ReLearn.Core.ViewModels.Languages
     public class BlitzPollViewModel : MvxBlitzPollViewModel<List<DatabaseWords>>
     {
         #region Constructors
-
         public BlitzPollViewModel(IMvxNavigationService navigationService) :
             base(navigationService)
         {
         }
-
         #endregion
 
         #region Properties

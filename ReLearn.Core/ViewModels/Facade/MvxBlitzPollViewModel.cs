@@ -55,10 +55,13 @@ namespace ReLearn.Core.ViewModels.Facade
             }
             else
             {
-                await DBStatistics.Insert(True, False, $"{DataBase.TableName}");
-                await NavigateToStatistic();
-                Timer.Dispose();
-                await NavigationService.Close(this);
+                if (Timer != null)
+                {
+                    Timer.Dispose();
+                    await DBStatistics.Insert(True, False, $"{DataBase.TableName}");
+                    await NavigateToStatistic();
+                    await NavigationService.Close(this);
+                }
             }
         }
 
