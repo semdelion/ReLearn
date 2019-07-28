@@ -82,31 +82,19 @@ namespace ReLearn.Droid.Views.Images
             menu.FindItem(Resource.Id.HideStudied).SetChecked(ViewModel.HideStudied);
             searchView.QueryTextChange += (sender, e) =>
             {
-                if (e.NewText == "")
+                var searchWord = e.NewText.ToLower().Trim();
+                if (searchWord == string.Empty)
                     DictionaryImages.Adapter = new CustomAdapterImage(ParentActivity,
                         ViewModel.HideStudied
-                            ? ViewModel.DataBase.FindAll(obj => obj.NumberLearn != 0)
+                            ? ViewModel.DataBase.FindAll(column => column.NumberLearn != 0)
                             : ViewModel.DataBase);
                 else
-                    DictionaryImages.Adapter = new CustomAdapterImage(ParentActivity,
-                        Settings.Currentlanguage == $"{Language.en}"
-                            ? SearchWithGetTypeField("Name_image_en", e)
-                            : SearchWithGetTypeField("Name_image_ru", e));
+                    DictionaryImages.Adapter = new CustomAdapterImage(ParentActivity, 
+                        Settings.Currentlanguage == $"{Language.en}" ? 
+                        ViewModel.DataBase.FindAll(column => column.Name_image_en.ToLower().Contains(searchWord)) : 
+                        ViewModel.DataBase.FindAll(column => column.Name_image_ru.ToLower().Contains(searchWord)));
             };
             base.OnCreateOptionsMenu(menu, inflater);
-        }
-
-        public List<DatabaseImages> SearchWithGetTypeField(string nameField, SearchView.QueryTextChangeEventArgs e)
-        {
-            var database = new List<DatabaseImages>();
-            foreach (var image in ViewModel.DataBase)
-                if (image.GetType().GetProperty(nameField).GetValue(image, null).ToString().Substring(0,
-                        e.NewText.Length > image.GetType().GetProperty(nameField).GetValue(image, null).ToString()
-                            .Length
-                            ? 0
-                            : e.NewText.Length) == e.NewText)
-                    database.Add(image);
-            return database;
         }
 
         public void SortNamesImages()

@@ -42,21 +42,21 @@ namespace ReLearn.Droid.Views.Languages
 
             _searchView.QueryTextChange += (sender, e) =>
             {
-                if (e.NewText == "")
+                var searchWord = e.NewText.ToLower().Trim();
+                if (searchWord == "")
                 {
                     DictionaryWords.Adapter = new CustomAdapterWord(ParentActivity,
                         ViewModel.HideStudied
-                            ? ViewModel.Database.FindAll(obj => obj.NumberLearn != 0)
+                            ? ViewModel.Database.FindAll(column => column.NumberLearn != 0)
                             : ViewModel.Database);
                 }
                 else
                 {
-                    var FD = new List<DatabaseWords>();
-                    foreach (var word in ViewModel.Database)
-                        if (word.Word.Substring(0, e.NewText.Length > word.Word.Length ? 0 : e.NewText.Length) ==
-                            e.NewText)
-                            FD.Add(word);
-                    DictionaryWords.Adapter = new CustomAdapterWord(ParentActivity, FD);
+                    var date = ViewModel.Database.FindAll(column => 
+                        column.Word.ToLower().Contains(searchWord) || 
+                        column.TranslationWord.ToLower().Contains(searchWord));
+                        
+                    DictionaryWords.Adapter = new CustomAdapterWord(ParentActivity, date);
                 }
             };
 
