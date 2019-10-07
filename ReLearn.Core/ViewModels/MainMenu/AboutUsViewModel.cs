@@ -6,15 +6,9 @@ using MvvmCross.ViewModels;
 
 namespace ReLearn.Core.ViewModels.MainMenu
 {
-    public class AboutUsViewModel : MvxViewModel
+    public class AboutUsViewModel : BaseViewModel
     {
         #region Constructors
-
-        public AboutUsViewModel(IMvxNavigationService navigationService)
-        {
-            NavigationService = navigationService;
-        }
-
         #endregion
 
         #region Commands
@@ -24,9 +18,6 @@ namespace ReLearn.Core.ViewModels.MainMenu
         #endregion
 
         #region Services
-
-        protected IMvxNavigationService NavigationService { get; }
-
         #endregion
 
         #region Private

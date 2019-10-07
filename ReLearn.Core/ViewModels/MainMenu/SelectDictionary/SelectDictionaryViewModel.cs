@@ -3,21 +3,12 @@ using MvvmCross.ViewModels;
 
 namespace ReLearn.Core.ViewModels.MainMenu.SelectDictionary
 {
-    public class SelectDictionaryViewModel : MvxViewModel
+    public class SelectDictionaryViewModel : BaseViewModel
     {
         #region Constructors
-
-        public SelectDictionaryViewModel(IMvxNavigationService navigationService)
-        {
-            NavigationService = navigationService;
-        }
-
         #endregion
 
         #region Services
-
-        protected IMvxNavigationService NavigationService { get; }
-
         #endregion
 
         #region Fields

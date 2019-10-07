@@ -7,7 +7,7 @@ using ReLearn.Core.Localization;
 
 namespace ReLearn.Core.ViewModels.MainMenu.Statistics
 {
-    public class MainStatisticsViewModel : MvxViewModel
+    public class MainStatisticsViewModel : BaseViewModel
     {
         private int _amountOfStatistics = Settings.AmountOfStatistics;
 

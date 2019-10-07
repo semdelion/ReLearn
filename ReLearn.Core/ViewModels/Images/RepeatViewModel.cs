@@ -8,11 +8,6 @@ namespace ReLearn.Core.ViewModels.Images
     public class RepeatViewModel : MvxRepeatViewModel<List<DatabaseImages>>
     {
         #region Constructors
-
-        public RepeatViewModel(IMvxNavigationService navigationService) : base(navigationService)
-        {
-        }
-
         #endregion
 
         #region Properties

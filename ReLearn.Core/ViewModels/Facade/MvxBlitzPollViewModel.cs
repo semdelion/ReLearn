@@ -10,22 +10,18 @@ using ReLearn.Core.ViewModels.MainMenu.Statistics;
 
 namespace ReLearn.Core.ViewModels.Facade
 {
-    public abstract class MvxBlitzPollViewModel<ListDatabase> : MvxViewModel<ListDatabase>
+    public abstract class MvxBlitzPollViewModel<ListDatabase> : BaseViewModel<ListDatabase>
     {
         #region Constructors
 
-        public MvxBlitzPollViewModel(IMvxNavigationService navigationService)
+        public MvxBlitzPollViewModel()
         {
-            NavigationService = navigationService;
             Time = Settings.TimeToBlitz * 10;
         }
 
         #endregion
 
         #region Services
-
-        protected IMvxNavigationService NavigationService { get; }
-
         #endregion
 
         #region Private

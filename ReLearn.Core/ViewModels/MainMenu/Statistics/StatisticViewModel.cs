@@ -3,21 +3,12 @@ using MvvmCross.ViewModels;
 
 namespace ReLearn.Core.ViewModels.MainMenu.Statistics
 {
-    public class StatisticViewModel : MvxViewModel
+    public class StatisticViewModel : BaseViewModel
     {
         #region Constructors
-
-        public StatisticViewModel(IMvxNavigationService navigationService)
-        {
-            NavigationService = navigationService;
-        }
-
         #endregion
 
         #region Services
-
-        protected IMvxNavigationService NavigationService { get; }
-
         #endregion
 
         #region Fields

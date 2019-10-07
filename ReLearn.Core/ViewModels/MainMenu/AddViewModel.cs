@@ -8,13 +8,12 @@ using ReLearn.Core.Services;
 
 namespace ReLearn.Core.ViewModels.MainMenu
 {
-    public class AddViewModel : MvxViewModel
+    public class AddViewModel : BaseViewModel
     {
         #region Constructors
 
-        public AddViewModel(IMvxNavigationService navigationService, IMessageCore imessage)
+        public AddViewModel(IMessageCore imessage)
         {
-            NavigationService = navigationService;
             Message = imessage;
         }
 
@@ -58,8 +57,6 @@ namespace ReLearn.Core.ViewModels.MainMenu
         #endregion
 
         #region Services
-
-        protected IMvxNavigationService NavigationService { get; }
         protected IMessageCore Message { get; }
 
         #endregion

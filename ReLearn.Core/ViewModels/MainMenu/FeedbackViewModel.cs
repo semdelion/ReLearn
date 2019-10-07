@@ -7,15 +7,9 @@ using MvvmCross.ViewModels;
 
 namespace ReLearn.Core.ViewModels.MainMenu
 {
-    public class FeedbackViewModel : MvxViewModel
+    public class FeedbackViewModel : BaseViewModel
     {
         #region Constructors
-
-        public FeedbackViewModel(IMvxNavigationService mvxNavigationService)
-        {
-            NavigationService = mvxNavigationService;
-        }
-
         #endregion
 
         #region Commands
@@ -25,9 +19,6 @@ namespace ReLearn.Core.ViewModels.MainMenu
         #endregion
 
         #region Services
-
-        private IMvxNavigationService NavigationService { get; }
-
         #endregion
 
         #region Protected

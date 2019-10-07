@@ -13,25 +13,18 @@ using ReLearn.Core.ViewModels.MainMenu.SelectDictionary;
 
 namespace ReLearn.Core.ViewModels.MainMenu
 {
-    public class HomeViewModel : MvxViewModel
+    public class HomeViewModel : BaseViewModel
     {
         private IMvxAsyncCommand _toLearn;
         private IMvxAsyncCommand _toRepeat;
 
         private IMvxAsyncCommand _toSelectDictionary;
 
-        public HomeViewModel(IMvxNavigationService navigationService)
-        {
-            NavigationService = navigationService;
-        }
-
         public IMvxAsyncCommand ToRepeat => _toRepeat ?? (_toRepeat = new MvxAsyncCommand(NavigateToRepeat));
         public IMvxAsyncCommand ToLearn => _toLearn ?? (_toLearn = new MvxAsyncCommand(NavigateToLearn));
 
         public IMvxAsyncCommand ToSelectDictionary =>
             _toSelectDictionary ?? (_toSelectDictionary = new MvxAsyncCommand(NavigateToSelectDictionary));
-
-        protected IMvxNavigationService NavigationService { get; set; }
 
         private async Task Quiz(bool isImage)
         {

@@ -9,13 +9,12 @@ using ReLearn.Core.Services;
 
 namespace ReLearn.Core.ViewModels.MainMenu
 {
-    public class AddDictionaryViewModel : MvxViewModel
+    public class AddDictionaryViewModel : BaseViewModel
     {
         #region Constructors
 
-        public AddDictionaryViewModel(IMvxNavigationService navigationService, IMessageCore imessage)
+        public AddDictionaryViewModel(IMessageCore imessage)
         {
-            NavigationService = navigationService;
             Message = imessage;
         }
 
@@ -45,8 +44,6 @@ namespace ReLearn.Core.ViewModels.MainMenu
         #endregion
 
         #region Services
-
-        protected IMvxNavigationService NavigationService { get; }
         protected IMessageCore Message { get; }
 
         #endregion

@@ -9,13 +9,12 @@ using ReLearn.Core.Localization;
 
 namespace ReLearn.Core.ViewModels.MainMenu
 {
-    public class SettingsViewModel : MvxViewModel
+    public class SettingsViewModel : BaseViewModel
     {
         #region Constructors
 
-        public SettingsViewModel(IMvxNavigationService navigationService)
+        public SettingsViewModel()
         {
-            NavigationService = navigationService;
             WordsNumber = (Settings.NumberOfRepeatsLanguage - 5) / 5;
             ImagesNumber = (Settings.NumberOfRepeatsImage - 5) / 5;
             TimeToBlitz = (Settings.TimeToBlitz - 15) / 5;
@@ -26,9 +25,6 @@ namespace ReLearn.Core.ViewModels.MainMenu
         #endregion
 
         #region Services
-
-        protected IMvxNavigationService NavigationService { get; }
-
         #endregion
 
         #region Fields

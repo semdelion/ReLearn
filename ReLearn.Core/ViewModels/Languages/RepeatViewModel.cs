@@ -10,8 +10,7 @@ namespace ReLearn.Core.ViewModels.Languages
     {
         #region Constructors
 
-        public RepeatViewModel(IMvxNavigationService navigationService, ITextToSpeech textToSpeech)
-            : base(navigationService)
+        public RepeatViewModel(ITextToSpeech textToSpeech): base()
         {
             TextToSpeech = textToSpeech;
         }

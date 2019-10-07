@@ -8,22 +8,18 @@ using ReLearn.API.Database;
 
 namespace ReLearn.Core.ViewModels.Images
 {
-    public class ViewDictionaryViewModel : MvxViewModel
+    public class ViewDictionaryViewModel : BaseViewModel
     {
         #region Constructors
 
-        public ViewDictionaryViewModel(IMvxNavigationService navigationService)
+        public ViewDictionaryViewModel()
         {
-            NavigationService = navigationService;
             Task.Run(async () => DataBase = await DatabaseImages.GetData()).Wait();
         }
 
         #endregion
 
         #region Services
-
-        protected IMvxNavigationService NavigationService { get; }
-
         #endregion
 
         #region Fields

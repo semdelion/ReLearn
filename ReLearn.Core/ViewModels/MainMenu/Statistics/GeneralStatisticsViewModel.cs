@@ -9,7 +9,7 @@ using ReLearn.Core.Localization;
 
 namespace ReLearn.Core.ViewModels.MainMenu.Statistics
 {
-    public class GeneralStatisticsViewModel : MvxViewModel
+    public class GeneralStatisticsViewModel : BaseViewModel
     {
         private float _avgTrue;
         private float _avgTrueMonth;

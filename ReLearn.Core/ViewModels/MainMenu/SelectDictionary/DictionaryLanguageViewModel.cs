@@ -5,7 +5,7 @@ using ReLearn.API.Database;
 
 namespace ReLearn.Core.ViewModels.MainMenu.SelectDictionary
 {
-    public class DictionaryLanguageViewModel : MvxViewModel
+    public class DictionaryLanguageViewModel : BaseViewModel
     {
         public DictionaryLanguageViewModel()
         {

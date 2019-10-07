@@ -6,21 +6,17 @@ using ReLearn.Core.ViewModels.MainMenu.Statistics;
 
 namespace ReLearn.Core.ViewModels.Facade
 {
-    public abstract class MvxRepeatViewModel<ListDatabase> : MvxViewModel<ListDatabase>
+    public abstract class MvxRepeatViewModel<ListDatabase> : BaseViewModel<ListDatabase>
     {
         #region Constructors
 
-        public MvxRepeatViewModel(IMvxNavigationService navigationService)
+        public MvxRepeatViewModel()
         {
-            NavigationService = navigationService;
         }
 
         #endregion
 
         #region Services
-
-        protected IMvxNavigationService NavigationService { get; }
-
         #endregion
 
         #region Protected

@@ -4,21 +4,12 @@ using ReLearn.Core.ViewModels.MainMenu;
 
 namespace ReLearn.Core.ViewModels
 {
-    public class MainViewModel : MvxViewModel
+    public class MainViewModel : BaseViewModel
     {
         #region Constructors
-
-        public MainViewModel(IMvxNavigationService navigationService)
-        {
-            NavigationService = navigationService;
-        }
-
         #endregion
 
         #region Services
-
-        protected IMvxNavigationService NavigationService { get; set; }
-
         #endregion
 
         #region Public

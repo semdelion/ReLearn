@@ -8,12 +8,6 @@ namespace ReLearn.Core.ViewModels.Images
     public class BlitzPollViewModel : MvxBlitzPollViewModel<List<DatabaseImages>>
     {
         #region Constructors
-
-        public BlitzPollViewModel(IMvxNavigationService navigationService) :
-            base(navigationService)
-        {
-        }
-
         #endregion
 
         #region Properties

@@ -9,7 +9,7 @@ using ReLearn.Core.ViewModels.MainMenu.Statistics;
 
 namespace ReLearn.Core.ViewModels.MainMenu
 {
-    public class MenuViewModel : MvxViewModel
+    public class MenuViewModel : BaseViewModel
     {
         private IMvxAsyncCommand _toAboutUs;
 
@@ -26,9 +26,8 @@ namespace ReLearn.Core.ViewModels.MainMenu
 
         private IMvxAsyncCommand _toViewDictionary;
 
-        public MenuViewModel(IMvxNavigationService navigationService)
+        public MenuViewModel()
         {
-            NavigationService = navigationService;
             NavigateToHomeViewModel();
         }
 
@@ -54,8 +53,6 @@ namespace ReLearn.Core.ViewModels.MainMenu
 
         public IMvxAsyncCommand ToAboutUsViewModel =>
             _toAboutUs ?? (_toAboutUs = new MvxAsyncCommand(NavigateToAboutUsViewModel));
-
-        protected IMvxNavigationService NavigationService { get; set; }
 
         private async Task NavigateToHomeViewModel()
         {
