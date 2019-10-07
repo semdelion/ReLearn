@@ -7,6 +7,6 @@
     tools:context =".MainActivity">
     <item
         android:id      ="@+id/MenuSelectDictionary"
-        android:icon    ="@+mipmap/ic_dictionary"
+        android:icon    ="@mipmap/ic_dictionary"
         app:showAsAction="always" />
 </menu>
