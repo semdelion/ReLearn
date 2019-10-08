@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using MvvmCross.ViewModels;
-using ReLearn.API;
+﻿using ReLearn.API;
 using ReLearn.API.Database;
 using ReLearn.Core.Localization;
+using ReLearn.Core.ViewModels.Base;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace ReLearn.Core.ViewModels.MainMenu.Statistics
 {

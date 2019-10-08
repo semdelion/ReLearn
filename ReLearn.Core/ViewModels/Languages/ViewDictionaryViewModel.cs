@@ -5,6 +5,7 @@ using MvvmCross.ViewModels;
 using Plugin.Settings;
 using ReLearn.API;
 using ReLearn.API.Database;
+using ReLearn.Core.ViewModels.Base;
 
 namespace ReLearn.Core.ViewModels.Languages
 {

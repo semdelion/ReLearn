@@ -9,7 +9,6 @@ using ReLearn.Core.ViewModels;
 using ReLearn.Core.ViewModels.Languages;
 using ReLearn.Droid.Adapters;
 using ReLearn.Droid.Views.Menu;
-using System.Collections.Generic;
 using SearchView = Android.Support.V7.Widget.SearchView;
 
 namespace ReLearn.Droid.Views.Languages

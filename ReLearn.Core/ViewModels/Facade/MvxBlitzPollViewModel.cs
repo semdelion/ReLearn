@@ -6,6 +6,7 @@ using MvvmCross.UI;
 using MvvmCross.ViewModels;
 using ReLearn.API;
 using ReLearn.API.Database;
+using ReLearn.Core.ViewModels.Base;
 using ReLearn.Core.ViewModels.MainMenu.Statistics;
 
 namespace ReLearn.Core.ViewModels.Facade

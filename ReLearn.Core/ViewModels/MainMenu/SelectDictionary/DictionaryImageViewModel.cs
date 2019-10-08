@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using ReLearn.API.Database;
+using ReLearn.Core.ViewModels.Base;
+using System.Collections.Generic;
 using System.Threading.Tasks;
-using MvvmCross.ViewModels;
-using ReLearn.API.Database;
 
 namespace ReLearn.Core.ViewModels.MainMenu.SelectDictionary
 {

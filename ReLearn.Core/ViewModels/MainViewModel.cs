@@ -1,5 +1,5 @@
 ﻿using MvvmCross.Navigation;
-using MvvmCross.ViewModels;
+using ReLearn.Core.ViewModels.Base;
 using ReLearn.Core.ViewModels.MainMenu;
 
 namespace ReLearn.Core.ViewModels

@@ -1,15 +1,14 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using MvvmCross;
+﻿using MvvmCross;
 using MvvmCross.Commands;
-using MvvmCross.Navigation;
-using MvvmCross.ViewModels;
 using ReLearn.API;
 using ReLearn.API.Database;
 using ReLearn.Core.Localization;
 using ReLearn.Core.Services;
+using ReLearn.Core.ViewModels.Base;
 using ReLearn.Core.ViewModels.Images;
 using ReLearn.Core.ViewModels.MainMenu.SelectDictionary;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace ReLearn.Core.ViewModels.MainMenu
 {
@@ -25,6 +24,10 @@ namespace ReLearn.Core.ViewModels.MainMenu
 
         public IMvxAsyncCommand ToSelectDictionary =>
             _toSelectDictionary ?? (_toSelectDictionary = new MvxAsyncCommand(NavigateToSelectDictionary));
+
+        public string TextRepeat => this["Buttons.Repeat"];
+
+        public string TextLearn => this["Buttons.Learn"];
 
         private async Task Quiz(bool isImage)
         {

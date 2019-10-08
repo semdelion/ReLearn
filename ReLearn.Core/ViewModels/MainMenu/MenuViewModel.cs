@@ -1,11 +1,11 @@
-﻿using System.Threading.Tasks;
-using MvvmCross.Commands;
+﻿using MvvmCross.Commands;
 using MvvmCross.Navigation;
-using MvvmCross.ViewModels;
 using ReLearn.API.Database;
+using ReLearn.Core.ViewModels.Base;
 using ReLearn.Core.ViewModels.Images;
 using ReLearn.Core.ViewModels.MainMenu.SelectDictionary;
 using ReLearn.Core.ViewModels.MainMenu.Statistics;
+using System.Threading.Tasks;
 
 namespace ReLearn.Core.ViewModels.MainMenu
 {

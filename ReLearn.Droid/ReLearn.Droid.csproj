@@ -67,6 +67,7 @@
     <Compile Include="Statistics\BaseStatistics.cs" />
     <Compile Include="Statistics\DrawChart.cs" />
     <Compile Include="Statistics\DrawStatistics.cs" />
+    <Compile Include="Views\Base\MvxBaseFragment.cs" />
     <Compile Include="Views\Facade\MvxAppCompatActivityBlitzPoll.cs" />
     <Compile Include="Views\Facade\MvxAppCompatActivityRepeat.cs" />
     <Compile Include="Views\Menu\AddFragment.cs" />

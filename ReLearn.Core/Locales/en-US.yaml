@@ -1,26 +1,4 @@
-SignInAgreementViewModel:
-  TermsOfUse: "Нажимая кнопку \"Далее\", я принимаю условия <a href=\"https://www.google.com\" >Пользовательского соглашения</a> и даю свое согласие на обработку моих персональных данных"
-  Button:
-    Text: ДАЛЕЕ
-  TextHint:
-    Login: Ваш логин (email)
-  TextError:
-    Login: Email указан некорректно
-
 HomeViewModel:
-  Text: fff
-  Button:
-    Text: ДАЛЕЕ
-  TextHint:
-    Password: Пароль
-  Texts:
-    RemindPassword: Напомнить пароль
-    RememberPassword: Запомнить меня
-    Message: Для восстановления пароля требуется обратиться в техподдержку. Позвонить?
-    Yes: ДА, ПОЗВОНИТЬ
-    No: НЕТ
-    Error:
-      Title: Ошибка
-      MessageEmpty: Поле не должно быть пустым
-      Message: Неправильный пароль.
-  PhoneNumber: 8 123-456-78-90
+  Buttons:
+    Repeat: Repeat
+    Learn: Learn

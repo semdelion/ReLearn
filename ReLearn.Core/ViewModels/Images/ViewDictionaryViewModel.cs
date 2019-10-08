@@ -1,10 +1,9 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using MvvmCross.Navigation;
-using MvvmCross.ViewModels;
-using Plugin.Settings;
+﻿using Plugin.Settings;
 using ReLearn.API;
 using ReLearn.API.Database;
+using ReLearn.Core.ViewModels.Base;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace ReLearn.Core.ViewModels.Images
 {

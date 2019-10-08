@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using MvvmCross.ViewModels;
 using ReLearn.API.Database;
+using ReLearn.Core.ViewModels.Base;
 
 namespace ReLearn.Core.ViewModels.MainMenu.SelectDictionary
 {

@@ -1,4 +1,4 @@
-﻿using MvvmCross.ViewModels;
+﻿using ReLearn.Core.ViewModels.Base;
 
 namespace ReLearn.Core.ViewModels.Facade
 {
