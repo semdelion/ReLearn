@@ -2,8 +2,8 @@
 
 namespace ReLearn.Droid.Services
 {
-	public interface INavigationActivity
-	{
-		DrawerLayout DrawerLayout { get; set; }
-	}
+    public interface INavigationActivity
+    {
+        DrawerLayout DrawerLayout { get; set; }
+    }
 }

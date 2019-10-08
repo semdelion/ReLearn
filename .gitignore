@@ -1,13 +1,125 @@
+# Specific
 
-.vs/ReLearn/v15/.suo
-\Debug\Schemas
-Relearn.Droid/bin/
-Relearn.Droid/obj/
-Relearn.Core/bin/
-Relearn.Core/obj/
-Relearn.API/obj/
-Relearn.API/bin/
-/ReLearn/bin/Debug
-/ReLearn/obj
-/packages/Xamarin.Android.Support.Vector.Drawable.28.0.0-preview7/build/monoandroid81
-.vs/ReLearn/v15/Server/sqlite3/storage.ide
+# Visual Studio 2015 cache/options directory
+.vs/
+
+# User-specific files (MonoDevelop/Xamarin Studio)
+*.userprefs
+
+# Build results
+/**/Debug/*
+/**/Release/*
+/**/bin/*
+/**/obj/*
+
+# Xamarin Components
+/**/Components/*
+
+# NuGet Packages
+*.nupkg
+# The packages folder can be ignored because of Package Restore
+**/packages/*
+# except build/, which is used as an MSBuild target.
+!**/packages/build/
+# Uncomment if necessary however generally it will be regenerated when needed
+#!**/packages/repositories.config
+# NuGet v3's project.json files produces more ignoreable files
+*.nuget.props
+*.nuget.targets
+
+# User-specific files
+*.suo
+*.user
+*.sln.docstates
+*.userprefs
+*.DS_Store
+*.Cache
+*.bak
+*/UpgradeLog*.htm
+
+# Ignore Xamarin.Android Resource.Designer.cs files
+**/*.Droid*/**/[Rr]esource.[Dd]esigner.cs
+*/*.Droid/**/[Rr]esource.[Dd]esigner.cs
+**/*.Droid/**/[Rr]esource.[Dd]esigner.cs
+/**/*Android*/**/[Rr]esource.[Dd]esigner.cs
+**/Droid/**/[Rr]esource.[Dd]esigner.cs
+**/Android/**/[Rr]esource.[Dd]esigner.cs
+**/Droid/**/[Rr]esource.[Dd]esigner.cs
+
+# ReSharper is a .NET coding add-in
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+*.DotSettings
+!Loymax.DotSettings
+
+# TeamCity is a build add-in
+_TeamCity*
+
+# DotCover is a Code Coverage Tool
+*.dotCover
+
+# Visual Studio profiler
+*.psess
+*.vsp
+*.vspx
+
+#NUNIT
+*.VisualState.xml
+TestResult.xml
+
+#Rider
+.idea
+.rider
+
+# MSTest test Results
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+
+
+### Xcode ###
+# Xcode
+#
+# gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
+
+## Build generated
+build/
+!**/Extensions/**/build/
+!**/pdfjs/build/
+DerivedData/
+
+## ios native extenions
+!/**/NativeExtensions/Debug/*
+!/**/NativeExtensions/Release/*
+
+## Various settings
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata/
+
+## Other
+*.moved-aside
+*.xccheckout
+*.xcscmblueprint
+
+### Xcode Patch ###
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/xcshareddata/
+!*.xcworkspace/contents.xcworkspacedata
+/*.gcno
+
+# End of https://www.gitignore.io/api/xcode
+
+# NUnit
+TEST-*.xml
+
+#Other
+*.droidres*
+.DS_Store

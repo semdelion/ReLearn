@@ -36,18 +36,16 @@
 				android:layout_marginRight		="35.0dp"
 				android:orientation				="vertical" >
 				<Button
-					local:MvxBind				="Click ToRepeat"
-					android:text				="@string/Repeat"
 					android:background			="@drawable/button_style_standard"
 					android:textColor			="@color/text_white"
 					android:fontFamily			="@font/myriadpro_semibold"
 					android:textSize			="30dp"
 					android:layout_width		="match_parent"
 					android:layout_height		="70dp"
-					android:gravity				="center"/>
+					android:gravity				="center"
+                    local:MvxBind               ="Text TextRepeat; Click ToRepeat"
+                    tools:text                  ="Repeat"/>
 				<Button
-					local:MvxBind				="Click ToLearn"
-					android:text				="@string/Learn"
 					android:id					="@+id/button_Images_learn"
 					android:background			="@drawable/button_style_standard"
 					android:textColor			="@color/text_white"
@@ -57,7 +55,8 @@
 					android:layout_height		="70dp"
 					android:layout_marginTop	="20dp"
 					android:gravity				="center"
-				/>
+                    local:MvxBind               ="Text TextLearn; Click ToLearn"
+                    tools:text                  ="Learn"/>
 			</LinearLayout>
 		</RelativeLayout>
 	</android.support.design.widget.CoordinatorLayout>

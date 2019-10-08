@@ -7,17 +7,16 @@
     android:layout_height ="match_parent">
 
 	<TableLayout
-			android:layout_width		="match_parent"
-			android:layout_height		="match_parent"
-			android:layout_above		="@+id/view_learned_words"
-			android:layout_marginRight	="@dimen/view_margin_statistics"
-			android:layout_marginLeft	="@dimen/view_margin_statistics"
-			android:layout_marginTop	="@dimen/view_margin_statistics"
-			android:layout_marginBottom	="@dimen/view_margin_statistics">
+		android:layout_width		="match_parent"
+		android:layout_height		="match_parent"
+		android:layout_above		="@+id/view_learned_words"
+		android:layout_marginRight	="@dimen/view_margin_statistics"
+		android:layout_marginLeft	="@dimen/view_margin_statistics"
+		android:layout_marginTop	="@dimen/view_margin_statistics"
+		android:layout_marginBottom	="@dimen/view_margin_statistics">
 		<TableRow
-			android:layout_height="0dp"
-			android:layout_weight="1">
-
+			android:layout_height       ="0dp"
+			android:layout_weight       ="1">
 			<LinearLayout
 				tools:background				="@android:color/holo_purple"
 				android:id						="@+id/view_degree_of_study"

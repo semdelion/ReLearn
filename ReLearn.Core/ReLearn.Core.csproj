@@ -1,18 +1,31 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Locales\en-US.yaml" />
+    <None Remove="Locales\ru-RU.yaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Locales\en-US.yaml" />
+    <EmbeddedResource Include="Locales\ru-RU.yaml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Acr.UserDialogs" Version="7.0.3" />
     <PackageReference Include="MvvmCross" Version="6.2.3" />
+    <PackageReference Include="MvvmCross.Plugin.Color" Version="6.2.3" />
     <PackageReference Include="MvvmCross.Plugin.Email" Version="6.2.3" />
     <PackageReference Include="MvvmCross.Plugin.Json" Version="6.2.3" />
     <PackageReference Include="MvvmCross.Plugin.JsonLocalization" Version="6.2.3" />
     <PackageReference Include="MvvmCross.Plugin.ResourceLoader" Version="6.2.3" />
     <PackageReference Include="MvvmCross.Plugin.ResxLocalization" Version="6.2.3" />
     <PackageReference Include="MvvmCross.Plugin.WebBrowser" Version="6.2.3" />
+    <PackageReference Include="Xamarin.Yaml.Localization" Version="1.1.9" />
+    <PackageReference Include="Xamarin.Yaml.Parser" Version="1.1.9" />
   </ItemGroup>
 
   <ItemGroup>

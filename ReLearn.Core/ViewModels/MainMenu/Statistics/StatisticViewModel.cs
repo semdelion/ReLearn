@@ -1,34 +1,37 @@
-﻿using MvvmCross.Navigation;
-using MvvmCross.ViewModels;
+﻿using ReLearn.Core.ViewModels.Base;
 
 namespace ReLearn.Core.ViewModels.MainMenu.Statistics
 {
-    public class StatisticViewModel : MvxViewModel
+    public class StatisticViewModel : BaseViewModel
     {
-        #region Fields
-        #endregion
-
-        #region Commands
-        #endregion
-
-        #region Properties
+        #region Constructors
         #endregion
 
         #region Services
-        protected IMvxNavigationService NavigationService { get; }
         #endregion
 
-        #region Constructors
-        public StatisticViewModel(IMvxNavigationService navigationService) => NavigationService = navigationService;
+        #region Fields
+
+        #endregion
+
+        #region Commands
+
+        #endregion
+
+        #region Properties
+
         #endregion
 
         #region Private
+
         #endregion
 
         #region Protected
+
         #endregion
 
         #region Public
+
         #endregion
     }
 }

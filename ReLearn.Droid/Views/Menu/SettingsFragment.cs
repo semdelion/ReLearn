@@ -5,9 +5,9 @@ using ReLearn.Core.ViewModels.MainMenu;
 
 namespace ReLearn.Droid.Views.Menu
 {
-    [MvxFragmentPresentation(typeof(MainViewModel), Resource.Id.content_frame, false)]
+    [MvxFragmentPresentation(typeof(MainViewModel), Resource.Id.content_frame)]
     [Register("relearn.droid.views.menu.SettingsFragment")]
-    class SettingsFragment : BaseFragment<SettingsViewModel>
+    internal class SettingsFragment : BaseFragment<SettingsViewModel>
     {
         protected override int FragmentId => Resource.Layout.fragment_menu_settings;
 

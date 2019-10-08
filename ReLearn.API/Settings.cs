@@ -1,6 +1,6 @@
-﻿using Plugin.Settings;
-using System;
+﻿using System;
 using System.Threading;
+using Plugin.Settings;
 
 namespace ReLearn.API
 {
@@ -67,7 +67,8 @@ namespace ReLearn.API
 
         public static int NumberOfRepeatsLanguage
         {
-            get => Convert.ToInt32(CrossSettings.Current.GetValueOrDefault($"{DBSettings.Language_repeat_count}", "20"));
+            get =>
+                Convert.ToInt32(CrossSettings.Current.GetValueOrDefault($"{DBSettings.Language_repeat_count}", "20"));
             set => CrossSettings.Current.AddOrUpdateValue($"{DBSettings.Language_repeat_count}", $"{value}");
         }
 
@@ -85,7 +86,8 @@ namespace ReLearn.API
 
         public static string Currentlanguage
         {
-            get => CrossSettings.Current.GetValueOrDefault($"{DBSettings.Language}", Thread.CurrentThread.CurrentCulture.Name == "ru-RU" ? $"{Language.ru}" : $"{Language.en}");
+            get => CrossSettings.Current.GetValueOrDefault($"{DBSettings.Language}",
+                Thread.CurrentThread.CurrentCulture.Name == "ru-RU" ? $"{Language.ru}" : $"{Language.en}");
             set => CrossSettings.Current.AddOrUpdateValue($"{DBSettings.Language}", $"{value}");
         }
 
@@ -105,7 +107,9 @@ namespace ReLearn.API
         {
             get
             {
-                Enum.TryParse(CrossSettings.Current.GetValueOrDefault($"{DBSettings.TypeOfRepetition}", $"{TypeOfRepetitions.FourOptions}"), out TypeOfRepetitions name);
+                Enum.TryParse(
+                    CrossSettings.Current.GetValueOrDefault($"{DBSettings.TypeOfRepetition}",
+                        $"{TypeOfRepetitions.FourOptions}"), out TypeOfRepetitions name);
                 return name;
             }
             set => CrossSettings.Current.AddOrUpdateValue($"{DBSettings.TypeOfRepetition}", $"{value}");

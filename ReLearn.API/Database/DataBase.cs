@@ -1,7 +1,7 @@
-﻿using Plugin.Settings;
-using SQLite;
-using System;
+﻿using System;
 using System.IO;
+using Plugin.Settings;
+using SQLite;
 
 namespace ReLearn.API.Database
 {
@@ -9,6 +9,7 @@ namespace ReLearn.API.Database
     {
         Flags,
         Films,
+
         ///////////////////////////////////
         My_Directly,
         Home,
@@ -21,19 +22,21 @@ namespace ReLearn.API.Database
 
     public static class DataBase
     {
-        const string _statistics  = "database_statistics.db3"; 
-        const string _english     = "database_words.db3"; 
-        const string _flags       = "database_image.db3";
+        private const string _statistics = "database_statistics.db3";
+        private const string _english = "database_words.db3";
+        private const string _flags = "database_image.db3";
 
-        public static SQLiteAsyncConnection Languages;
-        public static SQLiteAsyncConnection Images;
-        public static SQLiteAsyncConnection Statistics;
+        public static SQLiteAsyncConnection Languages { get; private set; }
+        public static SQLiteAsyncConnection Images { get; private set; }
+        public static SQLiteAsyncConnection Statistics { get; private set; }
 
         public static TableNames TableName
         {
             get
             {
-                Enum.TryParse(CrossSettings.Current.GetValueOrDefault($"{DBSettings.DictionaryName}", $"{TableNames.Popular_Words}"), out TableNames name);
+                Enum.TryParse(
+                    CrossSettings.Current.GetValueOrDefault($"{DBSettings.DictionaryName}",
+                        $"{TableNames.Popular_Words}"), out TableNames name);
                 return name;
             }
             set => CrossSettings.Current.AddOrUpdateValue($"{DBSettings.DictionaryName}", $"{value}");
@@ -46,6 +49,10 @@ namespace ReLearn.API.Database
             Statistics = Connect(_statistics);
         }
 
-        static SQLiteAsyncConnection Connect(string nameDB) => new SQLiteAsyncConnection(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), nameDB));
+        private static SQLiteAsyncConnection Connect(string nameDB)
+        {
+            return new SQLiteAsyncConnection(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal),
+                nameDB));
+        }
     }
 }

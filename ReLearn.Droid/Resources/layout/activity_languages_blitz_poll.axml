@@ -36,9 +36,9 @@
 		android:layout_width	="match_parent"
 		android:layout_height	="match_parent">
 		<TextView
-			local:MvxBind			    ="Text TimerText"
+			local:MvxBind			    ="Text TimerText; TextColor NativeColor(CurrentColor)"
 			android:id					="@+id/textView_Timer_language"
-			android:textColor			="@color/text_white"
+			tools:textColor			    ="@color/text_white"
 			tools:text					="10:20"
 			android:textSize			="30dp"
 			android:textStyle			="bold"

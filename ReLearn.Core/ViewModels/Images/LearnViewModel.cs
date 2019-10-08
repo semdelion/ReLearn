@@ -1,45 +1,48 @@
-﻿using MvvmCross.Navigation;
-using MvvmCross.ViewModels;
+﻿using System.Collections.Generic;
 using ReLearn.API.Database;
-using System.Collections.Generic;
+using ReLearn.Core.ViewModels.Facade;
 
 namespace ReLearn.Core.ViewModels.Images
 {
-    public class LearnViewModel : MvxViewModel<List<DatabaseImages>>
+    public class LearnViewModel : MvxLearnViewModel<List<DatabaseImages>>
     {
-        #region Fields
-        #endregion
-
-        #region Commands
-        #endregion
-
         #region Properties
+
         public List<DatabaseImages> Database { get; set; }
-        public int Count { get; set; }
-        private string _imageName;
-        public string ImageName
-        {
-            get => _imageName;
-            set => SetProperty(ref _imageName, value);
-        }
-        #endregion
 
-        #region Services
-        protected IMvxNavigationService NavigationService { get; }
-        #endregion
-
-        #region Constructors
-        public LearnViewModel(IMvxNavigationService navigationService) => NavigationService = navigationService;
-        #endregion
-
-        #region Private
-        #endregion
-
-        #region Protected
         #endregion
 
         #region Public
-        public override void Prepare(List<DatabaseImages> parameter) => Database = parameter;
+
+        public override void Prepare(List<DatabaseImages> parameter)
+        {
+            Database = parameter;
+        }
+
+        #endregion
+
+        #region Fields
+
+        #endregion
+
+        #region Commands
+
+        #endregion
+
+        #region Services
+
+        #endregion
+
+        #region Constructors
+
+        #endregion
+
+        #region Private
+
+        #endregion
+
+        #region Protected
+
         #endregion
     }
 }

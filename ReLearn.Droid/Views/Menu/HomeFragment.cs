@@ -1,14 +1,12 @@
-﻿using Android.Animation;
-using Android.Runtime;
+﻿using Android.Runtime;
 using Android.Views;
-using Android.Views.Animations;
 using MvvmCross.Platforms.Android.Presenters.Attributes;
 using ReLearn.Core.ViewModels;
 using ReLearn.Core.ViewModels.MainMenu;
 
 namespace ReLearn.Droid.Views.Menu
 {
-    [MvxFragmentPresentation(typeof(MainViewModel), Resource.Id.content_frame, false)]
+    [MvxFragmentPresentation(typeof(MainViewModel), Resource.Id.content_frame)]
     [Register("relearn.droid.views.menu.HomeFragment")]
     public class HomeFragment : BaseFragment<HomeViewModel>
     {
@@ -37,6 +35,3 @@ namespace ReLearn.Droid.Views.Menu
         }
     }
 }
-
-
-    

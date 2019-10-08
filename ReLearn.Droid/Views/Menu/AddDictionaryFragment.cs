@@ -1,6 +1,7 @@
-﻿using Android.OS;
+﻿using Android.App;
+using Android.OS;
 using Android.Runtime;
-using Android.Support.V7.Graphics.Drawable;
+using Android.Support.V7.Widget;
 using Android.Views;
 using MvvmCross.Droid.Support.V7.AppCompat;
 using MvvmCross.Platforms.Android.Binding.BindingContext;
@@ -29,19 +30,20 @@ namespace ReLearn.Droid.Views.Menu
         {
             base.OnCreateView(inflater, container, savedInstanceState);
             var view = this.BindingInflate(FragmentId, null);
-            _toolbar = view.FindViewById<Android.Support.V7.Widget.Toolbar>(Toolbar);
+            _toolbar = view.FindViewById<Toolbar>(Toolbar);
             if (_toolbar != null)
             {
                 ParentActivity.SetSupportActionBar(_toolbar);
                 ParentActivity.SupportActionBar.SetHomeButtonEnabled(true);
                 ParentActivity.SupportActionBar.SetDisplayHomeAsUpEnabled(true);
                 _drawerToggle = new MvxActionBarDrawerToggle(
-                Activity,                               // host Activity
-                (ParentActivity as INavigationActivity).DrawerLayout,  // DrawerLayout object
-                             // nav drawer icon to replace 'Up' caret
-                Resource.String.navigation_drawer_open,
-                Resource.String.navigation_drawer_close);
+                    Activity, // host Activity
+                    (ParentActivity as INavigationActivity).DrawerLayout, // DrawerLayout object
+                    // nav drawer icon to replace 'Up' caret
+                    Resource.String.navigation_drawer_open,
+                    Resource.String.navigation_drawer_close);
             }
+
             SetHomeAsUp(ParentActivity.SupportFragmentManager.BackStackEntryCount == 0 ? false : true);
             return view;
         }
@@ -50,19 +52,21 @@ namespace ReLearn.Droid.Views.Menu
         {
             if (item.ItemId == Resource.Id.dictionary_replenishment_instruction)
             {
-                Android.App.AlertDialog.Builder alert = new Android.App.AlertDialog.Builder(ParentActivity);
-                LayoutInflater factory = LayoutInflater.From(ParentActivity);
+                var alert = new AlertDialog.Builder(ParentActivity);
+                var factory = LayoutInflater.From(ParentActivity);
                 alert.SetView(factory.Inflate(Resource.Layout.alert_dictionary, null));
                 alert.SetTitle(Resource.String.Instruction);
                 alert.SetPositiveButton("Cancel", delegate { alert.Dispose(); });
                 alert.Show();
                 return true;
             }
+
             if (ParentActivity.SupportFragmentManager.BackStackEntryCount >= 1)
             {
                 ParentActivity.SupportFragmentManager.PopBackStack();
                 return true;
             }
+
             return false;
         }
     }

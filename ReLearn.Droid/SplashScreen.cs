@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace ReLearn.Droid
 {
     [Activity(
-        Label = "@string/app_name", 
+        Label = "@string/app_name",
         MainLauncher = true,
         Theme = "@style/SplashTheme",
         NoHistory = true,
@@ -20,7 +20,7 @@ namespace ReLearn.Droid
         {
             Database.InstallDatabaseFromAssets();
             DataBase.SetupConnection();
-            Task.Run(async() =>
+            Task.Run(async () =>
             {
                 await Database.СreateTableImage();
                 await Database.СreateTableLanguage();

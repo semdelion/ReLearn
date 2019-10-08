@@ -11,13 +11,12 @@ using ReLearn.Core.ViewModels;
 using ReLearn.Core.ViewModels.MainMenu.Statistics;
 using ReLearn.Droid.Helpers;
 using ReLearn.Droid.Views.Menu;
-using ReLearn.Droid.Views.Statistics;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace ReLearn.Droid.Views.Fragments
+namespace ReLearn.Droid.Views.Statistics
 {
-    [MvxFragmentPresentation(typeof(MainViewModel), Resource.Id.content_frame, false)]
+    [MvxFragmentPresentation(typeof(MainViewModel), Resource.Id.content_frame)]
     [Register("relearn.droid.views.statistics.StatisticsFragment")]
     public class StatisticsFragment : BaseFragment<StatisticViewModel>
     {
@@ -32,19 +31,20 @@ namespace ReLearn.Droid.Views.Fragments
 
         private async Task GetDate()
         {
-            bool isContain = DatabaseImages.DatabaseIsContain($"{DataBase.TableName}");
+            var isContain = DatabaseImages.DatabaseIsContain($"{DataBase.TableName}");
             LightColor = isContain ? Colors.Orange : Colors.Blue;
             DarkColor = isContain ? Colors.DarkOrange : Colors.DarkBlue;
             DataTupe = isContain ? $"{DataBase.TableName}" : "Words";
-            StatisticsDatabase = isContain ? await DBStatistics.GetImages($"{DataBase.TableName}") :
-                                       await DBStatistics.GetWords($"{DataBase.TableName}");
+            StatisticsDatabase = isContain
+                ? await DBStatistics.GetImages($"{DataBase.TableName}")
+                : await DBStatistics.GetWords($"{DataBase.TableName}");
         }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             var view = base.OnCreateView(inflater, container, savedInstanceState);
             Task.Run(async () => await GetDate()).Wait();
-            ViewPager viewPager = view.FindViewById<ViewPager>(Resource.Id.pager);
+            var viewPager = view.FindViewById<ViewPager>(Resource.Id.pager);
             if (viewPager != null)
             {
                 var fragments = new List<MvxViewPagerFragmentInfo>
@@ -52,15 +52,15 @@ namespace ReLearn.Droid.Views.Fragments
                     new MvxViewPagerFragmentInfo("", "", typeof(TabMainFragment), typeof(MainStatisticsViewModel)),
                     new MvxViewPagerFragmentInfo("", "", typeof(TabGeneralFragment), typeof(GeneralStatisticsViewModel))
                 };
-                viewPager.Adapter = new MvxFragmentStatePagerAdapter(Activity, ChildFragmentManager, fragments); 
+                viewPager.Adapter = new MvxFragmentStatePagerAdapter(Activity, ChildFragmentManager, fragments);
             }
 
-            TabLayout tabLayout = view.FindViewById<TabLayout>(Resource.Id.tablayout);
+            var tabLayout = view.FindViewById<TabLayout>(Resource.Id.tablayout);
 
             tabLayout.SetupWithViewPager(viewPager);
             tabLayout.GetTabAt(tabLayout.TabCount - 2).SetIcon(Resource.Drawable.ic_statistics_main);
             tabLayout.GetTabAt(tabLayout.TabCount - 1).SetIcon(Resource.Drawable.ic_statistics_general);
-          
+
             return view;
         }
     }

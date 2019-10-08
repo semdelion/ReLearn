@@ -6,7 +6,7 @@ using ReLearn.Core.ViewModels.MainMenu;
 
 namespace ReLearn.Droid.Views.Menu
 {
-    [MvxFragmentPresentation(typeof(MainViewModel), Resource.Id.content_frame, false)]
+    [MvxFragmentPresentation(typeof(MainViewModel), Resource.Id.content_frame)]
     [Register("relearn.droid.views.menu.AddFragment")]
     public class AddFragment : BaseFragment<AddViewModel>
     {
@@ -19,6 +19,7 @@ namespace ReLearn.Droid.Views.Menu
             inflater.Inflate(Resource.Menu.menu_english_add, menu);
             base.OnCreateOptionsMenu(menu, inflater);
         }
+
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
             switch (item.ItemId)
