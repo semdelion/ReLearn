@@ -68,6 +68,7 @@ Distributed under the Apache 2.0 License. See `LICENSE` for more information.
 ## Contact
 
 <img src="ReadMeImages/google_email.png" alt="Logo" width="24" height="24"> [Telegram](https://t.me/semdelion)
+<br />
 <img src="ReadMeImages/telegram.png" alt="Logo" width="24" height="24"> Semdelion@gmail.com
 
 
@@ -76,4 +77,4 @@ Distributed under the Apache 2.0 License. See `LICENSE` for more information.
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [license-shield]: https://img.shields.io/badge/License-Apache%202.0-blue.svg
 [license-url]: https://github.com/semdelion/ReLearn/blob/master/LICENSE
-[product-screenshot-1]: Images/screenshot-1.png
+[product-screenshot-1]: ReadMeImages/screenshot-1.png
