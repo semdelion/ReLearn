@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\src"
   ],
-  "SelectedNode": "\\ReLearn.sln",
+  "SelectedNode": "\\src\\ReLearn.sln",
   "PreviewInSolutionExplorer": false
 }
