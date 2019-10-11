@@ -9,7 +9,6 @@ namespace ReLearn.Core.ViewModels.Images
         #region Properties
 
         public List<DatabaseImages> Database { get; set; }
-
         #endregion
 
         #region Public

@@ -53,7 +53,6 @@ namespace ReLearn.Core.ViewModels.Languages
         public bool VoiceEnable { get; set; } = true;
 
         public string Word { get; set; }
-
         #endregion
 
         #region Private

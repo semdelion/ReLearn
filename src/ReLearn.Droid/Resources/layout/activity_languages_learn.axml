@@ -18,11 +18,12 @@
        		android:layout_height ="80dp"	
 			local:buttonGravity	  ="bottom">
 			<TextView
-				android:text		  ="@string/Learn"  
 				android:gravity		  ="bottom"
 				android:paddingBottom ="12dp"
 				android:layout_width  ="match_parent"
 				android:layout_height ="match_parent"
+                local:MvxBind         ="Text Title"
+                tools:text            ="Learn"
 			/>
 		</android.support.v7.widget.Toolbar>
 	</android.support.design.widget.AppBarLayout>

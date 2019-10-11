@@ -2,3 +2,12 @@ HomeViewModel:
   Buttons:
     Repeat: Повторить
     Learn: Учить
+
+LearnViewModel:
+  Title: Учить
+
+AddViewModel:
+  Title: Добавить
+
+AddDictionaryViewModel:
+  Title: Добавить

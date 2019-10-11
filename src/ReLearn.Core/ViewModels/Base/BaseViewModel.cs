@@ -9,6 +9,8 @@ namespace ReLearn.Core.ViewModels.Base
 {
     public abstract class BaseViewModel : MvxViewModel, IMvxLocalizedTextSourceOwner
     {
+        public virtual string Title => this["Title"];
+
         private IMvxLanguageBinder _localizedTextSource;
 
         public virtual IMvxLanguageBinder LocalizedTextSource =>
