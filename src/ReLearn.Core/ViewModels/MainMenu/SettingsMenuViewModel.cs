@@ -5,7 +5,6 @@ using MvvmCross.Commands;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 using ReLearn.API;
-using ReLearn.Core.Localization;
 using ReLearn.Core.ViewModels.Base;
 
 namespace ReLearn.Core.ViewModels.MainMenu
@@ -13,7 +12,6 @@ namespace ReLearn.Core.ViewModels.MainMenu
     public class SettingsViewModel : BaseViewModel
     {
         #region Constructors
-
         public SettingsViewModel()
         {
             WordsNumber = (Settings.NumberOfRepeatsLanguage - 5) / 5;
@@ -22,14 +20,6 @@ namespace ReLearn.Core.ViewModels.MainMenu
             IsActiveBlitz = Settings.BlitzEnable;
             IsActiveQuiz = Settings.QuizEnable;
         }
-
-        #endregion
-
-        #region Services
-        #endregion
-
-        #region Fields
-
         #endregion
 
         #region Commands
@@ -156,7 +146,7 @@ namespace ReLearn.Core.ViewModels.MainMenu
         {
             var actionSheetConfig = new ActionSheetConfig
             {
-                Title = AppResources.SettingsMenuViewModel_ChooseLanguage,
+                Title = this["ChooseLanguage"],
                 UseBottomSheet = true,
                 Options = new List<ActionSheetOption>
                 {
@@ -172,7 +162,7 @@ namespace ReLearn.Core.ViewModels.MainMenu
                     })
                 },
 
-                Cancel = new ActionSheetOption(AppResources.SettingsMenuViewModel_Cancel, () => { })
+                Cancel = new ActionSheetOption(this["Cancel"], () => { })
             };
             Mvx.IoCProvider.Resolve<IUserDialogs>().ActionSheet(actionSheetConfig);
         }
@@ -181,7 +171,7 @@ namespace ReLearn.Core.ViewModels.MainMenu
         {
             var actionSheetConfig = new ActionSheetConfig
             {
-                Title = AppResources.SettingsMenuViewModel_ChoosePronunciation,
+                Title = this["ChoosePronunciation"],
                 UseBottomSheet = true,
                 Options = new List<ActionSheetOption>
                 {
@@ -196,21 +186,13 @@ namespace ReLearn.Core.ViewModels.MainMenu
                         Settings.CurrentPronunciation = $"{Pronunciation.uk}";
                     })
                 },
-                Cancel = new ActionSheetOption(AppResources.SettingsMenuViewModel_Cancel, () => { })
+                Cancel = new ActionSheetOption(this["Cancel"], () => { })
             };
             Mvx.IoCProvider.Resolve<IUserDialogs>().ActionSheet(actionSheetConfig);
         }
 
         public string TextQuiz => this["Texts.Quiz"];
         public string TextBlitz => this["Texts.Blitz"];
-        #endregion
-
-        #region Protected
-
-        #endregion
-
-        #region Public
-
         #endregion
     }
 }

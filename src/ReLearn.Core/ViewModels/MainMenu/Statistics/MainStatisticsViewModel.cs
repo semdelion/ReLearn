@@ -1,6 +1,5 @@
 ﻿using ReLearn.API;
 using ReLearn.API.Database;
-using ReLearn.Core.Localization;
 using ReLearn.Core.ViewModels.Base;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -34,9 +33,9 @@ namespace ReLearn.Core.ViewModels.MainMenu.Statistics
         public int? True { get; private set; }
         public int? False { get; private set; }
 
-        public string Answers => $"{AppResources.MainStatisticsViewModel_Correct}:" +
-                                 $" {True ?? 0}, {AppResources.MainStatisticsViewModel_Incorrect}: {False ?? 0}";
+        public string Answers => $"{this["Correct"]}:" +
+                                 $" {True ?? 0}, {this["Incorrect"]}: {False ?? 0}";
 
-        public string LastTest => AppResources.MainStatisticsViewModel_LastTest;
+        public string LastTest => this["LastTest"];
     }
 }

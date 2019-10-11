@@ -5,11 +5,15 @@ HomeViewModel:
 
 LearnViewModel:
   Title: Learn
+  DictionaryOver: Dictionary over
 
 AddViewModel:
   Title: Addition
   Buttons:
     Add: Add
+  WordAdded: Word added!
+  WordExists: The word exists!
+  EnterWord: Enter word!
 
 AddDictionaryViewModel:
   Title: Addition
@@ -21,6 +25,34 @@ SelectDictionaryViewModel:
 
 StatisticViewModel:
   Title: Statistics
+
+MainStatisticsViewModel:
+  LastTest: Last testing
+  Incorrect: Incorrect
+  Correct: Correct
+
+GeneralStatisticsViewModel:
+  Average: Average
+  Correct: Correct
+  CorrectAnswers: Correct answers
+  DegreeOfStudy: Degree of study
+  Incorrect: incorrect
+  Month: Month
+  Numbers:
+    CorrectAnswers: Answer Ratio
+    OfTests: number of tests
+    Inconvenient:
+      Films: Number of inconvenient films
+      Flags: Number of inconvenient flags
+      Images: Number of inconvenient images
+      Words: Number of inconvenient words
+    Learned:
+      Films: Number of films learned
+      Flags: Number of flags learned
+      Images: Number of images learned
+      Words: Number of words learned
+  Of: of
+  Today: Today
 
 ViewDictionaryViewModel:
   Title: View
@@ -36,10 +68,20 @@ SettingsViewModel:
     Pronunciation: Pronunciation
     Quiz: Quiz
     Blitz: Blitz
-   
+  Cancel: Cancel
+  ChooseLanguage: Choose language
+  ChoosePronunciation: Choose pronunciation
 
 FeedbackViewModel:
   Title: Feedback
  
 AboutUsViewModel:
   Title: About us
+
+HomeViewModel:
+  RepeatedAllImages: You repeated all the images
+  RepeatedAllWords: You repeated all the words
+
+AddDictionaryViewModel:
+  DataCorrectness: Data entered incorrectly
+  WordsAdded: Words have been added to your dictionary

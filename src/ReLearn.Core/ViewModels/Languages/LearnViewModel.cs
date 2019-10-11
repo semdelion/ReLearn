@@ -3,7 +3,6 @@ using System.Threading.Tasks;
 using MvvmCross;
 using MvvmCross.Commands;
 using ReLearn.API.Database;
-using ReLearn.Core.Localization;
 using ReLearn.Core.Services;
 using ReLearn.Core.ViewModels.Facade;
 
@@ -71,7 +70,7 @@ namespace ReLearn.Core.ViewModels.Languages
             }
             else
             {
-                Mvx.IoCProvider.Resolve<IMessageCore>().Toast(AppResources.LearnViewModel_DictionaryOver);
+                Mvx.IoCProvider.Resolve<IMessageCore>().Toast(this["DictionaryOver"]);
             }
         }
 

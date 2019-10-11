@@ -1,6 +1,5 @@
 ﻿using MvvmCross.Commands;
 using ReLearn.API.Database;
-using ReLearn.Core.Localization;
 using ReLearn.Core.Services;
 using ReLearn.Core.ViewModels.Base;
 using System.Threading.Tasks;
@@ -72,17 +71,17 @@ namespace ReLearn.Core.ViewModels.MainMenu
         {
             if (Word == "" || Word == null || TranslationWord == null || TranslationWord == "")
             {
-                Message.Toast(AppResources.AddViewModel_EnterWord);
+                Message.Toast(this["AddViewModel.EnterWord"]);
             }
             else if (await Task.Run(() => DatabaseWords.WordIsContained(Word.ToLower())))
             {
-                Message.Toast(AppResources.AddViewModel_WordExists);
+                Message.Toast(this["AddViewModel.WordExists"]);
             }
             else
             {
                 await Task.Run(() => DatabaseWords.Insert(Word.ToLower(), TranslationWord.ToLower()));
                 Word = TranslationWord = "";
-                Message.Toast(AppResources.AddViewModel_WordAdded);
+                Message.Toast(this["AddViewModel.WordAdded"]);
             }
         }
 

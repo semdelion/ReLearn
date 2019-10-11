@@ -1,6 +1,5 @@
 ﻿using ReLearn.API;
 using ReLearn.API.Database;
-using ReLearn.Core.Localization;
 using ReLearn.Core.ViewModels.Base;
 using System;
 using System.Collections.Generic;
@@ -33,50 +32,50 @@ namespace ReLearn.Core.ViewModels.MainMenu.Statistics
         public List<DatabaseStatistics> Database { get; private set; }
         public List<DBStatistics> DatabaseStats { get; private set; }
 
-        public string DegreeOfStudy => AppResources.GeneralStatisticsViewModel_DegreeOfStudy;
+        public string DegreeOfStudy => this["DegreeOfStudy"];
 
         public string NumberLearnedCount => $"{DatabaseStats.Count(r => r.NumberLearn == 0)} " +
-                                            $"{AppResources.GeneralStatisticsViewModel_Of} {DatabaseStats.Count}";
+                                            $"{this["Of"]} {DatabaseStats.Count}";
 
         public string NumberLearned
         {
             get
             {
                 if ($"{DataBase.TableName}" == $"{TableNamesImage.Flags}")
-                    return AppResources.GeneralStatisticsViewModel_NumberLearnedFlags;
+                    return this["Numbers.Learned.Flags"];
                 if ($"{DataBase.TableName}" == $"{TableNamesImage.Films}")
-                    return AppResources.GeneralStatisticsViewModel_NumberLearnedFilms;
-                return AppResources.GeneralStatisticsViewModel_NumberLearnedWords;
+                    return this["Numbers.Learned.Films"];
+                return this["Numbers.Learned.Words"];
             }
         }
 
         public string NumberInconvenientCount =>
             $"{DatabaseStats.Count(r => r.NumberLearn == Settings.MaxNumberOfRepeats)} " +
-            $"{AppResources.GeneralStatisticsViewModel_Of} {DatabaseStats.Count}";
+            $"{this["Of"]} {DatabaseStats.Count}";
 
         public string NumberInconvenient
         {
             get
             {
                 if ($"{DataBase.TableName}" == $"{TableNamesImage.Flags}")
-                    return AppResources.GeneralStatisticsViewModel_NumberInconvenientFlags;
+                    return this["Numbers.Inconvenient.Flags"];
                 if ($"{DataBase.TableName}" == $"{TableNamesImage.Films}")
-                    return AppResources.GeneralStatisticsViewModel_NumberInconvenientFilms;
-                return AppResources.GeneralStatisticsViewModel_NumberInconvenientWords;
+                    return this["Numbers.Inconvenient.Films"];
+                return this["Numbers.Inconvenient.Words"];
             }
         }
 
         public string NumberCorrectAnswers =>
-            AppResources.GeneralStatisticsViewModel_NumberCorrectAnswers;
+            this["Numbers.CorrectAnswers"];
 
         public string NumberCorrectAndIncorrect =>
-            $"{AppResources.GeneralStatisticsViewModel_Correct} {Database.Sum(r => r.True)}, " +
-            $"{AppResources.GeneralStatisticsViewModel_Incorrect} {Database.Sum(r => r.False)}, " +
-            $"{AppResources.GeneralStatisticsViewModel_NumberOfTests} {Database.Count}";
+            $"{this["Correct"]} {Database.Sum(r => r.True)}, " +
+            $"{this["Incorrect"]} {Database.Sum(r => r.False)}, " +
+            $"{this["Numbers.OfTests"]} {Database.Count}";
 
-        public string CorrectAnswers => $"{AppResources.GeneralStatisticsViewModel_CorrectAnswers}";
+        public string CorrectAnswers => $"{this["CorrectAnswers"]}";
 
-        public string Today => $"{AppResources.GeneralStatisticsViewModel_Today}";
+        public string Today => $"{this["Today"]}";
         public string TodayPercent => $"{Math.Round(_avgTrueToday, 1)}%";
 
         public string TodayPercentAbove =>
@@ -85,7 +84,7 @@ namespace ReLearn.Core.ViewModels.MainMenu.Statistics
         public string TodayPercentBelow =>
             _avgTrueToday - _avgTrue < 0 ? $"{Math.Round(_avgTrueToday - _avgTrue, 1)}%" : "";
 
-        public string Month => $"{AppResources.GeneralStatisticsViewModel_Month}";
+        public string Month => $"{this["Month"]}";
         public string MonthPercent => $"{Math.Round(_avgTrueMonth, 1)}%";
 
         public string MonthPercentAbove =>
@@ -94,7 +93,7 @@ namespace ReLearn.Core.ViewModels.MainMenu.Statistics
         public string MonthPercentBelow =>
             _avgTrueMonth - _avgTrue < 0 ? $"{Math.Round(_avgTrueMonth - _avgTrue, 1)}%" : "";
 
-        public string Average => $"{AppResources.GeneralStatisticsViewModel_Average}";
+        public string Average => $"{this["Average"]}";
         public string AveragePercent => $"{Math.Round(_avgTrue, 1)}%";
     }
 }

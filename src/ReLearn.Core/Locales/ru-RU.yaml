@@ -5,11 +5,15 @@ HomeViewModel:
 
 LearnViewModel:
   Title: Учить
+  DictionaryOver: Словарь закончился
 
 AddViewModel:
   Title: Добавить
   Buttons:
     Add: Добавить
+  WordAdded: Слово добавлено!
+  WordExists: Слово уже существует!
+  EnterWord: Введите слово!
 
 AddDictionaryViewModel:
   Title: Добавить
@@ -21,6 +25,34 @@ SelectDictionaryViewModel:
 
 StatisticViewModel:
   Title: Статистика
+
+MainStatisticsViewModel:
+  LastTest: Последнее тестирование
+  Incorrect: неверные
+  Correct: Верные
+
+GeneralStatisticsViewModel:
+  Average: Среднее значение
+  Correct: Верные
+  CorrectAnswers: Верные ответы
+  DegreeOfStudy: Степень изученности
+  Incorrect: неверные
+  Month: Месяц
+  Numbers:
+    CorrectAnswers: Соотношение ответов
+    OfTests: количество тестов
+    Inconvenient:
+      Films: Количество затруднительных фильмов
+      Flags: Количество затруднительных флагов
+      Images: Количество затруднительных изображений
+      Words: Количество затруднительных слов
+    Learned:
+      Films: Количество изученных фильмов
+      Flags: Количество изученных флагов
+      Images: Количество изученных изображений
+      Words: Количество изученных слов
+  Of: из
+  Today: Сегодня
 
 ViewDictionaryViewModel:
   Title: Просмотр
@@ -36,6 +68,9 @@ SettingsViewModel:
     Pronunciation: Произношение
     Quiz: Викторина
     Blitz: Блиц
+  Cancel: Отменить
+  ChooseLanguage: Выберете язык
+  ChoosePronunciation: Выберете произношение
 
 FeedbackViewModel:
   Title: Обратная связь
@@ -43,3 +78,10 @@ FeedbackViewModel:
 AboutUsViewModel:
   Title: О нас
 
+HomeViewModel:
+  RepeatedAllImages: Вы повторили все изображения
+  RepeatedAllWords: Вы повторили все слова
+
+AddDictionaryViewModel:
+  DataCorrectness: Данные введены некорректно
+  WordsAdded: Слова были добавлены в ваш словарь

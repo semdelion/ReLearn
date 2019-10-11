@@ -1,7 +1,6 @@
 ﻿using MvvmCross.Commands;
 using MvvmCross.Localization;
 using ReLearn.API.Database;
-using ReLearn.Core.Localization;
 using ReLearn.Core.Services;
 using ReLearn.Core.ViewModels.Base;
 using System.Threading.Tasks;
@@ -64,12 +63,12 @@ namespace ReLearn.Core.ViewModels.MainMenu
                             await DatabaseWords.Insert(str[0].Trim(), str[1].Trim());
                     }
                 });
-                Message.Toast(AppResources.DictionaryReplenishmentViewModel_WordsAdded);
+                Message.Toast(this["WordsAdded"]);
                 Words = "";
             }
             else
             {
-                Message.Toast(AppResources.DictionaryReplenishmentViewModel_DataCorrectness);
+                Message.Toast(this["DataCorrectness"]);
             }
         }
 

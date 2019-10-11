@@ -8,7 +8,6 @@ using MvvmCross.Localization;
 using MvvmCross.Plugin.ResxLocalization;
 using MvvmCross.ViewModels;
 using ReLearn.API.Database;
-using ReLearn.Core.Localization;
 using ReLearn.Core.Provider;
 using ReLearn.Core.ViewModels;
 using Xamarin.Yaml.Localization.Configs;
@@ -25,7 +24,6 @@ namespace ReLearn.Core
                 .AsInterfaces()
                 .RegisterAsLazySingleton();
 
-            Mvx.IoCProvider.RegisterSingleton<IMvxTextProvider>(new MvxResxTextProvider(AppResources.ResourceManager));
             Mvx.IoCProvider.RegisterSingleton(() => UserDialogs.Instance);
             RegisterAppStart<MainViewModel>();
             DataBase.SetupConnection();
