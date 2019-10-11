@@ -53,7 +53,7 @@ namespace ReLearn.Core.ViewModels.MainMenu
             set => SetProperty(ref _translationWord, value);
         }
 
-        public string Title => this["Title"];
+        public string ButtonAdd => this["Buttons.Add"];
         #endregion
 
         #region Services

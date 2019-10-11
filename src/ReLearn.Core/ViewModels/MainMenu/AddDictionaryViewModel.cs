@@ -40,6 +40,7 @@ namespace ReLearn.Core.ViewModels.MainMenu
             set => SetProperty(ref _words, value);
         }
 
+        public string ButtonAdd => this["Buttons.Add"];
         #endregion
 
         #region Services

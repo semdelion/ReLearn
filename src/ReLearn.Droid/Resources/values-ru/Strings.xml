@@ -4,9 +4,7 @@
 
   <string name="app_name">ReLearn</string>
   <!--buttons-->
-  <string name="Quiz">Викторина</string>
   <string name="Study">Изучение</string>
-  <string name="Language">Язык</string>
   <string name="Images">Изображения</string>
   <string name="Repeated">Повторено</string>
   <string name="Add_word">Добавить</string>
@@ -16,7 +14,6 @@
   <string name="Unknown">Не знаю</string>
   <string name="NotRepeat">Не повторять</string>
   <string name="Instruction">Инструкция</string>
-  <string name="Blitz">Блиц</string>
   <string name="Yes">Да</string>
   <string name="No">Нет</string>
 
@@ -51,14 +48,9 @@
 
   <!--Menu settings-->
 
-  <string name="Number_of_word_repeats">Количество повторений слов</string>
-  <string name="Number_of_image_repeats">Количество повторений изображений</string>
-  <string name="Time_blitz">Время для блиц</string>
-  <string name="Seconds">секунд</string>
   <string name="Settings">Настройки</string>
   <string name="Language_eng">Язык (en)</string>
   <string name="Language_rus">Язык (ru)</string>
-  <string name="Pronunciation">Произношение</string>
   <string name="SeparatorWords">Разделитель слов:</string>
   <string name="Sort_descending">Сортировать ↓</string>
   <string name="Sort_Ascending">Сортировать ↑</string>

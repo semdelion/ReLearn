@@ -49,7 +49,7 @@ namespace ReLearn.Core.ViewModels.MainMenu
             set
             {
                 SetProperty(ref _wordsNumber, value);
-                WordsNumberText = $"{5 + _wordsNumber * 5}";
+                WordsNumberText = this["Texts.WordRepeats"] + $" {5 + _wordsNumber * 5}";
                 Settings.NumberOfRepeatsLanguage = _wordsNumber * 5 + 5;
             }
         }
@@ -70,7 +70,7 @@ namespace ReLearn.Core.ViewModels.MainMenu
             set
             {
                 SetProperty(ref _imagesNumber, value);
-                ImagesNumberText = $"{5 + _imagesNumber * 5}";
+                ImagesNumberText = this["Texts.ImageRepeats"] + $" {5 + _imagesNumber * 5}";
                 Settings.NumberOfRepeatsImage = _imagesNumber * 5 + 5;
             }
         }
@@ -99,7 +99,7 @@ namespace ReLearn.Core.ViewModels.MainMenu
             set
             {
                 SetProperty(ref _timeToBlitz, value);
-                TimeToBlitzText = $"{15 + _timeToBlitz * 5}";
+                TimeToBlitzText = this["Texts.TimeBlitz"] + $" {15 + _timeToBlitz * 5} " + this["Texts.Seconds"];
                 Settings.TimeToBlitz = _timeToBlitz * 5 + 15;
             }
         }
@@ -137,7 +137,7 @@ namespace ReLearn.Core.ViewModels.MainMenu
 
         public string Languages
         {
-            get => _languages;
+            get => $"{this["Texts.Language"]}:  {_languages}";
             set => SetProperty(ref _languages, value);
         }
 
@@ -145,10 +145,9 @@ namespace ReLearn.Core.ViewModels.MainMenu
 
         public string Pronunciations
         {
-            get => _pronunciations;
+            get => $"{this["Texts.Pronunciation"]}:  {_pronunciations}";
             set => SetProperty(ref _pronunciations, value);
         }
-
         #endregion
 
         #region Private
@@ -202,6 +201,8 @@ namespace ReLearn.Core.ViewModels.MainMenu
             Mvx.IoCProvider.Resolve<IUserDialogs>().ActionSheet(actionSheetConfig);
         }
 
+        public string TextQuiz => this["Texts.Quiz"];
+        public string TextBlitz => this["Texts.Blitz"];
         #endregion
 
         #region Protected

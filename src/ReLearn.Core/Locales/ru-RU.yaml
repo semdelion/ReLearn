@@ -8,6 +8,38 @@ LearnViewModel:
 
 AddViewModel:
   Title: Добавить
+  Buttons:
+    Add: Добавить
 
 AddDictionaryViewModel:
   Title: Добавить
+  Buttons:
+    Add: Добавить
+
+SelectDictionaryViewModel:
+  Title: Словари
+
+StatisticViewModel:
+  Title: Статистика
+
+ViewDictionaryViewModel:
+  Title: Просмотр
+
+SettingsViewModel:
+  Title: Настройки
+  Texts:
+    WordRepeats: Количество повторений слов
+    ImageRepeats: Количество повторений изображений
+    TimeBlitz: Время для блиц
+    Seconds: секунд
+    Language: Язык
+    Pronunciation: Произношение
+    Quiz: Викторина
+    Blitz: Блиц
+
+FeedbackViewModel:
+  Title: Обратная связь
+ 
+AboutUsViewModel:
+  Title: О нас
+

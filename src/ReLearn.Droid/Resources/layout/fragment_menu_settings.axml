@@ -2,6 +2,7 @@
 <LinearLayout
 	xmlns:android			="http://schemas.android.com/apk/res/android"
 	xmlns:local				="http://schemas.android.com/apk/res-auto"
+    xmlns:tools				="http://schemas.android.com/tools"
 	android:orientation		="vertical"
 	android:layout_width	="match_parent"
 	android:layout_height	="match_parent">
@@ -9,7 +10,6 @@
 		android:layout_width	="match_parent"
 		android:layout_height	="wrap_content">
 		<android.support.v7.widget.Toolbar 
-			xmlns:local				="http://schemas.android.com/apk/res-auto"
 			android:id				="@+id/toolbar_setting"
 			local:navigationIcon	="@mipmap/ic_arrow_back" 
 			android:theme			="@style/ToolbarStyle"		
@@ -18,11 +18,12 @@
        		android:layout_height	="80dp"
 			local:buttonGravity		="bottom">
 			<TextView
-				android:text			="@string/Settings"
 				android:gravity			="bottom"
 				android:paddingBottom	="12dp"
 				android:layout_width	="match_parent"
 				android:layout_height	="match_parent"
+                local:MvxBind           ="Text Title"
+                tools:text              ="Settings"
 			/>
 		</android.support.v7.widget.Toolbar>
 	</android.support.design.widget.AppBarLayout>
@@ -32,28 +33,16 @@
 		android:layout_height		="match_parent"
 		android:layout_marginRight	="5.0dp"
 		android:layout_marginLeft	="5.0dp">
-		<LinearLayout
+		<TextView
+            local:MvxBind				="Text WordsNumberText"
+			tools:text				    ="Number of word repeats 10"
+			android:textColor			="@color/text_white"
+			android:textSize			="15dp"
 			android:layout_width		="wrap_content"
 			android:layout_height		="wrap_content"
-			android:layout_marginLeft	="15.0dp"
-			android:layout_marginRight	="15.0dp"
-			android:layout_marginTop	="15.0dp"
-			android:orientation			="horizontal">
-			<TextView
-				android:text				="@string/Number_of_word_repeats"
-				android:textColor			="@color/text_white"
-				android:textSize			="15dp"
-				android:layout_width		="wrap_content"
-				android:layout_height		="wrap_content"
-				android:layout_marginRight	="5.0dp"/>
-			<TextView
-				local:MvxBind				="Text WordsNumberText"
-				android:textColor			="@color/text_white"
-				android:textSize			="15dp"
-				android:layout_width		="wrap_content"
-				android:layout_height		="wrap_content"
-			/>
-		</LinearLayout>
+            android:layout_marginLeft	="20.0dp"
+            android:layout_marginTop	="15.0dp"
+			android:layout_marginRight	="20.0dp"/>
 		<SeekBar
 			local:MvxBind				="Progress WordsNumber"
 			android:thumb				="@drawable/custom_thumb"
@@ -62,28 +51,16 @@
 			android:layout_marginTop	="10.0dp"
 			android:layout_width		="match_parent"
 			android:layout_height		="@dimen/seekbar_height"/>
-		<LinearLayout
+		<TextView
+            local:MvxBind				="Text ImagesNumberText"
+			tools:text				    ="Number of image repeats 15"
+			android:textColor			="@color/text_white"
+			android:textSize			="15dp"
 			android:layout_width		="wrap_content"
 			android:layout_height		="wrap_content"
-			android:layout_marginLeft	="15.0dp"
-			android:layout_marginRight	="15.0dp"
-			android:layout_marginTop	="10.0dp"
-			android:orientation			="horizontal">
-			<TextView
-				android:text				="@string/Number_of_image_repeats"
-				android:textColor			="@color/text_white"
-				android:textSize			="15dp"
-				android:layout_width		="wrap_content"
-				android:layout_height		="wrap_content"
-				android:layout_marginRight	="5.0dp"/>
-			<TextView
-				local:MvxBind				="Text ImagesNumberText"
-				android:textColor			="@color/text_white"
-				android:textSize			="15dp"
-				android:layout_width		="wrap_content"
-				android:layout_height		="wrap_content"
-			/>
-		</LinearLayout>
+            android:layout_marginLeft	="20.0dp"
+            android:layout_marginTop	="10.0dp"
+			android:layout_marginRight	="20.0dp"/>
 		<SeekBar
 			local:MvxBind				="Progress ImagesNumber"
 			android:thumb				="@drawable/custom_thumb"
@@ -92,35 +69,16 @@
 			android:layout_marginTop	="10.0dp"
 			android:layout_width		="match_parent"
 			android:layout_height		="@dimen/seekbar_height"/>
-		<LinearLayout
+		<TextView
+            local:MvxBind				="Text TimeToBlitzText"
+			tools:text                  ="Time to blitz 60 seconds"
+			android:textColor			="@color/text_white"
+			android:textSize			="15dp"
 			android:layout_width		="wrap_content"
 			android:layout_height		="wrap_content"
-			android:layout_marginLeft	="15.0dp"
-			android:layout_marginRight	="15.0dp"
-			android:layout_marginTop	="10.0dp"
-			android:orientation			="horizontal">
-			<TextView
-				android:text				="@string/Time_blitz"
-				android:textColor			="@color/text_white"
-				android:textSize			="15dp"
-				android:layout_width		="wrap_content"
-				android:layout_height		="wrap_content"
-				android:layout_marginRight	="5.0dp"/>
-			<TextView
-				local:MvxBind				="Text TimeToBlitzText"
-				android:textColor			="@color/text_white"
-				android:textSize			="15dp"
-				android:layout_width		="wrap_content"
-				android:layout_height		="wrap_content"
-				android:layout_marginRight	="5.0dp"/>
-			<TextView
-				android:text				="@string/Seconds"
-				android:textColor			="@color/text_white"
-				android:textSize			="15dp"
-				android:layout_width		="wrap_content"
-				android:layout_height		="wrap_content"
-			/>
-		</LinearLayout>
+            android:layout_marginLeft	="20.0dp"
+            android:layout_marginTop	="10.0dp"
+			android:layout_marginRight	="20.0dp"/>
 		<SeekBar
 			local:MvxBind				="Progress TimeToBlitz"
 			android:thumb				="@drawable/custom_thumb"
@@ -129,49 +87,27 @@
 			android:layout_marginTop	="10.0dp"
 			android:layout_width		="match_parent"
 			android:layout_height		="@dimen/seekbar_height"/>
-		<LinearLayout
-			android:layout_width		="wrap_content"
-			android:layout_height		="wrap_content"
+		<TextView
+            local:MvxBind				="Click SelectedItemLanguageCommand; Text Languages"
+            tools:text				    ="Language"
+			android:textColor			="@color/text_white"
+			android:textSize			="18dp"
 			android:layout_marginLeft	="15.0dp"
 			android:layout_marginRight	="15.0dp"
 			android:layout_marginTop	="15.0dp"
-			android:orientation			="horizontal">
-			<TextView
-				android:textColor			="@color/text_white"
-				android:text				="@string/Language"
-				android:textSize			="18dp"
-				android:layout_marginRight	="10dp"
-				android:layout_width		="match_parent"
-				android:layout_height		="wrap_content"/>
-			<TextView
-				android:textColor			="@color/text_white"
-				android:textSize			="18dp"
-				android:layout_width		="match_parent"
-				android:layout_height		="wrap_content"
-				local:MvxBind				="Click SelectedItemLanguageCommand; Text Languages"/>
-		</LinearLayout>
-		<LinearLayout
-			android:layout_width		="wrap_content"
-			android:layout_height		="wrap_content"
-			android:layout_marginLeft	="15.0dp"
-			android:layout_marginRight	="15.0dp"
-			android:layout_marginTop	="15.0dp"
-			android:orientation			="horizontal">
-			<TextView
-				android:textColor			="@color/text_white"
-				android:text				="@string/Pronunciation"
-				android:textSize			="18dp"
-				android:layout_marginRight	="10dp"
-				android:layout_width		="match_parent"
-				android:layout_height		="wrap_content"/>
-			<TextView
-				android:textColor			="@color/text_white"
-				android:textSize			="18dp"
-				android:layout_width		="match_parent"
-				android:layout_height		="wrap_content"
-				local:MvxBind				="Click SelectedItemPronunciationCommand; Text Pronunciations"/>
-			/>
-		</LinearLayout>
+			android:layout_width		="match_parent"
+			android:layout_height		="wrap_content"/>
+		<TextView
+            local:MvxBind				="Click SelectedItemPronunciationCommand; Text Pronunciations"
+			tools:text				    ="Pronunciation"
+            android:textColor			="@color/text_white"
+			android:textSize			="18dp"
+			android:layout_marginRight	="15dp"
+            android:layout_marginTop	="15.0dp"
+            android:layout_marginLeft	="15.0dp"
+			android:layout_width		="match_parent"
+			android:layout_height		="wrap_content"/>
+
 		<TableLayout
 			android:layout_width		="match_parent"
 			android:layout_height		="wrap_content"
@@ -180,7 +116,8 @@
 			android:stretchColumns		="2">
 			<TableRow>
 				<TextView
-					android:text				="@string/Blitz"
+                    local:MvxBind				="Text TextBlitz"
+					tools:text				    ="Blitz"
 					android:textColor			="@color/text_white"
 					android:textSize			="18dp"
 					android:layout_column		="0"
@@ -205,7 +142,8 @@
 			android:stretchColumns		="2">
 			<TableRow>
 				<TextView
-					android:text				="@string/Quiz"
+                    local:MvxBind				="Text TextQuiz"
+					tools:text				    ="Quiz"
 					android:textColor			="@color/text_white"
 					android:textSize			="18dp"
 					android:layout_column		="0"

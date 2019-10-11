@@ -8,6 +8,38 @@ LearnViewModel:
 
 AddViewModel:
   Title: Addition
+  Buttons:
+    Add: Add
 
 AddDictionaryViewModel:
   Title: Addition
+  Buttons:
+    Add: Add
+
+SelectDictionaryViewModel:
+  Title: Dictionaries
+
+StatisticViewModel:
+  Title: Statistics
+
+ViewDictionaryViewModel:
+  Title: View
+
+SettingsViewModel:
+  Title: Settings
+  Texts:
+    WordRepeats: Number of word repeats
+    ImageRepeats: Number of image repeats
+    TimeBlitz: Time to blitz
+    Seconds: seconds
+    Language: Language
+    Pronunciation: Pronunciation
+    Quiz: Quiz
+    Blitz: Blitz
+   
+
+FeedbackViewModel:
+  Title: Feedback
+ 
+AboutUsViewModel:
+  Title: About us

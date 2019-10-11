@@ -18,13 +18,14 @@
 			local:navigationIcon	="@mipmap/ic_arrow_back"
 			local:buttonGravity		="bottom">
 			<TextView
-				android:text			="@string/Dictionaries"
 				android:gravity			="bottom"
 				android:textColor		="@color/text_white"
 				android:textSize		="25dp"
 				android:layout_width	="match_parent"
 				android:layout_height	="match_parent"
 				android:paddingBottom	="12dp"
+                local:MvxBind           ="Text Title"
+                tools:text              ="Dictionaries"
 			/>
 		</android.support.v7.widget.Toolbar>
 	</android.support.design.widget.AppBarLayout>

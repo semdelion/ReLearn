@@ -65,9 +65,9 @@
 		android:layout_marginRight	="@dimen/margin_right"
 		android:layout_marginLeft	="@dimen/margin_left">
 		<Button
-			local:MvxBind					="Click AddWordCommand"
+			local:MvxBind					="Text ButtonAdd; Click AddWordCommand"
 			android:background				="@drawable/button_style_standard"
-			android:text					="@string/Add_word"
+            android:fontFamily				="@font/myriadpro_semibold"
 			android:textColor				="@color/text_white"
 			android:textSize				="20dp"
 			android:layout_width			="match_parent"
@@ -76,6 +76,7 @@
 			android:gravity					="center"
 			android:layout_alignParentBottom="true"
 			android:layout_marginBottom		="30dp"
+            tools:text                      ="Add"
 		/>
 	</RelativeLayout>
 </LinearLayout>
