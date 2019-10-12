@@ -41,6 +41,10 @@ namespace ReLearn.Core.ViewModels.Languages
             set => CrossSettings.Current.AddOrUpdateValue($"{DBSettings.HideStudied}", value);
         }
 
+        public string TextOk => this["Alert.Ok"];
+        public string TextCancel => this["Alert.Cancel"];
+        public string TextDelete => this["Alert.Delete"];
+
         #endregion
 
         #region Private

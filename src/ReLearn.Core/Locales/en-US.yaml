@@ -18,11 +18,16 @@ AddViewModel:
   WordAdded: Word added!
   WordExists: The word exists!
   EnterWord: Enter word!
+  Hints:
+    WordEnglish: Word (English)
+    WordRus: Word (Russian)
 
 AddDictionaryViewModel:
   Title: Addition
   Buttons:
     Add: Add
+  Hints:
+    InsertData: Insert data
 
 SelectDictionaryViewModel:
   Title: Dictionaries
@@ -60,6 +65,10 @@ GeneralStatisticsViewModel:
 
 ViewDictionaryViewModel:
   Title: View
+  Alert:
+    Ok: Ok
+    Cancel: Cancel
+    Delete: Delete 
 
 SettingsViewModel:
   Title: Settings

@@ -6,7 +6,6 @@
   <!--buttons-->
   <string name="Study">Изучение</string>
   <string name="Images">Изображения</string>
-  <string name="Voice">Озвучить</string>
   <string name="Instruction">Инструкция</string>
   <!--Dictionary and description-->
 
@@ -30,12 +29,6 @@
   <string name="FilmsDescription">Словарь состоит из списка лучших  фильмов по версии пользователей.</string>
   <string name="Flags">Флаги</string>
   <string name="FlagsDescription">В словаре представлены флаги стран мира.</string>
-
-  <!--Hints -->
-
-  <string name="Word_English">Слово (Английский)</string>
-  <string name="Word_Rus">Слово (Русский)</string>
-  <string name="Insert_data">Вставьте данные</string>
 
   <!--Menu settings-->
 

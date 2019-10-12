@@ -31,12 +31,6 @@
   <string name="Flags">Flags</string>
   <string name="FlagsDescription">The dictionary contains flags of the world.</string>
 
-  <!--Hints -->
-
-  <string name="Word_English">Word (English)</string>
-  <string name="Word_Rus">Word (Russian)</string>
-  <string name="Insert_data">Insert data</string>
-
   <!--Menu settings-->
 
 

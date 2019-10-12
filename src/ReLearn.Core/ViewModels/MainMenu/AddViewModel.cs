@@ -53,6 +53,9 @@ namespace ReLearn.Core.ViewModels.MainMenu
         }
 
         public string ButtonAdd => this["Buttons.Add"];
+
+        public string HintWordEnglish => this["Hints.WordEnglish"];
+        public string HintWordRus => this["Hints.WordRus"];
         #endregion
 
         #region Services

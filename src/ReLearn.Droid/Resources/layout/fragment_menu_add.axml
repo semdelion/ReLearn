@@ -30,8 +30,8 @@
 		</android.support.v7.widget.Toolbar>
 	</android.support.design.widget.AppBarLayout>
 	<EditText
-		local:MvxBind						="Text Word"
-		android:hint						="@string/Word_English"
+		local:MvxBind						="Hint HintWordEnglish; Text Word"
+		tools:hint						    ="Word English"
 		android:textColor					="@color/text_white"
 		android:backgroundTint				="@color/text_white"
 		android:textColorHint				="@color/hint_text_white"	
@@ -45,8 +45,8 @@
 		android:scrollbars					="vertical" 
 		android:defaultFocusHighlightEnabled="true"/>
 	<EditText
-		local:MvxBind						="Text TranslationWord"
-		android:hint						="@string/Word_Rus"
+		local:MvxBind						="Hint HintWordRus; Text TranslationWord"
+		tools:hint						    ="Word Rus"
 		android:textColor					="@color/text_white"
 		android:textColorHint				="@color/hint_text_white"
 		android:backgroundTint				="@color/text_white"

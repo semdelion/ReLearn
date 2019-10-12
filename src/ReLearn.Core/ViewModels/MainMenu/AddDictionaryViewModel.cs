@@ -40,6 +40,8 @@ namespace ReLearn.Core.ViewModels.MainMenu
         }
 
         public string ButtonAdd => this["Buttons.Add"];
+
+        public string HintInsertData => this["Hints.InsertData"];
         #endregion
 
         #region Services

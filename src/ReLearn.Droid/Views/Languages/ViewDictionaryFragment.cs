@@ -67,9 +67,9 @@ namespace ReLearn.Droid.Views.Languages
                 var alert = new AlertDialog.Builder(ParentActivity);
 
                 alert.SetTitle("");
-                alert.SetMessage($"To delete : {$"{word}"}? ");
-                alert.SetPositiveButton("Cancel", delegate { alert.Dispose(); });
-                alert.SetNeutralButton("ок", delegate
+                alert.SetMessage($"{ViewModel.TextDelete} {$"{word}"}?");
+                alert.SetPositiveButton(ViewModel.TextCancel, delegate { alert.Dispose(); });
+                alert.SetNeutralButton(ViewModel.TextOk, delegate
                 {
                     ViewModel.Database.Remove(words);
                     DictionaryWords.Adapter = new CustomAdapterWord(ParentActivity,
