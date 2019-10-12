@@ -6,6 +6,10 @@ HomeViewModel:
 LearnViewModel:
   Title: Учить
   DictionaryOver: Словарь закончился
+  Buttons:
+    NotRepeat: Не повторять
+    Next: Дальше
+    Voice: Озвучить
 
 AddViewModel:
   Title: Добавить
@@ -74,9 +78,18 @@ SettingsViewModel:
 
 FeedbackViewModel:
   Title: Обратная связь
+  Buttons:
+    Send: Отправить
+  Texts:
+    MessageHint: Введите сообщение
+    Description: "В данном разделе вы можете оставить свои пожелания, предложения, замечания."
  
 AboutUsViewModel:
   Title: О нас
+  Buttons:
+    Support: Поддержать проект
+  Texts:
+    Message: "    Здравствуйте! \n    Данное приложение было разработано командой из двух человек. Приложение было хорошо встречено и помогло нам при изучении иностранных слов. По это причине было принято решение реализовать пожелание пользователей и опубликовать приложение. \n    Так как наш опыт разработки приложений под мобильные устройства составляет около 1 - 2 месяцев приложение может содержать ошибки. В связи с этим мы принимаем Ваши сообщения с пожеланиями, предложениями и замечаниями (все сообщения будут рассмотрены и учтены). \n\n Благодарим за внимание! \n\n С уважением, команда SemdelionTeam \n\n Адрес: SemdelionTeam@gmail.com"
 
 HomeViewModel:
   RepeatedAllImages: Вы повторили все изображения
@@ -85,3 +98,15 @@ HomeViewModel:
 AddDictionaryViewModel:
   DataCorrectness: Данные введены некорректно
   WordsAdded: Слова были добавлены в ваш словарь
+
+BlitzPollViewModel:
+  Title: Повторено
+  Buttons:
+    Yes: Да
+    No: Нет
+
+RepeatViewModel:
+  Title: Повторено
+  Buttons:
+    Next: Дальше
+    Unknown: Не знаю

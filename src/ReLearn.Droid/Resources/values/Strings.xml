@@ -6,17 +6,8 @@
   <!--buttons-->
   <string name="Study">Study</string>
   <string name="Images">Images</string>
-  <string name="Repeated">Repeated</string>
   <string name="Add_word">Add</string>
-  <string name="Next">Next</string>
-  <string name="Voice">Voice</string>
-  <string name="Send">Send</string>
-  <string name="Unknown">Unknown</string>
-  <string name="NotRepeat">Not repeat</string>
   <string name="Instruction">Instruction</string>
-  <string name="Yes">Yes</string>
-  <string name="No">No</string>
-
   <!--Dictionary and description-->
 
   <string name="Dictionaries">Dictionaries</string>
@@ -73,7 +64,6 @@
   <string name="Word_Added">Word added!</string>
   <string name="Word_Not_Exists">Words do not exist!</string>
   <string name="Word_Delete">Word delete!</string>
-  <string name="Enter_Message">Enter Message</string>
   <string name="DictionaryOver">Dictionary over</string>
   <string name="DataCorrectness">Data entered incorrectly</string>
 
@@ -81,51 +71,18 @@
 
   <string name="DatatypeWords">Words: </string>
   <string name="DatatypeImages">Images: </string>
-  <string name="Degree_Of_Study">Degree of study</string>
-  <string name="Correct_answers">Correct answers</string>
-  <string name="Today">Today</string>
-  <string name="Month">Month</string>
-  <string name="Average">Average</string>
-  <string name="Number_Learned_Words">Number of words learned</string>
-  <string name="Number_Inconvenient_Words">Number of inconvenient words</string>
-  <string name="Number_Learned_Flags">Number of flags learned</string>
-  <string name="Number_Inconvenient_Flags">Number of inconvenient flags</string>
-  <string name="Number_Learned_Films">Number of films learned</string>
-  <string name="Number_Inconvenient_Films">Number of inconvenient films</string>
-  <string name="Number_Learned_Images">Number of images learned</string>
-  <string name="Number_Inconvenient_Images">Number of inconvenient images</string>
-  <string name="Number_Correct_Answers">The total number of correct answers</string>
-  <string name="Correct">Correct </string>
-  <string name="Incorrect">incorrect </string>
-  <string name="Number_Of_Tests">number of tests </string>
-  <string name="Of">of</string>
-  <string name="Last_testing">Last testing</string>
-  <string name="Incorrect_Up">Incorrect</string>
-
   <!--main menu-->
   <string name="About_us">About us</string>
   <string name="Feedback">Feedback</string>
-  <string name="Feedback_comments">In this section you can leave your wishes, suggestions, comments</string>
   <string name="Message_Sent">Message sent</string>
-  <string name="Support_project">Support the project</string>
 
   <!--Messsages-->
 
   <string name="WordsAdded">Words have been added to your dictionary</string>
-  <string name="Message_about_us">
-    \t\t\t Hello!
-    \n\t\t\t This application was developed by a team of two people. The application was well received and helped us with the study of foreign words. For this reason, it was decided to realize the wish of users and publish the application.
-    \n\t\t\t Since our experience in developing applications for mobile devices is about 1 - 2 months, the application may contain errors.
-    \n\t\t\t In this regard, we accept your messages with wishes, suggestions and comments (all messages will be considered and taken into account).
-    \n\n\t\t\t Thank you for your attention!
-    \n\n\t\t\t Sincerely, SemdelionTeam
-    \n\n\t\t\t Mail: SemdelionTeam@gmail.com
-  </string>
 
   <!--Achievements-->
   <string name="Achievements">Achievements</string>
   <string name="sign_in">Sign In</string>
-
 
   <string name="navigation_drawer_open">Open navigation drawer</string>
   <string name="navigation_drawer_close">Close navigation drawer</string>

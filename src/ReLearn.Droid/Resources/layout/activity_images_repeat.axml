@@ -104,9 +104,10 @@
 				android:layout_alignParentBottom="true"
 			/>
 			<Button
+                local:MvxBind               ="Text TextNext"
 				android:onClick				="Button_Images_Next_Click"
 				android:id					="@+id/button_I_Next"
-				android:text				="@string/Next"
+				tools:text				    ="Next"
 				android:background			="@drawable/button_style_standard"
 				android:textColor			="@color/text_white"
 				android:fontFamily			="@font/myriadpro_semibold"

@@ -4,6 +4,7 @@ using Android.OS;
 using Android.Views;
 using Android.Widget;
 using Java.Interop;
+using MvvmCross.Localization;
 using ReLearn.API;
 using ReLearn.API.Database;
 using ReLearn.Core.Helpers;
@@ -26,6 +27,8 @@ namespace ReLearn.Droid.Views.Languages
             for (var i = 0; i < buttons.Length; i++)
                 buttons[i].Text = ViewModel.Database[random_numbers[i]].TranslationWord;
         }
+
+       
 
         protected override void NextTest()
         {
@@ -120,8 +123,7 @@ namespace ReLearn.Droid.Views.Languages
                         new Random(unchecked((int) DateTime.Now.Ticks)).Next(ViewModel.Database.Count);
                     NextTest();
                     ButtonEnable(true);
-                    ViewModel.TitleCount =
-                        $"{GetString(Resource.String.Repeated)} {API.Statistics.Count + 1}/{Settings.NumberOfRepeatsLanguage}";
+                    ViewModel.TitleCount = $"{API.Statistics.Count + 1}/{Settings.NumberOfRepeatsLanguage}";
                 }
                 else
                 {
@@ -170,6 +172,23 @@ namespace ReLearn.Droid.Views.Languages
         {
             Finish();
             return base.OnOptionsItemSelected(item);
+        }
+
+        protected override void ButtonEnable(bool state)
+        {
+            foreach (var button in Buttons) button.Enabled = state;
+            if (state)
+            {
+                ButtonNext.State = StateButton.Unknown;
+                ViewModel.TextNext = ViewModel.ButtonEnableText(!state);
+                foreach (var button in Buttons)
+                    button.Background = GetDrawable(Resource.Drawable.button_style_standard);
+            }
+            else
+            {
+                ButtonNext.State = StateButton.Next;
+                ViewModel.TextNext = ViewModel.ButtonEnableText(!state);
+            }
         }
     }
 }

@@ -14,6 +14,9 @@ namespace ReLearn.Core.ViewModels.Images
 
         public List<DatabaseImages> Database { get; set; }
 
+        public string TextNegative => this["Buttons.No"];
+        public string TextPositive => this["Buttons.Yes"];
+
         #endregion
 
         #region Public

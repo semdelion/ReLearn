@@ -13,5 +13,8 @@ namespace ReLearn.Core.ViewModels.Facade
             get => _text;
             set => SetProperty(ref _text, value);
         }
+
+        public string TextNotRepeat => this["Buttons.NotRepeat"];
+        public string TextNext => this["Buttons.Next"];
     }
 }

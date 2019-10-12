@@ -27,22 +27,7 @@ namespace ReLearn.Droid.Views.Facade
         protected List<Button> Buttons { get; set; }
         protected ButtonNext ButtonNext { get; set; }
 
-        protected virtual void ButtonEnable(bool state)
-        {
-            foreach (var button in Buttons) button.Enabled = state;
-            if (state)
-            {
-                ButtonNext.State = StateButton.Unknown;
-                ButtonNext.button.Text = GetString(Resource.String.Unknown);
-                foreach (var button in Buttons)
-                    button.Background = GetDrawable(Resource.Drawable.button_style_standard);
-            }
-            else
-            {
-                ButtonNext.State = StateButton.Next;
-                ButtonNext.button.Text = GetString(Resource.String.Next);
-            }
-        }
+        protected abstract void ButtonEnable(bool state);
 
         protected abstract Task Answer(params Button[] buttons);
 
@@ -51,5 +36,6 @@ namespace ReLearn.Droid.Views.Facade
         protected abstract void NextTest();
 
         protected abstract Task Unknown();
+
     }
 }

@@ -6,6 +6,10 @@ HomeViewModel:
 LearnViewModel:
   Title: Learn
   DictionaryOver: Dictionary over
+  Buttons:
+    NotRepeat: Not repeat
+    Next: Next
+    Voice: Voice
 
 AddViewModel:
   Title: Addition
@@ -74,9 +78,18 @@ SettingsViewModel:
 
 FeedbackViewModel:
   Title: Feedback
+  Buttons:
+    Send: Send
+  Texts:
+    MessageHint: Enter Message
+    Description: "In this section, you can leave your wishes, suggestions, comments"
  
 AboutUsViewModel:
   Title: About us
+  Buttons:
+    Support: Support the project
+  Texts:
+    Message:    "    Hello! \n    This application was developed by a team of two people. The application was well received and helped us with the study of foreign words. For this reason, it was decided to realize the wish of users and publish the application. \n    Since our experience in developing applications for mobile devices is about 1 - 2 months, the application may contain errors. \n In this regard, we accept your messages with wishes, suggestions and comments (all messages will be considered and taken into account). \n\n Thank you for your attention! \n\n Sincerely, SemdelionTeam \n\n Mail: SemdelionTeam@gmail.com"
 
 HomeViewModel:
   RepeatedAllImages: You repeated all the images
@@ -85,3 +98,15 @@ HomeViewModel:
 AddDictionaryViewModel:
   DataCorrectness: Data entered incorrectly
   WordsAdded: Words have been added to your dictionary
+
+BlitzPollViewModel:
+  Title: Repeated
+  Buttons:
+    Yes: Yes
+    No: No
+
+RepeatViewModel:
+  Title: Repeated
+  Buttons:
+    Next: Next
+    Unknown: Unknown

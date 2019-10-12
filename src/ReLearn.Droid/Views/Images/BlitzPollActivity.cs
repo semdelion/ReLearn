@@ -90,7 +90,7 @@ namespace ReLearn.Droid.Views.Images
             ViewPrev = ViewCurrent;
             ViewCurrent = GetLayout();
             FindViewById<RelativeLayout>(Resource.Id.RelativeLayoutImagesBlitzPoll).AddView(ViewCurrent, 0);
-            ViewModel.TitleCount = $"{GetString(Resource.String.Repeated)} {ViewModel.True + ViewModel.False + 1}";
+            ViewModel.TitleCount = $"{ViewModel.True + ViewModel.False + 1}";
         }
 
         [Export("Button_Images_No_Click")]
@@ -128,7 +128,6 @@ namespace ReLearn.Droid.Views.Images
 
             ViewCurrent = GetLayout();
             FindViewById<RelativeLayout>(Resource.Id.RelativeLayoutImagesBlitzPoll).AddView(ViewCurrent, 1);
-            ViewModel.TitleCount = $"{GetString(Resource.String.Repeated)} {1}";
             ViewModel.TimerStart();
         }
 

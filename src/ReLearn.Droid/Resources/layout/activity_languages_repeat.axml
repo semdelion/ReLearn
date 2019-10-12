@@ -111,10 +111,11 @@
 				android:layout_alignParentBottom="true"
 			/>
 			<Button
+                local:MvxBind                   ="Text TextNext"
 				android:onClick					="Button_Languages_Next_Click"
 				android:id						="@+id/button_Languages_Next"	
 				android:background				="@drawable/button_style_standard"
-				android:text					="@string/Unknown"
+				tools:text					    ="Unknown"
 				android:fontFamily				="@font/myriadpro_semibold"
 				android:textColor				="@color/text_white"
 				android:layout_toRightOf		="@+id/Button_Speak_Languages"

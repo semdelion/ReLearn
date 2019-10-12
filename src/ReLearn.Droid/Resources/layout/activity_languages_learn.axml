@@ -63,8 +63,8 @@
 					android:gravity			   ="left|right|center"
 					android:scaleType		   ="fitXY"/>
 				<Button
-					local:MvxBind			   ="Click VoiceCommand"
-					android:text			   ="@string/Voice"
+					local:MvxBind			   ="Text TextVoice; Click VoiceCommand"
+					tools:text			       ="Voice"
 					android:background		   ="@drawable/button_style_standard"
 					android:textColor		   ="@color/text_white"
 					android:fontFamily		   ="@font/myriadpro_semibold"
@@ -79,10 +79,10 @@
 			</TableRow>
 			<TableRow android:layout_marginTop ="10.0dp">
 				<Button
-					local:MvxBind			   ="Click NotRepeatCommand"
+					local:MvxBind			   ="Click NotRepeatCommand; Text TextNotRepeat"
 					android:background		   ="@drawable/button_style_standard"
 					android:textColor		   ="@color/text_white"
-					android:text			   ="@string/NotRepeat"
+					tools:text			       ="Not Repeat"
 					android:fontFamily		   ="@font/myriadpro_semibold"
 					android:textSize		   ="20dp"
 					android:layout_width	   ="0dp"
@@ -91,10 +91,10 @@
 					android:layout_marginRight ="5dp" 
 				/>
 				<Button
-					local:MvxBind			   ="Click NextCommand"
+					local:MvxBind			   ="Click NextCommand; Text TextNext"
 					android:background		   ="@drawable/button_style_standard"
 					android:textColor		   ="@color/text_white"
-					android:text			   ="@string/Next"
+					tools:text			       ="Next"
 					android:fontFamily		   ="@font/myriadpro_semibold"
 					android:textSize		   ="20dp"
 					android:layout_width	   ="0dp"

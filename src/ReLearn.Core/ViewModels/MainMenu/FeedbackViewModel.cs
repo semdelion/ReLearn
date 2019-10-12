@@ -1,9 +1,7 @@
 ﻿using Acr.UserDialogs;
 using MvvmCross;
 using MvvmCross.Commands;
-using MvvmCross.Navigation;
 using MvvmCross.Plugin.Email;
-using MvvmCross.ViewModels;
 using ReLearn.Core.ViewModels.Base;
 
 namespace ReLearn.Core.ViewModels.MainMenu
@@ -37,6 +35,12 @@ namespace ReLearn.Core.ViewModels.MainMenu
                 Message = "";
             }
         }
+
+        public string TextSend => this["Buttons.Send"];
+
+        public string TextMessageHint => this["Texts.MessageHint"];
+
+        public string TextDescription => this["Texts.Description"];
 
         #endregion
 

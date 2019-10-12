@@ -43,16 +43,25 @@ namespace ReLearn.Core.ViewModels.Facade
 
         #region Properties
 
-        private string _titleCount;
+        private string _titleCount = "1";
 
         public string TitleCount
         {
-            get => _titleCount;
+            get => $"{this["Title"]} {_titleCount}";
             set => SetProperty(ref _titleCount, value);
         }
 
         public int CurrentNumber { get; set; }
 
+        private string _textNext;
+
+        public string TextNext
+        {
+            get => _textNext ?? ButtonEnableText(false);
+            set => SetProperty(ref _textNext, value);
+        }
+
+        public string ButtonEnableText(bool buttonEnable) => buttonEnable ? this["Buttons.Next"] : this["Buttons.Unknown"];
         #endregion
 
         #region Private

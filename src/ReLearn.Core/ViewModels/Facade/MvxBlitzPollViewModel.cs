@@ -77,11 +77,11 @@ namespace ReLearn.Core.ViewModels.Facade
 
         #region Properties
 
-        protected string _titleCount;
+        protected string _titleCount = "1";
 
         public string TitleCount
         {
-            get => _titleCount;
+            get => $"{this["Title"]} {_titleCount}";
             set => SetProperty(ref _titleCount, value);
         }
 

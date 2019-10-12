@@ -5,6 +5,7 @@ using Android.OS;
 using Android.Views;
 using Android.Widget;
 using Java.Interop;
+using MvvmCross.Localization;
 using ReLearn.API;
 using ReLearn.API.Database;
 using ReLearn.Core.Helpers;
@@ -46,6 +47,7 @@ namespace ReLearn.Droid.Views.Images
                 Buttons[randomNumbers[3]]);
         }
 
+       
         protected override async Task
             Answer(params Button[] buttons) // подсвечиваем правильный ответ, если мы ошиблись подсвечиваем неправвильный и паравильный 
         {
@@ -119,7 +121,7 @@ namespace ReLearn.Droid.Views.Images
                     NextTest();
                     ButtonEnable(true);
                     ViewModel.TitleCount =
-                        $"{GetString(Resource.String.Repeated)} {API.Statistics.Count + 1}/{Settings.NumberOfRepeatsImage}";
+                        $"{API.Statistics.Count + 1}/{Settings.NumberOfRepeatsImage}";
                 }
                 else
                 {
@@ -167,6 +169,23 @@ namespace ReLearn.Droid.Views.Images
         {
             Finish();
             return base.OnOptionsItemSelected(item);
+        }
+
+        protected override void ButtonEnable(bool state)
+        {
+            foreach (var button in Buttons) button.Enabled = state;
+            if (state)
+            {
+                ButtonNext.State = StateButton.Unknown;
+                ViewModel.TextNext = ViewModel.ButtonEnableText(!state);
+                foreach (var button in Buttons)
+                    button.Background = GetDrawable(Resource.Drawable.button_style_standard);
+            }
+            else
+            {
+                ButtonNext.State = StateButton.Next;
+                ViewModel.TextNext = ViewModel.ButtonEnableText(!state);
+            }
         }
     }
 }

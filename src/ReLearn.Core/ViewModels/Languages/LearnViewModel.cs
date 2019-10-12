@@ -52,6 +52,8 @@ namespace ReLearn.Core.ViewModels.Languages
         public bool VoiceEnable { get; set; } = true;
 
         public string Word { get; set; }
+
+        public string TextVoice => this["Buttons.Voice"];
         #endregion
 
         #region Private

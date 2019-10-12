@@ -6,17 +6,8 @@
   <!--buttons-->
   <string name="Study">Изучение</string>
   <string name="Images">Изображения</string>
-  <string name="Repeated">Повторено</string>
-  <string name="Add_word">Добавить</string>
-  <string name="Next">Дальше</string>
   <string name="Voice">Озвучить</string>
-  <string name="Send">Отправить</string>
-  <string name="Unknown">Не знаю</string>
-  <string name="NotRepeat">Не повторять</string>
   <string name="Instruction">Инструкция</string>
-  <string name="Yes">Да</string>
-  <string name="No">Нет</string>
-
   <!--Dictionary and description-->
 
   <string name="Dictionaries">Словари</string>
@@ -71,7 +62,6 @@
   <string name="Word_Added">Слово добавлено!</string>
   <string name="Word_Not_Exists">Слова не существуют!</string>
   <string name="Word_Delete">Слово удалено!</string>
-  <string name="Enter_Message">Введите сообщение</string>
   <string name="DictionaryOver">Словарь закончился</string>
   <string name="DataCorrectness">Данные введены некорректно</string>
 
@@ -79,47 +69,15 @@
 
   <string name="DatatypeWords">Слов: </string>
   <string name="DatatypeImages">Изображений: </string>
-  <string name="Degree_Of_Study">Степень изученности</string>
-  <string name="Correct_answers">Верные ответы</string>
-  <string name="Today">Сегодня</string>
-  <string name="Month">Месяц</string>
-  <string name="Average">Среднее значение</string>
-  <string name="Number_Learned_Words">Количество изученных слов</string>
-  <string name="Number_Inconvenient_Words">Количество затруднительных слов</string>
-  <string name="Number_Learned_Flags">Количество изученных флагов</string>
-  <string name="Number_Inconvenient_Flags">Количество затруднительных флагов</string>
-  <string name="Number_Learned_Films">Количество изученных фильмов</string>
-  <string name="Number_Inconvenient_Films">Количество затруднительных фильмов</string>
-  <string name="Number_Learned_Images">Количество изученных изображений</string>
-  <string name="Number_Inconvenient_Images">Количество затруднительных изображений</string>
-  <string name="Number_Correct_Answers">Общее количество правильных ответов</string>
-  <string name="Correct">Верные</string>
-  <string name="Incorrect">неверные </string>
-  <string name="Number_Of_Tests">количество тестов </string>
-  <string name="Of">из</string>
-  <string name="Last_testing">Последнее тестирование</string>
-  <string name="Incorrect_Up">Неверные</string>
-
   <!--main menu-->
 
   <string name="About_us">О нас</string>
   <string name="Feedback">Обратная связь</string>
-  <string name="Feedback_comments">В данном разделе вы можете оставить свои пожелания, предложения, замечания</string>
   <string name="Message_Sent">Сообщение отправлено</string>
-  <string name="Support_project">Поддержать проект</string>
 
   <!--Messsages-->
 
   <string name="WordsAdded">Слова были добавлены в ваш словарь</string>
-  <string name="Message_about_us">
-    \t\t\tЗдравствуйте!
-    \n\t\t\tДанное приложение было разработано командой из двух человек. Приложение было хорошо встречено и помогло нам при изучении иностранных слов. По это причине было принято решение реализовать пожелание пользователей и опубликовать приложение.
-    \n\t\t\tТак как наш опыт разработки приложений под мобильные устройства составляет около 1 - 2 месяцев приложение может содержать ошибки.
-    В связи с этим мы принимаем Ваши сообщения с пожеланиями, предложениями и замечаниями (все сообщения будут рассмотрены и учтены).
-    \n\n\t\t\tБлагодарим за внимание!
-    \n\n\t\t\t С уважением, команда SemdelionTeam
-    \n\n\t\t\t Адрес: SemdelionTeam@gmail.com
-  </string>
 
   <!--Achievements-->
   <string name="Achievements">Достижения</string>

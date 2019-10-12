@@ -64,7 +64,7 @@ namespace ReLearn.Droid.Views.Languages
             ViewPrev = ViewCurrent;
             ViewCurrent = GetTextView();
             FindViewById<RelativeLayout>(Resource.Id.RelativeLayoutLanguagesBlitzPoll).AddView(ViewCurrent, 0);
-            ViewModel.TitleCount = $"{GetString(Resource.String.Repeated)} {ViewModel.True + ViewModel.False + 1}";
+            ViewModel.TitleCount = $"{ViewModel.True + ViewModel.False + 1}";
         }
 
         [Export("Button_Languages_No_Click")]
@@ -102,7 +102,6 @@ namespace ReLearn.Droid.Views.Languages
 
             ViewCurrent = GetTextView();
             FindViewById<RelativeLayout>(Resource.Id.RelativeLayoutLanguagesBlitzPoll).AddView(ViewCurrent, 1);
-            ViewModel.TitleCount = $"{GetString(Resource.String.Repeated)} {1}";
             ViewModel.TimerStart();
         }
 

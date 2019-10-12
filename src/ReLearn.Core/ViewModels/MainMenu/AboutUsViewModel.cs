@@ -33,7 +33,9 @@ namespace ReLearn.Core.ViewModels.MainMenu
         #endregion
 
         #region Properties
+        public string TextSupport => this["Buttons.Support"];
 
+        public string TextMessage => this["Texts.Message"];
         #endregion
 
         #region Protected

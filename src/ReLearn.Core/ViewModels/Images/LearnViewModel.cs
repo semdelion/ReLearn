@@ -19,29 +19,5 @@ namespace ReLearn.Core.ViewModels.Images
         }
 
         #endregion
-
-        #region Fields
-
-        #endregion
-
-        #region Commands
-
-        #endregion
-
-        #region Services
-
-        #endregion
-
-        #region Constructors
-
-        #endregion
-
-        #region Private
-
-        #endregion
-
-        #region Protected
-
-        #endregion
     }
 }

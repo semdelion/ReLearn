@@ -69,11 +69,12 @@
 			android:gravity				="bottom">
 			<TableRow>
 				<Button
+                    local:MvxBind               ="Text TextNotRepeat"
 					android:onClick				="Button_Images_Learn_NotRepeat_Click"
 					android:id					="@+id/button_NotRepeat_Images"
 					android:background			="@drawable/button_style_standard"
 					android:textColor			="@color/text_white"
-					android:text				="@string/NotRepeat"
+					tools:text				    ="Not Repeat"
 					android:textStyle			="bold"
 					android:textSize			="20dp"
 					android:layout_width		="0dp"
@@ -83,11 +84,12 @@
 					android:layout_alignParentBottom="true"
 				/>
 				<Button
+                    local:MvxBind               ="Text TextNext"
 					android:onClick				="Button_Images_Learn_Next_Click"
 					android:id					="@+id/button_I_learn_Next"
 					android:background			="@drawable/button_style_standard"
 					android:textColor			="@color/text_white"
-					android:text				="@string/Next"
+					tools:text				    ="Next"
 					android:textStyle			="bold"
 					android:textSize			="20dp"
 					android:layout_width		="0dp"

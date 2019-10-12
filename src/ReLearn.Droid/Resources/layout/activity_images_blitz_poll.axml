@@ -56,11 +56,12 @@
 			android:gravity				="bottom">
 			<TableRow>
 				<Button
+                    local:MvxBind               ="Text TextNegative"
 					android:onClick				="Button_Images_No_Click"
 					android:id					="@+id/button_Images_No"
 					android:background			="@drawable/button_style_standard"
 					android:textColor			="@color/text_white"
-					android:text				="@string/No"
+					tools:text				    ="No"
 					android:fontFamily			="@font/myriadpro_semibold"
 					android:textSize			="20dp"
 					android:layout_width		="0dp"
@@ -69,11 +70,12 @@
 					android:layout_marginRight	="5dp" 
 					android:gravity				="center" />
 				<Button
+                    local:MvxBind               ="Text TextPositive"
 					android:onClick				="Button_Images_Yes_Click"
 					android:id					="@+id/button_Images_Yes"
 					android:background			="@drawable/button_style_standard"
 					android:textColor			="@color/text_white"
-					android:text				="@string/Yes"
+					tools:text				    ="Yes"
 					android:fontFamily			="@font/myriadpro_semibold"
 					android:textSize			="20dp"
 					android:layout_width		="0dp"
