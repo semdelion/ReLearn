@@ -6,7 +6,7 @@ namespace ReLearn.API
 {
     public enum DBSettings
     {
-        Language,
+        LanguageInfo,
         Pronunciation,
         Language_repeat_count,
         Images_repeat_count,
@@ -24,10 +24,10 @@ namespace ReLearn.API
         AmountOfStatistics
     }
 
-    public enum Language
+    public static class Language
     {
-        en,
-        ru
+        public const string en = "en-US";
+        public const string ru = "ru-RU";
     }
 
     public enum Pronunciation
@@ -86,9 +86,9 @@ namespace ReLearn.API
 
         public static string Currentlanguage
         {
-            get => CrossSettings.Current.GetValueOrDefault($"{DBSettings.Language}",
-                Thread.CurrentThread.CurrentCulture.Name == "ru-RU" ? $"{Language.ru}" : $"{Language.en}");
-            set => CrossSettings.Current.AddOrUpdateValue($"{DBSettings.Language}", $"{value}");
+            get => CrossSettings.Current.GetValueOrDefault($"{DBSettings.LanguageInfo}",
+                Thread.CurrentThread.CurrentCulture.Name == Language.ru ? Language.ru : Language.en);
+            set => CrossSettings.Current.AddOrUpdateValue($"{DBSettings.LanguageInfo}", Language.ru == value ? Language.ru : Language.en );
         }
 
         public static bool BlitzEnable

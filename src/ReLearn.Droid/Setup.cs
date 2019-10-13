@@ -39,8 +39,7 @@ namespace ReLearn.Droid
         {
             base.InitializeSecondary();
             Mvx.IoCProvider.LazyConstructAndRegisterSingleton<IInteractionProvider, InteractionProvider>();
-            _app.InitializeCultureInfo(new CultureInfo("ru-RU"));
-            
+            _app.InitializeCultureInfo(new CultureInfo(API.Settings.Currentlanguage)); 
         }
         protected override IMvxApplication CreateApp() => _app;
     }

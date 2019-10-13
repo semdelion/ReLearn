@@ -1,15 +1,14 @@
-﻿using System.Globalization;
-using System.Reflection;
-using System.Threading.Tasks;
-using Acr.UserDialogs;
+﻿using Acr.UserDialogs;
 using MvvmCross;
 using MvvmCross.IoC;
 using MvvmCross.Localization;
-using MvvmCross.Plugin.ResxLocalization;
 using MvvmCross.ViewModels;
 using ReLearn.API.Database;
 using ReLearn.Core.Provider;
 using ReLearn.Core.ViewModels;
+using System.Globalization;
+using System.Reflection;
+using System.Threading.Tasks;
 using Xamarin.Yaml.Localization.Configs;
 using Xamarin.Yaml.Parser;
 

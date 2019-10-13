@@ -143,6 +143,7 @@ DictionaryLanguageViewModel:
 
 DictionaryImageViewModel:
   Texts: 
+    StudiedAt: "изучен на:"
     Images: "Изображений:"
   Names:
     Films: Фильмы

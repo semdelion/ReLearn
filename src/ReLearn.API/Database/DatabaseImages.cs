@@ -30,7 +30,7 @@ namespace ReLearn.API.Database
         public int NumberLearn { get; set; }
         public DateTime DateRecurrence { get; set; }
 
-        public string ImageName => Settings.Currentlanguage == $"{Language.en}" ? Name_image_en : Name_image_ru;
+        public string ImageName => Settings.Currentlanguage == Language.en ? Name_image_en : Name_image_ru;
 
         public DatabaseImages Find()
         {
@@ -72,7 +72,7 @@ namespace ReLearn.API.Database
         public static async Task UpdateLearningNotRepeat(string imageName)
         {
             var query = $"UPDATE {DataBase.TableName} SET DateRecurrence = ?, NumberLearn = ? WHERE ";
-            var tmp = Settings.Currentlanguage == $"{Language.en}" ? "Name_image_en = ?" : "Name_image_ru = ?";
+            var tmp = Settings.Currentlanguage == Language.en ? "Name_image_en = ?" : "Name_image_ru = ?";
             await DataBase.Images.ExecuteAsync(query + tmp, DateTime.Now, 0, imageName);
         }
 

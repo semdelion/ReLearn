@@ -16,7 +16,7 @@
 			android:background		="@drawable/background_toolbar"
 			local:navigationIcon	="@mipmap/ic_arrow_back"
 			android:layout_width	="match_parent"
-			android:layout_height	="80dp"	
+			android:layout_height	="@dimen/toolbar_height"	
 			local:buttonGravity		="bottom">
 			<TextView		
 				android:gravity			="bottom"

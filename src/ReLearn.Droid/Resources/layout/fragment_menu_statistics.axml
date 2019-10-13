@@ -11,7 +11,7 @@
 		android:layout_height	="wrap_content">
 		<android.support.v7.widget.Toolbar
 			android:layout_width	="match_parent"
-			android:layout_height	="80dp"
+			android:layout_height	="@dimen/toolbar_height"
 			android:theme			="@style/ToolbarStyle"
 			android:id				="@+id/toolbar_statistics"
 			android:background		="@drawable/background_toolbar"

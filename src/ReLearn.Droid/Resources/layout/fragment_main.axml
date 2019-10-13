@@ -18,8 +18,8 @@
 				android:id				="@+id/toolbar_home"
 				android:background		="@drawable/background_toolbar_home" 
 				android:theme			="@style/ToolbarStyle"	
+                android:layout_height	="@dimen/toolbar_height"	
 				android:layout_width	="match_parent"
-       			android:layout_height	="80dp"	
 				local:buttonGravity		="bottom"	
 			/>
 		</android.support.design.widget.AppBarLayout>

@@ -1,16 +1,16 @@
-﻿using System.Collections.Generic;
-using Acr.UserDialogs;
+﻿using Acr.UserDialogs;
 using MvvmCross;
 using MvvmCross.Commands;
-using MvvmCross.Navigation;
-using MvvmCross.ViewModels;
 using ReLearn.API;
 using ReLearn.Core.ViewModels.Base;
+using System.Collections.Generic;
+using System.Globalization;
 
 namespace ReLearn.Core.ViewModels.MainMenu
 {
     public class SettingsViewModel : BaseViewModel
     {
+        private App _app = new App();
         #region Constructors
         public SettingsViewModel()
         {
@@ -39,7 +39,7 @@ namespace ReLearn.Core.ViewModels.MainMenu
             set
             {
                 SetProperty(ref _wordsNumber, value);
-                WordsNumberText = this["Texts.WordRepeats"] + $" {5 + _wordsNumber * 5}";
+                WordsNumberText = $" {5 + _wordsNumber * 5}";
                 Settings.NumberOfRepeatsLanguage = _wordsNumber * 5 + 5;
             }
         }
@@ -48,7 +48,7 @@ namespace ReLearn.Core.ViewModels.MainMenu
 
         public string WordsNumberText
         {
-            get => _wordsNumberText;
+            get => this["Texts.WordRepeats"] + _wordsNumberText;
             set => SetProperty(ref _wordsNumberText, value);
         }
 
@@ -60,7 +60,7 @@ namespace ReLearn.Core.ViewModels.MainMenu
             set
             {
                 SetProperty(ref _imagesNumber, value);
-                ImagesNumberText = this["Texts.ImageRepeats"] + $" {5 + _imagesNumber * 5}";
+                ImagesNumberText = $" {5 + _imagesNumber * 5}";
                 Settings.NumberOfRepeatsImage = _imagesNumber * 5 + 5;
             }
         }
@@ -69,16 +69,8 @@ namespace ReLearn.Core.ViewModels.MainMenu
 
         public string ImagesNumberText
         {
-            get => _imagesNumberText;
+            get => this["Texts.ImageRepeats"] + _imagesNumberText;
             set => SetProperty(ref _imagesNumberText, value);
-        }
-
-        private string _timeToBlitzText;
-
-        public string TimeToBlitzText
-        {
-            get => _timeToBlitzText;
-            set => SetProperty(ref _timeToBlitzText, value);
         }
 
         private int _timeToBlitz;
@@ -89,9 +81,17 @@ namespace ReLearn.Core.ViewModels.MainMenu
             set
             {
                 SetProperty(ref _timeToBlitz, value);
-                TimeToBlitzText = this["Texts.TimeBlitz"] + $" {15 + _timeToBlitz * 5} " + this["Texts.Seconds"];
+                TimeToBlitzText = $" {15 + _timeToBlitz * 5} ";
                 Settings.TimeToBlitz = _timeToBlitz * 5 + 15;
             }
+        }
+
+        private string _timeToBlitzText;
+
+        public string TimeToBlitzText
+        {
+            get => this["Texts.TimeBlitz"] + _timeToBlitzText + this["Texts.Seconds"];
+            set => SetProperty(ref _timeToBlitzText, value);
         }
 
         private bool _isActiveBlitz;
@@ -123,7 +123,7 @@ namespace ReLearn.Core.ViewModels.MainMenu
             }
         }
 
-        private string _languages = Settings.Currentlanguage == $"{Language.en}" ? "English" : "Русский";
+        private string _languages = Settings.Currentlanguage == Language.en ? "English" : "Русский";
 
         public string Languages
         {
@@ -153,12 +153,16 @@ namespace ReLearn.Core.ViewModels.MainMenu
                     new ActionSheetOption("English", () =>
                     {
                         Languages = "English";
-                        Settings.Currentlanguage = $"{Language.en}";
+                        Settings.Currentlanguage = Language.en;
+                        _app.InitializeCultureInfo(new CultureInfo("en-US"));
+                        this.RaiseAllPropertiesChanged();
                     }),
                     new ActionSheetOption("Русский", () =>
                     {
                         Languages = "Русский";
-                        Settings.Currentlanguage = $"{Language.ru}";
+                        Settings.Currentlanguage = Language.ru;
+                        _app.InitializeCultureInfo(new CultureInfo("ru-RU"));
+                        this.RaiseAllPropertiesChanged();
                     })
                 },
 
