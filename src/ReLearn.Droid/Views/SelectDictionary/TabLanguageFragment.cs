@@ -41,18 +41,18 @@ namespace ReLearn.Droid.Views.SelectDictionary
 
             var name = new TextView(view.Context)
             {
-                Text = Helpers.GetString.GetResourceString(nameDictionary, Resources),
+                Text = ViewModel.GetNameDictionary(nameDictionary),
                 TextSize = 20 //(int)(3 * width)
             };
             var countWords = new TextView(view.Context)
             {
-                Text = $"{GetString(Resource.String.DatatypeWords)} {count}, {GetString(Resource.String.StudiedAt)} " +
+                Text = $"{ViewModel.TextWords} {count}, {ViewModel.TextStudiedAt} " +
                        $"{(int) (100 - API.Statistics.GetAverageNumberLearn(database) * 100f / Settings.StandardNumberOfRepeats)}%",
                 TextSize = 14 //(int)(2.1f * width)
             };
             var description = new TextView(view.Context)
             {
-                Text = Helpers.GetString.GetResourceString($"{nameDictionary}Description", Resources),
+                Text = ViewModel.GetDescriptionDictionary(nameDictionary),
                 TextSize = 11 //(int)(1.7f * width)
             };
             var rextlinearLayout = new LinearLayout(view.Context)

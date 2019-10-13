@@ -13,7 +13,7 @@ namespace ReLearn.Droid.Views.SelectDictionary
 {
     internal class TabImageFragment : MvxFragment<DictionaryImageViewModel>
     {
-        public View CreateViewForDictionary(View view, List<DBStatistics> database, string NameDictionary, int ImageId,
+        public View CreateViewForDictionary(View view, List<DBStatistics> database, string nameDictionary, int ImageId,
             GravityFlags flag, bool separate, Color lightColor, Color darkColor)
         {
             var width = Resources.DisplayMetrics.WidthPixels / 100f;
@@ -27,7 +27,7 @@ namespace ReLearn.Droid.Views.SelectDictionary
                 SelectDictionaryFragment.Dictionaries.CreateBitmapWithStats(
                     BitmapFactory.DecodeResource(Resources, ImageId), database, lightColor,
                     darkColor)); //////fail color
-            var ImageDictionary = new ImageView(view.Context) {Tag = $"{NameDictionary}"};
+            var ImageDictionary = new ImageView(view.Context) {Tag = $"{nameDictionary}"};
             ImageDictionary.LayoutParameters = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WrapContent,
                 ViewGroup.LayoutParams.WrapContent)
             {
@@ -41,18 +41,18 @@ namespace ReLearn.Droid.Views.SelectDictionary
 
             var name = new TextView(view.Context)
             {
-                Text = Helpers.GetString.GetResourceString(NameDictionary, Resources),
+                Text = ViewModel.GetNameDictionary(nameDictionary),
                 TextSize = 20 //(int)(3 * width)
             };
             var countWords = new TextView(view.Context)
             {
-                Text = $"{GetString(Resource.String.DatatypeImages)} {count}, {GetString(Resource.String.StudiedAt)} " +
+                Text = $"{ViewModel.TextImages} {count}, {ViewModel.TextStudiedAt} " +
                        $"{(int) (100 - API.Statistics.GetAverageNumberLearn(database) * 100f / Settings.StandardNumberOfRepeats)}%",
                 TextSize = 14 //(int)(2.1f * width)
             };
             var description = new TextView(view.Context)
             {
-                Text = Helpers.GetString.GetResourceString($"{NameDictionary}Description", Resources),
+                Text = ViewModel.GetDescriptionDictionary(nameDictionary),
                 TextSize = 11 //(int)(1.7f * width)
             };
             var textlinearLayout = new LinearLayout(view.Context)

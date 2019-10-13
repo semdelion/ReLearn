@@ -10,31 +10,12 @@
   <string name="Instruction">Instruction</string>
   <!--Dictionary and description-->
 
-  <string name="Dictionaries">Dictionaries</string>
-  <string name="StudiedAt">studied at: </string>
-  <string name="Popular_Words">Popular words</string>
-  <string name="Popular_WordsDescription">This is a dictionary for those who want to master the most necessary and popular words.</string>
-  <string name="My_Directly">My dictionary</string>
-  <string name="My_DirectlyDescription">Contains the words you add to the system.</string>
-  <string name="Education">Education</string>
-  <string name="EducationDescription">Education plays a very important role in our life.Develops all aspects of the human personality, revealing his abilities.</string>
-  <string name="Home">Home</string>
-  <string name="HomeDescription">The house is a family hearth. It is a symbol of reliability and safety, comfort and warmth.It contains words that you can use to tell about your home.</string>
-  <string name="ThreeFormsOfVerb">Verbs</string>
-  <string name="ThreeFormsOfVerbDescription">The most commonly used irregular verbs of the English language are presented.</string>
-  <string name="ComputerScience">Computer Science</string>
-  <string name="ComputerScienceDescription">IT covers all areas of the creation, transfer, storage and perception of information, not limited to computer technology.</string>
-  <string name="Nature">Nature</string>
-  <string name="NatureDescription">Nature is all that is not created by human activity. But it is material, and surrounds us everywhere. We suggest to get acquainted with the words on this topic.</string>
-  <string name="Films">Films</string>
-  <string name="FilmsDescription">The dictionary consists of a list of the best movies according to users.</string>
-  <string name="Flags">Flags</string>
-  <string name="FlagsDescription">The dictionary contains flags of the world.</string>
+
 
   <!--Menu settings-->
 
 
-
+  <string name="Dictionaries">Dictionaries</string>
   <string name="Settings">Settings</string>
   <string name="Language_eng">Language (en)</string>
   <string name="Language_rus">Language (ru)</string>
@@ -63,8 +44,7 @@
 
   <!--Statistic-->
 
-  <string name="DatatypeWords">Words: </string>
-  <string name="DatatypeImages">Images: </string>
+
   <!--main menu-->
   <string name="About_us">About us</string>
   <string name="Feedback">Feedback</string>

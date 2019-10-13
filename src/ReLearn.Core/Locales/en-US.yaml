@@ -119,3 +119,34 @@ RepeatViewModel:
   Buttons:
     Next: Next
     Unknown: Unknown
+
+DictionaryLanguageViewModel:
+  Texts:
+    StudiedAt: "studied at:"
+    Words: "Words:"
+  Names:
+    Popular_Words: Popular words
+    My_Directly: My dictionary
+    Education: Education
+    Home: Home
+    ThreeFormsOfVerb: Verbs
+    ComputerScience: Computer Science
+    Nature: Nature
+  Dictionaries:
+    Popular_Words: "This is a dictionary for those who want to master the most necessary and popular words."
+    My_Directly: "Contains the words you add to the system."
+    Education: "Education plays a very important role in our life.Develops all aspects of the human personality, revealing his abilities."
+    Home: "The house is a family hearth. It is a symbol of reliability and safety, comfort and warmth.It contains words that you can use to tell about your home."
+    ThreeFormsOfVerb: "The most commonly used irregular verbs of the English language are presented."
+    ComputerScience: "IT covers all areas of the creation, transfer, storage and perception of information, not limited to computer technology."
+    Nature: "Nature is all that is not created by human activity. But it is material, and surrounds us everywhere. We suggest to get acquainted with the words on this topic."
+
+DictionaryImageViewModel:
+  Texts: 
+    Images: "Images:"
+  Names:
+    Films: Films
+    Flags: Flags
+  Dictionaries:
+    Films: "The dictionary consists of a list of the best movies according to users."
+    Flags: "The dictionary contains flags of the world."

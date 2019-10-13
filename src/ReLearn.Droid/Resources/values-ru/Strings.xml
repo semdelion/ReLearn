@@ -9,29 +9,10 @@
   <string name="Instruction">Инструкция</string>
   <!--Dictionary and description-->
 
-  <string name="Dictionaries">Словари</string>
-  <string name="StudiedAt">изучен на: </string>
-  <string name="Popular_Words">Популярные слова</string>
-  <string name="Popular_WordsDescription">Это словарь для тех, кто хочет освоить наиболее нужные и популярные слова.</string>
-  <string name="My_Directly">Мой словарь</string>
-  <string name="My_DirectlyDescription">Содержит слова, которые вы добавляете в систему.</string>
-  <string name="Education">Образование</string>
-  <string name="EducationDescription">Образование играет очень важную роль в нашей жизни. Развивает все стороны человеческой личности, раскрывая его способности. </string>
-  <string name="Home">Дом и быт</string>
-  <string name="HomeDescription">Дом - семейный очаг. Это символ надёжности и безопасности, уюта и тепла. Здесь содержатся слова, с помощью которых вы сможете рассказать о своем доме.</string>
-  <string name="ThreeFormsOfVerb">Глаголы</string>
-  <string name="ThreeFormsOfVerbDescription">Представлены наиболее употребляемые неправильные глаголы английского языка. </string>
-  <string name="ComputerScience">Информатика</string>
-  <string name="ComputerScienceDescription">ИТ охватывают все области создания, передачи, хранения и восприятия информации, не ограничиваясь только компьютерными технологиями.</string>
-  <string name="Nature">Природа</string>
-  <string name="NatureDescription">Природа – это все, что не создано деятельностью человека. Но она материальна, и окружает нас повсюду. Предлагаем ознакомиться со словами на эту тему.</string>
-  <string name="Films">Фильмы</string>
-  <string name="FilmsDescription">Словарь состоит из списка лучших  фильмов по версии пользователей.</string>
-  <string name="Flags">Флаги</string>
-  <string name="FlagsDescription">В словаре представлены флаги стран мира.</string>
+
 
   <!--Menu settings-->
-
+  <string name="Dictionaries">Словари</string>
   <string name="Settings">Настройки</string>
   <string name="Language_eng">Язык (en)</string>
   <string name="Language_rus">Язык (ru)</string>
@@ -60,8 +41,6 @@
 
   <!--Statistic-->
 
-  <string name="DatatypeWords">Слов: </string>
-  <string name="DatatypeImages">Изображений: </string>
   <!--main menu-->
 
   <string name="About_us">О нас</string>

@@ -1,12 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using ReLearn.API.Database;
+using ReLearn.Core.ViewModels.Facade;
+using System.Collections.Generic;
 using System.Threading.Tasks;
-using MvvmCross.ViewModels;
-using ReLearn.API.Database;
-using ReLearn.Core.ViewModels.Base;
 
 namespace ReLearn.Core.ViewModels.MainMenu.SelectDictionary
 {
-    public class DictionaryLanguageViewModel : BaseViewModel
+    public class DictionaryLanguageViewModel : MvxDictionaryViewModel
     {
         public DictionaryLanguageViewModel()
         {
@@ -29,5 +28,8 @@ namespace ReLearn.Core.ViewModels.MainMenu.SelectDictionary
         public List<DBStatistics> ComputerScience { get; private set; }
         public List<DBStatistics> Nature { get; private set; }
         public List<DBStatistics> MyDirectly { get; private set; }
+
+        public string TextWords => this["Texts.Words"];
+        public string TextStudiedAt => this["Texts.StudiedAt"];
     }
 }
