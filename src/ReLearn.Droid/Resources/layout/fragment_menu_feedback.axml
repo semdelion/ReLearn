@@ -28,8 +28,8 @@
 		</android.support.v7.widget.Toolbar>
 	</android.support.design.widget.AppBarLayout>
      <ScrollView
-        android:layout_width ="fill_parent"
-        android:layout_height="fill_parent">
+        android:layout_width ="match_parent"
+        android:layout_height="match_parent">
 	    <include 
 		    layout				      ="@layout/content_feedback"
 		    android:layout_width      ="match_parent"

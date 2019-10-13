@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+    xmlns:android        ="http://schemas.android.com/apk/res/android"
+    xmlns:local          ="http://schemas.android.com/apk/res-auto"
+    xmlns:tools		     ="http://schemas.android.com/tools"
+    android:layout_width ="match_parent"
+    android:layout_height="match_parent"
+    android:orientation  ="vertical">
+    <ScrollView
+        android:layout_width     ="match_parent"
+        android:layout_height    ="match_parent"
+        android:fitsSystemWindows="true"
+        android:layout_weight    ="1">
+        <LinearLayout 
+            android:orientation		  ="vertical"
+            android:layout_width	  ="match_parent"
+            android:layout_height	  ="match_parent"
+            android:layout_marginRight="@dimen/margin_right"
+		    android:layout_marginLeft ="@dimen/margin_left">
+	        <EditText
+		        local:MvxBind						="Hint HintWordEnglish; Text Word"
+		        tools:hint						    ="Word English"
+		        android:textColor					="@color/text_white"
+		        android:backgroundTint				="@color/text_white"
+		        android:textColorHint				="@color/hint_text_white"	
+		        android:minLines					="2"
+		        android:textSize					="25dp"
+		        android:layout_width				="match_parent"
+		        android:layout_height				="150dp"
+		        android:layout_marginTop			="25.0dp"
+		        android:defaultFocusHighlightEnabled="true"/>
+	        <EditText
+		        local:MvxBind						="Hint HintWordRus; Text TranslationWord"
+		        tools:hint						    ="Word Rus"
+		        android:textColor					="@color/text_white"
+		        android:textColorHint				="@color/hint_text_white"
+		        android:backgroundTint				="@color/text_white"
+		        android:textSize					="25dp"
+		        android:minLines					="2"
+		        android:layout_width				="match_parent"
+		        android:layout_height				="150dp"
+		        android:layout_marginTop			="25.0dp"
+		        android:defaultFocusHighlightEnabled="true"/>
+	        <Button
+		        local:MvxBind					="Text ButtonAdd; Click AddWordCommand"
+                android:background				="@drawable/button_style_standard"
+                android:fontFamily				="@font/myriadpro_semibold"
+		        android:textColor				="@color/text_white"
+		        android:textSize				="20dp"
+		        android:layout_width			="match_parent"
+		        android:layout_height			="@dimen/button_height"
+		        android:layout_marginTop		="20.0dp"
+		        android:layout_marginBottom		="30dp"
+                tools:text                      ="Add"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
