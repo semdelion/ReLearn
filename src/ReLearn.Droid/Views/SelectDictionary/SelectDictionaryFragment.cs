@@ -10,7 +10,7 @@ using MvvmCross.Platforms.Android.Presenters.Attributes;
 using ReLearn.API.Database;
 using ReLearn.Core.ViewModels;
 using ReLearn.Core.ViewModels.MainMenu.SelectDictionary;
-using ReLearn.Droid.Views.Menu;
+using ReLearn.Droid.Views.Base;
 using System;
 using System.Collections.Generic;
 
@@ -18,7 +18,7 @@ namespace ReLearn.Droid.Views.SelectDictionary
 {
     [MvxFragmentPresentation(typeof(MainViewModel), Resource.Id.content_frame)]
     [Register("relearn.droid.views.selectdictionary.SelectDictionaryFragment")]
-    public class SelectDictionaryFragment : BaseFragment<SelectDictionaryViewModel>
+    public class SelectDictionaryFragment : MvxBaseFragment<SelectDictionaryViewModel>
     {
         public static Dictionaries Dictionaries;
 

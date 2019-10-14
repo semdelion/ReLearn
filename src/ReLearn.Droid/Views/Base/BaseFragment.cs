@@ -10,15 +10,15 @@ using MvvmCross.ViewModels;
 using ReLearn.Droid.Services;
 using System.Threading.Tasks;
 
-namespace ReLearn.Droid.Views.Menu
+namespace ReLearn.Droid.Views.Base
 {
-    public abstract class BaseFragment : MvxFragment
+    public abstract class MvxBaseFragment : MvxFragment
     {
         protected MvxActionBarDrawerToggle _drawerToggle;
         protected Toolbar _toolbar;
         protected bool isHomeAsUp;
 
-        protected BaseFragment()
+        protected MvxBaseFragment()
         {
             RetainInstance = true;
         }
@@ -96,7 +96,7 @@ namespace ReLearn.Droid.Views.Menu
         }
     }
 
-    public abstract class BaseFragment<TViewModel> : BaseFragment where TViewModel : class, IMvxViewModel
+    public abstract class MvxBaseFragment<TViewModel> : MvxBaseFragment where TViewModel : class, IMvxViewModel
     {
         public new TViewModel ViewModel
         {

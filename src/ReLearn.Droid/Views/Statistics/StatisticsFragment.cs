@@ -10,7 +10,7 @@ using ReLearn.API.Database;
 using ReLearn.Core.ViewModels;
 using ReLearn.Core.ViewModels.MainMenu.Statistics;
 using ReLearn.Droid.Helpers;
-using ReLearn.Droid.Views.Menu;
+using ReLearn.Droid.Views.Base;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -18,7 +18,7 @@ namespace ReLearn.Droid.Views.Statistics
 {
     [MvxFragmentPresentation(typeof(MainViewModel), Resource.Id.content_frame)]
     [Register("relearn.droid.views.statistics.StatisticsFragment")]
-    public class StatisticsFragment : BaseFragment<StatisticViewModel>
+    public class StatisticsFragment : MvxBaseFragment<StatisticViewModel>
     {
         protected override int FragmentId => Resource.Layout.fragment_menu_statistics;
 

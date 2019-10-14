@@ -5,20 +5,18 @@ using Android.Views;
 using Android.Widget;
 using MvvmCross.Platforms.Android.Presenters.Attributes;
 using ReLearn.API;
-using ReLearn.API.Database;
 using ReLearn.Core.ViewModels;
 using ReLearn.Core.ViewModels.Images;
 using ReLearn.Droid.Adapters;
-using ReLearn.Droid.Views.Menu;
+using ReLearn.Droid.Views.Base;
 using System;
-using System.Collections.Generic;
 using SearchView = Android.Support.V7.Widget.SearchView;
 
 namespace ReLearn.Droid.Views.Images
 {
     [MvxFragmentPresentation(typeof(MainViewModel), Resource.Id.content_frame)]
     [Register("relearn.droid.views.images.ViewDictionaryFragment")]
-    public class ViewDictionaryFragment : BaseFragment<ViewDictionaryViewModel>
+    public class ViewDictionaryFragment : MvxBaseFragment<ViewDictionaryViewModel>
     {
         protected override int FragmentId => Resource.Layout.fragment_menu_view_dictionary;
 

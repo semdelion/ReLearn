@@ -13,26 +13,15 @@ namespace ReLearn.Core.ViewModels.Facade
 {
     public abstract class MvxBlitzPollViewModel<ListDatabase> : BaseViewModel<ListDatabase>
     {
-        #region Constructors
-
         public MvxBlitzPollViewModel()
         {
             Time = Settings.TimeToBlitz * 10;
         }
 
-        #endregion
-
-        #region Services
-        #endregion
-
-        #region Private
-
         protected virtual async Task<bool> NavigateToStatistic()
         {
             return await NavigationService.Navigate<StatisticViewModel>();
         }
-
-        #endregion
 
         public void TimerStart()
         {
@@ -62,20 +51,10 @@ namespace ReLearn.Core.ViewModels.Facade
             }
         }
 
-        #region Fields
-
-        #endregion
-
-        #region Commands
-
         private IMvxAsyncCommand _toStatistic;
 
         public IMvxAsyncCommand ToStatistic =>
             _toStatistic ?? (_toStatistic = new MvxAsyncCommand(NavigateToStatistic));
-
-        #endregion
-
-        #region Properties
 
         protected string _titleCount = "1";
 
@@ -106,15 +85,5 @@ namespace ReLearn.Core.ViewModels.Facade
             get => _currentColor;
             set => SetProperty(ref _currentColor, value);
         }
-
-        #endregion
-
-        #region Protected
-
-        #endregion
-
-        #region Public
-
-        #endregion
     }
 }
