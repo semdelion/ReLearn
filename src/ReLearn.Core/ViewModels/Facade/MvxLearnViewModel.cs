@@ -4,7 +4,14 @@ namespace ReLearn.Core.ViewModels.Facade
 {
     public abstract class MvxLearnViewModel<ListDatabase> : BaseViewModel<ListDatabase>
     {
+        #region Fields
         private string _text;
+        #endregion
+
+        #region Properties
+        public string TextNotRepeat => this["Buttons.NotRepeat"];
+
+        public string TextNext => this["Buttons.Next"];
 
         public int Count { get; set; }
 
@@ -13,8 +20,6 @@ namespace ReLearn.Core.ViewModels.Facade
             get => _text;
             set => SetProperty(ref _text, value);
         }
-
-        public string TextNotRepeat => this["Buttons.NotRepeat"];
-        public string TextNext => this["Buttons.Next"];
+        #endregion
     }
 }

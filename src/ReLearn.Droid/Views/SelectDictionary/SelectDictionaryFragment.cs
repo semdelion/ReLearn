@@ -41,7 +41,7 @@ namespace ReLearn.Droid.Views.SelectDictionary
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             var view = base.OnCreateView(inflater, container, savedInstanceState);
-            Dictionaries = new Dictionaries((int) (Resources.DisplayMetrics.WidthPixels / 3f));
+            Dictionaries = new Dictionaries((int)(Resources.DisplayMetrics.WidthPixels / 3f));
             var viewPager = view.FindViewById<ViewPager>(Resource.Id.pager);
 
             var fragments = new List<MvxViewPagerFragmentInfo>

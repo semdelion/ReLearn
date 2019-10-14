@@ -49,9 +49,14 @@ namespace ReLearn.Droid.Adapters
             BackgroundConstructor.SetColorForItems(List[position].NumberLearn, TextView);
 
             if (Settings.Currentlanguage == $"{Language.en}")
+            {
                 TextView.Text = List[position].Name_image_en;
+            }
             else
+            {
                 TextView.Text = List[position].Name_image_ru;
+            }
+
             return view;
         }
     }

@@ -40,7 +40,7 @@ namespace ReLearn.Droid.Views.Menu
                 _drawerToggle = new MvxActionBarDrawerToggle(
                     Activity, // host Activity
                     (ParentActivity as INavigationActivity).DrawerLayout, // DrawerLayout object
-                    // nav drawer icon to replace 'Up' caret
+                                                                          // nav drawer icon to replace 'Up' caret
                     Resource.String.navigation_drawer_open,
                     Resource.String.navigation_drawer_close);
             }

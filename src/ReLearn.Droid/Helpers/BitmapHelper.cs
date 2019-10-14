@@ -8,7 +8,7 @@ namespace ReLearn.Droid.Helpers
     {
         public static BitmapDrawable GetBackgroung(Android.Content.Res.Resources resources, float width, float height)
         {
-            using (var bitmap = Bitmap.CreateBitmap((int) width, (int) height, Bitmap.Config.Argb4444))
+            using (var bitmap = Bitmap.CreateBitmap((int)width, (int)height, Bitmap.Config.Argb4444))
             using (var canvas = new Canvas(bitmap))
             {
                 var background = new DrawStatistics(canvas);

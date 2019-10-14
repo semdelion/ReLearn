@@ -51,10 +51,10 @@ namespace ReLearn.Droid.Views.Languages
                 }
                 else
                 {
-                    var date = ViewModel.Database.FindAll(column => 
-                        column.Word.ToLower().Contains(searchWord) || 
+                    var date = ViewModel.Database.FindAll(column =>
+                        column.Word.ToLower().Contains(searchWord) ||
                         column.TranslationWord.ToLower().Contains(searchWord));
-                        
+
                     DictionaryWords.Adapter = new CustomAdapterWord(ParentActivity, date);
                 }
             };

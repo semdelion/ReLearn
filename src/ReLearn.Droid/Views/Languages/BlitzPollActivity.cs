@@ -25,12 +25,12 @@ namespace ReLearn.Droid.Views.Languages
             var param = PixelConverter.GetParamsRelative(ViewGroup.LayoutParams.MatchParent, PixelConverter.DpToPX(320),
                 10, 160, 10, 10);
 
-            ViewModel.CurrentNumber = new Random(unchecked((int) DateTime.Now.Ticks)).Next(ViewModel.Database.Count);
+            ViewModel.CurrentNumber = new Random(unchecked((int)DateTime.Now.Ticks)).Next(ViewModel.Database.Count);
             var randIndex =
                 (ViewModel.CurrentNumber +
-                 new Random(unchecked((int) DateTime.Now.Ticks)).Next(1, ViewModel.Database.Count)) %
+                 new Random(unchecked((int)DateTime.Now.Ticks)).Next(1, ViewModel.Database.Count)) %
                 ViewModel.Database.Count;
-            ViewModel.Answer = new Random(unchecked((int) DateTime.Now.Ticks)).Next(2) == 1 ? true : false;
+            ViewModel.Answer = new Random(unchecked((int)DateTime.Now.Ticks)).Next(2) == 1 ? true : false;
             var translationWord = ViewModel.Database[ViewModel.Answer ? ViewModel.CurrentNumber : randIndex]
                 .TranslationWord;
             var textView = new TextView(this)
@@ -52,11 +52,19 @@ namespace ReLearn.Droid.Views.Languages
             await API.Statistics.Add(ViewModel.Database, ViewModel.CurrentNumber,
               !(ViewModel.Answer ^ userAnswer) ? -1 : 1);
             if (!(ViewModel.Answer ^ userAnswer))
+            {
                 ViewModel.True++;
+            }
             else
+            {
                 ViewModel.False++;
+            }
+
             if (ViewPrev != null)
+            {
                 FindViewById<RelativeLayout>(Resource.Id.RelativeLayoutLanguagesBlitzPoll).RemoveView(ViewPrev);
+            }
+
             ViewCurrent.Background = GetDrawable(!(ViewModel.Answer ^ userAnswer)
                 ? Resource.Drawable.view_true
                 : Resource.Drawable.view_false);

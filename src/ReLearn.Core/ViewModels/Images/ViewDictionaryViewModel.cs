@@ -9,17 +9,21 @@ namespace ReLearn.Core.ViewModels.Images
 {
     public class ViewDictionaryViewModel : BaseViewModel
     {
-        public ViewDictionaryViewModel()
-        {
-            Task.Run(async () => DataBase = await DatabaseImages.GetData()).Wait();
-        }
-
-        public List<DatabaseImages> DataBase { get; private set; }
-
+        #region Properties
         public bool HideStudied
         {
             get => CrossSettings.Current.GetValueOrDefault($"{DBSettings.HideStudied}", true);
             set => CrossSettings.Current.AddOrUpdateValue($"{DBSettings.HideStudied}", value);
         }
+
+        public List<DatabaseImages> DataBase { get; private set; }
+        #endregion
+
+        #region Constructors
+        public ViewDictionaryViewModel()
+        {
+            Task.Run(async () => DataBase = await DatabaseImages.GetData()).Wait();
+        }
+        #endregion
     }
 }

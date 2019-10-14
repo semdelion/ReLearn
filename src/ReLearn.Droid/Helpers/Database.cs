@@ -1,9 +1,9 @@
-﻿using System;
-using System.IO;
-using System.Threading.Tasks;
-using Android.App;
+﻿using Android.App;
 using ReLearn.API;
 using ReLearn.API.Database;
+using System;
+using System.IO;
+using System.Threading.Tasks;
 
 namespace ReLearn.Droid.Helpers
 {
@@ -34,7 +34,10 @@ namespace ReLearn.Droid.Helpers
                         var buffer = new byte[1024];
                         int length;
                         while ((length = dbAssetStream.Read(buffer, 0, buffer.Length)) > 0)
+                        {
                             dbFileStream.Write(buffer, 0, length);
+                        }
+
                         dbFileStream.Flush();
                     }
                 }
@@ -101,11 +104,13 @@ namespace ReLearn.Droid.Helpers
         public static async Task AddColumn()
         {
             foreach (var tableName in Enum.GetNames(typeof(TableNamesLanguage)))
+            {
                 if (!DatabaseWords.ContainColumn("Transcription",
                     await DataBase.Languages.GetTableInfoAsync(tableName)))
                 {
                     await DataBase.Languages.ExecuteAsync($"ALTER TABLE {tableName} ADD COLUMN Transcription string");
                     if (tableName != $"{TableNamesLanguage.My_Directly}")
+                    {
                         using (var reader =
                             new StreamReader(Application.Context.Assets.Open($"Database/{tableName}.txt")))
                         {
@@ -125,10 +130,13 @@ namespace ReLearn.Droid.Helpers
                                                   list[0].ToLower().Trim(), list[2].Trim(),
                                                   list[0].ToLower().Trim() + "  ");
                                 if (changes == 0)
+                                {
                                     await DataBase.Languages.ExecuteAsync(
                                         $"INSERT INTO {tableName} (Word, TranslationWord, Transcription, NumberLearn, DateRecurrence) VALUES (?, ?, ?, ?, ?)",
                                         list[0].ToLower().Trim(), list[1].ToLower().Trim(), list[2].Trim(),
                                         Settings.StandardNumberOfRepeats, DateTime.Now);
+                                }
+
                                 if (changes > 1) // из-за старых таблиц 
                                 {
                                     await DataBase.Languages.ExecuteAsync($"DELETE FROM {tableName} WHERE Word = ?",
@@ -143,7 +151,9 @@ namespace ReLearn.Droid.Helpers
                             await DataBase.Languages.ExecuteAsync(
                                 $"DELETE FROM {tableName} WHERE Transcription IS NULL OR trim(Transcription) = ''");
                         }
+                    }
                 }
+            }
         }
     }
 }

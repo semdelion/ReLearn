@@ -82,15 +82,19 @@ namespace ReLearn.Droid.Views.Images
             {
                 var searchWord = e.NewText.ToLower().Trim();
                 if (searchWord == string.Empty)
+                {
                     DictionaryImages.Adapter = new CustomAdapterImage(ParentActivity,
                         ViewModel.HideStudied
                             ? ViewModel.DataBase.FindAll(column => column.NumberLearn != 0)
                             : ViewModel.DataBase);
+                }
                 else
-                    DictionaryImages.Adapter = new CustomAdapterImage(ParentActivity, 
-                        Settings.Currentlanguage == $"{Language.en}" ? 
-                        ViewModel.DataBase.FindAll(column => column.Name_image_en.ToLower().Contains(searchWord)) : 
+                {
+                    DictionaryImages.Adapter = new CustomAdapterImage(ParentActivity,
+                        Settings.Currentlanguage == $"{Language.en}" ?
+                        ViewModel.DataBase.FindAll(column => column.Name_image_en.ToLower().Contains(searchWord)) :
                         ViewModel.DataBase.FindAll(column => column.Name_image_ru.ToLower().Contains(searchWord)));
+                }
             };
             base.OnCreateOptionsMenu(menu, inflater);
         }
@@ -98,9 +102,13 @@ namespace ReLearn.Droid.Views.Images
         public void SortNamesImages()
         {
             if (Settings.Currentlanguage == $"{Language.en}")
+            {
                 ViewModel.DataBase.Sort((x, y) => x.Name_image_en.CompareTo(y.Name_image_en));
+            }
             else
+            {
                 ViewModel.DataBase.Sort((x, y) => x.Name_image_ru.CompareTo(y.Name_image_ru));
+            }
         }
     }
 }

@@ -10,29 +10,28 @@ namespace ReLearn.Core.ViewModels.MainMenu
 {
     public class SettingsViewModel : BaseViewModel
     {
-        private App _app = new App();
-        #region Constructors
-        public SettingsViewModel()
-        {
-            WordsNumber = (Settings.NumberOfRepeatsLanguage - 5) / 5;
-            ImagesNumber = (Settings.NumberOfRepeatsImage - 5) / 5;
-            TimeToBlitz = (Settings.TimeToBlitz - 15) / 5;
-            IsActiveBlitz = Settings.BlitzEnable;
-            IsActiveQuiz = Settings.QuizEnable;
-        }
+        #region Fields
+        private readonly App _app = new App();
+        private int _wordsNumber;
+        private string _wordsNumberText;
+        private int _imagesNumber;
+        private string _imagesNumberText;
+        private int _timeToBlitz;
+        private string _timeToBlitzText;
+        private bool _isActiveBlitz;
+        private bool _isActiveQuiz;
+        private string _languages = Settings.Currentlanguage == Language.en ? "English" : "Русский";
+        private string _pronunciations = Settings.CurrentPronunciation == $"{Pronunciation.en}" ? "English" : "British";
         #endregion
 
         #region Commands
-
         public IMvxCommand SelectedItemLanguageCommand => new MvxCommand(SelectedItemLanguage);
         public IMvxCommand SelectedItemPronunciationCommand => new MvxCommand(SelectedItemPronunciation);
-
         #endregion
 
         #region Properties
-
-        private int _wordsNumber;
-
+        public string TextQuiz => this["Texts.Quiz"];
+        public string TextBlitz => this["Texts.Blitz"];
         public int WordsNumber
         {
             get => _wordsNumber;
@@ -44,15 +43,11 @@ namespace ReLearn.Core.ViewModels.MainMenu
             }
         }
 
-        private string _wordsNumberText;
-
         public string WordsNumberText
         {
             get => this["Texts.WordRepeats"] + _wordsNumberText;
             set => SetProperty(ref _wordsNumberText, value);
         }
-
-        private int _imagesNumber;
 
         public int ImagesNumber
         {
@@ -65,15 +60,11 @@ namespace ReLearn.Core.ViewModels.MainMenu
             }
         }
 
-        private string _imagesNumberText;
-
         public string ImagesNumberText
         {
             get => this["Texts.ImageRepeats"] + _imagesNumberText;
             set => SetProperty(ref _imagesNumberText, value);
         }
-
-        private int _timeToBlitz;
 
         public int TimeToBlitz
         {
@@ -86,15 +77,11 @@ namespace ReLearn.Core.ViewModels.MainMenu
             }
         }
 
-        private string _timeToBlitzText;
-
         public string TimeToBlitzText
         {
             get => this["Texts.TimeBlitz"] + _timeToBlitzText + this["Texts.Seconds"];
             set => SetProperty(ref _timeToBlitzText, value);
         }
-
-        private bool _isActiveBlitz;
 
         public bool IsActiveBlitz
         {
@@ -104,11 +91,11 @@ namespace ReLearn.Core.ViewModels.MainMenu
                 SetProperty(ref _isActiveBlitz, value);
                 Settings.BlitzEnable = _isActiveBlitz;
                 if (!value)
+                {
                     IsActiveQuiz = true;
+                }
             }
         }
-
-        private bool _isActiveQuiz;
 
         public bool IsActiveQuiz
         {
@@ -119,19 +106,17 @@ namespace ReLearn.Core.ViewModels.MainMenu
 
                 Settings.QuizEnable = _isActiveQuiz;
                 if (!value)
+                {
                     IsActiveBlitz = true;
+                }
             }
         }
-
-        private string _languages = Settings.Currentlanguage == Language.en ? "English" : "Русский";
 
         public string Languages
         {
             get => $"{this["Texts.Language"]}:  {_languages}";
             set => SetProperty(ref _languages, value);
         }
-
-        private string _pronunciations = Settings.CurrentPronunciation == $"{Pronunciation.en}" ? "English" : "British";
 
         public string Pronunciations
         {
@@ -140,8 +125,18 @@ namespace ReLearn.Core.ViewModels.MainMenu
         }
         #endregion
 
-        #region Private
+        #region Constructors
+        public SettingsViewModel()
+        {
+            WordsNumber = (Settings.NumberOfRepeatsLanguage - 5) / 5;
+            ImagesNumber = (Settings.NumberOfRepeatsImage - 5) / 5;
+            TimeToBlitz = (Settings.TimeToBlitz - 15) / 5;
+            IsActiveBlitz = Settings.BlitzEnable;
+            IsActiveQuiz = Settings.QuizEnable;
+        }
+        #endregion
 
+        #region Private
         private void SelectedItemLanguage()
         {
             var actionSheetConfig = new ActionSheetConfig
@@ -155,14 +150,14 @@ namespace ReLearn.Core.ViewModels.MainMenu
                         Languages = "English";
                         Settings.Currentlanguage = Language.en;
                         _app.InitializeCultureInfo(new CultureInfo("en-US"));
-                        this.RaiseAllPropertiesChanged();
+                        RaiseAllPropertiesChanged();
                     }),
                     new ActionSheetOption("Русский", () =>
                     {
                         Languages = "Русский";
                         Settings.Currentlanguage = Language.ru;
                         _app.InitializeCultureInfo(new CultureInfo("ru-RU"));
-                        this.RaiseAllPropertiesChanged();
+                        RaiseAllPropertiesChanged();
                     })
                 },
 
@@ -194,9 +189,6 @@ namespace ReLearn.Core.ViewModels.MainMenu
             };
             Mvx.IoCProvider.Resolve<IUserDialogs>().ActionSheet(actionSheetConfig);
         }
-
-        public string TextQuiz => this["Texts.Quiz"];
-        public string TextBlitz => this["Texts.Blitz"];
         #endregion
     }
 }

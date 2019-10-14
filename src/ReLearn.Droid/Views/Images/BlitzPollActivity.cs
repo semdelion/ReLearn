@@ -28,7 +28,7 @@ namespace ReLearn.Droid.Views.Images
                 10, 0, 10, 20);
             var randIndex =
                 (ViewModel.CurrentNumber +
-                 new Random(unchecked((int) DateTime.Now.Ticks)).Next(1, ViewModel.Database.Count)) %
+                 new Random(unchecked((int)DateTime.Now.Ticks)).Next(1, ViewModel.Database.Count)) %
                 ViewModel.Database.Count;
             var textView = new TextView(this)
             {
@@ -45,7 +45,7 @@ namespace ReLearn.Droid.Views.Images
         {
             var param = PixelConverter.GetParams(ViewGroup.LayoutParams.MatchParent, PixelConverter.DpToPX(200), 10, 15,
                 10, 20);
-            var imageView = new ImageView(this) {LayoutParameters = param};
+            var imageView = new ImageView(this) { LayoutParameters = param };
             using (var bitmap = BitmapFactory.DecodeStream(Application.Context.Assets.Open(
                 $"Image{DataBase.TableName}/{ViewModel.Database[ViewModel.CurrentNumber].Image_name}.png")))
             using (var bitmapRounded = BitmapHelper.GetRoundedCornerBitmap(bitmap, PixelConverter.DpToPX(5)))
@@ -58,8 +58,8 @@ namespace ReLearn.Droid.Views.Images
 
         private LinearLayout GetLayout()
         {
-            ViewModel.CurrentNumber = new Random(unchecked((int) DateTime.Now.Ticks)).Next(ViewModel.Database.Count);
-            ViewModel.Answer = new Random(unchecked((int) DateTime.Now.Ticks)).Next(2) == 1 ? true : false;
+            ViewModel.CurrentNumber = new Random(unchecked((int)DateTime.Now.Ticks)).Next(ViewModel.Database.Count);
+            ViewModel.Answer = new Random(unchecked((int)DateTime.Now.Ticks)).Next(2) == 1 ? true : false;
             var param = PixelConverter.GetParamsRelative(ViewGroup.LayoutParams.MatchParent, PixelConverter.DpToPX(320),
                 10, 160, 10, 10);
             var linearLayout = new LinearLayout(this)
@@ -78,11 +78,19 @@ namespace ReLearn.Droid.Views.Images
             await API.Statistics.Add(ViewModel.Database, ViewModel.CurrentNumber,
               !(ViewModel.Answer ^ userAnswer) ? -1 : 1);
             if (!(ViewModel.Answer ^ userAnswer))
+            {
                 ViewModel.True++;
+            }
             else
+            {
                 ViewModel.False++;
+            }
+
             if (ViewPrev != null)
+            {
                 FindViewById<RelativeLayout>(Resource.Id.RelativeLayoutImagesBlitzPoll).RemoveView(ViewPrev);
+            }
+
             ViewCurrent.Background = GetDrawable(!(ViewModel.Answer ^ userAnswer)
                 ? Resource.Drawable.view_true
                 : Resource.Drawable.view_false);

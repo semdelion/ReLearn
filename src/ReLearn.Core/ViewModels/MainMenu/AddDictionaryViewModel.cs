@@ -9,48 +9,38 @@ namespace ReLearn.Core.ViewModels.MainMenu
 {
     public class AddDictionaryViewModel : BaseViewModel
     {
-        #region Constructors
-
-        public AddDictionaryViewModel(IMessageCore imessage)
-        {
-            Message = imessage;
-        }
-
-        #endregion
-
         #region Fields
-
+        private string _words;
         #endregion
 
         #region Commands
-
         public IMvxAsyncCommand AddWordsCommand => new MvxAsyncCommand(AddWords);
-        public IMvxLanguageBinder TextSource => new MvxLanguageBinder("", GetType().Name);
-
         #endregion
 
         #region Properties
+        public string ButtonAdd => this["Buttons.Add"];
 
-        private string _words;
+        public string HintInsertData => this["Hints.InsertData"];
 
         public string Words
         {
             get => _words;
             set => SetProperty(ref _words, value);
         }
-
-        public string ButtonAdd => this["Buttons.Add"];
-
-        public string HintInsertData => this["Hints.InsertData"];
         #endregion
 
         #region Services
         protected IMessageCore Message { get; }
+        #endregion
 
+        #region Constructors
+        public AddDictionaryViewModel(IMessageCore imessage)
+        {
+            Message = imessage;
+        }
         #endregion
 
         #region Private
-
         private async Task AddWords()
         {
             var text = Words.ToLower().Trim('\n').Split('\n');
@@ -62,7 +52,9 @@ namespace ReLearn.Core.ViewModels.MainMenu
                     {
                         var str = text[i].Split('|');
                         if (!await DatabaseWords.WordIsContained(str[0].Trim()))
+                        {
                             await DatabaseWords.Insert(str[0].Trim(), str[1].Trim());
+                        }
                     }
                 });
                 Message.Toast(this["WordsAdded"]);
@@ -77,21 +69,16 @@ namespace ReLearn.Core.ViewModels.MainMenu
         private bool ValidationOfEnteredData(string[] text)
         {
             for (var i = 0; i < text.Length; i++)
+            {
                 if (text[i].Trim().Split('|').Length != 2)
+                {
                     return false;
+                }
+            }
             //else if (text[i].Split('|')[0].Any(wordByte => wordByte > 191) || text[i].Split('|')[1].Any(wordByte => wordByte > 164 && wordByte < 123 )) // первое - английское, второе - русское
             //    return false;
             return true;
         }
-
-        #endregion
-
-        #region Protected
-
-        #endregion
-
-        #region Public
-
         #endregion
     }
 }

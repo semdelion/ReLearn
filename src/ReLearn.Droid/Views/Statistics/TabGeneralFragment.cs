@@ -128,7 +128,7 @@ namespace ReLearn.Droid.Views.Statistics
         {
             using (var bitmapLastStat = Bitmap.CreateBitmap(
                 Resources.DisplayMetrics.WidthPixels - PixelConverter.DpToPX(20) -
-                (int) (0.61f * Resources.DisplayMetrics.WidthPixels),
+                (int)(0.61f * Resources.DisplayMetrics.WidthPixels),
                 PixelConverter.DpToPX(265), Bitmap.Config.Argb4444))
             {
                 using (var canvas = new Canvas(bitmapLastStat))

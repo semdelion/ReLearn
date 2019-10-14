@@ -7,6 +7,20 @@ namespace ReLearn.Core.ViewModels.MainMenu.SelectDictionary
 {
     public class DictionaryLanguageViewModel : MvxDictionaryViewModel
     {
+        #region Properties
+        public string TextWords => this["Texts.Words"];
+        public string TextStudiedAt => this["Texts.StudiedAt"];
+
+        public List<DBStatistics> Home { get; private set; }
+        public List<DBStatistics> Education { get; private set; }
+        public List<DBStatistics> PopularWords { get; private set; }
+        public List<DBStatistics> ThreeFormsOfVerb { get; private set; }
+        public List<DBStatistics> ComputerScience { get; private set; }
+        public List<DBStatistics> Nature { get; private set; }
+        public List<DBStatistics> MyDirectly { get; private set; }
+        #endregion
+
+        #region Public
         public DictionaryLanguageViewModel()
         {
             Task.Run(async () =>
@@ -20,16 +34,6 @@ namespace ReLearn.Core.ViewModels.MainMenu.SelectDictionary
                 MyDirectly = await DBStatistics.GetWords($"{TableNamesLanguage.My_Directly}");
             }).Wait();
         }
-
-        public List<DBStatistics> Home { get; private set; }
-        public List<DBStatistics> Education { get; private set; }
-        public List<DBStatistics> PopularWords { get; private set; }
-        public List<DBStatistics> ThreeFormsOfVerb { get; private set; }
-        public List<DBStatistics> ComputerScience { get; private set; }
-        public List<DBStatistics> Nature { get; private set; }
-        public List<DBStatistics> MyDirectly { get; private set; }
-
-        public string TextWords => this["Texts.Words"];
-        public string TextStudiedAt => this["Texts.StudiedAt"];
+        #endregion
     }
 }

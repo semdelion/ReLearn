@@ -5,7 +5,6 @@ using Android.Telephony;
 using MvvmCross;
 using MvvmCross.Platforms.Android;
 using ReLearn.Core.Provider;
-using System;
 
 namespace ReLearn.Droid.Implements
 {

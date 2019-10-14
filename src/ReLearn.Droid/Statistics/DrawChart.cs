@@ -1,7 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using Android.Graphics;
+﻿using Android.Graphics;
 using ReLearn.API.Database;
+using System;
+using System.Collections.Generic;
 using static Android.Graphics.Shader;
 
 namespace ReLearn.Droid.Statistics
@@ -61,11 +61,16 @@ namespace ReLearn.Droid.Statistics
 
             var step = width / (StepAbscissa ?? CountAbscissa);
             for (var i = 0; i <= (StepAbscissa ?? CountAbscissa); i++)
+            {
                 Canvas.DrawLine(left + step * i, bottom, left + step * i, bottom + 1.5f * (_width + _height) / 200,
                     paint);
+            }
 
             var stepNumber = CountAbscissa / (StepAbscissa ?? CountAbscissa);
-            if (stepNumber < 1) stepNumber = 1;
+            if (stepNumber < 1)
+            {
+                stepNumber = 1;
+            }
 
             int countDate = amount / stepNumber >= (StepAbscissa ?? CountAbscissa)
                     ? StepAbscissa ?? CountAbscissa
@@ -73,9 +78,11 @@ namespace ReLearn.Droid.Statistics
                 stat = amount >= CountAbscissa ? amount - CountAbscissa : 0;
 
             for (var i = 1; i <= countDate + (amount % stepNumber > 0 ? 1 : 0); i++)
+            {
                 Canvas.DrawText($"{stat + i * stepNumber}",
                     left - $"{stat + i}".Length * 0.7f * (_width + _height) / 200 + step * i,
                     bottom + 4 * (_width + _height) / 200, paint);
+            }
         }
 
         protected virtual void Ordinate(float left, float bottom, float height, Paint paint)
@@ -84,12 +91,15 @@ namespace ReLearn.Droid.Statistics
 
             var step = height / CountOrdinate;
             for (var i = 0; i <= CountOrdinate; i++)
+            {
                 Canvas.DrawLine(
                     left,
                     bottom - step * i,
                     left - 1.5f * (_width + _height) / 200,
                     bottom - step * i,
                     paint);
+            }
+
             var date = TypeDate.MaxNumber == OrdinateType ? MaxNumber : 100f / CountOrdinate;
             for (var i = 0; i <= CountOrdinate; i++)
             {
@@ -104,7 +114,9 @@ namespace ReLearn.Droid.Statistics
         {
             var height = (bottom - top) / CountOrdinate;
             for (var j = 1; j <= CountOrdinate; j += 1)
+            {
                 Canvas.DrawLine(left, bottom - height * j, right, bottom - height * j, GraphLayoutPaint);
+            }
         }
 
         protected virtual void Diagram(List<DatabaseStatistics> DatabaseStat,
@@ -123,7 +135,7 @@ namespace ReLearn.Droid.Statistics
                         left + 2f, bottom - stepHeight,
                         left + stepWidth - 2f, bottom,
                         start, end, TileMode.Clamp);
-                    var paint = new Paint {AntiAlias = true};
+                    var paint = new Paint { AntiAlias = true };
                     paint.SetShader(shader);
                     Canvas.DrawRoundRect(
                         new RectF(

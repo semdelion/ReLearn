@@ -96,6 +96,7 @@ namespace ReLearn.Droid.Views.Statistics
             flingAnimationY.Start();
 
             if (e.Event.Action == MotionEventActions.Move)
+            {
                 if (e.Event.PointerCount == 2)
                 {
                     var x = e.Event.GetX(0) - e.Event.GetX(1);
@@ -109,16 +110,23 @@ namespace ReLearn.Droid.Views.Statistics
                     var count = ViewModel.AmountOfStatistics;
 
                     if (distanceOld > distanceNew && count < max && count < ViewModel.Database.Count)
+                    {
                         CreateMainChart(ViewModel.AmountOfStatistics += 1,
                             min + ViewModel.AmountOfStatistics % (ViewModel.AmountOfStatistics / min * min) /
                             (ViewModel.AmountOfStatistics / min));
+                    }
+
                     if (distanceOld < distanceNew && count > min)
+                    {
                         CreateMainChart(ViewModel.AmountOfStatistics -= 1,
                             min + ViewModel.AmountOfStatistics % (ViewModel.AmountOfStatistics / min * min) /
                             (ViewModel.AmountOfStatistics / min));
+                    }
+
                     HistoricalX = x;
                     HistoricalY = y;
                 }
+            }
         }
     }
 }

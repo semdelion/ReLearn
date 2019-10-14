@@ -1,11 +1,11 @@
-﻿using System.Collections.Generic;
-using Android.Graphics;
+﻿using Android.Graphics;
 using Android.Views;
 using Android.Widget;
 using ReLearn.API;
 using ReLearn.API.Database;
 using ReLearn.Droid.Helpers;
 using ReLearn.Droid.Statistics;
+using System.Collections.Generic;
 
 namespace ReLearn.Droid.Views.SelectDictionary
 {
@@ -18,7 +18,8 @@ namespace ReLearn.Droid.Views.SelectDictionary
             Width = width;
             ParmsImage = new LinearLayout.LayoutParams(width, width)
             {
-                Gravity = GravityFlags.Center, TopMargin = 10
+                Gravity = GravityFlags.Center,
+                TopMargin = 10
             };
         }
 
@@ -47,7 +48,7 @@ namespace ReLearn.Droid.Views.SelectDictionary
             using (var image1 = Bitmap.CreateBitmap(Width, Width, Bitmap.Config.Argb4444))
             using (var baseCan = new Canvas(image1))
             {
-                var paint2 = new Paint {Color = Colors.FrameBorder, AntiAlias = true};
+                var paint2 = new Paint { Color = Colors.FrameBorder, AntiAlias = true };
                 baseCan.DrawCircle(Width / 2, Width / 2, Width / 2.5f, paint2);
                 var indexNew = DictionariesView.FindIndex(s => $"{s.Tag}" == newTableName);
                 DictionariesView[indexNew]
@@ -61,16 +62,16 @@ namespace ReLearn.Droid.Views.SelectDictionary
             using (var image1 = Bitmap.CreateBitmap(Width, Width, Bitmap.Config.Argb4444))
             {
                 float WidthLine = image1.Width / 10;
-                using (var image2 = Bitmap.CreateScaledBitmap(image, (int) (Width / 2.5 * 2 - WidthLine),
-                    (int) (Width / 2.5 * 2 - WidthLine), false))
+                using (var image2 = Bitmap.CreateScaledBitmap(image, (int)(Width / 2.5 * 2 - WidthLine),
+                    (int)(Width / 2.5 * 2 - WidthLine), false))
                 using (var baseCan = new Canvas(image1))
                 {
                     var pieChart = new DrawStatistics(baseCan);
                     pieChart.DrawPieChart(API.Statistics.GetAverageNumberLearn(database),
-                        Settings.StandardNumberOfRepeats, start, end, 0.13f, (float) (baseCan.Height / 2.5), false);
+                        Settings.StandardNumberOfRepeats, start, end, 0.13f, (float)(baseCan.Height / 2.5), false);
                     return CreateSingleImageFromMultipleImages(image1, image2,
-                        new PointF(image1.Width / 2 - (float) (baseCan.Height / 2.5) + WidthLine / 2,
-                            image1.Width / 2 - (float) (baseCan.Height / 2.5) + WidthLine / 2));
+                        new PointF(image1.Width / 2 - (float)(baseCan.Height / 2.5) + WidthLine / 2,
+                            image1.Width / 2 - (float)(baseCan.Height / 2.5) + WidthLine / 2));
                 }
             }
         }

@@ -1,35 +1,62 @@
-﻿using System.Threading.Tasks;
-using System.Timers;
-using MvvmCross.Commands;
-using MvvmCross.Navigation;
+﻿using MvvmCross.Commands;
 using MvvmCross.UI;
-using MvvmCross.ViewModels;
 using ReLearn.API;
 using ReLearn.API.Database;
 using ReLearn.Core.ViewModels.Base;
 using ReLearn.Core.ViewModels.MainMenu.Statistics;
+using System.Threading.Tasks;
+using System.Timers;
 
 namespace ReLearn.Core.ViewModels.Facade
 {
     public abstract class MvxBlitzPollViewModel<ListDatabase> : BaseViewModel<ListDatabase>
     {
-        public MvxBlitzPollViewModel()
+        #region Fields
+        private IMvxAsyncCommand _toStatistic;
+        protected string _titleCount = "1";
+        protected string _timerText;
+        protected MvxColor _currentColor = MvxColor.ParseHexString("#d7f8fe");
+        #endregion
+
+        #region Properties
+        public string TitleCount
         {
-            Time = Settings.TimeToBlitz * 10;
+            get => $"{this["Title"]} {_titleCount}";
+            set => SetProperty(ref _titleCount, value);
         }
 
+        public IMvxAsyncCommand ToStatistic =>
+           _toStatistic ?? (_toStatistic = new MvxAsyncCommand(NavigateToStatistic));
+
+        public string TimerText
+        {
+            get => _timerText;
+            set => SetProperty(ref _timerText, value);
+        }
+
+        public Timer Timer { get; set; }
+        public bool Answer { get; set; }
+        public int CurrentNumber { get; set; }
+        public int Time { get; set; }
+        public int True { get; set; } = 0;
+        public int False { get; set; } = 0;
+        #endregion
+
+        #region Services
         protected virtual async Task<bool> NavigateToStatistic()
         {
             return await NavigationService.Navigate<StatisticViewModel>();
         }
+        #endregion
 
-        public void TimerStart()
+        #region Constructors
+        public MvxBlitzPollViewModel()
         {
-            Timer = new Timer {Interval = 100, Enabled = true};
-            Timer.Elapsed += TimerElapsed;
-            Timer.Start();
+            Time = Settings.TimeToBlitz * 10;
         }
+        #endregion
 
+        #region Private
         private async void TimerElapsed(object sender, ElapsedEventArgs e)
         {
             if (Time > 0)
@@ -37,7 +64,9 @@ namespace ReLearn.Core.ViewModels.Facade
                 Time--;
                 TimerText = $"{Time / 10}:{Time % 10}0";
                 if (Time == 50)
+                {
                     CurrentColor = MvxColor.ParseHexString("#ef4049");
+                }
             }
             else
             {
@@ -50,40 +79,21 @@ namespace ReLearn.Core.ViewModels.Facade
                 }
             }
         }
+        #endregion
 
-        private IMvxAsyncCommand _toStatistic;
-
-        public IMvxAsyncCommand ToStatistic =>
-            _toStatistic ?? (_toStatistic = new MvxAsyncCommand(NavigateToStatistic));
-
-        protected string _titleCount = "1";
-
-        public string TitleCount
+        #region Public
+        public void TimerStart()
         {
-            get => $"{this["Title"]} {_titleCount}";
-            set => SetProperty(ref _titleCount, value);
+            Timer = new Timer { Interval = 100, Enabled = true };
+            Timer.Elapsed += TimerElapsed;
+            Timer.Start();
         }
-
-        public Timer Timer { get; set; }
-        public bool Answer { get; set; }
-        public int CurrentNumber { get; set; }
-        public int Time { get; set; }
-        public int True { get; set; } = 0;
-        public int False { get; set; } = 0;
-        protected string _timerText;
-
-        public string TimerText
-        {
-            get => _timerText;
-            set => SetProperty(ref _timerText, value);
-        }
-
-        protected MvxColor _currentColor = MvxColor.ParseHexString("#d7f8fe");
 
         public MvxColor CurrentColor
         {
             get => _currentColor;
             set => SetProperty(ref _currentColor, value);
         }
+        #endregion
     }
 }

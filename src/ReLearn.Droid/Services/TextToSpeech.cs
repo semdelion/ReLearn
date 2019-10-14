@@ -28,9 +28,13 @@ namespace ReLearn.Droid.Services
         {
             ToSpeak = text;
             if (speaker == null)
+            {
                 speaker = new Android.Speech.Tts.TextToSpeech(CurrentActivity.BaseContext, this);
+            }
             else
+            {
                 speaker.Speak(ToSpeak, QueueMode.Flush, null, null);
+            }
         }
     }
 }

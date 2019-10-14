@@ -1,6 +1,6 @@
-﻿using System;
-using Android.Graphics;
+﻿using Android.Graphics;
 using ReLearn.Droid.Helpers;
+using System;
 using static Android.Graphics.Shader;
 
 namespace ReLearn.Droid.Statistics
@@ -19,18 +19,25 @@ namespace ReLearn.Droid.Statistics
             Paint gradient = null)
         {
             if (background != null)
+            {
                 Canvas.DrawRoundRect(
                     new RectF(0, 0, _width, _height),
                     PixelConverter.DpToPX(roundXDP),
                     PixelConverter.DpToPX(roundYDP),
                     background);
+            }
+
             if (gradient != null)
+            {
                 Canvas.DrawRoundRect(
                     new RectF(0, 0, _width, _height),
                     PixelConverter.DpToPX(roundXDP),
                     PixelConverter.DpToPX(roundYDP),
                     gradient);
+            }
+
             if (border != null)
+            {
                 Canvas.DrawRoundRect(
                     new RectF(0 + border.StrokeWidth / 2f,
                         0 + border.StrokeWidth / 2f,
@@ -39,6 +46,7 @@ namespace ReLearn.Droid.Statistics
                     PixelConverter.DpToPX(roundXDP),
                     PixelConverter.DpToPX(roundYDP),
                     border);
+            }
         }
 
         public void ProgressLine(
@@ -53,7 +61,7 @@ namespace ReLearn.Droid.Statistics
                 paddingLeftRight * _width / 100f, 0,
                 _width - 2f * paddingLeftRight * _width / 100f, 0,
                 endGradient, startGradient, TileMode.Clamp);
-            var trueLine = new Paint {AntiAlias = true};
+            var trueLine = new Paint { AntiAlias = true };
             trueLine.SetShader(shader);
             ProgressLine(@true, @false, trueLine, falseLine, paddingLeftRight, heightLine, paddingBottom);
         }
@@ -86,8 +94,8 @@ namespace ReLearn.Droid.Statistics
             radius = radius <= 0 ? (_width <= _height ? _width / 2f : _height / 2f) - strokeWidth : radius;
 
             Shader shader = new SweepGradient(Cx, Cy, end, start);
-            var paintMain = new Paint {Color = start, StrokeWidth = strokeWidth, AntiAlias = true};
-            var paintBack = new Paint {Color = Color.Rgb(29, 43, 59), StrokeWidth = strokeWidth, AntiAlias = true};
+            var paintMain = new Paint { Color = start, StrokeWidth = strokeWidth, AntiAlias = true };
+            var paintBack = new Paint { Color = Color.Rgb(29, 43, 59), StrokeWidth = strokeWidth, AntiAlias = true };
             paintMain.SetStyle(Paint.Style.Stroke);
             paintMain.SetShader(shader);
             paintBack.SetStyle(Paint.Style.Stroke);
@@ -98,8 +106,10 @@ namespace ReLearn.Droid.Statistics
                 360f - average * (360f / sum), false, paintMain);
             Canvas.Rotate(90f, Cx, Cy);
             if (text)
+            {
                 DrawText(_width * 20f / 100f, $"{RoundOfNumber(100 - average * 100f / sum)}%", 2.4f * _width / 10f,
                     Cy - 33f * radius / 100);
+            }
         }
 
         public void DrawText(float fontSize, string text, float left, float top, Color? c = null)
@@ -130,9 +140,13 @@ namespace ReLearn.Droid.Statistics
             else
             {
                 if (numberChar.Length == 2)
+                {
                     numberChar += ".0";
+                }
                 else if (numberChar.Length == 1)
+                {
                     numberChar += ".00";
+                }
             }
 
             return numberChar;

@@ -1,38 +1,19 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using MvvmCross;
+﻿using MvvmCross;
 using MvvmCross.Commands;
 using ReLearn.API.Database;
 using ReLearn.Core.Services;
 using ReLearn.Core.ViewModels.Facade;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace ReLearn.Core.ViewModels.Languages
 {
     public class LearnViewModel : MvxLearnViewModel<List<DatabaseWords>>
     {
-        #region Constructors
-
-        public LearnViewModel(ITextToSpeech textToSpeech)
-        {
-            TextToSpeech = textToSpeech;
-        }
-
-        #endregion
-
-        #region Services
-
-        public ITextToSpeech TextToSpeech { get; }
-
-        #endregion
-
-        #region Fields
-
-        #endregion
-
         #region Commands
-
         private IMvxAsyncCommand _nextCommand;
-        public IMvxAsyncCommand NextCommand => _nextCommand ?? (_nextCommand = new MvxAsyncCommand(Next));
+        public IMvxAsyncCommand NextCommand =>
+            _nextCommand ?? (_nextCommand = new MvxAsyncCommand(Next));
 
         private IMvxAsyncCommand _notRepeatCommand;
 
@@ -43,21 +24,27 @@ namespace ReLearn.Core.ViewModels.Languages
 
         public IMvxCommand VoiceCommand =>
             _voiceCommand ?? (_voiceCommand = new MvxCommand(() => TextToSpeech.Speak(Word)));
-
         #endregion
 
         #region Properties
+        public string TextVoice => this["Buttons.Voice"];
 
         public List<DatabaseWords> Database { get; set; }
+
         public bool VoiceEnable { get; set; } = true;
 
         public string Word { get; set; }
+        #endregion
 
-        public string TextVoice => this["Buttons.Voice"];
+        #region Services
+        public ITextToSpeech TextToSpeech { get; }
+        #endregion
+
+        #region Constructors
+        public LearnViewModel(ITextToSpeech textToSpeech) => TextToSpeech = textToSpeech;
         #endregion
 
         #region Private
-
         private async Task Next()
         {
             if (Count < Database.Count)
@@ -68,7 +55,9 @@ namespace ReLearn.Core.ViewModels.Languages
                     $"\n\n{Database[Count++].TranslationWord}";
                 await DatabaseWords.UpdateLearningNext(Word);
                 if (VoiceEnable)
+                {
                     TextToSpeech.Speak(Word);
+                }
             }
             else
             {
@@ -81,15 +70,9 @@ namespace ReLearn.Core.ViewModels.Languages
             await DatabaseWords.UpdateLearningNotRepeat(Word);
             await Next();
         }
-
-        #endregion
-
-        #region Protected
-
         #endregion
 
         #region Public
-
         public override void Prepare(List<DatabaseWords> parameter)
         {
             Database = parameter;
@@ -100,7 +83,6 @@ namespace ReLearn.Core.ViewModels.Languages
             await base.Initialize();
             await Next();
         }
-
         #endregion
     }
 }

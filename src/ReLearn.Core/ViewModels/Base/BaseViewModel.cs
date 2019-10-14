@@ -1,33 +1,42 @@
-﻿using System;
-using Acr.UserDialogs;
+﻿using Acr.UserDialogs;
 using MvvmCross;
 using MvvmCross.Localization;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
+using System;
 
 namespace ReLearn.Core.ViewModels.Base
 {
     public abstract class BaseViewModel : MvxViewModel, IMvxLocalizedTextSourceOwner
     {
-        public virtual string Title => this["Title"];
-
+        #region Fields
         private IMvxLanguageBinder _localizedTextSource;
 
-        public virtual IMvxLanguageBinder LocalizedTextSource =>
-            _localizedTextSource ?? (_localizedTextSource = new MvxLanguageBinder("", this.GetType().Name));
-
         private readonly Lazy<IUserDialogs> _userDialogsLazy =
-            new Lazy<IUserDialogs>(Mvx.IoCProvider.Resolve<IUserDialogs>);
+           new Lazy<IUserDialogs>(Mvx.IoCProvider.Resolve<IUserDialogs>);
 
-        private readonly Lazy<IMvxNavigationService> navigationServiceLazy =
+        private readonly Lazy<IMvxNavigationService> _navigationServiceLazy =
             new Lazy<IMvxNavigationService>(Mvx.IoCProvider.Resolve<IMvxNavigationService>);
+        #endregion
+
+        #region Properties
+        public virtual string Title => this["Title"];
+
+        public virtual IMvxLanguageBinder LocalizedTextSource =>
+            _localizedTextSource ?? (_localizedTextSource = new MvxLanguageBinder("", GetType().Name));
 
         protected IUserDialogs UserDialogs => _userDialogsLazy.Value;
 
-        protected IMvxNavigationService NavigationService => navigationServiceLazy.Value;
+        protected IMvxNavigationService NavigationService => _navigationServiceLazy.Value;
 
         public string this[string localizeKey] => TryLocalize(localizeKey);
 
+        public void ShowLoading() => UserDialogs.ShowLoading();
+
+        public void HideLoading() => UserDialogs.HideLoading();
+        #endregion
+
+        #region Private
         private string TryLocalize(string localizeKey)
         {
             try
@@ -39,10 +48,7 @@ namespace ReLearn.Core.ViewModels.Base
                 return "Key not found";
             }
         }
-
-        public void ShowLoading() => UserDialogs.ShowLoading();
-
-        public void HideLoading() => UserDialogs.HideLoading();
+        #endregion
     }
 
     public abstract class BaseViewModel<TParameter> : BaseViewModel, IMvxViewModel<TParameter>, IMvxViewModel

@@ -1,8 +1,8 @@
-﻿using System;
+﻿using ReLearn.API.Database.Interface;
+using SQLite;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using ReLearn.API.Database.Interface;
-using SQLite;
 
 namespace ReLearn.API.Database
 {
@@ -56,18 +56,27 @@ namespace ReLearn.API.Database
                     await DataBase.Languages.QueryAsync<DatabaseWords>(
                         $"SELECT * FROM {tableName} WHERE NumberLearn = 0 ");
                 foreach (var s in dataBase)
+                {
                     if (s.DateRecurrence < toDay)
+                    {
                         await DataBase.Languages.ExecuteAsync(
                             $"UPDATE {tableName} SET DateRecurrence = ?, NumberLearn = ? WHERE Word = ?", DateTime.Now,
                             s.NumberLearn + 1, s.Word);
+                    }
+                }
             }
         }
 
         public static bool ContainColumn(string columnName, List<SQLiteConnection.ColumnInfo> columns)
         {
             foreach (var column in columns)
+            {
                 if (column.Name == columnName)
+                {
                     return true;
+                }
+            }
+
             return false;
         }
 

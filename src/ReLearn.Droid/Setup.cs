@@ -1,23 +1,23 @@
 ﻿using MvvmCross;
-using MvvmCross.IoC;
 using MvvmCross.Converters;
 using MvvmCross.Droid.Support.V7.AppCompat;
+using MvvmCross.IoC;
 using MvvmCross.Localization;
 using MvvmCross.ViewModels;
+using ReLearn.Core;
+using ReLearn.Core.Provider;
+using ReLearn.Core.Services;
+using ReLearn.Droid.Implements;
+using ReLearn.Droid.Services;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Reflection;
-using ReLearn.Core.Services;
-using ReLearn.Droid.Services;
-using ReLearn.Core;
-using ReLearn.Core.Provider;
-using ReLearn.Droid.Implements;
 
 namespace ReLearn.Droid
 {
     public class Setup : MvxAppCompatSetup<Core.App>
     {
-        private App _app = new App();
+        private readonly App _app = new App();
         protected override void InitializeFirstChance()
         {
             base.InitializeFirstChance();
@@ -39,7 +39,7 @@ namespace ReLearn.Droid
         {
             base.InitializeSecondary();
             Mvx.IoCProvider.LazyConstructAndRegisterSingleton<IInteractionProvider, InteractionProvider>();
-            _app.InitializeCultureInfo(new CultureInfo(API.Settings.Currentlanguage)); 
+            _app.InitializeCultureInfo(new CultureInfo(API.Settings.Currentlanguage));
         }
         protected override IMvxApplication CreateApp() => _app;
     }

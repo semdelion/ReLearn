@@ -4,34 +4,5 @@ namespace ReLearn.Core.ViewModels.MainMenu.Statistics
 {
     public class StatisticViewModel : BaseViewModel
     {
-        #region Constructors
-        #endregion
-
-        #region Services
-        #endregion
-
-        #region Fields
-
-        #endregion
-
-        #region Commands
-
-        #endregion
-
-        #region Properties
-
-        #endregion
-
-        #region Private
-
-        #endregion
-
-        #region Protected
-
-        #endregion
-
-        #region Public
-
-        #endregion
     }
 }

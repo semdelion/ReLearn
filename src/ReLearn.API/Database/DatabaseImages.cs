@@ -1,8 +1,8 @@
-﻿using System;
+﻿using ReLearn.API.Database.Interface;
+using SQLite;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using ReLearn.API.Database.Interface;
-using SQLite;
 
 namespace ReLearn.API.Database
 {
@@ -48,7 +48,10 @@ namespace ReLearn.API.Database
         {
             Enum.TryParse(nameDB, out TableNamesImage name);
             if (nameDB != $"{name}")
+            {
                 return false;
+            }
+
             return true;
         }
 
@@ -61,11 +64,13 @@ namespace ReLearn.API.Database
                     await DataBase.Images.QueryAsync<DatabaseImages>(
                         $"SELECT * FROM {tableName} WHERE NumberLearn = 0");
                 foreach (var s in dataBase)
+                {
                     if (s.DateRecurrence < toDay)
                     {
                         var query = $"UPDATE {tableName} SET DateRecurrence = ?, NumberLearn = ? WHERE Word = ?";
                         await DataBase.Images.ExecuteAsync(query, DateTime.Now, s.NumberLearn + 1, s.Image_name);
                     }
+                }
             }
         }
 

@@ -4,7 +4,6 @@ using Android.OS;
 using Android.Views;
 using Android.Widget;
 using Java.Interop;
-using MvvmCross.Localization;
 using ReLearn.API;
 using ReLearn.API.Database;
 using ReLearn.Core.Helpers;
@@ -25,10 +24,12 @@ namespace ReLearn.Droid.Views.Languages
         {
             RandomNumbers.RandomFourNumbers(ViewModel.CurrentNumber, ViewModel.Database.Count, out var random_numbers);
             for (var i = 0; i < buttons.Length; i++)
+            {
                 buttons[i].Text = ViewModel.Database[random_numbers[i]].TranslationWord;
+            }
         }
 
-       
+
 
         protected override void NextTest()
         {
@@ -36,10 +37,13 @@ namespace ReLearn.Droid.Views.Languages
             ViewModel.Text = $"{ViewModel.Database[ViewModel.CurrentNumber].Word}" +
                              $"{(ViewModel.Database[ViewModel.CurrentNumber].Transcription == null ? "" : $"\n{ViewModel.Database[ViewModel.CurrentNumber].Transcription}")}";
             const int four = 4;
-            var first = new Random(unchecked((int) DateTime.Now.Ticks)).Next(four);
-            var randomNumbers = new List<int> {first, 0, 0, 0};
+            var first = new Random(unchecked((int)DateTime.Now.Ticks)).Next(four);
+            var randomNumbers = new List<int> { first, 0, 0, 0 };
             for (var i = 1; i < four; i++)
+            {
                 randomNumbers[i] = (first + i) % four;
+            }
+
             RandomButton(Buttons[randomNumbers[0]], Buttons[randomNumbers[1]], Buttons[randomNumbers[2]],
                 Buttons[randomNumbers[3]]);
         }
@@ -120,7 +124,7 @@ namespace ReLearn.Droid.Views.Languages
                 if (API.Statistics.Count < Settings.NumberOfRepeatsLanguage)
                 {
                     ViewModel.CurrentNumber =
-                        new Random(unchecked((int) DateTime.Now.Ticks)).Next(ViewModel.Database.Count);
+                        new Random(unchecked((int)DateTime.Now.Ticks)).Next(ViewModel.Database.Count);
                     NextTest();
                     ButtonEnable(true);
                     ViewModel.TitleCount = $"{API.Statistics.Count + 1}/{Settings.NumberOfRepeatsLanguage}";
@@ -176,13 +180,19 @@ namespace ReLearn.Droid.Views.Languages
 
         protected override void ButtonEnable(bool state)
         {
-            foreach (var button in Buttons) button.Enabled = state;
+            foreach (var button in Buttons)
+            {
+                button.Enabled = state;
+            }
+
             if (state)
             {
                 ButtonNext.State = StateButton.Unknown;
                 ViewModel.TextNext = ViewModel.ButtonEnableText(!state);
                 foreach (var button in Buttons)
+                {
                     button.Background = GetDrawable(Resource.Drawable.button_style_standard);
+                }
             }
             else
             {

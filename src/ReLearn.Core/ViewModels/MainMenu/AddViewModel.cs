@@ -8,35 +8,23 @@ namespace ReLearn.Core.ViewModels.MainMenu
 {
     public class AddViewModel : BaseViewModel
     {
-        #region Constructors
-
-        public AddViewModel(IMessageCore imessage)
-        {
-            Message = imessage;
-        }
-
-        #endregion
-
         #region Fields
-
+        private string _word;
+        private string _translationWord;
         #endregion
 
         #region Commands
-
         private IMvxAsyncCommand _toDictionaryReplenishment;
-
-        public IMvxAsyncCommand ToDictionaryReplenishment => _toDictionaryReplenishment ??
-                                                             (_toDictionaryReplenishment =
-                                                                 new MvxAsyncCommand(NavigateToDictionaryReplenishment)
-                                                             );
+        public IMvxAsyncCommand ToDictionaryReplenishment =>
+          _toDictionaryReplenishment ?? (_toDictionaryReplenishment = new MvxAsyncCommand(NavigateToDictionaryReplenishment));
 
         public IMvxAsyncCommand AddWordCommand => new MvxAsyncCommand(AddWord);
-
         #endregion
 
-        #region Properties       
-
-        private string _word;
+        #region Properties
+        public string ButtonAdd => this["Buttons.Add"];
+        public string HintWordEnglish => this["Hints.WordEnglish"];
+        public string HintWordRus => this["Hints.WordRus"];
 
         public string Word
         {
@@ -44,33 +32,31 @@ namespace ReLearn.Core.ViewModels.MainMenu
             set => SetProperty(ref _word, value);
         }
 
-        private string _translationWord;
-
         public string TranslationWord
         {
             get => _translationWord;
             set => SetProperty(ref _translationWord, value);
         }
-
-        public string ButtonAdd => this["Buttons.Add"];
-
-        public string HintWordEnglish => this["Hints.WordEnglish"];
-        public string HintWordRus => this["Hints.WordRus"];
         #endregion
 
         #region Services
         protected IMessageCore Message { get; }
+        #endregion
 
+        #region Constructors
+        public AddViewModel(IMessageCore imessage)
+        {
+            Message = imessage;
+        }
         #endregion
 
         #region Private
-
         private Task<bool> NavigateToDictionaryReplenishment()
         {
             return NavigationService.Navigate<AddDictionaryViewModel>();
         }
 
-        private async Task AddWord() //TODO - перевод, async db
+        private async Task AddWord()
         {
             if (Word == "" || Word == null || TranslationWord == null || TranslationWord == "")
             {
@@ -87,15 +73,6 @@ namespace ReLearn.Core.ViewModels.MainMenu
                 Message.Toast(this["AddViewModel.WordAdded"]);
             }
         }
-
-        #endregion
-
-        #region Protected
-
-        #endregion
-
-        #region Public
-
         #endregion
     }
 }

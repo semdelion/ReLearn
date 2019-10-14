@@ -1,8 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using Plugin.Settings;
+using ReLearn.API.Database;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Plugin.Settings;
-using ReLearn.API.Database;
 
 namespace ReLearn.API
 {
@@ -29,11 +29,14 @@ namespace ReLearn.API
         public static float GetAverageNumberLearn(List<DBStatistics> database)
         {
             if (database.Count == 0)
+            {
                 return Settings.StandardNumberOfRepeats;
+            }
+
             var avg_numberLearn_stat = database.Sum(
                                            r => r.NumberLearn > Settings.StandardNumberOfRepeats
                                                ? Settings.StandardNumberOfRepeats
-                                               : r.NumberLearn) / (float) database.Count;
+                                               : r.NumberLearn) / (float)database.Count;
             return avg_numberLearn_stat;
         }
 

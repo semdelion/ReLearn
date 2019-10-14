@@ -1,5 +1,4 @@
 ﻿using MvvmCross.Commands;
-using MvvmCross.Navigation;
 using ReLearn.API.Database;
 using ReLearn.Core.ViewModels.Base;
 using ReLearn.Core.ViewModels.Images;
@@ -11,49 +10,48 @@ namespace ReLearn.Core.ViewModels.MainMenu
 {
     public class MenuViewModel : BaseViewModel
     {
+        #region Commands
         private IMvxAsyncCommand _toAboutUs;
+        public IMvxAsyncCommand ToAboutUsViewModel =>
+            _toAboutUs ?? (_toAboutUs = new MvxAsyncCommand(NavigateToAboutUsViewModel));
 
         private IMvxAsyncCommand _toAddition;
+        public IMvxAsyncCommand ToAdditionViewModel =>
+            _toAddition ?? (_toAddition = new MvxAsyncCommand(NavigateToAdditionViewModel));
 
         private IMvxAsyncCommand _toFeedback;
+        public IMvxAsyncCommand ToFeedbackViewModel =>
+            _toFeedback ?? (_toFeedback = new MvxAsyncCommand(NavigateToFeedbackViewModel));
+
         private IMvxAsyncCommand _toHome;
+        public IMvxAsyncCommand ToHomeViewModel => 
+            _toHome ?? (_toHome = new MvxAsyncCommand(NavigateToHomeViewModel));
 
         private IMvxAsyncCommand _toSelectDictionary;
+        public IMvxAsyncCommand ToSelectDictionary => 
+            _toSelectDictionary ?? (_toSelectDictionary = new MvxAsyncCommand(NavigateToSelectDictionary));
 
         private IMvxAsyncCommand _toSettings;
+        public IMvxAsyncCommand ToSettingsViewModel => 
+            _toSettings ?? (_toSettings = new MvxAsyncCommand(NavigateToSettingsViewModel));
 
         private IMvxAsyncCommand _toStatistic;
+        public IMvxAsyncCommand ToStatisticViewModel => 
+            _toStatistic ?? (_toStatistic = new MvxAsyncCommand(NavigateToStatisticViewModel));
 
         private IMvxAsyncCommand _toViewDictionary;
+        public IMvxAsyncCommand ToViewDictionaryViewModel => 
+            _toViewDictionary ?? (_toViewDictionary = new MvxAsyncCommand(NavigateToViewDictionaryViewModel));
+        #endregion
 
+        #region Constructors
         public MenuViewModel()
         {
             NavigateToHomeViewModel();
         }
+        #endregion
 
-        public IMvxAsyncCommand ToHomeViewModel => _toHome ?? (_toHome = new MvxAsyncCommand(NavigateToHomeViewModel));
-
-        public IMvxAsyncCommand ToSelectDictionary =>
-            _toSelectDictionary ?? (_toSelectDictionary = new MvxAsyncCommand(NavigateToSelectDictionary));
-
-        public IMvxAsyncCommand ToStatisticViewModel =>
-            _toStatistic ?? (_toStatistic = new MvxAsyncCommand(NavigateToStatisticViewModel));
-
-        public IMvxAsyncCommand ToViewDictionaryViewModel =>
-            _toViewDictionary ?? (_toViewDictionary = new MvxAsyncCommand(NavigateToViewDictionaryViewModel));
-
-        public IMvxAsyncCommand ToSettingsViewModel =>
-            _toSettings ?? (_toSettings = new MvxAsyncCommand(NavigateToSettingsViewModel));
-
-        public IMvxAsyncCommand ToAdditionViewModel =>
-            _toAddition ?? (_toAddition = new MvxAsyncCommand(NavigateToAdditionViewModel));
-
-        public IMvxAsyncCommand ToFeedbackViewModel =>
-            _toFeedback ?? (_toFeedback = new MvxAsyncCommand(NavigateToFeedbackViewModel));
-
-        public IMvxAsyncCommand ToAboutUsViewModel =>
-            _toAboutUs ?? (_toAboutUs = new MvxAsyncCommand(NavigateToAboutUsViewModel));
-
+        #region Private
         private async Task NavigateToHomeViewModel()
         {
             await NavigationService.Navigate<HomeViewModel>();
@@ -72,9 +70,13 @@ namespace ReLearn.Core.ViewModels.MainMenu
         private async Task NavigateToViewDictionaryViewModel()
         {
             if (DatabaseImages.DatabaseIsContain($"{DataBase.TableName}"))
+            {
                 await NavigationService.Navigate<ViewDictionaryViewModel>();
+            }
             else
+            {
                 await NavigationService.Navigate<Languages.ViewDictionaryViewModel>();
+            }
         }
 
         private async Task NavigateToAboutUsViewModel()
@@ -96,5 +98,6 @@ namespace ReLearn.Core.ViewModels.MainMenu
         {
             await NavigationService.Navigate<SettingsViewModel>();
         }
+        #endregion
     }
 }

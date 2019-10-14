@@ -42,17 +42,27 @@ namespace ReLearn.Droid.Views
         public override void OnBackPressed()
         {
             if (DrawerLayout != null && DrawerLayout.IsDrawerOpen(GravityCompat.Start))
+            {
                 DrawerLayout.CloseDrawers();
+            }
             else if (SupportFragmentManager.BackStackEntryCount >= 1)
+            {
                 SupportFragmentManager.PopBackStack();
+            }
             else
+            {
                 base.OnBackPressed();
+            }
         }
 
         public void HideSoftKeyboard()
         {
-            if (CurrentFocus == null) return;
-            var inputMethodManager = (InputMethodManager) GetSystemService(InputMethodService);
+            if (CurrentFocus == null)
+            {
+                return;
+            }
+
+            var inputMethodManager = (InputMethodManager)GetSystemService(InputMethodService);
             inputMethodManager.HideSoftInputFromWindow(CurrentFocus.WindowToken, 0);
             CurrentFocus.ClearFocus();
         }

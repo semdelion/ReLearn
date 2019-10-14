@@ -8,20 +8,29 @@ namespace ReLearn.Core.ViewModels.MainMenu
 {
     public class FeedbackViewModel : BaseViewModel
     {
-        #region Constructors
+        #region Fields
+        private string _message = "";
         #endregion
 
         #region Commands
-
         public IMvxCommand SendEmailCommand => new MvxCommand(ComposeEmail);
-
         #endregion
 
-        #region Services
+        #region Properties
+        public string TextSend => this["Buttons.Send"];
+
+        public string TextMessageHint => this["Texts.MessageHint"];
+
+        public string TextDescription => this["Texts.Description"];
+
+        public string Message
+        {
+            get => _message;
+            set => SetProperty(ref _message, value);
+        }
         #endregion
 
         #region Protected
-
         protected void ComposeEmail()
         {
             if (Message == "")
@@ -35,37 +44,6 @@ namespace ReLearn.Core.ViewModels.MainMenu
                 Message = "";
             }
         }
-
-        public string TextSend => this["Buttons.Send"];
-
-        public string TextMessageHint => this["Texts.MessageHint"];
-
-        public string TextDescription => this["Texts.Description"];
-
-        #endregion
-
-        #region Fields
-
-        #endregion
-
-        #region Properties
-
-        private string _message = "";
-
-        public string Message
-        {
-            get => _message;
-            set => SetProperty(ref _message, value);
-        }
-
-        #endregion
-
-        #region Private
-
-        #endregion
-
-        #region Public
-
         #endregion
     }
 }

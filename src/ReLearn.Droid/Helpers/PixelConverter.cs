@@ -8,7 +8,7 @@ namespace ReLearn.Droid.Helpers
     {
         public static int DpToPX(float dp)
         {
-            return (int) TypedValue.ApplyDimension(ComplexUnitType.Dip, dp,
+            return (int)TypedValue.ApplyDimension(ComplexUnitType.Dip, dp,
                 Application.Context.Resources.DisplayMetrics);
         }
 

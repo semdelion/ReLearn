@@ -1,14 +1,14 @@
-﻿using System;
-using System.Collections.Specialized;
-using System.ComponentModel;
-using System.Windows.Input;
-using Android.App;
+﻿using Android.App;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using MvvmCross.IoC;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
+using System;
+using System.Collections.Specialized;
+using System.ComponentModel;
+using System.Windows.Input;
 
 namespace ReLearn.Droid
 {
@@ -89,7 +89,10 @@ namespace ReLearn.Droid
         {
             command.CanExecuteChanged += (s, e) =>
             {
-                if (command.CanExecute(null)) command.Execute(null);
+                if (command.CanExecute(null))
+                {
+                    command.Execute(null);
+                }
             };
         }
 

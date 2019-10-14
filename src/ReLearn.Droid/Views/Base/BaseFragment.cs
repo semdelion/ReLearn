@@ -26,7 +26,7 @@ namespace ReLearn.Droid.Views.Base
         protected abstract int FragmentId { get; }
         protected abstract int Toolbar { get; }
 
-        public MvxAppCompatActivity ParentActivity => (MvxAppCompatActivity) Activity;
+        public MvxAppCompatActivity ParentActivity => (MvxAppCompatActivity)Activity;
 
         public override void OnCreate(Bundle savedInstanceState)
         {
@@ -63,7 +63,9 @@ namespace ReLearn.Droid.Views.Base
         {
             base.OnConfigurationChanged(newConfig);
             if (_toolbar != null)
+            {
                 _drawerToggle.OnConfigurationChanged(newConfig);
+            }
         }
 
         public override void OnPause()
@@ -76,7 +78,9 @@ namespace ReLearn.Droid.Views.Base
         {
             base.OnActivityCreated(savedInstanceState);
             if (_toolbar != null)
+            {
                 _drawerToggle?.SyncState();
+            }
         }
 
         protected void SetHomeAsUp(bool isHomeAsUp)
@@ -88,7 +92,7 @@ namespace ReLearn.Droid.Views.Base
                 anim.SetDuration(300);
                 anim.Update += async (sender, e) =>
                 {
-                    var value = (float) anim.AnimatedValue;
+                    var value = (float)anim.AnimatedValue;
                     _drawerToggle.DrawerArrowDrawable.Progress = value;
                 };
                 anim.Start();
@@ -100,7 +104,7 @@ namespace ReLearn.Droid.Views.Base
     {
         public new TViewModel ViewModel
         {
-            get => (TViewModel) base.ViewModel;
+            get => (TViewModel)base.ViewModel;
             set => base.ViewModel = value;
         }
     }

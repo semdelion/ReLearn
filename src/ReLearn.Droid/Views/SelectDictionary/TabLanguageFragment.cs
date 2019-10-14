@@ -27,13 +27,13 @@ namespace ReLearn.Droid.Views.SelectDictionary
                 SelectDictionaryFragment.Dictionaries.CreateBitmapWithStats(
                     BitmapFactory.DecodeResource(Resources, imageId), database, lightColor,
                     darkColor)); //////fail color
-            var ImageDictionary = new ImageView(view.Context) {Tag = $"{nameDictionary}"};
+            var ImageDictionary = new ImageView(view.Context) { Tag = $"{nameDictionary}" };
             ImageDictionary.LayoutParameters = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WrapContent,
                 ViewGroup.LayoutParams.WrapContent)
             {
                 Gravity = flag
             };
-            ImageDictionary.SetPadding((int) (5 * width), 0, (int) (5 * width), 0);
+            ImageDictionary.SetPadding((int)(5 * width), 0, (int)(5 * width), 0);
             ImageDictionary.SetImageBitmap(
                 SelectDictionaryFragment.Dictionaries.DictionariesBitmap[
                     SelectDictionaryFragment.Dictionaries.DictionariesBitmap.Count - 1]);
@@ -47,7 +47,7 @@ namespace ReLearn.Droid.Views.SelectDictionary
             var countWords = new TextView(view.Context)
             {
                 Text = $"{ViewModel.TextWords} {count}, {ViewModel.TextStudiedAt} " +
-                       $"{(int) (100 - API.Statistics.GetAverageNumberLearn(database) * 100f / Settings.StandardNumberOfRepeats)}%",
+                       $"{(int)(100 - API.Statistics.GetAverageNumberLearn(database) * 100f / Settings.StandardNumberOfRepeats)}%",
                 TextSize = 14 //(int)(2.1f * width)
             };
             var description = new TextView(view.Context)
@@ -71,11 +71,11 @@ namespace ReLearn.Droid.Views.SelectDictionary
             rextlinearLayout.AddView(name);
             rextlinearLayout.AddView(countWords);
             rextlinearLayout.AddView(description);
-            rextlinearLayout.SetPadding(flag == GravityFlags.Left ? 0 : (int) (5 * width), 0,
-                flag == GravityFlags.Right ? 0 : (int) (5 * width), 0);
+            rextlinearLayout.SetPadding(flag == GravityFlags.Left ? 0 : (int)(5 * width), 0,
+                flag == GravityFlags.Right ? 0 : (int)(5 * width), 0);
 
-            dictionarylinearLayout.AddView(flag == GravityFlags.Left ? (View) ImageDictionary : rextlinearLayout);
-            dictionarylinearLayout.AddView(flag == GravityFlags.Right ? (View) ImageDictionary : rextlinearLayout);
+            dictionarylinearLayout.AddView(flag == GravityFlags.Left ? (View)ImageDictionary : rextlinearLayout);
+            dictionarylinearLayout.AddView(flag == GravityFlags.Right ? (View)ImageDictionary : rextlinearLayout);
 
             view.FindViewById<LinearLayout>(Resource.Id.LanguageSelectDictionary).AddView(dictionarylinearLayout);
             if (separate)
@@ -83,8 +83,8 @@ namespace ReLearn.Droid.Views.SelectDictionary
                 var separateView = new View(view.Context)
                 {
                     LayoutParameters =
-                        new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WrapContent, (int) (width / 2f))
-                            {TopMargin = (int) (2 * width), BottomMargin = (int) (2 * width)},
+                        new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WrapContent, (int)(width / 2f))
+                        { TopMargin = (int)(2 * width), BottomMargin = (int)(2 * width) },
                     Background = view.Context.GetDrawable(Resource.Drawable.separator)
                 };
                 view.FindViewById<LinearLayout>(Resource.Id.LanguageSelectDictionary).AddView(separateView);

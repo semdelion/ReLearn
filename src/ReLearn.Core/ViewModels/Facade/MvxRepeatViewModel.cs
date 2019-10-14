@@ -1,5 +1,4 @@
 ﻿using MvvmCross.Commands;
-using MvvmCross.Navigation;
 using ReLearn.Core.ViewModels.Base;
 using ReLearn.Core.ViewModels.MainMenu.Statistics;
 using System.Threading.Tasks;
@@ -8,21 +7,20 @@ namespace ReLearn.Core.ViewModels.Facade
 {
     public abstract class MvxRepeatViewModel<ListDatabase> : BaseViewModel<ListDatabase>
     {
-        public MvxRepeatViewModel()
-        {
-        }
+        #region Fields
+        private string _titleCount = "1";
+        private string _textNext;
+        #endregion
 
-        protected virtual async Task<bool> NavigateToStatistic()
-        {
-            return await NavigationService.Navigate<StatisticViewModel>();
-        }
-
+        #region Commands
         private IMvxAsyncCommand _toStatistic;
 
         public IMvxAsyncCommand ToStatistic =>
             _toStatistic ?? (_toStatistic = new MvxAsyncCommand(NavigateToStatistic));
+        #endregion
 
-        private string _titleCount = "1";
+        #region Properties
+        public string ButtonEnableText(bool buttonEnable) => buttonEnable ? this["Buttons.Next"] : this["Buttons.Unknown"];
 
         public string TitleCount
         {
@@ -30,16 +28,26 @@ namespace ReLearn.Core.ViewModels.Facade
             set => SetProperty(ref _titleCount, value);
         }
 
-        public int CurrentNumber { get; set; }
-
-        private string _textNext;
-
         public string TextNext
         {
             get => _textNext ?? ButtonEnableText(false);
             set => SetProperty(ref _textNext, value);
         }
 
-        public string ButtonEnableText(bool buttonEnable) => buttonEnable ? this["Buttons.Next"] : this["Buttons.Unknown"];
+        public int CurrentNumber { get; set; }
+        #endregion
+
+        #region Constructors
+        public MvxRepeatViewModel()
+        {
+        }
+        #endregion
+
+        #region Protected
+        protected virtual async Task<bool> NavigateToStatistic()
+        {
+            return await NavigationService.Navigate<StatisticViewModel>();
+        }
+        #endregion
     }
 }

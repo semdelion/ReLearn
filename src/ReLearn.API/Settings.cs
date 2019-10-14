@@ -1,6 +1,6 @@
-﻿using System;
+﻿using Plugin.Settings;
+using System;
 using System.Threading;
-using Plugin.Settings;
 
 namespace ReLearn.API
 {
@@ -88,7 +88,7 @@ namespace ReLearn.API
         {
             get => CrossSettings.Current.GetValueOrDefault($"{DBSettings.LanguageInfo}",
                 Thread.CurrentThread.CurrentCulture.Name == Language.ru ? Language.ru : Language.en);
-            set => CrossSettings.Current.AddOrUpdateValue($"{DBSettings.LanguageInfo}", Language.ru == value ? Language.ru : Language.en );
+            set => CrossSettings.Current.AddOrUpdateValue($"{DBSettings.LanguageInfo}", Language.ru == value ? Language.ru : Language.en);
         }
 
         public static bool BlitzEnable

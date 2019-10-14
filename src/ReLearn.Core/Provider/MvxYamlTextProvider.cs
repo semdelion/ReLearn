@@ -26,7 +26,7 @@ namespace ReLearn.Core.Provider
         public async Task ChangeLocale(CultureInfo cultureInfo)
         {
             await TextProvider.ChangeLocale(cultureInfo);
-            this.CurrentCultureInfo = cultureInfo;
+            CurrentCultureInfo = cultureInfo;
         }
 
         public IEnumerable<CultureInfo> GetAvailableCultures()
@@ -60,13 +60,13 @@ namespace ReLearn.Core.Provider
 
         public bool TryGetText(out string textValue, string namespaceKey, string typeKey, string name)
         {
-            textValue = this.GetText(namespaceKey, typeKey, name);
+            textValue = GetText(namespaceKey, typeKey, name);
             return textValue != null;
         }
 
         public bool TryGetText(out string textValue, string namespaceKey, string typeKey, string name, params object[] formatArgs)
         {
-            if (!this.TryGetText(out textValue, namespaceKey, typeKey, name))
+            if (!TryGetText(out textValue, namespaceKey, typeKey, name))
             {
                 return false;
             }

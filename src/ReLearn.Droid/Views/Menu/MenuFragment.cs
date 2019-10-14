@@ -22,7 +22,10 @@ namespace ReLearn.Droid.Views.Menu
         public bool OnNavigationItemSelected(IMenuItem item)
         {
             if (item != _previousMenuItem)
+            {
                 _previousMenuItem?.SetChecked(false);
+            }
+
             item.SetCheckable(true);
             item.SetChecked(true);
             _previousMenuItem = item;
@@ -45,7 +48,7 @@ namespace ReLearn.Droid.Views.Menu
 
         private async Task Navigate(int itemId)
         {
-            ((MainActivity) Activity).DrawerLayout.CloseDrawers();
+            ((MainActivity)Activity).DrawerLayout.CloseDrawers();
 
             await Task.Delay(TimeSpan.FromMilliseconds(250));
 

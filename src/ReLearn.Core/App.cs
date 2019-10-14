@@ -32,7 +32,7 @@ namespace ReLearn.Core
                 await DatabaseWords.UpdateData();
             });
 
-            var assemblyConfig = new AssemblyContentConfig(this.GetType().GetTypeInfo().Assembly)
+            var assemblyConfig = new AssemblyContentConfig(GetType().GetTypeInfo().Assembly)
             {
                 ResourceFolder = "Locales",
                 ParserConfig = new ParserConfig

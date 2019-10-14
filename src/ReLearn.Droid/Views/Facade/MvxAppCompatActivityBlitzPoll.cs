@@ -1,11 +1,11 @@
-﻿using System;
-using System.Threading.Tasks;
-using Android.App;
+﻿using Android.App;
 using Android.Graphics.Drawables;
 using Android.Support.Animation;
 using Android.Views;
 using MvvmCross.Droid.Support.V7.AppCompat;
 using MvvmCross.ViewModels;
+using System;
+using System.Threading.Tasks;
 
 namespace ReLearn.Droid.Views.Facade
 {
@@ -39,10 +39,17 @@ namespace ReLearn.Droid.Views.Facade
                 var movement = e.Event.GetX() - StartX;
                 var offset = _displayWidth / 10;
                 if (Math.Abs(movement) > offset)
+                {
                     if (movement < 0)
+                    {
                         await Answer(false);
+                    }
                     else
+                    {
                         await Answer(true);
+                    }
+                }
+
                 handled = true;
             }
 
