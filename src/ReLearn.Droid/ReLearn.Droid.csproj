@@ -64,6 +64,7 @@
     <Compile Include="Adapters\BackgroundConstructor.cs" />
     <Compile Include="Helpers\Paints.cs" />
     <Compile Include="Implements\InteractionProvider.cs" />
+    <Compile Include="Services\NavigatiomViewUpdater.cs" />
     <Compile Include="Statistics\BaseStatistics.cs" />
     <Compile Include="Statistics\DrawChart.cs" />
     <Compile Include="Statistics\DrawStatistics.cs" />

@@ -23,6 +23,7 @@ namespace ReLearn.Droid
             base.InitializeFirstChance();
             Mvx.IoCProvider.RegisterType<IMessageCore>(() => new MessageDroid());
             Mvx.IoCProvider.RegisterType<ITextToSpeech>(() => new TextToSpeech());
+            Mvx.IoCProvider.RegisterSingleton<INavigatiomViewUpdater>(() => new NavigatiomViewUpdater());
         }
 
         protected override void FillValueConverters(IMvxValueConverterRegistry registry)

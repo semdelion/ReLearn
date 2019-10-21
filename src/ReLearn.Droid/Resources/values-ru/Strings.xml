@@ -4,7 +4,6 @@
 
   <string name="app_name">ReLearn</string>
   <!--buttons-->
-  <string name="Study">Изучение</string>
   <string name="Images">Изображения</string>
   <string name="Instruction">Инструкция</string>
   <!--Dictionary and description-->
@@ -12,8 +11,6 @@
 
 
   <!--Menu settings-->
-  <string name="Dictionaries">Словари</string>
-  <string name="Settings">Настройки</string>
   <string name="Language_eng">Язык (en)</string>
   <string name="Language_rus">Язык (ru)</string>
   <string name="SeparatorWords">Разделитель слов:</string>
@@ -22,8 +19,7 @@
   <string name="Sort_alphabetically">Сортировать А→Я</string>
   <string name="HideStudied">Скрыть изученные</string>
   <string name="Delete">Удаление</string>
-  <string name="Statistics">Статистика</string>
-  <string name="View_dictionary">Просмотр</string>
+
 
   <!--Errors and wornings-->
 
@@ -43,8 +39,6 @@
 
   <!--main menu-->
 
-  <string name="About_us">О нас</string>
-  <string name="Feedback">Обратная связь</string>
   <string name="Message_Sent">Сообщение отправлено</string>
 
   <!--Messsages-->

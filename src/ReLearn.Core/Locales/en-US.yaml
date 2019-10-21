@@ -151,3 +151,13 @@ DictionaryImageViewModel:
   Dictionaries:
     Films: "The dictionary consists of a list of the best movies according to users."
     Flags: "The dictionary contains flags of the world."
+
+Menu:
+  Study: Study
+  Dictionaries: Dictionaries
+  Statistics: Statistics
+  ViewDictionary: View
+  AddWord: Add
+  Settings: Settings
+  Feedback: Feedback
+  AboutUs: About us

@@ -151,3 +151,13 @@ DictionaryImageViewModel:
   Dictionaries:
     Films: "Словарь состоит из списка лучших фильмов по версии пользователей."
     Flags: "В словаре представлены флаги стран мира."
+
+Menu:
+  Study: Изучение
+  Dictionaries: Словари
+  Statistics: Статистика
+  ViewDictionary: Просмотр
+  AddWord: Добавить
+  Settings: Настройки
+  Feedback: Обратная связь
+  AboutUs: О нас

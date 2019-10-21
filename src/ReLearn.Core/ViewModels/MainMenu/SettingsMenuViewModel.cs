@@ -2,6 +2,7 @@
 using MvvmCross;
 using MvvmCross.Commands;
 using ReLearn.API;
+using ReLearn.Core.Services;
 using ReLearn.Core.ViewModels.Base;
 using System.Collections.Generic;
 using System.Globalization;
@@ -22,6 +23,7 @@ namespace ReLearn.Core.ViewModels.MainMenu
         private bool _isActiveQuiz;
         private string _languages = Settings.Currentlanguage == Language.en ? "English" : "Русский";
         private string _pronunciations = Settings.CurrentPronunciation == $"{Pronunciation.en}" ? "English" : "British";
+        private INavigatiomViewUpdater _navigatiomViewUpdater;
         #endregion
 
         #region Commands
@@ -126,13 +128,14 @@ namespace ReLearn.Core.ViewModels.MainMenu
         #endregion
 
         #region Constructors
-        public SettingsViewModel()
+        public SettingsViewModel(INavigatiomViewUpdater navigatiomViewUpdater)
         {
             WordsNumber = (Settings.NumberOfRepeatsLanguage - 5) / 5;
             ImagesNumber = (Settings.NumberOfRepeatsImage - 5) / 5;
             TimeToBlitz = (Settings.TimeToBlitz - 15) / 5;
             IsActiveBlitz = Settings.BlitzEnable;
             IsActiveQuiz = Settings.QuizEnable;
+            _navigatiomViewUpdater = navigatiomViewUpdater;
         }
         #endregion
 
@@ -150,6 +153,7 @@ namespace ReLearn.Core.ViewModels.MainMenu
                         Languages = "English";
                         Settings.Currentlanguage = Language.en;
                         _app.InitializeCultureInfo(new CultureInfo("en-US"));
+                        _navigatiomViewUpdater.UpdateNavigatiomView();
                         RaiseAllPropertiesChanged();
                     }),
                     new ActionSheetOption("Русский", () =>
@@ -157,6 +161,7 @@ namespace ReLearn.Core.ViewModels.MainMenu
                         Languages = "Русский";
                         Settings.Currentlanguage = Language.ru;
                         _app.InitializeCultureInfo(new CultureInfo("ru-RU"));
+                        _navigatiomViewUpdater.UpdateNavigatiomView();
                         RaiseAllPropertiesChanged();
                     })
                 },

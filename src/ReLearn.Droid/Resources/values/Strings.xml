@@ -4,9 +4,7 @@
   <string name="app_name">ReLearn</string>
 
   <!--buttons-->
-  <string name="Study">Study</string>
   <string name="Images">Images</string>
-  <string name="Add_word">Add</string>
   <string name="Instruction">Instruction</string>
   <!--Dictionary and description-->
 
@@ -14,9 +12,6 @@
 
   <!--Menu settings-->
 
-
-  <string name="Dictionaries">Dictionaries</string>
-  <string name="Settings">Settings</string>
   <string name="Language_eng">Language (en)</string>
   <string name="Language_rus">Language (ru)</string>
   <string name="Sort_descending">Sort ↓</string>
@@ -46,8 +41,6 @@
 
 
   <!--main menu-->
-  <string name="About_us">About us</string>
-  <string name="Feedback">Feedback</string>
   <string name="Message_Sent">Message sent</string>
 
   <!--Messsages-->

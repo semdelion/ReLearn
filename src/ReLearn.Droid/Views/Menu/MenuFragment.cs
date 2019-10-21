@@ -42,8 +42,24 @@ namespace ReLearn.Droid.Views.Menu
             NavigationView = view.FindViewById<NavigationView>(Resource.Id.nav_view);
             NavigationView.SetNavigationItemSelectedListener(this);
             NavigationView.Menu.FindItem(Resource.Id.study).SetChecked(true);
-
+            UpdateNavigatiomView();
+            
             return view;
+        }
+
+        public static void UpdateNavigatiomView()
+        {
+            if (NavigationView != null)
+            {
+                NavigationView.Menu.FindItem(Resource.Id.study).SetTitle(Xamarin.Yaml.Localization.I18N.Instance.Translate("Menu.Study"));
+                NavigationView.Menu.FindItem(Resource.Id.dictionaries).SetTitle(Xamarin.Yaml.Localization.I18N.Instance.Translate("Menu.Dictionaries"));
+                NavigationView.Menu.FindItem(Resource.Id.statistics).SetTitle(Xamarin.Yaml.Localization.I18N.Instance.Translate("Menu.Statistics"));
+                NavigationView.Menu.FindItem(Resource.Id.view_dictionary).SetTitle(Xamarin.Yaml.Localization.I18N.Instance.Translate("Menu.ViewDictionary"));
+                NavigationView.Menu.FindItem(Resource.Id.add_word).SetTitle(Xamarin.Yaml.Localization.I18N.Instance.Translate("Menu.AddWord"));
+                NavigationView.Menu.FindItem(Resource.Id.settings_menu).SetTitle(Xamarin.Yaml.Localization.I18N.Instance.Translate("Menu.Settings"));
+                NavigationView.Menu.FindItem(Resource.Id.feedback).SetTitle(Xamarin.Yaml.Localization.I18N.Instance.Translate("Menu.Feedback"));
+                NavigationView.Menu.FindItem(Resource.Id.about_us).SetTitle(Xamarin.Yaml.Localization.I18N.Instance.Translate("Menu.AboutUs"));
+            }
         }
 
         private async Task Navigate(int itemId)
