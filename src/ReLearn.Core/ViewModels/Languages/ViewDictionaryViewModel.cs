@@ -1,13 +1,13 @@
 ﻿using Plugin.Settings;
 using ReLearn.API;
 using ReLearn.API.Database;
-using ReLearn.Core.ViewModels.Base;
+using ReLearn.Core.ViewModels.Facade;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace ReLearn.Core.ViewModels.Languages
 {
-    public class ViewDictionaryViewModel : BaseViewModel
+    public class ViewDictionaryViewModel : MvxViewDictionaryViewModel
     {
         #region Properties
         public string TextOk => this["Alert.Ok"];

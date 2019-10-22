@@ -39,6 +39,11 @@ namespace ReLearn.Droid.Views.Languages
             var _searchView = menu.FindItem(Resource.Id.action_search).ActionView.JavaCast<SearchView>();
             menu.FindItem(Resource.Id.HideStudied).SetChecked(ViewModel.HideStudied);
 
+            menu.FindItem(Resource.Id.ABC).SetTitle(ViewModel.TextSortAlphabetically);
+            menu.FindItem(Resource.Id.HideStudied).SetTitle(ViewModel.TextHideStudied);
+            menu.FindItem(Resource.Id.increase).SetTitle(ViewModel.TextSortAscending);
+            menu.FindItem(Resource.Id.decrease).SetTitle(ViewModel.TextSortDescending);
+
             _searchView.QueryTextChange += (sender, e) =>
             {
                 var searchWord = e.NewText.ToLower().Trim();

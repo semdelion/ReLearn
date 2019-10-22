@@ -19,25 +19,21 @@
             <item
                 android:id              ="@+id/increase"
                 android:orderInCategory ="101"
-                app:showAsAction        ="always"
-                android:title           ="@string/Sort_descending" />
+                app:showAsAction        ="always"/>
             <item
                 android:id              ="@+id/decrease"
                 android:orderInCategory ="102"
-                app:showAsAction        ="never"
-                android:title           ="@string/Sort_Ascending" />
+                app:showAsAction        ="never"/>
             <item
                 android:id              ="@+id/ABC"
                 android:orderInCategory ="103"
-                app:showAsAction        ="never"
-                android:title           ="@string/Sort_alphabetically" />
+                app:showAsAction        ="never" />
             <group android:checkableBehavior  ="single">
                 <item
                     android:id                ="@+id/HideStudied"
                     android:orderInCategory   ="104"
                     android:checkable         ="true"
-                    app:showAsAction          ="always"
-                    android:title             ="@string/HideStudied" />
+                    app:showAsAction          ="always" />
             </group>
         </menu>
     </item>

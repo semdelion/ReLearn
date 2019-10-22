@@ -19,7 +19,7 @@
 			android:layout_height	="@dimen/toolbar_height"
 			local:buttonGravity		="bottom">
 			<TextView
-				android:text			="@string/Achievements"
+				android:text			="Achievements"
 				android:gravity			="bottom"
 				android:paddingBottom	="12dp"
 				android:layout_width	="match_parent"
@@ -29,7 +29,7 @@
 	</android.support.design.widget.AppBarLayout>
 	<Button
 		android:id				="@+id/signInButton"
-		android:text			="@string/sign_in"
+		android:text			="sign in"
 		android:textColor		="@color/text_white"
 		android:layout_width	="match_parent"
 		android:layout_height	="50dp"	

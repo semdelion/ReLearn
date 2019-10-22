@@ -1,4 +1,4 @@
-HomeViewModel:
+﻿HomeViewModel:
   Buttons:
     Repeat: Repeat
     Learn: Learn
@@ -69,6 +69,12 @@ ViewDictionaryViewModel:
     Ok: Ok
     Cancel: Cancel
     Delete: Delete 
+  Menu:
+    Texts:
+      SortDescending: Sort ↓
+      SortAscending: Sort ↑
+      SortAlphabetically: Sort A→Z
+      HideStudied: Hide studied
 
 SettingsViewModel:
   Title: Settings

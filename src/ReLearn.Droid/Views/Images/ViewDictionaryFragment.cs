@@ -78,6 +78,10 @@ namespace ReLearn.Droid.Views.Images
             var searchView = searchItem.ActionView.JavaCast<SearchView>();
             searchView.InputType = Convert.ToInt32(InputTypes.TextFlagCapWords);
             menu.FindItem(Resource.Id.HideStudied).SetChecked(ViewModel.HideStudied);
+            menu.FindItem(Resource.Id.ABC).SetTitle(ViewModel.TextSortAlphabetically);
+            menu.FindItem(Resource.Id.HideStudied).SetTitle(ViewModel.TextHideStudied);
+            menu.FindItem(Resource.Id.increase).SetTitle(ViewModel.TextSortAscending);
+            menu.FindItem(Resource.Id.decrease).SetTitle(ViewModel.TextSortDescending);
             searchView.QueryTextChange += (sender, e) =>
             {
                 var searchWord = e.NewText.ToLower().Trim();
