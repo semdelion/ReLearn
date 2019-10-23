@@ -42,7 +42,7 @@ namespace ReLearn.Core.ViewModels.MainMenu
                 var database = await DatabaseImages.GetDataNotLearned();
                 if (database.Count == 0)
                 {
-                    Mvx.IoCProvider.Resolve<IMessageCore>().Toast(this["HomeViewModel.RepeatedAllImages"]);
+                    Mvx.IoCProvider.Resolve<IMessageCore>().Toast(this["RepeatedAllImages"]);
                 }
                 else
                 {
@@ -54,7 +54,7 @@ namespace ReLearn.Core.ViewModels.MainMenu
                 var database = await DatabaseWords.GetDataNotLearned();
                 if (database.Count == 0)
                 {
-                    Mvx.IoCProvider.Resolve<IMessageCore>().Toast(this["HomeViewModel.RepeatedAllWords"]);
+                    Mvx.IoCProvider.Resolve<IMessageCore>().Toast(this["RepeatedAllWords"]);
                 }
                 else
                 {
@@ -71,7 +71,7 @@ namespace ReLearn.Core.ViewModels.MainMenu
                 var database = await DatabaseImages.GetDataNotLearned();
                 if (database.Count == 0)
                 {
-                    Mvx.IoCProvider.Resolve<IMessageCore>().Toast(this["HomeViewModel.RepeatedAllImages"]);
+                    Mvx.IoCProvider.Resolve<IMessageCore>().Toast(this["RepeatedAllImages"]);
                 }
                 else
                 {
@@ -83,7 +83,7 @@ namespace ReLearn.Core.ViewModels.MainMenu
                 var database = await DatabaseWords.GetDataNotLearned();
                 if (database.Count == 0)
                 {
-                    Mvx.IoCProvider.Resolve<IMessageCore>().Toast(this["HomeViewModel.RepeatedAllWords"]);
+                    Mvx.IoCProvider.Resolve<IMessageCore>().Toast(this["RepeatedAllWords"]);
                 }
                 else
                 {
@@ -136,7 +136,7 @@ namespace ReLearn.Core.ViewModels.MainMenu
                 var database = await DatabaseImages.GetDataNotLearned();
                 if (database.Count == 0)
                 {
-                    Mvx.IoCProvider.Resolve<IMessageCore>().Toast(this["HomeViewModel.RepeatedAllImages"]);
+                    Mvx.IoCProvider.Resolve<IMessageCore>().Toast(this["RepeatedAllImages"]);
                 }
                 else
                 {
@@ -148,7 +148,7 @@ namespace ReLearn.Core.ViewModels.MainMenu
                 var database = await DatabaseWords.GetDataNotLearned();
                 if (database.Count == 0)
                 {
-                    Mvx.IoCProvider.Resolve<IMessageCore>().Toast(this["HomeViewModel.RepeatedAllWords"]);
+                    Mvx.IoCProvider.Resolve<IMessageCore>().Toast(this["RepeatedAllWords"]);
                 }
                 else
                 {

@@ -5,11 +5,12 @@
 
 LearnViewModel:
   Title: Learn
-  DictionaryOver: Dictionary over
   Buttons:
     NotRepeat: Not repeat
     Next: Next
     Voice: Voice
+  Error:
+    DictionaryOver: Dictionary over
 
 AddViewModel:
   Title: Addition
@@ -75,6 +76,8 @@ ViewDictionaryViewModel:
       SortAscending: Sort ↑
       SortAlphabetically: Sort A→Z
       HideStudied: Hide studied
+  Error:
+    WordDelete: Word delete!
 
 SettingsViewModel:
   Title: Settings

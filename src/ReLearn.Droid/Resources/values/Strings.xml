@@ -2,55 +2,6 @@
 
 <resources>
   <string name="app_name">ReLearn</string>
-
-  <!--buttons-->
-  <string name="Images">Images</string>
-  <string name="Instruction">Instruction</string>
-  <!--Dictionary and description-->
-
-
-
-  <!--Menu settings-->
-
-  <string name="Language_eng">Language (en)</string>
-  <string name="Language_rus">Language (ru)</string>
-  <string name="Sort_descending">Sort ↓</string>
-  <string name="Sort_Ascending">Sort ↑</string>
-  <string name="Sort_alphabetically">Sort A→Z</string>
-  <string name="SeparatorWords">Word separator:</string>
-  <string name="HideStudied">Hide studied</string>
-  <string name="Delete">Delete</string>
-  <string name="Statistics">Statistics</string>
-  <string name="View_dictionary">View</string>
-
-  <!--Errors and wornings-->
-
-  <string name="DatabaseEmpty">The database is empty</string>
-  <string name="DatabaseNotConnect">Error : can not connect to database</string>
-  <string name="RepeatedAllWords">You repeated all the words</string>
-  <string name="RepeatedAllImages">You repeated all the images</string>
-  <string name="Enter_word">Enter word!</string>
-  <string name="Word_exists">The word exists!</string>
-  <string name="Word_Added">Word added!</string>
-  <string name="Word_Not_Exists">Words do not exist!</string>
-  <string name="Word_Delete">Word delete!</string>
-  <string name="DictionaryOver">Dictionary over</string>
-  <string name="DataCorrectness">Data entered incorrectly</string>
-
-  <!--Statistic-->
-
-
-  <!--main menu-->
-  <string name="Message_Sent">Message sent</string>
-
-  <!--Messsages-->
-
-  <string name="WordsAdded">Words have been added to your dictionary</string>
-
-  <!--Achievements-->
-  <string name="Achievements">Achievements</string>
-  <string name="sign_in">Sign In</string>
-
   <string name="navigation_drawer_open">Open navigation drawer</string>
   <string name="navigation_drawer_close">Close navigation drawer</string>
 

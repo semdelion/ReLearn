@@ -82,7 +82,7 @@ namespace ReLearn.Droid.Views.Languages
                             ? ViewModel.Database.FindAll(obj => obj.NumberLearn != 0)
                             : ViewModel.Database);
                     DatabaseWords.Delete($"{word}");
-                    Toast.MakeText(ParentActivity, GetString(Resource.String.Word_Delete), ToastLength.Short).Show();
+                    Toast.MakeText(ParentActivity, ViewModel.ErrorWordDelete, ToastLength.Short).Show();
                 });
                 alert.Show();
             };

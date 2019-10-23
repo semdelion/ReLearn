@@ -42,7 +42,7 @@ namespace ReLearn.Droid.Views.Images
             }
             else
             {
-                Toast.MakeText(this, GetString(Resource.String.DictionaryOver), ToastLength.Short).Show();
+                Toast.MakeText(this, ViewModel.ErrorDictionaryOver, ToastLength.Short).Show();
             }
         }
 

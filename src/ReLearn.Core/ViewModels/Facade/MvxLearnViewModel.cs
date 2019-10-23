@@ -13,6 +13,8 @@ namespace ReLearn.Core.ViewModels.Facade
 
         public string TextNext => this["Buttons.Next"];
 
+        public string ErrorDictionaryOver => this["Error.DictionaryOver"];
+
         public int Count { get; set; }
 
         public string Text

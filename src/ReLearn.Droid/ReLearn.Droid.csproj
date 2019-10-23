@@ -356,9 +356,6 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\speak_on.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\values-ru\Strings.xml" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidAsset Include="Assets\setting.txt" />
   </ItemGroup>
   <ItemGroup>

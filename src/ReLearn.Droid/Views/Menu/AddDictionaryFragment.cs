@@ -56,7 +56,7 @@ namespace ReLearn.Droid.Views.Menu
                 var alert = new AlertDialog.Builder(ParentActivity);
                 var factory = LayoutInflater.From(ParentActivity);
                 alert.SetView(factory.Inflate(Resource.Layout.alert_dictionary, null));
-                alert.SetTitle(Resource.String.Instruction);
+                alert.SetTitle("Instruction"); // TODO
                 alert.SetPositiveButton("Cancel", delegate { alert.Dispose(); });
                 alert.Show();
                 return true;

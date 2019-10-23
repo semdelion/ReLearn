@@ -9,6 +9,7 @@ namespace ReLearn.Core.ViewModels.Facade
         public virtual string TextSortAscending => this["Menu.Texts.SortAscending"];
         public virtual string TextSortAlphabetically => this["Menu.Texts.SortAlphabetically"];
         public virtual string TextHideStudied => this["Menu.Texts.HideStudied"];
+        public virtual string ErrorWordDelete => this["Error.WordDelete"];
         #endregion
     }
 }

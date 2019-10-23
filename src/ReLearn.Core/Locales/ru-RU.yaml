@@ -5,11 +5,12 @@ HomeViewModel:
 
 LearnViewModel:
   Title: Учить
-  DictionaryOver: Словарь закончился
   Buttons:
     NotRepeat: Не повторять
     Next: Дальше
     Voice: Озвучить
+  Error:
+    DictionaryOver: Словарь закончился
 
 AddViewModel:
   Title: Добавить
@@ -75,6 +76,8 @@ ViewDictionaryViewModel:
       SortAscending: Сортировать ↑
       SortAlphabetically: Сортировать А→Я
       HideStudied: Скрыть изученные
+  Error:
+    WordDelete: Слово удалено!
 
 SettingsViewModel:
   Title: Настройки
