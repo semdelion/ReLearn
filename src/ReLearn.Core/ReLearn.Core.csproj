@@ -16,14 +16,14 @@
 
   <ItemGroup>
     <PackageReference Include="Acr.UserDialogs" Version="7.0.3" />
-    <PackageReference Include="MvvmCross" Version="6.2.3" />
-    <PackageReference Include="MvvmCross.Plugin.Color" Version="6.2.3" />
-    <PackageReference Include="MvvmCross.Plugin.Email" Version="6.2.3" />
-    <PackageReference Include="MvvmCross.Plugin.Json" Version="6.2.3" />
-    <PackageReference Include="MvvmCross.Plugin.JsonLocalization" Version="6.2.3" />
-    <PackageReference Include="MvvmCross.Plugin.ResourceLoader" Version="6.2.3" />
-    <PackageReference Include="MvvmCross.Plugin.ResxLocalization" Version="6.2.3" />
-    <PackageReference Include="MvvmCross.Plugin.WebBrowser" Version="6.2.3" />
+    <PackageReference Include="MvvmCross" Version="6.4.1" />
+    <PackageReference Include="MvvmCross.Plugin.Color" Version="6.4.1" />
+    <PackageReference Include="MvvmCross.Plugin.Email" Version="6.4.1" />
+    <PackageReference Include="MvvmCross.Plugin.Json" Version="6.4.1" />
+    <PackageReference Include="MvvmCross.Plugin.JsonLocalization" Version="6.4.1" />
+    <PackageReference Include="MvvmCross.Plugin.ResourceLoader" Version="6.4.1" />
+    <PackageReference Include="MvvmCross.Plugin.ResxLocalization" Version="6.4.1" />
+    <PackageReference Include="MvvmCross.Plugin.WebBrowser" Version="6.4.1" />
     <PackageReference Include="Xamarin.Yaml.Localization" Version="1.1.9" />
     <PackageReference Include="Xamarin.Yaml.Parser" Version="1.1.9" />
   </ItemGroup>

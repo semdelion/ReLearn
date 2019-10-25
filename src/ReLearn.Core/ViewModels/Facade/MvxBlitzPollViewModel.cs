@@ -1,11 +1,11 @@
 ﻿using MvvmCross.Commands;
-using MvvmCross.UI;
 using ReLearn.API;
 using ReLearn.API.Database;
 using ReLearn.Core.ViewModels.Base;
 using ReLearn.Core.ViewModels.MainMenu.Statistics;
 using System.Threading.Tasks;
 using System.Timers;
+using System.Drawing;
 
 namespace ReLearn.Core.ViewModels.Facade
 {
@@ -15,7 +15,7 @@ namespace ReLearn.Core.ViewModels.Facade
         private IMvxAsyncCommand _toStatistic;
         protected string _titleCount = "1";
         protected string _timerText;
-        protected MvxColor _currentColor = MvxColor.ParseHexString("#d7f8fe");
+        protected Color _currentColor = Color.FromArgb(215, 248, 254);
         #endregion
 
         #region Properties
@@ -65,7 +65,7 @@ namespace ReLearn.Core.ViewModels.Facade
                 TimerText = $"{Time / 10}:{Time % 10}0";
                 if (Time == 50)
                 {
-                    CurrentColor = MvxColor.ParseHexString("#ef4049");
+                    CurrentColor = Color.FromArgb(239, 64, 73);
                 }
             }
             else
@@ -89,7 +89,7 @@ namespace ReLearn.Core.ViewModels.Facade
             Timer.Start();
         }
 
-        public MvxColor CurrentColor
+        public System.Drawing.Color CurrentColor
         {
             get => _currentColor;
             set => SetProperty(ref _currentColor, value);

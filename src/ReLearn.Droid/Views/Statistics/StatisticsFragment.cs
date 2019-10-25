@@ -6,6 +6,7 @@ using Android.Support.V4.View;
 using Android.Views;
 using MvvmCross.Droid.Support.V4;
 using MvvmCross.Platforms.Android.Presenters.Attributes;
+using MvvmCross.ViewModels;
 using ReLearn.API.Database;
 using ReLearn.Core.ViewModels;
 using ReLearn.Core.ViewModels.MainMenu.Statistics;
@@ -49,8 +50,8 @@ namespace ReLearn.Droid.Views.Statistics
             {
                 var fragments = new List<MvxViewPagerFragmentInfo>
                 {
-                    new MvxViewPagerFragmentInfo("", "", typeof(TabMainFragment), typeof(MainStatisticsViewModel)),
-                    new MvxViewPagerFragmentInfo("", "", typeof(TabGeneralFragment), typeof(GeneralStatisticsViewModel))
+                    new MvxViewPagerFragmentInfo("", "", typeof(TabMainFragment),  new MvxViewModelRequest(typeof(MainStatisticsViewModel))),
+                    new MvxViewPagerFragmentInfo("", "", typeof(TabGeneralFragment),  new MvxViewModelRequest(typeof(GeneralStatisticsViewModel)))
                 };
                 viewPager.Adapter = new MvxFragmentStatePagerAdapter(Activity, ChildFragmentManager, fragments);
             }
@@ -60,7 +61,7 @@ namespace ReLearn.Droid.Views.Statistics
             tabLayout.SetupWithViewPager(viewPager);
             tabLayout.GetTabAt(tabLayout.TabCount - 2).SetIcon(Resource.Drawable.ic_statistics_main);
             tabLayout.GetTabAt(tabLayout.TabCount - 1).SetIcon(Resource.Drawable.ic_statistics_general);
-
+            
             return view;
         }
     }

@@ -7,6 +7,7 @@ using Android.Views;
 using Android.Widget;
 using MvvmCross.Droid.Support.V4;
 using MvvmCross.Platforms.Android.Presenters.Attributes;
+using MvvmCross.ViewModels;
 using ReLearn.API.Database;
 using ReLearn.Core.ViewModels;
 using ReLearn.Core.ViewModels.MainMenu.SelectDictionary;
@@ -46,8 +47,8 @@ namespace ReLearn.Droid.Views.SelectDictionary
 
             var fragments = new List<MvxViewPagerFragmentInfo>
             {
-                new MvxViewPagerFragmentInfo("", "", typeof(TabLanguageFragment), typeof(DictionaryLanguageViewModel)),
-                new MvxViewPagerFragmentInfo("", "", typeof(TabImageFragment), typeof(DictionaryImageViewModel))
+                new MvxViewPagerFragmentInfo("", "", typeof(TabLanguageFragment), new MvxViewModelRequest(typeof(DictionaryLanguageViewModel))),
+                new MvxViewPagerFragmentInfo("", "", typeof(TabImageFragment), new MvxViewModelRequest(typeof(DictionaryImageViewModel)))
             };
             viewPager.Adapter = new MvxFragmentStatePagerAdapter(Activity, ChildFragmentManager, fragments);
             var tabLayout = view.FindViewById<TabLayout>(Resource.Id.tablayout);
