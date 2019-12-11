@@ -18,7 +18,7 @@ namespace ReLearn.Droid.Views.Images
     [Register("relearn.droid.views.images.ViewDictionaryFragment")]
     public class ViewDictionaryFragment : MvxBaseFragment<ViewDictionaryViewModel>
     {
-        protected override int FragmentId => Resource.Layout.fragment_menu_view_dictionary;
+        protected override int FragmentId => Resource.Layout.fragment_images_menu_view_dictionary;
 
         protected override int Toolbar => Resource.Id.toolbar_view_dictionary;
         private ListView DictionaryImages { get; set; }

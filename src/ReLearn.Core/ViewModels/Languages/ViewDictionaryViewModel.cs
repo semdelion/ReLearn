@@ -1,4 +1,5 @@
-﻿using Plugin.Settings;
+﻿using MvvmCross.ViewModels;
+using Plugin.Settings;
 using ReLearn.API;
 using ReLearn.API.Database;
 using ReLearn.Core.ViewModels.Facade;
@@ -13,7 +14,13 @@ namespace ReLearn.Core.ViewModels.Languages
         public string TextOk => this["Alert.Ok"];
         public string TextCancel => this["Alert.Cancel"];
         public string TextDelete => this["Alert.Delete"];
-        public List<DatabaseWords> Database { get; private set; }
+
+        private MvxObservableCollection<DatabaseWords> _items = new MvxObservableCollection<DatabaseWords>();
+        public MvxObservableCollection<DatabaseWords> Items
+        {
+            get { return _items; }
+            set { SetProperty(ref _items, value); }
+        }
 
         public bool HideStudied
         {
@@ -23,10 +30,20 @@ namespace ReLearn.Core.ViewModels.Languages
         #endregion
 
         #region Constructors
-        public ViewDictionaryViewModel()
-        {
-            Task.Run(async () => Database = await DatabaseWords.GetData()).Wait();
-        }
         #endregion
+
+        public override async void Prepare()
+        {
+            try
+            {
+                UserDialogs.ShowLoading();
+                var database = await DatabaseWords.GetData();
+                Items.AddRange(database);
+            }
+            finally
+            {
+                UserDialogs.HideLoading();
+            }
+        }
     }
 }

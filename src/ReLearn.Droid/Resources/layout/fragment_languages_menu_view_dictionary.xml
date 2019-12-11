@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+	xmlns:android			="http://schemas.android.com/apk/res/android"
+	xmlns:local				="http://schemas.android.com/apk/res-auto"
+    xmlns:tools				="http://schemas.android.com/tools"
+    android:orientation		="vertical"
+    android:layout_width	="match_parent"
+    android:layout_height	="match_parent">
+	<android.support.design.widget.AppBarLayout
+		android:layout_width	="match_parent"
+		android:layout_height	="wrap_content">
+		<android.support.v7.widget.Toolbar 
+			android:id				="@+id/toolbar_view_dictionary"
+			android:theme			="@style/ToolbarStyle"	
+			android:background		="@drawable/background_toolbar"
+			local:navigationIcon	="@mipmap/ic_arrow_back"
+			android:layout_width	="match_parent"
+       		android:layout_height	="@dimen/toolbar_height"	
+			local:buttonGravity		="bottom">
+			<TextView
+				android:paddingBottom	="12dp"
+				android:layout_width	="match_parent"
+				android:layout_height	="match_parent"
+				android:gravity			="bottom"  
+                local:MvxBind           ="Text Title"
+                tools:text              ="View"
+			/>
+		</android.support.v7.widget.Toolbar >
+	</android.support.design.widget.AppBarLayout>
+    <mvvmcross.droid.support.v7.recyclerview.MvxRecyclerView
+        android:id					="@+id/listView_dictionary"
+        android:layout_width		="match_parent"
+        android:layout_height		="match_parent"
+        android:layout_marginLeft	="2.0dp"
+        android:layout_marginRight	="2.0dp" 
+        local:MvxItemTemplate       ="@layout/item_languages_view_dictionary"
+        local:MvxBind               ="ItemsSource Items; ItemClick ItemClickCommand"/>
+</LinearLayout>
