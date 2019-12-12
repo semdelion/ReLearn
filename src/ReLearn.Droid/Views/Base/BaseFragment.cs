@@ -90,7 +90,7 @@ namespace ReLearn.Droid.Views.Base
                 this.isHomeAsUp = isHomeAsUp;
                 var anim = isHomeAsUp ? ValueAnimator.OfFloat(0, 1) : ValueAnimator.OfFloat(1, 0);
                 anim.SetDuration(300);
-                anim.Update += async (sender, e) =>
+                anim.Update += (sender, e) =>
                 {
                     var value = (float)anim.AnimatedValue;
                     _drawerToggle.DrawerArrowDrawable.Progress = value;

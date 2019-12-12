@@ -60,17 +60,17 @@ namespace ReLearn.Core.ViewModels.MainMenu
         {
             if (Word == "" || Word == null || TranslationWord == null || TranslationWord == "")
             {
-                Message.Toast(this["AddViewModel.EnterWord"]);
+                Message.Toast(this["EnterWord"]);
             }
             else if (await Task.Run(() => DatabaseWords.WordIsContained(Word.ToLower())))
             {
-                Message.Toast(this["AddViewModel.WordExists"]);
+                Message.Toast(this["WordExists"]);
             }
             else
             {
                 await Task.Run(() => DatabaseWords.Insert(Word.ToLower(), TranslationWord.ToLower()));
                 Word = TranslationWord = "";
-                Message.Toast(this["AddViewModel.WordAdded"]);
+                Message.Toast(this["WordAdded"]);
             }
         }
         #endregion

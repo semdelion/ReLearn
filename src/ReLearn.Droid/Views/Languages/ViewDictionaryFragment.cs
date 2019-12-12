@@ -64,7 +64,7 @@ namespace ReLearn.Droid.Views.Languages
                 }
             };
 
-            DictionaryWords.ItemClick += async (s, args) =>
+            DictionaryWords.ItemClick += (s, args) =>
             {
                 var word = DictionaryWords.Adapter.GetItem(args.Position);
                 var words = new DatabaseWords();
