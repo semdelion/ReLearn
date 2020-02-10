@@ -31,7 +31,7 @@ namespace ReLearn.Droid.Views.SelectDictionary
         {
             var image = sender as ImageView;
             Dictionaries.Selected($"{image.Tag}", $"{DataBase.TableName}");
-            Enum.TryParse($"{image.Tag}", out TableNames name);
+            Enum.TryParse($"{image.Tag}", out TableName name);
             DataBase.TableName = name;
             var Animation = new SpringAnimation(image, DynamicAnimation.Rotation, 0);
             Animation.Spring.SetStiffness(SpringForce.StiffnessMedium);

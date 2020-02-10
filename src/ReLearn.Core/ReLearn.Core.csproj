@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netstandard2.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
@@ -15,15 +15,19 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Acr.UserDialogs" Version="7.0.3" />
-    <PackageReference Include="MvvmCross" Version="6.4.1" />
-    <PackageReference Include="MvvmCross.Plugin.Color" Version="6.4.1" />
-    <PackageReference Include="MvvmCross.Plugin.Email" Version="6.4.1" />
-    <PackageReference Include="MvvmCross.Plugin.Json" Version="6.4.1" />
-    <PackageReference Include="MvvmCross.Plugin.JsonLocalization" Version="6.4.1" />
-    <PackageReference Include="MvvmCross.Plugin.ResourceLoader" Version="6.4.1" />
-    <PackageReference Include="MvvmCross.Plugin.ResxLocalization" Version="6.4.1" />
-    <PackageReference Include="MvvmCross.Plugin.WebBrowser" Version="6.4.1" />
+    <PackageReference Include="Acr.UserDialogs" Version="7.0.35" />
+    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.9.6">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="MvvmCross" Version="6.4.2" />
+    <PackageReference Include="MvvmCross.Plugin.Color" Version="6.4.2" />
+    <PackageReference Include="MvvmCross.Plugin.Email" Version="6.4.2" />
+    <PackageReference Include="MvvmCross.Plugin.Json" Version="6.4.2" />
+    <PackageReference Include="MvvmCross.Plugin.JsonLocalization" Version="6.4.2" />
+    <PackageReference Include="MvvmCross.Plugin.ResourceLoader" Version="6.4.2" />
+    <PackageReference Include="MvvmCross.Plugin.ResxLocalization" Version="6.4.2" />
+    <PackageReference Include="MvvmCross.Plugin.WebBrowser" Version="6.4.2" />
     <PackageReference Include="Xamarin.Yaml.Localization" Version="1.1.9" />
     <PackageReference Include="Xamarin.Yaml.Parser" Version="1.1.9" />
   </ItemGroup>

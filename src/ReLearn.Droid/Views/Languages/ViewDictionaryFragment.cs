@@ -81,7 +81,7 @@ namespace ReLearn.Droid.Views.Languages
                         ViewModel.HideStudied
                             ? ViewModel.Database.FindAll(obj => obj.NumberLearn != 0)
                             : ViewModel.Database);
-                    DatabaseWords.Delete($"{word}");
+                    DatabaseWords.Delete($"{word}").ConfigureAwait(false);
                     Toast.MakeText(ParentActivity, ViewModel.ErrorWordDelete, ToastLength.Short).Show();
                 });
                 alert.Show();

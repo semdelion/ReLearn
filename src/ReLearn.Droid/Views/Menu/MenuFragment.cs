@@ -29,7 +29,7 @@ namespace ReLearn.Droid.Views.Menu
             item.SetCheckable(true);
             item.SetChecked(true);
             _previousMenuItem = item;
-            Navigate(item.ItemId);
+            Navigate(item.ItemId).ConfigureAwait(false);
             return true;
         }
 

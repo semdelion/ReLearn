@@ -5,7 +5,7 @@ using System.IO;
 
 namespace ReLearn.API.Database
 {
-    public enum TableNames
+    public enum TableName
     {
         Flags,
         Films,
@@ -30,13 +30,13 @@ namespace ReLearn.API.Database
         public static SQLiteAsyncConnection Images { get; private set; }
         public static SQLiteAsyncConnection Statistics { get; private set; }
 
-        public static TableNames TableName
+        public static TableName TableName
         {
             get
             {
                 Enum.TryParse(
                     CrossSettings.Current.GetValueOrDefault($"{DBSettings.DictionaryName}",
-                        $"{TableNames.Popular_Words}"), out TableNames name);
+                        $"{TableName.Popular_Words}"), out TableName name);
                 return name;
             }
             set => CrossSettings.Current.AddOrUpdateValue($"{DBSettings.DictionaryName}", $"{value}");

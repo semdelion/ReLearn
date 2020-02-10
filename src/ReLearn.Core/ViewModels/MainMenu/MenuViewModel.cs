@@ -47,7 +47,7 @@ namespace ReLearn.Core.ViewModels.MainMenu
         #region Constructors
         public MenuViewModel()
         {
-            NavigateToHomeViewModel();
+            NavigateToHomeViewModel().ConfigureAwait(false);
         }
         #endregion
 

@@ -150,25 +150,25 @@
       <Version>7.0.35</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.AppCenter.Analytics">
-      <Version>2.5.0</Version>
+      <Version>2.6.4</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.AppCenter.Crashes">
-      <Version>2.5.0</Version>
+      <Version>2.6.4</Version>
     </PackageReference>
     <PackageReference Include="MvvmCross">
-      <Version>6.4.1</Version>
+      <Version>6.4.2</Version>
     </PackageReference>
     <PackageReference Include="MvvmCross.Droid.Support.V7.AppCompat">
-      <Version>6.4.1</Version>
+      <Version>6.4.2</Version>
     </PackageReference>
     <PackageReference Include="MvvmCross.Droid.Support.V7.RecyclerView">
-      <Version>6.4.1</Version>
+      <Version>6.4.2</Version>
     </PackageReference>
     <PackageReference Include="MvvmCross.Plugin.Color">
-      <Version>6.4.1</Version>
+      <Version>6.4.2</Version>
     </PackageReference>
     <PackageReference Include="sqlite-net-pcl">
-      <Version>1.5.231</Version>
+      <Version>1.6.292</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Android.Support.Animated.Vector.Drawable">
       <Version>28.0.0.3</Version>
