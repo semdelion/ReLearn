@@ -1,7 +1,7 @@
 ﻿using Android.App;
 using Android.Graphics.Drawables;
-using Android.Support.Animation;
 using Android.Views;
+using AndroidX.DynamicAnimation;
 using MvvmCross.Droid.Support.V7.AppCompat;
 using MvvmCross.ViewModels;
 using System;

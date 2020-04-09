@@ -9,7 +9,6 @@ using ReLearn.Core.ViewModels;
 using ReLearn.Core.ViewModels.Languages;
 using ReLearn.Droid.Adapters;
 using ReLearn.Droid.Views.Base;
-using SearchView = Android.Support.V7.Widget.SearchView;
 
 namespace ReLearn.Droid.Views.Languages
 {
@@ -36,7 +35,7 @@ namespace ReLearn.Droid.Views.Languages
         public override void OnCreateOptionsMenu(IMenu menu, MenuInflater inflater)
         {
             inflater.Inflate(Resource.Menu.search, menu);
-            var _searchView = menu.FindItem(Resource.Id.action_search).ActionView.JavaCast<SearchView>();
+            var _searchView = menu.FindItem(Resource.Id.action_search).ActionView.JavaCast<AndroidX.AppCompat.Widget.SearchView>();
             menu.FindItem(Resource.Id.HideStudied).SetChecked(ViewModel.HideStudied);
 
             menu.FindItem(Resource.Id.ABC).SetTitle(ViewModel.TextSortAlphabetically);

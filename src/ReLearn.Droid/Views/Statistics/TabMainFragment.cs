@@ -1,9 +1,9 @@
 ﻿using Android.Graphics;
 using Android.Graphics.Drawables;
 using Android.OS;
-using Android.Support.Animation;
 using Android.Views;
 using Android.Widget;
+using AndroidX.DynamicAnimation;
 using MvvmCross.Droid.Support.V4;
 using MvvmCross.Platforms.Android.Binding.BindingContext;
 using ReLearn.API;
@@ -23,43 +23,33 @@ namespace ReLearn.Droid.Views.Statistics
 
         private void CreateLastStat(LinearLayout viewLastStat)
         {
-            using (var bitmapLastStat = Bitmap.CreateBitmap(
+            using var bitmapLastStat = Bitmap.CreateBitmap(
                 Resources.DisplayMetrics.WidthPixels - PixelConverter.DpToPX(20),
-                PixelConverter.DpToPX(70), Bitmap.Config.Argb4444))
-            {
-                using (var canvasLastStat = new Canvas(bitmapLastStat))
-                {
-                    var lastStat = new DrawStatistics(canvasLastStat);
-                    lastStat.DrawBackground(6, 6, Paints.Background, Paints.Border, Paints.Gradient);
-                    lastStat.ProgressLine(ViewModel.True ?? 0, ViewModel.False ?? 1, StatisticsFragment.LightColor,
-                        StatisticsFragment.DarkColor, Paints.BackgroundLine);
-                    viewLastStat.Background = new BitmapDrawable(Resources, bitmapLastStat);
-                }
-            }
+                PixelConverter.DpToPX(70), Bitmap.Config.Argb4444);
+            using var canvasLastStat = new Canvas(bitmapLastStat);
+            var lastStat = new DrawStatistics(canvasLastStat);
+            lastStat.DrawBackground(6, 6, Paints.Background, Paints.Border, Paints.Gradient);
+            lastStat.ProgressLine(ViewModel.True ?? 0, ViewModel.False ?? 1, StatisticsFragment.LightColor,
+                StatisticsFragment.DarkColor, Paints.BackgroundLine);
+            viewLastStat.Background = new BitmapDrawable(Resources, bitmapLastStat);
         }
 
         private void CreateMainChart(int abscissa = 10, int count = 10)
         {
-            using (var bitmapLastStat = Bitmap.CreateBitmap(
+            using var bitmapLastStat = Bitmap.CreateBitmap(
                 Resources.DisplayMetrics.WidthPixels - PixelConverter.DpToPX(20),
                 Resources.DisplayMetrics.HeightPixels - PixelConverter.DpToPX(150),
-                Bitmap.Config.Argb4444))
+                Bitmap.Config.Argb4444);
+            using var canvasLastStat = new Canvas(bitmapLastStat);
+            var mainChart = new DrawChart(canvasLastStat)
             {
-                using (var canvasLastStat = new Canvas(bitmapLastStat))
-                {
-                    var mainChart = new DrawChart(canvasLastStat)
-                    {
-                        StepAbscissa = count,
-                        CountAbscissa = abscissa
-                    };
-                    mainChart.DoDrawChart(ViewModel.Database, StatisticsFragment.LightColor,
-                        StatisticsFragment.DarkColor, Paints.Text);
-                    using (var back = new BitmapDrawable(Resources, bitmapLastStat))
-                    {
-                        ViewMainChart.Background = back;
-                    }
-                }
-            }
+                StepAbscissa = count,
+                CountAbscissa = abscissa
+            };
+            mainChart.DoDrawChart(ViewModel.Database, StatisticsFragment.LightColor,
+                StatisticsFragment.DarkColor, Paints.Text);
+            using var back = new BitmapDrawable(Resources, bitmapLastStat);
+            ViewMainChart.Background = back;
         }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)

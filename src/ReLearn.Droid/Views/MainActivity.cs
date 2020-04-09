@@ -12,7 +12,6 @@ using MvvmCross.Droid.Support.V7.AppCompat;
 using MvvmCross.Platforms.Android.Presenters.Attributes;
 using ReLearn.Core.ViewModels;
 using ReLearn.Droid.Services;
-using FragmentManager = Android.Support.V4.App.FragmentManager;
 
 namespace ReLearn.Droid.Views
 {
@@ -20,7 +19,7 @@ namespace ReLearn.Droid.Views
     [Activity(Label = "", ScreenOrientation = ScreenOrientation.Portrait,
         ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.Locale)]
     public class MainActivity : MvxAppCompatActivity<MainViewModel>, INavigationActivity,
-        FragmentManager.IOnBackStackChangedListener
+         Android.Support.V4.App.FragmentManager.IOnBackStackChangedListener
     {
         public DrawerLayout DrawerLayout { get; set; }
 

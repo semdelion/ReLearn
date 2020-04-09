@@ -1,7 +1,7 @@
 ﻿using Android.OS;
 using Android.Runtime;
-using Android.Support.Design.Widget;
 using Android.Views;
+using Google.Android.Material.Navigation;
 using MvvmCross.Droid.Support.V4;
 using MvvmCross.Platforms.Android.Binding.BindingContext;
 using MvvmCross.Platforms.Android.Presenters.Attributes;

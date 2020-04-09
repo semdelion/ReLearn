@@ -1,10 +1,10 @@
 ﻿using Android.OS;
 using Android.Runtime;
-using Android.Support.Animation;
 using Android.Support.Design.Widget;
 using Android.Support.V4.View;
 using Android.Views;
 using Android.Widget;
+using AndroidX.DynamicAnimation;
 using MvvmCross.Droid.Support.V4;
 using MvvmCross.Platforms.Android.Presenters.Attributes;
 using MvvmCross.ViewModels;
