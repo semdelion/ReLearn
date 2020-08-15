@@ -13,7 +13,6 @@ using ReLearn.Droid.Views.Facade;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Toolbar = Android.Support.V7.Widget.Toolbar;
 
 namespace ReLearn.Droid.Views.Languages
 {
@@ -145,7 +144,7 @@ namespace ReLearn.Droid.Views.Languages
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.activity_languages_repeat);
-            var toolbarMain = FindViewById<Toolbar>(Resource.Id.toolbar_languages_repeat);
+            var toolbarMain = FindViewById<AndroidX.AppCompat.Widget.Toolbar>(Resource.Id.toolbar_languages_repeat);
 
             SetSupportActionBar(toolbarMain);
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);

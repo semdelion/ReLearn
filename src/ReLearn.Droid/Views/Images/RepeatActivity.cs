@@ -14,7 +14,6 @@ using ReLearn.Droid.Views.Facade;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Toolbar = Android.Support.V7.Widget.Toolbar;
 
 namespace ReLearn.Droid.Views.Images
 {
@@ -144,7 +143,7 @@ namespace ReLearn.Droid.Views.Images
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.activity_images_repeat);
 
-            var toolbarMain = FindViewById<Toolbar>(Resource.Id.toolbar_images_repeat);
+            var toolbarMain = FindViewById<AndroidX.AppCompat.Widget.Toolbar>(Resource.Id.toolbar_images_repeat);
             SetSupportActionBar(toolbarMain);
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
 

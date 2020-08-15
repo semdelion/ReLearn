@@ -10,7 +10,6 @@ using ReLearn.Core.ViewModels.Images;
 using ReLearn.Droid.Adapters;
 using ReLearn.Droid.Views.Base;
 using System;
-using SearchView = Android.Support.V7.Widget.SearchView;
 
 namespace ReLearn.Droid.Views.Images
 {
@@ -75,7 +74,7 @@ namespace ReLearn.Droid.Views.Images
         {
             inflater.Inflate(Resource.Menu.search, menu);
             var searchItem = menu.FindItem(Resource.Id.action_search);
-            var searchView = searchItem.ActionView.JavaCast<SearchView>();
+            var searchView = searchItem.ActionView.JavaCast<AndroidX.AppCompat.Widget.SearchView>();
             searchView.InputType = Convert.ToInt32(InputTypes.TextFlagCapWords);
             menu.FindItem(Resource.Id.HideStudied).SetChecked(ViewModel.HideStudied);
             menu.FindItem(Resource.Id.ABC).SetTitle(ViewModel.TextSortAlphabetically);

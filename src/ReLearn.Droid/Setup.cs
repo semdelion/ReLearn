@@ -1,8 +1,8 @@
 ﻿using MvvmCross;
 using MvvmCross.Converters;
-using MvvmCross.Droid.Support.V7.AppCompat;
 using MvvmCross.IoC;
 using MvvmCross.Localization;
+using MvvmCross.Platforms.Android.Core;
 using MvvmCross.ViewModels;
 using ReLearn.Core;
 using ReLearn.Core.Provider;
@@ -15,7 +15,7 @@ using System.Reflection;
 
 namespace ReLearn.Droid
 {
-    public class Setup : MvxAppCompatSetup<Core.App>
+    public class Setup : MvxAndroidSetup<Core.App>
     {
         private readonly App _app = new App();
         protected override void InitializeFirstChance()
@@ -31,10 +31,6 @@ namespace ReLearn.Droid
             base.FillValueConverters(registry);
             registry.AddOrOverwrite("Language", new MvxLanguageConverter());
         }
-        protected override IEnumerable<Assembly> AndroidViewAssemblies => new List<Assembly>(base.AndroidViewAssemblies)
-        {
-            typeof(MvvmCross.Droid.Support.V7.RecyclerView.MvxRecyclerView).Assembly
-        };
 
         public override void InitializeSecondary()
         {

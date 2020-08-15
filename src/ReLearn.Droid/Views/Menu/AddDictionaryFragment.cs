@@ -1,11 +1,11 @@
 ﻿using Android.App;
 using Android.OS;
 using Android.Runtime;
-using Android.Support.V7.Widget;
 using Android.Views;
-using MvvmCross.Droid.Support.V7.AppCompat;
+using AndroidX.AppCompat.Widget;
 using MvvmCross.Platforms.Android.Binding.BindingContext;
 using MvvmCross.Platforms.Android.Presenters.Attributes;
+using MvvmCross.Platforms.Android.Views.AppCompat;
 using ReLearn.Core.ViewModels;
 using ReLearn.Core.ViewModels.MainMenu;
 using ReLearn.Droid.Services;

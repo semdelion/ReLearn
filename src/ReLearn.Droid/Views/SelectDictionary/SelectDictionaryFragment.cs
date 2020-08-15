@@ -1,12 +1,12 @@
 ﻿using Android.OS;
 using Android.Runtime;
-using Android.Support.Design.Widget;
-using Android.Support.V4.View;
 using Android.Views;
 using Android.Widget;
 using AndroidX.DynamicAnimation;
-using MvvmCross.Droid.Support.V4;
+using AndroidX.ViewPager.Widget;
+using Google.Android.Material.Tabs;
 using MvvmCross.Platforms.Android.Presenters.Attributes;
+using MvvmCross.Platforms.Android.Views.ViewPager;
 using MvvmCross.ViewModels;
 using ReLearn.API.Database;
 using ReLearn.Core.ViewModels;
@@ -50,7 +50,7 @@ namespace ReLearn.Droid.Views.SelectDictionary
                 new MvxViewPagerFragmentInfo("", "", typeof(TabLanguageFragment), new MvxViewModelRequest(typeof(DictionaryLanguageViewModel))),
                 new MvxViewPagerFragmentInfo("", "", typeof(TabImageFragment), new MvxViewModelRequest(typeof(DictionaryImageViewModel)))
             };
-            viewPager.Adapter = new MvxFragmentStatePagerAdapter(Activity, ChildFragmentManager, fragments);
+            viewPager.Adapter = new MvxCachingFragmentStatePagerAdapter(Activity, ChildFragmentManager, fragments);
             var tabLayout = view.FindViewById<TabLayout>(Resource.Id.tablayout);
             tabLayout.SetupWithViewPager(viewPager);
             tabLayout.GetTabAt(tabLayout.TabCount - 2).SetIcon(Resource.Drawable.ic_dictionary_languages);

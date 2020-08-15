@@ -1,11 +1,12 @@
 ﻿using Android.Animation;
 using Android.Content.Res;
 using Android.OS;
-using Android.Support.V7.Widget;
 using Android.Views;
-using MvvmCross.Droid.Support.V4;
-using MvvmCross.Droid.Support.V7.AppCompat;
+using AndroidX.AppCompat.Widget;
 using MvvmCross.Platforms.Android.Binding.BindingContext;
+using MvvmCross.Platforms.Android.Views;
+using MvvmCross.Platforms.Android.Views.AppCompat;
+using MvvmCross.Platforms.Android.Views.Fragments;
 using MvvmCross.ViewModels;
 using ReLearn.Droid.Services;
 using System.Threading.Tasks;
@@ -26,7 +27,7 @@ namespace ReLearn.Droid.Views.Base
         protected abstract int FragmentId { get; }
         protected abstract int Toolbar { get; }
 
-        public MvxAppCompatActivity ParentActivity => (MvxAppCompatActivity)Activity;
+        public MvxActivity ParentActivity => (MvxActivity)Activity;
 
         public override void OnCreate(Bundle savedInstanceState)
         {

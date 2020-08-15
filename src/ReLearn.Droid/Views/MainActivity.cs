@@ -2,24 +2,25 @@
 using Android.App;
 using Android.Content.PM;
 using Android.OS;
-using Android.Support.V4.View;
-using Android.Support.V4.Widget;
 using Android.Views.InputMethods;
+using AndroidX.Core.View;
+using AndroidX.DrawerLayout.Widget;
 using Microsoft.AppCenter;
 using Microsoft.AppCenter.Analytics;
 using Microsoft.AppCenter.Crashes;
-using MvvmCross.Droid.Support.V7.AppCompat;
 using MvvmCross.Platforms.Android.Presenters.Attributes;
+using MvvmCross.Platforms.Android.Views;
 using ReLearn.Core.ViewModels;
 using ReLearn.Droid.Services;
+using static AndroidX.Fragment.App.FragmentManager;
 
 namespace ReLearn.Droid.Views
 {
     [MvxActivityPresentation]
     [Activity(Label = "", ScreenOrientation = ScreenOrientation.Portrait,
         ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.Locale)]
-    public class MainActivity : MvxAppCompatActivity<MainViewModel>, INavigationActivity,
-         Android.Support.V4.App.FragmentManager.IOnBackStackChangedListener
+    public class MainActivity : MvxActivity<MainViewModel>, INavigationActivity,
+         IOnBackStackChangedListener
     {
         public DrawerLayout DrawerLayout { get; set; }
 

@@ -2,14 +2,14 @@
 using Android.Graphics.Drawables;
 using Android.Views;
 using AndroidX.DynamicAnimation;
-using MvvmCross.Droid.Support.V7.AppCompat;
+using MvvmCross.Platforms.Android.Views;
 using MvvmCross.ViewModels;
 using System;
 using System.Threading.Tasks;
 
 namespace ReLearn.Droid.Views.Facade
 {
-    public abstract class MvxAppCompatActivityBlitzPoll<ViewModel> : MvxAppCompatActivity<ViewModel>
+    public abstract class MvxAppCompatActivityBlitzPoll<ViewModel> : MvxActivity<ViewModel>
         where ViewModel : class, IMvxViewModel
     {
         protected readonly float _displayHeight = Application.Context.Resources.DisplayMetrics.HeightPixels;

@@ -6,10 +6,10 @@
     android:orientation		="vertical"
     android:layout_width	="match_parent"
     android:layout_height	="match_parent">
-	<android.support.design.widget.AppBarLayout
+	<com.google.android.material.appbar.AppBarLayout
 		android:layout_width	="match_parent"
 		android:layout_height	="wrap_content">
-		<android.support.v7.widget.Toolbar
+		<androidx.appcompat.widget.Toolbar
 			xmlns:local				="http://schemas.android.com/apk/res-auto"
 			android:id				="@+id/toolbar_images_blitz_poll"
 			android:theme			="@style/ToolbarStyle"
@@ -26,8 +26,8 @@
 				android:layout_width	="match_parent"
 				android:layout_height	="match_parent"
 			/>
-		</android.support.v7.widget.Toolbar>
-	</android.support.design.widget.AppBarLayout>
+		</androidx.appcompat.widget.Toolbar>
+	</com.google.android.material.appbar.AppBarLayout>
 	<RelativeLayout
 		android:id				="@+id/RelativeLayoutImagesBlitzPoll"
 		android:orientation		="vertical"

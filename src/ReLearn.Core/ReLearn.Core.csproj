@@ -15,19 +15,19 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Acr.UserDialogs" Version="7.1.0.442" />
-    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.9.8">
+    <PackageReference Include="Acr.UserDialogs" Version="7.1.0.446" />
+    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="3.3.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="MvvmCross" Version="6.4.2" />
-    <PackageReference Include="MvvmCross.Plugin.Color" Version="6.4.2" />
-    <PackageReference Include="MvvmCross.Plugin.Email" Version="6.4.2" />
-    <PackageReference Include="MvvmCross.Plugin.Json" Version="6.4.2" />
-    <PackageReference Include="MvvmCross.Plugin.JsonLocalization" Version="6.4.2" />
-    <PackageReference Include="MvvmCross.Plugin.ResourceLoader" Version="6.4.2" />
-    <PackageReference Include="MvvmCross.Plugin.ResxLocalization" Version="6.4.2" />
-    <PackageReference Include="MvvmCross.Plugin.WebBrowser" Version="6.4.2" />
+    <PackageReference Include="MvvmCross" Version="7.0.0" />
+    <PackageReference Include="MvvmCross.Plugin.Color" Version="7.0.0" />
+    <PackageReference Include="MvvmCross.Plugin.Email" Version="7.0.0" />
+    <PackageReference Include="MvvmCross.Plugin.Json" Version="7.0.0" />
+    <PackageReference Include="MvvmCross.Plugin.JsonLocalization" Version="7.0.0" />
+    <PackageReference Include="MvvmCross.Plugin.ResourceLoader" Version="7.0.0" />
+    <PackageReference Include="MvvmCross.Plugin.ResxLocalization" Version="7.0.0" />
+    <PackageReference Include="MvvmCross.Plugin.WebBrowser" Version="7.0.0" />
     <PackageReference Include="Xamarin.Yaml.Localization" Version="1.1.9" />
     <PackageReference Include="Xamarin.Yaml.Parser" Version="1.1.9" />
   </ItemGroup>

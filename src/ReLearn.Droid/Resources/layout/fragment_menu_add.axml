@@ -8,10 +8,10 @@
     android:layout_height	="match_parent"
     android:minWidth		="25px"
     android:minHeight		="25px">
-	<android.support.design.widget.AppBarLayout
+	<com.google.android.material.appbar.AppBarLayout
 		android:layout_width	="match_parent"
 		android:layout_height	="wrap_content">
-		<android.support.v7.widget.Toolbar 
+		<androidx.appcompat.widget.Toolbar 
 			android:id				="@+id/toolbar_add"
 			android:theme			="@style/ToolbarStyle"	
 			android:background		="@drawable/background_toolbar" 
@@ -26,8 +26,8 @@
 				android:layout_height	="match_parent"
                 local:MvxBind           ="Text Title"
                 tools:text              ="Addition"/>
-		</android.support.v7.widget.Toolbar>
-	</android.support.design.widget.AppBarLayout>
+		</androidx.appcompat.widget.Toolbar >
+	</com.google.android.material.appbar.AppBarLayout>
     <ScrollView
         android:layout_width ="match_parent"
         android:layout_height="match_parent">

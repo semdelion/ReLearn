@@ -12,7 +12,6 @@ using ReLearn.Droid.Helpers;
 using ReLearn.Droid.Views.Facade;
 using System;
 using System.Threading.Tasks;
-using Toolbar = Android.Support.V7.Widget.Toolbar;
 
 namespace ReLearn.Droid.Views.Images
 {
@@ -117,7 +116,7 @@ namespace ReLearn.Droid.Views.Images
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.activity_images_blitz_poll);
-            var toolbarMain = FindViewById<Toolbar>(Resource.Id.toolbar_images_blitz_poll);
+            var toolbarMain = FindViewById<AndroidX.AppCompat.Widget.Toolbar>(Resource.Id.toolbar_images_blitz_poll);
             SetSupportActionBar(toolbarMain);
             SupportActionBar.SetDisplayHomeAsUpEnabled(true); // отображаем кнопку домой
 

@@ -1,6 +1,6 @@
 ﻿using Android.App;
 using Android.Widget;
-using MvvmCross.Droid.Support.V7.AppCompat;
+using MvvmCross.Platforms.Android.Views;
 using MvvmCross.ViewModels;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -19,7 +19,7 @@ namespace ReLearn.Droid.Views.Facade
         public StateButton State { get; set; }
     }
 
-    public abstract class MvxAppCompatActivityRepeat<ViewModel> : MvxAppCompatActivity<ViewModel>
+    public abstract class MvxAppCompatActivityRepeat<ViewModel> : MvxActivity<ViewModel>
         where ViewModel : class, IMvxViewModel
     {
         protected readonly float _displayWidth = Application.Context.Resources.DisplayMetrics.WidthPixels;
