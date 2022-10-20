@@ -1,7 +1,6 @@
 ﻿using MvvmCross;
 using MvvmCross.Commands;
-//TODUPDATE2
-//using MvvmCross.Plugin.WebBrowser;
+using MvvmCross.Plugin.WebBrowser;
 using ReLearn.Core.ViewModels.Base;
 
 namespace ReLearn.Core.ViewModels.MainMenu
@@ -21,8 +20,7 @@ namespace ReLearn.Core.ViewModels.MainMenu
         #region Private
         private void SupportProject()
         {
-            //TODUPDATE2
-            //Mvx.IoCProvider.Resolve<IMvxWebBrowserTask>().ShowWebPage("http://www.donationalerts.ru/r/semdelionteam");
+            Mvx.IoCProvider.Resolve<IMvxWebBrowserTask>().ShowWebPage("http://www.donationalerts.ru/r/semdelionteam");
         }
         #endregion
     }

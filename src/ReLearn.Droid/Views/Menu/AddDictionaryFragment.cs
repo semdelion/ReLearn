@@ -5,6 +5,7 @@ using Android.Views;
 using AndroidX.AppCompat.Widget;
 using MvvmCross.Platforms.Android.Binding.BindingContext;
 using MvvmCross.Platforms.Android.Presenters.Attributes;
+using MvvmCross.Platforms.Android.Views.AppCompat;
 using ReLearn.Core.ViewModels;
 using ReLearn.Core.ViewModels.MainMenu;
 using ReLearn.Droid.Services;
@@ -31,21 +32,20 @@ namespace ReLearn.Droid.Views.Menu
             base.OnCreateView(inflater, container, savedInstanceState);
             var view = this.BindingInflate(FragmentId, null);
             _toolbar = view.FindViewById<Toolbar>(Toolbar);
-            //TODOUPDATE2
-            //if (_toolbar != null)
-            //{
-            //    ParentActivity.SetSupportActionBar(_toolbar);
-            //    ParentActivity.SupportActionBar.SetHomeButtonEnabled(true);
-            //    ParentActivity.SupportActionBar.SetDisplayHomeAsUpEnabled(true);
-            //    _drawerToggle = new MvxActionBarDrawerToggle(
-            //        Activity, // host Activity
-            //        (ParentActivity as INavigationActivity).DrawerLayout, // DrawerLayout object
-            //                                                              // nav drawer icon to replace 'Up' caret
-            //        Resource.String.navigation_drawer_open,
-            //        Resource.String.navigation_drawer_close);
-            //}
+            if (_toolbar != null)
+            {
+                ParentActivity.SetSupportActionBar(_toolbar);
+                ParentActivity.SupportActionBar.SetHomeButtonEnabled(true);
+                ParentActivity.SupportActionBar.SetDisplayHomeAsUpEnabled(true);
+                _drawerToggle = new MvxActionBarDrawerToggle(
+                    Activity, // host Activity
+                    (ParentActivity as INavigationActivity).DrawerLayout, // DrawerLayout object
+                                                                          // nav drawer icon to replace 'Up' caret
+                    Resource.String.navigation_drawer_open,
+                    Resource.String.navigation_drawer_close);
+            }
 
-            //SetHomeAsUp(ParentActivity.SupportFragmentManager.BackStackEntryCount != 0);
+            SetHomeAsUp(ParentActivity.SupportFragmentManager.BackStackEntryCount != 0);
             return view;
         }
 
@@ -61,12 +61,11 @@ namespace ReLearn.Droid.Views.Menu
                 alert.Show();
                 return true;
             }
-            //TODOUPDATE2
-            //if (ParentActivity.SupportFragmentManager.BackStackEntryCount >= 1)
-            //{
-            //    ParentActivity.SupportFragmentManager.PopBackStack();
-            //    return true;
-            //}
+            if (ParentActivity.SupportFragmentManager.BackStackEntryCount >= 1)
+            {
+                ParentActivity.SupportFragmentManager.PopBackStack();
+                return true;
+            }
 
             return false;
         }

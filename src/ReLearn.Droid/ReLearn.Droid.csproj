@@ -166,6 +166,9 @@
     <PackageReference Include="MvvmCross">
       <Version>8.0.2</Version>
     </PackageReference>
+    <PackageReference Include="MvvmCross.Plugin.Email">
+      <Version>8.0.2</Version>
+    </PackageReference>
     <PackageReference Include="MvvmCross.Plugin.WebBrowser">
       <Version>8.0.2</Version>
     </PackageReference>
