@@ -109,10 +109,10 @@ namespace ReLearn.Droid
             };
         }
 
-        public void Include(MvxNavigationService service, IMvxViewModelLoader loader)
-        {
-            service = new MvxNavigationService(null, loader);
-        }
+        //public void Include(MvxNavigationService service, IMvxViewModelLoader loader)
+        //{
+        //    service = new MvxNavigationService(null, loader);
+        //}
 
         public void Include(ConsoleColor color)
         {

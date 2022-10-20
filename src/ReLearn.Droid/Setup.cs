@@ -1,4 +1,5 @@
-﻿using MvvmCross;
+﻿using Microsoft.Extensions.Logging;
+using MvvmCross;
 using MvvmCross.Converters;
 using MvvmCross.IoC;
 using MvvmCross.Localization;
@@ -9,18 +10,21 @@ using ReLearn.Core.Provider;
 using ReLearn.Core.Services;
 using ReLearn.Droid.Implements;
 using ReLearn.Droid.Services;
+using Serilog;
+using Serilog.Extensions.Logging;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Reflection;
+using System.Security.Cryptography;
 
 namespace ReLearn.Droid
 {
     public class Setup : MvxAndroidSetup<Core.App>
     {
         private readonly App _app = new App();
-        protected override void InitializeFirstChance()
+        protected override void InitializeFirstChance(IMvxIoCProvider iocProvider)
         {
-            base.InitializeFirstChance();
+            base.InitializeFirstChance(iocProvider);
             Mvx.IoCProvider.RegisterType<IMessageCore>(() => new MessageDroid());
             Mvx.IoCProvider.RegisterType<ITextToSpeech>(() => new TextToSpeech());
             Mvx.IoCProvider.RegisterSingleton<INavigatiomViewUpdater>(() => new NavigatiomViewUpdater());
@@ -38,6 +42,21 @@ namespace ReLearn.Droid
             Mvx.IoCProvider.LazyConstructAndRegisterSingleton<IInteractionProvider, InteractionProvider>();
             _app.InitializeCultureInfo(new CultureInfo(API.Settings.Currentlanguage));
         }
-        protected override IMvxApplication CreateApp() => _app;
+        protected override IMvxApplication CreateApp(IMvxIoCProvider iocProvider) => _app;
+
+        protected override ILoggerProvider CreateLogProvider()
+        {
+            return new SerilogLoggerProvider();
+        }
+
+        protected override ILoggerFactory CreateLogFactory()
+        {
+			Log.Logger = new LoggerConfiguration()
+			   .MinimumLevel.Debug()
+			   .WriteTo.AndroidLog()
+			   .CreateLogger();
+
+			return new SerilogLoggerFactory();
+        }
     }
 }

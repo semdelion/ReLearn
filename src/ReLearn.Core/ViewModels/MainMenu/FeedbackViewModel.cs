@@ -1,7 +1,8 @@
 ﻿using Acr.UserDialogs;
 using MvvmCross;
 using MvvmCross.Commands;
-using MvvmCross.Plugin.Email;
+//TODUPDATE2
+//using MvvmCross.Plugin.Email;
 using ReLearn.Core.ViewModels.Base;
 
 namespace ReLearn.Core.ViewModels.MainMenu
@@ -39,8 +40,9 @@ namespace ReLearn.Core.ViewModels.MainMenu
             }
             else
             {
-                Mvx.IoCProvider.Resolve<IMvxComposeEmailTask>().ComposeEmail("SemdelionTeam@gmail.com",
-                    subject: "Hello, SemdelionTeam!", body: Message);
+                //TODUPDATE2
+                //Mvx.IoCProvider.Resolve<IMvxComposeEmailTask>().ComposeEmail("SemdelionTeam@gmail.com",
+                //    subject: "Hello, SemdelionTeam!", body: Message);
                 Message = "";
             }
         }
