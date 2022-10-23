@@ -11,7 +11,7 @@
 		android:layout_height	="wrap_content">
 		<androidx.appcompat.widget.Toolbar
 			android:id				="@+id/toolbar_setting"
-			local:navigationIcon	="@mipmap/ic_arrow_back" 
+			local:navigationIcon	="@drawable/ic_arrow_back" 
 			android:theme			="@style/ToolbarStyle"		
 			android:background		="@drawable/background_toolbar"
 			android:layout_width	="match_parent"

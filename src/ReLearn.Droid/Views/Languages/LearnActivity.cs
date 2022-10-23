@@ -19,7 +19,7 @@ namespace ReLearn.Droid.Views.Languages
         {
             ViewModel.VoiceEnable = !ViewModel.VoiceEnable;
             FindViewById<ImageButton>(Resource.Id.Button_Speak_TurnOn_TurnOff).SetImageDrawable(
-                GetDrawable(ViewModel.VoiceEnable ? Resource.Mipmap.speak_on : Resource.Mipmap.speak_off));
+                GetDrawable(ViewModel.VoiceEnable ? Resource.Drawable.speak_on : Resource.Drawable.speak_off));
         }
 
         protected override void OnCreate(Bundle savedInstanceState)

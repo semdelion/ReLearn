@@ -8,35 +8,35 @@
     <group android:checkableBehavior  ="single">
         <item
             android:id    ="@+id/study"
-            android:icon  ="@mipmap/ic_study"/>
+            android:icon  ="@drawable/ic_study"/>
         <item
             android:id    ="@+id/dictionaries"
-            android:icon  ="@mipmap/ic_dictionary" />
+            android:icon  ="@drawable/ic_dictionary" />
         <item
             android:id    ="@+id/statistics"
-            android:icon  ="@mipmap/ic_statistics" />
+            android:icon  ="@drawable/ic_statistics" />
         <item
             android:id    ="@+id/view_dictionary"
-            android:icon  ="@mipmap/ic_list_dictionary" />
+            android:icon  ="@drawable/ic_list_dictionary" />
         <item
             android:id    ="@+id/add_word"
-            android:icon  ="@mipmap/ic_add_words_to_dictionary" />
+            android:icon  ="@drawable/ic_add_words_to_dictionary" />
         <group android:id ="@+id/nav_footer">
             <item
                 android:id    ="@+id/settings_menu"
-                android:icon  ="@mipmap/ic_settings"/>
+                android:icon  ="@drawable/ic_settings"/>
             <item
                 android:id    ="@+id/feedback"
-                android:icon  ="@mipmap/ic_feedback"/>
+                android:icon  ="@drawable/ic_feedback"/>
             <item
                 android:id    ="@+id/about_us"
-                android:icon  ="@mipmap/ic_about_us" />
+                android:icon  ="@drawable/ic_about_us" />
         </group>
     </group>
 </menu>
 
 <!--<item
    android:id       ="@+id/achievements"
-   android:icon     ="@+mipmap/achiev"
+   android:icon     ="@drawable/achiev"
    app:showAsAction ="always"
   />  -->

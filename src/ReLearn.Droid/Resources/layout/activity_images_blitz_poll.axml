@@ -14,7 +14,7 @@
 			android:id				="@+id/toolbar_images_blitz_poll"
 			android:theme			="@style/ToolbarStyle"
 			android:background		="@drawable/background_toolbar"
-			local:navigationIcon	="@mipmap/ic_arrow_back"
+			local:navigationIcon	="@drawable/ic_arrow_back"
 			android:layout_width	="match_parent"
 			android:layout_height	="@dimen/toolbar_height"
 			local:buttonGravity		="bottom">

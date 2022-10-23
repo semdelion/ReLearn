@@ -70,7 +70,10 @@
   <ItemGroup>
     <Compile Include="Adapters\BackgroundConstructor.cs" />
     <Compile Include="Helpers\Paints.cs" />
+    <Compile Include="Implements\Insets.cs" />
     <Compile Include="Implements\InteractionProvider.cs" />
+    <Compile Include="Implements\Listeners\ApplyWindowInsetsListener.cs" />
+    <Compile Include="Implements\Listeners\InsetsAttachStateChangeListener.cs" />
     <Compile Include="Services\NavigatiomViewUpdater.cs" />
     <Compile Include="Statistics\BaseStatistics.cs" />
     <Compile Include="Statistics\DrawChart.cs" />
@@ -132,7 +135,6 @@
   <ItemGroup>
     <AndroidResource Include="Resources\values\colors.xml" />
     <AndroidResource Include="Resources\values\dimens.xml" />
-    <AndroidResource Include="Resources\values\ic_launcher_background.xml" />
     <AndroidResource Include="Resources\values\strings.xml" />
     <AndroidResource Include="Resources\values\styles.xml" />
     <AndroidResource Include="Resources\mipmap-anydpi-v26\ic_launcher.xml" />
@@ -261,109 +263,109 @@
     <AndroidResource Include="Resources\menu\settings.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-hdpi\achiev.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\achiev.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-hdpi\ic_dictionary.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_dictionary.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-hdpi\instruction.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\instruction.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-hdpi\replenishment.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\replenishment.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-hdpi\search.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\search.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-hdpi\speak_off.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\speak_off.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-hdpi\speak_on.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\speak_on.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-mdpi\achiev.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\achiev.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-mdpi\ic_dictionary.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_dictionary.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-mdpi\instruction.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\instruction.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-mdpi\replenishment.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\replenishment.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-mdpi\search.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\search.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-mdpi\speak_off.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\speak_off.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-mdpi\speak_on.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\speak_on.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xhdpi\achiev.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\achiev.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xhdpi\ic_dictionary.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_dictionary.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xhdpi\instruction.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\instruction.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xhdpi\replenishment.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\replenishment.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xhdpi\search.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\search.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xhdpi\speak_off.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\speak_off.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xhdpi\speak_on.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\speak_on.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xxhdpi\achiev.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\achiev.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xxhdpi\ic_dictionary.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_dictionary.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xxhdpi\instruction.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\instruction.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xxhdpi\replenishment.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\replenishment.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xxhdpi\search.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\search.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xxhdpi\speak_off.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\speak_off.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xxhdpi\speak_on.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\speak_on.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xxxhdpi\achiev.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\achiev.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_dictionary.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_dictionary.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xxxhdpi\instruction.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\instruction.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xxxhdpi\replenishment.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\replenishment.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xxxhdpi\search.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\search.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xxxhdpi\speak_off.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\speak_off.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xxxhdpi\speak_on.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\speak_on.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\setting.txt" />
@@ -2739,94 +2741,94 @@
     <AndroidResource Include="Resources\menu\activity_main_drawer.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-hdpi\ic_statistics.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_statistics.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-mdpi\ic_statistics.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_statistics.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xhdpi\ic_statistics.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_statistics.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xxhdpi\ic_statistics.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_statistics.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_statistics.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_statistics.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_list_dictionary.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_list_dictionary.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xxhdpi\ic_list_dictionary.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_list_dictionary.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xhdpi\ic_list_dictionary.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_list_dictionary.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-mdpi\ic_list_dictionary.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_list_dictionary.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-hdpi\ic_list_dictionary.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_list_dictionary.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-hdpi\ic_add_words_to_dictionary.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_add_words_to_dictionary.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-mdpi\ic_add_words_to_dictionary.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_add_words_to_dictionary.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xhdpi\ic_add_words_to_dictionary.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_add_words_to_dictionary.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xxhdpi\ic_add_words_to_dictionary.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_add_words_to_dictionary.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_add_words_to_dictionary.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_add_words_to_dictionary.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-hdpi\ic_feedback.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_feedback.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-mdpi\ic_feedback.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_feedback.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xhdpi\ic_feedback.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_feedback.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_settings.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_settings.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xxhdpi\ic_settings.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_settings.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xhdpi\ic_settings.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_settings.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-mdpi\ic_settings.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_settings.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-hdpi\ic_settings.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_settings.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xxhdpi\ic_feedback.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_feedback.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_feedback.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_feedback.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-hdpi\ic_about_us.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_about_us.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-mdpi\ic_about_us.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_about_us.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xhdpi\ic_about_us.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_about_us.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xxhdpi\ic_about_us.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_about_us.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_about_us.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_about_us.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\background_navigation_header.png" />
@@ -2857,19 +2859,19 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-hdpi\ic_study.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_study.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-mdpi\ic_study.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_study.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xhdpi\ic_study.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_study.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xxhdpi\ic_study.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_study.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_study.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_study.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\fragment_menu_add.axml">
@@ -2882,37 +2884,37 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-hdpi\ic_sort.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_sort.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-mdpi\ic_sort.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_sort.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xhdpi\ic_sort.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_sort.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xxhdpi\ic_sort.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_sort.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_sort.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_sort.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\color\drawer_item.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-hdpi\ic_arrow_back.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_arrow_back.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-mdpi\ic_arrow_back.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_arrow_back.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xhdpi\ic_arrow_back.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_arrow_back.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xxhdpi\ic_arrow_back.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_arrow_back.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_arrow_back.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_arrow_back.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\custom_thumb_switch.xml" />
@@ -2950,5 +2952,11 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ItemGroup>
     <AndroidAotProfile Include="$(MSBuildThisFileDirectory)custom.aprof" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\drawable-v21\" />
+    <Folder Include="Resources\values-v21\" />
+    <Folder Include="Resources\values-v29\" />
+    <Folder Include="Resources\values-v31\" />
   </ItemGroup>
 </Project>
