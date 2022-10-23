@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <style
+        name  ="AppTheme"
+        parent="SemdelionTheme">
+		<item
+			name="colorPrimary">@android:color/transparent</item>
+		<item
+			name="android:forceDarkAllowed" targetApi="q">false</item>
+		<item
+			name="android:statusBarColor">#50000000</item>
+		<item
+			name="android:windowTranslucentStatus">true</item>
+		<item
+			name="android:windowDrawsSystemBarBackgrounds">true</item>
+		<item
+			name="android:navigationBarColor">#00ffffff</item>
+		<item
+			name="android:windowLightStatusBar">true</item>
+    </style>
+</resources>

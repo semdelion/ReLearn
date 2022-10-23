@@ -2,6 +2,7 @@
 using Android.App;
 using Android.Content.PM;
 using Android.OS;
+using Android.Views;
 using Android.Views.InputMethods;
 using AndroidX.AppCompat.App;
 using AndroidX.Core.View;
@@ -18,8 +19,11 @@ using FragmentManager = AndroidX.Fragment.App.FragmentManager;
 namespace ReLearn.Droid.Views
 {
     [MvxActivityPresentation]
-    [Activity(Label = "", ScreenOrientation = ScreenOrientation.Portrait,
-        ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.Locale)]
+    [Activity(Label = ""
+              , Theme = "@style/AppTheme"
+              , LaunchMode = LaunchMode.SingleTask
+              , ScreenOrientation = ScreenOrientation.Portrait
+              , WindowSoftInputMode = SoftInput.AdjustResize)]
     public class MainActivity : MvxActivity<MainViewModel>, INavigationActivity,
          FragmentManager.IOnBackStackChangedListener
     {

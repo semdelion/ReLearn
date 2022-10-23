@@ -3,18 +3,21 @@
 <resources>
   <style
     name="AppTheme"
-    parent="Theme.AppCompat.Light.DarkActionBar">
-    <item name="android:windowBackground">@drawable/background_main</item>
-    <item name="colorPrimary">@android:color/transparent</item>
-    <item name="windowActionBar">false</item>
-    <item name="windowNoTitle">true</item>
-    <item name="android:textSize">25dp</item>
-    <item name="android:actionMenuTextColor">@color/text_white</item>
-    <item name="android:statusBarColor">#80000000</item>
-    <item name="android:fontFamily">@font/myriadpro</item>
-    <item name="android:windowTranslucentStatus">true</item>
-    <item name="android:navigationBarColor">#30000000</item>
+    parent="SemdelionTheme">
   </style>
+
+<style
+	name="SemdelionTheme"
+	parent="Theme.AppCompat.Light.NoActionBar">
+	<item name="android:windowBackground">@drawable/background_main</item>
+	<item name="colorPrimary">@android:color/transparent</item>
+	<item name="android:textSize">25dp</item>
+	<item name="android:actionMenuTextColor">@color/text_white</item>
+	<item name="android:statusBarColor">#80000000</item>
+	<item name="android:fontFamily">@font/myriadpro</item>
+	<item name="android:windowTranslucentStatus">true</item>
+	<item name="android:navigationBarColor">#30000000</item>
+</style>
 
   <style
     name="myPopupTheme">
@@ -25,7 +28,7 @@
 
   <style
     name="ToolbarStyle"
-    parent="Theme.AppCompat.NoActionBar">
+    parent="Theme.AppCompat.Light.NoActionBar">
     <item name="android:textColor">@color/text_white</item>
     <item name="android:colorBackground">#283544</item>
     <item name="android:textColorPrimary">@color/text_white</item>
@@ -48,7 +51,7 @@
 
   <style
     name="MenuStyle"
-    parent="Theme.AppCompat.NoActionBar">
+    parent="Theme.AppCompat.Light.NoActionBar">
     <item name="android:textColor">@color/text_white</item>
     <item name="android:textSize">25dp</item>
     <item name="android:colorPrimary">#3F51B5</item>

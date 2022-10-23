@@ -2955,8 +2955,14 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable-v21\" />
-    <Folder Include="Resources\values-v21\" />
-    <Folder Include="Resources\values-v29\" />
-    <Folder Include="Resources\values-v31\" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values-v31\theme.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values-v21\theme.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values-v29\theme.xml" />
   </ItemGroup>
 </Project>
