@@ -5,29 +5,28 @@ using Android.Util;
 using Android.Views;
 using Android.Widget;
 using Java.Interop;
-using MvvmCross.Droid.Support.V7.AppCompat;
+using MvvmCross.Platforms.Android.Views;
 using ReLearn.Core.ViewModels.Languages;
 using ReLearn.Droid.Helpers;
-using Toolbar = Android.Support.V7.Widget.Toolbar;
 
 namespace ReLearn.Droid.Views.Languages
 {
     [Activity(Label = "", ScreenOrientation = ScreenOrientation.Portrait)]
-    public class LearnActivity : MvxAppCompatActivity<LearnViewModel>
+    public class LearnActivity : MvxActivity<LearnViewModel>
     {
         [Export("Button_Languages_Learn_Voice_Enable")]
         public void Button_Languages_Learn_Voice_Enable(View v)
         {
             ViewModel.VoiceEnable = !ViewModel.VoiceEnable;
             FindViewById<ImageButton>(Resource.Id.Button_Speak_TurnOn_TurnOff).SetImageDrawable(
-                GetDrawable(ViewModel.VoiceEnable ? Resource.Mipmap.speak_on : Resource.Mipmap.speak_off));
+                GetDrawable(ViewModel.VoiceEnable ? Resource.Drawable.speak_on : Resource.Drawable.speak_off));
         }
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.activity_languages_learn);
-            var toolbarMain = FindViewById<Toolbar>(Resource.Id.toolbar_languages_learn);
+            var toolbarMain = FindViewById<AndroidX.AppCompat.Widget.Toolbar>(Resource.Id.toolbar_languages_learn);
             SetSupportActionBar(toolbarMain);
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
             var displayMetrics = new DisplayMetrics();

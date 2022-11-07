@@ -10,7 +10,6 @@ using ReLearn.Droid.Helpers;
 using ReLearn.Droid.Views.Facade;
 using System;
 using System.Threading.Tasks;
-using Toolbar = Android.Support.V7.Widget.Toolbar;
 
 namespace ReLearn.Droid.Views.Languages
 {
@@ -91,7 +90,7 @@ namespace ReLearn.Droid.Views.Languages
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.activity_languages_blitz_poll);
-            var toolbarMain = FindViewById<Toolbar>(Resource.Id.toolbar_languages_blitz_poll);
+            var toolbarMain = FindViewById<AndroidX.AppCompat.Widget.Toolbar>(Resource.Id.toolbar_languages_blitz_poll);
             SetSupportActionBar(toolbarMain);
             SupportActionBar.SetDisplayHomeAsUpEnabled(true); // отображаем кнопку домой
 

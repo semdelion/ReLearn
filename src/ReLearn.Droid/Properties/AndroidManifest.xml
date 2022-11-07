@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="36" package="com.SemdelionTeam.ReLearn" android:installLocation="auto" android:versionName="1.2.0">
-	<uses-sdk android:minSdkVersion="21" android:targetSdkVersion="29"></uses-sdk>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="39" package="com.SemdelionTeam.ReLearn" android:installLocation="auto" android:versionName="1.2.39">
+	<uses-sdk android:minSdkVersion="21" android:targetSdkVersion="33"></uses-sdk>
 	<uses-permission android:name="android.permission.INTERNET" />
-	<application android:largeHeap="true" android:usesCleartextTraffic="true" android:hardwareAccelerated="true" android:allowBackup="true" android:icon="@drawable/icon" android:label="@string/app_name" android:roundIcon="@mipmap/ic_launcher_round" android:supportsRtl="true" android:theme="@style/AppTheme"></application>
+	<application android:largeHeap="true" android:usesCleartextTraffic="true" android:hardwareAccelerated="true" android:allowBackup="true" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:roundIcon="@mipmap/ic_launcher_round" android:supportsRtl="true" android:theme="@style/AppTheme"></application>
 </manifest>

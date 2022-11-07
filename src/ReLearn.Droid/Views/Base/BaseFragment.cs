@@ -1,12 +1,14 @@
 ﻿using Android.Animation;
 using Android.Content.Res;
 using Android.OS;
-using Android.Support.V7.Widget;
 using Android.Views;
-using MvvmCross.Droid.Support.V4;
-using MvvmCross.Droid.Support.V7.AppCompat;
+using AndroidX.AppCompat.Widget;
 using MvvmCross.Platforms.Android.Binding.BindingContext;
+using MvvmCross.Platforms.Android.Views;
+using MvvmCross.Platforms.Android.Views.AppCompat;
+using MvvmCross.Platforms.Android.Views.Fragments;
 using MvvmCross.ViewModels;
+using ReLearn.Droid.Implements;
 using ReLearn.Droid.Services;
 using System.Threading.Tasks;
 
@@ -18,6 +20,8 @@ namespace ReLearn.Droid.Views.Base
         protected Toolbar _toolbar;
         protected bool isHomeAsUp;
 
+        protected virtual IViewInsets Insets { get; set; }
+
         protected MvxBaseFragment()
         {
             RetainInstance = true;
@@ -26,7 +30,7 @@ namespace ReLearn.Droid.Views.Base
         protected abstract int FragmentId { get; }
         protected abstract int Toolbar { get; }
 
-        public MvxAppCompatActivity ParentActivity => (MvxAppCompatActivity)Activity;
+        public MvxActivity ParentActivity => (MvxActivity)Activity;
 
         public override void OnCreate(Bundle savedInstanceState)
         {
@@ -55,8 +59,21 @@ namespace ReLearn.Droid.Views.Base
                 (ParentActivity as INavigationActivity).DrawerLayout.AddDrawerListener(_drawerToggle);
             }
 
+            SetView(view);
+            SetInsets(view);
+
             Task.Run(() => SetHomeAsUp(ParentActivity.SupportFragmentManager.BackStackEntryCount == 0 ? false : true));
             return view;
+        }
+
+        protected virtual void SetView(View view)
+        {
+        }
+
+        protected virtual void SetInsets(View view)
+        {
+            Insets ??= new DefaultViewInsets(view);
+            Insets.Apply();
         }
 
         public override void OnConfigurationChanged(Configuration newConfig)

@@ -1,11 +1,11 @@
 ﻿using Android.App;
 using Android.OS;
 using Android.Runtime;
-using Android.Support.V7.Widget;
 using Android.Views;
-using MvvmCross.Droid.Support.V7.AppCompat;
+using AndroidX.AppCompat.Widget;
 using MvvmCross.Platforms.Android.Binding.BindingContext;
 using MvvmCross.Platforms.Android.Presenters.Attributes;
+using MvvmCross.Platforms.Android.Views.AppCompat;
 using ReLearn.Core.ViewModels;
 using ReLearn.Core.ViewModels.MainMenu;
 using ReLearn.Droid.Services;
@@ -45,7 +45,7 @@ namespace ReLearn.Droid.Views.Menu
                     Resource.String.navigation_drawer_close);
             }
 
-            SetHomeAsUp(ParentActivity.SupportFragmentManager.BackStackEntryCount == 0 ? false : true);
+            SetHomeAsUp(ParentActivity.SupportFragmentManager.BackStackEntryCount != 0);
             return view;
         }
 
@@ -61,7 +61,6 @@ namespace ReLearn.Droid.Views.Menu
                 alert.Show();
                 return true;
             }
-
             if (ParentActivity.SupportFragmentManager.BackStackEntryCount >= 1)
             {
                 ParentActivity.SupportFragmentManager.PopBackStack();

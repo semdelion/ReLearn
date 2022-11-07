@@ -1,11 +1,11 @@
 ﻿using Android.Graphics;
 using Android.OS;
 using Android.Runtime;
-using Android.Support.Design.Widget;
-using Android.Support.V4.View;
 using Android.Views;
-using MvvmCross.Droid.Support.V4;
+using AndroidX.ViewPager.Widget;
+using Google.Android.Material.Tabs;
 using MvvmCross.Platforms.Android.Presenters.Attributes;
+using MvvmCross.Platforms.Android.Views.ViewPager;
 using MvvmCross.ViewModels;
 using ReLearn.API.Database;
 using ReLearn.Core.ViewModels;
@@ -53,7 +53,7 @@ namespace ReLearn.Droid.Views.Statistics
                     new MvxViewPagerFragmentInfo("", "", typeof(TabMainFragment),  new MvxViewModelRequest(typeof(MainStatisticsViewModel))),
                     new MvxViewPagerFragmentInfo("", "", typeof(TabGeneralFragment),  new MvxViewModelRequest(typeof(GeneralStatisticsViewModel)))
                 };
-                viewPager.Adapter = new MvxFragmentStatePagerAdapter(Activity, ChildFragmentManager, fragments);
+                viewPager.Adapter = new MvxCachingFragmentStatePagerAdapter(Activity, ChildFragmentManager, fragments);
             }
 
             var tabLayout = view.FindViewById<TabLayout>(Resource.Id.tablayout);

@@ -2,7 +2,7 @@
 using Android.OS;
 using Android.Views;
 using Android.Widget;
-using MvvmCross.Droid.Support.V4;
+using MvvmCross.Platforms.Android.Views.Fragments;
 using ReLearn.API;
 using ReLearn.API.Database;
 using ReLearn.Core.ViewModels.MainMenu.SelectDictionary;

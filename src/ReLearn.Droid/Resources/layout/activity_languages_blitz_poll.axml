@@ -1,88 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
-    xmlns:android			    ="http://schemas.android.com/apk/res/android"
-    xmlns:local				    ="http://schemas.android.com/apk/res-auto"
-	  xmlns:tools				    ="http://schemas.android.com/tools"
+    xmlns:android		    ="http://schemas.android.com/apk/res/android"
+    xmlns:local				="http://schemas.android.com/apk/res-auto"
+	xmlns:tools				="http://schemas.android.com/tools"
     android:orientation		="vertical"
     android:layout_width	="match_parent"
     android:layout_height	="match_parent">
-	  <android.support.design.widget.AppBarLayout
-		    android:layout_width	="match_parent"
-		    android:layout_height	="wrap_content">
-		    <android.support.v7.widget.Toolbar
-			      xmlns:local				    ="http://schemas.android.com/apk/res-auto"
-			      android:id				    ="@+id/toolbar_languages_blitz_poll"
-			      android:theme			    ="@style/ToolbarStyle"
-			      android:background		="@drawable/background_toolbar"
-			      local:navigationIcon	="@mipmap/ic_arrow_back"
-			      android:layout_width	="match_parent"
-			      android:layout_height	="@dimen/toolbar_height"
-			      local:buttonGravity		="bottom">
-			      <TextView
-				        local:MvxBind			    ="Text TitleCount"
-				        tools:text				    ="Count 1/20"
-				        android:gravity			  ="bottom"
-				        android:paddingBottom	="12dp"
-				        android:layout_width	="match_parent"
-				        android:layout_height	="match_parent"
-			      />
-		    </android.support.v7.widget.Toolbar>
-	  </android.support.design.widget.AppBarLayout>
-	  <RelativeLayout
-		    xmlns:android			    ="http://schemas.android.com/apk/res/android"
-		    xmlns:local				    ="http://schemas.android.com/apk/res-auto"
-		    android:id				    ="@+id/RelativeLayoutLanguagesBlitzPoll"
-		    android:orientation		="vertical"
-		    android:layout_width	="match_parent"
-		    android:layout_height	="match_parent">
-		    <TextView
-			      local:MvxBind			        ="Text TimerText; TextColor NativeColor(CurrentColor)"
-			      android:id					      ="@+id/textView_Timer_language"
-			      tools:textColor			      ="@color/text_white"
-			      tools:text					      ="10:20"
-			      android:textSize			    ="30dp"
-			      android:textStyle			    ="bold"
-			      android:layout_width		  ="match_parent"
-			      android:layout_height		  ="50dp"
-			      android:layout_marginRight="100.0dp"
-			      android:layout_marginLeft	="100.0dp"
-			      android:layout_marginTop	="95.0dp"
-			      android:gravity				    = "center_horizontal|center"/>		
-		    <TableLayout
-			      android:layout_width		    ="match_parent"
-			      android:layout_height		    ="match_parent"
-			      android:layout_marginRight	="@dimen/margin_right"
-			      android:layout_marginLeft	  ="@dimen/margin_left"
-			      android:layout_marginBottom	="30dp"
-			      android:gravity				      ="bottom">
-			      <TableRow>
-				        <Button
-                    local:MvxBind           ="Text TextNegative"
-					          android:onClick				  ="Button_Languages_No_Click"
-					          android:id					    ="@+id/button_Languages_No"
-					          android:background			="@drawable/button_style_standard"
-					          android:textColor			  ="@color/text_white"
-					          tools:text				      ="No"
-					          android:fontFamily			="@font/myriadpro_semibold"
-					          android:textSize			  ="20dp"
-					          android:layout_width		="0dp"
-					          android:layout_weight		="0.5"
-					          android:layout_height		="@dimen/button_height"
-					          android:layout_marginRight	="5dp" />
-                <Button
-                    local:MvxBind           ="Text TextPositive"
-					          android:onClick				  ="Button_Languages_Yes_Click"
-					          android:id					    ="@+id/button_Languages_Yes"
-					          android:background			="@drawable/button_style_standard"
-					          android:textColor			  ="@color/text_white"
-					          tools:text				      ="Yes"
-					          android:fontFamily			="@font/myriadpro_semibold"
-					          android:textSize			  ="20dp"
-					          android:layout_width		="0dp"
-					          android:layout_weight		="0.5"
-					          android:layout_height		="@dimen/button_height"
-					          android:layout_marginLeft	="5dp"/>
-			        </TableRow>
-		      </TableLayout>
-	  </RelativeLayout>
+	<com.google.android.material.appbar.AppBarLayout
+		android:layout_width	="match_parent"
+		android:layout_height	="wrap_content">
+		<androidx.appcompat.widget.Toolbar
+			android:id				="@+id/toolbar_languages_blitz_poll"
+			android:theme			="@style/ToolbarStyle"
+			android:background		="@drawable/background_toolbar"
+			local:navigationIcon	="@drawable/ic_arrow_back"
+			android:layout_width	="match_parent"
+			android:layout_height	="@dimen/toolbar_height"
+			local:buttonGravity		="bottom">
+			<TextView
+				local:MvxBind			="Text TitleCount"
+				tools:text			    ="Count 1/20"
+				android:gravity			="bottom"
+				android:paddingBottom	="12dp"
+				android:layout_width	="match_parent"
+				android:layout_height	="match_parent"
+			/>
+		</androidx.appcompat.widget.Toolbar>
+	</com.google.android.material.appbar.AppBarLayout>
+	<RelativeLayout
+		android:id			    ="@+id/RelativeLayoutLanguagesBlitzPoll"
+		android:orientation		="vertical"
+		android:layout_width	="match_parent"
+		android:layout_height	="match_parent">
+		<TextView
+			local:MvxBind			  ="Text TimerText; TextColor NativeColor(CurrentColor)"
+			android:id				  ="@+id/textView_Timer_language"
+			tools:textColor			  ="@color/text_white"
+			tools:text				  ="10:20"
+			android:textSize		  ="30dp"
+			android:textStyle	      ="bold"
+			android:layout_width	  ="match_parent"
+			android:layout_height	  ="50dp"
+			android:layout_marginRight="100.0dp"
+			android:layout_marginLeft ="100.0dp"
+			android:layout_marginTop  ="95.0dp"
+			android:gravity			  = "center_horizontal|center"/>		
+		<TableLayout
+			android:layout_width	    ="match_parent"
+			android:layout_height		="match_parent"
+			android:layout_marginRight	="@dimen/margin_right"
+			android:layout_marginLeft	="@dimen/margin_left"
+			android:layout_marginBottom	="30dp"
+			android:gravity				="bottom">
+			<TableRow>
+				<Button
+					local:MvxBind               ="Text TextNegative"
+					android:onClick				="Button_Languages_No_Click"
+					android:id				    ="@+id/button_Languages_No"
+					android:background			="@drawable/button_style_standard"
+					android:textColor			="@color/text_white"
+					tools:text				    ="No"
+					android:fontFamily			="@font/myriadpro_semibold"
+					android:textSize			="20dp"
+					android:layout_width		="0dp"
+					android:layout_weight		="0.5"
+					android:layout_height		="@dimen/button_height"
+					android:layout_marginRight	="5dp" />
+				<Button
+					local:MvxBind               ="Text TextPositive"
+					android:onClick				="Button_Languages_Yes_Click"
+					android:id					="@+id/button_Languages_Yes"
+					android:background			="@drawable/button_style_standard"
+					android:textColor			="@color/text_white"
+					tools:text				    ="Yes"
+					android:fontFamily			="@font/myriadpro_semibold"
+					android:textSize		    ="20dp"
+					android:layout_width		="0dp"
+					android:layout_weight		="0.5"
+					android:layout_height		="@dimen/button_height"
+					android:layout_marginLeft	="5dp"/>
+			</TableRow>
+		</TableLayout>
+	</RelativeLayout>
 </RelativeLayout>

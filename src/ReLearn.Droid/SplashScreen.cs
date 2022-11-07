@@ -1,10 +1,10 @@
 ﻿using Android.App;
 using Android.Content.PM;
-using MvvmCross.Droid.Support.V7.AppCompat;
 using ReLearn.API.Database;
 using ReLearn.Core;
 using ReLearn.Droid.Helpers;
 using System.Threading.Tasks;
+using MvvmCross.Platforms.Android.Views;
 
 namespace ReLearn.Droid
 {
@@ -14,7 +14,7 @@ namespace ReLearn.Droid
         Theme = "@style/SplashTheme",
         NoHistory = true,
         ScreenOrientation = ScreenOrientation.Portrait)]
-    public class SplashScreen : MvxSplashScreenAppCompatActivity<Setup, App>
+    public class SplashScreen : MvxSplashScreenActivity<Setup, App>
     {
         public SplashScreen() : base(Resource.Layout.splash_screen)
         {

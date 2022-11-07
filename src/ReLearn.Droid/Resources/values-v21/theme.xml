@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <style
+        name  ="AppTheme"
+        parent="SemdelionTheme">
+		<item
+	        name="colorPrimary">@android:color/transparent</item>
+		<item
+            name="android:statusBarColor">#50000000</item>
+		<item
+            name="android:windowTranslucentStatus">true</item>
+		<item
+            name="android:windowDrawsSystemBarBackgrounds">true</item>
+		<!-- Надо попробовать и без него, хз точно ли он нужен -->
+    </style>
+</resources>

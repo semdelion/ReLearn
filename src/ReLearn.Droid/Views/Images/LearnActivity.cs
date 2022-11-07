@@ -6,16 +6,15 @@ using Android.Util;
 using Android.Views;
 using Android.Widget;
 using Java.Interop;
-using MvvmCross.Droid.Support.V7.AppCompat;
+using MvvmCross.Platforms.Android.Views;
 using ReLearn.API.Database;
 using ReLearn.Core.ViewModels.Images;
 using ReLearn.Droid.Helpers;
-using Toolbar = Android.Support.V7.Widget.Toolbar;
 
 namespace ReLearn.Droid.Views.Images
 {
     [Activity(Label = "", ScreenOrientation = ScreenOrientation.Portrait)]
-    public class LearnActivity : MvxAppCompatActivity<LearnViewModel>
+    public class LearnActivity : MvxActivity<LearnViewModel>
     {
         [Export("Button_Images_Learn_NotRepeat_Click")]
         public async void Button_Images_Learn_NotRepeat_Click(View v)
@@ -50,7 +49,7 @@ namespace ReLearn.Droid.Views.Images
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.activity_images_learn);
-            SetSupportActionBar(FindViewById<Toolbar>(Resource.Id.toolbar_images_learn));
+            SetSupportActionBar(FindViewById<AndroidX.AppCompat.Widget.Toolbar>(Resource.Id.toolbar_images_learn));
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
             var displayMetrics = new DisplayMetrics();
             WindowManager.DefaultDisplay.GetRealMetrics(displayMetrics);

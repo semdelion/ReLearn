@@ -6,14 +6,14 @@
     android:orientation		="vertical"
     android:layout_width	="match_parent"
     android:layout_height	="match_parent">
-	<android.support.design.widget.AppBarLayout
+	<com.google.android.material.appbar.AppBarLayout
 		android:layout_width	="match_parent"
 		android:layout_height	="wrap_content">
-		<android.support.v7.widget.Toolbar 
+		<androidx.appcompat.widget.Toolbar 
 			android:id				="@+id/toolbar_view_dictionary"
 			android:theme			="@style/ToolbarStyle"	
 			android:background		="@drawable/background_toolbar"
-			local:navigationIcon	="@mipmap/ic_arrow_back"
+			local:navigationIcon	="@drawable/ic_arrow_back"
 			android:layout_width	="match_parent"
        		android:layout_height	="@dimen/toolbar_height"	
 			local:buttonGravity		="bottom">
@@ -25,13 +25,14 @@
                 local:MvxBind           ="Text Title"
                 tools:text              ="View"
 			/>
-		</android.support.v7.widget.Toolbar >
-	</android.support.design.widget.AppBarLayout>
+		</androidx.appcompat.widget.Toolbar >
+	</com.google.android.material.appbar.AppBarLayout>
     <ListView
 		android:id					="@+id/listView_dictionary"
         android:layout_width		="match_parent"
         android:layout_height		="match_parent"
         android:layout_marginLeft	="2.0dp"
         android:layout_marginRight	="2.0dp" 
+		android:clipToPadding       ="false"
 	/>
 </LinearLayout>

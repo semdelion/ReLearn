@@ -6,16 +6,16 @@
     android:layout_width	="match_parent"
     android:layout_height	="match_parent"
     android:orientation		="vertical">
-	<android.support.design.widget.AppBarLayout
+	<com.google.android.material.appbar.AppBarLayout
 		android:layout_width	="match_parent"
 		android:layout_height	="wrap_content">
-		<android.support.v7.widget.Toolbar
+		<androidx.appcompat.widget.Toolbar 
 			android:layout_width	="match_parent"
 			android:layout_height	="@dimen/toolbar_height"
 			android:theme			="@style/ToolbarStyle"
 			android:id				="@+id/toolbar_statistics"
 			android:background		="@drawable/background_toolbar"
-			local:navigationIcon	="@mipmap/ic_arrow_back"
+			local:navigationIcon	="@drawable/ic_arrow_back"
 			local:buttonGravity		="bottom">
 			<TextView
 				android:gravity			="bottom"
@@ -27,18 +27,18 @@
                 local:MvxBind           ="Text Title"
                 tools:text              ="Statistics"
 			/>
-		</android.support.v7.widget.Toolbar>
-	</android.support.design.widget.AppBarLayout>
-    <android.support.design.widget.TabLayout
+		</androidx.appcompat.widget.Toolbar >
+	</com.google.android.material.appbar.AppBarLayout>
+    <com.google.android.material.tabs.TabLayout
         android:layout_width ="match_parent"
         android:layout_height="wrap_content"
         android:id			 ="@+id/tablayout"
         android:minHeight	 ="?attr/actionBarSize"
         android:theme		 ="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
-    </android.support.design.widget.TabLayout>
-    <android.support.v4.view.ViewPager
+    </com.google.android.material.tabs.TabLayout>
+    <androidx.viewpager.widget.ViewPager
         android:layout_width	="match_parent"
         android:layout_height	="fill_parent"
         android:id				="@+id/pager">
-    </android.support.v4.view.ViewPager>
+    </androidx.viewpager.widget.ViewPager>
 </LinearLayout>
