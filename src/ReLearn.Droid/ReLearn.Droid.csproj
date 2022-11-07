@@ -49,7 +49,6 @@
     <AndroidManagedSymbols>true</AndroidManagedSymbols>
     <AndroidDexTool>d8</AndroidDexTool>
     <AndroidUseAapt2>true</AndroidUseAapt2>
-    <AndroidPackageFormat>aab</AndroidPackageFormat>
     <AndroidTlsProvider>btls</AndroidTlsProvider>
     <AndroidSupportedAbis>armeabi-v7a;arm64-v8a</AndroidSupportedAbis>
     <AndroidEnableProfiledAot>false</AndroidEnableProfiledAot>
@@ -58,6 +57,8 @@
     <AndroidEnableSGenConcurrent>true</AndroidEnableSGenConcurrent>
     <EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
     <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+    <AndroidPackageFormat>aab</AndroidPackageFormat>
+    <AndroidCreatePackagePerAbi>false</AndroidCreatePackagePerAbi>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="I18N" />
@@ -165,6 +166,12 @@
     <PackageReference Include="Microsoft.AppCenter.Crashes">
       <Version>3.1.0</Version>
     </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Logging">
+      <Version>6.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions">
+      <Version>6.0.1</Version>
+    </PackageReference>
     <PackageReference Include="MvvmCross">
       <Version>8.0.2</Version>
     </PackageReference>
@@ -175,7 +182,7 @@
       <Version>8.0.2</Version>
     </PackageReference>
     <PackageReference Include="Serilog">
-      <Version>2.12.0</Version>
+      <Version>2.11.0</Version>
     </PackageReference>
     <PackageReference Include="Serilog.Extensions.Logging">
       <Version>3.1.0</Version>
