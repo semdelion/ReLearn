@@ -12,36 +12,28 @@ namespace ReLearn.Core.ViewModels.MainMenu
     {
         #region Commands
         private IMvxAsyncCommand _toAboutUs;
-        public IMvxAsyncCommand ToAboutUsViewModel =>
-            _toAboutUs ?? (_toAboutUs = new MvxAsyncCommand(NavigateToAboutUsViewModel));
+        public IMvxAsyncCommand ToAboutUsViewModel => _toAboutUs ??= new MvxAsyncCommand(NavigateToAboutUsViewModel);
 
         private IMvxAsyncCommand _toAddition;
-        public IMvxAsyncCommand ToAdditionViewModel =>
-            _toAddition ?? (_toAddition = new MvxAsyncCommand(NavigateToAdditionViewModel));
+        public IMvxAsyncCommand ToAdditionViewModel => _toAddition ??= new MvxAsyncCommand(NavigateToAdditionViewModel);
 
         private IMvxAsyncCommand _toFeedback;
-        public IMvxAsyncCommand ToFeedbackViewModel =>
-            _toFeedback ?? (_toFeedback = new MvxAsyncCommand(NavigateToFeedbackViewModel));
+        public IMvxAsyncCommand ToFeedbackViewModel => _toFeedback ??= new MvxAsyncCommand(NavigateToFeedbackViewModel);
 
         private IMvxAsyncCommand _toHome;
-        public IMvxAsyncCommand ToHomeViewModel => 
-            _toHome ?? (_toHome = new MvxAsyncCommand(NavigateToHomeViewModel));
+        public IMvxAsyncCommand ToHomeViewModel => _toHome ??= new MvxAsyncCommand(NavigateToHomeViewModel);
 
         private IMvxAsyncCommand _toSelectDictionary;
-        public IMvxAsyncCommand ToSelectDictionary => 
-            _toSelectDictionary ?? (_toSelectDictionary = new MvxAsyncCommand(NavigateToSelectDictionary));
+        public IMvxAsyncCommand ToSelectDictionary => _toSelectDictionary ??= new MvxAsyncCommand(NavigateToSelectDictionary);
 
         private IMvxAsyncCommand _toSettings;
-        public IMvxAsyncCommand ToSettingsViewModel => 
-            _toSettings ?? (_toSettings = new MvxAsyncCommand(NavigateToSettingsViewModel));
+        public IMvxAsyncCommand ToSettingsViewModel => _toSettings ??= new MvxAsyncCommand(NavigateToSettingsViewModel);
 
         private IMvxAsyncCommand _toStatistic;
-        public IMvxAsyncCommand ToStatisticViewModel => 
-            _toStatistic ?? (_toStatistic = new MvxAsyncCommand(NavigateToStatisticViewModel));
+        public IMvxAsyncCommand ToStatisticViewModel => _toStatistic ??= new MvxAsyncCommand(NavigateToStatisticViewModel);
 
         private IMvxAsyncCommand _toViewDictionary;
-        public IMvxAsyncCommand ToViewDictionaryViewModel => 
-            _toViewDictionary ?? (_toViewDictionary = new MvxAsyncCommand(NavigateToViewDictionaryViewModel));
+        public IMvxAsyncCommand ToViewDictionaryViewModel => _toViewDictionary ??= new MvxAsyncCommand(NavigateToViewDictionaryViewModel);
         #endregion
 
         #region Constructors

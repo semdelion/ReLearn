@@ -58,7 +58,7 @@ namespace ReLearn.Droid.Views.Menu
                 NavigationView.Menu.FindItem(Resource.Id.add_word).SetTitle(Xamarin.Yaml.Localization.I18N.Instance.Translate("Menu.AddWord"));
                 NavigationView.Menu.FindItem(Resource.Id.settings_menu).SetTitle(Xamarin.Yaml.Localization.I18N.Instance.Translate("Menu.Settings"));
                 NavigationView.Menu.FindItem(Resource.Id.feedback).SetTitle(Xamarin.Yaml.Localization.I18N.Instance.Translate("Menu.Feedback"));
-                NavigationView.Menu.FindItem(Resource.Id.about_us).SetTitle(Xamarin.Yaml.Localization.I18N.Instance.Translate("Menu.AboutUs"));
+               // NavigationView.Menu.FindItem(Resource.Id.about_us).SetTitle(Xamarin.Yaml.Localization.I18N.Instance.Translate("Menu.AboutUs"));
             }
         }
 
@@ -91,9 +91,9 @@ namespace ReLearn.Droid.Views.Menu
                 case Resource.Id.feedback:
                     ViewModel.ToFeedbackViewModel.Execute();
                     break;
-                case Resource.Id.about_us:
+                /*case Resource.Id.about_us:
                     ViewModel.ToAboutUsViewModel.Execute();
-                    break;
+                    break;*/
             }
         }
     }
